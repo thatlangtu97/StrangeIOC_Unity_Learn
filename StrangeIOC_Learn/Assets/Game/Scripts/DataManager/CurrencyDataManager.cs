@@ -103,7 +103,8 @@ public class CurrencyDataManager : IObjectDataManager
     }
     public void setupValueDefault() {
         currencyData.gold = 3000;
-        currencyData.gem = 0;
+        currencyData.gem = 100;
+        currencyData.stamina = 50;
         SaveData();
     }
 }
@@ -112,6 +113,7 @@ public class CurrencyData : DataObject
 {
     public int gold;
     public int gem;
+    public int stamina;
 }
 
 
