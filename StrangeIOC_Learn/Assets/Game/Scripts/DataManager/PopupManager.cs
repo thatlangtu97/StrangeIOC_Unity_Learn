@@ -17,16 +17,25 @@ public class PopupManager
     {
         panelKey = key;
     }
-    public void ResetPopupAfterLoadHomeScene()
+    public void ResetPanelAfterLoadHomeScene()
     {
         panelKey = PanelKey.PanelHome;
     }
-    public PanelKey GetPopupAfterLoadHomeScene()
+    public PanelKey GetPanelAfterLoadHomeScene()
     {
         return panelKey;
+    }
+    public void ResetPanelShowAfterLoadHomeScene()
+    {
+        panelKey = PanelKey.PanelHome;
     }
 }
 public enum PanelKey
 {
     PanelHome,
+}
+public enum UILayer
+{
+    UI1,
+    UI2,
 }

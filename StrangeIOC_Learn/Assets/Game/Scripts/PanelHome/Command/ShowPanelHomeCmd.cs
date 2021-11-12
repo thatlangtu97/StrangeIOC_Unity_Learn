@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowPanelHomeCmd : Command
+public class ShowPanelHomeCmd : AbsShowPanelCmd
 {
+
     public override void Execute()
     {
-        
+        PanelHomeView panelHomeView = GetInstance<PanelHomeView>();
+        panelHomeView.ShowPanel();
     }
-    public string GetResourcePath()
+
+    public override string GetResourcePath()
     {
         return GameResourcePath.PANEL_HOME;
     }
