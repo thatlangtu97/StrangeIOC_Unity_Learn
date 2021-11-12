@@ -1,0 +1,108 @@
+{ "skeleton": { "images": "/d/Stick 4/online/UI/layers/inventory_screen/equipment/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "ultra_shoes", "bone": "root", "attachment": "ultra_shoes" },
+	{ "name": "curved_armour", "bone": "root", "attachment": "curved_armour" },
+	{ "name": "curved_helmet", "bone": "root", "attachment": "curved_helmet" },
+	{ "name": "curved_necklace", "bone": "root", "attachment": "curved_necklace" },
+	{ "name": "curved_ring", "bone": "root", "attachment": "curved_ring" },
+	{ "name": "curved_shoes", "bone": "root", "attachment": "curved_shoes" },
+	{ "name": "curved_sword", "bone": "root", "attachment": "curved_sword" },
+	{ "name": "great_armour", "bone": "root", "attachment": "great_armour" },
+	{ "name": "great_helmet", "bone": "root", "attachment": "great_helmet" },
+	{ "name": "great_necklace", "bone": "root", "attachment": "great_necklace" },
+	{ "name": "great_ring", "bone": "root", "attachment": "great_ring" },
+	{ "name": "great_shoes", "bone": "root", "attachment": "great_shoes" },
+	{ "name": "great_sword", "bone": "root", "attachment": "great_sword" },
+	{ "name": "straight_armour", "bone": "root", "attachment": "straight_armour" },
+	{ "name": "straight_helmet", "bone": "root", "attachment": "straight_helmet" },
+	{ "name": "straight_necklace", "bone": "root", "attachment": "straight_necklace" },
+	{ "name": "straight_ring", "bone": "root", "attachment": "straight_ring" },
+	{ "name": "straight_shoes", "bone": "root", "attachment": "straight_shoes" },
+	{ "name": "straight_sword", "bone": "root", "attachment": "straight_sword" },
+	{ "name": "ultra_armour", "bone": "root", "attachment": "ultra_armour" },
+	{ "name": "ultra_sword", "bone": "root", "attachment": "ultra_sword" },
+	{ "name": "ultra_helmet", "bone": "root", "attachment": "ultra_helmet" },
+	{ "name": "ultra_necklace", "bone": "root", "attachment": "ultra_necklace" },
+	{ "name": "ultra_ring", "bone": "root", "attachment": "ultra_ring" }
+],
+"skins": {
+	"default": {
+		"ultra_shoes": {
+			"ultra_shoes": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"curved_armour": {
+			"curved_armour": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"curved_helmet": {
+			"curved_helmet": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"curved_necklace": {
+			"curved_necklace": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"curved_ring": {
+			"curved_ring": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"curved_shoes": {
+			"curved_shoes": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"curved_sword": {
+			"curved_sword": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"great_armour": {
+			"great_armour": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"great_helmet": {
+			"great_helmet": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"great_necklace": {
+			"great_necklace": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"great_ring": {
+			"great_ring": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"great_shoes": {
+			"great_shoes": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"great_sword": {
+			"great_sword": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"straight_armour": {
+			"straight_armour": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"straight_helmet": {
+			"straight_helmet": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"straight_necklace": {
+			"straight_necklace": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"straight_ring": {
+			"straight_ring": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"straight_shoes": {
+			"straight_shoes": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"straight_sword": {
+			"straight_sword": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"ultra_armour": {
+			"ultra_armour": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"ultra_sword": {
+			"ultra_sword": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"ultra_helmet": {
+			"ultra_helmet": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"ultra_necklace": {
+			"ultra_necklace": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		},
+		"ultra_ring": {
+			"ultra_ring": { "x": 78.5, "y": -78.5, "width": 159, "height": 159 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

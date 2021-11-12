@@ -1,0 +1,164 @@
+{ "skeleton": { "images": "/d/Stick 4/GUI/1920x1080/1920x1080/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "demo", "bone": "root", "attachment": "demo" },
+	{ "name": "enemy_HP_bar", "bone": "root", "attachment": "enemy_HP_bar" },
+	{ "name": "enemy_HP", "bone": "root", "attachment": "enemy_HP" },
+	{ "name": "Player_HP_bar_small", "bone": "root", "attachment": "Player_HP_bar_small" },
+	{ "name": "player_HP_small", "bone": "root", "attachment": "player_HP_small" },
+	{ "name": "Boss_HP_bar_small", "bone": "root", "attachment": "Boss_HP_bar_small" },
+	{ "name": "boss_HP_small", "bone": "root", "attachment": "boss_HP_small" },
+	{ "name": "Move_slide", "bone": "root", "attachment": "Move_slide" },
+	{ "name": "Move", "bone": "root", "attachment": "Move" },
+	{ "name": "player_HUD", "bone": "root", "attachment": "player_HUD" },
+	{ "name": "player_ava", "bone": "root", "attachment": "player_ava" },
+	{ "name": "player_HP_bar", "bone": "root", "attachment": "player_HP_bar" },
+	{ "name": "player_HP", "bone": "root", "attachment": "player_HP" },
+	{ "name": "exp_bar", "bone": "root", "attachment": "exp_bar" },
+	{ "name": "exp", "bone": "root", "attachment": "exp" },
+	{ "name": "boss_HUD", "bone": "root", "attachment": "boss_HUD" },
+	{ "name": "Boss_ava", "bone": "root", "attachment": "Boss_ava" },
+	{ "name": "boss_HP bar", "bone": "root", "attachment": "boss_HP bar" },
+	{ "name": "Boss_HP_red", "bone": "root", "attachment": "Boss_HP_red" },
+	{ "name": "Boss_HP_red_behide", "bone": "root", "attachment": "Boss_HP_red_behide" },
+	{ "name": "Boss_HP_purple_behide", "bone": "root", "attachment": "Boss_HP_purple_behide" },
+	{ "name": "Boss_HP_purple", "bone": "root", "attachment": "Boss_HP_purple" },
+	{ "name": "Boss_HP_blue_behide", "bone": "root", "attachment": "Boss_HP_blue_behide" },
+	{ "name": "Boss_HP_blue", "bone": "root", "attachment": "Boss_HP_blue" },
+	{ "name": "Boss_HP_yellow_behide", "bone": "root", "attachment": "Boss_HP_yellow_behide" },
+	{ "name": "Boss_HP_yellow", "bone": "root", "attachment": "Boss_HP_yellow" },
+	{ "name": "Boss_HP_green_behide", "bone": "root", "attachment": "Boss_HP_green_behide" },
+	{ "name": "Boss_HP_green", "bone": "root", "attachment": "Boss_HP_green" },
+	{ "name": "pause", "bone": "root", "attachment": "pause" },
+	{ "name": "atk", "bone": "root", "attachment": "atk" },
+	{ "name": "jump", "bone": "root", "attachment": "jump" },
+	{ "name": "Skill_203", "bone": "root", "attachment": "Skill_203" },
+	{ "name": "Skill_204", "bone": "root", "attachment": "Skill_204" },
+	{ "name": "Skill_deactive", "bone": "root", "attachment": "Skill_deactive" },
+	{ "name": "Cooldown2", "bone": "root", "attachment": "Cooldown2" },
+	{ "name": "Skill_201", "bone": "root", "attachment": "Skill_201" },
+	{ "name": "Skill_202", "bone": "root", "attachment": "Skill_202" },
+	{ "name": "Cooldown1", "bone": "root", "attachment": "Cooldown1" }
+],
+"skins": {
+	"default": {
+		"demo": {
+			"demo": { "x": 960, "y": -540, "width": 1922, "height": 1082 }
+		},
+		"enemy_HP_bar": {
+			"enemy_HP_bar": { "x": 834, "y": -618, "width": 150, "height": 24 }
+		},
+		"enemy_HP": {
+			"enemy_HP": { "x": 834, "y": -618, "width": 142, "height": 16 }
+		},
+		"Player_HP_bar_small": {
+			"Player_HP_bar_small": { "x": 965, "y": -573, "width": 150, "height": 24 }
+		},
+		"player_HP_small": {
+			"player_HP_small": { "x": 965, "y": -573, "width": 142, "height": 16 }
+		},
+		"Boss_HP_bar_small": {
+			"Boss_HP_bar_small": { "x": 1624, "y": -344, "width": 278, "height": 24 }
+		},
+		"boss_HP_small": {
+			"boss_HP_small": { "x": 1624, "y": -344, "width": 270, "height": 16 }
+		},
+		"Move_slide": {
+			"Move_slide": { "x": 206, "y": -957, "width": 368, "height": 94 }
+		},
+		"Move": {
+			"Move": { "x": 206, "y": -957.5, "width": 166, "height": 167 }
+		},
+		"player_HUD": {
+			"player_HUD": { "x": 95, "y": -91, "width": 152, "height": 152 }
+		},
+		"player_ava": {
+			"player_ava": { "x": 95, "y": -90.5, "width": 96, "height": 103 }
+		},
+		"player_HP_bar": {
+			"player_HP_bar": { "x": 396.5, "y": -53.5, "width": 429, "height": 55 }
+		},
+		"player_HP": {
+			"player_HP": { "x": 396.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"exp_bar": {
+			"exp_bar": { "x": 396.5, "y": -98.5, "width": 407, "height": 29 }
+		},
+		"exp": {
+			"exp": { "x": 396.5, "y": -98.5, "width": 399, "height": 21 }
+		},
+		"boss_HUD": {
+			"boss_HUD": { "x": 1824, "y": -91, "width": 152, "height": 152 }
+		},
+		"Boss_ava": {
+			"Boss_ava": { "x": 1824, "y": -92, "width": 114, "height": 108 }
+		},
+		"boss_HP bar": {
+			"boss_HP bar": { "x": 1522.5, "y": -53.5, "width": 429, "height": 55 }
+		},
+		"Boss_HP_red": {
+			"Boss_HP_red": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"Boss_HP_red_behide": {
+			"Boss_HP_red_behide": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"Boss_HP_purple_behide": {
+			"Boss_HP_purple_behide": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"Boss_HP_purple": {
+			"Boss_HP_purple": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"Boss_HP_blue_behide": {
+			"Boss_HP_blue_behide": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"Boss_HP_blue": {
+			"Boss_HP_blue": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"Boss_HP_yellow_behide": {
+			"Boss_HP_yellow_behide": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"Boss_HP_yellow": {
+			"Boss_HP_yellow": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"Boss_HP_green_behide": {
+			"Boss_HP_green_behide": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"Boss_HP_green": {
+			"Boss_HP_green": { "x": 1522.5, "y": -53.5, "width": 421, "height": 47 }
+		},
+		"pause": {
+			"pause": { "x": 960, "y": -66, "width": 92, "height": 92 }
+		},
+		"atk": {
+			"atk": { "x": 1658.5, "y": -943.5, "width": 197, "height": 197 }
+		},
+		"jump": {
+			"jump": { "x": 1831.5, "y": -868.5, "width": 131, "height": 131 }
+		},
+		"Skill_203": {
+			"Skill_203": { "x": 1656, "y": -763, "width": 114, "height": 114 }
+		},
+		"Skill_204": {
+			"Skill_204": { "x": 1656.5, "y": -763, "width": 113, "height": 114 }
+		},
+		"Skill_deactive": {
+			"Skill_deactive": { "x": 1657, "y": -763, "width": 122, "height": 118 }
+		},
+		"Cooldown2": {
+			"Cooldown2": { "x": 1657, "y": -763, "width": 122, "height": 122 }
+		},
+		"Skill_201": {
+			"Skill_201": { "x": 1477, "y": -971, "width": 114, "height": 114 }
+		},
+		"Skill_202": {
+			"Skill_202": { "x": 1518, "y": -826, "width": 114, "height": 114 }
+		},
+		"Cooldown1": {
+			"Cooldown1": { "x": 1518, "y": -826, "width": 122, "height": 122 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

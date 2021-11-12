@@ -1,0 +1,27 @@
+
+sr4_logo.png
+size: 863,863
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+4
+  rotate: false
+  xy: 2, 363
+  size: 390, 498
+  orig: 393, 500
+  offset: 1, 1
+  index: -1
+R
+  rotate: true
+  xy: 394, 126
+  size: 379, 410
+  orig: 381, 412
+  offset: 1, 1
+  index: -1
+S
+  rotate: false
+  xy: 394, 507
+  size: 467, 354
+  orig: 470, 356
+  offset: 1, 1
+  index: -1

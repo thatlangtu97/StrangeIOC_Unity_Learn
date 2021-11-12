@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MaskImagePanelHero
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 0
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 59a0e965f174ad64b837429ac2efdb6a, type: 3}
+    - {fileID: 2800000, guid: 7192095bac629c14d925a2fa38eb07c6, type: 3}
+    - {fileID: 2800000, guid: d7e14b95bac0f354f8759dc75232d287, type: 3}
+    - {fileID: 2800000, guid: 0dadd49966b935845a7699944de78479, type: 3}
+    - {fileID: 2800000, guid: b33e01ace4e4c2d4982b3d827b495607, type: 3}
+    - {fileID: 2800000, guid: 30512ea497c7bb145bc59d1f42adc6c4, type: 3}
+    - {fileID: 2800000, guid: b56f3464ab580a6489d86eef7097e95f, type: 3}
+    - {fileID: 2800000, guid: b3d960bce736cab4ebb29980a9d8b8fd, type: 3}
+    - {fileID: 2800000, guid: 89275837115606f47810803ddeae2090, type: 3}
+    - {fileID: 2800000, guid: 9324724df0b155e4faa654f60233d545, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: b56f3464ab580a6489d86eef7097e95f, type: 3}
+  - {fileID: 21300000, guid: 30512ea497c7bb145bc59d1f42adc6c4, type: 3}
+  - {fileID: 21300000, guid: 59a0e965f174ad64b837429ac2efdb6a, type: 3}
+  - {fileID: 21300000, guid: d7e14b95bac0f354f8759dc75232d287, type: 3}
+  - {fileID: 21300000, guid: 89275837115606f47810803ddeae2090, type: 3}
+  - {fileID: 21300000, guid: 0dadd49966b935845a7699944de78479, type: 3}
+  - {fileID: 21300000, guid: 7192095bac629c14d925a2fa38eb07c6, type: 3}
+  - {fileID: 21300000, guid: b33e01ace4e4c2d4982b3d827b495607, type: 3}
+  - {fileID: 21300000, guid: b3d960bce736cab4ebb29980a9d8b8fd, type: 3}
+  - {fileID: 21300000, guid: 9324724df0b155e4faa654f60233d545, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - blade_purple
+  - blade_normal
+  - main_normal_Mask
+  - main_carton_Mask
+  - main_blackpink_mask
+  - main_yellow_Mask
+  - main_purple_Mask
+  - blade_carton
+  - blade_yellow
+  - shuriken_blackpink_mask
+  m_Tag: MaskImagePanelHero
+  m_IsVariant: 0

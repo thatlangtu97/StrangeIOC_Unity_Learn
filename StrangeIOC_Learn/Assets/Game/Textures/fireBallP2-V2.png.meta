@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 932f2ff0032903f439c32eed7bd0f2b8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 698590597456691807
+    second: fireBallP2-V2_0
+  - first:
+      213: 8280691277948623243
+    second: fireBallP2-V2_1
+  - first:
+      213: 7086261271860767799
+    second: fireBallP2-V2_2
+  - first:
+      213: -6228913803001258855
+    second: fireBallP2-V2_3
+  - first:
+      213: 3889785116667705407
+    second: fireBallP2-V2_4
+  - first:
+      213: -6656555532054728018
+    second: fireBallP2-V2_5
+  - first:
+      213: -1737738573508915441
+    second: fireBallP2-V2_6
+  - first:
+      213: 4845420765036898749
+    second: fireBallP2-V2_7
+  - first:
+      213: 2059863471278848606
+    second: fireBallP2-V2_8
+  - first:
+      213: 6475971850154250619
+    second: fireBallP2-V2_9
+  - first:
+      213: 2666876624752102955
+    second: fireBallP2-V2_10
+  - first:
+      213: 5700321990635498264
+    second: fireBallP2-V2_11
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fireBallP2-V2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 787.3334
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121b3a81207454c48ad7ea929ce732fe
+      internalID: 698590597456691807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_1
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 787.3334
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b42000f8caa714db51ee60e40f31c9
+      internalID: 8280691277948623243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_2
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 787.3334
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f372f8930c963f408c6dd618e2d7e7d
+      internalID: 7086261271860767799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_3
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 787.3334
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ec2dfe03266af48865e0b2eca23b0a
+      internalID: -6228913803001258855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 394.33334
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9dd45842cc16242a6ccc04c0a4ef31
+      internalID: 3889785116667705407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_5
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 394.33334
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b3071869178f346bc0ac127efb1d3e
+      internalID: -6656555532054728018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_6
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 394.33334
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8949b9d669352ff43811952bb1b162fe
+      internalID: -1737738573508915441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_7
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 394.33334
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebfe14ee449b28f47a5c2081b2b1e1e4
+      internalID: 4845420765036898749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333435
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4eff688c17071468154ab89721f710
+      internalID: 2059863471278848606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_9
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1.3333435
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c97f6fedadbb449b721afaf38be5a1
+      internalID: 6475971850154250619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_10
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 1.3333435
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d5f7ca268568f4aaddffb9149418f8
+      internalID: 2666876624752102955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireBallP2-V2_11
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 1.3333435
+        width: 602
+        height: 393.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46656f970f8c74d4fbfda117e1d791d0
+      internalID: 5700321990635498264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
