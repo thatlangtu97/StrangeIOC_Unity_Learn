@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HomeSceneContextView : ContextView
 {
-    void Start()
+    void Awake()
     {
         context = new HomeSceneContext(this);
         context.Start();

@@ -4,14 +4,36 @@ using UnityEngine;
 
 public class PopupManager 
 {
-    public PanelKey panelKey;
+    public PanelKey panelKey { get; set; }
+    public Dictionary<UILayer, Transform> UIDic = new Dictionary<UILayer, Transform>();
     public PopupManager()
     {
-        Debug.Log("tao moi popup manager");
     }
-    public void Start()
+
+    public void AddUILayer(UILayer layer,Transform transform)
     {
-        Debug.Log("start popup singleton");
+        
+        if (UIDic.ContainsKey(layer))
+        {
+            UIDic[layer] = transform;
+        }
+        else
+        {
+            UIDic.Add(layer, transform);
+            
+        }
+    }
+    public Transform GetUILayer(UILayer layer)
+    {
+        if (UIDic.ContainsKey(layer))
+        {
+            return UIDic[layer];
+        }
+        else
+        {
+            return null;
+        }
+
     }
     public void SetPopupAfterLoadHomeScene(PanelKey key)
     {

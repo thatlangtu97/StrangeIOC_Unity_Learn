@@ -11,13 +11,14 @@ public class FinishSetupHomeSceneCmd : Command
     public ShowPanelHomeSignal ShowMainScenePopupSignal { get; set; }
     public override void Execute()
     {
-        PanelKey panelKey = popupManager.GetPanelAfterLoadHomeScene();
-        switch (panelKey)
-        {
-            case PanelKey.PanelHome:
-                ShowMainScenePopupSignal.Dispatch();
-                break;
-        }
+        //PanelKey panelKey = popupManager.GetPanelAfterLoadHomeScene();
+        //switch (panelKey)
+        //{
+        //    case PanelKey.PanelHome:
+        //        ShowMainScenePopupSignal.Dispatch();
+        //        break;
+        //}
+        Debug.Log("popup " +popupManager);
         popupManager.ResetPanelShowAfterLoadHomeScene();
     }
 }

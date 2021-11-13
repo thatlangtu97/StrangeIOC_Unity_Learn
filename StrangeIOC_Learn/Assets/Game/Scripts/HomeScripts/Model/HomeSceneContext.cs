@@ -14,7 +14,7 @@ public class HomeSceneContext : MVCSContext
     protected override void mapBindings()
     {
         base.mapBindings();
-        injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton();
+        //injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton();
         commandBinder.Bind<FinishSetupHomeSceneSignal>().To<FinishSetupHomeSceneCmd>();
         commandBinder.Bind<ShowPanelHomeSignal>().To<ShowPanelHomeCmd>();
     }

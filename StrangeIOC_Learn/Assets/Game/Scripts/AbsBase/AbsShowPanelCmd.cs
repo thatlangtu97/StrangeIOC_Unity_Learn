@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class AbsShowPanelCmd : Command
 {
     [Inject] public PopupManager popupManager { get; set; }
-
+	public UILayer uiLayer;
     public override void Execute()
     {
         
@@ -40,10 +40,7 @@ public abstract class AbsShowPanelCmd : Command
 	private GameObject Instantiate()
 	{
 		GameObject o = PrefabUtils.LoadPrefab(GetResourcePath());
-
-		GameObject spawned = GameObject.Instantiate(o) as GameObject;
-		spawned.transform.parent = GameObject.Find( spawned.GetComponent<AbsPanelView>().uILayer.ToString()).transform;
-		
+		GameObject spawned = GameObject.Instantiate(o, popupManager.GetUILayer(uiLayer)) as GameObject;		
 		return spawned;
 	}
 
