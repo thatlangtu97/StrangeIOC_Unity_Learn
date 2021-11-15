@@ -18,7 +18,6 @@ public class FinishSetupHomeSceneCmd : Command
                 showPanelHomeSignal.Dispatch();
                 break;
         }
-        Debug.Log("popup " +popupManager);
         popupManager.ResetPanelShowAfterLoadHomeScene();
     }
 }

@@ -1,14 +1,14 @@
-﻿using System.Collections;
+﻿using strange.extensions.mediation.impl;
+using System.Collections;
 using System.Collections.Generic;
-using strange.extensions.mediation.impl;
 using UnityEngine;
 
-public abstract class AbsPanelView : View
+public class AbsPopupView : View
 {
 	[Inject]
 	public PopupManager popupManager { get; set; }
 	public UILayer uILayer;
-	public PanelKey panelKey;
+	public PopupKey popupKey;
 	AutoFIllPanelInParent autoFIllPanelInParent;
 	protected override void Start()
 	{
@@ -17,19 +17,18 @@ public abstract class AbsPanelView : View
 		autoFIllPanelInParent = GetComponent<AutoFIllPanelInParent>();
 		autoFIllPanelInParent.AutoFill();
 	}
-	public void ShowPanel() 
+	public void ShowPopup()
 	{
 		this.gameObject.SetActive(true);
-		NotifyShowPanel();
-		popupManager.ShowPanel(panelKey);
-
+		NotifyShowPopup();
+		popupManager.ShowPopup(popupKey);
 	}
-	
+
 	protected override void OnEnable()
 	{
 	}
-	public void NotifyShowPanel()
+	public void NotifyShowPopup()
 	{
-		
+
 	}
 }

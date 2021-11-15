@@ -17,6 +17,7 @@ public class HomeSceneContext : MVCSContext
         //injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton();
         commandBinder.Bind<FinishSetupHomeSceneSignal>().To<FinishSetupHomeSceneCmd>();
         commandBinder.Bind<ShowPanelHomeSignal>().To<ShowPanelHomeCmd>();
+        commandBinder.Bind<ShowPopupStaminaSignal>().To<ShowPopupStaminaCmd>();
     }
     // Remove Inject nếu k cần đến nữa
     public override void OnRemove()

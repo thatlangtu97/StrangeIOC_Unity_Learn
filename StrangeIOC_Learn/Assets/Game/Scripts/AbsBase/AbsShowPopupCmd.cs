@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using strange.extensions.command.impl;
 using UnityEngine;
-
-public abstract class AbsShowPanelCmd : Command
+using strange.extensions.command.impl;
+public abstract class AbsShowPopupCmd : Command
 {
     [Inject] public PopupManager popupManager { get; set; }
-	public PanelKey panelKey;
+    public PopupKey popupKey;
     public override void Execute()
     {
-        
+
     }
 	public T GetInstance<T>() where T : Component
 	{
@@ -32,7 +31,7 @@ public abstract class AbsShowPanelCmd : Command
 
 		return injectionBinder.GetInstance<T>(GetInjectName());
 	}
-	
+
 	public virtual string GetInjectName()
 	{
 		return "";
@@ -41,25 +40,25 @@ public abstract class AbsShowPanelCmd : Command
 	{
 		GameObject o = PrefabUtils.LoadPrefab(GetResourcePath());
 		GameObject spawned = null;
-		if (!popupManager.CheckContainPanel(panelKey))
-        {
-			spawned = GameObject.Instantiate(o/*, popupManager.GetUILayer(uiLayer)*/) as GameObject;
-			popupManager.AddPanel(panelKey, spawned);
+		if (!popupManager.CheckContainPopup(popupKey))
+		{
+			spawned = GameObject.Instantiate(o) as GameObject;
+			popupManager.AddPopup(popupKey, spawned);
 		}
-        else
-        {
-			if(popupManager.GetPanelByPanelKey(panelKey) == null)
-            {
+		else
+		{
+			if (popupManager.GetPopupByPopupKey(popupKey) == null)
+			{
 				spawned = GameObject.Instantiate(o) as GameObject;
-				popupManager.AddPanel(panelKey, spawned);
+				popupManager.AddPopup(popupKey, spawned);
 			}
-            else
-            {
-				spawned = popupManager.GetPanelByPanelKey(panelKey);
+			else
+			{
+				spawned = popupManager.GetPopupByPopupKey(popupKey);
 
 			}
-        }
-		
+		}
+
 		return spawned;
 	}
 

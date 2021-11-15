@@ -16,7 +16,6 @@ public class UIBasePanel : View
     protected override void Start()
     {
         base.Start();
-        Debug.Log(popupManager);
         popupManager.AddUILayer(uiLayer, transform);
     }
 

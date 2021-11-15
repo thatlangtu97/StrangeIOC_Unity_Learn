@@ -398,7 +398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &2245676584033253779
@@ -1011,7 +1010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355225231857
@@ -1344,7 +1342,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355296965317
@@ -1481,7 +1478,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355346045481
@@ -2234,7 +2230,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355639647143
@@ -2837,7 +2832,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355987949579
@@ -3352,7 +3346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158356418251965
@@ -3487,7 +3480,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158356459547653
@@ -3947,7 +3939,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158356631346144
@@ -5152,6 +5143,7 @@ GameObject:
   - component: {fileID: 5019252353696687373}
   - component: {fileID: 5019252353696687370}
   - component: {fileID: 7872430388364689923}
+  - component: {fileID: 1253708034}
   m_Layer: 5
   m_Name: Bg_Gem
   m_TagString: Untagged
@@ -5232,9 +5224,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
+--- !u!114 &1253708034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019252353696687368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5019252353696687370}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5019252353723381244
 GameObject:
   m_ObjectHideFlags: 0
@@ -5459,7 +5493,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &5019252353811728412
@@ -5474,6 +5507,7 @@ GameObject:
   - component: {fileID: 5019252353811728401}
   - component: {fileID: 5019252353811728414}
   - component: {fileID: 1475571895483297914}
+  - component: {fileID: 1253708035}
   m_Layer: 5
   m_Name: Bg_Gold
   m_TagString: Untagged
@@ -5554,9 +5588,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
+--- !u!114 &1253708035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019252353811728412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5019252353811728414}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5019252353992942123
 GameObject:
   m_ObjectHideFlags: 0
@@ -5770,6 +5846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uILayer: 0
+  StaminaBtn: {fileID: 1253708036}
 --- !u!114 &1066033666949472781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6499,7 +6576,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &5019252355093216494
@@ -6514,6 +6590,7 @@ GameObject:
   - component: {fileID: 5019252355093216483}
   - component: {fileID: 5019252355093216480}
   - component: {fileID: 2913115672800647560}
+  - component: {fileID: 1253708036}
   m_Layer: 5
   m_Name: Bg_Stamina
   m_TagString: Untagged
@@ -6595,9 +6672,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventrigger: {fileID: 0}
-  btn: {fileID: 0}
   shrinkScale: {x: 0.9, y: 0.9, z: 1}
   expandScale: {x: 1, y: 1, z: 1}
+--- !u!114 &1253708036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019252355093216494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5019252355093216480}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5078137672214840510
 GameObject:
   m_ObjectHideFlags: 0
