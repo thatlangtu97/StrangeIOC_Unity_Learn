@@ -11,6 +11,7 @@ namespace EntrySystem
         public void MapBindings(ICrossContextInjectionBinder injectionBinder, ICommandBinder commandBinder,
             IMediationBinder mediationBinder)
         {
+            commandBinder.Bind<ShowPanelHomeSignal>().To<ShowPanelHomeCmd>();
         }
     }
 }

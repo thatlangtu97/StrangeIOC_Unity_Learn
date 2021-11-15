@@ -1,12 +1,20 @@
-﻿using System.Collections;
+﻿using strange.extensions.mediation.impl;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestUtils
+public class TestUtils :View
 {
-    [Inject] public PopupManager popupManager { get; set; }
-    public void DebugPopup()
+    [Inject] public ShowPanelHomeSignal showPanelHomeSignal { get; set; }
+    protected override void Start()
     {
-        Debug.Log(popupManager);
+        base.Start();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            showPanelHomeSignal.Dispatch();
+        }
     }
 }

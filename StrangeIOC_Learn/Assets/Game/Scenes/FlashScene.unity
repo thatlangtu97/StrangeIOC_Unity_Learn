@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 856779013}
   - component: {fileID: 856779014}
+  - component: {fileID: 856779015}
   m_Layer: 0
   m_Name: EntryContext
   m_TagString: Untagged
@@ -162,6 +163,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ccf6fe8b4c95ad428379b45ae274c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &856779015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856779012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd75dffacead174e8f59f42e3002acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &931733091
@@ -258,12 +271,12 @@ GameObject:
   - component: {fileID: 2039141851}
   - component: {fileID: 2039141850}
   m_Layer: 0
-  m_Name: Flash
+  m_Name: PlayFlashScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2039141850
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class AbsShowPanelCmd : Command
 {
     [Inject] public PopupManager popupManager { get; set; }
-	public UILayer uiLayer;
+	public PanelKey panelKey;
     public override void Execute()
     {
         
@@ -16,6 +16,7 @@ public abstract class AbsShowPanelCmd : Command
 		bool isInit = injectionBinder.GetBinding<T>(GetInjectName()) == null ||
 					  injectionBinder.GetInstance<T>(GetInjectName()) == null;
 
+		Debug.Log(isInit);
 		if (isInit)
 		{
 			GameObject q = Instantiate();
@@ -40,7 +41,26 @@ public abstract class AbsShowPanelCmd : Command
 	private GameObject Instantiate()
 	{
 		GameObject o = PrefabUtils.LoadPrefab(GetResourcePath());
-		GameObject spawned = GameObject.Instantiate(o, popupManager.GetUILayer(uiLayer)) as GameObject;		
+		GameObject spawned = null;
+		if (!popupManager.CheckContainPanel(panelKey))
+        {
+			spawned = GameObject.Instantiate(o/*, popupManager.GetUILayer(uiLayer)*/) as GameObject;
+			popupManager.AddPanel(panelKey, spawned);
+		}
+        else
+        {
+			if(popupManager.GetPanelByPanelKey(panelKey) == null)
+            {
+				spawned = GameObject.Instantiate(o) as GameObject;
+				popupManager.AddPanel(panelKey, spawned);
+			}
+            else
+            {
+				spawned = popupManager.GetPanelByPanelKey(panelKey);
+
+			}
+        }
+		
 		return spawned;
 	}
 

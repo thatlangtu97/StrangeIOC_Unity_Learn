@@ -12,17 +12,13 @@ namespace EntrySystem
 		protected override void mapBindings() {
 			base.mapBindings();
 
-			//new CrossContextBindingConfig().MapBindings(injectionBinder, commandBinder, mediationBinder);
-			injectionBinder.Bind<GlobalData>().ToValue(new GlobalData(this)).ToSingleton().CrossContext();
+			new CrossContextBindingConfig().MapBindings(injectionBinder, commandBinder, mediationBinder);
 			injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton().CrossContext();
 			injectionBinder.Bind<EntryContext>().ToValue(this).ToSingleton().CrossContext();
-			
-			
 		}
 		public override void Launch()
 		{
-			Debug.Log("value popupmanager : "+ injectionBinder.GetBinding<PopupManager>().value);
-			Debug.Log("value GlobalData : " + injectionBinder.GetBinding<GlobalData>().value);
+
 
 		}
 	}

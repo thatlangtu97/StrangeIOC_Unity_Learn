@@ -6,10 +6,38 @@ public class PopupManager
 {
     public PanelKey panelKey { get; set; }
     public Dictionary<UILayer, Transform> UIDic = new Dictionary<UILayer, Transform>();
+    public Dictionary<PanelKey, GameObject> GameObjectDic = new Dictionary<PanelKey, GameObject>(); 
     public PopupManager()
     {
     }
-
+    public bool CheckContainPanel(PanelKey key)
+    {
+        if (GameObjectDic.ContainsKey(key))
+        {
+            return true;
+        }
+        return false;
+    }
+    public GameObject GetPanelByPanelKey(PanelKey key)
+    {
+        if (GameObjectDic.ContainsKey(key))
+        {
+            return GameObjectDic[key];
+        }
+        
+        return null;
+    }
+    public void AddPanel(PanelKey key , GameObject panel)
+    {
+        if (GameObjectDic.ContainsKey(key))
+        {
+            GameObjectDic[key] = panel;
+        }
+        else
+        {
+            GameObjectDic.Add(key, panel);
+        }
+    }
     public void AddUILayer(UILayer layer,Transform transform)
     {
         
