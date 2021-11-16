@@ -9,6 +9,8 @@ public class FinishSetupHomeSceneCmd : Command
     public PopupManager popupManager { get; set; }
     [Inject]
     public ShowPanelHomeSignal showPanelHomeSignal { get; set; }
+    [Inject]
+    public ShowPanelHeroSignal showPanelHeroSignal { get; set; }
     public override void Execute()
     {
         PanelKey panelKey = popupManager.GetPanelAfterLoadHomeScene();
@@ -16,6 +18,9 @@ public class FinishSetupHomeSceneCmd : Command
         {
             case PanelKey.PanelHome:
                 showPanelHomeSignal.Dispatch();
+                break;
+            case PanelKey.PanelHero:
+                showPanelHeroSignal.Dispatch();
                 break;
         }
         popupManager.ResetPanelShowAfterLoadHomeScene();

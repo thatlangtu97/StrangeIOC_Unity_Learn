@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 7300344724251854604}
   - component: {fileID: 7300344724251854607}
   - component: {fileID: 7300344724251854606}
-  - component: {fileID: 5634589112034816186}
   m_Layer: 5
   m_Name: Button_Watch_Ads
   m_TagString: Untagged
@@ -197,21 +196,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5634589112034816186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7300344724251854617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &7300344724447841352
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +746,6 @@ GameObject:
   - component: {fileID: 7300344724870811907}
   - component: {fileID: 7300344724870811906}
   - component: {fileID: 7300344724870811909}
-  - component: {fileID: 1415069709365600460}
   m_Layer: 5
   m_Name: Button_Buy_Stamina
   m_TagString: Untagged
@@ -871,21 +854,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1415069709365600460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7300344724870811915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &7300344725102546941
 GameObject:
   m_ObjectHideFlags: 0

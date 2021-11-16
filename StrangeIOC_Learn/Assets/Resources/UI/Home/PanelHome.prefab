@@ -277,7 +277,6 @@ GameObject:
   - component: {fileID: 2245676583653160490}
   - component: {fileID: 2245676583653160491}
   - component: {fileID: 2245676583653160484}
-  - component: {fileID: 3966870997953632668}
   m_Layer: 5
   m_Name: Button_Settings
   m_TagString: Untagged
@@ -385,21 +384,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3966870997953632668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2245676583653160486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &2245676584033253779
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +871,6 @@ GameObject:
   - component: {fileID: 4971158355142459807}
   - component: {fileID: 4971158355142459806}
   - component: {fileID: 4971158355142459805}
-  - component: {fileID: 3644316973217639418}
   m_Layer: 5
   m_Name: Button_Craft
   m_TagString: Untagged
@@ -997,21 +980,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3644316973217639418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4971158355142459802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355225231857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1188,6 @@ GameObject:
   - component: {fileID: 4971158355285697680}
   - component: {fileID: 4971158355285697695}
   - component: {fileID: 4971158355285697694}
-  - component: {fileID: 3181781006356552432}
   m_Layer: 5
   m_Name: Button_Challenge
   m_TagString: Untagged
@@ -1329,21 +1296,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3181781006356552432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4971158355285697692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355296965317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1308,6 @@ GameObject:
   - component: {fileID: 4971158355296965369}
   - component: {fileID: 4971158355296965368}
   - component: {fileID: 4971158355296965319}
-  - component: {fileID: 8899421710860655623}
   m_Layer: 5
   m_Name: Button_Survival
   m_TagString: Untagged
@@ -1465,21 +1416,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8899421710860655623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4971158355296965317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355346045481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,7 +2044,6 @@ GameObject:
   - component: {fileID: 4971158355616341031}
   - component: {fileID: 4971158355616341030}
   - component: {fileID: 4971158355616341029}
-  - component: {fileID: 6864323366664767984}
   m_Layer: 5
   m_Name: Button_BossRaid
   m_TagString: Untagged
@@ -2217,21 +2152,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6864323366664767984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4971158355616341027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355639647143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,7 +2629,6 @@ GameObject:
   - component: {fileID: 4971158355920799459}
   - component: {fileID: 4971158355920799458}
   - component: {fileID: 4971158355920799457}
-  - component: {fileID: 4380654081179156816}
   m_Layer: 5
   m_Name: Button_Choose_Story
   m_TagString: Untagged
@@ -2819,21 +2738,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4380654081179156816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4971158355920799471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158355987949579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,7 +3130,6 @@ GameObject:
   - component: {fileID: 4971158356353889988}
   - component: {fileID: 4971158356353889987}
   - component: {fileID: 4971158356353889986}
-  - component: {fileID: 5769197232993134986}
   m_Layer: 5
   m_Name: Button_left
   m_TagString: Untagged
@@ -3333,21 +3236,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5769197232993134986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4971158356353889984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158356418251965
 GameObject:
   m_ObjectHideFlags: 0
@@ -3360,7 +3248,6 @@ GameObject:
   - component: {fileID: 4971158356418251953}
   - component: {fileID: 4971158356418251952}
   - component: {fileID: 4971158356418251967}
-  - component: {fileID: 4731794789153970266}
   m_Layer: 5
   m_Name: Button_Right
   m_TagString: Untagged
@@ -3467,21 +3354,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4731794789153970266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4971158356418251965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158356459547653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,7 +3689,6 @@ GameObject:
   - component: {fileID: 4971158356623991326}
   - component: {fileID: 4971158356623991325}
   - component: {fileID: 4971158356623991324}
-  - component: {fileID: 4008679206862846904}
   m_Layer: 5
   m_Name: Button_PvP
   m_TagString: Untagged
@@ -3926,21 +3797,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4008679206862846904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4971158356623991322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4971158356631346144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5142,7 +4998,6 @@ GameObject:
   - component: {fileID: 5019252353696687371}
   - component: {fileID: 5019252353696687373}
   - component: {fileID: 5019252353696687370}
-  - component: {fileID: 7872430388364689923}
   - component: {fileID: 1253708034}
   m_Layer: 5
   m_Name: Bg_Gem
@@ -5211,21 +5066,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7872430388364689923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019252353696687368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!114 &1253708034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5370,7 +5210,6 @@ GameObject:
   - component: {fileID: 5019252353761924664}
   - component: {fileID: 5019252353761924665}
   - component: {fileID: 5019252353761924614}
-  - component: {fileID: 4869989602150151965}
   m_Layer: 5
   m_Name: Button_Shop
   m_TagString: Untagged
@@ -5480,21 +5319,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4869989602150151965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019252353761924612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &5019252353811728412
 GameObject:
   m_ObjectHideFlags: 0
@@ -5506,7 +5330,6 @@ GameObject:
   - component: {fileID: 5019252353811728415}
   - component: {fileID: 5019252353811728401}
   - component: {fileID: 5019252353811728414}
-  - component: {fileID: 1475571895483297914}
   - component: {fileID: 1253708035}
   m_Layer: 5
   m_Name: Bg_Gold
@@ -5575,21 +5398,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1475571895483297914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019252353811728412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!114 &1253708035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5846,7 +5654,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uILayer: 0
+  panelKey: 0
   StaminaBtn: {fileID: 1253708036}
+  HeroBtn: {fileID: 5019252354548048316}
 --- !u!114 &1066033666949472781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6453,7 +6263,6 @@ GameObject:
   - component: {fileID: 5019252354548048318}
   - component: {fileID: 5019252354548048319}
   - component: {fileID: 5019252354548048316}
-  - component: {fileID: 5956296633989029669}
   m_Layer: 5
   m_Name: Button_Hero
   m_TagString: Untagged
@@ -6563,21 +6372,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5956296633989029669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019252354548048314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!1 &5019252355093216494
 GameObject:
   m_ObjectHideFlags: 0
@@ -6589,7 +6383,6 @@ GameObject:
   - component: {fileID: 5019252355093216481}
   - component: {fileID: 5019252355093216483}
   - component: {fileID: 5019252355093216480}
-  - component: {fileID: 2913115672800647560}
   - component: {fileID: 1253708036}
   m_Layer: 5
   m_Name: Bg_Stamina
@@ -6659,21 +6452,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2913115672800647560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019252355093216494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24ac1d64eeef91439eca47ffe5ccca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventrigger: {fileID: 0}
-  shrinkScale: {x: 0.9, y: 0.9, z: 1}
-  expandScale: {x: 1, y: 1, z: 1}
 --- !u!114 &1253708036
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -91,10 +91,18 @@ public class PopupManager
     public void ShowPanel(PanelKey key)
     {
         currentPanel = key;
+        Debug.Log(key);
         if (!AutoBackPopupDic.ContainsKey(key))
         {
             AutoBackPopupDic.Add(key, new List<GameObject>());
         }
+        //foreach (PanelKey temp in PanelDic.Keys)
+        //{
+        //    if (temp != key)
+        //    {
+        //        PanelDic[key].SetActive(false);
+        //    }
+        //}
     }
     public void BackPanel()
     {
@@ -113,7 +121,22 @@ public class PopupManager
         if (lastPopup != null)
         {
             lastPopup.SetActive(false);
+            return;
         }
+        GameObject lastPanel = null;
+        foreach (GameObject temp in PanelDic.Values)
+        {
+            if (temp.activeInHierarchy == true)
+            {
+                lastPanel = temp;
+            }
+        }
+        if (lastPanel != null)
+        {
+            lastPanel.SetActive(false);
+            return;
+        }
+
     }
     #endregion
 
@@ -168,11 +191,11 @@ public class PopupManager
     }
     #endregion
 
-
 }
 public enum PanelKey
 {
     PanelHome,
+    PanelHero,
 }
 public enum PopupKey
 {

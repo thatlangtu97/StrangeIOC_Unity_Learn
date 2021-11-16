@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowPanelHomeCmd : AbsShowPanelCmd
+public class ShowPanelHeroCmd : AbsShowPanelCmd
 {
-
     public override void Execute()
     {
-        PanelHomeView panelHomeView = GetInstance<PanelHomeView>();
-        panelHomeView.ShowPanel();
+        PanelHeroView panelHeroView = GetInstance<PanelHeroView>();
+        panelHeroView.ShowPanel();
     }
     //public override string GetInjectName()
     //{
-    //    return typeof(PanelHomeView).ToString();
+    //    return typeof(PanelHeroView).ToString() ;
     //}
     public override string GetResourcePath()
     {
-        return GameResourcePath.PANEL_HOME;
+        return GameResourcePath.PANEL_HERO;
     }
 }

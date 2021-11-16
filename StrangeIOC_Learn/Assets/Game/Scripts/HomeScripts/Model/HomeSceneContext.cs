@@ -18,6 +18,7 @@ public class HomeSceneContext : MVCSContext
         commandBinder.Bind<FinishSetupHomeSceneSignal>().To<FinishSetupHomeSceneCmd>();
         commandBinder.Bind<ShowPanelHomeSignal>().To<ShowPanelHomeCmd>();
         commandBinder.Bind<ShowPopupStaminaSignal>().To<ShowPopupStaminaCmd>();
+        commandBinder.Bind<ShowPanelHeroSignal>().To<ShowPanelHeroCmd>();
     }
     // Remove Inject nếu k cần đến nữa
     public override void OnRemove()
