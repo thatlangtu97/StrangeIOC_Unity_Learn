@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using strange.extensions.signal.impl;
 
 public class PopupManager 
 {
@@ -12,7 +13,13 @@ public class PopupManager
 
     public Dictionary<PanelKey, List<GameObject>> AutoBackPopupDic = new Dictionary<PanelKey, List<GameObject>>();
     public PanelKey currentPanel;
+    //new databack
+    public Dictionary<PanelKey,Signal> DicSignalPanel = new Dictionary<PanelKey,Signal>();
 
+
+
+    [Inject] public ShowPanelHeroSignal showPanelHeroSignal { get; set; }
+    [Inject] public ShowPanelHomeSignal showPanelHomeSignal { get; set; }
     public PopupManager()
     {
     }
@@ -72,6 +79,17 @@ public class PopupManager
             PanelDic.Add(key, panel);
         }
     }
+    public void AddPanel(PanelKey key, Signal signalPanel)
+    {
+        if (DicSignalPanel.ContainsKey(key))
+        {
+            DicSignalPanel[key] = signalPanel;
+        }
+        else
+        {
+            DicSignalPanel.Add(key, signalPanel);
+        }
+    }
     public void SetPanelAfterLoadHomeScene(PanelKey key)
     {
         panelKey = key;
@@ -96,16 +114,17 @@ public class PopupManager
         {
             AutoBackPopupDic.Add(key, new List<GameObject>());
         }
-        //foreach (PanelKey temp in PanelDic.Keys)
-        //{
-        //    if (temp != key)
-        //    {
-        //        PanelDic[key].SetActive(false);
-        //    }
-        //}
+        foreach (PanelKey temp in PanelDic.Keys)
+        {
+            if (temp != key)
+            {
+                PanelDic[temp].SetActive(false);
+            }
+        }
     }
     public void BackPanel()
     {
+        //Disable popup
         if (!AutoBackPopupDic.ContainsKey(currentPanel))
         {
             AutoBackPopupDic.Add(currentPanel, new List<GameObject>());
@@ -123,7 +142,27 @@ public class PopupManager
             lastPopup.SetActive(false);
             return;
         }
-        GameObject lastPanel = null;
+        //disable Panel
+        foreach (PanelKey temp in PanelDic.Keys)
+        {
+            if (temp != PanelKey.PanelHome)
+            {
+                if (PanelDic[temp].activeInHierarchy == true)
+                {
+                    PanelDic[temp].SetActive(false);
+                }
+            }
+        }
+        if (!PanelDic.ContainsKey(PanelKey.PanelHome)){
+            showPanelHomeSignal.Dispatch();
+            currentPanel = PanelKey.PanelHome;
+        }
+        else
+        {
+            showPanelHomeSignal.Dispatch();
+            currentPanel = PanelKey.PanelHome;
+        }
+/*
         foreach (GameObject temp in PanelDic.Values)
         {
             if (temp.activeInHierarchy == true)
@@ -136,7 +175,7 @@ public class PopupManager
             lastPanel.SetActive(false);
             return;
         }
-
+*/
     }
     #endregion
 
