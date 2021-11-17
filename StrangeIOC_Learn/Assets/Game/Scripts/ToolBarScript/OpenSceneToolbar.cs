@@ -11,11 +11,15 @@ public class OpenSceneToolbar : MonoBehaviour
         OpenScene("UIDev");
     }
     [MenuItem("Open Scene/FlashScene &2")]
-    public static void OpenFirstScene()
+    public static void OpenFlashScene()
     {
         OpenScene("FlashScene");
     }
-
+    [MenuItem("Open Scene/_HomeScene &3")]
+    public static void OpenHomeSceneOld()
+    {
+        OpenScene("_HomeScene");
+    }
     private static void OpenScene(string sceneName)
     {
         if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
