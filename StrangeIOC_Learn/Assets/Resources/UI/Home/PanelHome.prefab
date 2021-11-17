@@ -5657,6 +5657,7 @@ MonoBehaviour:
   panelKey: 0
   StaminaBtn: {fileID: 1253708036}
   HeroBtn: {fileID: 5019252354548048316}
+  CraftBtn: {fileID: 4971158355142459805}
 --- !u!114 &1066033666949472781
 MonoBehaviour:
   m_ObjectHideFlags: 0

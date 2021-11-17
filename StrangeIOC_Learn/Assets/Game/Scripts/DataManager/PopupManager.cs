@@ -11,7 +11,7 @@ public class PopupManager
     public Dictionary<PanelKey, GameObject> PanelDic = new Dictionary<PanelKey, GameObject>();
     public Dictionary<PopupKey, GameObject> PopupDic = new Dictionary<PopupKey, GameObject>();
 
-    public Dictionary<PanelKey, List<GameObject>> AutoBackPopupDic = new Dictionary<PanelKey, List<GameObject>>();
+    public Dictionary<PanelKey, List<GameObject>> ListPopupOfPanel = new Dictionary<PanelKey, List<GameObject>>();
     public PanelKey currentPanel;
     //new databack
     public Dictionary<PanelKey,Signal> DicSignalPanel = new Dictionary<PanelKey,Signal>();
@@ -110,9 +110,9 @@ public class PopupManager
     {
         currentPanel = key;
         Debug.Log(key);
-        if (!AutoBackPopupDic.ContainsKey(key))
+        if (!ListPopupOfPanel.ContainsKey(key))
         {
-            AutoBackPopupDic.Add(key, new List<GameObject>());
+            ListPopupOfPanel.Add(key, new List<GameObject>());
         }
         foreach (PanelKey temp in PanelDic.Keys)
         {
@@ -125,12 +125,12 @@ public class PopupManager
     public void BackPanel()
     {
         //Disable popup
-        if (!AutoBackPopupDic.ContainsKey(currentPanel))
+        if (!ListPopupOfPanel.ContainsKey(currentPanel))
         {
-            AutoBackPopupDic.Add(currentPanel, new List<GameObject>());
+            ListPopupOfPanel.Add(currentPanel, new List<GameObject>());
         }
         GameObject lastPopup = null;
-        foreach(GameObject temp in AutoBackPopupDic[currentPanel])
+        foreach(GameObject temp in ListPopupOfPanel[currentPanel])
         {
             if (temp.activeInHierarchy == true)
             {
@@ -162,20 +162,6 @@ public class PopupManager
             showPanelHomeSignal.Dispatch();
             currentPanel = PanelKey.PanelHome;
         }
-/*
-        foreach (GameObject temp in PanelDic.Values)
-        {
-            if (temp.activeInHierarchy == true)
-            {
-                lastPanel = temp;
-            }
-        }
-        if (lastPanel != null)
-        {
-            lastPanel.SetActive(false);
-            return;
-        }
-*/
     }
     #endregion
 
@@ -208,7 +194,28 @@ public class PopupManager
             PopupDic.Add(key, panel);
         }
     }
-
+    public void AddPopupOfPanel(PopupKey key, GameObject panel)
+    {
+        if (PopupDic.ContainsKey(key))
+        {
+            PopupDic[key] = panel;
+        }
+        else
+        {
+            PopupDic.Add(key, panel);
+        }
+        if (!ListPopupOfPanel.ContainsKey(currentPanel))
+        {
+            ListPopupOfPanel.Add(currentPanel, new List<GameObject>());
+        }
+        else
+        {
+            if (!ListPopupOfPanel[currentPanel].Contains(PopupDic[key]))
+            {
+                ListPopupOfPanel[currentPanel].Add(PopupDic[key]);
+            }
+        }
+    }
     public void ResetPopup()
     {
         //popupKey = PopupKey.Node;
@@ -216,15 +223,15 @@ public class PopupManager
     public void ShowPopup(PopupKey key)
     {
         
-        if (!AutoBackPopupDic.ContainsKey(currentPanel))
+        if (!ListPopupOfPanel.ContainsKey(currentPanel))
         {
-            AutoBackPopupDic.Add(currentPanel, new List<GameObject>());
+            ListPopupOfPanel.Add(currentPanel, new List<GameObject>());
         }
         else
         {
-            if (!AutoBackPopupDic[currentPanel].Contains(PopupDic[key]))
+            if (!ListPopupOfPanel[currentPanel].Contains(PopupDic[key]))
             {
-                AutoBackPopupDic[currentPanel].Add(PopupDic[key]);
+                ListPopupOfPanel[currentPanel].Add(PopupDic[key]);
             }
         }
     }
@@ -235,11 +242,16 @@ public enum PanelKey
 {
     PanelHome,
     PanelHero,
+    PanelCraft,
 }
 public enum PopupKey
 {
     Node,
     StaminaPopup,
+    EquipmentHeroDetailLeft,
+    EquipmentHeroDetailRight,
+    EquipmentCraftDetailLeft,
+    EquipmentCraftDetailRight,
 }
 public enum UILayer
 {
