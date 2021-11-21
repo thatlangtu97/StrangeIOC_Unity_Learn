@@ -15,7 +15,6 @@ public abstract class AbsShowPanelCmd : Command
 	{
 		bool isInit = injectionBinder.GetBinding<T>(GetInjectName()) == null ||
 					  injectionBinder.GetInstance<T>(GetInjectName()) == null;
-
 		if (isInit)
 		{
 			GameObject q = Instantiate();
@@ -24,7 +23,6 @@ public abstract class AbsShowPanelCmd : Command
 			{
 				injectionBinder.Unbind<T>(GetInjectName());
 			}
-
 			injectionBinder.Bind<T>()
 				.ToValue(q.GetComponent<T>())
 				.ToName(GetInjectName());
@@ -37,10 +35,11 @@ public abstract class AbsShowPanelCmd : Command
 	{
 		return "";
 	}
-	private GameObject Instantiate()
+	public GameObject Instantiate()
 	{
 		GameObject o = PrefabUtils.LoadPrefab(GetResourcePath());
 		GameObject spawned = null;
+		panelKey = o.GetComponent<AbsPanelView>().panelKey;
 		if (!popupManager.CheckContainPanel(panelKey))
         {
 			spawned = GameObject.Instantiate(o/*, popupManager.GetUILayer(uiLayer)*/) as GameObject;
@@ -48,7 +47,7 @@ public abstract class AbsShowPanelCmd : Command
 		}
         else
         {
-			if(popupManager.GetPanelByPanelKey(panelKey) == null)
+			if (popupManager.GetPanelByPanelKey(panelKey) == null)
             {
 				spawned = GameObject.Instantiate(o) as GameObject;
 				popupManager.AddPanel(panelKey, spawned);

@@ -6,6 +6,7 @@ using UnityEngine;
 public class TestUtils :View
 {
     [Inject] public ShowPanelHomeSignal showPanelHomeSignal { get; set; }
+    [Inject] public PopupManager popupManager { get; set; }
     protected override void Start()
     {
         base.Start();
@@ -14,7 +15,8 @@ public class TestUtils :View
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            showPanelHomeSignal.Dispatch();
+            //showPanelHomeSignal.Dispatch();
+            popupManager.BackPanel();
         }
     }
 }

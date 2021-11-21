@@ -14,10 +14,15 @@ public class HomeSceneContext : MVCSContext
     protected override void mapBindings()
     {
         base.mapBindings();
+        //commandBinder.Bind<>().To<>();
         //injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton();
         commandBinder.Bind<FinishSetupHomeSceneSignal>().To<FinishSetupHomeSceneCmd>();
         commandBinder.Bind<ShowPanelHomeSignal>().To<ShowPanelHomeCmd>();
         commandBinder.Bind<ShowPopupStaminaSignal>().To<ShowPopupStaminaCmd>();
+        commandBinder.Bind<ShowPanelHeroSignal>().To<ShowPanelHeroCmd>();
+        commandBinder.Bind<ShowPanelCraftSignal>().To<ShowPanelCraftCmd>();
+        commandBinder.Bind<ShowPanelShopSignal>().To<ShowPanelShopCmd>();
+
     }
     // Remove Inject nếu k cần đến nữa
     public override void OnRemove()

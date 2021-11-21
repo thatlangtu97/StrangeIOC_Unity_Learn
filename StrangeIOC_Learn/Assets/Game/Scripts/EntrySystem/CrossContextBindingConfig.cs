@@ -14,6 +14,9 @@ namespace EntrySystem
             //commandBinder.Bind<>().To<>();
             commandBinder.Bind<ShowPanelHomeSignal>().To<ShowPanelHomeCmd>();
             commandBinder.Bind<ShowPopupStaminaSignal>().To<ShowPopupStaminaCmd>();
+            commandBinder.Bind<ShowPanelHeroSignal>().To<ShowPanelHeroCmd>();
+            commandBinder.Bind<ShowPanelCraftSignal>().To<ShowPanelCraftCmd>();
+            commandBinder.Bind<ShowPanelShopSignal>().To<ShowPanelShopCmd>();
         }
     }
 }

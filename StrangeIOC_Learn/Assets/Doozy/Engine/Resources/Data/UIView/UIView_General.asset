@@ -15,4 +15,9 @@ MonoBehaviour:
   CategoryName: General
   DatabaseType: 2
   Names:
+  - PanelCraft
+  - PanelHero
+  - PanelHome
+  - PanelShop
+  - PopupStamina
   - Unnamed
