@@ -17,7 +17,6 @@ public class UiViewController : MonoBehaviour
         //    isStarted = true;
         //    action.Invoke();
         //}
-        Debug.Log("start");
         uiView.DisableGameObjectWhenHidden = true;
         isStarted = true;
         action.Invoke();

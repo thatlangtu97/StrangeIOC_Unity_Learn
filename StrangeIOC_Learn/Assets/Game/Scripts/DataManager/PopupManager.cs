@@ -267,6 +267,8 @@ public class PopupManager
             ListPopupOfPanel.Add(keyPanel, new List<GameObject>());
         }
         List <GameObject> TempPopupOfPanel = ListPopupOfPanel[keyPanel];
+        if (!PopupDic.ContainsKey(keyPopup)) return;
+
         GameObject PopupGameObject = PopupDic[keyPopup];
         foreach (GameObject tempPopup in TempPopupOfPanel)
         {

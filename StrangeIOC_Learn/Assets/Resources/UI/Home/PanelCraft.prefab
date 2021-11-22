@@ -15992,6 +15992,7 @@ GameObject:
   - component: {fileID: 1388261874667794398}
   - component: {fileID: 1388261874667794396}
   - component: {fileID: 1388261874667794399}
+  - component: {fileID: 2059877184654649211}
   m_Layer: 5
   m_Name: Panel_Currentcy
   m_TagString: Untagged
@@ -16061,6 +16062,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2059877184654649211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388261874667794369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc423b313e0c43979065b0f74207ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShopStaminaBtn: {fileID: 0}
+  ShopGoldBtn: {fileID: 1388261874675854720}
+  ShopGemBtn: {fileID: 1388261874307052523}
 --- !u!1 &1388261874675854722
 GameObject:
   m_ObjectHideFlags: 0
