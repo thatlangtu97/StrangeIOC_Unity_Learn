@@ -134,17 +134,21 @@ public class PopupManager
             ListPopupOfPanel.Add(currentPanel, new List<GameObject>());
         }
         GameObject lastPopup = null;
-        foreach(GameObject temp in ListPopupOfPanel[currentPanel])
+        if (currentPanel != PanelKey.PanelShop)
         {
-            if (temp.activeInHierarchy == true)
+            foreach (GameObject temp in ListPopupOfPanel[currentPanel])
             {
-                lastPopup = temp;
+                if (temp.activeInHierarchy == true)
+                {
+                    lastPopup = temp;
+                }
             }
-        }
-        if (lastPopup != null)
-        {
-            lastPopup.SetActive(false);
-            return;
+            if (lastPopup != null)
+            {
+                //lastPopup.SetActive(false);
+                lastPopup.GetComponent<AbsPopupView>().HidePopup();
+                return;
+            }
         }
         //disable Panel
         foreach (PanelKey temp in PanelDic.Keys)
@@ -226,7 +230,9 @@ public class PopupManager
     }
     public void ShowPopup(PopupKey key)
     {
-        
+        if (!PopupDic.ContainsKey(key))
+            return;
+
         if (!ListPopupOfPanel.ContainsKey(currentPanel))
         {
             ListPopupOfPanel.Add(currentPanel, new List<GameObject>());
@@ -236,6 +242,21 @@ public class PopupManager
             if (!ListPopupOfPanel[currentPanel].Contains(PopupDic[key]))
             {
                 ListPopupOfPanel[currentPanel].Add(PopupDic[key]);
+                
+            }
+
+            //PopupDic[key].GetComponent<AbsPopupView>().ShowPopup();
+            List<GameObject> TempPopupOfPanel = ListPopupOfPanel[currentPanel];
+            foreach (GameObject tempPopup in TempPopupOfPanel)
+            {
+                if (tempPopup != PopupDic[key])
+                {
+                    tempPopup.GetComponent<AbsPopupView>().HidePopup();
+                }
+                else
+                {
+                    tempPopup.GetComponent<AbsPopupView>().ShowPopup();
+                }
             }
         }
     }
@@ -251,11 +272,12 @@ public class PopupManager
         {
             if(tempPopup != PopupGameObject)
             {
-                tempPopup.gameObject.SetActive(false);
+                //tempPopup.gameObject.SetActive(false);
+                tempPopup.GetComponent<AbsPopupView>().HidePopup();
             }
             else
             {
-                tempPopup.gameObject.SetActive(true);
+                tempPopup.GetComponent<AbsPopupView>().ShowPopup();
             }
         }
 
@@ -286,4 +308,5 @@ public enum UILayer
 {
     UI1,
     UI2,
+    NODE,
 }

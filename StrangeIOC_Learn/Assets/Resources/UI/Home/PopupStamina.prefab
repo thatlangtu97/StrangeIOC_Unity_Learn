@@ -1546,9 +1546,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7300344725786648753}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8314899558810732723}
+        m_MethodName: Hide
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1648,6 +1648,7 @@ GameObject:
   - component: {fileID: 1989448789530100961}
   - component: {fileID: -367372864204883290}
   - component: {fileID: -7645219558415906202}
+  - component: {fileID: 8314899558810732723}
   m_Layer: 5
   m_Name: PopupStamina
   m_TagString: Untagged
@@ -1727,6 +1728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uILayer: 1
   popupKey: 1
+  UiViewController: {fileID: 8314899558810732723}
 --- !u!114 &-2989620567418682115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1812,12 +1814,12 @@ MonoBehaviour:
   AutoHideAfterShow: 0
   AutoHideAfterShowDelay: 3
   AutoSelectButtonAfterShow: 0
-  BehaviorAtStart: 0
+  BehaviorAtStart: 1
   CustomStartAnchoredPosition: {x: 0, y: 0, z: 0}
   DeselectAnyButtonSelectedOnHide: 0
   DeselectAnyButtonSelectedOnShow: 0
   DisableCanvasWhenHidden: 1
-  DisableGameObjectWhenHidden: 1
+  DisableGameObjectWhenHidden: 0
   DisableGraphicRaycasterWhenHidden: 1
   HideBehavior:
     Animation:
@@ -2566,6 +2568,20 @@ MonoBehaviour:
   UseCustomStartAnchoredPosition: 0
   ViewCategory: General
   ViewName: PopupStamina
+--- !u!114 &8314899558810732723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7300344725786648753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3d59931f4494240b764fd23f06155e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiView: {fileID: -7645219558415906202}
+  isStarted: 0
 --- !u!1 &7300344726067326836
 GameObject:
   m_ObjectHideFlags: 0

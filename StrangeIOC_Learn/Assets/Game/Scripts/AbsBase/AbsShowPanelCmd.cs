@@ -43,6 +43,7 @@ public abstract class AbsShowPanelCmd : Command
 		if (!popupManager.CheckContainPanel(panelKey))
         {
 			spawned = GameObject.Instantiate(o/*, popupManager.GetUILayer(uiLayer)*/) as GameObject;
+
 			popupManager.AddPanel(panelKey, spawned);
 		}
         else

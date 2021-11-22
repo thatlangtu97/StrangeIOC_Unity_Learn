@@ -8,22 +8,33 @@ using UnityEngine.UI;
 public class PanelShopView : AbsPanelView
 {
     public Button backBtn;
-    public List<PopupShopType>ListPopup;
+    public List<PopupShopType> ListPopup;
     public List<TabShopType> ListTab;
     protected override void Start()
     {
         base.Start();
         backBtn.onClick.AddListener(() => popupManager.BackPanel());
-        foreach(PopupShopType popup in ListPopup)
+        foreach (PopupShopType popup in ListPopup)
         {
             popupManager.AddPopupOfPanel(popup.key, popup.Prefab);
         }
         foreach (TabShopType tab in ListTab)
         {
-            tab.btn.onClick.AddListener(() => popupManager.ShowPopup(tab.key, tab.keyPanel));
+            //tab.btn.onClick.AddListener(() => popupManager.ShowPopup(tab.key, tab.keyPanel));
+            tab.btn.onClick.AddListener(() => popupManager.ShowPopup(tab.key));
         }
+        popupManager.ShowPopup(popupManager.popupKey);
 
     }
+    protected override void OnEnable()
+    {
+        base.CopyStart();
+        base.OnEnable();
+        popupManager.ShowPopup(popupManager.popupKey);
+    }
+
+
+
     [System.Serializable]
     public class PopupShopType
     {

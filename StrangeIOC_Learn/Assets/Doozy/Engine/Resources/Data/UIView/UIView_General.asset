@@ -15,9 +15,16 @@ MonoBehaviour:
   CategoryName: General
   DatabaseType: 2
   Names:
+  - ' EquipmentHeroCraftLeft'
+  - ' EquipmentHeroCraftRight'
+  - ' EquipmentHeroDetailLeft'
+  - ' EquipmentHeroDetailRight'
   - PanelCraft
   - PanelHero
   - PanelHome
   - PanelShop
+  - PopupShopGacha
+  - PopupShopGem
+  - PopupShopGold
   - PopupStamina
   - Unnamed

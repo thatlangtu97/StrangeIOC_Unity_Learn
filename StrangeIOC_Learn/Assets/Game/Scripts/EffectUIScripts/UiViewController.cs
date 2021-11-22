@@ -11,39 +11,52 @@ public class UiViewController : MonoBehaviour
     public Action action;
     void Start()
     {
-        if (action != null)
-        {
-            action.Invoke();
-        }
+        //if (action != null && isStarted == false && gameObject.activeInHierarchy)
+        //{
+        //    uiView.DisableGameObjectWhenHidden = true;
+        //    isStarted = true;
+        //    action.Invoke();
+        //}
+        Debug.Log("start");
+        uiView.DisableGameObjectWhenHidden = true;
+        isStarted = true;
+        action.Invoke();
     }
     void Setup(bool checkShow)
     {
+        //uiView.Awake();
+        //uiView.Start();
         if (checkShow)
             action = Show;
         else
             action = Hide;
+        gameObject.SetActive(true);
     }
     public void Show()
     {
-        if (action == null)
+        if (!isStarted)
         {
             Setup(true);
         }
         else
         {
             uiView.Show();
+            //UIView.ShowView("General", panelKey.ToString());
         }
+        
     }
     public void Hide()
     {
-        if (action == null)
+        if (!isStarted)
         {
             Setup(false);
         }
         else
         {
             uiView.Hide();
+            //UIView.HideView("General", panelKey.ToString());
         }
+
     }
-   
+    
 }
