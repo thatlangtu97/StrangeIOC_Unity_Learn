@@ -10,25 +10,46 @@ public class PanelHomeView : AbsPanelView
     [Inject] public ShowPanelCraftSignal showPanelCraftSignal { get; set; }
     [Inject] public ShowPanelShopSignal showPanelShopSignal { get; set; }
     public Button StaminaBtn;
+    public Button ShopBtn;
     public Button HeroBtn;
     public Button CraftBtn;
-    public Button ShopBtn;
-    //public Button ShopGoldBtn, ShopGemBtn;
 
+    //public Button ShopGoldBtn, ShopGemBtn;
+    public Doozy.Engine.UI.UIButton UIBtnShop, UIBtnHero , UIBtnCraft;
     protected override void Start()
     {
         base.Start();
-        //StaminaBtn.onClick.AddListener( ()=>{ showPopupStaminaSignal.Dispatch(); });
-        HeroBtn.onClick.AddListener(() => { showPanelHeroSignal.Dispatch(); });
-        CraftBtn.onClick.AddListener(() => { showPanelCraftSignal.Dispatch(); });
 
-        ShopBtn.onClick.AddListener(() => { showPanelShopSignal.Dispatch(); });
-        ShopBtn.onClick.AddListener(() => { popupManager.popupKey = PopupKey.ShopGoldPopup; });
+        //HeroBtn.onClick.AddListener(() => { showPanelHeroSignal.Dispatch(); });
+        //CraftBtn.onClick.AddListener(() => { showPanelCraftSignal.Dispatch(); });
+
+        //ShopBtn.onClick.AddListener(() => { showPanelShopSignal.Dispatch(); });
+        //ShopBtn.onClick.AddListener(() => { popupManager.popupKey = PopupKey.ShopGoldPopup; });
         /*
+        StaminaBtn.onClick.AddListener( ()=>{ showPopupStaminaSignal.Dispatch(); });
         ShopGoldBtn.onClick.AddListener(() => { showPanelShopSignal.Dispatch(); });
         ShopGoldBtn.onClick.AddListener(() => { popupManager.popupKey = PopupKey.ShopGoldPopup; });
         ShopGemBtn.onClick.AddListener(() => { showPanelShopSignal.Dispatch(); });
         ShopGemBtn.onClick.AddListener(() => { popupManager.popupKey = PopupKey.ShopGemPopup; });
         */
+
+        UIBtnHero.OnClick.OnTrigger.Event.AddListener(ShowPanelHero);
+        UIBtnShop.OnClick.OnTrigger.Event.AddListener(ShowPanelShopGold);
+        UIBtnCraft.OnClick.OnTrigger.Event.AddListener(ShowPanelCraft);
+    }
+    void ShowPanelHero()
+    {
+        showPanelHeroSignal.Dispatch();
+    }
+    void ShowPanelCraft()
+    {
+        showPanelCraftSignal.Dispatch();
+    }
+    void ShowPanelShopGold()
+    {
+        
+        showPanelShopSignal.Dispatch();
+        popupManager.popupKey = PopupKey.ShopGoldPopup;
+
     }
 }
