@@ -33,9 +33,9 @@ public class PanelHomeView : AbsPanelView
         ShopGemBtn.onClick.AddListener(() => { popupManager.popupKey = PopupKey.ShopGemPopup; });
         */
 
-        UIBtnHero.OnPointerUp.OnTrigger.Event.AddListener(ShowPanelHero);
-        UIBtnShop.OnPointerUp.OnTrigger.Event.AddListener(ShowPanelShopGold);
-        UIBtnCraft.OnPointerUp.OnTrigger.Event.AddListener(ShowPanelCraft);
+        UIBtnHero.OnClick.OnTrigger.Event.AddListener(ShowPanelHero);
+        UIBtnShop.OnClick.OnTrigger.Event.AddListener(ShowPanelShopGold);
+        UIBtnCraft.OnClick.OnTrigger.Event.AddListener(ShowPanelCraft);
     }
     void ShowPanelHero()
     {
