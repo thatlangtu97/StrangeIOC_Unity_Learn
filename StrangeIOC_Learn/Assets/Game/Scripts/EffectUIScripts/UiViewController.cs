@@ -35,10 +35,12 @@ public class UiViewController : MonoBehaviour
     {
         if (!isStarted)
         {
+            Debug.Log("setup");
             Setup(true);
         }
         else
         {
+            Debug.Log("show");
             uiView.Show();
             //UIView.ShowView("General", panelKey.ToString());
         }

@@ -20,6 +20,7 @@ public class PopupManager
 
     [Inject] public ShowPanelHeroSignal showPanelHeroSignal { get; set; }
     [Inject] public ShowPanelHomeSignal showPanelHomeSignal { get; set; }
+    [Inject] public ShowPanelShopSignal showPanelShopSignal { get; set; }
     public PopupManager()
     {
     }
@@ -68,8 +69,9 @@ public class PopupManager
         
         return null;
     }
-    public void AddPanel(PanelKey key , GameObject panel)
+    public void AddPanel(PanelKey key, GameObject panel)
     {
+        Debug.Log(key + " "+ panel);
         if (PanelDic.ContainsKey(key))
         {
             PanelDic[key] = panel;
@@ -90,10 +92,12 @@ public class PopupManager
             DicSignalPanel.Add(key, signalPanel);
         }
     }
-    public void SetPanelAfterLoadHomeScene(PanelKey key)
+    public void SetPanelAfterLoadHomeScene(PanelKey key , PopupKey popupkey)
     {
         panelKey = key;
+        popupKey = popupkey;
     }
+    
     public void ResetPanelAfterLoadHomeScene()
     {
         panelKey = PanelKey.PanelHome;
@@ -117,12 +121,13 @@ public class PopupManager
         {
             if (temp != key)
             {
-                //PanelDic[temp].SetActive(false);
-                PanelDic[temp].GetComponent<AbsPanelView>().HidePanel();
+                if(PanelDic[temp]!=null)
+                    PanelDic[temp].GetComponent<AbsPanelView>().HidePanel();
             }
             else
             {
-                PanelDic[temp].GetComponent<AbsPanelView>().ShowPanel();
+                if (PanelDic[temp] != null)
+                    PanelDic[temp].GetComponent<AbsPanelView>().ShowPanel();
             }
         }
     }
@@ -136,16 +141,18 @@ public class PopupManager
         GameObject lastPopup = null;
         if (currentPanel != PanelKey.PanelShop)
         {
-            foreach (GameObject temp in ListPopupOfPanel[currentPanel])
-            {
-                if (temp.activeInHierarchy == true)
+            foreach (GameObject temp in ListPopupOfPanel[currentPanel]) 
+            { 
+                if (temp != null)
                 {
-                    lastPopup = temp;
+                    if (temp.activeInHierarchy == true)
+                    {
+                        lastPopup = temp;
+                    }
                 }
             }
             if (lastPopup != null)
             {
-                //lastPopup.SetActive(false);
                 lastPopup.GetComponent<AbsPopupView>().HidePopup();
                 return;
             }
@@ -155,9 +162,12 @@ public class PopupManager
         {
             if (temp != PanelKey.PanelHome)
             {
-                if (PanelDic[temp].activeInHierarchy == true)
+                if (PanelDic[temp] != null)
                 {
-                    PanelDic[temp].GetComponent<AbsPanelView>().HidePanel();
+                    if (PanelDic[temp].activeInHierarchy == true)
+                    {
+                        PanelDic[temp].GetComponent<AbsPanelView>().HidePanel();
+                    }
                 }
             }
         }
@@ -251,11 +261,13 @@ public class PopupManager
             {
                 if (tempPopup != PopupDic[key])
                 {
-                    tempPopup.GetComponent<AbsPopupView>().HidePopup();
+                    if (tempPopup != null)
+                        tempPopup.GetComponent<AbsPopupView>().HidePopup();
                 }
                 else
                 {
-                    tempPopup.GetComponent<AbsPopupView>().ShowPopup();
+                    if (tempPopup != null)
+                        tempPopup.GetComponent<AbsPopupView>().ShowPopup();
                 }
             }
         }
@@ -274,12 +286,13 @@ public class PopupManager
         {
             if(tempPopup != PopupGameObject)
             {
-                //tempPopup.gameObject.SetActive(false);
-                tempPopup.GetComponent<AbsPopupView>().HidePopup();
+                if (tempPopup != null)
+                    tempPopup.GetComponent<AbsPopupView>().HidePopup();
             }
             else
             {
-                tempPopup.GetComponent<AbsPopupView>().ShowPopup();
+                if (tempPopup != null)
+                    tempPopup.GetComponent<AbsPopupView>().ShowPopup();
             }
         }
 

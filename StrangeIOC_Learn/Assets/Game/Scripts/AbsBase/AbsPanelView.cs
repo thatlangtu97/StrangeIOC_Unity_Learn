@@ -21,7 +21,7 @@ public abstract class AbsPanelView : View
 	}
 	public void ShowPanelByCmd() 
 	{
-		base.Start();
+		base.CopyStart();
 		//this.gameObject.SetActive(true);
 		//NotifyShowPanel();
 		popupManager.ShowPanel(panelKey);
@@ -29,6 +29,7 @@ public abstract class AbsPanelView : View
 	}
 	public void ShowPanel()
     {
+		Debug.Log("show panel");
 		UiViewController.Show();
 	}
 	public void HidePanel()
