@@ -16,6 +16,9 @@ public class HomeSceneContext : MVCSContext
         base.mapBindings();
         //commandBinder.Bind<>().To<>();
         //injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton();
+        //commandBinder.Bind<InitHomeSceneSignal>().To<InitHomeSceneCmd>().To<FinishSetupHomeSceneCmd>().InSequence(); 
+        //commandBinder.Bind<FinishSetupHomeSceneSignal>().To<InitHomeSceneCmd>().To<FinishSetupHomeSceneCmd>().InSequence();
+
         commandBinder.Bind<FinishSetupHomeSceneSignal>().To<FinishSetupHomeSceneCmd>();
         commandBinder.Bind<ShowPanelHomeSignal>().To<ShowPanelHomeCmd>();
         commandBinder.Bind<ShowPopupStaminaSignal>().To<ShowPopupStaminaCmd>();
