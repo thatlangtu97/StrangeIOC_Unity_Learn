@@ -19,7 +19,8 @@ public class UiViewController : MonoBehaviour
         //}
         uiView.DisableGameObjectWhenHidden = true;
         isStarted = true;
-        action.Invoke();
+        DelayInvokeAction();
+        //action.Invoke();
     }
     void Setup(bool checkShow)
     {
@@ -59,5 +60,13 @@ public class UiViewController : MonoBehaviour
         }
 
     }
-    
+    void DelayInvokeAction()
+    {
+        StartCoroutine(delayInvokeAction());
+    }
+    IEnumerator delayInvokeAction()
+    {
+        yield return new WaitForSeconds(0.1f);
+        action.Invoke();
+    }
 }
