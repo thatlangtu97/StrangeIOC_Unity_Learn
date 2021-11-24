@@ -45,7 +45,7 @@ public class PanelCurrencyView : View
     void ShowShop(PopupKey keyPopup , PanelKey panelKey)
     {
         popupManager.popupKey = keyPopup;
-        popupManager.ShowPopup(keyPopup, panelKey);
+        popupManager.ShowPanel(panelKey);
     }
 
 }

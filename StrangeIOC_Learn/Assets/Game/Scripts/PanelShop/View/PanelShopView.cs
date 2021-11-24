@@ -14,27 +14,60 @@ public class PanelShopView : AbsPanelView
     {
         base.Start();
         Setup();
-        popupManager.ShowPopup(popupManager.popupKey);
+        ShowPopupShop(popupManager.popupKey);
 
     }
     public void Setup()
     {
         backBtn.onClick.AddListener(() => popupManager.BackPanel());
-        foreach (PopupShopType popup in ListPopup)
-        {
-            popupManager.AddPopupOfPanel(popup.key, popup.Prefab);
-        }
         foreach (TabShopType tab in ListTab)
         {
-            //tab.btn.onClick.AddListener(() => popupManager.ShowPopup(tab.key, tab.keyPanel));
-            tab.btn.onClick.AddListener(() => popupManager.ShowPopup(tab.key));
+            tab.btn.onClick.AddListener(() => ShowPopupShop(tab.key));
         }
+    }
+    public override void ShowPanelByCmd()
+    {
+        base.ShowPanelByCmd();
+        ShowPopupShop(popupManager.popupKey);
+    }
+    public override void ShowPanel()
+    {
+        base.ShowPanel();
+        ShowPopupShop(popupManager.popupKey);
     }
     protected override void OnEnable()
     {
         base.CopyStart();
         base.OnEnable();
-        popupManager.ShowPopup(popupManager.popupKey);
+        ShowPopupShop(popupManager.popupKey);
+    }
+    void ShowPopupShop(PopupKey popupKey)
+    {
+        foreach (PopupShopType popup in ListPopup)
+        {
+            if(popup.key == popupKey)
+            {
+                popup.Prefab.GetComponent<AbsPopupView>().ShowPopup();
+            }
+            else
+            {
+                if(popup.Prefab.activeInHierarchy)
+                    popup.Prefab.GetComponent<AbsPopupView>().HidePopup();
+            }
+        }
+        foreach (TabShopType tab in ListTab)
+        {
+            Color colorTemp = tab.text.color;
+            if (tab.key == popupKey)
+            {
+                
+                tab.text.color = new Vector4(colorTemp.r, colorTemp.g, colorTemp.b, 1f);
+            }
+            else
+            {
+                tab.text.color = new Vector4(colorTemp.r, colorTemp.g, colorTemp.b, 0.5f);
+            }
+        }
     }
 
 
@@ -49,8 +82,8 @@ public class PanelShopView : AbsPanelView
     public class TabShopType
     {
         public Button btn;
+        public Text text;
         public PopupKey key;
-        public PanelKey keyPanel;
     }
 
 }

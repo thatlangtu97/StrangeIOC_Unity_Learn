@@ -11,7 +11,7 @@ public class PanelHeroView : AbsPanelView
     {
         base.Start();
         backBtn.onClick.AddListener(()=>popupManager.BackPanel());
-        popupManager.AddPopupOfPanel(PopupKey.EquipmentHeroDetailLeft, EquipmentDetailLeft);
-        popupManager.AddPopupOfPanel(PopupKey.EquipmentHeroDetailRight, EquipmentDetailFight);
+        popupManager.AddPopup(PopupKey.EquipmentHeroDetailLeft, EquipmentDetailLeft);
+        popupManager.AddPopup(PopupKey.EquipmentHeroDetailRight, EquipmentDetailFight);
     }
 }

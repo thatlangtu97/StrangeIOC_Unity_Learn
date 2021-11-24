@@ -19,7 +19,7 @@ public abstract class AbsPanelView : View
 		autoFIllPanelInParent = GetComponent<AutoFIllPanelInParent>();
 		autoFIllPanelInParent.AutoFill();
 	}
-	public void ShowPanelByCmd() 
+	public virtual void ShowPanelByCmd() 
 	{
 		base.CopyStart();
 		//this.gameObject.SetActive(true);
@@ -27,9 +27,8 @@ public abstract class AbsPanelView : View
 		popupManager.ShowPanel(panelKey);
 		
 	}
-	public void ShowPanel()
+	public virtual void ShowPanel()
     {
-		Debug.Log("show panel");
 		UiViewController.Show();
 	}
 	public void HidePanel()
