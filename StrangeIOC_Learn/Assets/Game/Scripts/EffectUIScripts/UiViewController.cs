@@ -36,12 +36,10 @@ public class UiViewController : MonoBehaviour
     {
         if (!isStarted)
         {
-            Debug.Log("setup");
             Setup(true);
         }
         else
         {
-            Debug.Log("show");
             uiView.Show();
             //UIView.ShowView("General", panelKey.ToString());
         }
@@ -67,6 +65,7 @@ public class UiViewController : MonoBehaviour
     IEnumerator delayInvokeAction()
     {
         yield return new WaitForSeconds(0.1f);
-        action.Invoke();
+        if(action!=null)
+            action.Invoke();
     }
 }

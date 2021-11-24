@@ -13,6 +13,12 @@ public class PanelShopView : AbsPanelView
     protected override void Start()
     {
         base.Start();
+        Setup();
+        popupManager.ShowPopup(popupManager.popupKey);
+
+    }
+    public void Setup()
+    {
         backBtn.onClick.AddListener(() => popupManager.BackPanel());
         foreach (PopupShopType popup in ListPopup)
         {
@@ -23,8 +29,6 @@ public class PanelShopView : AbsPanelView
             //tab.btn.onClick.AddListener(() => popupManager.ShowPopup(tab.key, tab.keyPanel));
             tab.btn.onClick.AddListener(() => popupManager.ShowPopup(tab.key));
         }
-        popupManager.ShowPopup(popupManager.popupKey);
-
     }
     protected override void OnEnable()
     {
