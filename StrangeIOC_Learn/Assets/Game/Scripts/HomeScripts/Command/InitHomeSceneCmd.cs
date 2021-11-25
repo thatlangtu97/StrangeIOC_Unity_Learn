@@ -8,13 +8,12 @@ public class InitHomeSceneCmd : Command
     {
 		GetResourcePath = GameResourcePath.PANEL_HERO;
 		PanelHeroView panelHeroView = GetInstance<PanelHeroView>();
-		GetResourcePath = GameResourcePath.PANEL_HOME;
-		PanelHomeView panelHomeView = GetInstance<PanelHomeView>();
 		GetResourcePath = GameResourcePath.PANEL_CRAFT;
 		PanelCraftView panelCraftView = GetInstance<PanelCraftView>();
 		GetResourcePath = GameResourcePath.PANEL_SHOP;
 		PanelShopView panelShopView = GetInstance<PanelShopView>();
-
+		GetResourcePath = GameResourcePath.PANEL_HOME;
+		PanelHomeView panelHomeView = GetInstance<PanelHomeView>();
 	}
 	public T GetInstance<T>() where T : Component
 	{
@@ -45,11 +44,14 @@ public class InitHomeSceneCmd : Command
 		GameObject o = PrefabUtils.LoadPrefab(GetResourcePath);
 		GameObject spawned = null;
 		PanelKey panelKey = o.GetComponent<AbsPanelView>().panelKey;
+		UILayer uILayer = o.GetComponent<AbsPanelView>().uILayer;
+		
 		if (!popupManager.CheckContainPanel(panelKey))
 		{
 			spawned = GameObject.Instantiate(o/*, popupManager.GetUILayer(uiLayer)*/) as GameObject;
-
+			
 			popupManager.AddPanel(panelKey, spawned);
+
 		}
 		else
 		{
@@ -64,7 +66,8 @@ public class InitHomeSceneCmd : Command
 
 			}
 		}
-
+		spawned.transform.parent = popupManager.GetUILayer(uILayer);
+		spawned.transform.localScale = Vector3.one;
 		return spawned;
 	}
 

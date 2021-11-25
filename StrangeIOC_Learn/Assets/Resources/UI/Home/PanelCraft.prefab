@@ -13554,7 +13554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1168311939750164925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13687,12 +13687,12 @@ MonoBehaviour:
   AutoHideAfterShow: 0
   AutoHideAfterShowDelay: 3
   AutoSelectButtonAfterShow: 0
-  BehaviorAtStart: 1
+  BehaviorAtStart: 0
   CustomStartAnchoredPosition: {x: 0, y: 0, z: 0}
   DeselectAnyButtonSelectedOnHide: 0
   DeselectAnyButtonSelectedOnShow: 0
   DisableCanvasWhenHidden: 1
-  DisableGameObjectWhenHidden: 0
+  DisableGameObjectWhenHidden: 1
   DisableGraphicRaycasterWhenHidden: 1
   HideBehavior:
     Animation:

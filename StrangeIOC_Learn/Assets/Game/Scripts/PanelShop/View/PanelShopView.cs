@@ -10,6 +10,13 @@ public class PanelShopView : AbsPanelView
     public Button backBtn;
     public List<PopupShopType> ListPopup;
     public List<TabShopType> ListTab;
+    protected override void Awake()
+    {
+        base.CopyStart();
+        //Setup();
+        //ShowPopupShop(popupManager.popupKey);
+
+    }
     protected override void Start()
     {
         base.Start();

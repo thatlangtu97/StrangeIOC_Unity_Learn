@@ -64,8 +64,9 @@ public class UiViewController : MonoBehaviour
     }
     IEnumerator delayInvokeAction()
     {
-        yield return new WaitForSeconds(0.1f);
-        if(action!=null)
+        //yield return new WaitForSeconds(0.1f);
+        yield return new WaitForEndOfFrame();
+        if (action!=null)
             action.Invoke();
     }
 }

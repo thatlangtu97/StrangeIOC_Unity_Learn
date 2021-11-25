@@ -106,7 +106,8 @@ namespace strange.extensions.mediation.impl
 		}
 		public void CopyStart()
         {
-			bubbleToContext(this, BubbleType.Add, true);
+			if (autoRegisterWithContext && !registeredWithContext && shouldRegister)
+				bubbleToContext(this, BubbleType.Add, true);
 		}
 		/// A MonoBehaviour OnDisable handler
 		/// The View will inform the Context that it was disabled
