@@ -70,10 +70,10 @@ RectTransform:
   m_Father: {fileID: 9001216308385300572}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 480, y: -540}
+  m_SizeDelta: {x: 960, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1347495570057839770
 GameObject:
@@ -110,10 +110,10 @@ RectTransform:
   m_Father: {fileID: 9001216308385300572}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1440, y: -540}
+  m_SizeDelta: {x: 960, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2134666695258705425
 GameObject:
@@ -16505,6 +16505,7 @@ GameObject:
   - component: {fileID: 5019252353696687370}
   - component: {fileID: 1253708034}
   - component: {fileID: 4173215662235764567}
+  - component: {fileID: 264519596529818952}
   m_Layer: 5
   m_Name: Bg_Gem
   m_TagString: Untagged
@@ -18918,6 +18919,20 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 0
   TextLabel: {fileID: 0}
+--- !u!114 &264519596529818952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019252353696687368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20680c181f1d354d814e5aadcd5f2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyType: 1
+  ValueText: {fileID: 5019252353462707785}
 --- !u!1 &5019252353723381244
 GameObject:
   m_ObjectHideFlags: 0
@@ -18952,7 +18967,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -21445,6 +21460,7 @@ GameObject:
   - component: {fileID: 5019252353811728414}
   - component: {fileID: 1253708035}
   - component: {fileID: 8864300563458879370}
+  - component: {fileID: 4720771246523748413}
   m_Layer: 5
   m_Name: Bg_Gold
   m_TagString: Untagged
@@ -23858,6 +23874,20 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 0
   TextLabel: {fileID: 0}
+--- !u!114 &4720771246523748413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019252353811728412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20680c181f1d354d814e5aadcd5f2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyType: 0
+  ValueText: {fileID: 5019252354379178944}
 --- !u!1 &5019252353992942123
 GameObject:
   m_ObjectHideFlags: 0
@@ -24027,6 +24057,7 @@ GameObject:
   - component: {fileID: 116168348016080268}
   - component: {fileID: 3093515613330087161}
   - component: {fileID: 4530232120708026512}
+  - component: {fileID: 2572071900978864450}
   m_Layer: 5
   m_Name: PanelHome
   m_TagString: Untagged
@@ -24938,6 +24969,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: 3093515613330087161}
   isStarted: 0
+--- !u!95 &2572071900978864450
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019252354123720244}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df0eff6961330584ba39f067a21d79d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5019252354162628573
 GameObject:
   m_ObjectHideFlags: 0
@@ -27987,6 +28037,7 @@ GameObject:
   - component: {fileID: 5019252355093216480}
   - component: {fileID: 1253708036}
   - component: {fileID: 3753406716063246554}
+  - component: {fileID: 1691873861753480692}
   m_Layer: 5
   m_Name: Bg_Stamina
   m_TagString: Untagged
@@ -30390,6 +30441,20 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 0
   TextLabel: {fileID: 0}
+--- !u!114 &1691873861753480692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019252355093216494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20680c181f1d354d814e5aadcd5f2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyType: 2
+  ValueText: {fileID: 5019252354474776173}
 --- !u!1 &5078137672214840510
 GameObject:
   m_ObjectHideFlags: 0

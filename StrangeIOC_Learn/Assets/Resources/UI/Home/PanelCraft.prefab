@@ -38036,6 +38036,7 @@ GameObject:
   - component: {fileID: 7810047783686838434}
   - component: {fileID: 5270870941323167970}
   - component: {fileID: 1733854815485187695}
+  - component: {fileID: 6670862401334907465}
   m_Layer: 5
   m_Name: Bg_Gold
   m_TagString: Untagged
@@ -40449,6 +40450,20 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 0
   TextLabel: {fileID: 0}
+--- !u!114 &6670862401334907465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649165117198740614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20680c181f1d354d814e5aadcd5f2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyType: 0
+  ValueText: {fileID: 1784823917730197434}
 --- !u!1 &5681687964686812092
 GameObject:
   m_ObjectHideFlags: 0
@@ -44673,6 +44688,7 @@ GameObject:
   - component: {fileID: 8231504491273776823}
   - component: {fileID: 8028266925270162627}
   - component: {fileID: 3565853381536790031}
+  - component: {fileID: 5440807880556536369}
   m_Layer: 5
   m_Name: Bg_Gem
   m_TagString: Untagged
@@ -47086,6 +47102,20 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 0
   TextLabel: {fileID: 0}
+--- !u!114 &5440807880556536369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261783330398787522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20680c181f1d354d814e5aadcd5f2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyType: 1
+  ValueText: {fileID: 8504631619326290181}
 --- !u!1 &8289775356263098378
 GameObject:
   m_ObjectHideFlags: 0

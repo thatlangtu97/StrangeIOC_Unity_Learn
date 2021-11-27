@@ -13,13 +13,17 @@ namespace EntrySystem
 			base.mapBindings();
 
 			new CrossContextBindingConfig().MapBindings(injectionBinder, commandBinder, mediationBinder);
+			injectionBinder.Bind<GlobalData>().ToValue(new GlobalData()).ToSingleton().CrossContext();
 			injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton().CrossContext();
 			injectionBinder.Bind<EntryContext>().ToValue(this).ToSingleton().CrossContext();
+
+			injectionBinder.Bind<AdsManager>().ToValue(new AdsManager()).ToSingleton().CrossContext();
+
+			commandBinder.Bind<SetupDatamanagerSignal>().To<SetupDataManagerCmd>();
 		}
 		public override void Launch()
 		{
-
-
+			injectionBinder.GetInstance<SetupDatamanagerSignal>().Dispatch();
 		}
 	}
 }

@@ -1,45 +1,44 @@
 using System.Collections.Generic;
 using strange.extensions.context.impl;
 
-namespace EntrySystem
+public class GlobalData
 {
-	public class GlobalData
-	{
-		private PanelKey panelAfterLoadMainScene;
-		private List<MVCSContext> listContext =  new List<MVCSContext>();
-		public GlobalData()
-		{
-
-		}
-		public GlobalData(MVCSContext mvcsContext)
-		{
-			ResetPopupShowAfterLoadMainScene();
-			listContext.Add(mvcsContext);
-		}
-		public void SetPopupShowAfterLoadMainScene(PanelKey popupKey)
-		{
-			panelAfterLoadMainScene = popupKey;
-		}
-		public PanelKey GetPopupShowAfterLoadMainScene()
-		{
-			return panelAfterLoadMainScene;
-		}
-		public void ResetPopupShowAfterLoadMainScene()
-		{
-			panelAfterLoadMainScene = PanelKey.PanelHome;
-		}
-		public void AddLastestContext(MVCSContext mvcsContext)
-		{
-			listContext.Add(mvcsContext);
-		}
-		public MVCSContext GetLastestContext()
-		{
-			return listContext[listContext.Count - 1];
-		}
-		public void RemoveLastestContext(MVCSContext mvcsContext)
-		{
-			listContext.Remove(mvcsContext);
-		}
-	}
-
+    #region CURRENCY ASSET SHOWER
+    public Dictionary<CurrencyType, List<CurrencyAssetShower>> dicCurrencyAssetShower = new Dictionary<CurrencyType, List<CurrencyAssetShower>>();
+    public void AddCurrencyAssetShower(CurrencyType type, CurrencyAssetShower asset)
+    {
+        if (!dicCurrencyAssetShower.ContainsKey(type))
+        {
+            dicCurrencyAssetShower.Add(type, new List<CurrencyAssetShower>());
+        }
+        dicCurrencyAssetShower[type].Add(asset);
+    }
+    public void UpdateDataAllCurrencyView()
+    {
+        foreach (CurrencyType type in dicCurrencyAssetShower.Keys)
+        {
+            foreach (CurrencyAssetShower asset in dicCurrencyAssetShower[type])
+            {
+                if (asset != null)
+                {
+                    asset.Setup();
+                }
+            }
+        }
+    }
+    public void UpdateDataAllCurrencyView(CurrencyType type)
+    {
+        if (!dicCurrencyAssetShower.ContainsKey(type)) return;
+        foreach (CurrencyAssetShower asset in dicCurrencyAssetShower[type])
+        {
+            if (asset != null)
+            {
+                asset.Setup();
+            }
+        }
+    }
+    #endregion
+    #region SCRIPTABLE IBJECT DATA
+    
+    #endregion
 }
