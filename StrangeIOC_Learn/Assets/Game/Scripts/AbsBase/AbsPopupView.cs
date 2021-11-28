@@ -21,9 +21,9 @@ public class AbsPopupView : View
 			autoFIllPanelInParent.AutoFill();
 		}
 	}
-	public void ShowPopupByCmd()
+	public virtual void ShowPopupByCmd()
 	{
-		//this.gameObject.SetActive(true);
+		base.CopyStart();
 		NotifyShowPopup();
 		popupManager.ShowPopup(popupKey);
 	}

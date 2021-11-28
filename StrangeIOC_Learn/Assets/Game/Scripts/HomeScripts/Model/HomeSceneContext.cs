@@ -25,6 +25,7 @@ public class HomeSceneContext : MVCSContext
         commandBinder.Bind<ShowPanelHeroSignal>().To<ShowPanelHeroCmd>();
         commandBinder.Bind<ShowPanelCraftSignal>().To<ShowPanelCraftCmd>();
         commandBinder.Bind<ShowPanelShopSignal>().To<ShowPanelShopCmd>();
+        commandBinder.Bind<ShowPopupGachaSignal>().To<ShowPopupGachaCmd>();
 
     }
     // Remove Inject nếu k cần đến nữa

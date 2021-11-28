@@ -143,6 +143,28 @@ public class CurrencyDataManager : IObjectDataManager
         SaveData();
         return currencyData.stamina;
     }
+    public int GetCountOpenGachaById(int id)
+    {
+        if (!currencyData.gachaOpened.ContainsKey(id))
+        {
+            currencyData.gachaOpened.Add(id, 0);
+            SaveData();
+        }
+        return currencyData.gachaOpened[id];
+    }
+    public void UpCountOpenGachaById(int id ,int count)
+    {
+        if (!currencyData.gachaOpened.ContainsKey(id))
+        {
+            currencyData.gachaOpened.Add(id, count);
+            
+        }
+        else
+        {
+            currencyData.gachaOpened[id] += count;
+        }
+        SaveData();
+    }
     public void setupValueDefault() {
         currencyData.gold = 3000;
         currencyData.gem = 100;
@@ -158,6 +180,7 @@ public class CurrencyData : DataObject
     public int gem;
     public int stamina;
     public int maxStamina;
+    public Dictionary<int, int> gachaOpened = new Dictionary<int, int>();
 }
 public enum CurrencyType
 {

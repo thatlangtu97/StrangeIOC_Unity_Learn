@@ -214,6 +214,7 @@ public enum PopupKey
     ShopGoldPopup,
     ShopGemPopup,
     ShopGachaPopup,
+    GachaPopup,
 }
 public enum UILayer
 {

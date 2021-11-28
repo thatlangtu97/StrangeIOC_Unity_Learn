@@ -38,7 +38,9 @@ public class GlobalData
         }
     }
     #endregion
-    #region SCRIPTABLE IBJECT DATA
-    
+    #region GACHA
+    public Gacha CurrenctGacha;
+    public dataGachaRandom dataGacha;
     #endregion
+
 }
