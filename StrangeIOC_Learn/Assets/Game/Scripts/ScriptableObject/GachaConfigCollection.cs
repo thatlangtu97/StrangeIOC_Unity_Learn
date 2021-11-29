@@ -29,6 +29,8 @@ public class dataGachaRandom
 public class Gacha
 {
     public int id;
+    public int costOpen1;
+    public int costOpen10;
     public List<Droprate> DropList;
 }
 [System.Serializable]

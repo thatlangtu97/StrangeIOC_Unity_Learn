@@ -42,5 +42,8 @@ public class GlobalData
     public Gacha CurrenctGacha;
     public dataGachaRandom dataGacha;
     #endregion
+    #region INVENTORY
+    public GearSlot CurrentTab= GearSlot.weapon;
+    #endregion
 
 }

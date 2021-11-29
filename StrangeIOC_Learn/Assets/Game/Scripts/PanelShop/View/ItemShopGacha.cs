@@ -15,9 +15,11 @@ public class ItemShopGacha : View
     }
     public void Open()
     {
-        dataGachaRandom data= GachaLogic.GetGachaRandom(idGacha);
-        global.dataGacha = data;
         global.CurrenctGacha = ScriptableObjectData.GachaConfigCollection.GetGachaById(idGacha);
+        if (DataManager.Instance.CurrencyDataManager.gem < global.CurrenctGacha.costOpen1) return;
+
+        dataGachaRandom data= GachaLogic.GetGachaRandom(idGacha);
+        global.dataGacha = data;        
         showPopupGachaSignal.Dispatch();
     }
 
