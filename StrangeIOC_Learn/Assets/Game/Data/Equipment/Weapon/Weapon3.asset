@@ -16,7 +16,7 @@ MonoBehaviour:
   GearIcon: {fileID: 21300000, guid: e130249c9e6b27348892cf97998c9e38, type: 3}
   GearFull: {fileID: 21300000, guid: c7cd9d8ce9c07f7498fc59c8d0c52247, type: 3}
   GearSlot: 0
-  gearName: 
+  gearName: Sword 10
   idOfHero: 0
   price: []
   mainAttribute:

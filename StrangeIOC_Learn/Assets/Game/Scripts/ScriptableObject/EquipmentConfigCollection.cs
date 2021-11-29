@@ -8,6 +8,7 @@ public class EquipmentConfigCollection : ScriptableObject
     public List<EquipmentConfig> weaponCollection;
     public List<EquipmentConfig> armorCollection;
     public List<EquipmentConfig> ringCollection;
+    public List<EquipmentConfig> charmCollection;
     public List<ColorRarity> colorRarity;
 }
 [System.Serializable]

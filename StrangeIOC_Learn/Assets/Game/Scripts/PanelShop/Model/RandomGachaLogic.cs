@@ -20,33 +20,17 @@ public class GachaLogic
         Gacha currentGacha = ScriptableObjectData.GachaConfigCollection.GetGachaById(idGacha);
         //data select item
         Rarity rarity = Rarity.common;
-        
-        List<int> listSlotRamdom = new List<int>
-        {
-            /*Weapon*/   0,
-            /*Armor*/    1,
-            /*Ring*/     2,
-        };
         List<int> listIdHeroRandom = new List<int>
         {
             0,
         };
-        List<int> listIdConfig = new List<int>
-        {
-            1,
-            2,
-            3,
-            4,
-            5,
-        };
-        int gearslot = randomSlot(listSlotRamdom);
-        int idConfig = randomSlot(listIdConfig);
+        int gearslot = randomSlot(EquipmentLogic.ListIdGearSlot());
+
+        int idConfig = randomSlot(EquipmentLogic.ListIdConfigBySlot((GearSlot)gearslot));
         int idOfHero = randomSlot(listIdHeroRandom);
 
-        //
         int maxrandom = 100;
         int randomQuality = UnityEngine.Random.Range(0, maxrandom);
-
         int initdrop = 0;
         int desireddrop = 0;
         for (int i = 0; i < currentGacha.DropList.Count; i++)
@@ -66,7 +50,7 @@ public class GachaLogic
         tempValueRandom.idConfig = idConfig;
         tempValueRandom.Rarity = rarity;
         tempValueRandom.idOfHero = idOfHero;
-        //Debug.Log($"GearSlot {tempValueRandom.GearSlot} idConfig {tempValueRandom.idConfig} Rarity {tempValueRandom.Rarity} idOfHero {tempValueRandom.idOfHero}");
+        
         return tempValueRandom;
 
 }
@@ -92,6 +76,9 @@ public class GachaLogic
                 break;
             case GearSlot.ring:
                 listConfig = ScriptableObjectData.EquipmentConfigCollection.ringCollection;
+                break;
+            case GearSlot.charm:
+                listConfig = ScriptableObjectData.EquipmentConfigCollection.charmCollection;
                 break;
         }
         foreach (EquipmentConfig temp in listConfig)

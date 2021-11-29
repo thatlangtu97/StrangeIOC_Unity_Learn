@@ -20,6 +20,7 @@ public enum GearSlot
     weapon=0,
     armor=1,
     ring=2,
+    charm=3,
 }
 public enum Rarity
 {

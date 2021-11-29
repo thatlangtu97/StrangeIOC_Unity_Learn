@@ -21,7 +21,7 @@ public class AutoPlayOpenGacha : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         material.SetFloat("RotationUV_Rotation_PosY_1", RotationUV_Rotation_PosY_1);
         material.SetFloat("_ShinyOnlyFX_Size_1", _ShinyOnlyFX_Size_1);
