@@ -14,6 +14,7 @@ public class ResetGameToolbar : MonoBehaviour
         //DataManager.DeleteData("HeroUpgradeData.binary");
         DataManager.DeleteData("CurencyData.binary");
         DataManager.DeleteData("InventoryData.binary");
+        DataManager.DeleteData("AllHeroData.binary");
         //DataManager.DeleteData("FirebaseData.binary");
         //DataManager.DeleteData("StoryTapeData.binary");
         //DataManager.DeleteData("Achievement.binary");

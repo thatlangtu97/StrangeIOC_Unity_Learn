@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf6283de4e9443219cd62a9212d0b10, type: 3}
   m_Name: Charm1
   m_EditorClassIdentifier: 
-  id: 1
+  id: 131
   GearIcon: {fileID: 21300000, guid: 26aa8a60d3e4f0046b2487dca8991cfa, type: 3}
   GearFull: {fileID: 21300000, guid: 775d292687ac52447bda61343b13aa27, type: 3}
   GearSlot: 3

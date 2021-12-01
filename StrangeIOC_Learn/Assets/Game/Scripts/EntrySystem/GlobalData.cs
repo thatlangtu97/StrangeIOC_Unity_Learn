@@ -44,6 +44,9 @@ public class GlobalData
     #endregion
     #region INVENTORY
     public GearSlot CurrentTab= GearSlot.weapon;
+    public int CurrentIdHero=0;
+    public EquipmentData dataLeft,dataRight;
+
     #endregion
 
 }

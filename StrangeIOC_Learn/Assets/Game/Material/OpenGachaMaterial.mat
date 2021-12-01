@@ -62,7 +62,7 @@ Material:
     m_Floats:
     - RotationUV_Rotation_1: 96
     - RotationUV_Rotation_PosX_1: 0
-    - RotationUV_Rotation_PosY_1: -0.50986785
+    - RotationUV_Rotation_PosY_1: -0.414
     - RotationUV_Rotation_Speed_1: 0
     - _Add_Fade_1: 1.2
     - _BumpScale: 1
@@ -81,7 +81,7 @@ Material:
     - _Parallax: 0.02
     - _ShinyOnlyFX_Intensity_1: 0.78
     - _ShinyOnlyFX_Pos_1: 0
-    - _ShinyOnlyFX_Size_1: -0.1
+    - _ShinyOnlyFX_Size_1: 0.8607444
     - _ShinyOnlyFX_Smooth_1: 0.321
     - _ShinyOnlyFX_Speed_1: 0
     - _SmoothnessTextureChannel: 0

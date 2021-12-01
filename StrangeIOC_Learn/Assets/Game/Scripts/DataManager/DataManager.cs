@@ -98,6 +98,21 @@ public class DataManager : MonoBehaviour
             return inventoryDataManager;
         }
     }
+    HeroDataManager heroDataManager;
+    public HeroDataManager HeroDataManager
+    {
+        get
+        {
+            if (heroDataManager == null)
+            {
+                heroDataManager = new HeroDataManager();
+                heroDataManager.LoadData();
+                listObjectDataManager.Add(heroDataManager);
+
+            }
+            return heroDataManager;
+        }
+    }
 
 }
 public interface IObjectDataManager

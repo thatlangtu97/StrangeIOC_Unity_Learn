@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EquipmentConfig", menuName = "Data/EquipmentConfig")]
 public class EquipmentConfig : ScriptableObject
 {
+    [Header("idHero/Gearslot/id")]
     public int id;
     public Sprite GearIcon, GearFull;
     public GearSlot GearSlot;

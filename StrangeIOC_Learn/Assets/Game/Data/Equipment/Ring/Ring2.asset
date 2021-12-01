@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf6283de4e9443219cd62a9212d0b10, type: 3}
   m_Name: Ring2
   m_EditorClassIdentifier: 
-  id: 2
+  id: 122
   GearIcon: {fileID: 21300000, guid: 2a0d7e74d4d8d5c4584b08b3fa87f7f6, type: 3}
   GearFull: {fileID: 21300000, guid: d8ec1f5294ef6bf44ac567c7253bcf6c, type: 3}
   GearSlot: 2

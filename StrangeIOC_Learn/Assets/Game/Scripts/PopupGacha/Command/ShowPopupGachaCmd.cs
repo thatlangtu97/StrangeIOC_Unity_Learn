@@ -10,7 +10,8 @@ public class ShowPopupGachaCmd : AbsShowPopupCmd
         popupKey = PopupKey.GachaPopup;
         PopupGachaView popupStaminaView = GetInstance<PopupGachaView>();
         popupStaminaView.ShowPopupByCmd();
-        DataManager.Instance.InventoryDataManager.AddEquipment(global.dataGacha.idConfig, global.dataGacha.Rarity, global.dataGacha.GearSlot);
+        dataGachaRandom dataGacha = global.dataGacha;
+        DataManager.Instance.InventoryDataManager.AddEquipment(dataGacha.idConfig, dataGacha.Rarity, dataGacha.GearSlot, dataGacha.idOfHero);
     }
 
     public override string GetResourcePath()

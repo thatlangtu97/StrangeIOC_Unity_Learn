@@ -35,13 +35,11 @@ public class InventoryView : View
         global.CurrentTab = gearSlot;
         ReloadPage();
         ShowButton();
-
     }
     public void NextPage()
     {
-        if (equipmentItemViews.Count * (currentPage - 1) > ListEquipment.Count) return;
+        if (equipmentItemViews.Count * (currentPage) > ListEquipment.Count) return;
         currentPage += 1;
-
         ReloadPage();
     }
     public void PreviousPage()
@@ -52,18 +50,17 @@ public class InventoryView : View
     }
     void ReloadPage()
     {
-        ListEquipment = DataManager.Instance.InventoryDataManager.GetAllEquipmentBySlot((int)global.CurrentTab);
-        
+        ListEquipment = EquipmentLogic.GetAllEquipmentBySlotOfHeroNotEquiped(global.CurrentTab,global.CurrentIdHero);        
         int countEquipment = ListEquipment.Count;
-
         int indexStart = equipmentItemViews.Count * (currentPage - 1);
-        Debug.Log(indexStart + " " + ListEquipment.Count);
         for (int i = 0; i < equipmentItemViews.Count; i++)
         {
             if (indexStart < countEquipment)
             {
+                EquipmentConfig config = EquipmentLogic.GetEquipmentConfigById(ListEquipment[indexStart].idConfig);
+
                 equipmentItemViews[i].gameObject.SetActive(true);
-                equipmentItemViews[i].Show(ListEquipment[indexStart], EquipmentLogic.GetEquipmentConfigById(ListEquipment[indexStart].gearSlot, ListEquipment[indexStart].idConfig));
+                equipmentItemViews[i].Show(ListEquipment[indexStart], config);
             }
             else
             {
@@ -72,6 +69,7 @@ public class InventoryView : View
             indexStart += 1;
         }
     }
+
     public void ShowButton()
     {
         foreach (TabType temp in tabTypes)

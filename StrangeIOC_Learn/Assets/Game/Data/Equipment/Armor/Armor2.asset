@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf6283de4e9443219cd62a9212d0b10, type: 3}
   m_Name: Armor2
   m_EditorClassIdentifier: 
-  id: 2
+  id: 112
   GearIcon: {fileID: 21300000, guid: 0ee1b6062d9e3514a832920495f8cf4d, type: 3}
   GearFull: {fileID: 21300000, guid: 8e277f301cbb19949b6781d114bf73f1, type: 3}
   GearSlot: 1

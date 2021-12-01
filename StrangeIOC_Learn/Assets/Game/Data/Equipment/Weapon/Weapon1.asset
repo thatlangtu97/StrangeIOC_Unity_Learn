@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf6283de4e9443219cd62a9212d0b10, type: 3}
   m_Name: Weapon1
   m_EditorClassIdentifier: 
-  id: 1
+  id: 101
   GearIcon: {fileID: 21300000, guid: 5a6fa6dcb5830d74789cbbc27437bff3, type: 3}
   GearFull: {fileID: 21300000, guid: 441450d2d90a2024d957a643cd319992, type: 3}
   GearSlot: 0

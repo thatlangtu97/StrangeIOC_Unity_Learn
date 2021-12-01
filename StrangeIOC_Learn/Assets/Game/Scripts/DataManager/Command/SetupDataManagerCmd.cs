@@ -8,5 +8,6 @@ public class SetupDataManagerCmd : Command
     public override void Execute()
     {
         DataManager.Instance.CurrencyDataManager.LoadData();
+        EquipmentLogic.Cache();
     }
 }

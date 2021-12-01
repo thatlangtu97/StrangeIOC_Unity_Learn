@@ -7,7 +7,7 @@ public class InventoryDataManager : IObjectDataManager
 {
     const string INVENTORY_DATA_FILE = "InventoryData.binary";
     private InventoryData inventoryData = new InventoryData();
-    private const string identityKey = "IdentityKey";
+    private const string identityKey = "IdentityKeyEquipment";
     public void DeleteData()
     {
         DataManager.DeleteData(INVENTORY_DATA_FILE);
@@ -47,7 +47,7 @@ public class InventoryDataManager : IObjectDataManager
         PlayerPrefs.Save();
         return returnValue;
     }
-    public void AddEquipment(int idConfig,Rarity rarity,GearSlot gearSlot)
+    public void AddEquipment(int idConfig,Rarity rarity,GearSlot gearSlot,int idOfHero)
     {
         EquipmentData newEquipment = new EquipmentData();
         newEquipment.id = GenerateIdentityEquipment();
@@ -55,23 +55,24 @@ public class InventoryDataManager : IObjectDataManager
         newEquipment.gearSlot = gearSlot;
         newEquipment.rarity = rarity;
         newEquipment.level = 1;
-        if (inventoryData.EquipmentDicBySlot.ContainsKey((int)gearSlot))
+        newEquipment.idOfHero = idOfHero;
+        if (inventoryData.EquipmentDicBySlot.ContainsKey(gearSlot))
         {
-            inventoryData.EquipmentDicBySlot[(int)gearSlot].Add(newEquipment);
+            inventoryData.EquipmentDicBySlot[gearSlot].Add(newEquipment);
         }
         else
         {
             List<EquipmentData> tempList = new List<EquipmentData>();
             tempList.Add(newEquipment);
-            inventoryData.EquipmentDicBySlot.Add((int)gearSlot, tempList);
+            inventoryData.EquipmentDicBySlot.Add(gearSlot, tempList);
         }
         SaveData();
     }
-    public List<EquipmentData> GetAllEquipmentBySlot(int gearSlot)
+    public List<EquipmentData> GetAllEquipmentBySlot(GearSlot gearSlot)
     {
         if (inventoryData.EquipmentDicBySlot.ContainsKey(gearSlot))
         {
-            return inventoryData.EquipmentDicBySlot[(int)gearSlot];
+            return inventoryData.EquipmentDicBySlot[gearSlot];
         }
         return new List<EquipmentData>();
     }
@@ -79,13 +80,14 @@ public class InventoryDataManager : IObjectDataManager
 [Serializable]
 public class InventoryData : DataObject
 {
-    public Dictionary<int, List<EquipmentData>> EquipmentDicBySlot = new Dictionary<int, List<EquipmentData>>();
+    public Dictionary<GearSlot, List<EquipmentData>> EquipmentDicBySlot = new Dictionary<GearSlot, List<EquipmentData>>();
 }
 [Serializable]
 public class EquipmentData
 {
     public int id;
     public int idConfig;
+    public int idOfHero;
     public GearSlot gearSlot;
     public Rarity rarity;
     public int level;
