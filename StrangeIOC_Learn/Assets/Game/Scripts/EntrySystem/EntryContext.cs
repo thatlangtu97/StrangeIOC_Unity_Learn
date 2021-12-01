@@ -14,6 +14,7 @@ namespace EntrySystem
 
 			new CrossContextBindingConfig().MapBindings(injectionBinder, commandBinder, mediationBinder);
 			injectionBinder.Bind<GlobalData>().ToValue(new GlobalData()).ToSingleton().CrossContext();
+			injectionBinder.Bind<EquipmentLogic>().ToValue(new EquipmentLogic()).ToSingleton().CrossContext();
 			injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton().CrossContext();
 			injectionBinder.Bind<EntryContext>().ToValue(this).ToSingleton().CrossContext();
 

@@ -6,10 +6,8 @@ using UnityEngine;
 public class EquipmentLogic 
 {
     static Dictionary<int, EquipmentConfig> cacheConfig = new Dictionary<int, EquipmentConfig>();
-    static Dictionary<GearSlot, List<int>> idConfig = new Dictionary<GearSlot, List<int>>();
     public static void Cache()
     {
-        //GearSlot[] tempSlot = Enum.GetNames(typeof(GearSlot)) as GearSlot
         cacheConfig = new Dictionary<int, EquipmentConfig>();
         GearSlot[] gearSlots = new[]
             {
@@ -42,7 +40,6 @@ public class EquipmentLogic
     }
     public static EquipmentConfig GetEquipmentConfigById(int idConfig)
     {
-        Cache();
         return cacheConfig[idConfig];
     }
     public static List<int> ListIdConfigBySlot(GearSlot gearSlot)
@@ -106,20 +103,18 @@ public class EquipmentLogic
 
         List<EquipmentData> templist = DataManager.Instance.InventoryDataManager.GetAllEquipmentBySlot(gearSlot);
         int idEquiped = DataManager.Instance.HeroDataManager.GetIdEquipmentEquiped(gearSlot, hero);
+        List<EquipmentData> newlist = new List<EquipmentData>();
         foreach (EquipmentData tempItem in templist)
         {
-            if(tempItem.id == idEquiped)
+            if(tempItem.id != idEquiped)
             {
-                templist.Remove(tempItem);
-                break;
+                newlist.Add(tempItem);
             }
         }
-       
-        return templist;
+        return newlist;
     }
     public static void EquipGear(EquipmentData data ,int hero)
     {
-       // HeroData herodata = DataManager.Instance.HeroDataManager.GetHeroById((int)hero);
         DataManager.Instance.HeroDataManager.EquipGear(data.gearSlot, data.id, (int)hero);
     }
     public static void UnEquipGear(EquipmentData data, int hero)

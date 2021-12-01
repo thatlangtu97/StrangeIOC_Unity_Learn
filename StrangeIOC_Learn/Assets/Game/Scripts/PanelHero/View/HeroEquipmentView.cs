@@ -33,10 +33,6 @@ public class HeroEquipmentView : View
     public void Show()
     {
         currentEquipment = EquipmentLogic.GetEquipmentOfHero(global.CurrentIdHero);
-        foreach (EquipmentOfHeroView temp in listEquipmentOfHeroView)
-        {
-            temp.view.gameObject.SetActive(false);
-        }
         foreach (EquipmentData data in currentEquipment)
         {
             EquipmentConfig config = EquipmentLogic.GetEquipmentConfigById(data.idConfig);
