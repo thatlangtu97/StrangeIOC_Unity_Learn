@@ -18,7 +18,8 @@ namespace EntrySystem
             commandBinder.Bind<ShowPanelCraftSignal>().To<ShowPanelCraftCmd>();
             commandBinder.Bind<ShowPanelShopSignal>().To<ShowPanelShopCmd>();
             commandBinder.Bind<ShowPopupGachaSignal>().To<ShowPopupGachaCmd>();
-            
+            commandBinder.Bind<EquipGearSignal>().To<EquipGearCmd>();
+            commandBinder.Bind<ShowEquipmentDetailSignal>().To<ShowEquipmentDetailCmd>();
         }
     }
 }

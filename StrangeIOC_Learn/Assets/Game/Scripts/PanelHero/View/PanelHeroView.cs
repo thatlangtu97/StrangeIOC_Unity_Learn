@@ -7,6 +7,8 @@ public class PanelHeroView : AbsPanelView
 {
     public Button backBtn;
     public GameObject EquipmentDetailLeft, EquipmentDetailFight;
+    //public InventoryView inventoryView;
+    //public HeroEquipmentView heroEquipmentView;
     protected override void Start()
     {
         base.Start();

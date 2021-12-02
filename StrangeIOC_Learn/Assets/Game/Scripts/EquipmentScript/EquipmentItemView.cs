@@ -8,24 +8,41 @@ using strange.extensions.mediation.impl;
 public class EquipmentItemView : View
 {
     [Inject] public GlobalData global { get; set; }
+    [Inject] public EquipGearSignal equipGearSignal { get; set; }
+    [Inject] public ShowEquipmentDetailSignal showEquipmentDetailSignal { get; set; }
     public Image icon;
     public Image boderRarity;
     public Text level;
     EquipmentData data;
     EquipmentConfig config;
-    public Button button;
+    Button btnClick;
     
-    public void Show(EquipmentData data, EquipmentConfig config)
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+    public void Show(EquipmentData data, EquipmentConfig config )
     {
         base.CopyStart();
-        button = GetComponent<Button>();
-        button.onClick.RemoveAllListeners();
-        button.onClick.AddListener(()=> EquipmentLogic.EquipGear(data, global.CurrentIdHero));
         this.data = data;
         this.config = config;
         icon.sprite = config.GearIcon;
         boderRarity.color = GachaLogic.GetColorByRarity(data.rarity);
         level.text = $"{data.level}";
     }
+    public void ShowDetail(int valuePopup)
+    {
+        ParameterEquipmentDetail temp = new ParameterEquipmentDetail();
+        temp.equipmentData = data;
+        temp.popupkey = (PopupKey)valuePopup;
+        showEquipmentDetailSignal.Dispatch(temp);
+    }
+    
 
+
+}
+public class ParameterEquipmentDetail
+{
+    public EquipmentData equipmentData;
+    public PopupKey popupkey;
 }

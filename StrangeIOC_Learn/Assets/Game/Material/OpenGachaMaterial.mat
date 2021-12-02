@@ -62,7 +62,7 @@ Material:
     m_Floats:
     - RotationUV_Rotation_1: 96
     - RotationUV_Rotation_PosX_1: 0
-    - RotationUV_Rotation_PosY_1: -0.414
+    - RotationUV_Rotation_PosY_1: -0.40428573
     - RotationUV_Rotation_Speed_1: 0
     - _Add_Fade_1: 1.2
     - _BumpScale: 1
@@ -81,7 +81,7 @@ Material:
     - _Parallax: 0.02
     - _ShinyOnlyFX_Intensity_1: 0.78
     - _ShinyOnlyFX_Pos_1: 0
-    - _ShinyOnlyFX_Size_1: 0.8607444
+    - _ShinyOnlyFX_Size_1: 0.9882678
     - _ShinyOnlyFX_Smooth_1: 0.321
     - _ShinyOnlyFX_Speed_1: 0
     - _SmoothnessTextureChannel: 0
@@ -94,12 +94,12 @@ Material:
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
     - _ThresholdSmooth_Smooth_1: 0.5
-    - _ThresholdSmooth_Value_1: -1
+    - _ThresholdSmooth_Value_1: -0.95002115
     - _TurnAlphaToBlack_Fade_2: 0
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FillColor_Color_1: {r: 0.4117647, g: 0.4117647, b: 0.4117647, a: 1}
+    - _FillColor_Color_1: {r: 0.3372549, g: 0.4627451, b: 0.25490198, a: 1}
     - _FillColor_Color_2: {r: 1, g: 1, b: 1, a: 1}

@@ -42,6 +42,17 @@ public class EquipmentLogic
     {
         return cacheConfig[idConfig];
     }
+    public static EquipmentData CloneEquipmentData (EquipmentData dataBase)
+    {
+        EquipmentData dataClone = new EquipmentData();
+        dataClone.id = dataBase.id;
+        dataClone.idConfig = dataBase.idConfig;
+        dataClone.gearSlot = dataBase.gearSlot;
+        dataClone.rarity = dataBase.rarity;
+        dataClone.level = dataBase.level;
+        dataClone.idOfHero = dataBase.idOfHero;
+        return dataClone;
+    }
     public static List<int> ListIdConfigBySlot(GearSlot gearSlot)
     {
         List<int> tempList = new List<int>();

@@ -205,16 +205,16 @@ public enum PanelKey
 }
 public enum PopupKey
 {
-    Node,
-    StaminaPopup,
-    EquipmentHeroDetailLeft,
-    EquipmentHeroDetailRight,
-    EquipmentCraftDetailLeft,
-    EquipmentCraftDetailRight,
-    ShopGoldPopup,
-    ShopGemPopup,
-    ShopGachaPopup,
-    GachaPopup,
+    Node=0,
+    StaminaPopup = 1,
+    EquipmentHeroDetailLeft = 2,
+    EquipmentHeroDetailRight = 3,
+    EquipmentCraftDetailLeft = 4,
+    EquipmentCraftDetailRight = 5,
+    ShopGoldPopup = 6,
+    ShopGemPopup =7,
+    ShopGachaPopup =8,
+    GachaPopup =9,
 }
 public enum UILayer
 {

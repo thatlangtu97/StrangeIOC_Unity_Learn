@@ -1,4 +1,5 @@
 ﻿using strange.extensions.mediation.impl;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine;
 public class HeroEquipmentView : View
 {
     [Inject] public GlobalData global { get; set; }
-    
+    [Inject] public ShowEquipmentDetailSignal showEquipmentDetailSignal { get; set; }
 
     public Dictionary<GearSlot, EquipmentItemView> DicSlotOfHero = new Dictionary<GearSlot, EquipmentItemView>();
     [SerializeField]
@@ -33,10 +34,13 @@ public class HeroEquipmentView : View
     public void Show()
     {
         currentEquipment = EquipmentLogic.GetEquipmentOfHero(global.CurrentIdHero);
+        foreach (EquipmentItemView view in DicSlotOfHero.Values) {
+            view.gameObject.SetActive(false);
+        }
         foreach (EquipmentData data in currentEquipment)
         {
             EquipmentConfig config = EquipmentLogic.GetEquipmentConfigById(data.idConfig);
-
+            
             DicSlotOfHero[data.gearSlot].gameObject.SetActive(true);
             DicSlotOfHero[data.gearSlot].Show(data, config);
         }

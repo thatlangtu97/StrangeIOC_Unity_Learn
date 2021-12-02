@@ -27,7 +27,7 @@ public class AbsPopupView : View
 		NotifyShowPopup();
 		popupManager.ShowPopup(popupKey);
 	}
-	public void ShowPopup()
+	public virtual void ShowPopup()
 	{
 		UiViewController.Show();
 	}
@@ -39,4 +39,8 @@ public class AbsPopupView : View
 	{
 
 	}
+}
+public class ParameterPopup
+{
+
 }
