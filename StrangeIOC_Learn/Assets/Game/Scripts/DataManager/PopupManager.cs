@@ -9,7 +9,7 @@ public class PopupManager
     public PopupKey popupKey { get; set; }
     public Dictionary<UILayer, Transform> UIDic = new Dictionary<UILayer, Transform>();
     public Dictionary<PanelKey, GameObject> PanelDic = new Dictionary<PanelKey, GameObject>();
-    public Dictionary<PopupKey, GameObject> PopupDic = new Dictionary<PopupKey, GameObject>();
+    public Dictionary<PopupKey, AbsPopupView> PopupDic = new Dictionary<PopupKey, AbsPopupView>();
     public PanelKey BasePabelKey;
     //public Dictionary<PanelKey, List<GameObject>> ListPopupOfPanel = new Dictionary<PanelKey, List<GameObject>>();
 
@@ -115,12 +115,12 @@ public class PopupManager
     public void BackPanel()
     {
         //Disable popup
-        GameObject lastPopup = null;
-        foreach (GameObject temp in PopupDic.Values)
+        AbsPopupView lastPopup = null;
+        foreach (AbsPopupView temp in PopupDic.Values)
         {
             if (temp != null)
             {
-                if (temp.activeInHierarchy == true)
+                if (temp.gameObject.activeInHierarchy == true)
                 {
                     lastPopup = temp;
                 }
@@ -128,7 +128,7 @@ public class PopupManager
         }
         if (lastPopup != null)
         {
-            lastPopup.GetComponent<AbsPopupView>().HidePopup();
+            lastPopup/*.GetComponent<AbsPopupView>()*/.HidePopup();
             return;
         }
         //disable Panel
@@ -162,7 +162,7 @@ public class PopupManager
         }
         return false;
     }
-    public GameObject GetPopupByPopupKey(PopupKey key)
+    public AbsPopupView GetPopupByPopupKey(PopupKey key)
     {
         if (PopupDic.ContainsKey(key))
         {
@@ -171,7 +171,7 @@ public class PopupManager
 
         return null;
     }
-    public void AddPopup(PopupKey key, GameObject panel)
+    public void AddPopup(PopupKey key, AbsPopupView panel)
     {
         if (PopupDic.ContainsKey(key))
         {
@@ -191,7 +191,7 @@ public class PopupManager
         if (!PopupDic.ContainsKey(key))
             return;
         if (PopupDic[key] != null)
-            PopupDic[key].GetComponent<AbsPopupView>().ShowPopup();
+            PopupDic[key]/*.GetComponent<AbsPopupView>()*/.ShowPopup();
     }
     #endregion
 

@@ -7,11 +7,12 @@ public class PanelCraftView : AbsPanelView
 {
     public Button backBtn;
     public GameObject EquipmentDetailLeft, EquipmentDetailFight;
+    public AbsPopupView PopupEquipmentDetailLeft, PopupEquipmentDetailFight;
     protected override void Start()
     {
         base.Start();
         backBtn.onClick.AddListener(() => popupManager.BackPanel());
-        popupManager.AddPopup(PopupKey.EquipmentCraftDetailLeft, EquipmentDetailLeft);
-        popupManager.AddPopup(PopupKey.EquipmentCraftDetailRight, EquipmentDetailFight);
+        popupManager.AddPopup(PopupKey.EquipmentCraftDetailLeft, PopupEquipmentDetailLeft);
+        popupManager.AddPopup(PopupKey.EquipmentCraftDetailRight, PopupEquipmentDetailFight);
     }
 }

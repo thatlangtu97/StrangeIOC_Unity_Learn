@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelKey: 0
   popupKey: 0
+  currencyType: 0
 --- !u!114 &856779016
 MonoBehaviour:
   m_ObjectHideFlags: 0

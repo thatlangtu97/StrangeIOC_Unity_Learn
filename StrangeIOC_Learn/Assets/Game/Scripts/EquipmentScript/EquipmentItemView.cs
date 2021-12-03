@@ -8,14 +8,13 @@ using strange.extensions.mediation.impl;
 public class EquipmentItemView : View
 {
     [Inject] public GlobalData global { get; set; }
-    [Inject] public EquipGearSignal equipGearSignal { get; set; }
     [Inject] public ShowEquipmentDetailSignal showEquipmentDetailSignal { get; set; }
+
     public Image icon;
     public Image boderRarity;
     public Text level;
     EquipmentData data;
     EquipmentConfig config;
-    Button btnClick;
     
     protected override void Awake()
     {
@@ -27,13 +26,14 @@ public class EquipmentItemView : View
         this.data = data;
         this.config = config;
         icon.sprite = config.GearIcon;
-        boderRarity.color = GachaLogic.GetColorByRarity(data.rarity);
-        level.text = $"{data.level}";
+        boderRarity.color = EquipmentLogic.GetColorByRarity(data.rarity);
+        if(level!=null) level.text = $"{data.level}";
     }
     public void ShowDetail(int valuePopup)
     {
         ParameterEquipmentDetail temp = new ParameterEquipmentDetail();
         temp.equipmentData = data;
+        temp.equipmentConfig = config;
         temp.popupkey = (PopupKey)valuePopup;
         showEquipmentDetailSignal.Dispatch(temp);
     }
@@ -44,5 +44,6 @@ public class EquipmentItemView : View
 public class ParameterEquipmentDetail
 {
     public EquipmentData equipmentData;
+    public EquipmentConfig equipmentConfig;
     public PopupKey popupkey;
 }

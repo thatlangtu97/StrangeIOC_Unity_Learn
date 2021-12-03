@@ -38,6 +38,18 @@ public class EquipmentLogic
             }
         }
     }
+    public static Color GetColorByRarity(Rarity rarity)
+    {
+        foreach (ColorRarity tempColor in ScriptableObjectData.EquipmentConfigCollection.colorRarity)
+        {
+            if (tempColor.rarity == rarity)
+            {
+                return tempColor.color;
+            }
+        }
+        return Color.white;
+
+    }
     public static EquipmentConfig GetEquipmentConfigById(int idConfig)
     {
         return cacheConfig[idConfig];
@@ -132,4 +144,5 @@ public class EquipmentLogic
     {
         DataManager.Instance.HeroDataManager.UnEquipGear(data.gearSlot, (int)hero);
     }
+
 }

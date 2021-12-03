@@ -27,8 +27,9 @@ public class TestUtils :View
         {
             SceneManager.LoadScene("HomeScene");
         }
-        if(Input.GetKeyDown(KeyCode.KeypadEnter)){
-            popupManager.SetPanelAfterLoadHomeScene(panelKey, popupKey);
+        if (Input.GetKeyDown(KeyCode.KeypadEnter)){
+           // popupManager.SetPanelAfterLoadHomeScene(panelKey, popupKey);
+            popupManager.ShowPopup(popupKey);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {

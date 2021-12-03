@@ -25,10 +25,10 @@ public class PopupGachaView : AbsPopupView
         config = GachaLogic.getEquipmentConfig(data.GearSlot, data.idConfig, data.idOfHero);
         ImageGacha.sprite = config.GearFull;
         ImageGacha.SetNativeSize();
-        gachaEffect._FillColor_Color_1 = GachaLogic.GetColorByRarity(data.Rarity);
+        gachaEffect._FillColor_Color_1 = EquipmentLogic.GetColorByRarity(data.Rarity);
         EquipmentText.text = config.gearName;
         RarityText.text = data.Rarity.ToString();
-        RarityText.color = GachaLogic.GetColorByRarity(data.Rarity);
+        RarityText.color = EquipmentLogic.GetColorByRarity(data.Rarity);
         animator.SetTrigger("Show");
 
     }

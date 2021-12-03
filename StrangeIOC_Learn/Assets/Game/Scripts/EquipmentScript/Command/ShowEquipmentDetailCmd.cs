@@ -10,9 +10,8 @@ public class ShowEquipmentDetailCmd : Command
     public override void Execute()
     {
         
-        EquipmentDetailView detailview = popupManager.GetPopupByPopupKey(Parameter.popupkey).GetComponent<EquipmentDetailView>();
-        Debug.Log(detailview);
-        detailview.SetupData(Parameter.equipmentData);
+        EquipmentDetailView detailview = popupManager.GetPopupByPopupKey(Parameter.popupkey) as EquipmentDetailView;
+        detailview.SetupData(Parameter.equipmentData, Parameter.equipmentConfig);
         popupManager.ShowPopup(Parameter.popupkey);
         
     }

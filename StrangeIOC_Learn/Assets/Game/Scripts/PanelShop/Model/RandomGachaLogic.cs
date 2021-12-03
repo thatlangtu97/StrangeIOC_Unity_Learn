@@ -90,17 +90,4 @@ public class GachaLogic
         }
         return null;
     }
-    public static Color GetColorByRarity(Rarity rarity)
-    {
-        foreach(ColorRarity tempColor in ScriptableObjectData.EquipmentConfigCollection.colorRarity)
-        {
-            if(tempColor.rarity == rarity)
-            {
-                return tempColor.color;
-            }
-        }
-        return Color.white;
-        
-    }
-    
 }
