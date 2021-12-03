@@ -7,9 +7,7 @@ using UnityEngine;
 public class HeroEquipmentView : View
 {
     [Inject] public GlobalData global { get; set; }
-    [Inject] public ShowEquipmentDetailSignal showEquipmentDetailSignal { get; set; }
-
-    public Dictionary<GearSlot, EquipmentItemView> DicSlotOfHero = new Dictionary<GearSlot, EquipmentItemView>();
+    Dictionary<GearSlot, EquipmentOfHeroView> DicEquipmentOfHeroView = new Dictionary<GearSlot, EquipmentOfHeroView>();
     [SerializeField]
     List<EquipmentOfHeroView> listEquipmentOfHeroView = new List<EquipmentOfHeroView>();
     List<EquipmentData> currentEquipment = new List<EquipmentData>();
@@ -34,29 +32,31 @@ public class HeroEquipmentView : View
     public void Show()
     {
         currentEquipment = EquipmentLogic.GetEquipmentOfHero(global.CurrentIdHero);
-        foreach (EquipmentItemView view in DicSlotOfHero.Values) {
-            view.gameObject.SetActive(false);
+        foreach (EquipmentOfHeroView equipmentOfHero in DicEquipmentOfHeroView.Values) {
+            equipmentOfHero.view.gameObject.SetActive(false);
+            equipmentOfHero.backItem.SetActive(true);
         }
         foreach (EquipmentData data in currentEquipment)
         {
             EquipmentConfig config = EquipmentLogic.GetEquipmentConfigById(data.idConfig);
+            DicEquipmentOfHeroView[data.gearSlot].backItem.SetActive(false);
+            DicEquipmentOfHeroView[data.gearSlot].view.gameObject.SetActive(true);
+            DicEquipmentOfHeroView[data.gearSlot].view.Show(data, config);
             
-            DicSlotOfHero[data.gearSlot].gameObject.SetActive(true);
-            DicSlotOfHero[data.gearSlot].Show(data, config);
+            
         }
-
     }
     private void InitItem()
     {
         foreach(EquipmentOfHeroView temp in listEquipmentOfHeroView)
         {
-            if (!DicSlotOfHero.ContainsKey(temp.slot))
+            if (!DicEquipmentOfHeroView.ContainsKey(temp.slot))
             {
-                DicSlotOfHero.Add(temp.slot, temp.view);
+                DicEquipmentOfHeroView.Add(temp.slot, temp);
             }
             else
             {
-                DicSlotOfHero[temp.slot] = temp.view;
+                DicEquipmentOfHeroView[temp.slot] = temp;
             }
         }
     }

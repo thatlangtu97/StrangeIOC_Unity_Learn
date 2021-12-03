@@ -6,6 +6,7 @@ using UnityEngine;
 public class EquipmentLogic 
 {
     static Dictionary<int, EquipmentConfig> cacheConfig = new Dictionary<int, EquipmentConfig>();
+    static List<EquipmentData> equipmentOfCraft = new List<EquipmentData>();
     public static void Cache()
     {
         cacheConfig = new Dictionary<int, EquipmentConfig>();
@@ -143,6 +144,14 @@ public class EquipmentLogic
     public static void UnEquipGear(EquipmentData data, int hero)
     {
         DataManager.Instance.HeroDataManager.UnEquipGear(data.gearSlot, (int)hero);
+    }
+    public static List<EquipmentData> GetEquipmentOfCraft()
+    {
+        return equipmentOfCraft;
+    }
+    public static void AddEquipmentToCraftCmd(EquipmentData eqiupmentData)
+    {
+
     }
 
 }
