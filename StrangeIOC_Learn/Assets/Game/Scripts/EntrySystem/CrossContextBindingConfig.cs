@@ -21,6 +21,9 @@ namespace EntrySystem
             commandBinder.Bind<EquipGearSignal>().To<EquipGearCmd>();
             commandBinder.Bind<UnequipGearSignal>().To<UnequipGearCmd>();
             commandBinder.Bind<ShowEquipmentDetailSignal>().To<ShowEquipmentDetailCmd>();
+            //NOTIFICATION
+            commandBinder.Bind<NotificationPanelHeroSignal>().To<NotificationPanelHeroCmd>();
+            commandBinder.Bind<NotificationPanelCraftSignal>().To<NotificationPanelCraftCmd>();
         }
     }
 }

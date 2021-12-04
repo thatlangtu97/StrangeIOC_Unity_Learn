@@ -49,7 +49,7 @@ public class InventoryView : View
         if (currentPage < 1) { currentPage = 1; }
         ReloadPage();
     }
-    void ReloadPage()
+    public void ReloadPage()
     {
         ListEquipment = EquipmentLogic.GetAllEquipmentBySlotOfHeroNotEquiped(global.CurrentTab,global.CurrentIdHero);        
         int countEquipment = ListEquipment.Count;

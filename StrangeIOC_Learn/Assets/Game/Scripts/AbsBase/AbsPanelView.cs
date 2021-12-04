@@ -36,7 +36,7 @@ public abstract class AbsPanelView : View
 		UiViewController.Hide();
 	}
 
-	public void NotifyShowPanel()
+	public virtual void NotifyShowPanel()
 	{
 		
 	}

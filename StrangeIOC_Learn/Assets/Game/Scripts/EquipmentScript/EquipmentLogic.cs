@@ -55,17 +55,6 @@ public class EquipmentLogic
     {
         return cacheConfig[idConfig];
     }
-    public static EquipmentData CloneEquipmentData (EquipmentData dataBase)
-    {
-        EquipmentData dataClone = new EquipmentData();
-        dataClone.id = dataBase.id;
-        dataClone.idConfig = dataBase.idConfig;
-        dataClone.gearSlot = dataBase.gearSlot;
-        dataClone.rarity = dataBase.rarity;
-        dataClone.level = dataBase.level;
-        dataClone.idOfHero = dataBase.idOfHero;
-        return dataClone;
-    }
     public static List<int> ListIdConfigBySlot(GearSlot gearSlot)
     {
         List<int> tempList = new List<int>();
@@ -126,14 +115,29 @@ public class EquipmentLogic
     {
 
         List<EquipmentData> templist = DataManager.Instance.InventoryDataManager.GetAllEquipmentBySlot(gearSlot);
+        List<int> breakID = new List<int>();
+
         int idEquiped = DataManager.Instance.HeroDataManager.GetIdEquipmentEquiped(gearSlot, hero);
+        foreach (EquipmentData equipmentData in equipmentOfCraft)
+        {
+            breakID.Add(equipmentData.id);
+        }
+
+
+
+
+
         List<EquipmentData> newlist = new List<EquipmentData>();
         foreach (EquipmentData tempItem in templist)
         {
+            /*
             if(tempItem.id != idEquiped)
             {
                 newlist.Add(tempItem);
             }
+            */
+            if(!breakID.Contains(tempItem.id))
+                newlist.Add(tempItem);
         }
         return newlist;
     }
@@ -149,9 +153,16 @@ public class EquipmentLogic
     {
         return equipmentOfCraft;
     }
-    public static void AddEquipmentToCraftCmd(EquipmentData eqiupmentData)
+    public static void AddEquipmentToCraft(EquipmentData eqiupmentData)
     {
-
+        equipmentOfCraft.Add(eqiupmentData);
     }
-
+    public static void RemoveEquipmentToCraft(EquipmentData eqiupmentData)
+    {
+        equipmentOfCraft.Remove(eqiupmentData);
+    }
+    public static void RemoveAllEquipmentToCraft()
+    {
+        equipmentOfCraft.Clear();
+    }
 }

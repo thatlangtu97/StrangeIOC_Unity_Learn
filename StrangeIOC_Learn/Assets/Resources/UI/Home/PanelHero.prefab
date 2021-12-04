@@ -45834,6 +45834,8 @@ MonoBehaviour:
   EquipmentDetailFight: {fileID: 6072806086212616657}
   PopupEquipmentDetailLeft: {fileID: 3969694040350756793}
   PopupEquipmentDetailFight: {fileID: 380415088501025424}
+  inventoryView: {fileID: 1830986719822939453}
+  heroEquipmentView: {fileID: 4781757468177555016}
 --- !u!223 &7678480056752847938
 Canvas:
   m_ObjectHideFlags: 0
@@ -57799,7 +57801,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: UNEQUIP
+  m_Text: EQUIP
 --- !u!1 &6072806086089225710
 GameObject:
   m_ObjectHideFlags: 0

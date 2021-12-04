@@ -21812,6 +21812,8 @@ MonoBehaviour:
   EquipmentDetailFight: {fileID: 8493254836135210225}
   PopupEquipmentDetailLeft: {fileID: 4810778937191007894}
   PopupEquipmentDetailFight: {fileID: 4179332557821391177}
+  craftEquipmentView: {fileID: 3789853275003576159}
+  inventoryView: {fileID: 5845930579279906548}
 --- !u!223 &-4397598419165204872
 Canvas:
   m_ObjectHideFlags: 0
@@ -43619,8 +43621,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SelectItemEquipment
+      - m_Target: {fileID: 4810778937191007894}
+        m_MethodName: UnSelectGearCraft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -73007,6 +73009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278942715688141441}
+  - component: {fileID: 3789853275003576159}
   m_Layer: 5
   m_Name: All_Combine(id=4)
   m_TagString: Untagged
@@ -73042,6 +73045,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3789853275003576159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404500494300833968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e44b3af8e13f4f1ba8f16a8d81b74d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listEquipmentOfHeroView:
+  - view: {fileID: 3166380669574418819}
+    backItem: {fileID: 2190083972905716227}
+  - view: {fileID: 2274976226797132308}
+    backItem: {fileID: 7331344266850401234}
+  - view: {fileID: 8135019652713361170}
+    backItem: {fileID: 1634775658306270878}
 --- !u!1 &7413025882616787504
 GameObject:
   m_ObjectHideFlags: 0
@@ -82880,8 +82902,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SelectItemEquipment
+      - m_Target: {fileID: 4179332557821391177}
+        m_MethodName: SelectGearCraft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
