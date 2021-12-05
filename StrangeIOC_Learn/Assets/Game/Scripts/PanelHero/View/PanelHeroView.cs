@@ -22,6 +22,8 @@ public class PanelHeroView : AbsPanelView
         base.NotifyShowPanel();
         heroEquipmentView.Show();
         inventoryView.ReloadPage();
+        PopupEquipmentDetailLeft.HidePopup();
+        PopupEquipmentDetailFight.HidePopup();
     }
     public override void ShowPanelByCmd()
     {
@@ -29,4 +31,5 @@ public class PanelHeroView : AbsPanelView
         base.ShowPanelByCmd();
         
     }
+
 }

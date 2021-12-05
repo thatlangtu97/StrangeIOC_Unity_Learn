@@ -23,6 +23,8 @@ MonoBehaviour:
   - PanelHero
   - PanelHome
   - PanelShop
+  - PopupCraft
+  - PopupOpenGacha
   - PopupShopGacha
   - PopupShopGem
   - PopupShopGold

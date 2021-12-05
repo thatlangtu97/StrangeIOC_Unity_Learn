@@ -8695,7 +8695,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7817138659926658818}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7817138660932248445}
+        m_MethodName: Open10
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6759988394070816402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13732,13 +13743,12 @@ GameObject:
   - component: {fileID: 7817138660932248439}
   - component: {fileID: 7817138660932248425}
   - component: {fileID: 7817138660932248438}
-  - component: {fileID: 7817138660932248427}
   - component: {fileID: 7817138660932248445}
+  - component: {fileID: 7817138660932248440}
   - component: {fileID: 7817138660932248444}
   - component: {fileID: 7817138660932248443}
   - component: {fileID: 7817138660932248442}
   - component: {fileID: 7817138660932248441}
-  - component: {fileID: 7817138660932248440}
   - component: {fileID: 7817138660932248437}
   m_Layer: 5
   m_Name: PopupGacha
@@ -13806,49 +13816,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7817138660932248427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7817138660932248436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 0
-  m_TargetGraphic: {fileID: 7817138660932248438}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &7817138660932248445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13867,7 +13834,7 @@ MonoBehaviour:
   config: {fileID: 0}
   gachaEffect: {fileID: 1467974072529112454}
   ImageGacha: {fileID: 7699036920060692057}
-  CurrencyGacha:
+  gacha:
     id: 0
     costOpen1: 0
     costOpen10: 0
@@ -13875,7 +13842,24 @@ MonoBehaviour:
   OpenGacha: {fileID: 7817138660325225743}
   EquipmentText: {fileID: 7699036921547079712}
   RarityText: {fileID: 7699036920583933594}
+  costOpen1Text: {fileID: 7817138660404323942}
+  costOpen10Text: {fileID: 7817138659541512830}
   animator: {fileID: 7699036920458987487}
+--- !u!114 &7817138660932248440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7817138660932248436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e098c791c57481aa97c106d086d910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
+  anchorMin: {x: 0, y: 0}
+  anchorMax: {x: 1, y: 1}
 --- !u!223 &7817138660932248444
 Canvas:
   m_ObjectHideFlags: 0
@@ -14699,22 +14683,7 @@ MonoBehaviour:
   UpdateShowProgressorOnHide: 0
   UseCustomStartAnchoredPosition: 0
   ViewCategory: General
-  ViewName: PopupStamina
---- !u!114 &7817138660932248440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7817138660932248436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97e098c791c57481aa97c106d086d910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
-  anchorMin: {x: 0, y: 0}
-  anchorMax: {x: 1, y: 1}
+  ViewName: PopupOpenGacha
 --- !u!114 &7817138660932248437
 MonoBehaviour:
   m_ObjectHideFlags: 0

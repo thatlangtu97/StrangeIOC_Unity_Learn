@@ -25,14 +25,37 @@ public class ItemShopGacha : View
     }
     public void Open()
     {
+        if (DataManager.Instance.CurrencyDataManager.gem < gacha.costOpen1) return;
+       
         global.CurrenctGacha = ScriptableObjectData.GachaConfigCollection.GetGachaById(idGacha);
-        if (DataManager.Instance.CurrencyDataManager.gem < global.CurrenctGacha.costOpen1) return;
-        DataManager.Instance.CurrencyDataManager.DownGem(gacha.costOpen1,false);
+        DataManager.Instance.CurrencyDataManager.DownGem(gacha.costOpen1, false);
         global.UpdateDataAllCurrencyView();
 
-        dataGachaRandom data= GachaLogic.GetGachaRandom(idGacha);
-        global.dataGacha = data;        
-        showPopupGachaSignal.Dispatch();
+        DataGachaOpened dataGachaOpened = new DataGachaOpened();
+        DataGachaRandom data= GachaLogic.GetGachaRandom(idGacha);        
+        dataGachaOpened.datas.Add(data);
+
+        showPopupGachaSignal.Dispatch(dataGachaOpened);
+    }
+    public void Open10()
+    {        
+        if (DataManager.Instance.CurrencyDataManager.gem < gacha.costOpen10) return;
+        
+        global.CurrenctGacha = ScriptableObjectData.GachaConfigCollection.GetGachaById(idGacha);
+        DataManager.Instance.CurrencyDataManager.DownGem(gacha.costOpen10, false);
+        global.UpdateDataAllCurrencyView();
+
+        DataGachaOpened dataGachaOpened = new DataGachaOpened();
+        for (int i=0;i< 10; i++)
+        {           
+            DataGachaRandom data = GachaLogic.GetGachaRandom(idGacha);
+            dataGachaOpened.datas.Add(data);
+        }
+        showPopupGachaSignal.Dispatch(dataGachaOpened);
     }
 
+}
+public class DataGachaOpened
+{
+    public List<DataGachaRandom> datas = new List<DataGachaRandom>();
 }

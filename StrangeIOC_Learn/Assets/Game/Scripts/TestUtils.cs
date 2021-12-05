@@ -9,6 +9,7 @@ public class TestUtils :View
     [Inject] public ShowPanelHomeSignal showPanelHomeSignal { get; set; }
     [Inject] public PopupManager popupManager { get; set; }
     [Inject] public GlobalData globalData { get; set; }
+    [Inject] public ShowPopupCraftSignal ShowPopupCraftSignal { get; set; }
     public PanelKey panelKey;
     public PopupKey popupKey;
     public CurrencyType currencyType;
@@ -27,9 +28,10 @@ public class TestUtils :View
         {
             SceneManager.LoadScene("HomeScene");
         }
-        if (Input.GetKeyDown(KeyCode.KeypadEnter)){
-           // popupManager.SetPanelAfterLoadHomeScene(panelKey, popupKey);
-            popupManager.ShowPopup(popupKey);
+        if (Input.GetKeyDown(KeyCode.KeypadEnter)|| Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.End)){
+            // popupManager.SetPanelAfterLoadHomeScene(panelKey, popupKey);
+            //popupManager.ShowPopup(popupKey);
+            ShowPopupCraftSignal.Dispatch(DataManager.Instance.InventoryDataManager.GetAllEquipmentBySlot(GearSlot.weapon)[0]);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {

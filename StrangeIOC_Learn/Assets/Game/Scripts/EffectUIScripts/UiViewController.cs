@@ -17,6 +17,7 @@ public class UiViewController : MonoBehaviour
         //    isStarted = true;
         //    action.Invoke();
         //}
+        
         uiView.DisableGameObjectWhenHidden = true;
         isStarted = true;
         DelayInvokeAction();
@@ -68,5 +69,9 @@ public class UiViewController : MonoBehaviour
         yield return new WaitForEndOfFrame();
         if (action!=null)
             action.Invoke();
+        else
+        {
+            Debug.Log("action bi null");
+        }
     }
 }

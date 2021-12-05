@@ -1,6 +1,6 @@
 ﻿using strange.extensions.signal.impl;
 
-public class ShowPopupGachaSignal: Signal
+public class ShowPopupGachaSignal: Signal<DataGachaOpened>
 {
     
 }

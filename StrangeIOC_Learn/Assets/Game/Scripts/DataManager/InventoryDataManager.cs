@@ -47,6 +47,34 @@ public class InventoryDataManager : IObjectDataManager
         PlayerPrefs.Save();
         return returnValue;
     }
+    public void AddEquipments(List<int> idConfigs, List<Rarity> raritys,List<GearSlot> gearSlots,List<int> idOfHeros)
+    {
+        for (int i=0;i< idConfigs.Count; i++)
+        {
+            EquipmentData newEquipment = new EquipmentData();
+            newEquipment.id = GenerateIdentityEquipment();
+            newEquipment.idConfig = idConfigs[i];
+            newEquipment.gearSlot = gearSlots[i];
+            newEquipment.rarity = raritys[i];
+            newEquipment.level = 1;
+            newEquipment.idOfHero = idOfHeros[i];
+            if (inventoryData.EquipmentDicBySlot.ContainsKey(gearSlots[i]))
+            {
+                inventoryData.EquipmentDicBySlot[gearSlots[i]].Add(newEquipment);
+            }
+            else
+            {
+                List<EquipmentData> tempList = new List<EquipmentData>();
+                tempList.Add(newEquipment);
+                inventoryData.EquipmentDicBySlot.Add(gearSlots[i], tempList);
+            }
+        }
+        
+        SaveData();
+
+
+
+    }
     public void AddEquipment(int idConfig,Rarity rarity,GearSlot gearSlot,int idOfHero)
     {
         EquipmentData newEquipment = new EquipmentData();

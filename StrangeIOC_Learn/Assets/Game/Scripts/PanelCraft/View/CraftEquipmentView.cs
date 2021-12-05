@@ -49,7 +49,10 @@ public class CraftEquipmentView : View
     }
     public void CraftItem()
     {
-        CraftEquipmentSignal.Dispatch();
+        if (EquipmentLogic.CanCraft())
+        {
+            CraftEquipmentSignal.Dispatch();
+        }
 
     }
     [System.Serializable]

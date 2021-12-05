@@ -18,7 +18,7 @@ public class GachaConfigCollection : ScriptableObject
     }
 }
 [System.Serializable]
-public class dataGachaRandom
+public class DataGachaRandom
 {
     public int idConfig;
     public int idOfHero;

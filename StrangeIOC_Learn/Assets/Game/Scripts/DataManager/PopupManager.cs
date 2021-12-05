@@ -215,6 +215,7 @@ public enum PopupKey
     ShopGemPopup =7,
     ShopGachaPopup =8,
     GachaPopup =9,
+    CraftPopup =10,
 }
 public enum UILayer
 {

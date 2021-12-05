@@ -5,9 +5,9 @@ using UnityEngine;
 public class GachaLogic
 {
     #region PUBLIC METHOC
-    public static List<dataGachaRandom> GetListGachaRandom(int idGacha, int count)
+    public static List<DataGachaRandom> GetListGachaRandom(int idGacha, int count)
     {
-        List<dataGachaRandom> tempList = new List<dataGachaRandom>();
+        List<DataGachaRandom> tempList = new List<DataGachaRandom>();
 
         for (int i = 0; i < count; i++)
         {
@@ -15,8 +15,8 @@ public class GachaLogic
         }
         return tempList;
     }
-    public static dataGachaRandom GetGachaRandom(int idGacha){
-        dataGachaRandom tempValueRandom = new dataGachaRandom();
+    public static DataGachaRandom GetGachaRandom(int idGacha){
+        DataGachaRandom tempValueRandom = new DataGachaRandom();
         Gacha currentGacha = ScriptableObjectData.GachaConfigCollection.GetGachaById(idGacha);
         //data select item
         Rarity rarity = Rarity.common;

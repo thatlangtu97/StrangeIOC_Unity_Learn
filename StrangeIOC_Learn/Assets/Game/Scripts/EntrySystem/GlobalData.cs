@@ -40,8 +40,6 @@ public class GlobalData
     #endregion
     #region GACHA
     public Gacha CurrenctGacha;
-    public dataGachaRandom dataGacha;
-    public List<dataGachaRandom> listdataGacha= new List<dataGachaRandom>();
     #endregion
     #region INVENTORY
     public GearSlot CurrentTab= GearSlot.weapon;

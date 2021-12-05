@@ -201,7 +201,19 @@ public class EquipmentLogic
     {
         equipmentOfCraft.Clear();
     }
-    public static void CraftItem()
+    public static bool CanCraft()
+    {
+        if (equipmentOfCraft.Count == 3)
+        {
+            return true;
+        }
+        return false;
+    }
+    public static EquipmentData getMainEquipmentCraft()
+    {
+        return equipmentOfCraft[0];
+    }
+    public static EquipmentData CraftItem()
     {
         if (equipmentOfCraft.Count == 3)
         {
@@ -222,6 +234,10 @@ public class EquipmentLogic
             }
             DataManager.Instance.InventoryDataManager.CraftItem(mainEquipmentCraft.gearSlot, mainEquipmentCraft.id);
             equipmentOfCraft.Clear();
+            return mainEquipmentCraft;
         }
+        return null;
+
+
     }
 }
