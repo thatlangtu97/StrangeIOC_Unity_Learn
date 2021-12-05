@@ -118,15 +118,12 @@ public class EquipmentLogic
         List<int> breakID = new List<int>();
 
         int idEquiped = DataManager.Instance.HeroDataManager.GetIdEquipmentEquiped(gearSlot, hero);
+        Rarity rarityCraft= Rarity.common;
         foreach (EquipmentData equipmentData in equipmentOfCraft)
         {
             breakID.Add(equipmentData.id);
+            rarityCraft = equipmentData.rarity;
         }
-
-
-
-
-
         List<EquipmentData> newlist = new List<EquipmentData>();
         foreach (EquipmentData tempItem in templist)
         {
@@ -136,7 +133,46 @@ public class EquipmentLogic
                 newlist.Add(tempItem);
             }
             */
-            if(!breakID.Contains(tempItem.id))
+            if (breakID.Count != 0)
+            {
+                
+               if (!breakID.Contains(tempItem.id) && tempItem.rarity == rarityCraft)
+                        newlist.Add(tempItem);
+            }
+            else
+            {
+                if (tempItem.id != idEquiped)
+                {
+                    newlist.Add(tempItem);
+                }
+            }
+
+        }
+        
+        return newlist;
+    }
+    
+    public static List<EquipmentData> GetEquipmentInventory(GearSlot gearSlot, int hero)
+    {
+
+        List<EquipmentData> templist = DataManager.Instance.InventoryDataManager.GetAllEquipmentBySlot(gearSlot);
+        List<int> breakID = new List<int>();
+
+        int idEquiped = DataManager.Instance.HeroDataManager.GetIdEquipmentEquiped(gearSlot, hero);
+        foreach (EquipmentData equipmentData in equipmentOfCraft)
+        {
+            breakID.Add(equipmentData.id);
+        }
+        List<EquipmentData> newlist = new List<EquipmentData>();
+        foreach (EquipmentData tempItem in templist)
+        {
+            /*
+            if(tempItem.id != idEquiped)
+            {
+                newlist.Add(tempItem);
+            }
+            */
+            if (!breakID.Contains(tempItem.id))
                 newlist.Add(tempItem);
         }
         return newlist;
@@ -164,5 +200,28 @@ public class EquipmentLogic
     public static void RemoveAllEquipmentToCraft()
     {
         equipmentOfCraft.Clear();
+    }
+    public static void CraftItem()
+    {
+        if (equipmentOfCraft.Count == 3)
+        {
+            EquipmentData mainEquipmentCraft = equipmentOfCraft[0];
+            int idEquiped = DataManager.Instance.HeroDataManager.GetIdEquipmentEquiped(mainEquipmentCraft.gearSlot, mainEquipmentCraft.idOfHero);
+
+            foreach (EquipmentData tempItem in equipmentOfCraft)
+            {
+                if (tempItem.id != mainEquipmentCraft.id)
+                {
+                    if (idEquiped == tempItem.id)
+                    {
+                        UnEquipGear(tempItem, tempItem.idOfHero);
+
+                    }
+                    DataManager.Instance.InventoryDataManager.RemoveItem(tempItem.gearSlot, tempItem.id);
+                }
+            }
+            DataManager.Instance.InventoryDataManager.CraftItem(mainEquipmentCraft.gearSlot, mainEquipmentCraft.id);
+            equipmentOfCraft.Clear();
+        }
     }
 }

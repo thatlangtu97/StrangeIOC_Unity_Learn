@@ -6,7 +6,7 @@ using UnityEngine;
 public class CraftEquipmentView : View
 {
     [Inject] public GlobalData global { get; set; }
-    
+    [Inject] public CraftEquipmentSignal CraftEquipmentSignal { get; set; }
     [SerializeField]
     List<EquipmentToCraftView> listEquipmentOfHeroView = new List<EquipmentToCraftView>();
     List<EquipmentData> currentEquipment = new List<EquipmentData>();
@@ -46,6 +46,11 @@ public class CraftEquipmentView : View
             listEquipmentOfHeroView[index].view.Show(data, config);
             index += 1;
         }
+    }
+    public void CraftItem()
+    {
+        CraftEquipmentSignal.Dispatch();
+
     }
     [System.Serializable]
     public struct EquipmentToCraftView

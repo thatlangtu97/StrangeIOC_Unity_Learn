@@ -5,13 +5,13 @@ using UnityEngine;
 public class GachaLogic
 {
     #region PUBLIC METHOC
-    public static List<dataGachaRandom> GetListGachaRandom(int id, int count)
+    public static List<dataGachaRandom> GetListGachaRandom(int idGacha, int count)
     {
         List<dataGachaRandom> tempList = new List<dataGachaRandom>();
 
         for (int i = 0; i < count; i++)
         {
-            tempList.Add(GetGachaRandom(id));
+            tempList.Add(GetGachaRandom(idGacha));
         }
         return tempList;
     }

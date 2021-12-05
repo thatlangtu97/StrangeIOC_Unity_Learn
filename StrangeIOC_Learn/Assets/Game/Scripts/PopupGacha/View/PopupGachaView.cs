@@ -12,7 +12,7 @@ public class PopupGachaView : AbsPopupView
     public EquipmentConfig config;
     public AutoPlayOpenGacha gachaEffect;
     public Image ImageGacha;
-    public Gacha CurrencyGacha;
+    public Gacha gacha;
     public Button OpenGacha;
     public Text EquipmentText;
     public Text RarityText;
@@ -21,7 +21,7 @@ public class PopupGachaView : AbsPopupView
     {
         base.ShowPopupByCmd();
         dataGachaRandom data = global.dataGacha;
-        CurrencyGacha = global.CurrenctGacha;
+        gacha = global.CurrenctGacha;
         config = GachaLogic.getEquipmentConfig(data.GearSlot, data.idConfig, data.idOfHero);
         ImageGacha.sprite = config.GearFull;
         ImageGacha.SetNativeSize();
@@ -37,7 +37,9 @@ public class PopupGachaView : AbsPopupView
     {
         
         if (DataManager.Instance.CurrencyDataManager.gem < global.CurrenctGacha.costOpen1) return;
-        dataGachaRandom data = GachaLogic.GetGachaRandom(CurrencyGacha.id);
+        DataManager.Instance.CurrencyDataManager.DownGem(gacha.costOpen1, false);
+        global.UpdateDataAllCurrencyView();
+        dataGachaRandom data = GachaLogic.GetGachaRandom(gacha.id);
         global.dataGacha = data;        
         showPopupGachaSignal.Dispatch();
     }

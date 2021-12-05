@@ -50,5 +50,6 @@ public class EquipmentDetailView : AbsPopupView
         NotificationPanelCraftSignal.Dispatch();
         HidePopup();
     }
+    
 
 }

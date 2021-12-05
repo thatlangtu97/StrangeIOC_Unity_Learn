@@ -40918,6 +40918,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idGacha: 0
+  costOpen1Text: {fileID: 6178995030729162751}
+  costOpen10Text: {fileID: 6178995031364262383}
+  gacha:
+    id: 0
+    costOpen1: 0
+    costOpen10: 0
+    DropList: []
 --- !u!1 &6178995030173466586
 GameObject:
   m_ObjectHideFlags: 0
@@ -57990,6 +57997,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idGacha: 1
+  costOpen1Text: {fileID: 6178995031371172797}
+  costOpen10Text: {fileID: 6178995031698861410}
+  gacha:
+    id: 0
+    costOpen1: 0
+    costOpen10: 0
+    DropList: []
 --- !u!1 &6178995030957395259
 GameObject:
   m_ObjectHideFlags: 0

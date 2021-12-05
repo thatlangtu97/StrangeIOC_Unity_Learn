@@ -76,6 +76,32 @@ public class InventoryDataManager : IObjectDataManager
         }
         return new List<EquipmentData>();
     }
+    public void CraftItem(GearSlot gearSlot, int idItem)
+    {
+        List<EquipmentData> tempList = inventoryData.EquipmentDicBySlot[gearSlot];
+        foreach(EquipmentData equipmentData in tempList)
+        {
+            if(equipmentData.id == idItem)
+            {
+                equipmentData.rarity = (Rarity)Mathf.Clamp( (int)equipmentData.rarity + 1,(int)Rarity.common,(int)Rarity.heroic);
+                SaveData();
+                return;
+            }
+        }
+    }
+    public void RemoveItem(GearSlot gearSlot, int idItem)
+    {
+        List<EquipmentData> tempList = inventoryData.EquipmentDicBySlot[gearSlot];
+        foreach (EquipmentData equipmentData in tempList)
+        {
+            if (equipmentData.id == idItem)
+            {
+                inventoryData.EquipmentDicBySlot[gearSlot].Remove(equipmentData);
+                SaveData();
+                return;
+            }
+        }
+    }
 }
 [Serializable]
 public class InventoryData : DataObject
