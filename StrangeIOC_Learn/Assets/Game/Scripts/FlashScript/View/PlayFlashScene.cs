@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class PlayFlashScene : View
 {
     public string nameScene;
-    public float timeDelay;
     public Button StartGameBtn;
     public Animator animator;
     protected override void Start()
@@ -21,8 +20,8 @@ public class PlayFlashScene : View
     }
     IEnumerator DelayLoadScene()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.02f);
         animator.SetTrigger("HideLogo");
-        SceneManager.LoadScene(nameScene);
+        SceneManager.LoadSceneAsync(nameScene);
     }
 }
