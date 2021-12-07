@@ -21,13 +21,13 @@ public class AbsPopupView : View
 			autoFIllPanelInParent.AutoFill();
 		}
 	}
-	public void ShowPopupByCmd()
+	public virtual void ShowPopupByCmd()
 	{
-		//this.gameObject.SetActive(true);
+		base.CopyStart();
 		NotifyShowPopup();
 		popupManager.ShowPopup(popupKey);
 	}
-	public void ShowPopup()
+	public virtual void ShowPopup()
 	{
 		UiViewController.Show();
 	}
@@ -39,4 +39,8 @@ public class AbsPopupView : View
 	{
 
 	}
+}
+public class ParameterPopup
+{
+
 }

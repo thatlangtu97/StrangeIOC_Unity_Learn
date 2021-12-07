@@ -13,5 +13,8 @@ public static class GameResourcePath
 	#endregion
 	#region POPUP
 	public static readonly string POPUP_STAMINA = "UI/Home/PopupStamina";
+	public static readonly string POPUP_GACHA = "UI/Home/PopupGacha";
+	public static readonly string POPUP_CRAFT = "UI/Home/PopupCraft";
+	public static readonly string POPUP_INFO_GACHA = "UI/Home/PopupInfoGacha";
 	#endregion
 }

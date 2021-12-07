@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf6283de4e9443219cd62a9212d0b10, type: 3}
+  m_Name: Charm1
+  m_EditorClassIdentifier: 
+  id: 131
+  GearIcon: {fileID: 21300000, guid: 26aa8a60d3e4f0046b2487dca8991cfa, type: 3}
+  GearFull: {fileID: 21300000, guid: 775d292687ac52447bda61343b13aa27, type: 3}
+  GearSlot: 3
+  gearName: Charm 6
+  idOfHero: 0
+  price: []
+  mainStatConfig:
+    attType: 1
+    valueMinRandom:
+    - 15
+    - 40
+    - 160
+    - 600
+    - 1800
+    valueMaxRandom:
+    - 20
+    - 50
+    - 200
+    - 700
+    - 2000

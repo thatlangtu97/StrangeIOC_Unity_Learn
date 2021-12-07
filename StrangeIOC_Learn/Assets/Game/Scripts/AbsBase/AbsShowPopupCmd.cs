@@ -43,18 +43,18 @@ public abstract class AbsShowPopupCmd : Command
 		if (!popupManager.CheckContainPopup(popupKey))
 		{
 			spawned = GameObject.Instantiate(o) as GameObject;
-			popupManager.AddPopup(popupKey, spawned);
+			popupManager.AddPopup(popupKey, spawned.GetComponent<AbsPopupView>());
 		}
 		else
 		{
 			if (popupManager.GetPopupByPopupKey(popupKey) == null)
 			{
 				spawned = GameObject.Instantiate(o) as GameObject;
-				popupManager.AddPopup(popupKey, spawned);
+				popupManager.AddPopup(popupKey, spawned.GetComponent<AbsPopupView>());
 			}
 			else
 			{
-				spawned = popupManager.GetPopupByPopupKey(popupKey);
+				spawned = popupManager.GetPopupByPopupKey(popupKey).gameObject;
 
 			}
 		}
