@@ -13,6 +13,7 @@ public class EquipmentDetailView : AbsPopupView
     public EquipmentItemView EquipmentView;
     public Text nameEquipment;
     public Text rarityEquipment;
+    public Text mainStatType,mainStatValue;
     EquipmentData equipmentData;
     EquipmentConfig equipmentConfig;
     public void SetupData(EquipmentData equipmentData, EquipmentConfig equipmentConfig)
@@ -24,6 +25,8 @@ public class EquipmentDetailView : AbsPopupView
         nameEquipment.color = EquipmentLogic.GetColorByRarity(equipmentData.rarity);
         rarityEquipment.text = equipmentData.rarity.ToString();
         rarityEquipment.color = EquipmentLogic.GetColorByRarity(equipmentData.rarity);
+        mainStatType.text = EquipmentLogic.StatTypeToString(equipmentData.mainStatData.statType);
+        mainStatValue.text = EquipmentLogic.StatValueToString(equipmentData.mainStatData.statType,equipmentData.mainStatData.baseValue);
     }
     public void EquipGear()
     {

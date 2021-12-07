@@ -13,7 +13,7 @@ public class EquipmentConfig : ScriptableObject
     public int idOfHero;
     public float[] price;
     [Header("Main Stat")]
-    public AtributeConfig mainAttribute;
+    public StatConfig mainStatConfig;
 
 }
 public enum GearSlot
@@ -32,13 +32,13 @@ public enum Rarity
     heroic=4,
 }
 [Serializable]
-public class AtributeConfig
+public class StatConfig
 {
-    public AtributeType attType;
+    public StatType attType;
     public float[] valueMinRandom,valueMaxRandom;
 
 }
-public enum AtributeType
+public enum StatType
 {
     //INT
     Attack,

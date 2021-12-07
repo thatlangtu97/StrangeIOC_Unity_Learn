@@ -53,53 +53,53 @@ public class ScriptableObjectData
     {
         return Resources.Load<T>(path);
     }
-    public static string AttributeTypeToString(AtributeType atributeType)
+    public static string AttributeTypeToString(StatType atributeType)
     {
         switch (atributeType)
         {
-            case AtributeType.Attack:
+            case StatType.Attack:
                 return "rst_attack";
-            case AtributeType.Defense:
+            case StatType.Defense:
                 return "rst_defense";
-            case AtributeType.Health:
+            case StatType.Health:
                 return "rst_health_point";
-            case AtributeType.CritChance:
+            case StatType.CritChance:
                 return "rst_crit_chance";
-            case AtributeType.CritDamage:
+            case StatType.CritDamage:
                 return "rst_crit_damage";
-            case AtributeType.SkillCritChance:
+            case StatType.SkillCritChance:
                 return "rst_skill_crit_chance";
-            case AtributeType.SkillCritDamage:
+            case StatType.SkillCritDamage:
                 return "rst_skill_crit_damage";
-            case AtributeType.BossDMGBonus:
+            case StatType.BossDMGBonus:
                 return "rst_boss_dmg_bonus";
-            case AtributeType.PvPDMGBonus:
+            case StatType.PvPDMGBonus:
                 return "rst_pvp_dmg_bonus";
-            case AtributeType.EXPBonus:
+            case StatType.EXPBonus:
                 return "rst_exp_bonus";
-            case AtributeType.GoldBonus:
+            case StatType.GoldBonus:
                 return "rst_gold_bonus";
-            case AtributeType.GemBonus:
+            case StatType.GemBonus:
                 return "rst_gem_bonus";
-            case AtributeType.EquipmentDropRate:
+            case StatType.EquipmentDropRate:
                 return "rst_equipment_droprate";
-            case AtributeType.PhysicalResistance:
+            case StatType.PhysicalResistance:
                 return "rst_physical_resistance";
-            case AtributeType.FireResistance:
+            case StatType.FireResistance:
                 return "rst_fire_resistance";
-            case AtributeType.IceResistance:
+            case StatType.IceResistance:
                 return "rst_ice_resistance";
-            case AtributeType.LightingResistance:
+            case StatType.LightingResistance:
                 return "rst_lighting_resistance";
-            case AtributeType.ProjectileResistance:
+            case StatType.ProjectileResistance:
                 return "rst_projectile_resistance";
-            case AtributeType.SkillCooldownReduction:
+            case StatType.SkillCooldownReduction:
                 return "rst_skill_cooldown_reduction";
-            case AtributeType.AttackScale:
+            case StatType.AttackScale:
                 return "rst_attack_scale";
-            case AtributeType.DefenseScale:
+            case StatType.DefenseScale:
                 return "rst_defense_scale";
-            case AtributeType.HealthPointScale:
+            case StatType.HealthPointScale:
                 return "rst_health_point_scale";
 
         }

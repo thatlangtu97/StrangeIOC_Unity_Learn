@@ -96632,6 +96632,8 @@ MonoBehaviour:
   EquipmentView: {fileID: 903164053174154863}
   nameEquipment: {fileID: 2884006071917233706}
   rarityEquipment: {fileID: 8937867654661690069}
+  mainStatType: {fileID: 511723739278468953}
+  mainStatValue: {fileID: 766949598110580479}
 --- !u!1 &8413374042407187103
 GameObject:
   m_ObjectHideFlags: 0
@@ -97967,6 +97969,8 @@ MonoBehaviour:
   EquipmentView: {fileID: 8967450679350187948}
   nameEquipment: {fileID: 8917152765232506991}
   rarityEquipment: {fileID: 559192221626847180}
+  mainStatType: {fileID: 8556302801840728313}
+  mainStatValue: {fileID: 5801563164108749801}
 --- !u!1 &8506029999583352441
 GameObject:
   m_ObjectHideFlags: 0

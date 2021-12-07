@@ -19,7 +19,17 @@ MonoBehaviour:
   gearName: Charm 6
   idOfHero: 0
   price: []
-  mainAttribute:
-    attType: 0
-    valueMinRandom: []
-    valueMaxRandom: []
+  mainStatConfig:
+    attType: 1
+    valueMinRandom:
+    - 15
+    - 40
+    - 160
+    - 600
+    - 1800
+    valueMaxRandom:
+    - 20
+    - 50
+    - 200
+    - 700
+    - 2000
