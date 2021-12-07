@@ -1,0 +1,20 @@
+
+WheelYokai.png
+size: 202,202
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+face
+  rotate: false
+  xy: 2, 2
+  size: 74, 74
+  orig: 76, 76
+  offset: 1, 1
+  index: -1
+wheel
+  rotate: false
+  xy: 2, 78
+  size: 122, 122
+  orig: 124, 124
+  offset: 1, 1
+  index: -1

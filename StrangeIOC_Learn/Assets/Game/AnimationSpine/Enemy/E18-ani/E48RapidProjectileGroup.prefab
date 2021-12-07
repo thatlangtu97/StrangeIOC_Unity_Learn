@@ -1,0 +1,292 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3117925536442537263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3117925536442537262}
+  m_Layer: 0
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3117925536442537262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925536442537263}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3117925537960771665}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &3117925537021892641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3117925537021892640}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3117925537021892640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537021892641}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3117925537960771665}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &3117925537960771670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3117925537960771665}
+  - component: {fileID: 3117925537960771669}
+  - component: {fileID: 8625215588792653431}
+  - component: {fileID: 6689340482000193979}
+  - component: {fileID: 7529691175741059975}
+  - component: {fileID: 9164642033735962718}
+  - component: {fileID: 1073880666534906648}
+  - component: {fileID: 7069974228925302751}
+  - component: {fileID: -1005350596641626179}
+  m_Layer: 0
+  m_Name: E48RapidProjectileGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3117925537960771665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537960771670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5622641, y: -1.8701046, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3117925537021892640}
+  - {fileID: 3117925536442537262}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3117925537960771669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537960771670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26dc112f61cd42499ccc914ba1cb216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentManager: {fileID: 9164642033735962718}
+  damageSource: {fileID: -1005350596641626179}
+  launchPoint: {fileID: 3117925536442537262}
+  shootPoint: {fileID: 3117925537021892640}
+  projectile: {fileID: 3993046127140530638, guid: b1e82ff2df5c5d441a2bd1bbd76c179e,
+    type: 3}
+  numberOfProjectile: 3
+  numberProjecitlePerShot: 0
+  fireRate: 0.2
+  angle: 2
+  maxPrpjectilePerShot: 0
+  offset: 0
+  countDirection: 3
+  curdirection: 0
+  shootMode: 3
+  shotDelay: 0.1
+  target: {x: 0, y: 0}
+  randomShootPointRange: 1
+  offsetPosition: {x: 0.5, y: 0}
+--- !u!114 &8625215588792653431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537960771670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a179ec64f6c2a1458f5156aee18aa20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchpoint: {fileID: 3117925536442537262}
+  projectileObj: {fileID: 3993046127140530638, guid: b1e82ff2df5c5d441a2bd1bbd76c179e,
+    type: 3}
+  offSet: 0
+  type: 0
+  notDestroy: 1
+--- !u!114 &6689340482000193979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537960771670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edba0b6780bf014da00d262da7ce283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 0
+  bonusDamageBoss: 0
+  magicDamage: 0
+  speed: 0
+  isPlayer: 0
+  isObject: 1
+  bonusDamageCreep: 0
+  identity: 2
+  burnDamage: 0
+  frostDamage: 0
+  electrocuteDamage: 0
+  fireDamage: 0
+  iceDamage: 0
+  lightingDamage: 0
+  attackScale: 0
+  levelInit: 0
+  notDestoy: 1
+--- !u!114 &7529691175741059975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537960771670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede57e142d632f94389bee8783020ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnable: 1
+  speed: 0
+  duration: 3
+  direction: {x: 0, y: 0, z: 0}
+  isFaceToTarget: 1
+--- !u!114 &9164642033735962718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537960771670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599d38bd49bce71449c8f31cc402d76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  link: {fileID: 0}
+  test: {x: 0, y: 0}
+  dependCount: 0
+  layerOrder: 0
+  levelInit: 0
+  isPlayer: 0
+  activeList: []
+  deactiveList: []
+  activePositions: []
+  notSetActive: 0
+  enemyCountReduce: 0
+--- !u!114 &1073880666534906648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537960771670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f3f0ec33f43e5f488f08342b4b13954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyID: 
+  baseHealth: 0
+  baseAttack: 0
+  baseDefense: 0
+  baseHealEffectiveness: 0
+  notDestroy: 1
+  isObject: 1
+  isPlayer: 0
+--- !u!114 &7069974228925302751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537960771670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca42157ce824084492be90574cfb490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackModifier: 0
+  defenseModifider: 0
+  healthModifier: 0
+  notDestroy: 1
+--- !u!114 &-1005350596641626179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117925537960771670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6cab4b5836e349b6b138d42c87eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackInfo:
+    nameAnimation: 
+    rawDamage: 0
+    isSkillSource: 0
+    damagescale: 0
+    damageType: 
+    attackType: 0
+    critChance: 0
+    critMultiplier: 0
+    knockBackForce: 0
+    knockUpForce: 0
+    isKnockDownAttack: 0
+    fxSet: {fileID: 0}
+  autoRelease: 0
+  parent: {fileID: 0}
+  destroyCollision: 0
+  setInactiveCollision: 0
+  notAddDepend: 0
+  isBreakable: 0
+  effectActiveChance: 0
+  isAddOnProjectile: 0
+  hitCount: 0
+  numberOfPiercingTarget: 0
+  piercing: 0

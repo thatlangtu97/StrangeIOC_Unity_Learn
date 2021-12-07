@@ -1,0 +1,83 @@
+
+umbrella1.png
+size: 248,248
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 111 copy
+  rotate: true
+  xy: 160, 61
+  size: 48, 24
+  orig: 48, 24
+  offset: 0, 0
+  index: -1
+Layer 112
+  rotate: true
+  xy: 160, 111
+  size: 52, 24
+  orig: 54, 26
+  offset: 1, 1
+  index: -1
+Layer 116 copy
+  rotate: false
+  xy: 2, 165
+  size: 183, 81
+  orig: 183, 81
+  offset: 0, 0
+  index: -1
+eye
+  rotate: true
+  xy: 227, 160
+  size: 27, 17
+  orig: 29, 19
+  offset: 1, 1
+  index: -1
+eye2
+  rotate: true
+  xy: 227, 130
+  size: 28, 14
+  orig: 30, 16
+  offset: 1, 1
+  index: -1
+foot
+  rotate: false
+  xy: 186, 46
+  size: 41, 35
+  orig: 43, 37
+  offset: 1, 1
+  index: -1
+foot2
+  rotate: false
+  xy: 186, 83
+  size: 38, 51
+  orig: 40, 53
+  offset: 1, 1
+  index: -1
+hat
+  rotate: false
+  xy: 89, 30
+  size: 69, 133
+  orig: 69, 133
+  offset: 0, 0
+  index: -1
+hat2
+  rotate: true
+  xy: 2, 2
+  size: 161, 85
+  orig: 161, 85
+  offset: 0, 0
+  index: -1
+leg
+  rotate: false
+  xy: 227, 189
+  size: 17, 57
+  orig: 22, 57
+  offset: 0, 0
+  index: -1
+leg2
+  rotate: false
+  xy: 187, 136
+  size: 38, 110
+  orig: 38, 110
+  offset: 0, 0
+  index: -1

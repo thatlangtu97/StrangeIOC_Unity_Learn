@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: E2_Archer_Controller
+  m_Controller: {fileID: 9100000, guid: b4ceecc6eac5ef241a2ec9402f460eca, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 6528960646528243520, guid: b4ceecc6eac5ef241a2ec9402f460eca,
+      type: 2}
+    m_OverrideClip: {fileID: 1912279838561989532, guid: c5e00a3c1debab344b48577ad73e1226,
+      type: 2}
+  - m_OriginalClip: {fileID: -8841498661691200081, guid: b4ceecc6eac5ef241a2ec9402f460eca,
+      type: 2}
+    m_OverrideClip: {fileID: 3264425167986521554, guid: c5e00a3c1debab344b48577ad73e1226,
+      type: 2}
+  - m_OriginalClip: {fileID: -5749057562990334762, guid: b4ceecc6eac5ef241a2ec9402f460eca,
+      type: 2}
+    m_OverrideClip: {fileID: 1138832995808570825, guid: c5e00a3c1debab344b48577ad73e1226,
+      type: 2}
+  - m_OriginalClip: {fileID: 772364086051940157, guid: b4ceecc6eac5ef241a2ec9402f460eca,
+      type: 2}
+    m_OverrideClip: {fileID: 1318032109773192889, guid: c5e00a3c1debab344b48577ad73e1226,
+      type: 2}
+  - m_OriginalClip: {fileID: 3963501342408338928, guid: b4ceecc6eac5ef241a2ec9402f460eca,
+      type: 2}
+    m_OverrideClip: {fileID: -4115961731699883960, guid: c5e00a3c1debab344b48577ad73e1226,
+      type: 2}
+  - m_OriginalClip: {fileID: 335037673964149373, guid: b4ceecc6eac5ef241a2ec9402f460eca,
+      type: 2}
+    m_OverrideClip: {fileID: -3748509208044097083, guid: c5e00a3c1debab344b48577ad73e1226,
+      type: 2}
+  - m_OriginalClip: {fileID: 4325951747937593137, guid: b4ceecc6eac5ef241a2ec9402f460eca,
+      type: 2}
+    m_OverrideClip: {fileID: 8369972160683378498, guid: c5e00a3c1debab344b48577ad73e1226,
+      type: 2}
+  - m_OriginalClip: {fileID: 6831413981382026343, guid: b4ceecc6eac5ef241a2ec9402f460eca,
+      type: 2}
+    m_OverrideClip: {fileID: -6620419666138942098, guid: c5e00a3c1debab344b48577ad73e1226,
+      type: 2}

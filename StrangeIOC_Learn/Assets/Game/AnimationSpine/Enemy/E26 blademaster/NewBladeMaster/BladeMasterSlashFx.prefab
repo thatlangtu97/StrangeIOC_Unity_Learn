@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &455139560939292809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7166014817918111134}
+  - component: {fileID: 3874352407894194352}
+  m_Layer: 0
+  m_Name: BladeMasterSlashFx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7166014817918111134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455139560939292809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7842621, y: -1.5222781, z: -1236.4485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7774966760151115116}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3874352407894194352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455139560939292809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e40f2f397a0aa4bb38fe9a3d58b1fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 3
+--- !u!1001 &3674480739348844089
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7166014817918111134}
+    m_Modifications:
+    - target: {fileID: 6418250743305490964, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_Name
+      value: DashrayBlade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6617285530291564397, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 1.7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a523c9cb6bb26ca4c883ff4460bb6acb, type: 3}
+--- !u!4 &7774966760151115116 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6419982219969948501, guid: a523c9cb6bb26ca4c883ff4460bb6acb,
+    type: 3}
+  m_PrefabInstance: {fileID: 3674480739348844089}
+  m_PrefabAsset: {fileID: 0}

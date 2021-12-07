@@ -1,0 +1,132 @@
+
+Bear.png
+size: 755,311
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Back-Leg1
+  rotate: true
+  xy: 607, 2
+  size: 41, 81
+  orig: 41, 81
+  offset: 0, 0
+  index: -1
+Back-Leg2
+  rotate: false
+  xy: 607, 45
+  size: 48, 91
+  orig: 48, 91
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 2, 5
+  size: 208, 125
+  orig: 208, 125
+  offset: 0, 0
+  index: -1
+Front-Leg1
+  rotate: true
+  xy: 334, 7
+  size: 37, 70
+  orig: 37, 70
+  offset: 0, 0
+  index: -1
+Front-Leg2
+  rotate: false
+  xy: 657, 77
+  size: 43, 68
+  orig: 43, 68
+  offset: 0, 0
+  index: -1
+Giap-1
+  rotate: false
+  xy: 702, 87
+  size: 44, 58
+  orig: 46, 60
+  offset: 1, 1
+  index: -1
+Giap-2
+  rotate: false
+  xy: 651, 147
+  size: 73, 72
+  orig: 75, 74
+  offset: 1, 1
+  index: -1
+Giap-3
+  rotate: false
+  xy: 651, 221
+  size: 75, 88
+  orig: 77, 90
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 334, 46
+  size: 74, 82
+  orig: 74, 82
+  offset: 0, 0
+  index: -1
+Sung-1
+  rotate: true
+  xy: 410, 55
+  size: 73, 22
+  orig: 75, 24
+  offset: 1, 1
+  index: -1
+Sung-2
+  rotate: false
+  xy: 657, 45
+  size: 80, 30
+  orig: 82, 32
+  offset: 1, 1
+  index: -1
+eyes
+  rotate: false
+  xy: 690, 31
+  size: 14, 12
+  orig: 16, 14
+  offset: 1, 1
+  index: -1
+fx5 (00)
+  rotate: false
+  xy: 434, 3
+  size: 171, 133
+  orig: 186, 142
+  offset: 7, 2
+  index: -1
+fx5 (01)
+  rotate: false
+  xy: 434, 138
+  size: 215, 171
+  orig: 221, 178
+  offset: 3, 2
+  index: -1
+fx5 (02)
+  rotate: false
+  xy: 2, 132
+  size: 216, 177
+  orig: 225, 184
+  offset: 4, 2
+  index: -1
+fx5 (03)
+  rotate: false
+  xy: 220, 130
+  size: 212, 179
+  orig: 221, 187
+  offset: 5, 3
+  index: -1
+fx6 (00)
+  rotate: false
+  xy: 212, 10
+  size: 120, 118
+  orig: 120, 120
+  offset: 0, 1
+  index: -1
+head2
+  rotate: true
+  xy: 728, 261
+  size: 48, 25
+  orig: 48, 25
+  offset: 0, 0
+  index: -1

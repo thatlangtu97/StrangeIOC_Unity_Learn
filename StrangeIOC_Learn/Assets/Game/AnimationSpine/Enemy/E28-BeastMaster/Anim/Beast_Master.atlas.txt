@@ -1,0 +1,174 @@
+
+Beast_Master.png
+size: 636,636
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_arm
+  rotate: false
+  xy: 269, 2
+  size: 80, 82
+  orig: 82, 84
+  offset: 1, 1
+  index: -1
+L_forearm
+  rotate: true
+  xy: 489, 46
+  size: 68, 62
+  orig: 70, 64
+  offset: 1, 1
+  index: -1
+L_hand
+  rotate: true
+  xy: 224, 222
+  size: 55, 54
+  orig: 57, 56
+  offset: 1, 1
+  index: -1
+L_hand_action
+  rotate: true
+  xy: 374, 283
+  size: 65, 66
+  orig: 68, 69
+  offset: 2, 1
+  index: -1
+L_leg1
+  rotate: false
+  xy: 301, 284
+  size: 71, 64
+  orig: 73, 66
+  offset: 1, 1
+  index: -1
+L_leg2
+  rotate: true
+  xy: 165, 233
+  size: 42, 57
+  orig: 42, 57
+  offset: 0, 0
+  index: -1
+R_arm
+  rotate: true
+  xy: 215, 279
+  size: 69, 84
+  orig: 71, 86
+  offset: 1, 1
+  index: -1
+R_forearm
+  rotate: true
+  xy: 537, 160
+  size: 60, 62
+  orig: 62, 64
+  offset: 1, 1
+  index: -1
+R_hand
+  rotate: true
+  xy: 113, 222
+  size: 53, 50
+  orig: 55, 52
+  offset: 1, 1
+  index: -1
+R_leg1
+  rotate: true
+  xy: 241, 86
+  size: 71, 64
+  orig: 73, 66
+  offset: 1, 1
+  index: -1
+R_leg2
+  rotate: false
+  xy: 241, 159
+  size: 32, 61
+  orig: 32, 61
+  offset: 0, 0
+  index: -1
+belly
+  rotate: false
+  xy: 2, 238
+  size: 109, 37
+  orig: 111, 39
+  offset: 1, 1
+  index: -1
+body
+  rotate: false
+  xy: 2, 73
+  size: 128, 147
+  orig: 128, 147
+  offset: 0, 0
+  index: -1
+fx1/new1
+  rotate: false
+  xy: 2, 10
+  size: 129, 61
+  orig: 134, 64
+  offset: 2, 1
+  index: -1
+fx1/new2
+  rotate: false
+  xy: 280, 193
+  size: 147, 84
+  orig: 152, 87
+  offset: 3, 1
+  index: -1
+fx1/new3
+  rotate: false
+  xy: 351, 17
+  size: 136, 86
+  orig: 141, 90
+  offset: 3, 2
+  index: -1
+fx1/new4
+  rotate: false
+  xy: 307, 105
+  size: 139, 86
+  orig: 147, 96
+  offset: 5, 6
+  index: -1
+fx1/new5
+  rotate: false
+  xy: 133, 2
+  size: 134, 82
+  orig: 147, 91
+  offset: 10, 5
+  index: -1
+fx1/new6
+  rotate: true
+  xy: 448, 116
+  size: 104, 87
+  orig: 142, 96
+  offset: 35, 5
+  index: -1
+hat
+  rotate: false
+  xy: 2, 277
+  size: 211, 71
+  orig: 213, 73
+  offset: 1, 1
+  index: -1
+head
+  rotate: true
+  xy: 132, 86
+  size: 134, 107
+  orig: 134, 107
+  offset: 0, 0
+  index: -1
+new
+  rotate: false
+  xy: 2, 350
+  size: 438, 284
+  orig: 640, 360
+  offset: 94, 72
+  index: -1
+weapon1
+  rotate: false
+  xy: 442, 222
+  size: 167, 212
+  orig: 170, 214
+  offset: 2, 1
+  index: -1
+weapon2
+  rotate: true
+  xy: 442, 436
+  size: 198, 179
+  orig: 200, 181
+  offset: 1, 1
+  index: -1

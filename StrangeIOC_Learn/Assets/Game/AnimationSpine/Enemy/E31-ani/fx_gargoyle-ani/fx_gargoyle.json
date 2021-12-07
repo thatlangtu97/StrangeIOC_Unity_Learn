@@ -1,0 +1,64 @@
+{
+"skeleton": { "hash": "S9K96+w/ACft0RE9oLcXTZ4Ip2o", "spine": "3.8.72", "images": "./images/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{
+		"name": "dust/0",
+		"parent": "root",
+		"length": 86.23,
+		"rotation": 88.9,
+		"x": -0.14,
+		"y": -2.87,
+		"scaleX": 1.1983,
+		"scaleY": 1.5117,
+		"color": "4f0101ff"
+	}
+],
+"slots": [
+	{ "name": "dust/0", "bone": "dust/0" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"dust/0": {
+				"dust/0": { "x": 76.53, "y": 3.01, "rotation": 1.1, "width": 152, "height": 95 },
+				"dust/1": { "x": 104.82, "y": 4.55, "rotation": 1.1, "width": 134, "height": 99 },
+				"dust/2": { "x": 119.1, "y": 5.98, "rotation": 1.1, "width": 104, "height": 93 },
+				"dust/3": { "x": 124.8, "y": 8.02, "rotation": 1.1, "width": 93, "height": 84 },
+				"dust/4": { "x": 141.55, "y": 10.91, "rotation": 1.1, "width": 75, "height": 86 },
+				"dust/5": { "x": 155.73, "y": 10.07, "rotation": 1.1, "width": 52, "height": 83 }
+			}
+		}
+	}
+],
+"animations": {
+	"fx_stone_form": {
+		"slots": {
+			"dust/0": {
+				"attachment": [
+					{ "name": "dust/0" },
+					{ "time": 0.0667, "name": "dust/1" },
+					{ "time": 0.1333, "name": "dust/2" },
+					{ "time": 0.2, "name": "dust/3" },
+					{ "time": 0.2667, "name": "dust/4" },
+					{ "time": 0.3333, "name": "dust/5" },
+					{ "time": 0.4, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"dust/0": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.4 }
+				],
+				"translate": [
+					{ "x": 5.04, "y": -11.6, "curve": "stepped" },
+					{ "time": 0.4, "x": 5.04, "y": -11.6 }
+				]
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,20 @@
+
+weapon_butcher.png
+size: 386,386
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/fx3/fx1 (00)
+  rotate: true
+  xy: 223, 193
+  size: 191, 161
+  orig: 191, 161
+  offset: 0, 0
+  index: -1
+images/weapon
+  rotate: false
+  xy: 2, 167
+  size: 219, 217
+  orig: 222, 220
+  offset: 2, 1
+  index: -1
