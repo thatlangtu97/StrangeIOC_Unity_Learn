@@ -11,6 +11,7 @@ public class PopupManager
     public Dictionary<PanelKey, GameObject> PanelDic = new Dictionary<PanelKey, GameObject>();
     public Dictionary<PopupKey, AbsPopupView> PopupDic = new Dictionary<PopupKey, AbsPopupView>();
     public PanelKey BasePabelKey;
+    public Dictionary<string, IEnumerator> listActionDelay = new Dictionary<string, IEnumerator>();
     //public Dictionary<PanelKey, List<GameObject>> ListPopupOfPanel = new Dictionary<PanelKey, List<GameObject>>();
 
     [Inject] public ShowPanelHeroSignal showPanelHeroSignal { get; set; }
@@ -216,6 +217,7 @@ public enum PopupKey
     ShopGachaPopup =8,
     GachaPopup =9,
     CraftPopup =10,
+    GachaInfoPopup =11,
 }
 public enum UILayer
 {

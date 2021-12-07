@@ -8,9 +8,11 @@ public class ItemShopGacha : View
 {
     [Inject] public ShowPopupGachaSignal showPopupGachaSignal { get; set; }
     [Inject] public GlobalData global { get; set; }
+    [Inject] public ShowPopupGachaInfoSignal ShowPopupGachaInfoSignal { get; set; }
     public int idGacha;
     public Text costOpen1Text, costOpen10Text;
     public Gacha gacha;
+    public Button infoGachaBtn;
     protected override void Awake()
     {
         base.Awake();
@@ -22,6 +24,11 @@ public class ItemShopGacha : View
         gacha = ScriptableObjectData.GachaConfigCollection.GetGachaById(idGacha);
         costOpen1Text.text = gacha.costOpen1.ToString();
         costOpen10Text.text = gacha.costOpen10.ToString();
+        infoGachaBtn.onClick.AddListener(ShowInfoGacha);
+    }
+    public void ShowInfoGacha()
+    {
+        ShowPopupGachaInfoSignal.Dispatch(gacha);
     }
     public void Open()
     {

@@ -119,10 +119,12 @@ public class EquipmentLogic
 
         int idEquiped = DataManager.Instance.HeroDataManager.GetIdEquipmentEquiped(gearSlot, hero);
         Rarity rarityCraft= Rarity.common;
+        GearSlot gearSlotCraft = GearSlot.weapon;
         foreach (EquipmentData equipmentData in equipmentOfCraft)
         {
             breakID.Add(equipmentData.id);
             rarityCraft = equipmentData.rarity;
+            gearSlotCraft = equipmentData.gearSlot;
         }
         List<EquipmentData> newlist = new List<EquipmentData>();
         foreach (EquipmentData tempItem in templist)
@@ -136,12 +138,12 @@ public class EquipmentLogic
             if (breakID.Count != 0)
             {
                 
-               if (!breakID.Contains(tempItem.id) && tempItem.rarity == rarityCraft)
+               if (!breakID.Contains(tempItem.id) && tempItem.rarity == rarityCraft && tempItem.gearSlot == gearSlotCraft)
                         newlist.Add(tempItem);
             }
             else
             {
-                if (tempItem.id != idEquiped)
+                if (tempItem.id != idEquiped && tempItem.idOfHero == hero)
                 {
                     newlist.Add(tempItem);
                 }
