@@ -213,11 +213,11 @@ GameObject:
   - component: {fileID: 1483235770}
   - component: {fileID: 1483235769}
   - component: {fileID: 1483235768}
-  - component: {fileID: 1483235767}
   - component: {fileID: 1483235766}
   - component: {fileID: 1483235765}
   - component: {fileID: 1483235771}
   - component: {fileID: 1483235772}
+  - component: {fileID: 1483235767}
   m_Layer: 0
   m_Name: E1
   m_TagString: Untagged
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1483235764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Script: {fileID: 11500000, guid: f9db98c60740638449864eb028fbe7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: db65728375e8ed9498f22fca9034df4e, type: 2}
@@ -317,9 +317,11 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: idle
-  loop: 1
-  timeScale: 1
+  translator:
+    autoReset: 1
+    useCustomMixMode: 1
+    layerMixModes: 01000000
+    layerBlendModes: 01000000
 --- !u!23 &1483235768
 MeshRenderer:
   m_ObjectHideFlags: 0
