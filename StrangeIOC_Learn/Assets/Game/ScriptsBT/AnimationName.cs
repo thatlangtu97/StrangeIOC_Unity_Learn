@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AnimationName
 {
-    public const string IDLE = "Idle";
-    public const string MOVE = "Move";
+    public const string IDLE = "idle";
+    public const string MOVE = "move";
     public const string DASH = "Dash";
     public const string DASH_END = "EndDash";
     public const string HIT = "Hit";

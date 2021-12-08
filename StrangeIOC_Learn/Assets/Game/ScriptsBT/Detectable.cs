@@ -35,15 +35,6 @@ public class Detectable : MonoBehaviour
         }
 
     }
-    //private void Start()
-    //{
-    //    if (StandCollider != null )
-    //    {
-    //        StandCollider.enabled = true;
-
-
-    //    }
-    //}
     public void DisableAllImmune()
     {
         immuneToEffects = false;
@@ -51,33 +42,5 @@ public class Detectable : MonoBehaviour
         immuneToForce = false;
         immune = false;
         immuneToInstantKill = false;
-    }
-    public void KnockDown(){
-        if (StandCollider != null )
-        {
-           
-            StandCollider.direction = CapsuleDirection2D.Horizontal;
-            StandCollider.offset = OffsetKnockDown;
-            StandCollider.size = SizeKnockDown;
-        }
-        if (StandColliderBox != null)
-        {
-            StandColliderBox.offset = OffsetKnockDown;
-            StandColliderBox.size = SizeKnockDown;
-        }
-    }
-    public void ExitKnockDown() {
-        if (StandCollider != null )
-        {
-            StandCollider.direction = CapsuleDirection2D.Vertical;
-            StandCollider.offset = OffsetStand;
-            StandCollider.size = SizeStand;
-
-        }
-        if (StandColliderBox != null)
-        {
-            StandColliderBox.offset = OffsetStand;
-            StandColliderBox.size = SizeStand;
-        }
     }
 }
