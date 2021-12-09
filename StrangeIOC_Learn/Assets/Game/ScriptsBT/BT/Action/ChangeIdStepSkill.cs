@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [TaskCategory("Extension")]
-public class SetupComponentManager : Action
+public class ChangeIdStepSkill : Action
 {
     public SharedComponentManager componentManager;
-    public override void OnAwake()
-    {
-        base.OnAwake();
-    }
+    public int idStepSkill;
 
+    public override void OnStart()
+    {
+        base.OnStart();
+        componentManager.Value.nextIdSkill = idStepSkill;
+
+    }
 }

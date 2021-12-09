@@ -11,6 +11,6 @@ public class IdleState : State
     public override void EnterState()
     {
         base.EnterState();
-        controller.ChangeState(controller.dieState);
+        controller.animator.SetTrigger(AnimationTriger.IDLE);
     }
 }

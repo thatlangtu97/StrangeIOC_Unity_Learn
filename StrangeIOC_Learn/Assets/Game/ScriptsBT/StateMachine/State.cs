@@ -11,13 +11,14 @@ public class State : ScriptableObject
         this.controller = controller;
     }
 
-    public virtual void UpdateState(float deltaTime)
+    public virtual void UpdateState()
     {
       
     }
 
     public virtual void EnterState()
     {
+        Debug.Log("EnterState " + this.name);
         foreach (AnimatorControllerParameter p in controller.animator.parameters)
         {
             if (p.type == AnimatorControllerParameterType.Trigger)
@@ -30,13 +31,13 @@ public class State : ScriptableObject
     {
         
         yield return new WaitForEndOfFrame();
-        foreach (var param in controller.animator.parameters)
-        {
-            if (param.type == AnimatorControllerParameterType.Trigger)
-            {
-                controller.animator.ResetTrigger(param.name);
-            }
-        }
+        //foreach (var param in controller.animator.parameters)
+        //{
+        //    if (param.type == AnimatorControllerParameterType.Trigger)
+        //    {
+        //        controller.animator.ResetTrigger(param.name);
+        //    }
+        //}
     }
     public virtual void ExitState()
     {
@@ -116,8 +117,8 @@ public class State : ScriptableObject
     }
     public virtual TaskStatus OnInputSkill(int skillId)
     {
-        controller.ChangeState(controller.skillState);
-        return TaskStatus.Success;
+        
+        return TaskStatus.Failure;
     }
     public void OnPlayerSkill(int skillID)
     {

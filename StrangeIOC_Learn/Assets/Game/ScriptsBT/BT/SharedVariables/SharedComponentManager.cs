@@ -7,6 +7,13 @@ public class SharedComponentManager : SharedVariable<ComponentManager>
 {
     public static implicit operator SharedComponentManager(ComponentManager value) { return new SharedComponentManager { Value = value }; }
 }
+public class SharedSkillConfig : SharedVariable<SkillConfigBehaviourTree>
+{
+    public static implicit operator SharedSkillConfig(SkillConfigBehaviourTree value)
+    {
+        return new SharedSkillConfig { Value = value };
+    }
+}
 //public class SharedSkillCheck : SharedVariable<SharedSkillCheckInfo>
 //{
 //    public static implicit operator SharedSkillCheck(SharedSkillCheckInfo value)
@@ -50,30 +57,12 @@ public class SharedComponentManager : SharedVariable<ComponentManager>
 //        return new SharedGameEntity { Value = value };
 //    }
 //}
-public class SharedAnimator : SharedVariable<Animator>
-{
-    public static implicit operator SharedAnimator(Animator value)
-    {
-        return new SharedAnimator { Value = value };
-    }
-}
+//public class SharedAnimator : SharedVariable<Animator>
+//{
+//    public static implicit operator SharedAnimator(Animator value)
+//    {
+//        return new SharedAnimator { Value = value };
+//    }
+//}
 
-[System.Serializable]
-public class SharedSkillCheckInfo
-{
-    public float cooldown;
-    public float lastTimeUsed;
-    public float range;
-    public float dmgMultiple;
-    public float knockBackForce;
-    public float knockUpForce;
-    public bool canNotReduce;
-    public float critChance;
-    public float critMultiply;
-    public float minRange;
-}
-[System.Serializable]
-public class ListInt
-{
-    public List<int> listValue = new List<int>();
-}
+

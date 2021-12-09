@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MeleeMoveState", menuName = "State/MeleeMoveState")]
 public class MeleeMoveState : State
 {
+    public float speed;
     public override void InitState(StateMachineController controller)
     {
         base.InitState(controller);
@@ -11,9 +12,6 @@ public class MeleeMoveState : State
     public override void EnterState()
     {
         base.EnterState();
-
-        //controller.animator.SetBool(AnimationName.MOVE, true);
-        //controller.animator.SetTrigger(AnimationName.MOVE);
-        controller.animator.Play(AnimationName.MOVE);
+        controller.animator.SetTrigger(AnimationTriger.MOVE);
     }
 }
