@@ -35,8 +35,17 @@ public class StateMachineController : MonoBehaviour
     
     public void Awake()
     {
-        componentManager.BehaviorTree.PauseWhenDisabled = true;
         InitStateMachine();
+    }
+    public void OnEnable()
+    {
+        ChangeState(idleState);
+
+
+    }
+    public void Start()
+    {
+        componentManager.BehaviorTree.PauseWhenDisabled = true;
     }
     public void Update()
     {
@@ -50,22 +59,22 @@ public class StateMachineController : MonoBehaviour
 
     public virtual void UpdateState()
     {
-        //if (currentState != null)
-        //{
-        //    currentState.UpdateState();
-
-        //}
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    componentManager.BehaviorTree.DisableBehavior();
-        //    ChangeState(beHitState);
-            
-        //}
-        //if (Input.GetKeyUp(KeyCode.Space))
-        //{
-        //    componentManager.BehaviorTree.EnableBehavior();
-        //}
-
+        if (currentState != null)
+        {
+            currentState.UpdateState();
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            ChangeState(freezeState);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ChangeState(beHitState);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            ChangeState(dieState);
+        }
     }
     public virtual void OnSpawn()
     {
@@ -81,11 +90,6 @@ public class StateMachineController : MonoBehaviour
     }
 
 
-
-    protected virtual void EnterStateOnSpawn()
-    {
-        //  currentState.EnterState();
-    }
     protected virtual void InitStates()
     {    
         CreateStateFactory(ref idleState);
@@ -111,25 +115,29 @@ public class StateMachineController : MonoBehaviour
 
     }
     public virtual void ChangeState(State newState)
-    {     
-        if(previousState != currentState)
+    {
+        if (newState == null) return;
+
+
+        if (previousState != currentState)
         {
             previousState = currentState;
         }
-        if (currentState != dieState)
+        if (newState != currentState)
         {
-            //if (currentState != null)
-            //    currentState.ExitState();
-
-            if (newState == null)
-                return;
-            if (newState != currentState)
+            if (currentState != freezeState)
             {
                 currentState.ExitState();
                 currentState = newState;
                 currentState.EnterState();
-                
             }
+            else
+            {
+                currentState.ExitState();
+                currentState = newState;
+                currentState.EnterState();
+            }
+
         }
     }
     protected virtual void OnInputAttack()

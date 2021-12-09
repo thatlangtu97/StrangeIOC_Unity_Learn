@@ -291,6 +291,8 @@ MonoBehaviour:
     animationName: 
     duration: 0
   BehaviorTree: {fileID: 1483235765}
+  timeScale: 1
+  speedMove: -1
   idCurrentSkill: 0
   nextIdSkill: 0
 --- !u!114 &1483235767
@@ -387,7 +389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483235764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.37, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -434,11 +436,11 @@ MonoBehaviour:
   knockDownState: {fileID: 0}
   airAttackState: {fileID: 0}
   dashState: {fileID: 0}
-  dieState: {fileID: 0}
+  dieState: {fileID: 11400000, guid: 00972c9e7997e407395d7b808456faa6, type: 2}
   dashAttack: {fileID: 0}
   beHitState: {fileID: 11400000, guid: 5025ff8a1c77dab41bf7bb72ebcbaf54, type: 2}
   getUpState: {fileID: 0}
-  freezeState: {fileID: 0}
+  freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
   stuntState: {fileID: 0}
   currentState: {fileID: 0}
   previousState: {fileID: 0}

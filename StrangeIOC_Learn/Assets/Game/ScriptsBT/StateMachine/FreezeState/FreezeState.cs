@@ -1,22 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "HitState", menuName = "State/HitState")]
-public class HitState : State
+[CreateAssetMenu(fileName = "FreezeState", menuName = "State/FreezeState")]
+public class FreezeState : State
 {
     public float duration = 0.4f;
     float coutTime = 0;
-    int hit = 0;
     public override void EnterState()
     {
         base.EnterState();
         controller.componentManager.BehaviorTree.DisableBehavior();
-        hit = (hit + 1);
-        if (hit % 2 == 0)
-            controller.animator.SetTrigger(AnimationTriger.HIT);
-        else
-            controller.animator.SetTrigger(AnimationTriger.HIT2);
-                
+        controller.componentManager.timeScale = 0;
+        controller.animator.speed = 0f;
         coutTime = duration;
     }
     public override void UpdateState()
@@ -34,6 +29,8 @@ public class HitState : State
         base.ExitState();
         coutTime = 0;
         controller.componentManager.BehaviorTree.EnableBehavior();
+        controller.componentManager.timeScale = 1f;
+        controller.animator.speed = 1f;
+        
     }
-
 }

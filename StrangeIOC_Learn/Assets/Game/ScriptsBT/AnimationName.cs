@@ -46,8 +46,8 @@ public class AnimationTriger
     //public const string DASH = "Dash";
     //public const string DASH_END = "EndDash";
     public const string HIT = "hit";
-    //public const string HIT2 = "Hit2";
-    //public const string DIE = "Die";
+    public const string HIT2 = "hit2";
+    public const string DIE = "die";
     public const string ATTACK = "attack";
     //public const string JUMP = "Jump";
     //public const string FALL = "Fall";

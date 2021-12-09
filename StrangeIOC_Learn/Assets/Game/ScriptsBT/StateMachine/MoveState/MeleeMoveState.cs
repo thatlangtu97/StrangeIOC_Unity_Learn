@@ -14,4 +14,9 @@ public class MeleeMoveState : State
         base.EnterState();
         controller.animator.SetTrigger(AnimationTriger.MOVE);
     }
+    public override void UpdateState()
+    {
+        base.UpdateState();
+        controller.transform.position += new Vector3(controller.transform.localScale.x, 0f, 0f) * Time.deltaTime * controller.componentManager.speedMove * controller.componentManager.timeScale;
+    }
 }

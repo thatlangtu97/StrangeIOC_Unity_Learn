@@ -8,6 +8,7 @@ public class EnemyNormalAttack : State
     public override void EnterState()
     {
         base.EnterState();
+        //controller.componentManager.isAttack = true;
         controller.animator.SetTrigger(AnimationTriger.ATTACK);
     }
     public override void UpdateState()

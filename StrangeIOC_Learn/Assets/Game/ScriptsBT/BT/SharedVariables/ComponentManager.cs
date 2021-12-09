@@ -14,6 +14,8 @@ public class ComponentManager : MonoBehaviour
     public SkillConfigBehaviourTree skillConfig;
     public StepSkill CurrentStep;
     public BehaviorTree BehaviorTree;
+    public float timeScale=1f;
+    public float speedMove = 1f;
 
     public int idCurrentSkill, nextIdSkill;
     private void Awake()
