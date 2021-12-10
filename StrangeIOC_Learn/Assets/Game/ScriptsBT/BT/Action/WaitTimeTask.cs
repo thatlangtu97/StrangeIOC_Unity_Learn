@@ -19,12 +19,12 @@ public class WaitTimeTask : Action
 
     public override TaskStatus OnUpdate()
     {
-        startTime -= Time.deltaTime * componentManager.Value.timeScale;
+       
         if (startTime <=0)
         {
             return TaskStatus.Success;
         }
-
+        startTime -= Time.deltaTime * componentManager.Value.timeScale;
         // Otherwise we are still waiting.
         return TaskStatus.Running;
     }

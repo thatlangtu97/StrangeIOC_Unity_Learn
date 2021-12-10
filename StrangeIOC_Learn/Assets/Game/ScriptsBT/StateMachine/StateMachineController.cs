@@ -40,12 +40,10 @@ public class StateMachineController : MonoBehaviour
     public void OnEnable()
     {
         ChangeState(idleState);
-
-
     }
     public void Start()
     {
-        componentManager.BehaviorTree.PauseWhenDisabled = true;
+       
     }
     public void Update()
     {
@@ -63,18 +61,18 @@ public class StateMachineController : MonoBehaviour
         {
             currentState.UpdateState();
         }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            ChangeState(freezeState);
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            ChangeState(beHitState);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            ChangeState(dieState);
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    ChangeState(freezeState);
+        //}
+        //if (Input.GetKeyDown(KeyCode.H))
+        //{
+        //    ChangeState(beHitState);
+        //}
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    ChangeState(dieState);
+        //}
     }
     public virtual void OnSpawn()
     {
@@ -83,13 +81,6 @@ public class StateMachineController : MonoBehaviour
     public virtual void OnRevival()
     {
     }
-
-    public virtual void DisableOnDead()
-    {
-        gameObject.SetActive(false);
-    }
-
-
     protected virtual void InitStates()
     {    
         CreateStateFactory(ref idleState);
@@ -117,112 +108,104 @@ public class StateMachineController : MonoBehaviour
     public virtual void ChangeState(State newState)
     {
         if (newState == null) return;
-
-
         if (previousState != currentState)
         {
             previousState = currentState;
         }
         if (newState != currentState)
         {
-            if (currentState != freezeState)
-            {
-                currentState.ExitState();
-                currentState = newState;
-                currentState.EnterState();
-            }
-            else
-            {
-                currentState.ExitState();
-                currentState = newState;
-                currentState.EnterState();
-            }
-
+            currentState.ExitState();
+            currentState = newState;
+            currentState.EnterState();
         }
     }
-    protected virtual void OnInputAttack()
+
+    public virtual void OnInputAttack()
     {
     }
 
-    protected virtual void OnInputJump()
+    //protected virtual void OnInputJump()
+    //{
+    //}
+
+    //protected virtual void OnInputMoveLeft()
+    //{
+    //}
+
+    //protected virtual void OnInputMoveRight()
+    //{
+    //}
+    public virtual void OnInputMove()
+    {
+        ChangeState(moveState);
+    }
+    public virtual void OnInputStopMove()
     {
     }
 
-    protected virtual void OnInputMoveLeft()
+    public virtual void OnInputSkill(int skillId)
     {
     }
 
-    protected virtual void OnInputMoveRight()
+    //protected virtual void OnInputDarts()
+    //{
+    //}
+
+    public virtual void OnInputDash()
     {
     }
 
-    protected virtual void OnInputStopMove()
-    {
-    }
+    //public virtual void OnInputTool()
+    //{
+    //}
 
-    protected virtual void OnInputSkill(int skillId)
-    {
-    }
+    //public virtual void OnFinishCastingSkill(bool isSkill = false)
+    //{
+    //}
 
-    protected virtual void OnInputDarts()
-    {
-    }
+    //public virtual void UpdateState(float deltaTime)
+    //{
+    //}
 
-    protected virtual void OnInputDash()
-    {
-    }
+    //public virtual void Attack()
+    //{
+    //}
 
-    public virtual void OnInputTool()
-    {
-    }
+    //public virtual void Reborn()
+    //{
+    //}
 
-    public virtual void OnFinishCastingSkill(bool isSkill = false)
-    {
-    }
+    //protected virtual void CheckForOpponentInTheSight()
+    //{
 
-    public virtual void UpdateState(float deltaTime)
-    {
-    }
-
-    public virtual void Attack()
-    {
-    }
-
-    public virtual void Reborn()
-    {
-    }
-
-    protected virtual void CheckForOpponentInTheSight()
-    {
-
-    }
-    public void GetUp()
-    {
-        currentState.OnGetUp();
-    }
+    //}
+    //public void GetUp()
+    //{
+    //    currentState.OnGetUp();
+    //}
     
-    public virtual void KnockDown()
-    {
-        if (currentState != null)
-        {
-            currentState.OnKnockDown();
-        }
+    //public virtual void KnockDown()
+    //{
+    //    if (currentState != null)
+    //    {
+    //        currentState.OnKnockDown();
+    //    }
 
 
-    }
-    public virtual void Freeze(float duration)
-    {
-        if(currentState != null)
-        {
-            currentState.OnFrezee(duration);
-        }
-    }
+    //}
+    //public virtual void Freeze(float duration)
+    //{
+    //    if(currentState != null)
+    //    {
+    //        currentState.OnFrezee(duration);
+    //    }
+    //}
 
-    public virtual void OnForceExitState()
-    {
-        if(currentState!= null)
-        currentState.OnForceExitState();
-    }
+    //public virtual void OnForceExitState()
+    //{
+    //    if(currentState!= null)
+    //    currentState.OnForceExitState();
+    //}
 
 
 }

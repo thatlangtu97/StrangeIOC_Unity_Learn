@@ -17,12 +17,13 @@ public class FreezeState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        coutTime -= Time.deltaTime;
+        
         if (coutTime < 0)
         {
             controller.ChangeState(controller.idleState);
             //ExitState();
         }
+        coutTime -= Time.deltaTime;
     }
     public override void ExitState()
     {

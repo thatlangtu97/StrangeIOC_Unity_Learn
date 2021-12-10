@@ -42,10 +42,12 @@ public class ComponentManager : MonoBehaviour
         if (isFaceRight)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            speedMove = Mathf.Abs(speedMove);
         }
         else
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            speedMove = -Mathf.Abs(speedMove);
         }
     }
     public void CurrentSkill(int idSkill)

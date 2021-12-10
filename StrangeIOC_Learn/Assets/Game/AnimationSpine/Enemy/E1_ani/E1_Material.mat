@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: E1_Material
   m_Shader: {fileID: 4800000, guid: deee23ab4aa38564ead2ac05e112c169, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _USE8NEIGHBOURHOOD_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -59,13 +59,20 @@ Material:
     - _Alpha: 1
     - _BlackAmount: 1
     - _Brightness_Fade_1: 0
-    - _ColorHSV_Brightness_1: 1
-    - _ColorHSV_Hue_1: 0
-    - _ColorHSV_Saturation_1: 2
+    - _Burn_Speed_1: 1.83
+    - _Burn_Value_1: 0.86
+    - _ColorHSV_Brightness_1: 1.058
+    - _ColorHSV_Hue_1: 209
+    - _ColorHSV_Saturation_1: 1
     - _ColorMask: 15
     - _CullMode: 0
     - _Cutoff: 0
+    - _DarkColorAlphaAdditive: 0
     - _Depthpower: 1
+    - _Destroyer_Speed_1: 0.5
+    - _Destroyer_Speed_2: 0.5
+    - _Destroyer_Value_1: 0
+    - _Destroyer_Value_2: 0.5
     - _EffectAmount: 1
     - _EmissStrength: 1
     - _Emission: 2
@@ -77,6 +84,11 @@ Material:
     - _InnerGlowHQ_Size_1: 0.857
     - _InvFade: 1
     - _Mul: 1.2
+    - _OperationBlend_Fade_1: 0
+    - _OutlineMipLevel: 0
+    - _OutlineReferenceTexWidth: 1024
+    - _OutlineSmoothness: 1
+    - _OutlineWidth: 3
     - _Sat: 1
     - _SharpEdge: 0
     - _SpriteFade: 1
@@ -87,6 +99,8 @@ Material:
     - _StencilRef: 1
     - _StencilWriteMask: 255
     - _StraightAlphaInput: 0
+    - _ThresholdEnd: 0.25
+    - _Use8Neighbourhood: 1
     - _UseUIAlphaClip: 0
     - _Usecenterglow: 0
     - _Usedepth: 0
@@ -94,7 +108,9 @@ Material:
     m_Colors:
     - _Black: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorRGBA_Color_1: {r: 0, g: 0.645887, b: 0.99215686, a: 1}
     - _DistortionSpeedXYPowerZ: {r: 0, g: 0, b: 0, a: 0}
     - _InnerGlowHQ_Color_1: {r: 1, g: 1, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
     - _SpeedMainTexUVNoiseZW: {r: 0, g: 0, b: 0, a: 0}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}

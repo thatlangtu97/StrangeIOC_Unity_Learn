@@ -12,22 +12,27 @@ public class HitState : State
         base.EnterState();
         controller.componentManager.BehaviorTree.DisableBehavior();
         hit = (hit + 1);
+        //if (hit % 2 == 0)
+        //    controller.animator.SetTrigger(AnimationTriger.HIT);
+        //else
+        //    controller.animator.SetTrigger(AnimationTriger.HIT2);
         if (hit % 2 == 0)
-            controller.animator.SetTrigger(AnimationTriger.HIT);
+            controller.animator.Play(AnimationTriger.HIT);
         else
-            controller.animator.SetTrigger(AnimationTriger.HIT2);
-                
+            controller.animator.Play(AnimationTriger.HIT2);
+
         coutTime = duration;
     }
     public override void UpdateState()
     {
         base.UpdateState();
-        coutTime -= Time.deltaTime;
+        
         if (coutTime < 0)
         {
             controller.ChangeState(controller.idleState);
             //ExitState();
         }
+        coutTime -= Time.deltaTime;
     }
     public override void ExitState()
     {

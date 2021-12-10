@@ -12,5 +12,6 @@ public class IdleState : State
     {
         base.EnterState();
         controller.animator.SetTrigger(AnimationTriger.IDLE);
+        controller.componentManager.speedMove = 0f;
     }
 }
