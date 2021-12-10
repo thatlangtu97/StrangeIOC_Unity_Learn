@@ -6,30 +6,39 @@ public class DashState : State
 {
     public float duration = 0.4f;
     public float speedDash = 10f;
-    float coutTime = 0;
+    float coutTimeDash = 0;
     public override void EnterState()
     {
         base.EnterState();
         controller.animator.SetTrigger(AnimationTriger.DASH);
-        coutTime = duration;
+        coutTimeDash = duration;
+        
     }
     public override void UpdateState()
     {
         base.UpdateState();
-        if (coutTime < 0)
+        
+        if (coutTimeDash >= 0)
         {
-            controller.ChangeState(controller.idleState);
+                controller.transform.position += new Vector3(controller.transform.localScale.x, 0f, 0f) * Time.deltaTime * speedDash;
+                coutTimeDash -= Time.deltaTime;
         }
         else
         {
-            if (coutTime > 0)
-                controller.transform.position += new Vector3(controller.transform.localScale.x, 0f, 0f) * Time.deltaTime * speedDash;
+            if (controller.componentManager.speedMove != 0)
+            {
+                controller.ChangeState(controller.moveState);
+            }
+            else
+            {
+                controller.ChangeState(controller.idleState);
+            }
         }
-        coutTime -= Time.deltaTime;
+        
     }
     public override void ExitState()
     {
         base.ExitState();
-        coutTime = 0;
+        coutTimeDash = -1;
     }
 }

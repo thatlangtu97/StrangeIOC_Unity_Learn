@@ -16,8 +16,10 @@ public class ComponentManager : MonoBehaviour
     public BehaviorTree BehaviorTree;
     public float timeScale=1f;
     public float speedMove = 1f;
-
     public int idCurrentSkill, nextIdSkill;
+
+    public int comboCount=0;
+    public int nextCombo = 0;
     private void Awake()
     {
         

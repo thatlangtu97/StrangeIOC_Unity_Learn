@@ -10,12 +10,6 @@ public class State : ScriptableObject
     {
         this.controller = controller;
     }
-
-    public virtual void UpdateState()
-    {
-      
-    }
-
     public virtual void EnterState()
     {
         Debug.Log("EnterState " + this.name);
@@ -27,23 +21,18 @@ public class State : ScriptableObject
             }
         }
     }
-    IEnumerator DelayResetTrigger()
+    public virtual void UpdateState()
     {
-        
-        yield return new WaitForEndOfFrame();
-        //foreach (var param in controller.animator.parameters)
-        //{
-        //    if (param.type == AnimatorControllerParameterType.Trigger)
-        //    {
-        //        controller.animator.ResetTrigger(param.name);
-        //    }
-        //}
+      
     }
+
+
+
     public virtual void ExitState()
     {
         
     }
-
+/*
     public virtual TaskStatus OnInputMoveLeft()
     {
         return TaskStatus.Failure;
@@ -147,6 +136,7 @@ public class State : ScriptableObject
     {
         controller.ChangeState(controller.idleState);    
     }
+*/
 }
 
 

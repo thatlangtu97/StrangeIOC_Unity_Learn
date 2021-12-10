@@ -45,7 +45,7 @@ public class StateMachineController : MonoBehaviour
     {
        
     }
-    public void Update()
+    public virtual void Update()
     {
         UpdateState();
     }
@@ -84,6 +84,7 @@ public class StateMachineController : MonoBehaviour
     protected virtual void InitStates()
     {    
         CreateStateFactory(ref idleState);
+        CreateStateFactory(ref dashState);
         CreateStateFactory(ref moveState);
         CreateStateFactory(ref jumpState);
         CreateStateFactory(ref jumpFallState);
