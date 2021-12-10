@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DashState
   m_EditorClassIdentifier: 
   duration: 0.4
-  speedDash: 10
+  speedDash: 3

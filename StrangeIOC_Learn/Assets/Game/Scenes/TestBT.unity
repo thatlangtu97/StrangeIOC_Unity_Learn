@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 218680108}
   - component: {fileID: 218680107}
   - component: {fileID: 218680106}
-  - component: {fileID: 218680111}
   - component: {fileID: 218680112}
+  - component: {fileID: 218680111}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -271,11 +271,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 218680105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c9b0525d7e56074d8775c3f0becdc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
-  moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
+  moveState: {fileID: 11400000, guid: 012a3ed284893405982d33bfd74e0838, type: 2}
   jumpState: {fileID: 0}
   attackState: {fileID: 0}
   skillState: {fileID: 0}
@@ -322,6 +322,8 @@ MonoBehaviour:
   speedMove: 1
   idCurrentSkill: 0
   nextIdSkill: 0
+  comboCount: 0
+  nextCombo: 0
 --- !u!1 &346243757
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +738,8 @@ MonoBehaviour:
   speedMove: -1
   idCurrentSkill: 0
   nextIdSkill: 0
+  comboCount: 0
+  nextCombo: 0
 --- !u!114 &1483235767
 MonoBehaviour:
   m_ObjectHideFlags: 0
