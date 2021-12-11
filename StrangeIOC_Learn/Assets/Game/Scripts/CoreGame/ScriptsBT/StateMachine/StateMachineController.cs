@@ -9,6 +9,7 @@ using UnityEngine.Events;
 public class StateMachineController : MonoBehaviour
 {
     [Header("State To Clone")]
+    public State spawnState;
     public State idleState;
     public State moveState;
     public State jumpState;
@@ -37,13 +38,10 @@ public class StateMachineController : MonoBehaviour
     {
         InitStateMachine();
     }
-    public void OnEnable()
-    {
-        ChangeState(idleState);
-    }
+
     public void Start()
     {
-       
+        //ChangeState(idleState);
     }
     public virtual void Update()
     {
@@ -52,7 +50,7 @@ public class StateMachineController : MonoBehaviour
     public virtual void InitStateMachine()
     {
         InitStates();
-        currentState = idleState;
+        //currentState = spawnState;
     }
 
     public virtual void UpdateState()
@@ -82,7 +80,8 @@ public class StateMachineController : MonoBehaviour
     {
     }
     protected virtual void InitStates()
-    {    
+    {
+        CreateStateFactory(ref spawnState); 
         CreateStateFactory(ref idleState);
         CreateStateFactory(ref dashState);
         CreateStateFactory(ref moveState);
@@ -117,7 +116,10 @@ public class StateMachineController : MonoBehaviour
         {
             if (newState != currentState)
             {
-                currentState.ExitState();
+                if (currentState != null)
+                {
+                    currentState.ExitState();
+                }
                 currentState = newState;
                 currentState.EnterState();
             }

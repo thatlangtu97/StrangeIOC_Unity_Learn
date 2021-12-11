@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9b0525d7e56074d8775c3f0becdc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnState: {fileID: 11400000, guid: 50934bed02bd1644d80b18914b7347d5, type: 2}
   idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
   moveState: {fileID: 11400000, guid: 012a3ed284893405982d33bfd74e0838, type: 2}
   jumpState: {fileID: 11400000, guid: 4cb2f1a96eac9a64cbc27f4f8ae8a979, type: 2}
@@ -382,7 +383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &346243758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1003,7 +1004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1483235765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,6 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnState: {fileID: 0}
   idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
   moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
   jumpState: {fileID: 0}

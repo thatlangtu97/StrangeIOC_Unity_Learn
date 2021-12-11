@@ -6,24 +6,34 @@ public class DashState : State
 {
     public float duration = 0.4f;
     public float speedDash = 10f;
-    float coutTimeDash = 0;
+    float countTime = 0;
     public override void EnterState()
     {
         base.EnterState();
         //controller.animator.SetTrigger(AnimationTriger.DASH);
         controller.animator.Play(AnimationTriger.DASH);
         controller.componentManager.Rotate();
-        coutTimeDash = duration;
+        countTime = duration;
         
     }
     public override void UpdateState()
     {
         base.UpdateState();
         
-        if (coutTimeDash >= 0)
+        if (countTime >= 0)
         {
+            
+            //if(controller.componentManager.rgbody2D.velocity.x <0 &&
+            //    controller.componentManager.transform.localScale.x>0 ||
+            //    controller.componentManager.rgbody2D.velocity.x>0 &&
+            //    controller.componentManager.transform.localScale.x < 0)
+            //{
+            //    controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
+            //    controller.componentManager.Rotate();
+            //    controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+            //}
             controller.componentManager.rgbody2D.velocity = new Vector2(speedDash * controller.componentManager.transform.localScale.x, 0f);
-            coutTimeDash -= Time.deltaTime;
+            countTime -= Time.deltaTime;
         }
         else
         {
@@ -41,7 +51,9 @@ public class DashState : State
             else
             {
                 controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-                controller.componentManager.rgbody2D.velocity = new Vector2(0, controller.componentManager.rgbody2D.velocity.y);
+                controller.componentManager.Rotate();
+                controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);               
+                //controller.componentManager.rgbody2D.velocity = new Vector2(0, controller.componentManager.rgbody2D.velocity.y);
             }
         }
         
@@ -49,6 +61,6 @@ public class DashState : State
     public override void ExitState()
     {
         base.ExitState();
-        coutTimeDash = -1;
+        countTime = -1;
     }
 }

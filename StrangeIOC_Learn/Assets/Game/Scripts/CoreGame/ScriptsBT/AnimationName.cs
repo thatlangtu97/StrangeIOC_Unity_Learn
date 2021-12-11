@@ -51,6 +51,7 @@ public class AnimationTriger
     public const string ATTACK = "attack";
     public const string JUMP = "jump";
     public const string JUMPFAIL = "jumpfail";
+    public const string SPAWN = "spawn";
     //public const string FALL = "Fall";
     //public const string END_FALL = "EndFall";
     //public const string END_FALL_MOVE = "EndFallMove";

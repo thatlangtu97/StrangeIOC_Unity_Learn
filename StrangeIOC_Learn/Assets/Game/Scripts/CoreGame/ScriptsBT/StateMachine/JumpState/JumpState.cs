@@ -8,6 +8,7 @@ public class JumpState : State
     public float forceJump=3f;
     public float duration = 0.05f;
     float countTimeBufferJump = 0;
+    
     public override void EnterState()
     {
         base.EnterState();
@@ -28,15 +29,17 @@ public class JumpState : State
         base.UpdateState();
         if (controller.componentManager.checkGround() == false)
         {
-            if (controller.componentManager.speedMove < 0 && controller.transform.localScale.x < 0 ||
-               controller.componentManager.speedMove > 0 && controller.transform.localScale.x > 0)
-            {
-                controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-            }
-            else
-            {
-                controller.componentManager.rgbody2D.velocity = new Vector2(0f, controller.componentManager.rgbody2D.velocity.y);
-            }
+            //if (controller.componentManager.speedMove < 0 && controller.transform.localScale.x < 0 ||
+            //   controller.componentManager.speedMove > 0 && controller.transform.localScale.x > 0)
+            //{
+            //    controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+            //}
+            //else
+            //{
+            //    controller.componentManager.rgbody2D.velocity = new Vector2(0f, controller.componentManager.rgbody2D.velocity.y);
+            //}
+            controller.componentManager.Rotate();
+            controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
         }
         else
         {
