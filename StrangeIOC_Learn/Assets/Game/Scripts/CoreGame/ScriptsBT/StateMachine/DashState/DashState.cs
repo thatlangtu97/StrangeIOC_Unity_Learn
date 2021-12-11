@@ -63,4 +63,14 @@ public class DashState : State
         base.ExitState();
         countTime = -1;
     }
+    public override void OnInputJump()
+    {
+        base.OnInputJump();
+        controller.ChangeState(controller.jumpState);
+    }
+    public override void OnInputMove()
+    {
+        base.OnInputMove();
+        controller.ChangeState(controller.moveState);
+    }
 }

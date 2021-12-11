@@ -50,7 +50,7 @@ public class StateMachineController : MonoBehaviour
     public virtual void InitStateMachine()
     {
         InitStates();
-        //currentState = spawnState;
+        currentState = idleState;
     }
 
     public virtual void UpdateState()

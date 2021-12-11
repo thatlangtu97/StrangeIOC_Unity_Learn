@@ -47,10 +47,8 @@ public class PlayerNormalAttack : State
                 {
                     controller.ChangeState(controller.idleState);
                 }
-                
             }
         }
-
     }
     public override void ExitState()
     {
@@ -66,6 +64,26 @@ public class PlayerNormalAttack : State
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
         durationVelocity = comboNormalAttack.skillDatas[currentCombo].durationVelocity;
         controller.componentManager.isBufferAttack = false;
-        
+    }
+    public override void OnInputDash()
+    {
+        base.OnInputDash();
+        controller.ChangeState(controller.dashState);
+    }
+    public override void OnInputJump()
+    {
+        base.OnInputJump();
+        controller.ChangeState(controller.jumpState);
+    }
+    public override void OnInputMove()
+    {
+        base.OnInputMove();
+        controller.ChangeState(controller.moveState);
+    }
+    public override void OnInputAttack()
+    {
+        base.OnInputAttack();
+        controller.componentManager.isBufferAttack = true;
+        //controller.ChangeState(controller.attackState);
     }
 }

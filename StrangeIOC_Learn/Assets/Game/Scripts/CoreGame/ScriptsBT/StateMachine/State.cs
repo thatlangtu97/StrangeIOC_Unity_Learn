@@ -23,120 +23,127 @@ public class State : ScriptableObject
     }
     public virtual void UpdateState()
     {
-      
     }
-
-
-
     public virtual void ExitState()
-    {
-        
+    {        
     }
-/*
-    public virtual TaskStatus OnInputMoveLeft()
-    {
-        return TaskStatus.Failure;
+    public virtual void OnInputMove()
+    {        
     }
+    public virtual void OnInputJump()
+    {       
+    }
+    public virtual void OnInputAttack()
+    {
+    }
+    public virtual void OnInputDash()
+    {
+    }
+    /*
+        public virtual TaskStatus OnInputMoveLeft()
+        {
+            return TaskStatus.Failure;
+        }
 
-    public virtual TaskStatus OnInputMoveRight()
-    {
-        return TaskStatus.Failure;
-    }
+        public virtual TaskStatus OnInputMoveRight()
+        {
+            return TaskStatus.Failure;
+        }
 
-    public virtual TaskStatus OnInputJump()
-    {
-        return TaskStatus.Failure;
-    }
+        public virtual TaskStatus OnInputJump()
+        {
+            return TaskStatus.Failure;
+        }
 
-    public virtual TaskStatus OnInputAttack()
-    {
+        public virtual TaskStatus OnInputAttack()
+        {
 
-        return TaskStatus.Failure;
-    }
+            return TaskStatus.Failure;
+        }
 
-    public virtual TaskStatus OnInputDash()
-    {
-        return TaskStatus.Success;
-    }
+        public virtual TaskStatus OnInputDash()
+        {
+            return TaskStatus.Success;
+        }
 
-    public virtual TaskStatus OnInputStopMove()
-    {
-        return TaskStatus.Failure;
-    }
-    public virtual TaskStatus OnHit(bool priority)
-    {
-        return TaskStatus.Failure;
-    }
-    public virtual TaskStatus OnInputChangeFacing()
-    {
-     
-        return TaskStatus.Success;
-       
-    }
+        public virtual TaskStatus OnInputStopMove()
+        {
+            return TaskStatus.Failure;
+        }
+        public virtual TaskStatus OnHit(bool priority)
+        {
+            return TaskStatus.Failure;
+        }
+        public virtual TaskStatus OnInputChangeFacing()
+        {
 
-    public virtual TaskStatus OnStunt()
-    {
-        controller.ChangeState(controller.stuntState);
-        return TaskStatus.Success;
-    }
+            return TaskStatus.Success;
 
-    public virtual TaskStatus OnKnockDown()
-    {
-        controller.ChangeState(controller.knockDownState);
+        }
 
-        return TaskStatus.Success;
-    }
-    public virtual TaskStatus OnFrezee(float duration)
-    {
-        return TaskStatus.Success;
-    }
-    public virtual TaskStatus OnGetUp()
-    {
-        return TaskStatus.Failure;
-    }
-    public virtual TaskStatus OnInputIdle()
-    {
-        controller.ChangeState(controller.idleState);
-        return TaskStatus.Success;
-    }
-    public virtual TaskStatus OnInputMove()
-    {
-        controller.ChangeState(controller.moveState);
-        return TaskStatus.Success;
-    }
-    public virtual TaskStatus OnInputSkill(int skillId)
-    {
-        
-        return TaskStatus.Failure;
-    }
-    public void OnPlayerSkill(int skillID)
-    {
-    }
-    public virtual void OnRevive()
-    {
+        public virtual TaskStatus OnStunt()
+        {
+            controller.ChangeState(controller.stuntState);
+            return TaskStatus.Success;
+        }
 
-    }
+        public virtual TaskStatus OnKnockDown()
+        {
+            controller.ChangeState(controller.knockDownState);
 
-    public virtual void OnDragControl()
-    {
+            return TaskStatus.Success;
+        }
+        public virtual TaskStatus OnFrezee(float duration)
+        {
+            return TaskStatus.Success;
+        }
+        public virtual TaskStatus OnGetUp()
+        {
+            return TaskStatus.Failure;
+        }
+        public virtual TaskStatus OnInputIdle()
+        {
+            controller.ChangeState(controller.idleState);
+            return TaskStatus.Success;
+        }
+        public virtual TaskStatus OnInputMove()
+        {
+            controller.ChangeState(controller.moveState);
+            return TaskStatus.Success;
+        }
+        public virtual TaskStatus OnInputSkill(int skillId)
+        {
 
-    }
+            return TaskStatus.Failure;
+        }
+        public void OnPlayerSkill(int skillID)
+        {
+        }
+        public virtual void OnRevive()
+        {
 
-    public virtual void OnForceExitState()
-    {
+        }
 
-    }
+        public virtual void OnDragControl()
+        {
 
-    public virtual void OnDropDown()
-    {
-        
-    }
+        }
 
-    public virtual  void ForceExitState()
-    {
-        controller.ChangeState(controller.idleState);    
-    }
-*/
+        public virtual void OnForceExitState()
+        {
+
+        }
+
+        public virtual void OnDropDown()
+        {
+
+        }
+
+        public virtual  void ForceExitState()
+        {
+            controller.ChangeState(controller.idleState);    
+        }
+    */
 }
 
 

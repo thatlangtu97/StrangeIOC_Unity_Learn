@@ -8,7 +8,6 @@ public class JumpState : State
     public float forceJump=3f;
     public float duration = 0.05f;
     float countTimeBufferJump = 0;
-    
     public override void EnterState()
     {
         base.EnterState();
@@ -61,5 +60,17 @@ public class JumpState : State
     {
         base.ExitState();
 
+    }
+
+    public override void OnInputDash()
+    {
+        base.OnInputDash();
+        controller.ChangeState(controller.dashState);
+    }
+    public override void OnInputJump()
+    {
+        base.OnInputJump();
+        controller.ChangeState(controller.jumpState);
+        EnterState();
     }
 }

@@ -14,11 +14,12 @@ public class PlayerStateMatchine : StateMachineController
         componentManager.checkGround();
         if (Input.GetKeyDown(KeyCode.D))
         {
-            OnInputDash();
+            currentState.OnInputDash();
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            OnInputAttack();
+            
+            currentState.OnInputAttack();
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -26,7 +27,7 @@ public class PlayerStateMatchine : StateMachineController
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ChangeState(jumpState);
+            currentState.OnInputJump();
         }
     }
     public override void OnInputDash()
