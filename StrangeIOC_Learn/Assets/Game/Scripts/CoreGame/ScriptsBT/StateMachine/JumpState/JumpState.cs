@@ -73,4 +73,9 @@ public class JumpState : State
         controller.ChangeState(controller.jumpState);
         EnterState();
     }
+    public override void OnInputAttack()
+    {
+        base.OnInputAttack();
+        controller.ChangeState(controller.airAttackState);
+    }
 }

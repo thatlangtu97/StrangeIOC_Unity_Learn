@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9efb88f72a6a91f4fb6ea52c50dc5009, type: 3}
-  m_Name: DashState
+  m_Script: {fileID: 11500000, guid: d5c95bee6f97d4eeeb655687f818ff9c, type: 3}
+  m_Name: PlayerAttackAir
   m_EditorClassIdentifier: 
-  duration: 0.2
-  speedDash: 7
+  comboNormalAttack: {fileID: 11400000, guid: 09e1b0132107d490ba11754cb5be9009, type: 2}
+  currentCombo: 0

@@ -285,7 +285,7 @@ MonoBehaviour:
   jumpFallState: {fileID: 0}
   doubleJumpState: {fileID: 0}
   knockDownState: {fileID: 0}
-  airAttackState: {fileID: 0}
+  airAttackState: {fileID: 11400000, guid: 9b32f3776c9074117a68c315aec531e2, type: 2}
   dashState: {fileID: 11400000, guid: 94834b1db599050418eb395d767edb2c, type: 2}
   dieState: {fileID: 11400000, guid: 32d4ceb13f3bc2f4792d5a1a89b22e1d, type: 2}
   dashAttack: {fileID: 0}

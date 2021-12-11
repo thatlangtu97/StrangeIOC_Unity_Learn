@@ -88,6 +88,7 @@ public class StateMachineController : MonoBehaviour
         CreateStateFactory(ref jumpState);
         CreateStateFactory(ref jumpFallState);
         CreateStateFactory(ref attackState);
+        CreateStateFactory(ref airAttackState);
         CreateStateFactory(ref beHitState);
         CreateStateFactory(ref dieState);
         CreateStateFactory(ref knockDownState);
