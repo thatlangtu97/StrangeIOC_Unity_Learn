@@ -16,6 +16,7 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     public Vector3 posStart, posEnd, ForceVector;
     [Range(1.5f, 4f)]
     public float space =2.5f;
+    public Transform effectLook;
     public ComponentManager componentManager;
     IEnumerator delayActive(GameObject obj, float time)
     {
@@ -25,8 +26,6 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     void Start()
     {
         posStart = Vector3.zero;
-        BackGround = transform.GetComponent<Image>();
-        PointJoystick = transform.GetChild(0).GetComponent<Image>();
 
     }
     public void OnDrag(PointerEventData eventData)
@@ -45,6 +44,8 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
             posEnd = (posEnd.magnitude >= 1f) ? posEnd.normalized : posEnd;
             ForceVector = new Vector3(posEnd.x, posEnd.y,0f);
             PointJoystick.rectTransform.anchoredPosition = new Vector3((posEnd.x *sizeDelta.x) / space, (posEnd.y * sizeDelta.y) / space);
+            effectLook.gameObject.SetActive(true);
+            effectLook.up = new Vector3(ForceVector.x, ForceVector.y,0);
             OnMove();
         }
     }
@@ -64,6 +65,7 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
         posEnd = Vector3.zero;
         ForceVector = Vector3.zero;
         PointJoystick.rectTransform.anchoredPosition = posEnd;
+        effectLook.gameObject.SetActive(false);
         OnStop();
     }
     void OnMove()
