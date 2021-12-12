@@ -44,7 +44,7 @@ public class AnimationTriger
     public const string IDLE = "idle";
     public const string MOVE = "move";
     public const string DASH = "dash";
-    //public const string DASH_END = "EndDash";
+    public const string DASHATTACK = "dashattack";
     public const string HIT = "hit";
     public const string HIT2 = "hit2";
     public const string DIE = "die";

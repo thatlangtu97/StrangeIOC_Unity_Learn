@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: ComboAirAttackPlayer
-  m_EditorClassIdentifier: Assembly-CSharp::ComboSkillConfig
-  skillDatas:
-  - id: 0
-    NameTrigger: airattack
-    durationAnimation: 0.45
-    nameEvent: 
-    velocity: {x: 0, y: 7}
-    durationVelocity: 0
+  m_Script: {fileID: 11500000, guid: 5b38d01ac4b6243aea77b5f5f7238ff9, type: 3}
+  m_Name: DashAttackState
+  m_EditorClassIdentifier: 
+  comboNormalAttack: {fileID: 0}
+  currentCombo: 0

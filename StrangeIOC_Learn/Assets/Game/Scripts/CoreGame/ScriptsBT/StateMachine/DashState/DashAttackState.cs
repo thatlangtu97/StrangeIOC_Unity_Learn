@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "PlayerNormalAttack", menuName = "State/PlayerNormalAttack")]
-public class PlayerNormalAttack : State
+[CreateAssetMenu(fileName = "DashAttackState", menuName = "State/DashAttackState")]
+public class DashAttackState : State
 {
     public ComboSkillConfig comboNormalAttack;
     public int currentCombo;
@@ -22,7 +22,7 @@ public class PlayerNormalAttack : State
         if (timeCount > 0)
         {
             timeCount -= Time.deltaTime;
-            durationVelocity-= Time.deltaTime;
+            durationVelocity -= Time.deltaTime;
             if (durationVelocity > 0)
             {
                 Vector2 velocityAttack = comboNormalAttack.skillDatas[currentCombo].velocity;
@@ -34,7 +34,7 @@ public class PlayerNormalAttack : State
         {
             if (controller.componentManager.isBufferAttack == true)
             {
-                currentCombo = (currentCombo+1) % (comboNormalAttack.skillDatas.Count);
+                currentCombo = (currentCombo + 1) % (comboNormalAttack.skillDatas.Count);
                 CastSkill();
             }
             else
@@ -65,11 +65,7 @@ public class PlayerNormalAttack : State
         durationVelocity = comboNormalAttack.skillDatas[currentCombo].durationVelocity;
         controller.componentManager.isBufferAttack = false;
     }
-    public override void OnInputDash()
-    {
-        base.OnInputDash();
-        controller.ChangeState(controller.dashState);
-    }
+
     public override void OnInputJump()
     {
         base.OnInputJump();
@@ -80,11 +76,5 @@ public class PlayerNormalAttack : State
         base.OnInputMove();
         controller.ChangeState(controller.moveState);
     }
-    public override void OnInputAttack()
-    {
-        base.OnInputAttack();
-        if(currentCombo != comboNormalAttack.skillDatas.Count-1)
-        controller.componentManager.isBufferAttack = true;
-        //controller.ChangeState(controller.attackState);
-    }
+
 }

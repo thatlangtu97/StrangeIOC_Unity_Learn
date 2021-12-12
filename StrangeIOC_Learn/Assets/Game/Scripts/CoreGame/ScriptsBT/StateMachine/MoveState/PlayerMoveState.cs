@@ -7,7 +7,7 @@ public class PlayerMoveState : MeleeMoveState
     public override void EnterState()
     {
         base.EnterState();
-        
+
     }
     public override void UpdateState()
     {
@@ -17,6 +17,12 @@ public class PlayerMoveState : MeleeMoveState
         {
             controller.ChangeState(controller.idleState);
         }
+    }
+    public override void ExitState()
+    {
+        base.ExitState();
+        controller.componentManager.ResetJumpCount();
+        controller.componentManager.ResetDashCount();
     }
     public override void OnInputAttack()
     {

@@ -14,6 +14,12 @@ public class IdleState : State
         controller.animator.SetTrigger(AnimationTriger.IDLE);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
     }
+    public override void ExitState()
+    {
+        base.ExitState();
+        controller.componentManager.ResetJumpCount();
+        controller.componentManager.ResetDashCount();
+    }
     public override void OnInputAttack()
     {
         base.OnInputAttack();

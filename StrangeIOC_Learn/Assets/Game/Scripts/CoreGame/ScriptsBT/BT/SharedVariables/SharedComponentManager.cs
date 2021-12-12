@@ -7,6 +7,7 @@ public class SharedComponentManager : SharedVariable<ComponentManager>
 {
     public static implicit operator SharedComponentManager(ComponentManager value) { return new SharedComponentManager { Value = value }; }
 }
+/*
 public class SharedSkillConfig : SharedVariable<SkillConfigBehaviourTree>
 {
     public static implicit operator SharedSkillConfig(SkillConfigBehaviourTree value)
@@ -14,6 +15,7 @@ public class SharedSkillConfig : SharedVariable<SkillConfigBehaviourTree>
         return new SharedSkillConfig { Value = value };
     }
 }
+*/
 //public class SharedSkillCheck : SharedVariable<SharedSkillCheckInfo>
 //{
 //    public static implicit operator SharedSkillCheck(SharedSkillCheckInfo value)

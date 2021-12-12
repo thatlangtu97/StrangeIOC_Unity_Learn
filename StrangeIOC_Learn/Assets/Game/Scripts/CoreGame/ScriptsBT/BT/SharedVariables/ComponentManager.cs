@@ -6,41 +6,25 @@ using UnityEngine;
 public class ComponentManager : MonoBehaviour
 {
     public Transform enemy;
+    public StateMachineController stateMachine;
+    public BehaviorTree BehaviorTree;
+    public Rigidbody2D rgbody2D;
+    public LayerMask layerMask;
+
     public bool hasCheckEnemyInSigh;
     public bool isFaceRight = false;
     public bool isAttack = false;
-    public float durationAttack = 0;
-    public StateMachineController stateMachine;
-    //public SkillConfigBehaviourTree skillConfig;
-    //public StepSkill CurrentStep;
-    public BehaviorTree BehaviorTree;
     public float timeScale=1f;
     public float speedMove = 1f;
     public float maxSpeedMove = 2f;
-    public int idCurrentSkill, nextIdSkill;
-
-    public int comboCount=0;
-    public int nextCombo = 0;
-
-
-
-    public Rigidbody2D rgbody2D;
     public bool isBufferAttack;
     [Range(0f,2f)]
     public float distanceCheckGround=0.1f;
     public bool isOnGround;
-    public LayerMask layerMask;
-    private void Awake()
-    {
-        
-    }
-    private void Start()
-    {
-        
-    }
-    private void OnDestroy()
-    {
-    }
+    public int jumpCount;
+    public int dashCount;
+    public int maxJump,maxDash;
+
     public void OnInputChangeFacing()
     {
         if (isFaceRight == true)
@@ -62,50 +46,39 @@ public class ComponentManager : MonoBehaviour
             speedMove = -Mathf.Abs(speedMove);
         }
     }
-    //public void CurrentSkill(int idSkill)
-    //{
-    //    foreach (StepSkill temp in skillConfig.listStepSkill)
-    //    {
-    //        if (temp.idStep == idSkill)
-    //        {
-    //            CurrentStep = temp;
-    //            idCurrentSkill = idSkill;
-    //        }
-    //    }
-    //}
-    //public void NextSkill(int idSkill)
-    //{
-        
-    //    foreach (StepSkill temp in skillConfig.listStepSkill)
-    //    {
-    //        if(temp.idStep == idSkill)
-    //        {
-    //            nextIdSkill = idSkill;
-    //            CurrentStep = temp;
-                
-    //        }
-    //    }
-    //}
     /// <summary>
     /// /////////////
     /// </summary>
     /// <returns></returns>
+    public void ResetJumpCount()
+    {
+        jumpCount = 0;
+    }
+    public void ResetDashCount()
+    {
+        dashCount = 0;
+    }
+    public bool CanJump
+    {
+        get { return jumpCount < maxJump; }
+    }
+    public bool CanDash
+    {
+        get { return dashCount < maxDash; }
+    }
     public bool checkGround()
     {
-        
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceCheckGround, layerMask);
-            if (hit.collider != null)
-            {
-                isOnGround = true;
-                return true;
-            }
-            else
-            {
-                isOnGround = false;
-                return false;
-
-            }
-
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceCheckGround, layerMask);
+        if (hit.collider != null)
+        {
+            isOnGround = true;
+            return true;
+        }
+        else
+        {
+            isOnGround = false;
+            return false;
+        }
     }
     public void Rotate()
     {

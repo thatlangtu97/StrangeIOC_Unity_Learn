@@ -40,6 +40,7 @@ public class PlayerAttackAir : State
         }
         else
         {
+            
             if (controller.componentManager.checkGround() == true)
             {
                 if (controller.componentManager.speedMove != 0)
@@ -77,6 +78,23 @@ public class PlayerAttackAir : State
     public override void OnInputDash()
     {
         base.OnInputDash();
-        controller.ChangeState(controller.dashState);
+        if (controller.componentManager.CanDash)
+            controller.ChangeState(controller.dashState);
+    }
+    public override void OnInputJump()
+    {
+        base.OnInputJump();
+        if (controller.componentManager.CanJump)
+            controller.ChangeState(controller.jumpState);
+    }
+    public override void OnInputAttack()
+    {
+        base.OnInputAttack();
+        if (controller.componentManager.isAttack)
+        {
+            currentCombo = (currentCombo + 1);
+            if(currentCombo< comboNormalAttack.skillDatas.Count)
+                CastSkill();
+        }
     }
 }

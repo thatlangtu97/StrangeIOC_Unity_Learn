@@ -11,7 +11,7 @@ public class ChangeIdStepSkill : Action
     public override void OnStart()
     {
         base.OnStart();
-        componentManager.Value.nextIdSkill = idStepSkill;
+        //componentManager.Value.nextIdSkill = idStepSkill;
 
     }
 }

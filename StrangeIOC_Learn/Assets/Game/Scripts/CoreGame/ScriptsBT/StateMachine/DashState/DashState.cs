@@ -11,6 +11,7 @@ public class DashState : State
     {
         base.EnterState();
         //controller.animator.SetTrigger(AnimationTriger.DASH);
+        controller.componentManager.dashCount += 1;
         controller.animator.Play(AnimationTriger.DASH);
         controller.componentManager.Rotate();
         countTime = duration;
@@ -22,16 +23,6 @@ public class DashState : State
         
         if (countTime >= 0)
         {
-            
-            //if(controller.componentManager.rgbody2D.velocity.x <0 &&
-            //    controller.componentManager.transform.localScale.x>0 ||
-            //    controller.componentManager.rgbody2D.velocity.x>0 &&
-            //    controller.componentManager.transform.localScale.x < 0)
-            //{
-            //    controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-            //    controller.componentManager.Rotate();
-            //    controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-            //}
             controller.componentManager.rgbody2D.velocity = new Vector2(speedDash * controller.componentManager.transform.localScale.x, 0f);
             countTime -= Time.deltaTime;
         }
@@ -53,10 +44,8 @@ public class DashState : State
                 controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
                 controller.componentManager.Rotate();
                 controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);               
-                //controller.componentManager.rgbody2D.velocity = new Vector2(0, controller.componentManager.rgbody2D.velocity.y);
             }
         }
-        
     }
     public override void ExitState()
     {
@@ -66,11 +55,26 @@ public class DashState : State
     public override void OnInputJump()
     {
         base.OnInputJump();
-        controller.ChangeState(controller.jumpState);
+        if (controller.componentManager.checkGround() == true)
+        {
+            controller.componentManager.ResetDashCount();
+        }
+        if (controller.componentManager.CanJump)
+            controller.ChangeState(controller.jumpState);
     }
     public override void OnInputMove()
     {
         base.OnInputMove();
         controller.ChangeState(controller.moveState);
+    }
+    public override void OnInputAttack()
+    {
+        base.OnInputAttack();
+        if (controller.componentManager.checkGround() == true)
+            controller.ChangeState(controller.dashAttack);
+        else
+        {
+            controller.ChangeState(controller.airAttackState);
+        }
     }
 }
