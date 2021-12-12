@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efb88f72a6a91f4fb6ea52c50dc5009, type: 3}
   m_Name: DashState
   m_EditorClassIdentifier: 
-  duration: 0.2
+  duration: 0.3
   speedDash: 7

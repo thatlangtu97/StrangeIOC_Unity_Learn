@@ -15,7 +15,7 @@ MonoBehaviour:
   skillDatas:
   - id: 0
     NameTrigger: airattack
-    durationAnimation: 0.45
+    durationAnimation: 0.4
     nameEvent: 
     velocity: {x: 0, y: 7}
     durationVelocity: 0

@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: ComboDashAttackPlayer
   m_EditorClassIdentifier: Assembly-CSharp::ComboSkillConfig
-  skillDatas: []
+  skillDatas:
+  - id: 0
+    NameTrigger: dashattack
+    durationAnimation: 0.5
+    nameEvent: 
+    velocity: {x: 10, y: 0}
+    durationVelocity: 0.2
