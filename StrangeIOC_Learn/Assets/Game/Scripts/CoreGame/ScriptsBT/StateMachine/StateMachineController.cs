@@ -1,9 +1,5 @@
-﻿using BehaviorDesigner.Runtime;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [Serializable]
 public class StateMachineController : MonoBehaviour
@@ -36,7 +32,7 @@ public class StateMachineController : MonoBehaviour
     
     public void Awake()
     {
-        InitStateMachine();
+        //InitStateMachine();
     }
 
     public void Start()
@@ -45,7 +41,7 @@ public class StateMachineController : MonoBehaviour
     }
     public virtual void Update()
     {
-        UpdateState();
+        //UpdateState();
     }
     public virtual void InitStateMachine()
     {
@@ -59,18 +55,6 @@ public class StateMachineController : MonoBehaviour
         {
             currentState.UpdateState();
         }
-        //if (Input.GetKeyDown(KeyCode.F))
-        //{
-        //    ChangeState(freezeState);
-        //}
-        //if (Input.GetKeyDown(KeyCode.H))
-        //{
-        //    ChangeState(beHitState);
-        //}
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    ChangeState(dieState);
-        //}
     }
     public virtual void OnSpawn()
     {
@@ -103,9 +87,7 @@ public class StateMachineController : MonoBehaviour
         {
             stateToClone = Instantiate(stateToClone);
             stateToClone.InitState(this);
-
         }
-
     }
     public virtual void ChangeState(State newState)
     {
@@ -127,94 +109,17 @@ public class StateMachineController : MonoBehaviour
             }
         }
     }
-
     public virtual void OnInputAttack()
     {
     }
-
-    //protected virtual void OnInputJump()
-    //{
-    //}
-
-    //protected virtual void OnInputMoveLeft()
-    //{
-    //}
-
-    //protected virtual void OnInputMoveRight()
-    //{
-    //}
+    public virtual void OnInputJump()
+    {
+    }
     public virtual void OnInputMove()
     {
-        ChangeState(moveState);
     }
-    public virtual void OnInputStopMove()
-    {
-    }
-
-    public virtual void OnInputSkill(int skillId)
-    {
-    }
-
-    //protected virtual void OnInputDarts()
-    //{
-    //}
-
     public virtual void OnInputDash()
     {
     }
-
-    //public virtual void OnInputTool()
-    //{
-    //}
-
-    //public virtual void OnFinishCastingSkill(bool isSkill = false)
-    //{
-    //}
-
-    //public virtual void UpdateState(float deltaTime)
-    //{
-    //}
-
-    //public virtual void Attack()
-    //{
-    //}
-
-    //public virtual void Reborn()
-    //{
-    //}
-
-    //protected virtual void CheckForOpponentInTheSight()
-    //{
-
-    //}
-    //public void GetUp()
-    //{
-    //    currentState.OnGetUp();
-    //}
-    
-    //public virtual void KnockDown()
-    //{
-    //    if (currentState != null)
-    //    {
-    //        currentState.OnKnockDown();
-    //    }
-
-
-    //}
-    //public virtual void Freeze(float duration)
-    //{
-    //    if(currentState != null)
-    //    {
-    //        currentState.OnFrezee(duration);
-    //    }
-    //}
-
-    //public virtual void OnForceExitState()
-    //{
-    //    if(currentState!= null)
-    //    currentState.OnForceExitState();
-    //}
-
-
 }
 

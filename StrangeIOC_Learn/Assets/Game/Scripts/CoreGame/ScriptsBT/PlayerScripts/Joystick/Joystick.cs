@@ -49,17 +49,15 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
             OnMove();
         }
     }
-
     public void OnPointerDown(PointerEventData eventData)
     {
         OnDrag(eventData);
         if (componentManager != null)
         {
-            componentManager.stateMachine.currentState.OnInputMove();
-            //componentManager.stateMachine.ChangeState(componentManager.stateMachine.moveState);
+            if (componentManager.stateMachine.currentState != null)
+                componentManager.stateMachine.currentState.OnInputMove();
         }
     }
-
     public void OnPointerUp(PointerEventData eventData)
     {
         posEnd = Vector3.zero;
@@ -92,7 +90,6 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     private void Update()
     {
         Vector2 sizeDelta = BackGround.rectTransform.sizeDelta;
-        
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             ForceVector = new Vector3(-1, 0, 0f);
@@ -130,8 +127,5 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
                 PointJoystick.rectTransform.anchoredPosition = Vector3.zero;
             }
         }
-        
-
-
     }
 }

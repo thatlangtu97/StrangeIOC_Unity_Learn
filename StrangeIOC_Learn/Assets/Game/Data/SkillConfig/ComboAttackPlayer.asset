@@ -17,8 +17,8 @@ MonoBehaviour:
     NameTrigger: attack1
     durationAnimation: 0.3
     nameEvent: 
-    velocity: {x: 0, y: 0}
-    durationVelocity: 0
+    velocity: {x: 2, y: 0}
+    durationVelocity: 0.1
   - id: 1
     NameTrigger: attack2
     durationAnimation: 0.3
@@ -30,4 +30,4 @@ MonoBehaviour:
     durationAnimation: 0.5
     nameEvent: 
     velocity: {x: 3, y: 0}
-    durationVelocity: 0.2
+    durationVelocity: 0.3

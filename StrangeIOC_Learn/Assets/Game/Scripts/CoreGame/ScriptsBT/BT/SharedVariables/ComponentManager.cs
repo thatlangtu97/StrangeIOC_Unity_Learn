@@ -1,4 +1,5 @@
 ﻿using BehaviorDesigner.Runtime;
+using Entitas.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,19 @@ public class ComponentManager : MonoBehaviour
     public int dashCount;
     public int maxJump,maxDash;
 
+    //[HideInInspector]
+    public GameEntity entity;
+    public EntityLink link;
+    private void Awake()
+    {
+        entity = Contexts.sharedInstance.game.CreateEntity();
+        gameObject.Link(entity);
+        var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
+        foreach (var component in components)
+        {
+            component.AddComponent(ref entity);
+        }
+    }
     public void OnInputChangeFacing()
     {
         if (isFaceRight == true)

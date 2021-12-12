@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DashAttackState", menuName = "State/DashAttackState")]
 public class DashAttackState : State
 {
-    public ComboSkillConfig comboNormalAttack;
+    public AttackComboConfig comboNormalAttack;
     public int currentCombo;
     float timeCount;
     float durationVelocity;

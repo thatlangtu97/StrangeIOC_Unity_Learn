@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c125d8ce9b824c00ba85aa6e7cdf4ee, type: 3}
   m_Name: PlayerNormalAttack
   m_EditorClassIdentifier: 
-  comboNormalAttack: {fileID: 11400000, guid: 4ea8cef2d41b1c34c9b56797ef7809e2, type: 2}
+  comboNormalAttack: {fileID: 11400000, guid: d0628b11012454defb95a63745a454f2, type: 2}
   currentCombo: 0

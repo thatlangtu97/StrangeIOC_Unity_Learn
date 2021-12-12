@@ -9,5 +9,9 @@ public class HomeSceneContextView : ContextView
     {
         context = new HomeSceneContext(this);
         context.Start();
+        if (PlayFlashScene.instance != null)
+        {
+            PlayFlashScene.instance.HideLoading();
+        }
     }
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b38d01ac4b6243aea77b5f5f7238ff9, type: 3}
   m_Name: DashAttackState
   m_EditorClassIdentifier: 
-  comboNormalAttack: {fileID: 11400000, guid: 4c892f9222ea2491cad45458e7eda47f, type: 2}
+  comboNormalAttack: {fileID: 11400000, guid: 721a0eeb084a74b329b7bd00a99b5987, type: 2}
   currentCombo: 0

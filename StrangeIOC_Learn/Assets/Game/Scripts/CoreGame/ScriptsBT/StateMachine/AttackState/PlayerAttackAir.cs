@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerAttackAir", menuName = "State/PlayerAttackAir")]
 public class PlayerAttackAir : State
 {
-    public ComboSkillConfig comboNormalAttack;
+    public AttackComboConfig comboNormalAttack;
     public int currentCombo;
     float timeCount;
     public override void EnterState()

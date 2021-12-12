@@ -6,7 +6,7 @@ public class PlayerStateMatchine : StateMachineController
 {
     public override void Update()
     {
-        UpdateState();
+        //UpdateState();
     }
     public override void UpdateState()
     {
@@ -33,12 +33,25 @@ public class PlayerStateMatchine : StateMachineController
     public override void OnInputDash()
     {
         base.OnInputDash();
-        ChangeState(dashState);
+        if (currentState != null)
+        {
+            currentState.OnInputDash();
+        }
     }
     public override void OnInputAttack()
     {
         base.OnInputAttack();
-        componentManager.isBufferAttack = true;
-        ChangeState(attackState);
+        if (currentState != null)
+        {
+            currentState.OnInputAttack();
+        }
+    }
+    public override void OnInputJump()
+    {
+        base.OnInputJump();
+        if (currentState != null)
+        {
+            currentState.OnInputJump();
+        }
     }
 }
