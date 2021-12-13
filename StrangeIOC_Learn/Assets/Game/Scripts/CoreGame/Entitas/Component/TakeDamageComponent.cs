@@ -3,7 +3,7 @@
 public class TakeDamageComponent : IComponent
 {
     public GameEntity entity;
-    public GameEntity entityTakeDamage;
+    public GameEntity entityEnemy;
     public int damage;
     public TakeDamageComponent()
     {

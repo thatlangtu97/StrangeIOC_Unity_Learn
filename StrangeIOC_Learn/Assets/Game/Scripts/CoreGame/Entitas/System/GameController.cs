@@ -76,8 +76,8 @@ public class GameController : MonoBehaviour
     }
     IEnumerator delayReloadScene()
     {
-        
-        PlayFlashScene.instance.ShowLoading();
+        if(PlayFlashScene.instance!=null)
+            PlayFlashScene.instance.ShowLoading();
         Contexts.sharedInstance = new Contexts();
         yield return new WaitForSeconds(1.2f);
         Scene scene = SceneManager.GetActiveScene();

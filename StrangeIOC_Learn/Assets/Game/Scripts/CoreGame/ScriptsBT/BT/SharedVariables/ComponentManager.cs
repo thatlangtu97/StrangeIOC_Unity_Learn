@@ -33,25 +33,19 @@ public class ComponentManager : MonoBehaviour
     
     private void Awake()
     {
-        if (properties == null)
-        {
-            properties=  this.gameObject.AddComponent<ComponentProperties>();
-        }
-
-        entity = Contexts.sharedInstance.game.CreateEntity();
-        link = gameObject.Link(entity);
-        var component = GetComponent < IAutoAdd < GameEntity >> ();
-        component.AddComponent(ref entity);
         // var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
-
         //foreach (var component in components)
         //{
         //    component.AddComponent(ref entity);
         //}
     }
-    private void OnEnable()
+    public void OnEnable()
     {
-        TestTakeDamage.instance.AddEntity(entity);
+        
+        entity = Contexts.sharedInstance.game.CreateEntity();
+        link = gameObject.Link(entity);
+        var component = GetComponent<IAutoAdd<GameEntity>>();
+        component.AddComponent(ref entity);
     }
     public void OnInputChangeFacing()
     {
@@ -74,10 +68,6 @@ public class ComponentManager : MonoBehaviour
             speedMove = -Mathf.Abs(speedMove);
         }
     }
-    /// <summary>
-    /// /////////////
-    /// </summary>
-    /// <returns></returns>
     public void ResetJumpCount()
     {
         jumpCount = 0;

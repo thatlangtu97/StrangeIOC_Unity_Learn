@@ -15,9 +15,9 @@ TagManager:
   - 
   - Effect
   - Ground
-  - 
-  - 
-  - 
+  - DmgBoxPlayer
+  - Player
+  - Enemy
   - 
   - 
   - 
