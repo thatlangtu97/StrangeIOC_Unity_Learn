@@ -67,6 +67,7 @@ public class JumpState : State
     public override void OnInputAttack()
     {
         base.OnInputAttack();
-        controller.ChangeState(controller.airAttackState);
+        if (controller.componentManager.CanAttackAir)
+            controller.ChangeState(controller.airAttackState);
     }
 }

@@ -11,7 +11,7 @@ public class ComponentManager : MonoBehaviour
     public BehaviorTree BehaviorTree;
     public Rigidbody2D rgbody2D;
     public LayerMask layerMask;
-
+    public ComponentProperties properties;
     public bool hasCheckEnemyInSigh;
     public bool isFaceRight = false;
     public bool isAttack = false;
@@ -24,20 +24,34 @@ public class ComponentManager : MonoBehaviour
     public bool isOnGround;
     public int jumpCount;
     public int dashCount;
-    public int maxJump,maxDash;
+    public int attackAirCount;
+    public int maxJump,maxDash, maxAttackAirCount;
 
     //[HideInInspector]
     public GameEntity entity;
     public EntityLink link;
+    
     private void Awake()
     {
-        entity = Contexts.sharedInstance.game.CreateEntity();
-        gameObject.Link(entity);
-        var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
-        foreach (var component in components)
+        if (properties == null)
         {
-            component.AddComponent(ref entity);
+            properties=  this.gameObject.AddComponent<ComponentProperties>();
         }
+
+        entity = Contexts.sharedInstance.game.CreateEntity();
+        link = gameObject.Link(entity);
+        var component = GetComponent < IAutoAdd < GameEntity >> ();
+        component.AddComponent(ref entity);
+        // var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
+
+        //foreach (var component in components)
+        //{
+        //    component.AddComponent(ref entity);
+        //}
+    }
+    private void OnEnable()
+    {
+        TestTakeDamage.instance.AddEntity(entity);
     }
     public void OnInputChangeFacing()
     {
@@ -72,6 +86,10 @@ public class ComponentManager : MonoBehaviour
     {
         dashCount = 0;
     }
+    public void ResetAttackAirCount()
+    {
+        attackAirCount = 0;
+    }
     public bool CanJump
     {
         get { return jumpCount < maxJump; }
@@ -79,6 +97,10 @@ public class ComponentManager : MonoBehaviour
     public bool CanDash
     {
         get { return dashCount < maxDash; }
+    }
+    public bool CanAttackAir
+    {
+        get { return attackAirCount < maxAttackAirCount; }
     }
     public bool checkGround()
     {

@@ -58,6 +58,7 @@ public class DashState : State
         if (controller.componentManager.checkGround() == true)
         {
             controller.componentManager.ResetDashCount();
+            controller.componentManager.ResetAttackAirCount();
         }
         if (controller.componentManager.CanJump)
             controller.ChangeState(controller.jumpState);
@@ -74,7 +75,8 @@ public class DashState : State
             controller.ChangeState(controller.dashAttack);
         else
         {
-            controller.ChangeState(controller.airAttackState);
+            if(controller.componentManager.CanAttackAir)
+                controller.ChangeState(controller.airAttackState);
         }
     }
 }

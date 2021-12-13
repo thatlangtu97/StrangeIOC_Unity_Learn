@@ -19,7 +19,9 @@ public class GameController : MonoBehaviour
         }
         var contexts = Contexts.sharedInstance;
         GameSystem = new Feature("Game System")
-            .Add(new StateMachineUpdateSystem(contexts));
+            .Add(new StateMachineUpdateSystem(contexts))
+            .Add(new TakeDamageSystem(contexts))
+            ;
         GameSystem.Initialize();
     }
     void Start()

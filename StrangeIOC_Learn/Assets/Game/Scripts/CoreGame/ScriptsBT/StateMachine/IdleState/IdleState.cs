@@ -19,6 +19,7 @@ public class IdleState : State
         base.ExitState();
         controller.componentManager.ResetJumpCount();
         controller.componentManager.ResetDashCount();
+        controller.componentManager.ResetAttackAirCount();
     }
     public override void OnInputAttack()
     {

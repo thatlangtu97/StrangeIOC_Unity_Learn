@@ -11,6 +11,7 @@ public class PlayerAttackAir : State
     {
         base.EnterState();
         controller.componentManager.isAttack = true;
+        controller.componentManager.attackAirCount += 1;
         currentCombo = 0;
         CastSkill();
     }
