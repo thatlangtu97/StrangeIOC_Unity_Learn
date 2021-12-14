@@ -11,6 +11,11 @@ public class FinishSetupHomeSceneCmd : Command
     public ShowPanelHomeSignal showPanelHomeSignal { get; set; }
     [Inject]
     public ShowPanelHeroSignal showPanelHeroSignal { get; set; }
+    [Inject]
+    public ShowPanelShopSignal showPanelShopSignal { get; set; }
+    [Inject]
+    public ShowPanelCraftSignal showPanelCraftSignal { get; set; }
+
     public override void Execute()
     {
         PanelKey panelKey = popupManager.GetPanelAfterLoadHomeScene();
@@ -22,7 +27,13 @@ public class FinishSetupHomeSceneCmd : Command
             case PanelKey.PanelHero:
                 showPanelHeroSignal.Dispatch();
                 break;
+            case PanelKey.PanelCraft:
+                showPanelCraftSignal.Dispatch();
+                break;
+            case PanelKey.PanelShop:
+                showPanelShopSignal.Dispatch();
+                break;
         }
-        popupManager.ResetPanelShowAfterLoadHomeScene();
+        //popupManager.ResetPanelShowAfterLoadHomeScene();
     }
 }

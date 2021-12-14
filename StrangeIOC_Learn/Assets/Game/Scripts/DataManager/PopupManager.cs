@@ -9,17 +9,14 @@ public class PopupManager
     public PopupKey popupKey { get; set; }
     public Dictionary<UILayer, Transform> UIDic = new Dictionary<UILayer, Transform>();
     public Dictionary<PanelKey, GameObject> PanelDic = new Dictionary<PanelKey, GameObject>();
-    public Dictionary<PopupKey, GameObject> PopupDic = new Dictionary<PopupKey, GameObject>();
-
-    public Dictionary<PanelKey, List<GameObject>> ListPopupOfPanel = new Dictionary<PanelKey, List<GameObject>>();
-    public PanelKey currentPanel;
-    //new databack
-    public Dictionary<PanelKey,Signal> DicSignalPanel = new Dictionary<PanelKey,Signal>();
-
-
+    public Dictionary<PopupKey, AbsPopupView> PopupDic = new Dictionary<PopupKey, AbsPopupView>();
+    public PanelKey BasePabelKey;
+    public Dictionary<string, IEnumerator> listActionDelay = new Dictionary<string, IEnumerator>();
+    //public Dictionary<PanelKey, List<GameObject>> ListPopupOfPanel = new Dictionary<PanelKey, List<GameObject>>();
 
     [Inject] public ShowPanelHeroSignal showPanelHeroSignal { get; set; }
     [Inject] public ShowPanelHomeSignal showPanelHomeSignal { get; set; }
+    [Inject] public ShowPanelShopSignal showPanelShopSignal { get; set; }
     public PopupManager()
     {
     }
@@ -68,7 +65,7 @@ public class PopupManager
         
         return null;
     }
-    public void AddPanel(PanelKey key , GameObject panel)
+    public void AddPanel(PanelKey key, GameObject panel)
     {
         if (PanelDic.ContainsKey(key))
         {
@@ -79,24 +76,17 @@ public class PopupManager
             PanelDic.Add(key, panel);
         }
     }
-    public void AddPanel(PanelKey key, Signal signalPanel)
-    {
-        if (DicSignalPanel.ContainsKey(key))
-        {
-            DicSignalPanel[key] = signalPanel;
-        }
-        else
-        {
-            DicSignalPanel.Add(key, signalPanel);
-        }
-    }
-    public void SetPanelAfterLoadHomeScene(PanelKey key)
+    public void SetPanelAfterLoadHomeScene(PanelKey key , PopupKey popupkey)
     {
         panelKey = key;
+        popupKey = popupkey;
+        BasePabelKey = PanelKey.PanelHome;
     }
+    
     public void ResetPanelAfterLoadHomeScene()
     {
         panelKey = PanelKey.PanelHome;
+        BasePabelKey = PanelKey.PanelHome;
     }
     public PanelKey GetPanelAfterLoadHomeScene()
     {
@@ -108,59 +98,58 @@ public class PopupManager
     }
     public void ShowPanel(PanelKey key)
     {
-        currentPanel = key;
-        Debug.Log(key);
-        if (!ListPopupOfPanel.ContainsKey(key))
-        {
-            ListPopupOfPanel.Add(key, new List<GameObject>());
-        }
+        panelKey = key;
         foreach (PanelKey temp in PanelDic.Keys)
         {
             if (temp != key)
             {
-                PanelDic[temp].SetActive(false);
+                if(PanelDic[temp]!=null)
+                    PanelDic[temp].GetComponent<AbsPanelView>().HidePanel();
+            }
+            else
+            {
+                if (PanelDic[temp] != null)
+                    PanelDic[temp].GetComponent<AbsPanelView>().ShowPanel();
             }
         }
     }
     public void BackPanel()
     {
         //Disable popup
-        if (!ListPopupOfPanel.ContainsKey(currentPanel))
+        AbsPopupView lastPopup = null;
+        foreach (AbsPopupView temp in PopupDic.Values)
         {
-            ListPopupOfPanel.Add(currentPanel, new List<GameObject>());
-        }
-        GameObject lastPopup = null;
-        foreach(GameObject temp in ListPopupOfPanel[currentPanel])
-        {
-            if (temp.activeInHierarchy == true)
+            if (temp != null)
             {
-                lastPopup = temp;
+                if (temp.gameObject.activeInHierarchy == true)
+                {
+                    lastPopup = temp;
+                }
             }
         }
         if (lastPopup != null)
         {
-            lastPopup.SetActive(false);
+            lastPopup/*.GetComponent<AbsPopupView>()*/.HidePopup();
             return;
         }
         //disable Panel
         foreach (PanelKey temp in PanelDic.Keys)
         {
-            if (temp != PanelKey.PanelHome)
+            if (temp != BasePabelKey)
             {
-                if (PanelDic[temp].activeInHierarchy == true)
+                if (PanelDic[temp] != null)
                 {
-                    PanelDic[temp].SetActive(false);
+                    if (PanelDic[temp].activeInHierarchy == true)
+                    {
+                        PanelDic[temp].GetComponent<AbsPanelView>().HidePanel();
+                    }
                 }
             }
         }
-        if (!PanelDic.ContainsKey(PanelKey.PanelHome)){
-            showPanelHomeSignal.Dispatch();
-            currentPanel = PanelKey.PanelHome;
-        }
-        else
+        if(BasePabelKey == PanelKey.PanelHome)
         {
             showPanelHomeSignal.Dispatch();
-            currentPanel = PanelKey.PanelHome;
+            panelKey = PanelKey.PanelHome;
         }
     }
     #endregion
@@ -174,7 +163,7 @@ public class PopupManager
         }
         return false;
     }
-    public GameObject GetPopupByPopupKey(PopupKey key)
+    public AbsPopupView GetPopupByPopupKey(PopupKey key)
     {
         if (PopupDic.ContainsKey(key))
         {
@@ -183,7 +172,7 @@ public class PopupManager
 
         return null;
     }
-    public void AddPopup(PopupKey key, GameObject panel)
+    public void AddPopup(PopupKey key, AbsPopupView panel)
     {
         if (PopupDic.ContainsKey(key))
         {
@@ -192,28 +181,6 @@ public class PopupManager
         else
         {
             PopupDic.Add(key, panel);
-        }
-    }
-    public void AddPopupOfPanel(PopupKey key, GameObject panel)
-    {
-        if (PopupDic.ContainsKey(key))
-        {
-            PopupDic[key] = panel;
-        }
-        else
-        {
-            PopupDic.Add(key, panel);
-        }
-        if (!ListPopupOfPanel.ContainsKey(currentPanel))
-        {
-            ListPopupOfPanel.Add(currentPanel, new List<GameObject>());
-        }
-        else
-        {
-            if (!ListPopupOfPanel[currentPanel].Contains(PopupDic[key]))
-            {
-                ListPopupOfPanel[currentPanel].Add(PopupDic[key]);
-            }
         }
     }
     public void ResetPopup()
@@ -222,18 +189,10 @@ public class PopupManager
     }
     public void ShowPopup(PopupKey key)
     {
-        
-        if (!ListPopupOfPanel.ContainsKey(currentPanel))
-        {
-            ListPopupOfPanel.Add(currentPanel, new List<GameObject>());
-        }
-        else
-        {
-            if (!ListPopupOfPanel[currentPanel].Contains(PopupDic[key]))
-            {
-                ListPopupOfPanel[currentPanel].Add(PopupDic[key]);
-            }
-        }
+        if (!PopupDic.ContainsKey(key))
+            return;
+        if (PopupDic[key] != null)
+            PopupDic[key]/*.GetComponent<AbsPopupView>()*/.ShowPopup();
     }
     #endregion
 
@@ -243,18 +202,26 @@ public enum PanelKey
     PanelHome,
     PanelHero,
     PanelCraft,
+    PanelShop,
 }
 public enum PopupKey
 {
-    Node,
-    StaminaPopup,
-    EquipmentHeroDetailLeft,
-    EquipmentHeroDetailRight,
-    EquipmentCraftDetailLeft,
-    EquipmentCraftDetailRight,
+    Node=0,
+    StaminaPopup = 1,
+    EquipmentHeroDetailLeft = 2,
+    EquipmentHeroDetailRight = 3,
+    EquipmentCraftDetailLeft = 4,
+    EquipmentCraftDetailRight = 5,
+    ShopGoldPopup = 6,
+    ShopGemPopup =7,
+    ShopGachaPopup =8,
+    GachaPopup =9,
+    CraftPopup =10,
+    GachaInfoPopup =11,
 }
 public enum UILayer
 {
     UI1,
     UI2,
+    NODE,
 }

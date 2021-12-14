@@ -1,0 +1,146 @@
+
+MeatBag.png
+size: 1088,1088
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BOX
+  rotate: false
+  xy: 2, 695
+  size: 546, 390
+  orig: 548, 392
+  offset: 1, 1
+  index: -1
+BOX_2
+  rotate: true
+  xy: 550, 569
+  size: 516, 297
+  orig: 518, 299
+  offset: 1, 1
+  index: -1
+EYE_3_2
+  rotate: true
+  xy: 2, 48
+  size: 126, 179
+  orig: 128, 181
+  offset: 1, 1
+  index: -1
+EYE_normal_1
+  rotate: false
+  xy: 749, 4
+  size: 123, 123
+  orig: 125, 125
+  offset: 1, 1
+  index: -1
+EYE_normal_2
+  rotate: false
+  xy: 183, 115
+  size: 59, 59
+  orig: 61, 61
+  offset: 1, 1
+  index: -1
+GOLD
+  rotate: true
+  xy: 749, 129
+  size: 438, 261
+  orig: 440, 263
+  offset: 1, 1
+  index: -1
+Icon_Gem
+  rotate: true
+  xy: 632, 262
+  size: 68, 78
+  orig: 68, 78
+  offset: 0, 0
+  index: -1
+L_leg1
+  rotate: false
+  xy: 512, 233
+  size: 118, 97
+  orig: 120, 100
+  offset: 1, 2
+  index: -1
+L_leg2
+  rotate: false
+  xy: 849, 593
+  size: 141, 104
+  orig: 143, 106
+  offset: 1, 1
+  index: -1
+L_leg3
+  rotate: false
+  xy: 390, 6
+  size: 165, 113
+  orig: 167, 115
+  offset: 1, 1
+  index: -1
+MeatBag_LeftFoot
+  rotate: false
+  xy: 557, 6
+  size: 165, 113
+  orig: 165, 113
+  offset: 0, 0
+  index: -1
+R_leg1
+  rotate: true
+  xy: 963, 737
+  size: 128, 83
+  orig: 131, 85
+  offset: 1, 1
+  index: -1
+R_leg2
+  rotate: false
+  xy: 874, 7
+  size: 166, 120
+  orig: 168, 122
+  offset: 1, 1
+  index: -1
+R_leg3
+  rotate: true
+  xy: 849, 699
+  size: 166, 112
+  orig: 168, 114
+  offset: 1, 1
+  index: -1
+SKIRT
+  rotate: false
+  xy: 249, 121
+  size: 498, 108
+  orig: 498, 108
+  offset: 0, 0
+  index: -1
+TOP
+  rotate: true
+  xy: 2, 176
+  size: 517, 245
+  orig: 519, 247
+  offset: 1, 1
+  index: -1
+coin
+  rotate: true
+  xy: 244, 2
+  size: 117, 144
+  orig: 119, 146
+  offset: 1, 1
+  index: -1
+gem
+  rotate: true
+  xy: 249, 231
+  size: 462, 261
+  orig: 463, 261
+  offset: 1, 0
+  index: -1
+l_ARM
+  rotate: false
+  xy: 849, 867
+  size: 192, 218
+  orig: 192, 218
+  offset: 0, 0
+  index: -1
+r_ARM
+  rotate: false
+  xy: 512, 332
+  size: 193, 235
+  orig: 193, 235
+  offset: 0, 0
+  index: -1

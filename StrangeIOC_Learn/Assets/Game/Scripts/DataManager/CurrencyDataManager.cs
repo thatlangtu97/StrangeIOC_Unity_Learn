@@ -18,19 +18,22 @@ public class CurrencyDataManager : IObjectDataManager
         try
         {
             currencyData = DataManager.LoadData<CurrencyData>(CURRENCY_DATA_FILE);
+            if (currencyData == null)
+            {
+                currencyData = new CurrencyData();
+                setupValueDefault();
+                SaveData();
+            }
         }
         catch (Exception e)
         {
             Debug.LogError("CurrencyData Error: " + e);
             currencyData = new CurrencyData();
+            setupValueDefault();
             SaveData();
             return;
         }
-        if (currencyData == null)
-        {
-            currencyData = new CurrencyData();
-            SaveData();
-        }
+
     }
 
     public void SaveData()
@@ -54,6 +57,24 @@ public class CurrencyDataManager : IObjectDataManager
         set
         {
             currencyData.gem = value;
+            SaveData();
+        }
+    }
+    public int stamina
+    {
+        get { return currencyData.stamina; }
+        set
+        {
+            currencyData.stamina = value;
+            SaveData();
+        }
+    }
+    public int maxStamina
+    {
+        get { return currencyData.maxStamina; }
+        set
+        {
+            currencyData.maxStamina = value;
             SaveData();
         }
     }
@@ -101,10 +122,54 @@ public class CurrencyDataManager : IObjectDataManager
         SaveData();
         return currencyData.gem;
     }
+    public int UpStamina(int count, bool withEffect)
+    {
+        int initValue = currencyData.stamina;
+        int currentValue = initValue;
+        currencyData.stamina += count;
+        int desiredValue = currencyData.stamina;
+
+        SaveData();
+        return currencyData.stamina;
+    }
+    public int DownStamina(int count, bool withEffect)
+    {
+        int initValue = currencyData.stamina;
+        int currentValue = initValue;
+        currencyData.stamina -= count;
+        int desiredValue = currencyData.stamina;
+        if (currencyData.stamina <= 0)
+            currencyData.stamina = 0;
+        SaveData();
+        return currencyData.stamina;
+    }
+    public int GetCountOpenGachaById(int id)
+    {
+        if (!currencyData.gachaOpened.ContainsKey(id))
+        {
+            currencyData.gachaOpened.Add(id, 0);
+            SaveData();
+        }
+        return currencyData.gachaOpened[id];
+    }
+    public void UpCountOpenGachaById(int id ,int count)
+    {
+        if (!currencyData.gachaOpened.ContainsKey(id))
+        {
+            currencyData.gachaOpened.Add(id, count);
+            
+        }
+        else
+        {
+            currencyData.gachaOpened[id] += count;
+        }
+        SaveData();
+    }
     public void setupValueDefault() {
         currencyData.gold = 3000;
         currencyData.gem = 100;
         currencyData.stamina = 50;
+        currencyData.maxStamina = 50;
         SaveData();
     }
 }
@@ -114,6 +179,14 @@ public class CurrencyData : DataObject
     public int gold;
     public int gem;
     public int stamina;
+    public int maxStamina;
+    public Dictionary<int, int> gachaOpened = new Dictionary<int, int>();
+}
+public enum CurrencyType
+{
+    gold,
+    gem,
+    stamina,
 }
 
 

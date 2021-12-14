@@ -1,0 +1,69 @@
+
+flying_chest.png
+size: 292,292
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 191
+  size: 164, 99
+  orig: 167, 101
+  offset: 2, 1
+  index: -1
+body_gem
+  rotate: true
+  xy: 2, 25
+  size: 164, 99
+  orig: 165, 99
+  offset: 1, 0
+  index: -1
+coin_drop
+  rotate: false
+  xy: 168, 146
+  size: 117, 144
+  orig: 117, 144
+  offset: 0, 0
+  index: -1
+eyes
+  rotate: false
+  xy: 147, 65
+  size: 38, 38
+  orig: 40, 40
+  offset: 1, 1
+  index: -1
+eyes2
+  rotate: false
+  xy: 147, 172
+  size: 17, 17
+  orig: 19, 19
+  offset: 1, 1
+  index: -1
+get_hit
+  rotate: true
+  xy: 187, 66
+  size: 37, 54
+  orig: 39, 56
+  offset: 1, 1
+  index: -1
+get_hit2
+  rotate: false
+  xy: 243, 68
+  size: 35, 35
+  orig: 37, 37
+  offset: 1, 1
+  index: -1
+head
+  rotate: true
+  xy: 103, 30
+  size: 159, 42
+  orig: 161, 44
+  offset: 1, 1
+  index: -1
+wing1
+  rotate: false
+  xy: 147, 105
+  size: 143, 39
+  orig: 143, 39
+  offset: 0, 0
+  index: -1

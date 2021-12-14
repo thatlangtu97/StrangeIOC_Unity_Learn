@@ -1,0 +1,160 @@
+
+E1.png
+size: 1008,1008
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ATK1/Group-6
+  rotate: true
+  xy: 251, 811
+  size: 195, 163
+  orig: 200, 173
+  offset: 3, 1
+  index: -1
+ATK1/Group-6-copy
+  rotate: true
+  xy: 567, 815
+  size: 191, 111
+  orig: 200, 118
+  offset: 3, 2
+  index: -1
+ATK1/Group-6-copy-2
+  rotate: true
+  xy: 680, 809
+  size: 197, 95
+  orig: 200, 105
+  offset: 2, 6
+  index: -1
+L_hand1
+  rotate: false
+  xy: 655, 682
+  size: 39, 125
+  orig: 42, 127
+  offset: 2, 1
+  index: -1
+L_hand2
+  rotate: false
+  xy: 536, 743
+  size: 117, 70
+  orig: 119, 73
+  offset: 1, 2
+  index: -1
+L_hand3
+  rotate: false
+  xy: 760, 688
+  size: 71, 57
+  orig: 74, 59
+  offset: 2, 1
+  index: -1
+L_leg1
+  rotate: false
+  xy: 777, 747
+  size: 114, 121
+  orig: 120, 123
+  offset: 5, 1
+  index: -1
+L_leg2
+  rotate: true
+  xy: 251, 705
+  size: 49, 166
+  orig: 51, 168
+  offset: 1, 1
+  index: -1
+L_leg3
+  rotate: false
+  xy: 495, 698
+  size: 82, 43
+  orig: 84, 45
+  offset: 1, 1
+  index: -1
+Layer 11
+  rotate: false
+  xy: 696, 738
+  size: 62, 69
+  orig: 64, 71
+  offset: 1, 1
+  index: -1
+Layer 12
+  rotate: false
+  xy: 951, 730
+  size: 53, 74
+  orig: 55, 76
+  offset: 1, 1
+  index: -1
+R_hand1
+  rotate: true
+  xy: 251, 685
+  size: 18, 125
+  orig: 20, 127
+  offset: 1, 1
+  index: -1
+R_hand2
+  rotate: true
+  xy: 893, 687
+  size: 122, 56
+  orig: 124, 58
+  offset: 1, 1
+  index: -1
+R_hand3
+  rotate: false
+  xy: 419, 697
+  size: 74, 57
+  orig: 76, 60
+  offset: 1, 2
+  index: -1
+R_leg1
+  rotate: true
+  xy: 251, 765
+  size: 44, 157
+  orig: 46, 159
+  offset: 1, 1
+  index: -1
+R_leg2
+  rotate: false
+  xy: 777, 870
+  size: 121, 136
+  orig: 123, 139
+  offset: 1, 2
+  index: -1
+R_leg3
+  rotate: true
+  xy: 833, 662
+  size: 83, 42
+  orig: 85, 44
+  offset: 1, 1
+  index: -1
+body
+  rotate: false
+  xy: 900, 806
+  size: 105, 200
+  orig: 105, 200
+  offset: 0, 0
+  index: -1
+eye
+  rotate: true
+  xy: 972, 969
+  size: 37, 29
+  orig: 39, 31
+  offset: 1, 1
+  index: -1
+head
+  rotate: false
+  xy: 416, 848
+  size: 149, 158
+  orig: 151, 160
+  offset: 1, 1
+  index: -1
+shoulder
+  rotate: false
+  xy: 416, 756
+  size: 118, 90
+  orig: 120, 92
+  offset: 1, 1
+  index: -1
+sword
+  rotate: false
+  xy: 2, 673
+  size: 247, 333
+  orig: 250, 335
+  offset: 2, 1
+  index: -1

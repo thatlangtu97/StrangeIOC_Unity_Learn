@@ -1,0 +1,20 @@
+
+BM-weapon.png
+size: 251,105
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/R_axe
+  rotate: false
+  xy: 2, 2
+  size: 145, 101
+  orig: 147, 103
+  offset: 1, 1
+  index: -1
+images/fx/fxa
+  rotate: false
+  xy: 149, 3
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1

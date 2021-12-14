@@ -1,0 +1,27 @@
+
+cocoon.png
+size: 212,212
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 127 copy
+  rotate: true
+  xy: 145, 155
+  size: 55, 65
+  orig: 55, 65
+  offset: 0, 0
+  index: -1
+Layer 129 copy
+  rotate: false
+  xy: 2, 170
+  size: 141, 40
+  orig: 141, 40
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 2, 152
+  size: 35, 16
+  orig: 37, 18
+  offset: 1, 1
+  index: -1

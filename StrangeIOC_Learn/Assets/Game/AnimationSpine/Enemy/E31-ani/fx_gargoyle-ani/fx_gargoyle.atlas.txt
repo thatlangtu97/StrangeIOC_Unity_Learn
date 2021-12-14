@@ -1,0 +1,48 @@
+
+fx_gargoyle.png
+size: 484,484
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dust/0
+  rotate: false
+  xy: 2, 387
+  size: 152, 95
+  orig: 152, 95
+  offset: 0, 0
+  index: -1
+dust/1
+  rotate: false
+  xy: 156, 383
+  size: 134, 99
+  orig: 134, 99
+  offset: 0, 0
+  index: -1
+dust/2
+  rotate: false
+  xy: 292, 389
+  size: 104, 93
+  orig: 104, 93
+  offset: 0, 0
+  index: -1
+dust/3
+  rotate: true
+  xy: 398, 389
+  size: 93, 84
+  orig: 93, 84
+  offset: 0, 0
+  index: -1
+dust/4
+  rotate: true
+  xy: 292, 312
+  size: 75, 86
+  orig: 75, 86
+  offset: 0, 0
+  index: -1
+dust/5
+  rotate: true
+  xy: 2, 333
+  size: 52, 83
+  orig: 52, 83
+  offset: 0, 0
+  index: -1

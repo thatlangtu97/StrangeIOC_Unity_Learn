@@ -16,11 +16,17 @@ public class HomeSceneContext : MVCSContext
         base.mapBindings();
         //commandBinder.Bind<>().To<>();
         //injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton();
-        commandBinder.Bind<FinishSetupHomeSceneSignal>().To<FinishSetupHomeSceneCmd>();
+        //commandBinder.Bind<InitHomeSceneSignal>().To<InitHomeSceneCmd>().To<FinishSetupHomeSceneCmd>().InSequence(); 
+        commandBinder.Bind<InitHomeSceneSignal>().To<InitHomeSceneCmd>().To<FinishSetupHomeSceneCmd>().InSequence();
+
+        //commandBinder.Bind<FinishSetupHomeSceneSignal>().To<FinishSetupHomeSceneCmd>();
         commandBinder.Bind<ShowPanelHomeSignal>().To<ShowPanelHomeCmd>();
         commandBinder.Bind<ShowPopupStaminaSignal>().To<ShowPopupStaminaCmd>();
         commandBinder.Bind<ShowPanelHeroSignal>().To<ShowPanelHeroCmd>();
         commandBinder.Bind<ShowPanelCraftSignal>().To<ShowPanelCraftCmd>();
+        commandBinder.Bind<ShowPanelShopSignal>().To<ShowPanelShopCmd>();
+        commandBinder.Bind<ShowPopupGachaSignal>().To<ShowPopupGachaCmd>();
+        commandBinder.Bind<ShowPopupCraftSignal>().To<ShowPopupCraftCmd>();
 
     }
     // Remove Inject nếu k cần đến nữa
@@ -31,6 +37,8 @@ public class HomeSceneContext : MVCSContext
     public override void Launch()
     {
         base.Launch();
-        injectionBinder.GetInstance<FinishSetupHomeSceneSignal>().Dispatch();
+        injectionBinder.GetInstance<PopupManager>().ResetPanelAfterLoadHomeScene();
+        injectionBinder.GetInstance<InitHomeSceneSignal>().Dispatch();
+        //injectionBinder.GetInstance<FinishSetupHomeSceneSignal>().Dispatch();
     }
 }

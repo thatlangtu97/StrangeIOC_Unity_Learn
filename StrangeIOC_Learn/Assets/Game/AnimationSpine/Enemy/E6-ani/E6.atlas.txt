@@ -1,0 +1,146 @@
+
+E6.png
+size: 295,295
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 135, 8
+  size: 31, 37
+  orig: 33, 37
+  offset: 1, 0
+  index: -1
+die/0
+  rotate: false
+  xy: 151, 69
+  size: 53, 49
+  orig: 126, 126
+  offset: 28, 42
+  index: -1
+die/1
+  rotate: true
+  xy: 93, 47
+  size: 58, 56
+  orig: 126, 126
+  offset: 25, 38
+  index: -1
+die/2
+  rotate: false
+  xy: 208, 132
+  size: 82, 68
+  orig: 126, 126
+  offset: 14, 31
+  index: -1
+die/3
+  rotate: true
+  xy: 136, 120
+  size: 89, 70
+  orig: 126, 126
+  offset: 14, 30
+  index: -1
+die/4
+  rotate: true
+  xy: 215, 202
+  size: 91, 74
+  orig: 126, 126
+  offset: 19, 28
+  index: -1
+die/5
+  rotate: false
+  xy: 112, 211
+  size: 101, 82
+  orig: 126, 126
+  offset: 13, 26
+  index: -1
+die/6
+  rotate: false
+  xy: 2, 202
+  size: 108, 91
+  orig: 126, 126
+  offset: 11, 22
+  index: -1
+die/7
+  rotate: false
+  xy: 2, 7
+  size: 89, 94
+  orig: 126, 126
+  offset: 11, 22
+  index: -1
+die/8
+  rotate: false
+  xy: 2, 103
+  size: 87, 97
+  orig: 126, 126
+  offset: 10, 21
+  index: -1
+die/9
+  rotate: false
+  xy: 91, 107
+  size: 43, 93
+  orig: 126, 126
+  offset: 49, 25
+  index: -1
+eff_light
+  rotate: false
+  xy: 93, 5
+  size: 40, 40
+  orig: 44, 44
+  offset: 2, 2
+  index: -1
+eye
+  rotate: false
+  xy: 168, 2
+  size: 24, 11
+  orig: 26, 13
+  offset: 1, 1
+  index: -1
+head
+  rotate: false
+  xy: 168, 15
+  size: 33, 33
+  orig: 35, 35
+  offset: 1, 1
+  index: -1
+idle_body
+  rotate: false
+  xy: 244, 67
+  size: 30, 30
+  orig: 32, 32
+  offset: 1, 1
+  index: -1
+idle_eye
+  rotate: true
+  xy: 276, 68
+  size: 29, 8
+  orig: 31, 10
+  offset: 1, 1
+  index: -1
+idle_head
+  rotate: false
+  xy: 258, 99
+  size: 32, 31
+  orig: 34, 33
+  offset: 1, 1
+  index: -1
+idle_wing1
+  rotate: true
+  xy: 151, 50
+  size: 17, 48
+  orig: 19, 50
+  offset: 1, 1
+  index: -1
+idle_wing2
+  rotate: true
+  xy: 208, 114
+  size: 16, 48
+  orig: 18, 50
+  offset: 1, 1
+  index: -1
+wing
+  rotate: false
+  xy: 206, 72
+  size: 36, 40
+  orig: 36, 40
+  offset: 0, 0
+  index: -1

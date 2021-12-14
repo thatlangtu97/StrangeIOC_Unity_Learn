@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Effect
+  - Ground
+  - DmgBoxPlayer
+  - Player
+  - Enemy
   - 
   - 
   - 

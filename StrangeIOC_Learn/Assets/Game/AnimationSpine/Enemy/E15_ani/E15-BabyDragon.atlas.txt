@@ -1,0 +1,90 @@
+
+E15-BabyDragon.png
+size: 880,204
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+59x59
+  rotate: false
+  xy: 806, 143
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 6
+  size: 263, 196
+  orig: 266, 196
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 829, 54
+  size: 49, 44
+  orig: 52, 47
+  offset: 1, 1
+  index: -1
+eye_get_hit
+  rotate: false
+  xy: 454, 2
+  size: 38, 34
+  orig: 40, 36
+  offset: 1, 1
+  index: -1
+hand1
+  rotate: true
+  xy: 806, 100
+  size: 41, 54
+  orig: 43, 56
+  offset: 1, 1
+  index: -1
+hand2
+  rotate: true
+  xy: 829, 15
+  size: 37, 49
+  orig: 39, 51
+  offset: 1, 1
+  index: -1
+head
+  rotate: true
+  xy: 267, 9
+  size: 193, 185
+  orig: 195, 187
+  offset: 1, 1
+  index: -1
+leg1
+  rotate: true
+  xy: 695, 12
+  size: 74, 132
+  orig: 76, 134
+  offset: 1, 1
+  index: -1
+leg2
+  rotate: true
+  xy: 582, 6
+  size: 65, 111
+  orig: 67, 113
+  offset: 1, 1
+  index: -1
+mouth
+  rotate: true
+  xy: 691, 88
+  size: 114, 113
+  orig: 116, 115
+  offset: 1, 1
+  index: -1
+wing1
+  rotate: true
+  xy: 454, 38
+  size: 164, 126
+  orig: 164, 126
+  offset: 0, 0
+  index: -1
+wing2
+  rotate: false
+  xy: 582, 73
+  size: 107, 129
+  orig: 110, 131
+  offset: 2, 1
+  index: -1

@@ -1,0 +1,202 @@
+
+Ghoul.png
+size: 518,518
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_arm1
+  rotate: false
+  xy: 346, 200
+  size: 33, 37
+  orig: 33, 37
+  offset: 0, 0
+  index: -1
+L_arm2
+  rotate: false
+  xy: 370, 127
+  size: 49, 39
+  orig: 49, 39
+  offset: 0, 0
+  index: -1
+L_finger1
+  rotate: false
+  xy: 468, 160
+  size: 23, 12
+  orig: 23, 12
+  offset: 0, 0
+  index: -1
+L_finger2
+  rotate: false
+  xy: 493, 183
+  size: 10, 17
+  orig: 10, 17
+  offset: 0, 0
+  index: -1
+L_finger3
+  rotate: false
+  xy: 497, 147
+  size: 11, 17
+  orig: 11, 17
+  offset: 0, 0
+  index: -1
+L_finger4
+  rotate: false
+  xy: 505, 183
+  size: 9, 15
+  orig: 9, 15
+  offset: 0, 0
+  index: -1
+L_leg1
+  rotate: false
+  xy: 346, 125
+  size: 22, 41
+  orig: 22, 41
+  offset: 0, 0
+  index: -1
+L_leg2
+  rotate: false
+  xy: 444, 93
+  size: 27, 12
+  orig: 27, 12
+  offset: 0, 0
+  index: -1
+L_leg3
+  rotate: false
+  xy: 401, 103
+  size: 16, 22
+  orig: 16, 22
+  offset: 0, 0
+  index: -1
+R_arm1
+  rotate: false
+  xy: 444, 136
+  size: 22, 37
+  orig: 22, 37
+  offset: 0, 0
+  index: -1
+R_arm2
+  rotate: false
+  xy: 346, 94
+  size: 53, 29
+  orig: 53, 29
+  offset: 0, 0
+  index: -1
+R_finger1
+  rotate: false
+  xy: 498, 95
+  size: 17, 10
+  orig: 17, 10
+  offset: 0, 0
+  index: -1
+R_finger2
+  rotate: false
+  xy: 498, 107
+  size: 16, 14
+  orig: 16, 14
+  offset: 0, 0
+  index: -1
+R_finger3
+  rotate: false
+  xy: 480, 183
+  size: 11, 16
+  orig: 11, 16
+  offset: 0, 0
+  index: -1
+R_finger4
+  rotate: false
+  xy: 493, 166
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+R_leg1
+  rotate: false
+  xy: 420, 96
+  size: 22, 38
+  orig: 22, 38
+  offset: 0, 0
+  index: -1
+R_leg2
+  rotate: false
+  xy: 468, 147
+  size: 27, 11
+  orig: 27, 11
+  offset: 0, 0
+  index: -1
+R_leg3
+  rotate: false
+  xy: 482, 98
+  size: 14, 23
+  orig: 14, 23
+  offset: 0, 0
+  index: -1
+attack/Layer 1
+  rotate: false
+  xy: 2, 305
+  size: 170, 211
+  orig: 170, 211
+  offset: 0, 0
+  index: -1
+attack/Layer 2
+  rotate: false
+  xy: 2, 92
+  size: 170, 211
+  orig: 170, 211
+  offset: 0, 0
+  index: -1
+attack/Layer 3
+  rotate: false
+  xy: 174, 305
+  size: 170, 211
+  orig: 170, 211
+  offset: 0, 0
+  index: -1
+attack/Layer 4
+  rotate: false
+  xy: 174, 92
+  size: 170, 211
+  orig: 170, 211
+  offset: 0, 0
+  index: -1
+attack/Layer 5
+  rotate: false
+  xy: 346, 305
+  size: 170, 211
+  orig: 170, 211
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 346, 239
+  size: 85, 65
+  orig: 85, 65
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 346, 94
+  size: 19, 9
+  orig: 19, 9
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 346, 168
+  size: 38, 30
+  orig: 38, 30
+  offset: 0, 0
+  index: -1
+jaw
+  rotate: false
+  xy: 444, 107
+  size: 36, 27
+  orig: 36, 27
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 482, 123
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1

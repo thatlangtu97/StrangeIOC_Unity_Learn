@@ -7,12 +7,8 @@ public class ShowPanelHeroCmd : AbsShowPanelCmd
     public override void Execute()
     {
         PanelHeroView panelHeroView = GetInstance<PanelHeroView>();
-        panelHeroView.ShowPanel();
+        panelHeroView.ShowPanelByCmd();
     }
-    //public override string GetInjectName()
-    //{
-    //    return typeof(PanelHeroView).ToString() ;
-    //}
     public override string GetResourcePath()
     {
         return GameResourcePath.PANEL_HERO;

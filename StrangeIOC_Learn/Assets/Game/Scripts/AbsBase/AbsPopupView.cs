@@ -10,25 +10,37 @@ public class AbsPopupView : View
 	public UILayer uILayer;
 	public PopupKey popupKey;
 	AutoFIllPanelInParent autoFIllPanelInParent;
+	public UiViewController UiViewController;
 	protected override void Start()
 	{
 		base.Start();
-		transform.parent = popupManager.GetUILayer(uILayer);
-		autoFIllPanelInParent = GetComponent<AutoFIllPanelInParent>();
-		autoFIllPanelInParent.AutoFill();
+		if (uILayer != UILayer.NODE)
+		{
+			transform.parent = popupManager.GetUILayer(uILayer);
+			autoFIllPanelInParent = GetComponent<AutoFIllPanelInParent>();
+			autoFIllPanelInParent.AutoFill();
+		}
 	}
-	public void ShowPopup()
+	public virtual void ShowPopupByCmd()
 	{
-		this.gameObject.SetActive(true);
+		base.CopyStart();
 		NotifyShowPopup();
 		popupManager.ShowPopup(popupKey);
 	}
-
-	protected override void OnEnable()
+	public virtual void ShowPopup()
 	{
+		UiViewController.Show();
+	}
+	public void HidePopup()
+	{
+		UiViewController.Hide();
 	}
 	public void NotifyShowPopup()
 	{
 
 	}
+}
+public class ParameterPopup
+{
+
 }

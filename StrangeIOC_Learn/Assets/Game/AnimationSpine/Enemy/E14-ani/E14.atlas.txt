@@ -1,0 +1,90 @@
+
+E14.png
+size: 300,300
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 117
+  size: 118, 72
+  orig: 122, 74
+  offset: 2, 1
+  index: -1
+chest_fx
+  rotate: false
+  xy: 132, 168
+  size: 74, 130
+  orig: 80, 135
+  offset: 4, 1
+  index: -1
+close
+  rotate: false
+  xy: 2, 191
+  size: 128, 107
+  orig: 130, 110
+  offset: 1, 2
+  index: -1
+coin_drop
+  rotate: false
+  xy: 2, 36
+  size: 79, 79
+  orig: 88, 88
+  offset: 4, 5
+  index: -1
+eff_expo
+  rotate: false
+  xy: 83, 42
+  size: 40, 20
+  orig: 45, 27
+  offset: 4, 0
+  index: -1
+eyes
+  rotate: false
+  xy: 177, 77
+  size: 58, 20
+  orig: 60, 22
+  offset: 1, 1
+  index: -1
+get_hit
+  rotate: false
+  xy: 197, 12
+  size: 83, 29
+  orig: 85, 31
+  offset: 1, 1
+  index: -1
+get_hit2
+  rotate: false
+  xy: 189, 60
+  size: 53, 15
+  orig: 56, 19
+  offset: 1, 3
+  index: -1
+head
+  rotate: false
+  xy: 122, 99
+  size: 126, 57
+  orig: 128, 59
+  offset: 1, 1
+  index: -1
+head_open
+  rotate: true
+  xy: 208, 158
+  size: 140, 67
+  orig: 142, 70
+  offset: 1, 1
+  index: -1
+wing1
+  rotate: false
+  xy: 83, 40
+  size: 133, 58
+  orig: 133, 58
+  offset: 0, 0
+  index: -1
+wing2
+  rotate: 270
+  xy: 245, 18
+  size: 120, 52
+  orig: 120, 52
+  offset: 0, 0
+  index: -1

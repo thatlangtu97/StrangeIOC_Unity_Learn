@@ -89,7 +89,7 @@ namespace strange.extensions.mediation.impl
 			if (autoRegisterWithContext && !registeredWithContext && shouldRegister)
 				bubbleToContext(this, BubbleType.Add, true);
 		}
-
+		
 		/// A MonoBehaviour OnDestroy handler
 		/// The View will inform the Context that it is about to be
 		/// destroyed.
@@ -104,7 +104,11 @@ namespace strange.extensions.mediation.impl
 		{
 			bubbleToContext(this, BubbleType.Enable, false);
 		}
-
+		public void CopyStart()
+        {
+			if (autoRegisterWithContext && !registeredWithContext && shouldRegister)
+				bubbleToContext(this, BubbleType.Add, true);
+		}
 		/// A MonoBehaviour OnDisable handler
 		/// The View will inform the Context that it was disabled
 		protected virtual void OnDisable()

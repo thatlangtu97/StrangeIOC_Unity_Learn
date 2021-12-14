@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf6283de4e9443219cd62a9212d0b10, type: 3}
+  m_Name: Weapon2
+  m_EditorClassIdentifier: 
+  id: 102
+  GearIcon: {fileID: 21300000, guid: d382894c90ff34d4c89d0de19068b15d, type: 3}
+  GearFull: {fileID: 21300000, guid: 86308dff56f1405478b4e730788dbbc3, type: 3}
+  GearSlot: 0
+  gearName: Sword 9
+  idOfHero: 0
+  price: []
+  mainAttribute:
+    attType: 0
+    valueMinRandom: []
+    valueMaxRandom: []

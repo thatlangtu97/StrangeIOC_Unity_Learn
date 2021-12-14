@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bcadfb84a80b40c2b7838c18d716768, type: 3}
+  m_Name: EquipmentConfigCollection
+  m_EditorClassIdentifier: 
+  weaponCollection:
+  - {fileID: 11400000, guid: e6ef539fca4334104a2f966818bb85f8, type: 2}
+  - {fileID: 11400000, guid: bbb57829c2ffd4125b75d1899254231c, type: 2}
+  - {fileID: 11400000, guid: 9182840e922ce41d59a90c39bc827d8e, type: 2}
+  - {fileID: 11400000, guid: 5657db78b863248a196ff28161b4ff84, type: 2}
+  - {fileID: 11400000, guid: 9b83776f3f5fb4ceeacce0180a0a7c04, type: 2}
+  armorCollection:
+  - {fileID: 11400000, guid: d1fbd94eb6982409f9b7041cb97a5248, type: 2}
+  - {fileID: 11400000, guid: 4018b3f6f93ac4c0ebd7f005a365be6b, type: 2}
+  - {fileID: 11400000, guid: a226bdb8d1e9245e9aff1b10a7436fd0, type: 2}
+  - {fileID: 11400000, guid: 8221b9dc4c5b64faba4f6c3ed6961da5, type: 2}
+  - {fileID: 11400000, guid: 23b2e19426a4a456ca07ffb83cbdd0e8, type: 2}
+  ringCollection:
+  - {fileID: 11400000, guid: 858ba1339748c413d896d2fdf5ea4b59, type: 2}
+  - {fileID: 11400000, guid: 7cb822566ee3745199eac1e1b9e1c225, type: 2}
+  - {fileID: 11400000, guid: 6afe6e685d75240c19a777ad29bd5b92, type: 2}
+  - {fileID: 11400000, guid: ff2f5261a971245f1b042c79642a43cc, type: 2}
+  - {fileID: 11400000, guid: 89ad78d22fb6a417db265b047ded17dc, type: 2}
+  charmCollection:
+  - {fileID: 11400000, guid: 0fa12d1a30c2b49308f193ff7b9b55d2, type: 2}
+  - {fileID: 11400000, guid: 187e5668c647b46ba80bce3dfcb0fb63, type: 2}
+  - {fileID: 11400000, guid: 82b8695aae78c4108aa460df01cef40a, type: 2}
+  - {fileID: 11400000, guid: 95d9d9a4db3a94eb890b0e0d1a66cd80, type: 2}
+  - {fileID: 11400000, guid: 147f81b326afb460fa897afe57857cc7, type: 2}
+  colorRarity:
+  - rarity: 0
+    color: {r: 0.4117647, g: 0.4117647, b: 0.4117647, a: 1}
+  - rarity: 1
+    color: {r: 0.3372549, g: 0.4627451, b: 0.25490198, a: 1}
+  - rarity: 2
+    color: {r: 0.2509804, g: 0.30980393, b: 0.6784314, a: 1}
+  - rarity: 3
+    color: {r: 0.5921569, g: 0.28235295, b: 0.64705884, a: 1}
+  - rarity: 4
+    color: {r: 0.75686276, g: 0.4509804, b: 0, a: 1}
