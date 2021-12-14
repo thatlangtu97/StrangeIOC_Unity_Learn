@@ -19,21 +19,30 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2.0005593
-        inSlope: 0.5549985
-        outSlope: 0.5549985
+        value: 3
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9977875
-        value: 2.5543299
-        inSlope: 0.5549985
-        outSlope: 0.5549985
-        tangentMode: 34
+        time: 0.04864502
+        value: 3
+        inSlope: 0.0017700758
+        outSlope: 0.0017700758
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 1
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -42,19 +51,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.025008857
-        value: 5.4979463
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        time: 0.0016657859
+        value: 2.8686218
+        inSlope: 0.21090168
+        outSlope: 0.21090168
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
+        outWeight: 0.7428843
+      - serializedVersion: 3
+        time: 0.095507175
+        value: 2.9001217
+        inSlope: 1.4067084
+        outSlope: 1.4067084
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.3632421
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.50268555
-        value: 5.4979463
-        inSlope: 0
-        outSlope: 0
+        time: 0.2596478
+        value: 3.512742
+        inSlope: 3.73229
+        outSlope: 3.73229
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -63,6 +81,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     nameTrigger: skill1
-    durationAnimation: 1
+    durationAnimation: 0.5
     nameEvent: 
     lockVelocity: 0
