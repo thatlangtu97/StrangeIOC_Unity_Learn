@@ -12,23 +12,29 @@ public class PlayerStateMatchine : StateMachineController
     {
         base.UpdateState();
         componentManager.checkGround();
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             currentState.OnInputDash();
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Keypad0))
         {
-            
+
             currentState.OnInputAttack();
         }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            ChangeState(dieState);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    ChangeState(dieState);
+        //}
+        if (Input.GetKeyDown(KeyCode.Keypad5))
         {
             currentState.OnInputJump();
         }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            //currentState.OnRevive();
+            ChangeState(skillState);
+        }
+
     }
     public override void OnInputDash()
     {
@@ -53,5 +59,11 @@ public class PlayerStateMatchine : StateMachineController
         {
             currentState.OnInputJump();
         }
+    }
+    public override void OnInputRevive()
+    {
+        base.OnInputRevive();
+        currentState = reviveState;
+        currentState.EnterState();
     }
 }

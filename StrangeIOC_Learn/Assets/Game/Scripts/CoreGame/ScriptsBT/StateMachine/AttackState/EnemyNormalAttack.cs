@@ -20,6 +20,11 @@ public class EnemyNormalAttack : State
         base.ExitState();
         controller.componentManager.isAttack = false;
     }
+    public override void OnHit()
+    {
+        base.OnHit();
+        controller.ChangeState(controller.beHitState);
+    }
     //public override TaskStatus OnHit(bool isBlock)
     //{
 
@@ -34,13 +39,13 @@ public class EnemyNormalAttack : State
     //}
     //public override TaskStatus OnInputIdle()
     //{
-        
+
     //    return TaskStatus.Success;
     //}
 
     //public override TaskStatus OnInputMove()
     //{
-       
+
     //    return TaskStatus.Success;
     //}
     ////public override TaskStatus OnInputChangeFacing()

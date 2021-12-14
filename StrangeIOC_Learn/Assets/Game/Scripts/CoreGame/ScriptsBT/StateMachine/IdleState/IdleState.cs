@@ -41,5 +41,9 @@ public class IdleState : State
         base.OnInputMove();
         controller.ChangeState(controller.moveState);
     }
-
+    public override void OnHit()
+    {
+        base.OnHit();
+        controller.ChangeState(controller.beHitState);
+    }
 }

@@ -41,11 +41,14 @@ public class ComponentManager : MonoBehaviour
     }
     public void OnEnable()
     {
-        
         entity = Contexts.sharedInstance.game.CreateEntity();
         link = gameObject.Link(entity);
         var component = GetComponent<IAutoAdd<GameEntity>>();
         component.AddComponent(ref entity);
+    }
+    public void Unlink()
+    {
+        link.Unlink();
     }
     public void OnInputChangeFacing()
     {
@@ -117,4 +120,22 @@ public class ComponentManager : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
+    /// <summary>
+    /// UpdateWorldTransform() in Script 
+    /// SkeletonAnimation.cs
+    /// SkeletonMecanim.cs
+    /// Skeleton.cs
+    /// SkeletonGraphic.cs
+    /// </summary>
+    //public Spine.Unity.SkeletonMecanim mecanim;
+    //[Header("Update Skeleton")]
+    //public bool UpdateWorldTransform;
+    //public void UpdateMecanim()
+    //{
+    //    if (UpdateWorldTransform)/* return;*/
+    //    {
+    //        mecanim.skeleton.UpdateCache();
+    //        mecanim.skeleton.UpdateWorldTransform();
+    //    }
+    //}
 }

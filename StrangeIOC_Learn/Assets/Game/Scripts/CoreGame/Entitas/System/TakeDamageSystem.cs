@@ -33,6 +33,10 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
             {
                 entityEnemy.stateMachineContainer.stateMachine.ChangeState(entityEnemy.stateMachineContainer.stateMachine.dieState);
             }
+            else
+            {
+                entityEnemy.stateMachineContainer.stateMachine.currentState.OnHit();
+            }
             e.Destroy();
         }
     }

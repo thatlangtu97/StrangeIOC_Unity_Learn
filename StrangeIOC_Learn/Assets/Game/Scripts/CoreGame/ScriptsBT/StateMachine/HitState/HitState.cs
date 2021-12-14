@@ -20,7 +20,6 @@ public class HitState : State
             controller.animator.Play(AnimationTriger.HIT);
         else
             controller.animator.Play(AnimationTriger.HIT2);
-
         coutTime = duration;
     }
     public override void UpdateState()
@@ -39,6 +38,11 @@ public class HitState : State
         base.ExitState();
         coutTime = 0;
         controller.componentManager.BehaviorTree.EnableBehavior();
+    }
+    public override void OnHit()
+    {
+        base.OnHit();
+        EnterState();
     }
 
 }

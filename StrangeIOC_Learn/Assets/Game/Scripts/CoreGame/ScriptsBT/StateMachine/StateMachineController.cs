@@ -22,6 +22,7 @@ public class StateMachineController : MonoBehaviour
     public State getUpState; 
     public State freezeState;
     public State stuntState;
+    public State reviveState;
     [Header("Current State")]
     public State currentState;
     [Header("Previous State")]
@@ -80,6 +81,7 @@ public class StateMachineController : MonoBehaviour
         CreateStateFactory(ref freezeState);
         CreateStateFactory(ref skillState);
         CreateStateFactory(ref stuntState);
+        CreateStateFactory(ref reviveState);
     }
     protected void CreateStateFactory(ref State stateToClone)
     {
@@ -89,26 +91,39 @@ public class StateMachineController : MonoBehaviour
             stateToClone.InitState(this);
         }
     }
-    public virtual void ChangeState(State newState)
+    public virtual void ChangeState(State newState,bool forceChange=false)
     {
         if (newState == null) return;
         if (previousState != currentState)
         {
             previousState = currentState;
         }
-        if (currentState != dieState)
+        if (!forceChange)
         {
-            if (newState != currentState)
+            if (currentState != dieState && currentState != reviveState)
             {
-                if (currentState != null)
+                if (newState != currentState)
                 {
-                    currentState.ExitState();
+                    if (currentState != null)
+                    {
+                        currentState.ExitState();
+                    }
+                    currentState = newState;
+                    currentState.EnterState();
                 }
-                currentState = newState;
-                currentState.EnterState();
             }
         }
+        else
+        {
+            if (currentState != null)
+            {
+                currentState.ExitState();
+            }
+            currentState = newState;
+            currentState.EnterState();
+        }
     }
+
     public virtual void OnInputAttack()
     {
     }
@@ -119,6 +134,9 @@ public class StateMachineController : MonoBehaviour
     {
     }
     public virtual void OnInputDash()
+    {
+    }
+    public virtual void OnInputRevive()
     {
     }
 }

@@ -12,7 +12,6 @@ public class State : ScriptableObject
     }
     public virtual void EnterState()
     {
-        Debug.Log("EnterState " + this.name);
         foreach (AnimatorControllerParameter p in controller.animator.parameters)
         {
             if (p.type == AnimatorControllerParameterType.Trigger)
@@ -39,6 +38,16 @@ public class State : ScriptableObject
     public virtual void OnInputDash()
     {
     }
+    public virtual void OnInputSkill()
+    {
+    }
+    public virtual void OnHit()
+    {
+    }
+    public virtual void OnRevive()
+    {
+    }
+
     /*
         public virtual TaskStatus OnInputMoveLeft()
         {

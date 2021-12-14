@@ -28,9 +28,19 @@ public class DieState : State
     {
         base.ExitState();
         {
-            //Destroy(controller.gameObject);
+            Destroy(controller.gameObject);
+            controller.componentManager.Unlink();
             controller.componentManager.entity.Destroy();
             controller.gameObject.SetActive(false);
+        }
+    }
+    public override void OnRevive()
+    {
+        if (coutTime <= 0)
+        {
+            base.OnRevive();
+            controller.currentState = controller.reviveState;
+            controller.currentState.EnterState();
         }
     }
 }
