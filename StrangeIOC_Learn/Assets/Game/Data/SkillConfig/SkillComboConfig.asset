@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57449cef3e62ddd45aedc6c28c6c923a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8edc68811eaf0474d996014343a489e9, type: 3}
   m_Name: SkillComboConfig
   m_EditorClassIdentifier: 
   skillDatas:
@@ -19,67 +19,67 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3
+        value: 2.0110238
         inSlope: 0
         outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.04864502
-        value: 3
-        inSlope: 0.0017700758
-        outSlope: 0.0017700758
         tangentMode: 0
         weightedMode: 0
-        inWeight: 1
+        inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.5
-        value: 0
-        inSlope: 0
-        outSlope: 0
+        time: 0.110913545
+        value: 2.4773085
+        inSlope: 0.012131617
+        outSlope: 0.012131617
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.47700098
+      - serializedVersion: 3
+        time: 0.185346
+        value: 1.4719169
+        inSlope: -12.0427685
+        outSlope: -12.0427685
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.26207215
+      - serializedVersion: 3
+        time: 0.2889912
+        value: 0.0059509277
+        inSlope: -11.515785
+        outSlope: -11.515785
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.2611031
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     curveY:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0016657859
-        value: 2.8686218
-        inSlope: 0.21090168
-        outSlope: 0.21090168
+        time: 0
+        value: 0.9999504
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.7428843
+        outWeight: 0
       - serializedVersion: 3
-        time: 0.095507175
-        value: 2.9001217
-        inSlope: 1.4067084
-        outSlope: 1.4067084
+        time: 1.0162768
+        value: 3.023342
+        inSlope: 2
+        outSlope: 2
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.3632421
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.2596478
-        value: 3.512742
-        inSlope: 3.73229
-        outSlope: 3.73229
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     nameTrigger: skill1
     durationAnimation: 0.5
     nameEvent: 

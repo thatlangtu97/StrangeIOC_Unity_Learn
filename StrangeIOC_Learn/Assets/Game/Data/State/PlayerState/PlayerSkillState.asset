@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bcff397a593f304bb746c5a39671187, type: 3}
+  m_Script: {fileID: 11500000, guid: 89393e77c4e62468985fc39b787ae4a1, type: 3}
   m_Name: PlayerSkillState
   m_EditorClassIdentifier: 
-  comboNormalAttack: {fileID: 11400000, guid: a2bf43e76000c1741a093fdfc8191010, type: 2}
+  comboNormalAttack: {fileID: 11400000, guid: abbf8c377a5d14f3cbea8bbf7ec33ee8, type: 2}

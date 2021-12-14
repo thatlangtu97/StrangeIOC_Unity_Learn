@@ -555,7 +555,7 @@ MonoBehaviour:
   moveState: {fileID: 11400000, guid: 012a3ed284893405982d33bfd74e0838, type: 2}
   jumpState: {fileID: 11400000, guid: 4cb2f1a96eac9a64cbc27f4f8ae8a979, type: 2}
   attackState: {fileID: 11400000, guid: b99994fc2b68adf49a3fad1568e37fbd, type: 2}
-  skillState: {fileID: 11400000, guid: 966de3f308520334db045dae61541385, type: 2}
+  skillState: {fileID: 11400000, guid: 8132219dae7cb4098975bb1f1e837d39, type: 2}
   jumpFallState: {fileID: 0}
   doubleJumpState: {fileID: 0}
   knockDownState: {fileID: 0}
@@ -567,7 +567,7 @@ MonoBehaviour:
   getUpState: {fileID: 0}
   freezeState: {fileID: 0}
   stuntState: {fileID: 0}
-  reviveState: {fileID: 11400000, guid: 58ec35b27be41914abb3ab40762ead9c, type: 2}
+  reviveState: {fileID: 0}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   componentManager: {fileID: 218680112}
