@@ -4,8 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DashAttackState", menuName = "State/DashAttackState")]
 public class DashAttackState : State
 {
-    public List<AttackConfig> skillDatas;
     public int currentCombo;
+    public List<AttackConfig> skillDatas;
+
     float timeCount;
     float durationVelocity;
     public override void EnterState()

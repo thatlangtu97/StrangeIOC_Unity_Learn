@@ -10,7 +10,8 @@ public class ComponentManager : MonoBehaviour
     public StateMachineController stateMachine;
     public BehaviorTree BehaviorTree;
     public Rigidbody2D rgbody2D;
-    public LayerMask layerMask;
+    public LayerMask layerMaskGround,layerMaskWall;
+
     public ComponentProperties properties;
     public bool hasCheckEnemyInSigh;
     public bool isFaceRight = false;
@@ -21,6 +22,8 @@ public class ComponentManager : MonoBehaviour
     public bool isBufferAttack;
     [Range(0f,2f)]
     public float distanceCheckGround=0.1f;
+    [Range(0f, 2f)]
+    public float distanceCheckWall = 0.1f;
     public bool isOnGround;
     public int jumpCount;
     public int dashCount;
@@ -94,7 +97,21 @@ public class ComponentManager : MonoBehaviour
     }
     public bool checkGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceCheckGround, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceCheckGround, layerMaskGround);
+        if (hit.collider != null)
+        {
+            isOnGround = true;
+            return true;
+        }
+        else
+        {
+            isOnGround = false;
+            return false;
+        }
+    }
+    public bool checkWall()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1,0)* transform.localScale.x, distanceCheckWall, layerMaskWall);
         if (hit.collider != null)
         {
             isOnGround = true;

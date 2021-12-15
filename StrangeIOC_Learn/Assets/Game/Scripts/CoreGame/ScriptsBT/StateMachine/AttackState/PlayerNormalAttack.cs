@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerNormalAttack : State
 {
     //public AttackComboConfig comboNormalAttack;
-    public List<AttackConfig> skillDatas= new List<AttackConfig>();
     public int currentCombo;
+    public List<AttackConfig> skillDatas= new List<AttackConfig>();
+
     float timeCount;
     float durationVelocity;
     public override void EnterState()

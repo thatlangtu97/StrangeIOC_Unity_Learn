@@ -15,5 +15,4 @@ public class AttackConfig
     public string nameEvent;
     public Vector2 velocity;
     public float durationVelocity;
-
 }

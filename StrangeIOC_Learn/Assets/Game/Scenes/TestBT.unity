@@ -587,9 +587,12 @@ MonoBehaviour:
   stateMachine: {fileID: 218680111}
   BehaviorTree: {fileID: 0}
   rgbody2D: {fileID: 218680113}
-  layerMask:
+  layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
+  layerMaskWall:
+    serializedVersion: 2
+    m_Bits: 8192
   properties: {fileID: 218680116}
   hasCheckEnemyInSigh: 0
   isFaceRight: 0
@@ -599,6 +602,7 @@ MonoBehaviour:
   maxSpeedMove: 3
   isBufferAttack: 0
   distanceCheckGround: 0.05
+  distanceCheckWall: 0.31740394
   isOnGround: 0
   jumpCount: 0
   dashCount: 0
@@ -762,7 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 405126310}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WALL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6076,7 +6080,7 @@ GameObject:
   - component: {fileID: 1159029155}
   - component: {fileID: 1159029154}
   - component: {fileID: 1159029153}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6335,7 +6339,7 @@ GameObject:
   - component: {fileID: 1272585098}
   - component: {fileID: 1272585097}
   - component: {fileID: 1272585096}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6517,9 +6521,12 @@ MonoBehaviour:
   stateMachine: {fileID: 1483235772}
   BehaviorTree: {fileID: 1483235765}
   rgbody2D: {fileID: 1483235773}
-  layerMask:
+  layerMaskGround:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
+  layerMaskWall:
+    serializedVersion: 2
+    m_Bits: 0
   properties: {fileID: 1483235776}
   hasCheckEnemyInSigh: 1
   isFaceRight: 0
@@ -6529,6 +6536,7 @@ MonoBehaviour:
   maxSpeedMove: 2
   isBufferAttack: 0
   distanceCheckGround: 0.02
+  distanceCheckWall: 0.1
   isOnGround: 0
   jumpCount: 0
   dashCount: 0
