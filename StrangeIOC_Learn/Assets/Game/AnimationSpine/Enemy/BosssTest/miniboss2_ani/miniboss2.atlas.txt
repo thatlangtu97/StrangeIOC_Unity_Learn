@@ -1,0 +1,307 @@
+
+miniboss2.png
+size: 500,500
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_arm
+  rotate: false
+  xy: 175, 353
+  size: 87, 28
+  orig: 89, 30
+  offset: 1, 1
+  index: -1
+L_brace1
+  rotate: false
+  xy: 264, 357
+  size: 25, 8
+  orig: 27, 10
+  offset: 1, 1
+  index: -1
+L_brace2
+  rotate: false
+  xy: 468, 346
+  size: 23, 9
+  orig: 25, 11
+  offset: 1, 1
+  index: -1
+L_brace3
+  rotate: false
+  xy: 264, 367
+  size: 21, 12
+  orig: 23, 14
+  offset: 1, 1
+  index: -1
+L_finger1
+  rotate: false
+  xy: 474, 357
+  size: 23, 34
+  orig: 23, 34
+  offset: 0, 0
+  index: -1
+L_finger2
+  rotate: false
+  xy: 481, 467
+  size: 15, 32
+  orig: 15, 32
+  offset: 0, 0
+  index: -1
+L_finger3
+  rotate: false
+  xy: 474, 407
+  size: 19, 32
+  orig: 19, 32
+  offset: 0, 0
+  index: -1
+L_finger4
+  rotate: false
+  xy: 85, 322
+  size: 21, 25
+  orig: 21, 25
+  offset: 0, 0
+  index: -1
+L_foot
+  rotate: false
+  xy: 452, 277
+  size: 45, 28
+  orig: 45, 28
+  offset: 0, 0
+  index: -1
+L_forearm
+  rotate: false
+  xy: 327, 298
+  size: 31, 56
+  orig: 33, 58
+  offset: 1, 1
+  index: -1
+L_hair1
+  rotate: true
+  xy: 84, 282
+  size: 26, 77
+  orig: 26, 77
+  offset: 0, 0
+  index: -1
+L_hair2
+  rotate: false
+  xy: 430, 336
+  size: 43, 103
+  orig: 43, 103
+  offset: 0, 0
+  index: -1
+L_hand
+  rotate: false
+  xy: 227, 324
+  size: 30, 27
+  orig: 32, 29
+  offset: 1, 1
+  index: -1
+L_horn
+  rotate: false
+  xy: 134, 308
+  size: 39, 46
+  orig: 41, 48
+  offset: 1, 1
+  index: -1
+L_leg1
+  rotate: true
+  xy: 367, 324
+  size: 40, 61
+  orig: 42, 63
+  offset: 1, 1
+  index: -1
+L_leg2
+  rotate: true
+  xy: 272, 280
+  size: 30, 53
+  orig: 30, 53
+  offset: 0, 0
+  index: -1
+R_arm
+  rotate: true
+  xy: 368, 366
+  size: 62, 71
+  orig: 64, 73
+  offset: 1, 1
+  index: -1
+R_brace1
+  rotate: false
+  xy: 279, 449
+  size: 12, 23
+  orig: 14, 25
+  offset: 1, 1
+  index: -1
+R_brace2
+  rotate: false
+  xy: 481, 442
+  size: 9, 23
+  orig: 11, 25
+  offset: 1, 1
+  index: -1
+R_brace3
+  rotate: false
+  xy: 492, 442
+  size: 5, 23
+  orig: 7, 25
+  offset: 1, 1
+  index: -1
+R_finger1
+  rotate: false
+  xy: 397, 278
+  size: 41, 27
+  orig: 41, 27
+  offset: 0, 0
+  index: -1
+R_finger2
+  rotate: false
+  xy: 192, 386
+  size: 21, 24
+  orig: 23, 26
+  offset: 1, 1
+  index: -1
+R_finger3
+  rotate: false
+  xy: 227, 293
+  size: 43, 27
+  orig: 45, 29
+  offset: 1, 1
+  index: -1
+R_foot
+  rotate: false
+  xy: 327, 278
+  size: 50, 18
+  orig: 50, 18
+  offset: 0, 0
+  index: -1
+R_forearm
+  rotate: false
+  xy: 360, 298
+  size: 59, 24
+  orig: 61, 26
+  offset: 1, 1
+  index: -1
+R_horn
+  rotate: true
+  xy: 175, 294
+  size: 24, 44
+  orig: 26, 46
+  offset: 1, 1
+  index: -1
+R_leg1
+  rotate: true
+  xy: 435, 441
+  size: 57, 44
+  orig: 59, 46
+  offset: 1, 1
+  index: -1
+R_leg2
+  rotate: false
+  xy: 108, 297
+  size: 24, 55
+  orig: 24, 55
+  offset: 0, 0
+  index: -1
+belly
+  rotate: false
+  xy: 264, 322
+  size: 61, 32
+  orig: 63, 34
+  offset: 1, 1
+  index: -1
+body
+  rotate: true
+  xy: 192, 381
+  size: 117, 109
+  orig: 117, 109
+  offset: 0, 0
+  index: -1
+diaper
+  rotate: true
+  xy: 84, 346
+  size: 43, 89
+  orig: 43, 89
+  offset: 0, 0
+  index: -1
+ear
+  rotate: false
+  xy: 275, 474
+  size: 17, 24
+  orig: 19, 26
+  offset: 1, 1
+  index: -1
+earing
+  rotate: false
+  xy: 441, 426
+  size: 10, 13
+  orig: 12, 15
+  offset: 1, 1
+  index: -1
+eye
+  rotate: false
+  xy: 464, 336
+  size: 15, 8
+  orig: 17, 10
+  offset: 1, 1
+  index: -1
+eye_get_hit
+  rotate: false
+  xy: 215, 388
+  size: 14, 9
+  orig: 17, 11
+  offset: 2, 1
+  index: -1
+hair2
+  rotate: true
+  xy: 430, 307
+  size: 27, 64
+  orig: 27, 64
+  offset: 0, 0
+  index: -1
+head1
+  rotate: false
+  xy: 302, 356
+  size: 63, 69
+  orig: 65, 71
+  offset: 1, 1
+  index: -1
+head2
+  rotate: false
+  xy: 175, 320
+  size: 50, 31
+  orig: 52, 33
+  offset: 1, 1
+  index: -1
+mouth
+  rotate: false
+  xy: 475, 393
+  size: 22, 12
+  orig: 24, 14
+  offset: 1, 1
+  index: -1
+necklace
+  rotate: true
+  xy: 84, 391
+  size: 107, 106
+  orig: 109, 110
+  offset: 1, 2
+  index: -1
+staff1
+  rotate: false
+  xy: 2, 273
+  size: 80, 225
+  orig: 82, 227
+  offset: 1, 1
+  index: -1
+staff2
+  rotate: true
+  xy: 294, 427
+  size: 71, 72
+  orig: 78, 79
+  offset: 3, 3
+  index: -1
+staff3
+  rotate: false
+  xy: 368, 430
+  size: 65, 68
+  orig: 67, 70
+  offset: 1, 1
+  index: -1

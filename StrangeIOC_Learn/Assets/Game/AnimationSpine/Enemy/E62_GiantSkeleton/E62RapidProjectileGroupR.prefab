@@ -1,0 +1,289 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &622581801627604559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622581801627604558}
+  m_Layer: 0
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &622581801627604558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581801627604559}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 622581802340533041}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &622581802206960449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622581802206960448}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &622581802206960448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802206960449}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 622581802340533041}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &622581802340533046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622581802340533041}
+  - component: {fileID: 622581802340533045}
+  - component: {fileID: 6076527947378971927}
+  - component: {fileID: 9165825393841081051}
+  - component: {fileID: 5447125889526821095}
+  - component: {fileID: 6686045853336343358}
+  - component: {fileID: 3415274894008996600}
+  - component: {fileID: -7978045376478218083}
+  - component: {fileID: 6705765040245404772}
+  m_Layer: 0
+  m_Name: E62RapidProjectileGroupR
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &622581802340533041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802340533046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5622641, y: -1.8701046, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 622581802206960448}
+  - {fileID: 622581801627604558}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &622581802340533045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802340533046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26dc112f61cd42499ccc914ba1cb216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentManager: {fileID: 6686045853336343358}
+  damageSource: {fileID: 3415274894008996600}
+  launchPoint: {fileID: 622581801627604558}
+  shootPoint: {fileID: 622581802206960448}
+  projectile: {fileID: 7196222867583967108, guid: f9379fdc2e5bfe14e9390bfbccd8b242,
+    type: 3}
+  numberOfProjectile: 10
+  fireRate: 0.2
+  angle: 2
+  offset: 1
+  countDirection: 3
+  curdirection: 0
+  shootMode: 4
+  shotDelay: 0.1
+  target: {x: 0, y: 0}
+  randomShootPointRange: 1
+  offsetPosition: {x: 1, y: 0}
+--- !u!114 &6076527947378971927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802340533046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a179ec64f6c2a1458f5156aee18aa20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchpoint: {fileID: 622581801627604558}
+  projectileObj: {fileID: 7196222867583967108, guid: f9379fdc2e5bfe14e9390bfbccd8b242,
+    type: 3}
+  offSet: 1
+  type: 4
+  notDestroy: 1
+--- !u!114 &9165825393841081051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802340533046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edba0b6780bf014da00d262da7ce283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 0
+  bonusDamageBoss: 0
+  magicDamage: 0
+  speed: 0
+  isPlayer: 0
+  isObject: 1
+  bonusDamageCreep: 0
+  identity: 2
+  burnDamage: 0
+  frostDamage: 0
+  electrocuteDamage: 0
+  fireDamage: 0
+  iceDamage: 0
+  lightingDamage: 0
+  attackScale: 0
+  levelInit: 0
+  notDestoy: 1
+--- !u!114 &5447125889526821095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802340533046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede57e142d632f94389bee8783020ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnable: 1
+  speed: 0
+  duration: 10
+  direction: {x: 0, y: 0, z: 0}
+  isFaceToTarget: 1
+--- !u!114 &6686045853336343358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802340533046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599d38bd49bce71449c8f31cc402d76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  link: {fileID: 0}
+  test: {x: 0, y: 0}
+  dependCount: 0
+  layerOrder: 0
+  levelInit: 0
+  isPlayer: 0
+  activeList: []
+  deactiveList: []
+  activePositions: []
+  notSetActive: 0
+  enemyCountReduce: 0
+--- !u!114 &3415274894008996600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802340533046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6cab4b5836e349b6b138d42c87eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackInfo:
+    nameAnimation: 
+    rawDamage: 0
+    isSkillSource: 0
+    damagescale: 0
+    damageType: 
+    attackType: 0
+    critChance: 0
+    critMultiplier: 0
+    knockBackForce: 0
+    knockUpForce: 0
+    isKnockDownAttack: 0
+    fxSet: {fileID: 0}
+  autoRelease: 0
+  parent: {fileID: 0}
+  destroyCollision: 0
+  setInactiveCollision: 0
+  notAddDepend: 0
+  isBreakable: 0
+  effectActiveChance: 0
+  isAddOnProjectile: 0
+  hitCount: 0
+  numberOfPiercingTarget: 0
+--- !u!114 &-7978045376478218083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802340533046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f3f0ec33f43e5f488f08342b4b13954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyID: 
+  baseHealth: 0
+  baseAttack: 0
+  baseDefense: 0
+  baseHealEffectiveness: 0
+  notDestroy: 1
+  isObject: 1
+  isPlayer: 0
+--- !u!114 &6705765040245404772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622581802340533046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca42157ce824084492be90574cfb490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackModifier: 0
+  defenseModifider: 0
+  healthModifier: 0
+  notDestroy: 1

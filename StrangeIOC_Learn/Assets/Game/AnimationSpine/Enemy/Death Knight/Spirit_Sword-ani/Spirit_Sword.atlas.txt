@@ -1,0 +1,104 @@
+
+Spirit_Sword.png
+size: 766,766
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/Spirit_sword
+  rotate: false
+  xy: 298, 127
+  size: 208, 65
+  orig: 213, 69
+  offset: 2, 2
+  index: -1
+images/dash1
+  rotate: false
+  xy: 508, 78
+  size: 107, 108
+  orig: 128, 128
+  offset: 12, 0
+  index: -1
+images/fx1/0
+  rotate: false
+  xy: 2, 387
+  size: 250, 156
+  orig: 253, 159
+  offset: 1, 1
+  index: -1
+images/fx1/1
+  rotate: false
+  xy: 258, 352
+  size: 188, 195
+  orig: 191, 197
+  offset: 1, 1
+  index: -1
+images/fx1/2
+  rotate: false
+  xy: 510, 347
+  size: 245, 207
+  orig: 248, 209
+  offset: 1, 1
+  index: -1
+images/fx1/3
+  rotate: false
+  xy: 258, 549
+  size: 250, 215
+  orig: 253, 217
+  offset: 1, 1
+  index: -1
+images/fx1/4
+  rotate: false
+  xy: 2, 545
+  size: 254, 219
+  orig: 259, 222
+  offset: 3, 1
+  index: -1
+images/fx1/5
+  rotate: false
+  xy: 510, 556
+  size: 254, 208
+  orig: 258, 210
+  offset: 2, 0
+  index: -1
+images/fx7/0
+  rotate: true
+  xy: 187, 203
+  size: 147, 196
+  orig: 147, 196
+  offset: 0, 0
+  index: -1
+images/fx7/1
+  rotate: true
+  xy: 385, 194
+  size: 151, 190
+  orig: 151, 190
+  offset: 0, 0
+  index: -1
+images/fx7/2
+  rotate: true
+  xy: 2, 227
+  size: 158, 183
+  orig: 158, 183
+  offset: 0, 0
+  index: -1
+images/fx7/3
+  rotate: true
+  xy: 577, 188
+  size: 157, 174
+  orig: 157, 174
+  offset: 0, 0
+  index: -1
+images/fx7/4
+  rotate: true
+  xy: 2, 80
+  size: 145, 154
+  orig: 145, 154
+  offset: 0, 0
+  index: -1
+images/fx7/5
+  rotate: true
+  xy: 158, 77
+  size: 124, 138
+  orig: 124, 139
+  offset: 0, 1
+  index: -1

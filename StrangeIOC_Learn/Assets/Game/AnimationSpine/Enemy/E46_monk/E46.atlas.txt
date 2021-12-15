@@ -1,0 +1,118 @@
+
+E46.png
+size: 524,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 76, 116
+  size: 57, 107
+  orig: 76, 120
+  offset: 15, 5
+  index: -1
+110-1
+  rotate: false
+  xy: 2, 2
+  size: 230, 83
+  orig: 256, 128
+  offset: 13, 26
+  index: -1
+Body
+  rotate: false
+  xy: 2, 362
+  size: 126, 160
+  orig: 126, 168
+  offset: 0, 8
+  index: -1
+Head
+  rotate: true
+  xy: 76, 225
+  size: 135, 67
+  orig: 137, 70
+  offset: 1, 2
+  index: -1
+L-arm
+  rotate: true
+  xy: 146, 99
+  size: 48, 79
+  orig: 50, 81
+  offset: 1, 1
+  index: -1
+L-forearm
+  rotate: true
+  xy: 145, 317
+  size: 66, 43
+  orig: 68, 45
+  offset: 1, 1
+  index: -1
+L-hand
+  rotate: false
+  xy: 175, 472
+  size: 49, 50
+  orig: 51, 52
+  offset: 1, 1
+  index: -1
+L-leg
+  rotate: false
+  xy: 145, 249
+  size: 43, 66
+  orig: 43, 66
+  offset: 0, 0
+  index: -1
+R-arm
+  rotate: false
+  xy: 135, 149
+  size: 73, 74
+  orig: 75, 76
+  offset: 1, 1
+  index: -1
+R-forearm
+  rotate: false
+  xy: 130, 385
+  size: 43, 67
+  orig: 45, 69
+  offset: 1, 1
+  index: -1
+R-hand
+  rotate: true
+  xy: 175, 418
+  size: 52, 44
+  orig: 54, 47
+  offset: 1, 1
+  index: -1
+R-leg
+  rotate: false
+  xy: 130, 454
+  size: 43, 68
+  orig: 43, 71
+  offset: 0, 0
+  index: -1
+images/cycle1
+  rotate: true
+  xy: 76, 94
+  size: 20, 33
+  orig: 22, 37
+  offset: 1, 2
+  index: -1
+images/cycle2
+  rotate: true
+  xy: 111, 94
+  size: 20, 33
+  orig: 22, 37
+  offset: 1, 2
+  index: -1
+images/staff
+  rotate: false
+  xy: 2, 87
+  size: 72, 273
+  orig: 74, 276
+  offset: 1, 1
+  index: -1
+monk_hand
+  rotate: false
+  xy: 190, 358
+  size: 33, 58
+  orig: 36, 61
+  offset: 1, 1
+  index: -1

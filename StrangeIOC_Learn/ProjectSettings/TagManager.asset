@@ -14,12 +14,12 @@ TagManager:
   - 
   - 
   - Effect
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Enemy
+  - PlayerBoxTakeDamage
+  - Wall
+  - EnemyBoxTakeDamage
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BGLayer1
+    uniqueID: 480021929
+    locked: 0
+  - name: BGLayer2
+    uniqueID: 3445416175
+    locked: 0
+  - name: BGLayer3
+    uniqueID: 851103365
+    locked: 0
+  - name: BGLayer4
+    uniqueID: 2473934023
+    locked: 0
+  - name: BGLayer5
+    uniqueID: 4238400113
     locked: 0

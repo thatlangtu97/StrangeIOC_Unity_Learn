@@ -1,0 +1,20 @@
+
+Axe.png
+size: 611,611
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+new
+  rotate: false
+  xy: 2, 325
+  size: 438, 284
+  orig: 640, 360
+  offset: 94, 72
+  index: -1
+weapon1
+  rotate: false
+  xy: 442, 397
+  size: 167, 212
+  orig: 170, 214
+  offset: 2, 1
+  index: -1

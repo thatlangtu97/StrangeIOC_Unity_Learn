@@ -1,0 +1,146 @@
+
+villain.png
+size: 383,383
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_arm
+  rotate: false
+  xy: 284, 83
+  size: 35, 62
+  orig: 41, 66
+  offset: 5, 1
+  index: -1
+L_calf
+  rotate: false
+  xy: 312, 174
+  size: 25, 83
+  orig: 27, 85
+  offset: 1, 1
+  index: -1
+L_foot
+  rotate: false
+  xy: 321, 137
+  size: 45, 18
+  orig: 45, 18
+  offset: 0, 0
+  index: -1
+L_forearm
+  rotate: false
+  xy: 284, 40
+  size: 38, 41
+  orig: 40, 43
+  offset: 1, 1
+  index: -1
+L_hand
+  rotate: false
+  xy: 339, 157
+  size: 35, 33
+  orig: 37, 37
+  offset: 1, 2
+  index: -1
+L_thigh
+  rotate: false
+  xy: 318, 289
+  size: 45, 92
+  orig: 47, 94
+  offset: 1, 1
+  index: -1
+R_arm
+  rotate: true
+  xy: 190, 20
+  size: 48, 57
+  orig: 50, 67
+  offset: 1, 2
+  index: -1
+R_calf
+  rotate: true
+  xy: 190, 70
+  size: 28, 83
+  orig: 30, 85
+  offset: 1, 1
+  index: -1
+R_foot
+  rotate: true
+  xy: 365, 356
+  size: 25, 16
+  orig: 27, 18
+  offset: 1, 1
+  index: -1
+R_forearm
+  rotate: true
+  xy: 318, 259
+  size: 28, 50
+  orig: 30, 52
+  offset: 1, 1
+  index: -1
+R_hand
+  rotate: false
+  xy: 284, 3
+  size: 37, 35
+  orig: 40, 38
+  offset: 1, 2
+  index: -1
+R_thigh
+  rotate: true
+  xy: 190, 100
+  size: 45, 92
+  orig: 47, 94
+  offset: 1, 1
+  index: -1
+SWORD_1
+  rotate: true
+  xy: 249, 12
+  size: 56, 33
+  orig: 58, 35
+  offset: 1, 1
+  index: -1
+SWORD_2
+  rotate: false
+  xy: 2, 216
+  size: 188, 165
+  orig: 190, 167
+  offset: 1, 1
+  index: -1
+belly_1
+  rotate: false
+  xy: 192, 147
+  size: 118, 110
+  orig: 118, 110
+  offset: 0, 0
+  index: -1
+belly_2
+  rotate: false
+  xy: 192, 259
+  size: 124, 122
+  orig: 124, 122
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 2, 15
+  size: 47, 121
+  orig: 47, 122
+  offset: 0, 0
+  index: -1
+bottom
+  rotate: false
+  xy: 339, 192
+  size: 38, 65
+  orig: 38, 66
+  offset: 0, 1
+  index: -1
+head
+  rotate: false
+  xy: 2, 64
+  size: 186, 150
+  orig: 186, 150
+  offset: 0, 0
+  index: -1
+scarf
+  rotate: false
+  xy: 125, 15
+  size: 62, 47
+  orig: 64, 50
+  offset: 1, 2
+  index: -1

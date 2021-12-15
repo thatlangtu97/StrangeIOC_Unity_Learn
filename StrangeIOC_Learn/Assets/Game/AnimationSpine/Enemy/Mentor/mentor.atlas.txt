@@ -1,0 +1,104 @@
+
+mentor.png
+size: 536,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_eyebrown
+  rotate: true
+  xy: 128, 5
+  size: 53, 18
+  orig: 56, 40
+  offset: 1, 6
+  index: -1
+L_hand
+  rotate: false
+  xy: 411, 51
+  size: 120, 194
+  orig: 120, 194
+  offset: 0, 0
+  index: -1
+Layer 2
+  rotate: true
+  xy: 167, 36
+  size: 79, 152
+  orig: 80, 152
+  offset: 1, 0
+  index: -1
+Layer 3
+  rotate: true
+  xy: 2, 60
+  size: 55, 148
+  orig: 55, 148
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: true
+  xy: 43, 2
+  size: 56, 83
+  orig: 56, 84
+  offset: 0, 1
+  index: -1
+Layer 5
+  rotate: false
+  xy: 152, 83
+  size: 9, 32
+  orig: 11, 34
+  offset: 1, 1
+  index: -1
+Layer 6
+  rotate: false
+  xy: 2, 9
+  size: 39, 40
+  orig: 41, 42
+  offset: 1, 1
+  index: -1
+R_eyebrown
+  rotate: false
+  xy: 148, 39
+  size: 17, 19
+  orig: 20, 21
+  offset: 2, 1
+  index: -1
+R_hand
+  rotate: false
+  xy: 321, 22
+  size: 66, 93
+  orig: 91, 99
+  offset: 24, 1
+  index: -1
+balo
+  rotate: true
+  xy: 200, 348
+  size: 174, 193
+  orig: 176, 195
+  offset: 1, 1
+  index: -1
+bearth
+  rotate: false
+  xy: 411, 247
+  size: 123, 275
+  orig: 123, 275
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 220
+  size: 196, 302
+  orig: 196, 302
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 200, 222
+  size: 124, 136
+  orig: 126, 137
+  offset: 0, 1
+  index: -1
+staff
+  rotate: true
+  xy: 2, 117
+  size: 101, 407
+  orig: 105, 410
+  offset: 2, 1
+  index: -1
