@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b38d01ac4b6243aea77b5f5f7238ff9, type: 3}
   m_Name: DashAttackState
   m_EditorClassIdentifier: 
-  comboNormalAttack: {fileID: 11400000, guid: 721a0eeb084a74b329b7bd00a99b5987, type: 2}
+  skillDatas:
+  - id: 0
+    NameTrigger: dashattack
+    durationAnimation: 0.5
+    nameEvent: 
+    velocity: {x: 10, y: 0}
+    durationVelocity: 0.2
   currentCombo: 0
