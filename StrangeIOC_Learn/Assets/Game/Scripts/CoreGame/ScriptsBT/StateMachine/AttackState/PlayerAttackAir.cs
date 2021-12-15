@@ -4,7 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerAttackAir", menuName = "State/PlayerAttackAir")]
 public class PlayerAttackAir : State
 {
-    public AttackComboConfig comboNormalAttack;
+    //public AttackComboConfig comboNormalAttack;
+    public List<AttackConfig> skillDatas;
     public int currentCombo;
     float timeCount;
     public override void EnterState()
@@ -72,9 +73,9 @@ public class PlayerAttackAir : State
     public void CastSkill()
     {
         controller.componentManager.Rotate();
-        timeCount = comboNormalAttack.skillDatas[currentCombo].durationAnimation;
-        controller.animator.SetTrigger(comboNormalAttack.skillDatas[currentCombo].NameTrigger);
-        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, comboNormalAttack.skillDatas[currentCombo].velocity.y);
+        timeCount = skillDatas[currentCombo].durationAnimation;
+        controller.animator.SetTrigger(skillDatas[currentCombo].NameTrigger);
+        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, skillDatas[currentCombo].velocity.y);
     }
     public override void OnInputDash()
     {
@@ -94,7 +95,7 @@ public class PlayerAttackAir : State
         if (controller.componentManager.isAttack)
         {
             currentCombo = (currentCombo + 1);
-            if(currentCombo< comboNormalAttack.skillDatas.Count)
+            if(currentCombo< skillDatas.Count)
                 CastSkill();
         }
     }

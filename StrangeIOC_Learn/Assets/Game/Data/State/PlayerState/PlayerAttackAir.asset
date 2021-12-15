@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c95bee6f97d4eeeb655687f818ff9c, type: 3}
   m_Name: PlayerAttackAir
   m_EditorClassIdentifier: 
-  comboNormalAttack: {fileID: 11400000, guid: 1f0f76f70069c4db58305fc5f68e44f1, type: 2}
+  skillDatas:
+  - id: 0
+    NameTrigger: airattack
+    durationAnimation: 0.4
+    nameEvent: 
+    velocity: {x: 0, y: 7}
+    durationVelocity: 0
   currentCombo: 0

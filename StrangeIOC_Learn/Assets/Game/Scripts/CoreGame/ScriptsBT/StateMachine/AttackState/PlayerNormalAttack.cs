@@ -4,7 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerNormalAttack", menuName = "State/PlayerNormalAttack")]
 public class PlayerNormalAttack : State
 {
-    public AttackComboConfig comboNormalAttack;
+    //public AttackComboConfig comboNormalAttack;
+    public List<AttackConfig> skillDatas= new List<AttackConfig>();
     public int currentCombo;
     float timeCount;
     float durationVelocity;
@@ -25,7 +26,7 @@ public class PlayerNormalAttack : State
             durationVelocity-= Time.deltaTime;
             if (durationVelocity > 0)
             {
-                Vector2 velocityAttack = comboNormalAttack.skillDatas[currentCombo].velocity;
+                Vector2 velocityAttack = skillDatas[currentCombo].velocity;
                 Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
                 controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
             }
@@ -34,7 +35,7 @@ public class PlayerNormalAttack : State
         {
             if (controller.componentManager.isBufferAttack == true)
             {
-                currentCombo = (currentCombo+1) % (comboNormalAttack.skillDatas.Count);
+                currentCombo = (currentCombo+1) % (skillDatas.Count);
                 CastSkill();
             }
             else
@@ -59,10 +60,10 @@ public class PlayerNormalAttack : State
     public void CastSkill()
     {
         controller.componentManager.Rotate();
-        timeCount = comboNormalAttack.skillDatas[currentCombo].durationAnimation;
-        controller.animator.SetTrigger(comboNormalAttack.skillDatas[currentCombo].NameTrigger);
+        timeCount = skillDatas[currentCombo].durationAnimation;
+        controller.animator.SetTrigger(skillDatas[currentCombo].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
-        durationVelocity = comboNormalAttack.skillDatas[currentCombo].durationVelocity;
+        durationVelocity = skillDatas[currentCombo].durationVelocity;
         controller.componentManager.isBufferAttack = false;
     }
     public override void OnInputDash()
@@ -83,7 +84,7 @@ public class PlayerNormalAttack : State
     public override void OnInputAttack()
     {
         base.OnInputAttack();
-        if(currentCombo != comboNormalAttack.skillDatas.Count-1)
+        if(currentCombo != skillDatas.Count-1)
         controller.componentManager.isBufferAttack = true;
         //controller.ChangeState(controller.attackState);
     }
