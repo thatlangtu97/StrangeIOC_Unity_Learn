@@ -70,7 +70,7 @@ public class AnimationTriger
     //public const string DIE_END = "DieEnd";
     //public const string SKILL_END = "EndSkill";
     //public const string ATK_SPEED = "AtkSpeed";
-    //public const string REVIVE = "Revive";
+    public const string REVIVE = "revive";
     //public const string BLOCK = "Block";
     //public const string EXPLOSION = "Explosion";
     //public const string STUNT = "Stunt";
