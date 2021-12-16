@@ -20,7 +20,12 @@ public class OpenSceneToolbar : MonoBehaviour
     {
         OpenScene("HomeScene");
     }
-    [MenuItem("Open Scene/TestBt &4")]
+    [MenuItem("Open Scene/Main &4")]
+    public static void Main()
+    {
+        OpenScene("Main");
+    }
+    [MenuItem("Open Scene/TestBt &5")]
     public static void OpenTestBt()
     {
         OpenScene("TestBt");
