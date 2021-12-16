@@ -12,7 +12,7 @@ public class State : ScriptableObject
     }
     public virtual void EnterState()
     {
-        Debug.Log("EnterState " + this.name);
+        /*
         foreach (AnimatorControllerParameter p in controller.animator.parameters)
         {
             if (p.type == AnimatorControllerParameterType.Trigger)
@@ -20,6 +20,7 @@ public class State : ScriptableObject
                 controller.animator.ResetTrigger(p.name);
             }
         }
+        */
     }
     public virtual void UpdateState()
     {

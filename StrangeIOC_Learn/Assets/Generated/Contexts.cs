@@ -29,16 +29,15 @@ public partial class Contexts : Entitas.IContexts {
     public Contexts() {
         game = new GameContext();
         input = new InputContext();
-        /*
+
         var postConstructors = System.Linq.Enumerable.Where(
             GetType().GetMethods(),
             method => System.Attribute.IsDefined(method, typeof(Entitas.CodeGeneration.Attributes.PostConstructorAttribute))
         );
-        
+
         foreach (var postConstructor in postConstructors) {
             postConstructor.Invoke(this, null);
         }
-        */
     }
 
     public void Reset() {

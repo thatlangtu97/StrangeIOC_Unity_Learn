@@ -16,19 +16,19 @@ MonoBehaviour:
   skillDatas:
   - id: 0
     NameTrigger: attack1
-    durationAnimation: 0.3736
+    durationAnimation: 0.5
     nameEvent: 
     velocity: {x: 0, y: 0}
     durationVelocity: 0
   - id: 1
     NameTrigger: attack2
-    durationAnimation: 0.4
+    durationAnimation: 0.467
     nameEvent: 
     velocity: {x: 0, y: 0}
     durationVelocity: 0
   - id: 2
     NameTrigger: attack3
-    durationAnimation: 0.4536
+    durationAnimation: 0.567
     nameEvent: 
     velocity: {x: 0, y: 0}
     durationVelocity: 0

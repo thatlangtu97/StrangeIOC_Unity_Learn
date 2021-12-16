@@ -23,14 +23,13 @@ public class GameController : MonoBehaviour
             .Add(new TakeDamageSystem(contexts))
             ;
         GameSystem.Initialize();
+        //DontDestroyOnLoad(this);
     }
     void Start()
     {
         if (PlayFlashScene.instance != null)
         {
             PlayFlashScene.instance.HideLoading();
-
-            
         }
     }
     private void OnDestroy()
@@ -68,7 +67,9 @@ public class GameController : MonoBehaviour
         contexts.game.DestroyAllEntities();        
         contexts.Reset();
         */
-        Contexts.sharedInstance = new Contexts();
+        ComponentManagerUtils.ResetAll();
+        Contexts.sharedInstance.Reset();
+        //Contexts.sharedInstance = new Contexts();
     }
     public void BackToHome()
     {
@@ -78,7 +79,9 @@ public class GameController : MonoBehaviour
     {
         if(PlayFlashScene.instance!=null)
             PlayFlashScene.instance.ShowLoading();
-        Contexts.sharedInstance = new Contexts();
+        ComponentManagerUtils.ResetAll();
+        Contexts.sharedInstance.Reset();
+        //Contexts.sharedInstance = new Contexts();
         yield return new WaitForSeconds(1.2f);
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);

@@ -32,8 +32,8 @@ Material:
     - _DarkColorAlphaAdditive: 0
     - _OutlineMipLevel: 0
     - _OutlineReferenceTexWidth: 1024
-    - _OutlineSmoothness: 1
-    - _OutlineWidth: 1.42
+    - _OutlineSmoothness: 0
+    - _OutlineWidth: 0
     - _SpriteFade: 1
     - _Stencil: 0
     - _StencilComp: 8
@@ -47,4 +47,4 @@ Material:
     m_Colors:
     - _Black: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 0, b: 0.39305973, a: 1}
+    - _OutlineColor: {r: 1, g: 0.18017906, b: 0, a: 1}

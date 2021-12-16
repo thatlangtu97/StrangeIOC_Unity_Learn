@@ -19,15 +19,15 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
     }
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hastakeDamageComponent;
+        return entity.hasTakeDamage;
     }
     protected override void Execute(List<GameEntity> entities)
     {
         foreach (GameEntity e in entities)
         {
             //entity = e.takeDamageComponent.entity;
-            entityEnemy = e.takeDamageComponent.entityEnemy;
-            entityEnemy.stateMachineContainer.stateMachine.componentManager.properties.Heal -= e.takeDamageComponent.damage;
+            entityEnemy = e.takeDamage.entityEnemy;
+            entityEnemy.stateMachineContainer.stateMachine.componentManager.properties.Heal -= e.takeDamage.damage;
 
             if (entityEnemy.stateMachineContainer.stateMachine.componentManager.properties.Heal <= 0)
             {
@@ -37,6 +37,7 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
             {
                 entityEnemy.stateMachineContainer.stateMachine.currentState.OnHit();
             }
+            e.Destroy();
         }
     }
 }

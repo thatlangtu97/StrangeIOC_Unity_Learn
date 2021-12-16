@@ -48,6 +48,7 @@ public class ComponentManager : MonoBehaviour
         link = gameObject.Link(entity);
         var component = GetComponent<IAutoAdd<GameEntity>>();
         component.AddComponent(ref entity);
+        ComponentManagerUtils.AddComponent(this);
     }
     public void OnInputChangeFacing()
     {

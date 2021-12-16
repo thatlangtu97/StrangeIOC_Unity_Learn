@@ -23,7 +23,7 @@ public class TestTakeDamage : MonoBehaviour
     {
         GameEntity takeDamage;
         takeDamage = Contexts.sharedInstance.game.CreateEntity();
-        takeDamage.AddTakeDamageComponent(10, entity, entityTakeDamage);
+        takeDamage.AddTakeDamage( entity, entityTakeDamage, 10);
         //takeDamage.Destroy();
     }
     public void AddEntity(GameEntity e)

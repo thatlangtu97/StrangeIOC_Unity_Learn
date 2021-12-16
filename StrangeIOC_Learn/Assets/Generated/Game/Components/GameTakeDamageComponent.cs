@@ -8,60 +8,29 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly TakeDamageComponent takeDamage = new TakeDamageComponent();
-    public TakeDamageComponent takeDamageComponent 
-    { 
-        get 
-        { 
-            return GetComponent(GameComponentsLookup.TakeDamage) as TakeDamageComponent; 
-        } 
-    }
-    public bool hastakeDamageComponent
-    { 
-        get
-        { 
-            return HasComponent(GameComponentsLookup.TakeDamage); 
-        } 
-    }
-    public bool isTakeDamage 
-    {
-        get
-        { 
-            return HasComponent(GameComponentsLookup.TakeDamage); 
-        }
-        set 
-        {
-            if (value != isTakeDamage) 
-            {
-                var index = GameComponentsLookup.TakeDamage;
-                if (value) 
-                {
-                    var componentPool = GetComponentPool(index);
-                    var component = componentPool.Count > 0
-                            ? componentPool.Pop()
-                            : takeDamageComponent;
-                    AddComponent(index, component);
-                } 
-                else 
-                {
-                    RemoveComponent(index);
-                }
-            }
-        }
-    }
-    public void AddTakeDamageComponent(int damage, GameEntity entity, GameEntity entityEnemy)
-    {
-        var index = GameComponentsLookup.TakeDamage;
-        var componentPool = GetComponentPool(index);
-        var component = (componentPool.Count > 0
-                            ? componentPool.Pop() 
-                            : CreateComponent(index, typeof(TakeDamageComponent)))as TakeDamageComponent;
+    public TakeDamageComponent takeDamage { get { return (TakeDamageComponent)GetComponent(GameComponentsLookup.TakeDamage); } }
+    public bool hasTakeDamage { get { return HasComponent(GameComponentsLookup.TakeDamage); } }
 
-        //var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
-        component.damage = damage;
-        component.entity = entity;
-        component.entityEnemy = entityEnemy;
+    public void AddTakeDamage(GameEntity newEntity, GameEntity newEntityEnemy, int newDamage) {
+        var index = GameComponentsLookup.TakeDamage;
+        var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
+        component.entity = newEntity;
+        component.entityEnemy = newEntityEnemy;
+        component.damage = newDamage;
         AddComponent(index, component);
+    }
+
+    public void ReplaceTakeDamage(GameEntity newEntity, GameEntity newEntityEnemy, int newDamage) {
+        var index = GameComponentsLookup.TakeDamage;
+        var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
+        component.entity = newEntity;
+        component.entityEnemy = newEntityEnemy;
+        component.damage = newDamage;
+        ReplaceComponent(index, component);
+    }
+
+    public void RemoveTakeDamage() {
+        RemoveComponent(GameComponentsLookup.TakeDamage);
     }
 }
 

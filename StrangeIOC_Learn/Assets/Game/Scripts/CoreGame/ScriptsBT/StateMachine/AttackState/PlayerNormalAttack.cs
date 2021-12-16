@@ -7,13 +7,12 @@ public class PlayerNormalAttack : State
     //public AttackComboConfig comboNormalAttack;
     public int currentCombo;
     public List<AttackConfig> skillDatas= new List<AttackConfig>();
-
-    float timeCount;
-    float durationVelocity;
+    float timeCount=0;
+    float durationVelocity=0;
     public override void EnterState()
     {
         base.EnterState();
-
+        Debug.Log("enterstate");
         controller.componentManager.isAttack = true;
         currentCombo = 0;
         CastSkill();
@@ -21,16 +20,16 @@ public class PlayerNormalAttack : State
     public override void UpdateState()
     {
         base.UpdateState();
-        if (timeCount > 0)
+        if (timeCount >= 0)
         {
-            timeCount -= Time.deltaTime;
-            durationVelocity-= Time.deltaTime;
             if (durationVelocity > 0)
             {
                 Vector2 velocityAttack = skillDatas[currentCombo].velocity;
                 Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
                 controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
             }
+            timeCount -= Time.deltaTime;
+            durationVelocity -= Time.deltaTime;
         }
         else
         {
@@ -56,16 +55,17 @@ public class PlayerNormalAttack : State
     {
         base.ExitState();
         controller.componentManager.isAttack = false;
-        currentCombo = 0;
     }
     public void CastSkill()
     {
+        Debug.Log("Start " + timeCount);
         controller.componentManager.Rotate();
         timeCount = skillDatas[currentCombo].durationAnimation;
         controller.animator.SetTrigger(skillDatas[currentCombo].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
         durationVelocity = skillDatas[currentCombo].durationVelocity;
         controller.componentManager.isBufferAttack = false;
+        Debug.Log("Cash " + timeCount);
     }
     public override void OnInputDash()
     {
@@ -85,8 +85,11 @@ public class PlayerNormalAttack : State
     public override void OnInputAttack()
     {
         base.OnInputAttack();
-        if(currentCombo != skillDatas.Count-1)
-        controller.componentManager.isBufferAttack = true;
+        if (currentCombo != skillDatas.Count - 1)
+        {
+            if (timeCount < skillDatas[currentCombo].durationAnimation * 0.5f)
+                controller.componentManager.isBufferAttack = true;
+        }
         //controller.ChangeState(controller.attackState);
     }
 }

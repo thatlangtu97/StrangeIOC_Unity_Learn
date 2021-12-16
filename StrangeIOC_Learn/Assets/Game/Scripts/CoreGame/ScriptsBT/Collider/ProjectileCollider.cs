@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Entitas;
-using Entitas.Unity;
 
-public class DamageCollider : MonoBehaviour
+public class ProjectileCollider : MonoBehaviour
 {
-    public ComponentManager component;
+    public ProjectileComponent component;
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
         DealDmgManager.DealDamage(other, component.entity);
+        //component.colliderProjectile.enabled = false;
     }
 }
