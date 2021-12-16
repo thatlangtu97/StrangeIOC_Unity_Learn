@@ -29,7 +29,7 @@ public class DieState : State
         base.ExitState();
         {
             //Destroy(controller.gameObject);
-            controller.componentManager.entity.Destroy();
+            controller.componentManager.DestroyEntity();
             controller.gameObject.SetActive(false);
         }
     }

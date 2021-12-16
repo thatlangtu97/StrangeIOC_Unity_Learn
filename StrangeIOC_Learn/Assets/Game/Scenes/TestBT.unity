@@ -457,8 +457,8 @@ MonoBehaviour:
   translator:
     autoReset: 1
     useCustomMixMode: 1
-    layerMixModes: 01000000
-    layerBlendModes: 01000000
+    layerMixModes: 0100000001000000
+    layerBlendModes: 0100000002000000
 --- !u!95 &218680107
 Animator:
   serializedVersion: 3
@@ -567,6 +567,7 @@ MonoBehaviour:
   getUpState: {fileID: 0}
   freezeState: {fileID: 0}
   stuntState: {fileID: 0}
+  reviveState: {fileID: 11400000, guid: 49a287276e5dd4a25a548db226320f34, type: 2}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   componentManager: {fileID: 218680112}
@@ -6220,6 +6221,141 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1225712787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225712788}
+  - component: {fileID: 1225712793}
+  - component: {fileID: 1225712792}
+  - component: {fileID: 1225712791}
+  - component: {fileID: 1225712790}
+  - component: {fileID: 1225712789}
+  m_Layer: 12
+  m_Name: box_attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1225712788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225712787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.46008, y: 0.71872, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1483235770}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1225712789
+PolygonCollider2D:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225712787}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.27624, y: 0.35944003}
+      - {x: -0.26960003, y: -0.36272}
+      - {x: 0.26960003, y: -0.35944003}
+      - {x: 0.26288003, y: 0.36608002}
+--- !u!50 &1225712790
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225712787}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1225712791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225712787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0317ee9ba6e1b1e49a030268e026d372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonRenderer: {fileID: 1483235767}
+  slotName: box_attack
+  isTrigger: 1
+  clearStateOnDisable: 1
+--- !u!114 &1225712792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225712787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284c715261da4488fbb153b7acecb6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  component: {fileID: 1483235766}
+--- !u!114 &1225712793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225712787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fd8daaed7b64148a34acb96ba14ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonRenderer: {fileID: 1483235767}
+  boneName: box_attack
+  followXYPosition: 1
+  followZPosition: 1
+  followBoneRotation: 1
+  followSkeletonFlip: 1
+  followLocalScale: 1
+  maintainedAxisOrientation: 1
+  initializeOnAwake: 1
 --- !u!1 &1260393476
 GameObject:
   m_ObjectHideFlags: 0
@@ -6462,7 +6598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1483235765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6470,7 +6606,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483235764}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
   m_Name: 
@@ -6517,16 +6653,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d664cd561aedd4a9d16d6b138eae90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 218680115}
   stateMachine: {fileID: 1483235772}
   BehaviorTree: {fileID: 1483235765}
   rgbody2D: {fileID: 1483235773}
   layerMaskGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   layerMaskWall:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   properties: {fileID: 1483235776}
   hasCheckEnemyInSigh: 1
   isFaceRight: 0
@@ -6641,7 +6777,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.77, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1225712788}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6693,6 +6830,7 @@ MonoBehaviour:
   getUpState: {fileID: 0}
   freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
   stuntState: {fileID: 0}
+  reviveState: {fileID: 0}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   componentManager: {fileID: 1483235766}

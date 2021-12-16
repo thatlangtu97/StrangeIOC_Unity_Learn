@@ -40,5 +40,9 @@ public class HitState : State
         coutTime = 0;
         controller.componentManager.BehaviorTree.EnableBehavior();
     }
-
+    public override void OnHit()
+    {
+        base.OnHit();
+        EnterState();
+    }
 }

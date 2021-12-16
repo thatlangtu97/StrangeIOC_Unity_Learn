@@ -20,44 +20,9 @@ public class EnemyNormalAttack : State
         base.ExitState();
         controller.componentManager.isAttack = false;
     }
-    //public override TaskStatus OnHit(bool isBlock)
-    //{
-
-    //    controller.ChangeState(controller.beHitState);
-    //    return TaskStatus.Success;
-
-    //}
-    //public override TaskStatus OnInputSkill(int skillId)
-    //{
-    //    controller.componentManager.CurrentSkill(skillId);
-    //    return TaskStatus.Failure;
-    //}
-    //public override TaskStatus OnInputIdle()
-    //{
-        
-    //    return TaskStatus.Success;
-    //}
-
-    //public override TaskStatus OnInputMove()
-    //{
-       
-    //    return TaskStatus.Success;
-    //}
-    ////public override TaskStatus OnInputChangeFacing()
-    ////{
-
-    ////    if(controller.isCanRotate)
-    ////    {
-    ////        //Debug.Log("Rotate");
-    ////        base.OnInputChangeFacing();
-    ////        return TaskStatus.Success;
-    ////    }
-    ////    return TaskStatus.Failure;
-    ////}
-
-    //public TaskStatus ForceExitSkillState()
-    //{
-    //    controller.ChangeState(controller.idleState);
-    //    return TaskStatus.Success;
-    //}
+    public override void OnHit()
+    {
+        base.OnHit();
+        controller.ChangeState(controller.beHitState);
+    }
 }

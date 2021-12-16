@@ -19,4 +19,9 @@ public class MeleeMoveState : State
         base.UpdateState();
         controller.transform.position += new Vector3(controller.componentManager.speedMove * controller.componentManager.timeScale, 0f, 0f) * Time.deltaTime ;
     }
+    public override void OnHit()
+    {
+        base.OnHit();
+        controller.ChangeState(controller.beHitState);
+    }
 }

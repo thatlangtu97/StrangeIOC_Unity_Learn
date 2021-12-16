@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c125d8ce9b824c00ba85aa6e7cdf4ee, type: 3}
   m_Name: PlayerNormalAttack
   m_EditorClassIdentifier: 
+  currentCombo: 0
   skillDatas:
   - id: 0
     NameTrigger: attack1
-    durationAnimation: 0.467
+    durationAnimation: 0.3736
     nameEvent: 
-    velocity: {x: 3, y: 0}
-    durationVelocity: 0.1
+    velocity: {x: 0, y: 0}
+    durationVelocity: 0
   - id: 1
     NameTrigger: attack2
-    durationAnimation: 0.5
+    durationAnimation: 0.4
     nameEvent: 
-    velocity: {x: 3, y: 0}
-    durationVelocity: 0.1
+    velocity: {x: 0, y: 0}
+    durationVelocity: 0
   - id: 2
     NameTrigger: attack3
-    durationAnimation: 0.567
+    durationAnimation: 0.4536
     nameEvent: 
-    velocity: {x: 3, y: 0}
-    durationVelocity: 0.1
-  currentCombo: 0
+    velocity: {x: 0, y: 0}
+    durationVelocity: 0

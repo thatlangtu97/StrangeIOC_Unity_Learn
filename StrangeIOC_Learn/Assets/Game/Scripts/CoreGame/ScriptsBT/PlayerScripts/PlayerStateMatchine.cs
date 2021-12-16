@@ -29,6 +29,10 @@ public class PlayerStateMatchine : StateMachineController
         {
             currentState.OnInputJump();
         }
+        if (Input.GetKeyDown(KeyCode.End))
+        {
+            ChangeState(reviveState,true);
+        }
     }
     public override void OnInputDash()
     {
@@ -53,5 +57,10 @@ public class PlayerStateMatchine : StateMachineController
         {
             currentState.OnInputJump();
         }
+    }
+    public override void OnInputRevive()
+    {
+        base.OnInputRevive();
+        ChangeState(reviveState, true);
     }
 }

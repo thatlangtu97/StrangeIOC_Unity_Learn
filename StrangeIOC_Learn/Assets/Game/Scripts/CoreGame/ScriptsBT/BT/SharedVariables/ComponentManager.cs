@@ -44,7 +44,6 @@ public class ComponentManager : MonoBehaviour
     }
     public void OnEnable()
     {
-        
         entity = Contexts.sharedInstance.game.CreateEntity();
         link = gameObject.Link(entity);
         var component = GetComponent<IAutoAdd<GameEntity>>();
@@ -133,5 +132,11 @@ public class ComponentManager : MonoBehaviour
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
+    }
+    public void DestroyEntity()
+    {
+        gameObject.Unlink();
+        entity.Destroy();
+        link = null;
     }
 }

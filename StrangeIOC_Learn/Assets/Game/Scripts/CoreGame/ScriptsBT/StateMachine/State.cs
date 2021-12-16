@@ -25,18 +25,27 @@ public class State : ScriptableObject
     {
     }
     public virtual void ExitState()
-    {        
+    {
     }
     public virtual void OnInputMove()
-    {        
+    {
     }
     public virtual void OnInputJump()
-    {       
+    {
     }
     public virtual void OnInputAttack()
     {
     }
     public virtual void OnInputDash()
+    {
+    }
+    public virtual void OnInputSkill()
+    {
+    }
+    public virtual void OnHit()
+    {
+    }
+    public virtual void OnRevive()
     {
     }
     /*
