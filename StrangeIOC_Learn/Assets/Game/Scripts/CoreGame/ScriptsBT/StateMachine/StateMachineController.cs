@@ -120,6 +120,7 @@ public class StateMachineController : MonoBehaviour
             currentState.EnterState();
         }
     }
+
     public virtual void OnInputAttack()
     {
     }

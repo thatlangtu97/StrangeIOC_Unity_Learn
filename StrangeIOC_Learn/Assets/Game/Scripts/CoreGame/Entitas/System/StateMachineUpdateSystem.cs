@@ -7,12 +7,12 @@ public class StateMachineUpdateSystem : IExecuteSystem
 {
     public readonly Contexts context;
     readonly IGroup<GameEntity> entities;
-    //SimpleMoveJobSystem simpleMoveJobSystem;
+    //UpdateMecanimJobSystem updateMecanimJobSystem;
     public StateMachineUpdateSystem(Contexts _contexts)
     {
         context = _contexts;
         entities = context.game.GetGroup(GameMatcher.AllOf(GameMatcher.StateMachineContainer));
-        //simpleMoveJobSystem = new SimpleMoveJobSystem(context.game, 4);
+        //updateMecanimJobSystem = new UpdateMecanimJobSystem(context.game, 1);
     }
     public void Execute()
     {
@@ -20,18 +20,6 @@ public class StateMachineUpdateSystem : IExecuteSystem
         {
             e.stateMachineContainer.stateMachine.UpdateState();
         }
-        //simpleMoveJobSystem.Execute();
+        //updateMecanimJobSystem.Execute();
     }
-    //public class SimpleMoveJobSystem : JobSystem<GameEntity>
-    //{
-    //    public SimpleMoveJobSystem(GameContext context, int threads) :
-    //    base(context.GetGroup(GameMatcher.AllOf(GameMatcher.StateMachineContainer)), threads)
-    //    {
-    //    }
-
-    //    protected override void Execute(GameEntity entity)
-    //    {
-    //        entity.stateMachineContainer.stateMachine.UpdateState();
-    //    }
-    //}
 }

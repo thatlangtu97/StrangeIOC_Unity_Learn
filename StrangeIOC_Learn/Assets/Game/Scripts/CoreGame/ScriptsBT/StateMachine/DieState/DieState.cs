@@ -33,4 +33,13 @@ public class DieState : State
             controller.gameObject.SetActive(false);
         }
     }
+    public override void OnRevive()
+    {
+        if (coutTime <= 0)
+        {
+            base.OnRevive();
+            controller.currentState = controller.reviveState;
+            controller.currentState.EnterState();
+        }
+    }
 }

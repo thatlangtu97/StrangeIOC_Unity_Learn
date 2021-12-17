@@ -11,6 +11,7 @@ public class PlayerDieState : State
         base.EnterState();
         
         controller.animator.SetTrigger(AnimationTriger.DIE);
+        controller.componentManager.rgbody2D.velocity = Vector2.zero;
         coutTime = duration;
     }
     public override void UpdateState()
@@ -27,6 +28,15 @@ public class PlayerDieState : State
         base.ExitState();
         {
             //controller.gameObject.SetActive(false);
+        }
+    }
+    public override void OnRevive()
+    {
+        if (coutTime <= 0)
+        {
+            base.OnRevive();
+            controller.currentState = controller.reviveState;
+            controller.currentState.EnterState();
         }
     }
 }

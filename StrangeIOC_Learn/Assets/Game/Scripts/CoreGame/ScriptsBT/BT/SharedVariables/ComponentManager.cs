@@ -50,6 +50,10 @@ public class ComponentManager : MonoBehaviour
         component.AddComponent(ref entity);
         ComponentManagerUtils.AddComponent(this);
     }
+    public void Unlink()
+    {
+        link.Unlink();
+    }
     public void OnInputChangeFacing()
     {
         if (isFaceRight == true)
@@ -140,4 +144,22 @@ public class ComponentManager : MonoBehaviour
         entity.Destroy();
         link = null;
     }
+    /// <summary>
+    /// UpdateWorldTransform() in Script 
+    /// SkeletonAnimation.cs
+    /// SkeletonMecanim.cs
+    /// Skeleton.cs
+    /// SkeletonGraphic.cs
+    /// </summary>
+    //public Spine.Unity.SkeletonMecanim mecanim;
+    //[Header("Update Skeleton")]
+    //public bool UpdateWorldTransform;
+    //public void UpdateMecanim()
+    //{
+    //    if (UpdateWorldTransform)/* return;*/
+    //    {
+    //        mecanim.skeleton.UpdateCache();
+    //        mecanim.skeleton.UpdateWorldTransform();
+    //    }
+    //}
 }
