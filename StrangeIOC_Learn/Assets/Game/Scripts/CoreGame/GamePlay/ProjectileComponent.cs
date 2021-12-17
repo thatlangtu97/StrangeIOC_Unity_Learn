@@ -10,11 +10,14 @@ public class ProjectileComponent : MonoBehaviour
     public EntityLink link;
     public void OnEnable()
     {
-        entity = Contexts.sharedInstance.game.CreateEntity();
-        link = gameObject.Link(entity);
-        var component = GetComponent<IAutoAdd<GameEntity>>();
-        component.AddComponent(ref entity);
-        ComponentManagerUtils.AddComponent(this);
-        colliderProjectile.enabled = true;
+        if (entity == null)
+        {
+            entity = Contexts.sharedInstance.game.CreateEntity();
+            link = gameObject.Link(entity);
+            var component = GetComponent<IAutoAdd<GameEntity>>();
+            component.AddComponent(ref entity);
+            ComponentManagerUtils.AddComponent(this);
+            colliderProjectile.enabled = true;
+        }
     }
 }
