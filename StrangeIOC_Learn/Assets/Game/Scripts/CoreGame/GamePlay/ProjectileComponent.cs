@@ -8,6 +8,7 @@ public class ProjectileComponent : MonoBehaviour
     public Collider2D colliderProjectile;
     public GameEntity entity;
     public EntityLink link;
+    public ProjectileMovement projectileMovement;
     public void OnEnable()
     {
         if (entity == null)
@@ -19,5 +20,12 @@ public class ProjectileComponent : MonoBehaviour
             ComponentManagerUtils.AddComponent(this);
             colliderProjectile.enabled = true;
         }
+    }
+    public void OnDisable()
+    {
+        gameObject.Unlink();
+        entity.Destroy();
+        entity = null;
+        link = null;
     }
 }

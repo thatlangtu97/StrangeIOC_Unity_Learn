@@ -10,17 +10,18 @@ public class GameController : MonoBehaviour
     Systems CharacterSystems;
     Systems GameSystem;
     public static GameController instance;
-
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
+        Application.targetFrameRate = 70;
         var contexts = Contexts.sharedInstance;
         GameSystem = new Feature("Game System")
             .Add(new StateMachineUpdateSystem(contexts))
             .Add(new TakeDamageSystem(contexts))
+            .Add(new ProjectileMoveBezierSystem(contexts))
             ;
         GameSystem.Initialize();
         //DontDestroyOnLoad(this);

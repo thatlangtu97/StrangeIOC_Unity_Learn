@@ -30,7 +30,8 @@ public class StateMachineController : MonoBehaviour
 
     public ComponentManager componentManager;
     public Animator animator;
-    
+
+    public StateEventTriger stateEventTriger;
     public void Awake()
     {
         //InitStateMachine();

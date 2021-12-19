@@ -1,7 +1,9 @@
-namespace BehaviorDesigner.Runtime.Tasks
+﻿namespace BehaviorDesigner.Runtime.Tasks
 {
-    [TaskDescription(@"The repeater task will repeat execution of its child task until the child task has been run a specified number of times. " +
-                      "It has the option of continuing to execute the child task even if the child task returns a failure.")]
+    //[TaskDescription(@"The repeater task will repeat execution of its child task until the child task has been run a specified number of times. " +
+    //                  "It has the option of continuing to execute the child task even if the child task returns a failure.")]
+    [TaskDescription(@" thực hiện toàn bộ các node bên dưới theo số lần chỉ định hoặc mãi mãi " +
+                      "có tùy chọn thực hiện task con cả khi task fail")]
     [TaskIcon("{SkinColor}RepeaterIcon.png")]
     public class Repeater : Decorator
     {

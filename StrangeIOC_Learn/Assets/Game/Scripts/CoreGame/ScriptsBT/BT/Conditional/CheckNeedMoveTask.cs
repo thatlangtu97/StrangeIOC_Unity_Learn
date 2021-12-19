@@ -27,14 +27,19 @@ public class CheckNeedMoveTask : Conditional
         //    {
         //        lastTime = Time.timeSinceLevelLoad;
         //        return TaskStatus.Failure;
-                
+
         //    }
         //}
         //else
         //{
         //    return TaskStatus.Failure;
         //}
-        return TaskStatus.Success;
+        if (Mathf.Abs(rangeToEnemy.Value) > componentManager.Value.distanceChecEnemy)
+        {
+            Debug.Log("move");
+            return TaskStatus.Success;
+        }
+        return TaskStatus.Failure;
 
 
     }

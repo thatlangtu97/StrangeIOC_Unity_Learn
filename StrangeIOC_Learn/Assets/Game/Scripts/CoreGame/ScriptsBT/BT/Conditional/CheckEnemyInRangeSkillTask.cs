@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using UnityEngine;
 [TaskCategory("Extension")]
 
-public class CheckEnemyInRangeSkill : Conditional
+public class CheckEnemyInRangeSkillTask : Conditional
 {
     public SharedFloat rangeToEnemy;
     public SharedComponentManager componentManager;
     public float range;
     public override TaskStatus OnUpdate()
     {
-        if(rangeToEnemy.Value <range && rangeToEnemy.Value > -range)
+        if(Mathf.Abs( rangeToEnemy.Value) <range )
         {
             //if (componentManager.Value.isAttack)
             //{

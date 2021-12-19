@@ -1,7 +1,9 @@
 ﻿namespace BehaviorDesigner.Runtime.Tasks
 {
-    [TaskDescription("The selector task is similar to an \"or\" operation. It will return success as soon as one of its child tasks return success. " +
-                     "If a child task returns failure then it will sequentially run the next task. If no child task returns success then it will return failure.")]
+    [TaskDescription("Selector task trả về True khi 1 trong các tác vụ con của nó trả về True " +
+                     "Nếu tác vụ con trả về Fail nó sẽ chạy tiếp theo tuần tự cho đến khi hết. nếu không có Task nào True thì nó trả về Fail")]
+    //[TaskDescription("The selector task is similar to an \"or\" operation. It will return success as soon as one of its child tasks return success. " +
+    //                 "If a child task returns failure then it will sequentially run the next task. If no child task returns success then it will return failure.")]
     [TaskIcon("{SkinColor}SelectorIcon.png")]
     public class Selector : Composite
     {

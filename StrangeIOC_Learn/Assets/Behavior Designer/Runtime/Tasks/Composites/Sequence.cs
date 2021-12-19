@@ -1,7 +1,9 @@
 ﻿namespace BehaviorDesigner.Runtime.Tasks
 {
-    [TaskDescription("The sequence task is similar to an \"and\" operation. It will return failure as soon as one of its child tasks return failure. " +
-                     "If a child task returns success then it will sequentially run the next task. If all child tasks return success then it will return success.")]
+    [TaskDescription("Sequence task  sẽ trả về lỗi ngay sau khi một trong các tác vụ con của nó trả về lỗi." +
+                     "Nếu một nhiệm vụ con trả về thành công thì nó sẽ tuần tự chạy nhiệm vụ tiếp theo. Nếu tất cả các nhiệm vụ con trả về thành công thì nó sẽ trả về thành công.")]
+    //[TaskDescription("The sequence task is similar to an \"and\" operation. It will return failure as soon as one of its child tasks return failure. " +
+    //                 "If a child task returns success then it will sequentially run the next task. If all child tasks return success then it will return success.")]
     [TaskIcon("{SkinColor}SequenceIcon.png")]
     public class Sequence : Composite
     {

@@ -12,11 +12,11 @@ public class MoveTowardTask :Action
         base.OnStart();
         componentManager.Value.stateMachine.ChangeState(componentManager.Value.stateMachine.moveState);
     }
-    public override TaskStatus OnUpdate()
-    {
-        return TaskStatus.Success;
-        //return componentManager.Value.stateMachine.currentState.OnInputMove();
-    }
+    //public override TaskStatus OnUpdate()
+    //{
+    //    return TaskStatus.Success;
+    //    //return componentManager.Value.stateMachine.currentState.OnInputMove();
+    //}
     public override void OnEnd()
     {
         base.OnEnd();

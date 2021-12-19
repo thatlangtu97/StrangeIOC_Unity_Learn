@@ -1,7 +1,7 @@
-namespace BehaviorDesigner.Runtime.Tasks
+﻿namespace BehaviorDesigner.Runtime.Tasks
 {
-    [TaskDescription("The inverter task will invert the return value of the child task after it has finished executing. " + 
-                     "If the child returns success, the inverter task will return failure. If the child returns failure, the inverter task will return success.")]
+    [TaskDescription("Tác vụ biến tần sẽ đảo ngược giá trị trả về của tác vụ con sau khi nó thực hiện xong." +
+                      "Nếu đứa trẻ trả về thành công, tác vụ biến tần sẽ trả về lỗi. Nếu đứa trẻ trả về lỗi, tác vụ biến tần sẽ trả về thành công.")]
     [TaskIcon("{SkinColor}InverterIcon.png")]
     public class Inverter : Decorator
     {

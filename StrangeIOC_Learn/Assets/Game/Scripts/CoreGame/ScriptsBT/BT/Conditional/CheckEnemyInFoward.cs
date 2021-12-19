@@ -18,35 +18,37 @@ public class CheckEnemyInFoward : Conditional
     }
     public override TaskStatus OnUpdate()
     {
+        if(Mathf.Abs(rangeToEnemy.Value) > componentManager.Value.distanceChecEnemy)
+            return TaskStatus.Success;
+        return TaskStatus.Failure;
+        //if (rangeToEnemy.Value > 0.1f)
+        //{
+        //    if (!componentManager.Value.isFaceRight) // neu k dang quay mat ben phai thi change direction
+        //    {
+        //        return TaskStatus.Success;
+        //    }
+        //    else
+        //    {
 
-        if (rangeToEnemy.Value > 0.1f)
-        {
-            if (!componentManager.Value.isFaceRight) // neu k dang quay mat ben phai thi change direction
-            {
-                return TaskStatus.Success;
-            }
-            else
-            {
+        //        return TaskStatus.Failure;
+        //    }
+        //}
+        //else if (rangeToEnemy.Value < -0.1f)
+        //{
+        //    if (componentManager.Value.isFaceRight)
 
-                return TaskStatus.Failure;
-            }
-        }
-        else if (rangeToEnemy.Value < -0.1f)
-        {
-            if (componentManager.Value.isFaceRight)
+        //    {
+        //        return TaskStatus.Success;
+        //    }
+        //    else
+        //    {
+        //        return TaskStatus.Failure;
+        //    }
+        //}
+        //else
+        //{
+        //    return TaskStatus.Failure;
+        //}
 
-            {
-                return TaskStatus.Success;
-            }
-            else
-            {
-                return TaskStatus.Failure;
-            }
-        }
-        else
-        {
-            return TaskStatus.Failure;
-        }
-      
     }
 }

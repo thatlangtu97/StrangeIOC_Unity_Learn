@@ -10,7 +10,7 @@ public class ComponentManager : MonoBehaviour
     public StateMachineController stateMachine;
     public BehaviorTree BehaviorTree;
     public Rigidbody2D rgbody2D;
-    public LayerMask layerMaskGround,layerMaskWall;
+    public LayerMask layerMaskGround,layerMaskWall,layerEnemy;
 
     public ComponentProperties properties;
     public bool hasCheckEnemyInSigh;
@@ -24,6 +24,8 @@ public class ComponentManager : MonoBehaviour
     public float distanceCheckGround=0.1f;
     [Range(0f, 2f)]
     public float distanceCheckWall = 0.1f;
+    [Range(0f, 2f)]
+    public float distanceChecEnemy = 0.1f;
     public bool isOnGround;
     public int jumpCount;
     public int dashCount;
@@ -56,24 +58,35 @@ public class ComponentManager : MonoBehaviour
     }
     public void OnInputChangeFacing()
     {
-        if (isFaceRight == true)
-        {
-            isFaceRight = false;
-        }
-        else
-        {
-            isFaceRight = true;
-        }
-        if (isFaceRight)
+
+        if (enemy.transform.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            speedMove = Mathf.Abs(speedMove);
+            speedMove = -maxSpeedMove;
         }
-        else
+        else if (enemy.transform.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            speedMove = -Mathf.Abs(speedMove);
+            speedMove = maxSpeedMove;
         }
+        //if (isFaceRight == true)
+        //{
+        //    isFaceRight = false;
+        //}
+        //else
+        //{
+        //    isFaceRight = true;
+        //}
+        //if (isFaceRight)
+        //{
+        //    transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        //    speedMove = Mathf.Abs(speedMove);
+        //}
+        //else
+        //{
+        //    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        //    speedMove = -Mathf.Abs(speedMove);
+        //}
     }
     public void ResetJumpCount()
     {
@@ -104,12 +117,10 @@ public class ComponentManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceCheckGround, layerMaskGround);
         if (hit.collider != null)
         {
-            isOnGround = true;
             return true;
         }
         else
         {
-            isOnGround = false;
             return false;
         }
     }
@@ -118,12 +129,22 @@ public class ComponentManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1,0)* transform.localScale.x, distanceCheckWall, layerMaskWall);
         if (hit.collider != null)
         {
-            isOnGround = true;
             return true;
         }
         else
         {
-            isOnGround = false;
+            return false;
+        }
+    }
+    public bool checkEnemyForwark()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1, 0) * transform.localScale.x, distanceChecEnemy, layerEnemy);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        else
+        {
             return false;
         }
     }
