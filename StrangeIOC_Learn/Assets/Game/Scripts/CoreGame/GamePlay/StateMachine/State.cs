@@ -1,11 +1,13 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class State : ScriptableObject
+public class State : SerializedScriptableObject
 {
     protected StateMachineController controller;
+    protected int id;
     public virtual void InitState(StateMachineController controller)
     {
         this.controller = controller;
@@ -48,7 +50,7 @@ public class State : ScriptableObject
     public virtual void OnInputDash()
     {
     }
-    public virtual void OnInputSkill()
+    public virtual void OnInputSkill(int idSkill)
     {
     }
     public virtual void OnHit()

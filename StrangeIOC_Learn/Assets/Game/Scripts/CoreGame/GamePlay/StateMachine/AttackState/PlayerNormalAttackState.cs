@@ -7,6 +7,8 @@ public class PlayerNormalAttackState : State
     //public AttackComboConfig comboNormalAttack;
     public int currentCombo;
     public List<AttackConfig> skillDatas= new List<AttackConfig>();
+    public List<IComboEvent> EventCombo;
+
     float timeCount=0;
     float durationVelocity=0;
     bool isEnemyForwark;

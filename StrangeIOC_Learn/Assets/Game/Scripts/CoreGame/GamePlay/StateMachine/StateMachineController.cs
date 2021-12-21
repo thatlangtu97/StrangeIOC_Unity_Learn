@@ -31,7 +31,6 @@ public class StateMachineController : MonoBehaviour
     public ComponentManager componentManager;
     public Animator animator;
 
-    public StateEventTriger stateEventTriger;
     public void Awake()
     {
         //InitStateMachine();
@@ -136,6 +135,10 @@ public class StateMachineController : MonoBehaviour
     }
     public virtual void OnInputRevive()
     {
+    }
+    public virtual void OnInputSkill(int idSkill)
+    {
+
     }
 }
 

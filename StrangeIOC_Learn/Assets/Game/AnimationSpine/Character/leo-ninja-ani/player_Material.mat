@@ -45,6 +45,6 @@ Material:
     - _ThresholdEnd: 1
     - _Use8Neighbourhood: 0
     m_Colors:
-    - _Black: {r: 0, g: 0, b: 0, a: 0}
+    - _Black: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 0.18017906, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}

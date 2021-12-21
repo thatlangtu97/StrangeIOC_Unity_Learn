@@ -63,4 +63,13 @@ public class PlayerStateMatchine : StateMachineController
         base.OnInputRevive();
         ChangeState(reviveState, true);
     }
+    public override void OnInputSkill(int idSkill)
+    {
+        base.OnInputSkill(idSkill);
+        if (currentState != null)
+        {
+            currentState.OnInputSkill(idSkill);
+        }
+
+    }
 }

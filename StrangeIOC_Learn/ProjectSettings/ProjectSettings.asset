@@ -672,7 +672,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     1: dUI_MANAGER
     4: dUI_MANAGER
-    7: dUI_MANAGER
+    7: dUI_MANAGER;ODIN_INSPECTOR;ODIN_INSPECTOR_3
     13: dUI_MANAGER
     14: dUI_MANAGER
     19: dUI_MANAGER

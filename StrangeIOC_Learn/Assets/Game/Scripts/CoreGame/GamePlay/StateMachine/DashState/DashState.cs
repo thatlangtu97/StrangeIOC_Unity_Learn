@@ -27,34 +27,39 @@ public class DashState : State
             controller.componentManager.rgbody2D.velocity = new Vector2(speedDash * controller.componentManager.transform.localScale.x, 0f);
             countTime -= Time.deltaTime;
             //cancel dash
-            if(newVelocity.x > 0 && controller.componentManager.speedMove<0 || newVelocity.x < 0 && controller.componentManager.speedMove > 0)
+            if((newVelocity.x * controller.componentManager.speedMove) < 0)
             {
-                ExitState();
-                if (controller.componentManager.checkGround() == true)
-                {
-                    if (controller.componentManager.speedMove != 0)
-                    {
-                        controller.ChangeState(controller.moveState);
-                    }
-                    else
-                    {
-                        controller.ChangeState(controller.idleState);
-                    }
-                }
-                else
-                {
-                    
-                    controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-                    controller.componentManager.Rotate();
-                    newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-                    if (controller.componentManager.checkWall() == true)
-                    {
-                        newVelocity.x = 0;
-                    }
-                    controller.componentManager.rgbody2D.velocity = newVelocity;
-
-                }
+                countTime = -1f;
             }
+            //if(newVelocity.x > 0 && controller.componentManager.speedMove<0 || newVelocity.x < 0 && controller.componentManager.speedMove > 0)
+            //{
+            //    countTime = -1f;
+            //    //ExitState();
+            //    //if (controller.componentManager.checkGround() == true)
+            //    //{
+            //    //    if (controller.componentManager.speedMove != 0)
+            //    //    {
+            //    //        controller.ChangeState(controller.moveState);
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        controller.ChangeState(controller.idleState);
+            //    //    }
+            //    //}
+            //    //else
+            //    //{
+                    
+            //    //    controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
+            //    //    controller.componentManager.Rotate();
+            //    //    newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+            //    //    if (controller.componentManager.checkWall() == true)
+            //    //    {
+            //    //        newVelocity.x = 0;
+            //    //    }
+            //    //    controller.componentManager.rgbody2D.velocity = newVelocity;
+
+            //    //}
+            //}
         }
         else
         {
@@ -102,7 +107,13 @@ public class DashState : State
     public override void OnInputMove()
     {
         base.OnInputMove();
-        controller.ChangeState(controller.moveState);
+        if (controller.componentManager.checkGround() == true && countTime<0f)
+        {
+            if (controller.componentManager.speedMove != 0)
+            {
+                controller.ChangeState(controller.moveState);
+            }
+        }
     }
     public override void OnInputAttack()
     {

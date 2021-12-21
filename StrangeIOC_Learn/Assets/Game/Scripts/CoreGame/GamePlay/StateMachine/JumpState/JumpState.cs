@@ -75,4 +75,9 @@ public class JumpState : State
         if (controller.componentManager.CanAttackAir)
             controller.ChangeState(controller.airAttackState);
     }
+    public override void OnInputSkill(int idSkill)
+    {
+        base.OnInputSkill(idSkill);
+        controller.ChangeState(controller.skillState);
+    }
 }

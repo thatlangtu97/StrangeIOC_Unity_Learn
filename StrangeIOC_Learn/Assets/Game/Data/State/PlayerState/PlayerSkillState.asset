@@ -9,7 +9,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89393e77c4e62468985fc39b787ae4a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 037d665317dc22b4fa2a05bd6bd32cd7, type: 3}
   m_Name: PlayerSkillState
   m_EditorClassIdentifier: 
-  comboNormalAttack: {fileID: 11400000, guid: abbf8c377a5d14f3cbea8bbf7ec33ee8, type: 2}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  skillDatas:
+  - NameTrigger: skill1
+    durationAnimation: 1
+    velocity: {x: 0, y: 0}
+    durationVelocity: 0.5
+    curveX:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    curveY:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    eventConfig: {fileID: 11400000, guid: 48a6793bc92f9e947a93baee8ebfd1ce, type: 2}
