@@ -36,7 +36,6 @@ public class CheckNeedMoveTask : Conditional
         //}
         if (Mathf.Abs(rangeToEnemy.Value) > componentManager.Value.distanceChecEnemy)
         {
-            Debug.Log("move");
             return TaskStatus.Success;
         }
         return TaskStatus.Failure;

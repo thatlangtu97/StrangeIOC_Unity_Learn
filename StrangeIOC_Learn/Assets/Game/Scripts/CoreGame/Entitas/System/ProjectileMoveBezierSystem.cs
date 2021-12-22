@@ -30,7 +30,7 @@ public class ProjectileMoveBezierSystem : IExecuteSystem
 
         protected override void Execute(GameEntity entity)
         {
-            entity.projectileContainer.projectileComponent.projectileMovement.update();
+            entity.projectileContainer.projectileComponent.projectileMovement.updatePosition();
         }
 
     }

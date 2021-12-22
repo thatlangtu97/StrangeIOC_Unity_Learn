@@ -76,5 +76,9 @@ public class DashAttackState : State
         base.OnInputMove();
         controller.ChangeState(controller.moveState);
     }
-
+    public override void OnInputSkill(int idSkill)
+    {
+        base.OnInputSkill(idSkill);
+        controller.ChangeState(controller.skillState);
+    }
 }

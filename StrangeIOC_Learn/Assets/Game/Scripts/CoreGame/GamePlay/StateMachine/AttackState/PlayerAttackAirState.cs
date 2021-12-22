@@ -107,4 +107,9 @@ public class PlayerAttackAirState : State
                 CastSkill();
         }
     }
+    public override void OnInputSkill(int idSkill)
+    {
+        base.OnInputSkill(idSkill);
+        controller.ChangeState(controller.skillState);
+    }
 }

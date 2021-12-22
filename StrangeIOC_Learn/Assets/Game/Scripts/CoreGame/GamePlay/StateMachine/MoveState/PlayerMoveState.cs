@@ -40,6 +40,10 @@ public class PlayerMoveState : MeleeMoveState
         base.OnInputJump();
         controller.ChangeState(controller.jumpState);
     }
-
+    public override void OnInputSkill(int idSkill)
+    {
+        base.OnInputSkill(idSkill);
+        controller.ChangeState(controller.skillState);
+    }
 
 }

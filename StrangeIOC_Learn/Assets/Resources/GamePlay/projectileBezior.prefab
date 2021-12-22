@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2298935954853833856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: e
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2298935955140347880}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: projectileBezior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,10 +280,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trail: {fileID: 2298935955238826348}
   timeDelay: 1
-  enemyTransform: {fileID: 2298935954853833856}
+  enemyTransform: {fileID: 0}
   startTransform: {fileID: 2298935955140347880}
   directionStart: {x: -4.0699997, y: -2.846767, z: -2.4373996}
   directionEnd: {x: 2.1299999, y: 2.5406022, z: -2.058384}
+  radiusCastEnemy: 10
+  layerMaskEnemy:
+    serializedVersion: 2
+    m_Bits: 4096
+  cols: []
 --- !u!1 &2298935955495520356
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +319,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2298935955495520356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.245021, y: 1.2780477, z: -0.53591466}
+  m_LocalPosition: {x: 4.245021, y: 1.2780477, z: -0.5359148}
   m_LocalScale: {x: 0.29999998, y: 0.14999999, z: 0.099999994}
   m_Children: []
   m_Father: {fileID: 2298935955140347880}
@@ -497,10 +502,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trail: {fileID: 2298935955495520355}
   timeDelay: 0.4
-  enemyTransform: {fileID: 2298935954853833856}
+  enemyTransform: {fileID: 0}
   startTransform: {fileID: 2298935955140347880}
   directionStart: {x: -8.36, y: 7.7899995, z: 3.2999997}
   directionEnd: {x: 1.8899999, y: -2.0799997, z: 8.65}
+  radiusCastEnemy: 10
+  layerMaskEnemy:
+    serializedVersion: 2
+    m_Bits: 4096
+  cols: []
 --- !u!1 &2298935955671120030
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,10 +724,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trail: {fileID: 2298935955671120029}
   timeDelay: 0.8
-  enemyTransform: {fileID: 2298935954853833856}
+  enemyTransform: {fileID: 0}
   startTransform: {fileID: 2298935955140347880}
   directionStart: {x: -2.1900003, y: 0.2763102, z: -3.4011397}
   directionEnd: {x: -1.4100001, y: 5.5380297, z: 3.6418707}
+  radiusCastEnemy: 10
+  layerMaskEnemy:
+    serializedVersion: 2
+    m_Bits: 4096
+  cols: []
 --- !u!1 &2298935956201179427
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,10 +946,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trail: {fileID: 2298935956201179422}
   timeDelay: 0.2
-  enemyTransform: {fileID: 2298935954853833856}
+  enemyTransform: {fileID: 0}
   startTransform: {fileID: 2298935955140347880}
   directionStart: {x: -4.7799997, y: -2.35, z: -1.8}
   directionEnd: {x: -0.85000014, y: 5.0699997, z: -6.02}
+  radiusCastEnemy: 10
+  layerMaskEnemy:
+    serializedVersion: 2
+    m_Bits: 4096
+  cols: []
 --- !u!1 &2298935956321858165
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,7 +976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2298935956321858162
 Transform:
   m_ObjectHideFlags: 0
@@ -1148,10 +1168,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trail: {fileID: 2298935956321858160}
   timeDelay: 0
-  enemyTransform: {fileID: 2298935954853833856}
+  enemyTransform: {fileID: 0}
   startTransform: {fileID: 2298935955140347880}
   directionStart: {x: -4.07, y: 2.21, z: 6.09}
   directionEnd: {x: -1.41, y: 3.92, z: -12.08}
+  radiusCastEnemy: 2
+  layerMaskEnemy:
+    serializedVersion: 2
+    m_Bits: 4096
+  cols: []
 --- !u!1 &2298935956370425446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1390,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trail: {fileID: 2298935956370425445}
   timeDelay: 0.6
-  enemyTransform: {fileID: 2298935954853833856}
+  enemyTransform: {fileID: 0}
   startTransform: {fileID: 2298935955140347880}
   directionStart: {x: -4.19, y: 1.8499999, z: 4.2}
   directionEnd: {x: 0.03, y: -2.22, z: -12.03}
+  radiusCastEnemy: 10
+  layerMaskEnemy:
+    serializedVersion: 2
+    m_Bits: 4096
+  cols: []

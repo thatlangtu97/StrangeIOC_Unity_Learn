@@ -7,7 +7,7 @@ using UnityEngine;
 public class State : SerializedScriptableObject
 {
     protected StateMachineController controller;
-    protected int id;
+    public int idState;
     public virtual void InitState(StateMachineController controller)
     {
         this.controller = controller;

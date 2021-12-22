@@ -68,6 +68,7 @@ public class PlayerStateMatchine : StateMachineController
         base.OnInputSkill(idSkill);
         if (currentState != null)
         {
+            skillState.idState = idSkill;
             currentState.OnInputSkill(idSkill);
         }
 

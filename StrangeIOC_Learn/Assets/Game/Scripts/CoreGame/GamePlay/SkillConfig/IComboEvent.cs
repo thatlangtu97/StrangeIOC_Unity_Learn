@@ -20,7 +20,9 @@ public class CastProjectileEvent : IComboEvent
 
     public void OnEventTrigger(GameEntity entity)
     {
-        Debug.Log("spawn projectile");
-        GameObject.Instantiate(Prefab, Localosition,Quaternion.identity);
+        GameObject temp =  ObjectPool.Spawn(Prefab);
+        temp.transform.position = entity.stateMachineContainer.stateMachine.transform.position + Localosition;
+        ObjectPool.instance.Recycle(temp, 1.5f);
+        //GameObject.Instantiate(Prefab, Localosition,Quaternion.identity);
     }
 }
