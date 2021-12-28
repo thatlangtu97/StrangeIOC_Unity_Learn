@@ -111,6 +111,6 @@ public class EnemyNormalAttackState : State
     public override void OnHit()
     {
         base.OnHit();
-        controller.ChangeState(controller.beHitState);
+        controller.ChangeState(controller.hitState);
     }
 }

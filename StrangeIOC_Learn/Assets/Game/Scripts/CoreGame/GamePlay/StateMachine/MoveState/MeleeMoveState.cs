@@ -21,6 +21,6 @@ public class MeleeMoveState : State
     public override void OnHit()
     {
         base.OnHit();
-        controller.ChangeState(controller.beHitState);
+        controller.ChangeState(controller.hitState);
     }
 }

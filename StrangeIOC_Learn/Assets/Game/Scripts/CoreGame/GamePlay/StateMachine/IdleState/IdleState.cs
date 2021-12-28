@@ -44,7 +44,7 @@ public class IdleState : State
     public override void OnHit()
     {
         base.OnHit();
-        controller.ChangeState(controller.beHitState);
+        controller.ChangeState(controller.hitState);
     }
     public override void OnInputSkill(int idSkill)
     {

@@ -6,8 +6,6 @@ public class PlayerAttackAirState : State
 {
     //public AttackComboConfig comboNormalAttack;
     public int currentCombo;
-    public List<AttackConfig> skillDatas;
-
     float timeCount;
     public override void EnterState()
     {
@@ -81,9 +79,9 @@ public class PlayerAttackAirState : State
     public void CastSkill()
     {
         controller.componentManager.Rotate();
-        timeCount = skillDatas[currentCombo].durationAnimation;
-        controller.animator.SetTrigger(skillDatas[currentCombo].NameTrigger);
-        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, skillDatas[currentCombo].velocity.y);
+        timeCount = eventData[currentCombo].durationAnimation;
+        controller.animator.SetTrigger(eventData[currentCombo].NameTrigger);
+        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, eventData[currentCombo].velocity.y);
     }
     public override void OnInputDash()
     {
@@ -103,7 +101,7 @@ public class PlayerAttackAirState : State
         if (controller.componentManager.isAttack)
         {
             currentCombo = (currentCombo + 1);
-            if(currentCombo< skillDatas.Count)
+            if(currentCombo< eventData.Count)
                 CastSkill();
         }
     }

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64faa6ea1e28aa4ebda3e9b113278d0, type: 3}
-  m_Name: PlayerReviveState
+  m_Script: {fileID: 11500000, guid: 72edf7ed6e9df114fb9e1a90b3d99132, type: 3}
+  m_Name: Player1_DieState
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -23,4 +23,4 @@ MonoBehaviour:
     SerializationNodes: []
   idState: 0
   eventData: []
-  duration: 1
+  duration: 1.933
