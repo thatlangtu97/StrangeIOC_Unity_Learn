@@ -18,32 +18,41 @@ public class CheckEnemyInSightTask : Conditional
     }
     public override TaskStatus OnUpdate()
     {
-        if (componentManager != null)
+        if (componentManager.Value.enemy != null)
         {
-            if (componentManager.Value != null)
-            {
-                if (!componentManager.Value.hasCheckEnemyInSigh)
-                    return TaskStatus.Failure;
-                if (componentManager.Value.enemy != null)
-                {
-                    return TaskStatus.Success;
-                }
-                else
-                {
-                    return TaskStatus.Failure;
-                }
-            }
-            else
-            {
-                Debug.Log("Value null");
-                return TaskStatus.Failure;
-            }
+            return TaskStatus.Success;
         }
         else
         {
-            Debug.Log("componentManager null");
             return TaskStatus.Failure;
         }
+
+        //if (componentManager != null)
+        //{
+        //    if (componentManager.Value != null)
+        //    {
+        //        if (!componentManager.Value.hasCheckEnemyInSigh)
+        //            return TaskStatus.Failure;
+        //        if (componentManager.Value.enemy != null)
+        //        {
+        //            return TaskStatus.Success;
+        //        }
+        //        else
+        //        {
+        //            return TaskStatus.Failure;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("Value null");
+        //        return TaskStatus.Failure;
+        //    }
+        //}
+        //else
+        //{
+        //    Debug.Log("componentManager null");
+        //    return TaskStatus.Failure;
+        //}
 
     }
 }

@@ -49,11 +49,11 @@ public class ProjectilePet : MonoBehaviour
             directionStart = directionTransform != null ? directionTransform.position : Vector3.zero;
             directionEnd = directionTransform2 != null ? directionTransform2.position : Vector3.zero;
             endPosition = enemyTransform != null ? enemyTransform.position : Vector3.zero;
-            if (movement != null)
-            {
-                movement.directionStart = directionStart;
-                movement.directionEnd = directionEnd;
-            }
+            //if (movement != null)
+            //{
+            //    movement.directionStart = directionStart;
+            //    movement.directionEnd = directionEnd;
+            //}
         }
     }
     //IEnumerator GoByTheRoute()

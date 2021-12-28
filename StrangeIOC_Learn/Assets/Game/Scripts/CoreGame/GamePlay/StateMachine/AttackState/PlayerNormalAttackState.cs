@@ -6,7 +6,7 @@ public class PlayerNormalAttackState : State
 {
     //public AttackComboConfig comboNormalAttack;
     public int currentCombo;
-    public List<AttackConfig> skillDatas= new List<AttackConfig>();
+    //public List<AttackConfig> skillDatas= new List<AttackConfig>();
     float timeCount=0;
     float durationVelocity=0;
     bool isEnemyForwark;
@@ -26,7 +26,7 @@ public class PlayerNormalAttackState : State
             {
                 //Vector2 velocityAttack = skillDatas[currentCombo].velocity;
                 //Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
-                Vector2 velocityAttack = new Vector2( skillDatas[currentCombo].curveX.Evaluate(durationVelocity),skillDatas[currentCombo].curveY.Evaluate(durationVelocity));
+                Vector2 velocityAttack = new Vector2( eventData[currentCombo].curveX.Evaluate(durationVelocity), eventData[currentCombo].curveY.Evaluate(durationVelocity));
                 //Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
                 controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
             }
@@ -39,7 +39,7 @@ public class PlayerNormalAttackState : State
             {
                 //currentCombo = (currentCombo+1) % (skillDatas.Count);
                 currentCombo += 1;
-                if(currentCombo== skillDatas.Count)
+                if(currentCombo== eventData.Count)
                 {
                     if (controller.componentManager.speedMove != 0)
                     {
@@ -76,10 +76,10 @@ public class PlayerNormalAttackState : State
         base.ResetTrigger();
         isEnemyForwark = controller.componentManager.checkEnemyForwark();
         controller.componentManager.Rotate();
-        timeCount = skillDatas[currentCombo].durationAnimation;
-        controller.animator.SetTrigger(skillDatas[currentCombo].NameTrigger);
+        timeCount = eventData[currentCombo].durationAnimation;
+        controller.animator.SetTrigger(eventData[currentCombo].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
-        durationVelocity = skillDatas[currentCombo].durationVelocity;
+        durationVelocity = eventData[currentCombo].durationVelocity;
         controller.componentManager.isBufferAttack = false;
         //controller.stateEventTriger.Invoke(NameStateEvent.AttackStart.ToString(),0f);
     }

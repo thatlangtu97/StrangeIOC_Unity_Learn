@@ -4,11 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerSkillState", menuName = "State/PlayerSkillState")]
 public class PlayerSkillState : State
 {
-    public List<AttackConfig> skillDatas;
+    //public List<AttackConfig> skillDatas;
     //int idSkill=0;    
     float timeCount;
     float timeCurve = 0;
-    List<int> idEventTrigged = new List<int>();
     //float durationVelocity;
     public override void EnterState()
     {
@@ -24,26 +23,15 @@ public class PlayerSkillState : State
         base.UpdateState();
         if (timeCount > 0)
         {
-            timeCount -= Time.deltaTime;
-            if (timeCurve < skillDatas[idState].durationAnimation)
+            timeCount -= Time.fixedDeltaTime;
+            if (timeCurve < eventData[idState].durationAnimation)
             {
-                Vector2 velocityAttack = new Vector2(skillDatas[idState].curveX.Evaluate(timeCurve), skillDatas[idState].curveY.Evaluate(timeCurve));
+                Vector2 velocityAttack = new Vector2(eventData[idState].curveX.Evaluate(timeCurve), eventData[idState].curveY.Evaluate(timeCurve));
                 Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
                 
-                controller.componentManager.rgbody2D.position += force*Time.deltaTime ;
+                controller.componentManager.rgbody2D.position += force*Time.fixedDeltaTime;
             }
-            if (skillDatas[idState].eventConfig != null)
-            {
-                foreach (IComboEvent comboevent in skillDatas[idState].eventConfig.EventCombo)
-                {
-                    if (timeCurve > comboevent.timeTrigger && !idEventTrigged.Contains(comboevent.id))
-                    {
-                        comboevent.OnEventTrigger(controller.componentManager.entity);
-                        idEventTrigged.Add(comboevent.id);
-                    }
-                }
-            }
-            timeCurve += Time.deltaTime;
+            timeCurve += Time.fixedDeltaTime;
         }
         else
         {
@@ -78,11 +66,12 @@ public class PlayerSkillState : State
         idEventTrigged.Clear();
         controller.componentManager.Rotate();
         timeCurve = 0;
-        timeCount = skillDatas[idState].durationAnimation;
+        timeTrigger = 0;
+        timeCount = eventData[idState].durationAnimation;
         if (controller.componentManager.checkGround() == true)
-            controller.animator.SetTrigger(skillDatas[idState].NameTrigger);
+            controller.animator.SetTrigger(eventData[idState].NameTrigger);
         else
-            controller.animator.SetTrigger(skillDatas[idState].NameTriggerAir);
+            controller.animator.SetTrigger(eventData[idState].NameTriggerAir);
     }
     public override void OnInputDash()
     {

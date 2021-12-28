@@ -5,7 +5,7 @@ using UnityEngine;
 public class DashAttackState : State
 {
     public int currentCombo;
-    public List<AttackConfig> skillDatas;
+    //public List<AttackConfig> skillDatas;
 
     float timeCount;
     float durationVelocity;
@@ -25,7 +25,7 @@ public class DashAttackState : State
             durationVelocity -= Time.deltaTime;
             if (durationVelocity > 0)
             {
-                Vector2 velocityAttack = skillDatas[currentCombo].velocity;
+                Vector2 velocityAttack = eventData[currentCombo].velocity;
                 Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
                 controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
             }
@@ -34,7 +34,7 @@ public class DashAttackState : State
         {
             if (controller.componentManager.isBufferAttack == true)
             {
-                currentCombo = (currentCombo + 1) % (skillDatas.Count);
+                currentCombo = (currentCombo + 1) % (eventData.Count);
                 CastSkill();
             }
             else
@@ -59,10 +59,10 @@ public class DashAttackState : State
     public void CastSkill()
     {
         controller.componentManager.Rotate();
-        timeCount = skillDatas[currentCombo].durationAnimation;
-        controller.animator.SetTrigger(skillDatas[currentCombo].NameTrigger);
+        timeCount = eventData[currentCombo].durationAnimation;
+        controller.animator.SetTrigger(eventData[currentCombo].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
-        durationVelocity = skillDatas[currentCombo].durationVelocity;
+        durationVelocity = eventData[currentCombo].durationVelocity;
         controller.componentManager.isBufferAttack = false;
     }
 

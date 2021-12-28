@@ -8,22 +8,30 @@ public class CalculateRangeToEnemyTask : Conditional
 {
     public SharedFloat rangeToEnemy;
     public SharedComponentManager componentManager;
-    public bool isUseDistance;
-    public float dir;
+    public float distance;
     public override TaskStatus OnUpdate()
     {
-                dir = componentManager.Value.enemy.position.x - componentManager.Value.transform.position.x;
-                if (dir == 0) dir = 0.05f;
-                if (isUseDistance)
-                {
-                    rangeToEnemy.Value = dir;
-                }
-                else
-                {
-                    rangeToEnemy.Value = dir;
+        float space = componentManager.Value.enemy.position.x - componentManager.Value.transform.position.x;
+        rangeToEnemy.Value = Mathf.Abs(space);
+        if (rangeToEnemy.Value < distance)
+        {
+            return TaskStatus.Success;
+        }
+        else
+        {
+            return TaskStatus.Failure;
+        }
+        //if (dir == 0) dir = 0.05f;
+        //if (isUseDistance)
+        //{
+        //    rangeToEnemy.Value = dir;
+        //}
+        //else
+        //{
+        //    rangeToEnemy.Value = dir;
 
-                }
-        return TaskStatus.Success;
+        //}
+        //return TaskStatus.Success;
 
 
     }

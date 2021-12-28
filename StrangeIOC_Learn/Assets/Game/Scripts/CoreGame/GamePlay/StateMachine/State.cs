@@ -8,6 +8,10 @@ public class State : SerializedScriptableObject
 {
     protected StateMachineController controller;
     public int idState;
+    protected List<int> idEventTrigged = new List<int>();
+    protected float timeTrigger;
+    public List<AttackConfig> eventData;
+
     public virtual void InitState(StateMachineController controller)
     {
         this.controller = controller;
@@ -21,6 +25,8 @@ public class State : SerializedScriptableObject
                 controller.animator.ResetTrigger(p.name);
             }
         }
+        timeTrigger = 0f;
+        idEventTrigged = new List<int>();
     }
     public virtual void ResetTrigger()
     {
@@ -34,6 +40,21 @@ public class State : SerializedScriptableObject
     }
     public virtual void UpdateState()
     {
+        timeTrigger +=Time.fixedDeltaTime;
+        if (eventData != null && eventData.Count > idState && idState >= 0)
+        {
+            if (eventData[idState].eventConfig != null)
+            {
+                foreach (IComboEvent comboevent in eventData[idState].eventConfig.EventCombo)
+                {
+                    if (timeTrigger > comboevent.timeTrigger && !idEventTrigged.Contains(comboevent.id))
+                    {
+                        comboevent.OnEventTrigger(controller.componentManager.entity);
+                        idEventTrigged.Add(comboevent.id);
+                    }
+                }
+            }
+        }
     }
     public virtual void ExitState()
     {

@@ -18,7 +18,7 @@ public class CheckEnemyInFoward : Conditional
     }
     public override TaskStatus OnUpdate()
     {
-        if(Mathf.Abs(rangeToEnemy.Value) > componentManager.Value.distanceChecEnemy)
+        if(rangeToEnemy.Value > componentManager.Value.distanceChecEnemy)
             return TaskStatus.Success;
         return TaskStatus.Failure;
         //if (rangeToEnemy.Value > 0.1f)

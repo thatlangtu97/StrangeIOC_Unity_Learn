@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyNormalAttack", menuName = "State/EnemyNormalAttack")]
 public class EnemyNormalAttack : State
 {
+    
     public override void EnterState()
     {
         base.EnterState();

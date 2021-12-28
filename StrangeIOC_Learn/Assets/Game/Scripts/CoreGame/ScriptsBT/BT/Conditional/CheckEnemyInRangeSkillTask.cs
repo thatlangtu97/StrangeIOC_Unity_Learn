@@ -12,7 +12,7 @@ public class CheckEnemyInRangeSkillTask : Conditional
     public float range;
     public override TaskStatus OnUpdate()
     {
-        if(Mathf.Abs( rangeToEnemy.Value) <range )
+        if(rangeToEnemy.Value <range )
         {
             //if (componentManager.Value.isAttack)
             //{

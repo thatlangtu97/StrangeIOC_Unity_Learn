@@ -20,13 +20,9 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: EventCombo
-      Entry: 6
-      Data: 
+    SerializationNodes: []
   idState: 0
-  currentCombo: 0
-  skillDatas:
+  eventData:
   - NameTrigger: attack1
     NameTriggerAir: attack1
     durationAnimation: 0.4
@@ -144,3 +140,4 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     eventConfig: {fileID: 0}
+  currentCombo: 0
