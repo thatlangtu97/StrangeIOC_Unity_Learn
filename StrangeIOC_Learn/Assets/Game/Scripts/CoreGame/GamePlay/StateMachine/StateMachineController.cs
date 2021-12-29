@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class StateMachineController : MonoBehaviour
 {
-
+    public Dictionary<NameState, State> dictionaryStateMachine = new Dictionary<NameState, State>();
     //[Header("State To Clone")]
     //public State spawnState;
     //public State idleState;
@@ -27,91 +27,73 @@ public class StateMachineController : MonoBehaviour
     //public State stuntState;
 
     //[HideInInspector]
-    public State spawnState, idleState, moveState, jumpState, dashState, dieState, reviveState, attackState, airAttackState, dashAttack, skillState, knockDownState, hitState, getUpState, freezeState, stuntState;
+    //public State spawnState, idleState, moveState, jumpState, dashState, dieState, reviveState, attackState, airAttackState, dashAttack, skillState, knockDownState, hitState, getUpState, freezeState, stuntState;
     [Header("Current State")]
     public State currentState;
-    [Header("Previous State")]
-    public State previousState;
+    public NameState currentNameState;
+    //[Header("Previous State")]
+    //public State previousState;
+    //public NameState previousNameState;
     //[Header("State To Clone")]
     public List<StateClone> States;
-    public enum NameState
-    {
-      SpawnState,
-      IdleState,
-      MoveState,
-      JumpState,
-      DashState,
-      DieState,
-      RreviveState,
-      AttackState,
-      AirAttackState,
-      DashAttack,
-      SkillState,
-      KnockDownState,
-      HitState,
-      GetUpState,
-      FreezeState,
-      StuntState,
-    }
-    [System.Serializable]
-    public struct StateClone {
-        public NameState NameState;
-        public State StateToClone;
-    }
+
+
     public void SetupState()
     {
         foreach (StateClone tempState in States) {
-            switch (tempState.NameState)
-            {
-                case NameState.SpawnState:
-                    CreateStateFactory(ref spawnState, tempState.StateToClone);
-                    break;
-                case NameState.IdleState:
-                    CreateStateFactory(ref idleState, tempState.StateToClone);
-                    break;
-                case NameState.MoveState:
-                    CreateStateFactory(ref moveState, tempState.StateToClone);
-                    break;
-                case NameState.JumpState:
-                    CreateStateFactory(ref jumpState, tempState.StateToClone);
-                    break;
-                case NameState.DashState:
-                    CreateStateFactory(ref dashState, tempState.StateToClone);
-                    break;
-                case NameState.DieState:
-                    CreateStateFactory(ref dieState, tempState.StateToClone);
-                    break;
-                case NameState.RreviveState:
-                    CreateStateFactory(ref reviveState, tempState.StateToClone);
-                    break;
-                case NameState.AttackState:
-                    CreateStateFactory(ref attackState, tempState.StateToClone);
-                    break;
-                case NameState.AirAttackState:
-                    CreateStateFactory(ref airAttackState, tempState.StateToClone);
-                    break;
-                case NameState.DashAttack:
-                    CreateStateFactory(ref dashAttack, tempState.StateToClone);
-                    break;
-                case NameState.SkillState:
-                    CreateStateFactory(ref skillState, tempState.StateToClone);
-                    break;
-                case NameState.KnockDownState:
-                    CreateStateFactory(ref knockDownState, tempState.StateToClone);
-                    break;
-                case NameState.HitState:
-                    CreateStateFactory(ref hitState, tempState.StateToClone);
-                    break;
-                case NameState.GetUpState:
-                    CreateStateFactory(ref getUpState, tempState.StateToClone);
-                    break;
-                case NameState.FreezeState:
-                    CreateStateFactory(ref freezeState, tempState.StateToClone);
-                    break;
-                case NameState.StuntState:
-                    CreateStateFactory(ref stuntState, tempState.StateToClone);
-                    break;
-            }
+            CreateStateFactory(tempState);
+            //switch (tempState.NameState)
+            //{
+            //    case NameState.SpawnState:
+            //        CreateStateFactory(ref spawnState, tempState.StateToClone);
+                    
+            //        break;
+            //    case NameState.IdleState:
+            //        CreateStateFactory(ref idleState, tempState.StateToClone);
+            //        break;
+            //    case NameState.MoveState:
+            //        CreateStateFactory(ref moveState, tempState.StateToClone);
+            //        break;
+            //    case NameState.JumpState:
+            //        CreateStateFactory(ref jumpState, tempState.StateToClone);
+            //        break;
+            //    case NameState.DashState:
+            //        CreateStateFactory(ref dashState, tempState.StateToClone);
+            //        break;
+            //    case NameState.DieState:
+            //        CreateStateFactory(ref dieState, tempState.StateToClone);
+            //        break;
+            //    case NameState.RreviveState:
+            //        CreateStateFactory(ref reviveState, tempState.StateToClone);
+            //        break;
+            //    case NameState.AttackState:
+            //        CreateStateFactory(ref attackState, tempState.StateToClone);
+            //        break;
+            //    case NameState.AirAttackState:
+            //        CreateStateFactory(ref airAttackState, tempState.StateToClone);
+            //        break;
+            //    case NameState.DashAttack:
+            //        CreateStateFactory(ref dashAttack, tempState.StateToClone);
+            //        break;
+            //    case NameState.SkillState:
+            //        CreateStateFactory(ref skillState, tempState.StateToClone);
+            //        break;
+            //    case NameState.KnockDownState:
+            //        CreateStateFactory(ref knockDownState, tempState.StateToClone);
+            //        break;
+            //    case NameState.HitState:
+            //        CreateStateFactory(ref hitState, tempState.StateToClone);
+            //        break;
+            //    case NameState.GetUpState:
+            //        CreateStateFactory(ref getUpState, tempState.StateToClone);
+            //        break;
+            //    case NameState.FreezeState:
+            //        CreateStateFactory(ref freezeState, tempState.StateToClone);
+            //        break;
+            //    case NameState.StuntState:
+            //        CreateStateFactory(ref stuntState, tempState.StateToClone);
+            //        break;
+            //}
         
         }
     }
@@ -135,7 +117,7 @@ public class StateMachineController : MonoBehaviour
     {
         SetupState();
         //InitStates();
-        currentState = idleState;
+        ChangeState(NameState.IdleState, true);
     }
     public virtual void UpdateState()
     {
@@ -151,56 +133,84 @@ public class StateMachineController : MonoBehaviour
     {
     }
 
-    protected virtual void InitStates()
+    //protected virtual void InitStates()
+    //{
+    //    //CreateStateFactory(ref spawnState); 
+    //    CreateStateFactory(ref idleState);
+    //    CreateStateFactory(ref dashState);
+    //    CreateStateFactory(ref dashAttack);
+    //    CreateStateFactory(ref moveState);
+    //    CreateStateFactory(ref jumpState);
+    //    //CreateStateFactory(ref jumpFallState);
+    //    CreateStateFactory(ref attackState);
+    //    CreateStateFactory(ref airAttackState);
+    //    CreateStateFactory(ref hitState);
+    //    CreateStateFactory(ref dieState);
+    //    CreateStateFactory(ref knockDownState);
+    //    CreateStateFactory(ref freezeState);
+    //    CreateStateFactory(ref skillState);
+    //    CreateStateFactory(ref stuntState);
+    //    CreateStateFactory(ref reviveState);
+    //}
+    //protected void CreateStateFactory(ref State stateToClone , State stateClone)
+    //{
+    //    stateToClone = Instantiate(stateClone);
+    //    stateToClone.InitState(this);
+    //}
+    protected void CreateStateFactory(StateClone stateClone)
     {
-        //CreateStateFactory(ref spawnState); 
-        CreateStateFactory(ref idleState);
-        CreateStateFactory(ref dashState);
-        CreateStateFactory(ref dashAttack);
-        CreateStateFactory(ref moveState);
-        CreateStateFactory(ref jumpState);
-        //CreateStateFactory(ref jumpFallState);
-        CreateStateFactory(ref attackState);
-        CreateStateFactory(ref airAttackState);
-        CreateStateFactory(ref hitState);
-        CreateStateFactory(ref dieState);
-        CreateStateFactory(ref knockDownState);
-        CreateStateFactory(ref freezeState);
-        CreateStateFactory(ref skillState);
-        CreateStateFactory(ref stuntState);
-        CreateStateFactory(ref reviveState);
+        State state = Instantiate(stateClone.StateToClone);
+        state.InitState(this);
+        dictionaryStateMachine.Add(stateClone.NameState, state);
     }
-    protected void CreateStateFactory(ref State stateToClone)
+    //public virtual void ChangeState(State newState, bool forceChange = false)
+    //{
+    //    if (newState == null) return;
+    //    if (previousState != currentState)
+    //    {
+    //        previousState = currentState;
+    //    }
+    //    if (!forceChange)
+    //    {
+    //        if (currentState != dieState && currentState != reviveState)
+    //        {
+    //            if (newState != currentState)
+    //            {
+    //                if (currentState != null)
+    //                {
+    //                    currentState.ExitState();
+    //                }
+    //                currentState = newState;
+    //                currentState.EnterState();
+    //            }
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (currentState != null)
+    //        {
+    //            currentState.ExitState();
+    //        }
+    //        currentState = newState;
+    //        currentState.EnterState();
+    //    }
+    //}
+    public virtual void ChangeState(NameState nameState, bool forceChange = false)
     {
-        if (stateToClone != null)
-        {
-            stateToClone = Instantiate(stateToClone);
-            stateToClone.InitState(this);
-        }
-    }
-    protected void CreateStateFactory(ref State stateToClone , State stateClone)
-    {
-        stateToClone = Instantiate(stateClone);
-        stateToClone.InitState(this);
-    }
-    public virtual void ChangeState(State newState, bool forceChange = false)
-    {
-        if (newState == null) return;
-        if (previousState != currentState)
-        {
-            previousState = currentState;
-        }
+        if ( !dictionaryStateMachine.ContainsKey(nameState) ) return;
+        State newState = dictionaryStateMachine[nameState];
         if (!forceChange)
         {
-            if (currentState != dieState && currentState != reviveState)
+            if (currentNameState != NameState.DieState && currentNameState != NameState.RreviveState)
             {
-                if (newState != currentState)
+                if (nameState != currentNameState)
                 {
                     if (currentState != null)
                     {
                         currentState.ExitState();
                     }
                     currentState = newState;
+                    currentNameState = nameState;
                     currentState.EnterState();
                 }
             }
@@ -212,10 +222,10 @@ public class StateMachineController : MonoBehaviour
                 currentState.ExitState();
             }
             currentState = newState;
+            currentNameState = nameState;
             currentState.EnterState();
         }
     }
-
     public virtual void OnInputAttack()
     {
     }
@@ -237,3 +247,28 @@ public class StateMachineController : MonoBehaviour
     }
 }
 
+[System.Serializable]
+public struct StateClone
+{
+    public NameState NameState;
+    public State StateToClone;
+}
+public enum NameState
+{
+    SpawnState,
+    IdleState,
+    MoveState,
+    JumpState,
+    DashState,
+    DieState,
+    RreviveState,
+    AttackState,
+    AirAttackState,
+    DashAttack,
+    SkillState,
+    KnockDownState,
+    HitState,
+    GetUpState,
+    FreezeState,
+    StuntState,
+}

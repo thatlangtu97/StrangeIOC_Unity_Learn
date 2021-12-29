@@ -13,7 +13,7 @@ public class ToStateNormalAttackTask : Conditional
     {
         base.OnStart();
         stateMachine = componentManager.Value.stateMachine;
-        stateMachine.ChangeState(stateMachine.attackState);
+        stateMachine.ChangeState(NameState.AttackState);
     }
     //public override TaskStatus OnUpdate()
     //{

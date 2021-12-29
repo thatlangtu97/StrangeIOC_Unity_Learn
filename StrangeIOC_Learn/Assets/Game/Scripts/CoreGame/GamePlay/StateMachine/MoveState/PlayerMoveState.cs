@@ -15,7 +15,7 @@ public class PlayerMoveState : MeleeMoveState
         controller.componentManager.Rotate();
         if (controller.componentManager.speedMove == 0)
         {
-            controller.ChangeState(controller.idleState);
+            controller.ChangeState(NameState.IdleState);
         }
     }
     public override void ExitState()
@@ -28,22 +28,22 @@ public class PlayerMoveState : MeleeMoveState
     public override void OnInputAttack()
     {
         base.OnInputAttack();
-        controller.ChangeState(controller.attackState);
+        controller.ChangeState(NameState.AttackState);
     }
     public override void OnInputDash()
     {
         base.OnInputDash();
-        controller.ChangeState(controller.dashState);
+        controller.ChangeState(NameState.DashState);
     }
     public override void OnInputJump()
     {
         base.OnInputJump();
-        controller.ChangeState(controller.jumpState);
+        controller.ChangeState(NameState.JumpState);
     }
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(controller.skillState);
+        controller.ChangeState(NameState.SkillState);
     }
 
 }

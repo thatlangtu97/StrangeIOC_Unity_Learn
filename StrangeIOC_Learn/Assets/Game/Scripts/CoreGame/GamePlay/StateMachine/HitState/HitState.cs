@@ -29,7 +29,7 @@ public class HitState : State
         
         if (coutTime < 0)
         {
-            controller.ChangeState(controller.idleState);
+            controller.ChangeState(NameState.IdleState);
             //ExitState();
         }
         coutTime -= Time.deltaTime;

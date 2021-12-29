@@ -43,11 +43,11 @@ public class PlayerNormalAttackState : State
                 {
                     if (controller.componentManager.speedMove != 0)
                     {
-                        controller.ChangeState(controller.moveState);
+                        controller.ChangeState(NameState.MoveState);
                     }
                     else
                     {
-                        controller.ChangeState(controller.idleState);
+                        controller.ChangeState(NameState.IdleState);
                     }
                     return;
                 }
@@ -57,11 +57,11 @@ public class PlayerNormalAttackState : State
             {
                 if (controller.componentManager.speedMove != 0)
                 {
-                    controller.ChangeState(controller.moveState);
+                    controller.ChangeState(NameState.MoveState);
                 }
                 else
                 {
-                    controller.ChangeState(controller.idleState);
+                    controller.ChangeState(NameState.IdleState);
                 }
             }
         }
@@ -86,17 +86,17 @@ public class PlayerNormalAttackState : State
     public override void OnInputDash()
     {
         base.OnInputDash();
-        controller.ChangeState(controller.dashState);
+        controller.ChangeState(NameState.DashState);
     }
     public override void OnInputJump()
     {
         base.OnInputJump();
-        controller.ChangeState(controller.jumpState);
+        controller.ChangeState(NameState.JumpState);
     }
     public override void OnInputMove()
     {
         base.OnInputMove();
-        controller.ChangeState(controller.moveState);
+        controller.ChangeState(NameState.MoveState);
     }
     public override void OnInputAttack()
     {
@@ -112,6 +112,6 @@ public class PlayerNormalAttackState : State
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(controller.skillState);
+        controller.ChangeState(NameState.SkillState);
     }
 }

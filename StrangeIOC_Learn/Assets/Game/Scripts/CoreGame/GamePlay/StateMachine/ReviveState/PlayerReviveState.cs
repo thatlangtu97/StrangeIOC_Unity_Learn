@@ -33,11 +33,11 @@ public class PlayerReviveState : State
             {
                 if (controller.componentManager.speedMove != 0)
                 {
-                    controller.ChangeState(controller.moveState,true);
+                    controller.ChangeState(NameState.MoveState,true);
                 }
                 else
                 {
-                    controller.ChangeState(controller.idleState,true);
+                    controller.ChangeState(NameState.IdleState,true);
                 }
             }
         }

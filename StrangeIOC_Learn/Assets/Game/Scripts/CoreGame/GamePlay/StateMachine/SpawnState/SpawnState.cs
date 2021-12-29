@@ -24,7 +24,7 @@ public class SpawnState : State
     public override void ExitState()
     {
         base.ExitState();
-        controller.ChangeState(controller.idleState);
+        controller.ChangeState(NameState.IdleState);
 
     }
 }

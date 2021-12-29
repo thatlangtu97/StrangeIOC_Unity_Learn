@@ -31,7 +31,7 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
 
             if (entityEnemy.stateMachineContainer.stateMachine.componentManager.properties.Heal <= 0)
             {
-                entityEnemy.stateMachineContainer.stateMachine.ChangeState(entityEnemy.stateMachineContainer.stateMachine.dieState);
+                entityEnemy.stateMachineContainer.stateMachine.ChangeState(NameState.DieState);
             }
             else
             {

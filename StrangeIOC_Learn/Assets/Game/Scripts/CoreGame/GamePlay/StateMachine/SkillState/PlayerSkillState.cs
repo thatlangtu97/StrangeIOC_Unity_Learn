@@ -40,11 +40,11 @@ public class PlayerSkillState : State
             {
                 if (controller.componentManager.speedMove != 0)
                 {
-                    controller.ChangeState(controller.moveState);
+                    controller.ChangeState(NameState.MoveState);
                 }
                 else
                 {
-                    controller.ChangeState(controller.idleState);
+                    controller.ChangeState(NameState.IdleState);
                 }
             }
             else
@@ -78,7 +78,7 @@ public class PlayerSkillState : State
         if (timeCount < 0 && controller.componentManager.CanDash)
         {
             base.OnInputDash();
-            controller.ChangeState(controller.dashState);
+            controller.ChangeState(NameState.DashState);
         }
     }
     public override void OnInputJump()
@@ -86,7 +86,7 @@ public class PlayerSkillState : State
         if (timeCount < 0 && controller.componentManager.CanJump)
         {
             base.OnInputJump();
-            controller.ChangeState(controller.jumpState);
+            controller.ChangeState(NameState.JumpState);
         }
     }
     public override void OnInputMove()
@@ -94,7 +94,7 @@ public class PlayerSkillState : State
         if (timeCount < 0 && controller.componentManager.checkGround() == true)
         {
             base.OnInputMove();
-            controller.ChangeState(controller.moveState);
+            controller.ChangeState(NameState.MoveState);
         }
     }
     public override void OnInputSkill(int idSkill)

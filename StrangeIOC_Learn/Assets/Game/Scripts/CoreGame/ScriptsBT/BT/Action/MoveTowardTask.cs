@@ -10,7 +10,7 @@ public class MoveTowardTask :Action
     public override void OnStart()
     {
         base.OnStart();
-        componentManager.Value.stateMachine.ChangeState(componentManager.Value.stateMachine.moveState);
+        componentManager.Value.stateMachine.ChangeState(NameState.MoveState);
     }
     //public override TaskStatus OnUpdate()
     //{

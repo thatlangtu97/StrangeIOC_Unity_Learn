@@ -67,11 +67,11 @@ public class DashState : State
             {
                 if (controller.componentManager.speedMove != 0)
                 {
-                    controller.ChangeState(controller.moveState);
+                    controller.ChangeState(NameState.MoveState);
                 }
                 else
                 {
-                    controller.ChangeState(controller.idleState);
+                    controller.ChangeState(NameState.IdleState);
                 }
             }
             else
@@ -102,7 +102,7 @@ public class DashState : State
             controller.componentManager.ResetAttackAirCount();
         }
         if (controller.componentManager.CanJump)
-            controller.ChangeState(controller.jumpState);
+            controller.ChangeState(NameState.JumpState);
     }
     public override void OnInputMove()
     {
@@ -111,7 +111,7 @@ public class DashState : State
         {
             if (controller.componentManager.speedMove != 0)
             {
-                controller.ChangeState(controller.moveState);
+                controller.ChangeState(NameState.MoveState);
             }
         }
     }
@@ -119,16 +119,16 @@ public class DashState : State
     {
         base.OnInputAttack();
         if (controller.componentManager.checkGround() == true)
-            controller.ChangeState(controller.dashAttack);
+            controller.ChangeState(NameState.DashAttack);
         else
         {
             if(controller.componentManager.CanAttackAir)
-                controller.ChangeState(controller.airAttackState);
+                controller.ChangeState(NameState.AirAttackState);
         }
     }
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(controller.skillState);
+        controller.ChangeState(NameState.SkillState);
     }
 }

@@ -60,7 +60,7 @@ public class EnemyNormalAttackState : State
                 //}
                 //else
                 //{
-                    controller.ChangeState(controller.idleState);
+                    controller.ChangeState(NameState.IdleState);
                 //}
             }
         }
@@ -85,17 +85,17 @@ public class EnemyNormalAttackState : State
     public override void OnInputDash()
     {
         base.OnInputDash();
-        controller.ChangeState(controller.dashState);
+        controller.ChangeState(NameState.DashState);
     }
     public override void OnInputJump()
     {
         base.OnInputJump();
-        controller.ChangeState(controller.jumpState);
+        controller.ChangeState(NameState.JumpState);
     }
     public override void OnInputMove()
     {
         base.OnInputMove();
-        controller.ChangeState(controller.moveState);
+        controller.ChangeState(NameState.MoveState);
     }
     public override void OnInputAttack()
     {
@@ -111,6 +111,6 @@ public class EnemyNormalAttackState : State
     public override void OnHit()
     {
         base.OnHit();
-        controller.ChangeState(controller.hitState);
+        controller.ChangeState(NameState.HitState);
     }
 }

@@ -23,5 +23,5 @@ MonoBehaviour:
     SerializationNodes: []
   idState: 0
   eventData: []
-  duration: 0.4
+  duration: 0.3
   speedDash: 10

@@ -14,7 +14,7 @@ public class ChangeStateToIdleTask : Action
         if (!componentManager.Value.isAttack)
         {
             stateMachine = componentManager.Value.stateMachine;
-            stateMachine.ChangeState(stateMachine.idleState);
+            stateMachine.ChangeState(NameState.IdleState);
         }
     }
 }

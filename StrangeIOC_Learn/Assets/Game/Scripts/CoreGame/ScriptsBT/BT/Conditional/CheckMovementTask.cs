@@ -11,11 +11,11 @@ public class CheckMovementTask : Conditional
         base.OnStart();
         if (!componentManager.Value.isAttack)
         {
-                componentManager.Value.stateMachine.ChangeState(componentManager.Value.stateMachine.moveState);
+            componentManager.Value.stateMachine.ChangeState(NameState.MoveState);
         }
         else
         {
-            componentManager.Value.stateMachine.ChangeState(componentManager.Value.stateMachine.idleState);
+            componentManager.Value.stateMachine.ChangeState(NameState.IdleState);
         }
 
     }

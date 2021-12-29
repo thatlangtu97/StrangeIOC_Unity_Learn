@@ -39,8 +39,7 @@ public class DieState : State
         if (coutTime <= 0)
         {
             base.OnRevive();
-            controller.currentState = controller.reviveState;
-            controller.currentState.EnterState();
+            controller.ChangeState(NameState.RreviveState, true);
         }
     }
 }

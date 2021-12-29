@@ -24,31 +24,32 @@ public class IdleState : State
     public override void OnInputAttack()
     {
         base.OnInputAttack();
-        controller.ChangeState(controller.attackState);
+        controller.ChangeState(NameState.AttackState);
     }
     public override void OnInputDash()
     {
         base.OnInputDash();
-        controller.ChangeState(controller.dashState);
+        controller.ChangeState(NameState.DashState);
     }
     public override void OnInputJump()
     {
         base.OnInputJump();
-        controller.ChangeState(controller.jumpState);
+        Debug.Log(controller.dictionaryStateMachine[NameState.JumpState]);
+        controller.ChangeState(NameState.JumpState);
     }
     public override void OnInputMove()
     {
         base.OnInputMove();
-        controller.ChangeState(controller.moveState);
+        controller.ChangeState(NameState.MoveState);
     }
     public override void OnHit()
     {
         base.OnHit();
-        controller.ChangeState(controller.hitState);
+        controller.ChangeState(NameState.HitState);
     }
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(controller.skillState);
+        controller.ChangeState(NameState.SkillState);
     }
 }
