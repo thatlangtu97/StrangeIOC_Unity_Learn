@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "PlayerReviveState", menuName = "State/PlayerReviveState")]
+[CreateAssetMenu(fileName = "PlayerReviveState", menuName = "State/Player/PlayerReviveState")]
 public class PlayerReviveState : State
 {
     public float duration = 1f;

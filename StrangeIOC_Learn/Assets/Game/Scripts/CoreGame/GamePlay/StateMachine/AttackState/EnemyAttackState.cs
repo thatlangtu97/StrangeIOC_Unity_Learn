@@ -1,13 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-[CreateAssetMenu(fileName = "EnemyNormalAttackState", menuName = "State/EnemyNormalAttackState")]
-
-public class EnemyNormalAttackState : State
+﻿using UnityEngine;
+[CreateAssetMenu(fileName = "EnemyAttackState", menuName = "State/Enemy/EnemyAttackState")]
+public class EnemyAttackState : State
 {
-    //public AttackComboConfig comboNormalAttack;
     public int currentCombo;
-    //public List<AttackConfig> skillDatas;
     float timeCount = 0;
     float durationVelocity = 0;
     bool isEnemyForwark;
@@ -25,10 +20,8 @@ public class EnemyNormalAttackState : State
         {
             if (durationVelocity > 0 && !isEnemyForwark)
             {
-                Vector2 velocityAttack = new Vector2(   eventData[currentCombo].curveX.Evaluate(durationVelocity),
-                                                        eventData[currentCombo].curveY.Evaluate(durationVelocity));
-                controller.componentManager.rgbody2D.position += new Vector2(   velocityAttack.x * controller.transform.localScale.x,
-                                                                                velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
+                Vector2 velocityAttack = new Vector2(eventData[currentCombo].curveX.Evaluate(durationVelocity), eventData[currentCombo].curveY.Evaluate(durationVelocity));
+                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
             }
             timeCount -= Time.deltaTime;
             durationVelocity -= Time.deltaTime;
@@ -38,30 +31,30 @@ public class EnemyNormalAttackState : State
             if (controller.componentManager.isBufferAttack == true)
             {
                 currentCombo += 1;
-                //if (currentCombo == skillDatas.Count)
-                //{
-                //    if (controller.componentManager.speedMove != 0)
-                //    {
-                //        controller.ChangeState(controller.moveState);
-                //    }
-                //    else
-                //    {
-                //        controller.ChangeState(controller.idleState);
-                //    }
-                //    return;
-                //}
+                if (currentCombo == eventData.Count)
+                {
+                    if (controller.componentManager.speedMove != 0)
+                    {
+                        controller.ChangeState(NameState.MoveState);
+                    }
+                    else
+                    {
+                        controller.ChangeState(NameState.IdleState);
+                    }
+                    return;
+                }
                 CastSkill();
             }
             else
             {
-                //if (controller.componentManager.speedMove != 0)
-                //{
-                //    controller.ChangeState(controller.moveState);
-                //}
-                //else
-                //{
+                if (controller.componentManager.speedMove != 0)
+                {
+                    controller.ChangeState(NameState.MoveState);
+                }
+                else
+                {
                     controller.ChangeState(NameState.IdleState);
-                //}
+                }
             }
         }
     }
@@ -80,7 +73,6 @@ public class EnemyNormalAttackState : State
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
         durationVelocity = eventData[currentCombo].durationVelocity;
         controller.componentManager.isBufferAttack = false;
-        //controller.stateEventTriger.Invoke(NameStateEvent.AttackStart.ToString(),0f);
     }
     public override void OnInputDash()
     {
@@ -101,16 +93,10 @@ public class EnemyNormalAttackState : State
     {
         base.OnInputAttack();
         controller.componentManager.isBufferAttack = true;
-        //if (currentCombo < skillDatas.Count-1)
-        //{
-        //    //if (timeCount < skillDatas[currentCombo].durationAnimation * 0.5f)
-        //        controller.componentManager.isBufferAttack = true;
-        //}
-
     }
-    public override void OnHit()
+    public override void OnInputSkill(int idSkill)
     {
-        base.OnHit();
-        controller.ChangeState(NameState.HitState);
+        base.OnInputSkill(idSkill);
+        controller.ChangeState(NameState.SkillState);
     }
 }

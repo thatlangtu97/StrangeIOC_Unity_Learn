@@ -8,7 +8,6 @@ public class SpawnState : State
     float coutTime;
     public override void EnterState()
     {
-        
         controller.animator.SetTrigger(AnimationTriger.SPAWN);
         coutTime = duration;
     }
@@ -25,6 +24,5 @@ public class SpawnState : State
     {
         base.ExitState();
         controller.ChangeState(NameState.IdleState);
-
     }
 }

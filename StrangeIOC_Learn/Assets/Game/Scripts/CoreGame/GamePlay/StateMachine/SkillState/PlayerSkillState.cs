@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "PlayerSkillState", menuName = "State/PlayerSkillState")]
+[CreateAssetMenu(fileName = "PlayerSkillState", menuName = "State/Player/PlayerSkillState")]
 public class PlayerSkillState : State
 {
-    //public List<AttackConfig> skillDatas;
-    //int idSkill=0;    
     float timeCount;
     float timeCurve = 0;
-    //float durationVelocity;
     public override void EnterState()
     {
         base.EnterState();

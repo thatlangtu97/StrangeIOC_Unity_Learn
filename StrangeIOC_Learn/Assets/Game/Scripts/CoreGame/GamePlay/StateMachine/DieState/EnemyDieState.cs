@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-[CreateAssetMenu(fileName = "DieState", menuName = "State/DieState")]
-public class DieState : State
+﻿using UnityEngine;
+[CreateAssetMenu(fileName = "EnemyDieState", menuName = "State/Enemy/EnemyDieState")]
+public class EnemyDieState : State
 {
     public float duration = 1f;
     float coutTime = 0;
@@ -28,7 +26,6 @@ public class DieState : State
     {
         base.ExitState();
         {
-            //Destroy(controller.gameObject);
             controller.componentManager.DestroyEntity();
             controller.gameObject.SetActive(false);
             Destroy(controller.gameObject);

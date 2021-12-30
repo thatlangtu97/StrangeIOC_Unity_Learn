@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "MeleeMoveState", menuName = "State/MeleeMoveState")]
-public class MeleeMoveState : State
+[CreateAssetMenu(fileName = "EnemyMeleeMoveState", menuName = "State/Enemy/EnemyMeleeMoveState")]
+public class EnemyMeleeMoveState : State
 {
     public override void InitState(StateMachineController controller)
     {

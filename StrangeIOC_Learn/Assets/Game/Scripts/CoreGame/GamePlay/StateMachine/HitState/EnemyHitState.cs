@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "HitState", menuName = "State/HitState")]
-public class HitState : State
+[CreateAssetMenu(fileName = "EnemyHitState", menuName = "State/Enemy/EnemyHitState")]
+public class EnemyHitState : State
 {
     public float duration = 0.4f;
     float coutTime = 0;
@@ -12,10 +12,6 @@ public class HitState : State
         base.EnterState();
         controller.componentManager.BehaviorTree.DisableBehavior();
         hit = (hit + 1);
-        //if (hit % 2 == 0)
-        //    controller.animator.SetTrigger(AnimationTriger.HIT);
-        //else
-        //    controller.animator.SetTrigger(AnimationTriger.HIT2);
         if (hit % 2 == 0)
             controller.animator.Play(AnimationTriger.HIT);
         else
@@ -30,7 +26,6 @@ public class HitState : State
         if (coutTime < 0)
         {
             controller.ChangeState(NameState.IdleState);
-            //ExitState();
         }
         coutTime -= Time.deltaTime;
     }

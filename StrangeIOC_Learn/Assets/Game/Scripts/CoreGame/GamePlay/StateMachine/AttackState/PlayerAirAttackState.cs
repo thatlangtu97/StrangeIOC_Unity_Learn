@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "PlayerAttackAirState", menuName = "State/PlayerAttackAirState")]
-public class PlayerAttackAirState : State
+[CreateAssetMenu(fileName = "PlayerAirAttackState", menuName = "State/Player/PlayerAirAttackState")]
+public class PlayerAirAttackState : State
 {
-    //public AttackComboConfig comboNormalAttack;
     public int currentCombo;
     float timeCount;
     public override void EnterState()

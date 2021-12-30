@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "FreezeState", menuName = "State/FreezeState")]
-public class FreezeState : State
+[CreateAssetMenu(fileName = "EnemyFreezeState", menuName = "State/Enemy/EnemyFreezeState")]
+public class EnemyFreezeState : State
 {
     public float duration = 0.4f;
     float coutTime = 0;

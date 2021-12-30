@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "JumpState", menuName = "State/JumpState")]
-public class JumpState : State
+[CreateAssetMenu(fileName = "PlayerJumpState", menuName = "State/Player/PlayerJumpState")]
+public class PlayerJumpState : State
 {
-    public float forceJump=3f;
+    public float forceJump=7f;
     public float duration = 0.05f;
     float countTimeBufferJump = 0;
     public override void EnterState()

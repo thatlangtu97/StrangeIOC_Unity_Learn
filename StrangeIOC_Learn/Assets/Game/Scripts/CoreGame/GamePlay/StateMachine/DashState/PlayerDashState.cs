@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-[CreateAssetMenu(fileName = "DashState", menuName = "State/DashState")]
-public class DashState : State
+﻿using UnityEngine;
+[CreateAssetMenu(fileName = "PlayerDashState", menuName = "State/Player/PlayerDashState")]
+public class PlayerDashState : State
 {
     public float duration = 0.4f;
     public float speedDash = 10f;
@@ -31,35 +29,6 @@ public class DashState : State
             {
                 countTime = -1f;
             }
-            //if(newVelocity.x > 0 && controller.componentManager.speedMove<0 || newVelocity.x < 0 && controller.componentManager.speedMove > 0)
-            //{
-            //    countTime = -1f;
-            //    //ExitState();
-            //    //if (controller.componentManager.checkGround() == true)
-            //    //{
-            //    //    if (controller.componentManager.speedMove != 0)
-            //    //    {
-            //    //        controller.ChangeState(controller.moveState);
-            //    //    }
-            //    //    else
-            //    //    {
-            //    //        controller.ChangeState(controller.idleState);
-            //    //    }
-            //    //}
-            //    //else
-            //    //{
-                    
-            //    //    controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-            //    //    controller.componentManager.Rotate();
-            //    //    newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-            //    //    if (controller.componentManager.checkWall() == true)
-            //    //    {
-            //    //        newVelocity.x = 0;
-            //    //    }
-            //    //    controller.componentManager.rgbody2D.velocity = newVelocity;
-
-            //    //}
-            //}
         }
         else
         {
