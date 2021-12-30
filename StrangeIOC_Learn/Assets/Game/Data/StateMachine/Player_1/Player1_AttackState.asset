@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c125d8ce9b824c00ba85aa6e7cdf4ee, type: 3}
+  m_Name: Player1_AttackState
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  idState: 0
+  eventData:
+  - NameTrigger: attack1
+    NameTriggerAir: attack1
+    durationAnimation: 0.4
+    velocity: {x: 2, y: 0}
+    durationVelocity: 0.1
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 7.329689
+        inSlope: 203.75172
+        outSlope: 203.75172
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.3533029
+      - serializedVersion: 3
+        time: 0.017535344
+        value: 10
+        inSlope: -2.343817
+        outSlope: -2.343817
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.1
+        value: 0
+        inSlope: -21.66651
+        outSlope: -21.66651
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.14627896
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    curveY:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    eventConfig: {fileID: 0}
+  - NameTrigger: attack2
+    NameTriggerAir: attack2
+    durationAnimation: 0.3736
+    velocity: {x: 2, y: 0}
+    durationVelocity: 0.1
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.1
+        value: 0
+        inSlope: -29.76942
+        outSlope: -29.76942
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.11249989
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    curveY:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    eventConfig: {fileID: 0}
+  - NameTrigger: attack3
+    NameTriggerAir: attack3
+    durationAnimation: 0.4536
+    velocity: {x: 0, y: 0}
+    durationVelocity: 0.1
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 10
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.1
+        value: 0
+        inSlope: -102.640396
+        outSlope: -102.640396
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.07819466
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    curveY:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    eventConfig: {fileID: 0}
+  currentCombo: 0
