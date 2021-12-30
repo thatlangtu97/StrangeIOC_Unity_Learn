@@ -575,7 +575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 40049888}
 --- !u!114 &40049888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,9 +587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 40049886}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 40049884}
 --- !u!114 &40049889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 40049888}
 --- !u!114 &40049890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,20 +611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 1.1
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 894813751}
-  directionTransform: {fileID: 1294728267}
-  directionTransform2: {fileID: 374726570}
-  timeStep: 0.05
-  useGimoz: 0
-  movement: {fileID: 40049884}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -2.1900003, y: 0.2763102, z: -3.4011397}
-  directionEnd: {x: -1.4100001, y: 5.5380297, z: 3.6418707}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &62294452
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 63286512}
 --- !u!114 &63286512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,9 +849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 63286510}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 63286508}
 --- !u!114 &63286513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,7 +861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 63286512}
 --- !u!1 &93894578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 104479896}
 --- !u!114 &104479896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,9 +1140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 104479894}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 0}
 --- !u!114 &104479897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,7 +1152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 104479896}
 --- !u!114 &104479898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,20 +1164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.1
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 1673510152}
-  directionTransform: {fileID: 9977865}
-  directionTransform2: {fileID: 62294453}
-  timeStep: 0.05
-  useGimoz: 1
-  movement: {fileID: 0}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -4.7799997, y: -2.35, z: -1.8}
-  directionEnd: {x: -0.85000014, y: 5.0699997, z: 0.56999993}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &115531075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,7 +1400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 116585515}
 --- !u!114 &116585515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,9 +1412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 116585513}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 116585511}
 --- !u!114 &116585516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,7 +1424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 116585515}
 --- !u!114 &116585517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1484,20 +1436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.7
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 2139180130}
-  directionTransform: {fileID: 30024300}
-  directionTransform2: {fileID: 2053545904}
-  timeStep: 0.05
-  useGimoz: 0
-  movement: {fileID: 116585511}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -4.19, y: 1.8499999, z: 4.2}
-  directionEnd: {x: 0.03, y: -2.22, z: -3.1999998}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &139565258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284c715261da4488fbb153b7acecb6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 218680112}
 --- !u!60 &187456540
 PolygonCollider2D:
   m_ObjectHideFlags: 8
@@ -1721,7 +1658,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 0}
   currentNameState: 0
-  States: []
+  States:
+  - NameState: 8
+    StateToClone: {fileID: 11400000, guid: 22b97eee90605ef4b9feab6af8dae67b, type: 2}
+  - NameState: 7
+    StateToClone: {fileID: 11400000, guid: e2560a68f385f154c87be54bfb8473f6, type: 2}
+  - NameState: 9
+    StateToClone: {fileID: 11400000, guid: b9e6a92c076399a40bb340e87e143369, type: 2}
+  - NameState: 4
+    StateToClone: {fileID: 11400000, guid: 4818fee5989d8024ab1765f622e7fd1b, type: 2}
+  - NameState: 5
+    StateToClone: {fileID: 11400000, guid: 9677000bef5243f4aa96c2e371e2c6c4, type: 2}
+  - NameState: 1
+    StateToClone: {fileID: 11400000, guid: c1b2e2c86635b5245a2da8a0d1ac1877, type: 2}
+  - NameState: 3
+    StateToClone: {fileID: 11400000, guid: ca28a69843be46741b3c22219f366aa0, type: 2}
+  - NameState: 2
+    StateToClone: {fileID: 11400000, guid: b35c2b103ff66ef4d944d08e94c26ea7, type: 2}
+  - NameState: 6
+    StateToClone: {fileID: 11400000, guid: 6f5526934a43fe24ea5d8f55aeba2ba7, type: 2}
   componentManager: {fileID: 218680112}
   animator: {fileID: 790741382}
 --- !u!114 &218680110
@@ -1736,7 +1691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e0333c9605d43d9bfceb332c275006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 218680106}
 --- !u!114 &218680112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,7 +1705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  stateMachine: {fileID: 0}
+  stateMachine: {fileID: 218680106}
   BehaviorTree: {fileID: 0}
   rgbody2D: {fileID: 218680113}
   layerMaskGround:
@@ -1832,7 +1787,7 @@ Transform:
   - {fileID: 187456538}
   - {fileID: 790741378}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &218680116
 MonoBehaviour:
@@ -2026,7 +1981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 248063180}
 --- !u!114 &248063180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,9 +1993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 248063178}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 0}
 --- !u!114 &248063181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2054,7 +2005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 248063180}
 --- !u!114 &248063182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2067,20 +2017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.4
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 1527176886}
-  directionTransform: {fileID: 865974702}
-  directionTransform2: {fileID: 969970322}
-  timeStep: 0.05
-  useGimoz: 1
-  movement: {fileID: 0}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -3.6599996, y: 7.7899995, z: 3.2999997}
-  directionEnd: {x: 1.8899999, y: -2.0799997, z: 3.1}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &266544278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,7 +2051,7 @@ Transform:
   - {fileID: 40049883}
   - {fileID: 1271660772}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &285817821
 GameObject:
@@ -2240,7 +2176,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &374726569
 GameObject:
@@ -2316,7 +2252,7 @@ Transform:
   - {fileID: 1272585098}
   - {fileID: 1159029155}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &447989787
 GameObject:
@@ -2510,7 +2446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 447989793}
 --- !u!114 &447989793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2523,9 +2458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 447989791}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 447989789}
 --- !u!114 &447989794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2538,7 +2470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 447989793}
 --- !u!114 &447989795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2551,20 +2482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.5
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 1527176886}
-  directionTransform: {fileID: 865974702}
-  directionTransform2: {fileID: 969970322}
-  timeStep: 0.05
-  useGimoz: 0
-  movement: {fileID: 447989789}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -3.6599996, y: 7.7899995, z: 3.2999997}
-  directionEnd: {x: 1.8899999, y: -2.0799997, z: 3.1}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &483247838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2619,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 218680106}
           m_MethodName: OnInputDash
           m_Mode: 1
           m_Arguments:
@@ -5034,14 +4951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15eea62b3377e04e9c73043f87b05f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startupPoolMode: 0
-  startupPools:
-  - size: 2
-    prefab: {fileID: 2298935955140347883, guid: 41f5d9e780d3f2945aabf1d723d5119d,
-      type: 3}
-  - size: 4
-    prefab: {fileID: 3969153100511159295, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-      type: 3}
 --- !u!4 &489803271
 Transform:
   m_ObjectHideFlags: 0
@@ -5054,7 +4963,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522082312
 GameObject:
@@ -5091,7 +5000,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32567
 --- !u!114 &522082314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5155,7 +5064,7 @@ RectTransform:
   - {fileID: 981299997}
   - {fileID: 1680160140}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5388,7 +5297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 597903488}
 --- !u!114 &597903488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5401,9 +5309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 597903486}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 597903484}
 --- !u!114 &597903489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5416,7 +5321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 597903488}
 --- !u!1 &598530245
 GameObject:
   m_ObjectHideFlags: 0
@@ -5596,7 +5500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 598530250}
 --- !u!114 &598530250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5609,9 +5512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 598530248}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 0}
 --- !u!114 &598530251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5624,7 +5524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 598530250}
 --- !u!114 &598530252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5637,20 +5536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.55
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 2139180130}
-  directionTransform: {fileID: 30024300}
-  directionTransform2: {fileID: 2053545904}
-  timeStep: 0.05
-  useGimoz: 1
-  movement: {fileID: 0}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -4.19, y: 1.8499999, z: 4.2}
-  directionEnd: {x: 0.03, y: -2.22, z: -3.1999998}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &620082090
 GameObject:
   m_ObjectHideFlags: 0
@@ -5830,7 +5715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 620082095}
 --- !u!114 &620082095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5843,9 +5727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 620082093}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 0}
 --- !u!114 &620082096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5858,7 +5739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 620082095}
 --- !u!114 &620082097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5871,20 +5751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.25
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 1406880485}
-  directionTransform: {fileID: 2078698563}
-  directionTransform2: {fileID: 93894579}
-  timeStep: 0.05
-  useGimoz: 1
-  movement: {fileID: 0}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -4.0699997, y: 2.21, z: 6.0899997}
-  directionEnd: {x: -1.4100001, y: 3.9200003, z: -4.22}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &682880777
 GameObject:
   m_ObjectHideFlags: 0
@@ -6064,7 +5930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 682880782}
 --- !u!114 &682880782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6077,9 +5942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 682880780}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 0}
 --- !u!114 &682880783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6092,7 +5954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 682880782}
 --- !u!114 &682880784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6105,20 +5966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.4
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 285817822}
-  directionTransform: {fileID: 139565259}
-  directionTransform2: {fileID: 894333303}
-  timeStep: 0.05
-  useGimoz: 1
-  movement: {fileID: 0}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -4.0699997, y: -2.846767, z: -2.4373996}
-  directionEnd: {x: 2.1299999, y: 2.5406022, z: -2.058384}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &689637402
 GameObject:
   m_ObjectHideFlags: 0
@@ -6452,7 +6299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 782806251}
 --- !u!114 &782806251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6465,9 +6311,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 782806249}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 0}
 --- !u!114 &782806252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6480,7 +6323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 782806251}
 --- !u!114 &782806253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6493,20 +6335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.25
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 894813751}
-  directionTransform: {fileID: 1294728267}
-  directionTransform2: {fileID: 374726570}
-  timeStep: 0.05
-  useGimoz: 1
-  movement: {fileID: 0}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -2.1900003, y: 0.2763102, z: -3.4011397}
-  directionEnd: {x: -1.4100001, y: 5.5380297, z: 3.6418707}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &790741377
 GameObject:
   m_ObjectHideFlags: 0
@@ -6646,110 +6474,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &797477638
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3969153100310521635, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.082
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159289, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159292, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: enemyTransform
-      value: 
-      objectReference: {fileID: 1604142458}
-    - target: {fileID: 3969153100511159292, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: dir.y
-      value: 1.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159292, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: dir.x
-      value: -0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159292, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: timeStartMoveDown
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159295, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_Name
-      value: ProjectileArrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969153100511159295, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8476560380933329608, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ba6e5970cef1f8248bbac8ebc424b63f, type: 3}
 --- !u!1 &815329101
 GameObject:
   m_ObjectHideFlags: 0
@@ -6920,7 +6644,7 @@ Transform:
   - {fileID: 1260393479}
   - {fileID: 2094846631}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858043828
 GameObject:
@@ -7162,9 +6886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a9a39415fd2ae468a91babe273cc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skinWeaponName: Weapons/weapon2
-  skinOufitName: OutFits/skin3
-  skeletonMecanim: {fileID: 0}
 --- !u!4 &918706742
 Transform:
   m_ObjectHideFlags: 0
@@ -7177,7 +6898,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &927732699
 GameObject:
@@ -7371,7 +7092,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 927732705}
 --- !u!114 &927732705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7384,9 +7104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 927732703}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 927732701}
 --- !u!114 &927732706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7399,7 +7116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 927732705}
 --- !u!114 &927732707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7412,20 +7128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.3
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 1673510152}
-  directionTransform: {fileID: 9977865}
-  directionTransform2: {fileID: 62294453}
-  timeStep: 0.05
-  useGimoz: 0
-  movement: {fileID: 927732701}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -4.7799997, y: -2.35, z: -1.8}
-  directionEnd: {x: -0.85000014, y: 5.0699997, z: 0.56999993}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &931071008
 GameObject:
   m_ObjectHideFlags: 0
@@ -7476,7 +7178,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 931071008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf616b8f0f83656409037552b3c620e6, type: 3}
+  m_Script: {fileID: 11500000, guid: c06a38a8013af43eaa64615a9dac2316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BackGround: {fileID: 931071011}
@@ -7706,7 +7408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 969829065}
 --- !u!114 &969829065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7719,9 +7420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 969829063}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 969829061}
 --- !u!114 &969829066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7734,7 +7432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 969829065}
 --- !u!1 &969970321
 GameObject:
   m_ObjectHideFlags: 0
@@ -10128,7 +9825,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 218680106}
           m_MethodName: OnInputSkill
           m_Mode: 3
           m_Arguments:
@@ -10356,7 +10053,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 218680106}
           m_MethodName: OnInputAttack
           m_Mode: 1
           m_Arguments:
@@ -12693,7 +12390,7 @@ Transform:
   - {fileID: 969829060}
   - {fileID: 597903483}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078341610
 GameObject:
@@ -12877,7 +12574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1078341616}
 --- !u!114 &1078341616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12890,9 +12586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 1078341614}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 1078341612}
 --- !u!114 &1078341617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12905,7 +12598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1078341616}
 --- !u!1 &1101127575
 GameObject:
   m_ObjectHideFlags: 0
@@ -12940,7 +12632,7 @@ Transform:
   - {fileID: 735172465}
   - {fileID: 2002301303}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1159029152
 GameObject:
@@ -13091,7 +12783,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1190736607
 GameObject:
@@ -13380,7 +13072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284c715261da4488fbb153b7acecb6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1483235766}
 --- !u!114 &1225712793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13702,7 +13393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1271660777}
 --- !u!114 &1271660777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13715,9 +13405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 1271660775}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 1271660773}
 --- !u!114 &1271660778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13730,7 +13417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1271660777}
 --- !u!114 &1271660779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13743,20 +13429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 1.3
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 285817822}
-  directionTransform: {fileID: 139565259}
-  directionTransform2: {fileID: 894333303}
-  timeStep: 0.05
-  useGimoz: 0
-  movement: {fileID: 1271660773}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -4.0699997, y: -2.846767, z: -2.4373996}
-  directionEnd: {x: 2.1299999, y: 2.5406022, z: -2.058384}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &1272585095
 GameObject:
   m_ObjectHideFlags: 0
@@ -14011,7 +13683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1453188663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14222,28 +13894,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
-  moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
-  jumpState: {fileID: 0}
-  attackState: {fileID: 11400000, guid: 52f45a4f592002744860c00f840185c3, type: 2}
-  skillState: {fileID: 0}
-  jumpFallState: {fileID: 0}
-  doubleJumpState: {fileID: 0}
-  knockDownState: {fileID: 0}
-  airAttackState: {fileID: 0}
-  dashState: {fileID: 0}
-  dieState: {fileID: 11400000, guid: 00972c9e7997e407395d7b808456faa6, type: 2}
-  dashAttack: {fileID: 0}
-  beHitState: {fileID: 11400000, guid: 5025ff8a1c77dab41bf7bb72ebcbaf54, type: 2}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
-  stuntState: {fileID: 0}
-  reviveState: {fileID: 0}
-  currentState: {fileID: 0}
-  previousState: {fileID: 0}
-  componentManager: {fileID: 1453188670}
-  animator: {fileID: 2085942172}
 --- !u!114 &1453188669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14314,7 +13964,7 @@ Transform:
   m_Children:
   - {fileID: 2085942176}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1471693583
 GameObject:
@@ -14469,28 +14119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
-  moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
-  jumpState: {fileID: 0}
-  attackState: {fileID: 11400000, guid: 52f45a4f592002744860c00f840185c3, type: 2}
-  skillState: {fileID: 0}
-  jumpFallState: {fileID: 0}
-  doubleJumpState: {fileID: 0}
-  knockDownState: {fileID: 0}
-  airAttackState: {fileID: 0}
-  dashState: {fileID: 0}
-  dieState: {fileID: 11400000, guid: 00972c9e7997e407395d7b808456faa6, type: 2}
-  dashAttack: {fileID: 0}
-  beHitState: {fileID: 11400000, guid: 5025ff8a1c77dab41bf7bb72ebcbaf54, type: 2}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
-  stuntState: {fileID: 0}
-  reviveState: {fileID: 0}
-  currentState: {fileID: 0}
-  previousState: {fileID: 0}
-  componentManager: {fileID: 1471693591}
-  animator: {fileID: 1941828248}
 --- !u!114 &1471693590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14561,7 +14189,7 @@ Transform:
   m_Children:
   - {fileID: 1941828252}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1476106625
 GameObject:
@@ -14755,7 +14383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1476106631}
 --- !u!114 &1476106631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14768,9 +14395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 1476106629}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 1476106627}
 --- !u!114 &1476106632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14783,7 +14407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1476106631}
 --- !u!114 &1476106633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14796,20 +14419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c56d087bdcbba4691184c7598f1eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelay: 0.1
-  enemyTransform: {fileID: 0}
-  startTransform: {fileID: 1406880485}
-  directionTransform: {fileID: 2078698563}
-  directionTransform2: {fileID: 93894579}
-  timeStep: 0.05
-  useGimoz: 0
-  movement: {fileID: 1476106627}
-  tParam: 0
-  speedModifier: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  directionStart: {x: -4.0699997, y: 2.21, z: 6.0899997}
-  directionEnd: {x: -1.4100001, y: 3.9200003, z: -4.22}
-  endPosition: {x: 3.8189998, y: 0, z: 0}
 --- !u!1 &1483235764
 GameObject:
   m_ObjectHideFlags: 0
@@ -14833,7 +14442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1483235765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14960,7 +14569,7 @@ Transform:
   - {fileID: 1225712788}
   - {fileID: 1208435661}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1483235772
 MonoBehaviour:
@@ -14974,28 +14583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
-  moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
-  jumpState: {fileID: 0}
-  attackState: {fileID: 11400000, guid: 1a0aedc66c9a5ed4baba56f798bd2d47, type: 2}
-  skillState: {fileID: 0}
-  jumpFallState: {fileID: 0}
-  doubleJumpState: {fileID: 0}
-  knockDownState: {fileID: 0}
-  airAttackState: {fileID: 0}
-  dashState: {fileID: 0}
-  dieState: {fileID: 11400000, guid: 00972c9e7997e407395d7b808456faa6, type: 2}
-  dashAttack: {fileID: 0}
-  beHitState: {fileID: 11400000, guid: 5025ff8a1c77dab41bf7bb72ebcbaf54, type: 2}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
-  stuntState: {fileID: 0}
-  reviveState: {fileID: 0}
-  currentState: {fileID: 0}
-  previousState: {fileID: 0}
-  componentManager: {fileID: 1483235766}
-  animator: {fileID: 1208435665}
 --- !u!50 &1483235773
 Rigidbody2D:
   serializedVersion: 4
@@ -15363,7 +14950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1594628745}
 --- !u!114 &1594628745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15376,9 +14962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 1594628743}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 1594628741}
 --- !u!114 &1594628746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15391,7 +14974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1594628745}
 --- !u!1 &1597534327
 GameObject:
   m_ObjectHideFlags: 0
@@ -15473,7 +15055,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604142457
 GameObject:
@@ -15503,7 +15085,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627683353
 GameObject:
@@ -17942,7 +17524,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 218680106}
           m_MethodName: OnInputSkill
           m_Mode: 3
           m_Arguments:
@@ -18175,7 +17757,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695644028
 GameObject:
@@ -18507,7 +18089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1901077573}
 --- !u!114 &1901077573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18520,9 +18101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 1901077571}
-  link: {fileID: 0}
-  projectileMovement: {fileID: 1901077569}
 --- !u!114 &1901077574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18535,7 +18113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7068cb784a65447a43411845199694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 1901077573}
 --- !u!1 &1941828247
 GameObject:
   m_ObjectHideFlags: 0
@@ -18847,7 +18424,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 218680106}
           m_MethodName: OnInputJump
           m_Mode: 1
           m_Arguments:
@@ -21490,28 +21067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
-  moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
-  jumpState: {fileID: 0}
-  attackState: {fileID: 11400000, guid: 52f45a4f592002744860c00f840185c3, type: 2}
-  skillState: {fileID: 0}
-  jumpFallState: {fileID: 0}
-  doubleJumpState: {fileID: 0}
-  knockDownState: {fileID: 0}
-  airAttackState: {fileID: 0}
-  dashState: {fileID: 0}
-  dieState: {fileID: 11400000, guid: 00972c9e7997e407395d7b808456faa6, type: 2}
-  dashAttack: {fileID: 0}
-  beHitState: {fileID: 11400000, guid: 5025ff8a1c77dab41bf7bb72ebcbaf54, type: 2}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
-  stuntState: {fileID: 0}
-  reviveState: {fileID: 0}
-  currentState: {fileID: 0}
-  previousState: {fileID: 0}
-  componentManager: {fileID: 2055540920}
-  animator: {fileID: 815329104}
 --- !u!114 &2055540919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21582,7 +21137,7 @@ Transform:
   m_Children:
   - {fileID: 815329102}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2078698562
 GameObject:

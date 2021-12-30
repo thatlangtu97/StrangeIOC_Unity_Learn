@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9efb88f72a6a91f4fb6ea52c50dc5009, type: 3}
+  m_Script: {fileID: 11500000, guid: f1ce540d3e434465a9413ba80623e4bc, type: 3}
   m_Name: Player1_DashState
   m_EditorClassIdentifier: 
   serializationData:

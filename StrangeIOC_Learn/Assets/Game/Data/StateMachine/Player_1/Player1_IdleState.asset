@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5aa0f1a31e98b14195ebaac1ba4fa42, type: 3}
+  m_Script: {fileID: 11500000, guid: 99ead7e391f474b1a901a5dc9303b466, type: 3}
   m_Name: Player1_IdleState
   m_EditorClassIdentifier: 
   serializationData:
