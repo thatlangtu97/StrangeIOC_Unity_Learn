@@ -14,12 +14,12 @@ TagManager:
   - 
   - 
   - Effect
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - DmgBoxPlayer
+  - Player
+  - Enemy
+  - Wall
+  - DmgBoxEnemy
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Projectile
+    uniqueID: 1485561897
     locked: 0

@@ -15,10 +15,20 @@ public class OpenSceneToolbar : MonoBehaviour
     {
         OpenScene("FlashScene");
     }
-    [MenuItem("Open Scene/_HomeScene &3")]
+    [MenuItem("Open Scene/HomeScene &3")]
     public static void OpenHomeSceneOld()
     {
-        OpenScene("_HomeScene");
+        OpenScene("HomeScene");
+    }
+    [MenuItem("Open Scene/Main &4")]
+    public static void Main()
+    {
+        OpenScene("Main");
+    }
+    [MenuItem("Open Scene/TestBt &5")]
+    public static void OpenTestBt()
+    {
+        OpenScene("TestBt");
     }
     private static void OpenScene(string sceneName)
     {

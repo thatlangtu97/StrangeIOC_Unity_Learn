@@ -1,7 +1,9 @@
-namespace BehaviorDesigner.Runtime.Tasks
+﻿namespace BehaviorDesigner.Runtime.Tasks
 {
-    [TaskDescription("Similar to the parallel selector task, except the parallel complete task will return the child status as soon as the child returns success or failure." + 
-                     "The child tasks are executed simultaneously.")]
+    [TaskDescription("Tương tự với tác vụ bộ chọn song song, ngoại trừ tác vụ hoàn thành song song sẽ trả về trạng thái con ngay khi đứa trẻ trả về thành công hoặc thất bại." +
+                      "Các nhiệm vụ con được thực hiện đồng thời.")]
+    //[TaskDescription("Similar to the parallel selector task, except the parallel complete task will return the child status as soon as the child returns success or failure." +
+    //                 "The child tasks are executed simultaneously.")]
     [TaskIcon("{SkinColor}ParallelCompleteIcon.png")]
     public class ParallelComplete : Composite
     {

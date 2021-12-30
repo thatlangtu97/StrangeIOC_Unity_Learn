@@ -13,7 +13,6 @@ public class PanelHomeView : AbsPanelView
     public Button ShopBtn;
     public Button HeroBtn;
     public Button CraftBtn;
-
     //public Button ShopGoldBtn, ShopGemBtn;
     public Doozy.Engine.UI.UIButton UIBtnShop, UIBtnHero , UIBtnCraft;
     protected override void Start()
@@ -49,7 +48,9 @@ public class PanelHomeView : AbsPanelView
     {
         popupManager.popupKey = PopupKey.ShopGoldPopup;
         showPanelShopSignal.Dispatch();
-        
-
+    }
+    public void LoadScene(string name)
+    {
+        PlayFlashScene.instance.Loading(name, 1.2f);
     }
 }
