@@ -58,7 +58,7 @@ public class StateMachineController : MonoBehaviour
         State newState = dictionaryStateMachine[nameState];
         if (!forceChange)
         {
-            if (currentNameState != NameState.DieState && currentNameState != NameState.RreviveState)
+            if (currentNameState != NameState.DieState && currentNameState != NameState.ReviveState)
             {
                 if (nameState != currentNameState)
                 {
@@ -118,10 +118,10 @@ public enum NameState
     JumpState,
     DashState,
     DieState,
-    RreviveState,
+    ReviveState,
     AttackState,
     AirAttackState,
-    DashAttack,
+    DashAttackState,
     SkillState,
     KnockDownState,
     HitState,

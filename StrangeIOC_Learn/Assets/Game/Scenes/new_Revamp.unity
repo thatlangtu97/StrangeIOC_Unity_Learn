@@ -1732,24 +1732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9b0525d7e56074d8775c3f0becdc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: c1b2e2c86635b5245a2da8a0d1ac1877, type: 2}
-  moveState: {fileID: 11400000, guid: 012a3ed284893405982d33bfd74e0838, type: 2}
-  jumpState: {fileID: 11400000, guid: 4cb2f1a96eac9a64cbc27f4f8ae8a979, type: 2}
-  dashState: {fileID: 11400000, guid: 94834b1db599050418eb395d767edb2c, type: 2}
-  dieState: {fileID: 11400000, guid: 32d4ceb13f3bc2f4792d5a1a89b22e1d, type: 2}
-  reviveState: {fileID: 11400000, guid: 52f5805f7b64ca74da54fdb39126725f, type: 2}
-  attackState: {fileID: 11400000, guid: b99994fc2b68adf49a3fad1568e37fbd, type: 2}
-  airAttackState: {fileID: 11400000, guid: 9b32f3776c9074117a68c315aec531e2, type: 2}
-  dashAttack: {fileID: 11400000, guid: b00245ee2eecc487e9e9c4dea3c4f76b, type: 2}
-  skillState: {fileID: 11400000, guid: 675f4490388c25548bc095c60bf4caac, type: 2}
-  knockDownState: {fileID: 0}
-  hitState: {fileID: 0}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 0}
-  stuntState: {fileID: 0}
   currentState: {fileID: 0}
-  previousState: {fileID: 0}
+  currentNameState: 0
   States:
   - NameState: 1
     StateToClone: {fileID: 11400000, guid: c1b2e2c86635b5245a2da8a0d1ac1877, type: 2}
@@ -14397,24 +14381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
-  moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
-  jumpState: {fileID: 0}
-  dashState: {fileID: 0}
-  dieState: {fileID: 11400000, guid: 00972c9e7997e407395d7b808456faa6, type: 2}
-  reviveState: {fileID: 0}
-  attackState: {fileID: 11400000, guid: 52f45a4f592002744860c00f840185c3, type: 2}
-  airAttackState: {fileID: 0}
-  dashAttack: {fileID: 0}
-  skillState: {fileID: 0}
-  knockDownState: {fileID: 0}
-  hitState: {fileID: 0}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
-  stuntState: {fileID: 0}
   currentState: {fileID: 0}
-  previousState: {fileID: 0}
+  currentNameState: 0
   States: []
   componentManager: {fileID: 1453188670}
   animator: {fileID: 2085942172}
@@ -14643,24 +14611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
-  moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
-  jumpState: {fileID: 0}
-  dashState: {fileID: 0}
-  dieState: {fileID: 11400000, guid: 00972c9e7997e407395d7b808456faa6, type: 2}
-  reviveState: {fileID: 0}
-  attackState: {fileID: 11400000, guid: 52f45a4f592002744860c00f840185c3, type: 2}
-  airAttackState: {fileID: 0}
-  dashAttack: {fileID: 0}
-  skillState: {fileID: 0}
-  knockDownState: {fileID: 0}
-  hitState: {fileID: 0}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
-  stuntState: {fileID: 0}
   currentState: {fileID: 0}
-  previousState: {fileID: 0}
+  currentNameState: 0
   States: []
   componentManager: {fileID: 1471693591}
   animator: {fileID: 1941828248}
@@ -15147,24 +15099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
-  moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
-  jumpState: {fileID: 0}
-  dashState: {fileID: 0}
-  dieState: {fileID: 11400000, guid: 00972c9e7997e407395d7b808456faa6, type: 2}
-  reviveState: {fileID: 0}
-  attackState: {fileID: 11400000, guid: 1a0aedc66c9a5ed4baba56f798bd2d47, type: 2}
-  airAttackState: {fileID: 0}
-  dashAttack: {fileID: 0}
-  skillState: {fileID: 0}
-  knockDownState: {fileID: 0}
-  hitState: {fileID: 0}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
-  stuntState: {fileID: 0}
   currentState: {fileID: 0}
-  previousState: {fileID: 0}
+  currentNameState: 0
   States: []
   componentManager: {fileID: 1483235766}
   animator: {fileID: 1208435665}
@@ -18724,45 +18660,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9b0525d7e56074d8775c3f0becdc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: c1b2e2c86635b5245a2da8a0d1ac1877, type: 2}
-  moveState: {fileID: 11400000, guid: 012a3ed284893405982d33bfd74e0838, type: 2}
-  jumpState: {fileID: 11400000, guid: 4cb2f1a96eac9a64cbc27f4f8ae8a979, type: 2}
-  dashState: {fileID: 11400000, guid: 94834b1db599050418eb395d767edb2c, type: 2}
-  dieState: {fileID: 11400000, guid: 32d4ceb13f3bc2f4792d5a1a89b22e1d, type: 2}
-  reviveState: {fileID: 11400000, guid: 52f5805f7b64ca74da54fdb39126725f, type: 2}
-  attackState: {fileID: 11400000, guid: b99994fc2b68adf49a3fad1568e37fbd, type: 2}
-  airAttackState: {fileID: 11400000, guid: 9b32f3776c9074117a68c315aec531e2, type: 2}
-  dashAttack: {fileID: 11400000, guid: b00245ee2eecc487e9e9c4dea3c4f76b, type: 2}
-  skillState: {fileID: 11400000, guid: 675f4490388c25548bc095c60bf4caac, type: 2}
-  knockDownState: {fileID: 0}
-  hitState: {fileID: 0}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 0}
-  stuntState: {fileID: 0}
   currentState: {fileID: 0}
-  previousState: {fileID: 0}
+  currentNameState: 0
   States:
   - NameState: 1
-    StateToClone: {fileID: 11400000, guid: c1b2e2c86635b5245a2da8a0d1ac1877, type: 2}
+    StateToClone: {fileID: 0}
   - NameState: 2
-    StateToClone: {fileID: 11400000, guid: b35c2b103ff66ef4d944d08e94c26ea7, type: 2}
+    StateToClone: {fileID: 0}
   - NameState: 3
-    StateToClone: {fileID: 11400000, guid: ca28a69843be46741b3c22219f366aa0, type: 2}
+    StateToClone: {fileID: 0}
   - NameState: 4
-    StateToClone: {fileID: 11400000, guid: 4818fee5989d8024ab1765f622e7fd1b, type: 2}
+    StateToClone: {fileID: 0}
   - NameState: 5
-    StateToClone: {fileID: 11400000, guid: 9677000bef5243f4aa96c2e371e2c6c4, type: 2}
+    StateToClone: {fileID: 0}
   - NameState: 6
-    StateToClone: {fileID: 11400000, guid: 6f5526934a43fe24ea5d8f55aeba2ba7, type: 2}
+    StateToClone: {fileID: 0}
   - NameState: 7
-    StateToClone: {fileID: 11400000, guid: e2560a68f385f154c87be54bfb8473f6, type: 2}
+    StateToClone: {fileID: 0}
   - NameState: 8
-    StateToClone: {fileID: 11400000, guid: 22b97eee90605ef4b9feab6af8dae67b, type: 2}
+    StateToClone: {fileID: 0}
   - NameState: 9
-    StateToClone: {fileID: 11400000, guid: b9e6a92c076399a40bb340e87e143369, type: 2}
+    StateToClone: {fileID: 0}
   - NameState: 10
-    StateToClone: {fileID: 11400000, guid: 0cd61a1dd84903a49a2f3f9e1b32dd8b, type: 2}
+    StateToClone: {fileID: 0}
   componentManager: {fileID: 1887485947}
   animator: {fileID: 1189823242}
 --- !u!114 &1887485946
@@ -22003,24 +21923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78c9a3e43d62754aac6322e95f1c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnState: {fileID: 0}
-  idleState: {fileID: 11400000, guid: 5d9c138924f3cd04bb8a22352c3f5b09, type: 2}
-  moveState: {fileID: 11400000, guid: d4618dd04664af24d847b3a40086b06a, type: 2}
-  jumpState: {fileID: 0}
-  dashState: {fileID: 0}
-  dieState: {fileID: 11400000, guid: 00972c9e7997e407395d7b808456faa6, type: 2}
-  reviveState: {fileID: 0}
-  attackState: {fileID: 11400000, guid: 52f45a4f592002744860c00f840185c3, type: 2}
-  airAttackState: {fileID: 0}
-  dashAttack: {fileID: 0}
-  skillState: {fileID: 0}
-  knockDownState: {fileID: 0}
-  hitState: {fileID: 0}
-  getUpState: {fileID: 0}
-  freezeState: {fileID: 11400000, guid: 7fa2a39d77995424e961f30596b2de48, type: 2}
-  stuntState: {fileID: 0}
   currentState: {fileID: 0}
-  previousState: {fileID: 0}
+  currentNameState: 0
   States: []
   componentManager: {fileID: 2055540920}
   animator: {fileID: 815329104}
