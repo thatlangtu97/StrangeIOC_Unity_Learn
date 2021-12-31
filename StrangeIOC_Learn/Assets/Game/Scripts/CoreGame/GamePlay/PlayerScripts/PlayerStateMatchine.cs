@@ -28,7 +28,7 @@ public class PlayerStateMatchine : StateMachineController
         }
         if (Input.GetKeyDown(KeyCode.End))
         {
-            ChangeState(NameState.RreviveState, true);
+            ChangeState(NameState.ReviveState, true);
         }
     }
     public override void OnInputDash()
@@ -58,7 +58,7 @@ public class PlayerStateMatchine : StateMachineController
     public override void OnInputRevive()
     {
         base.OnInputRevive();
-        ChangeState(NameState.RreviveState, true);
+        ChangeState(NameState.ReviveState, true);
     }
     public override void OnInputSkill(int idSkill)
     {

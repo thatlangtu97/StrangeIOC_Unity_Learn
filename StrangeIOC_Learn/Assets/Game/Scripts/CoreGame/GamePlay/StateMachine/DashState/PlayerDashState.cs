@@ -88,7 +88,7 @@ public class PlayerDashState : State
     {
         base.OnInputAttack();
         if (controller.componentManager.checkGround() == true)
-            controller.ChangeState(NameState.DashAttack);
+            controller.ChangeState(NameState.DashAttackState);
         else
         {
             if(controller.componentManager.CanAttackAir)

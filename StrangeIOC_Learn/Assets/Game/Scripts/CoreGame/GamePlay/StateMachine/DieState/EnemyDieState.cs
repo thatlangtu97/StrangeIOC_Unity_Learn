@@ -36,7 +36,7 @@ public class EnemyDieState : State
         if (coutTime <= 0)
         {
             base.OnRevive();
-            controller.ChangeState(NameState.RreviveState, true);
+            controller.ChangeState(NameState.ReviveState, true);
         }
     }
 }
