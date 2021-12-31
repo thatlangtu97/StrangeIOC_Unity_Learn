@@ -26,9 +26,9 @@ public class EnemyDieState : State
     {
         base.ExitState();
         {
-            controller.componentManager.DestroyEntity();
+            //controller.componentManager.DestroyEntity();
             controller.gameObject.SetActive(false);
-            Destroy(controller.gameObject);
+            //Destroy(controller.gameObject);
         }
     }
     public override void OnRevive()

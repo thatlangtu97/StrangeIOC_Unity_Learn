@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
 public class StateMachineController : MonoBehaviour
 {
     public Dictionary<NameState, State> dictionaryStateMachine = new Dictionary<NameState, State>();
@@ -18,20 +17,20 @@ public class StateMachineController : MonoBehaviour
     }
     public ComponentManager componentManager;
     public Animator animator;
-
-    public void Awake()
-    {
-    }
-    public void Start()
-    {
-    }
     public virtual void Update()
     {
     }
     public virtual void InitStateMachine()
     {
         SetupState();
-        ChangeState(NameState.IdleState, true);
+        if (dictionaryStateMachine.ContainsKey(NameState.SpawnState))
+        {
+            ChangeState(NameState.SpawnState, true);
+        }
+        else
+        {
+            ChangeState(NameState.IdleState, true);
+        }
     }
     public virtual void UpdateState()
     {
@@ -50,7 +49,14 @@ public class StateMachineController : MonoBehaviour
     {
         State state = Instantiate(stateClone.StateToClone);
         state.InitState(this);
-        dictionaryStateMachine.Add(stateClone.NameState, state);
+        if (!dictionaryStateMachine.ContainsKey(stateClone.NameState))
+        {
+            dictionaryStateMachine.Add(stateClone.NameState, state);
+        }
+        else
+        {
+            dictionaryStateMachine[stateClone.NameState] = state;
+        }
     }
     public virtual void ChangeState(NameState nameState, bool forceChange = false)
     {

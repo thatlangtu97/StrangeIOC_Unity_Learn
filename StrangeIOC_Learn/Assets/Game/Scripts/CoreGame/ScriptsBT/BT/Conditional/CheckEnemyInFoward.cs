@@ -6,49 +6,16 @@ using UnityEngine;
 [TaskCategory("Extension")]
 public class CheckEnemyInFoward : Conditional
 {
-    // Start is called before the first frame update
     public SharedComponentManager componentManager;
-    public SharedFloat rangeToEnemy;
-    //CharacterDirection characterDirection;
-    public override void OnStart()
-    {
-        base.OnStart();
-        //if (characterDirection == null)
-        //    characterDirection = componentManager.Value.GetComponent<CharacterDirection>();
-    }
     public override TaskStatus OnUpdate()
     {
-        if(rangeToEnemy.Value > componentManager.Value.distanceChecEnemy)
+        if (componentManager.Value.transform.localScale.x > 0 && (componentManager.Value.enemy.position.x > componentManager.Value.transform.position.x) ||
+            componentManager.Value.transform.localScale.x < 0 && (componentManager.Value.enemy.position.x < componentManager.Value.transform.position.x)
+            )
+        {
             return TaskStatus.Success;
+        }
         return TaskStatus.Failure;
-        //if (rangeToEnemy.Value > 0.1f)
-        //{
-        //    if (!componentManager.Value.isFaceRight) // neu k dang quay mat ben phai thi change direction
-        //    {
-        //        return TaskStatus.Success;
-        //    }
-        //    else
-        //    {
-
-        //        return TaskStatus.Failure;
-        //    }
-        //}
-        //else if (rangeToEnemy.Value < -0.1f)
-        //{
-        //    if (componentManager.Value.isFaceRight)
-
-        //    {
-        //        return TaskStatus.Success;
-        //    }
-        //    else
-        //    {
-        //        return TaskStatus.Failure;
-        //    }
-        //}
-        //else
-        //{
-        //    return TaskStatus.Failure;
-        //}
 
     }
 }

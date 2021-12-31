@@ -21,7 +21,7 @@ public class PlayerAttackState : State
             if (durationVelocity > 0 && !isEnemyForwark)
             {
                 Vector2 velocityAttack = new Vector2( eventData[currentCombo].curveX.Evaluate(durationVelocity), eventData[currentCombo].curveY.Evaluate(durationVelocity));
-                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
+                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
             }
             timeCount -= Time.deltaTime;
             durationVelocity -= Time.deltaTime;

@@ -16,7 +16,12 @@ public class EnemyMeleeMoveState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove * controller.componentManager.timeScale, 0f) /** Time.deltaTime */;
+        if(controller.componentManager.speedMove!=0)
+            controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove * controller.componentManager.timeScale, 0f) /** Time.deltaTime */;
+        else
+        {
+            controller.ChangeState(NameState.IdleState);
+        }
     }
     public override void OnHit()
     {

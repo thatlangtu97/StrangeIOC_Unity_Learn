@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class PlayerStateMatchine : StateMachineController
 {
-    public override void Update()
-    {
-        //UpdateState();
-    }
+
     public override void UpdateState()
     {
         base.UpdateState();

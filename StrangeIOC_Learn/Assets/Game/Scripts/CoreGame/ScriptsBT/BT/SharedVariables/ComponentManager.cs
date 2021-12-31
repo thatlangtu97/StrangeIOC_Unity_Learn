@@ -52,42 +52,25 @@ public class ComponentManager : MonoBehaviour
         component.AddComponent(ref entity);
         ComponentManagerUtils.AddComponent(this);
     }
-    public void Unlink()
+    private void OnDisable()
     {
-        link.Unlink();
+        DestroyEntity();
     }
     public void OnInputChangeFacing()
     {
-
         if (enemy.transform.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            speedMove = -maxSpeedMove;
+            //speedMove = -maxSpeedMove;
         }
         else if (enemy.transform.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            speedMove = maxSpeedMove;
+            //speedMove = maxSpeedMove;
         }
-        //if (isFaceRight == true)
-        //{
-        //    isFaceRight = false;
-        //}
-        //else
-        //{
-        //    isFaceRight = true;
-        //}
-        //if (isFaceRight)
-        //{
-        //    transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        //    speedMove = Mathf.Abs(speedMove);
-        //}
-        //else
-        //{
-        //    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        //    speedMove = -Mathf.Abs(speedMove);
-        //}
     }
+    
+    
     public void ResetJumpCount()
     {
         jumpCount = 0;

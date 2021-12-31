@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  direction: {x: 1, y: 0.05, z: 0}
+  direction: {x: 1, y: 0, z: 0}
   timeStartMoveDown: 0.3
   trail: {fileID: 1891372011863126130}
   speedDown: 0.5
