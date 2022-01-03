@@ -118,6 +118,7 @@ public struct StateClone
 }
 public enum NameState
 {
+    UnknowState,
     SpawnState,
     IdleState,
     MoveState,

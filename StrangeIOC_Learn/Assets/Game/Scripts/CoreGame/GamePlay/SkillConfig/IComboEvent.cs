@@ -23,3 +23,49 @@ public class CastProjectileEvent : IComboEvent
         ObjectPool.instance.Recycle(temp, 1.5f);
     }
 }
+public class CastColliderEvent : IComboEvent
+{
+    public int idEvent;
+    public float timeTriggerEvent;
+    public Vector3 position;
+    public Vector3 sizeBox;
+    public LayerMask layerMaskEnemy;
+    public int id { get { return idEvent; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+
+    public void OnEventTrigger(GameEntity entity)
+    {
+        Collider2D[] cols = null;
+        Transform transform = entity.stateMachineContainer.stateMachine.transform;
+        //cols = Physics2D.OverlapBoxAll(transform.position + position, sizeBox, layerMaskEnemy);
+        cols = Physics2D.OverlapBoxAll(transform.position + new Vector3(position.x * transform.localScale.x, position.y, position.z), sizeBox, transform.localScale.x > 0 ? 0f:180f, layerMaskEnemy) ;
+        if (cols != null)
+        {
+            foreach (var col in cols)
+            {
+                if (col != null)
+                {
+                    DealDmgManager.DealDamage(col, entity);
+                    break;
+                }
+            }
+        }
+    }
+}
+public class CastEnableMeshRenderer : IComboEvent
+{
+    public int idEvent;
+    public float timeTriggerEvent;
+    public bool enable;
+    public int id { get { return idEvent; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+
+    public void OnEventTrigger(GameEntity entity)
+    {
+        MeshRenderer mesh = entity.stateMachineContainer.stateMachine.componentManager.meshRenderer;
+        if (mesh != null)
+        {
+            mesh.enabled = enable;
+        }
+    }
+}
