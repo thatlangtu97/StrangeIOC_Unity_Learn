@@ -8,6 +8,8 @@ using UnityEngine;
 public class CheckEnemyInSightTask : Conditional
 {
     public SharedComponentManager componentManager;
+    public int frameUpdate = 5;
+    public int frameCount;
     public override void OnAwake()
     {
         base.OnAwake();
@@ -18,43 +20,35 @@ public class CheckEnemyInSightTask : Conditional
     }
     public override TaskStatus OnUpdate()
     {
-
+        frameCount += 1;
         if (componentManager.Value.enemy != null)
         {
+            if (frameCount % frameUpdate != 0)
+            {
+                if (Contexts.sharedInstance.game.playerFlagEntity == null)
+                {
+                    componentManager.Value.enemy = null;
+                    componentManager.Value.stateMachine.ChangeState(NameState.IdleState, true);
+                    return TaskStatus.Failure;
+                }
+            }
             return TaskStatus.Success;
         }
         else
         {
-            componentManager.Value.enemy = Contexts.sharedInstance.game.playerFlagEntity.stateMachineContainer.stateMachine.transform;
-            return TaskStatus.Failure;
+            if (frameCount % frameUpdate != 0)
+            {
+                return TaskStatus.Failure;
+            }
+            if (Contexts.sharedInstance.game.playerFlagEntity != null)
+            {
+                componentManager.Value.enemy = Contexts.sharedInstance.game.playerFlagEntity.stateMachineContainer.stateMachine.transform;
+                return TaskStatus.Success;
+            }
+            else
+            {
+                return TaskStatus.Failure;
+            }
         }
-
-        //if (componentManager != null)
-        //{
-        //    if (componentManager.Value != null)
-        //    {
-        //        if (!componentManager.Value.hasCheckEnemyInSigh)
-        //            return TaskStatus.Failure;
-        //        if (componentManager.Value.enemy != null)
-        //        {
-        //            return TaskStatus.Success;
-        //        }
-        //        else
-        //        {
-        //            return TaskStatus.Failure;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("Value null");
-        //        return TaskStatus.Failure;
-        //    }
-        //}
-        //else
-        //{
-        //    Debug.Log("componentManager null");
-        //    return TaskStatus.Failure;
-        //}
-
     }
 }
