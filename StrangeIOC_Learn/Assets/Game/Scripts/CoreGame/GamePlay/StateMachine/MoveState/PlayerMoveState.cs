@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "PlayerMoveState", menuName = "State/PlayerMoveState")]
-public class PlayerMoveState : MeleeMoveState
+[CreateAssetMenu(fileName = "PlayerMoveState", menuName = "State/Player/PlayerMoveState")]
+public class PlayerMoveState : EnemyMeleeMoveState
 {
     public override void EnterState()
     {

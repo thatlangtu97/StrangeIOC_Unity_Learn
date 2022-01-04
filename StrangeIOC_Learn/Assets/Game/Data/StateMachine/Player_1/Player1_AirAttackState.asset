@@ -24,8 +24,8 @@ MonoBehaviour:
   idState: 0
   eventData:
   - NameTrigger: airattack
-    NameTriggerAir: 
-    durationAnimation: 0.5
+    NameTriggerAir: airattack
+    durationAnimation: 0.6
     velocity: {x: 0, y: 7}
     durationVelocity: 0
     curveX:
@@ -42,4 +42,3 @@ MonoBehaviour:
       m_RotationOrder: 4
     eventConfig: {fileID: 0}
   currentCombo: 0
-  skillDatas: []

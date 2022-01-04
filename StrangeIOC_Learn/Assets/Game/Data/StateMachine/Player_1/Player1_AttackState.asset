@@ -25,7 +25,7 @@ MonoBehaviour:
   eventData:
   - NameTrigger: attack1
     NameTriggerAir: attack1
-    durationAnimation: 0.4
+    durationAnimation: 0.5
     velocity: {x: 2, y: 0}
     durationVelocity: 0.1
     curveX:
@@ -67,10 +67,10 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    eventConfig: {fileID: 0}
+    eventConfig: {fileID: 11400000, guid: 725b0ad9d118b478bbbe2f1a731acd27, type: 2}
   - NameTrigger: attack2
     NameTriggerAir: attack2
-    durationAnimation: 0.3736
+    durationAnimation: 0.467
     velocity: {x: 2, y: 0}
     durationVelocity: 0.1
     curveX:
@@ -106,7 +106,7 @@ MonoBehaviour:
     eventConfig: {fileID: 0}
   - NameTrigger: attack3
     NameTriggerAir: attack3
-    durationAnimation: 0.4536
+    durationAnimation: 0.567
     velocity: {x: 0, y: 0}
     durationVelocity: 0.1
     curveX:

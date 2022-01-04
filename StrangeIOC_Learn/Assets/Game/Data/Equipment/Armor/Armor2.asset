@@ -19,7 +19,17 @@ MonoBehaviour:
   gearName: Armor 2
   idOfHero: 0
   price: []
-  mainAttribute:
-    attType: 0
-    valueMinRandom: []
-    valueMaxRandom: []
+  mainStatConfig:
+    attType: 2
+    valueMinRandom:
+    - 200
+    - 500
+    - 1500
+    - 5000
+    - 20000
+    valueMaxRandom:
+    - 300
+    - 600
+    - 1700
+    - 6000
+    - 22000

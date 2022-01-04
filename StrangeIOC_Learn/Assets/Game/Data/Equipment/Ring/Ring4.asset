@@ -19,7 +19,17 @@ MonoBehaviour:
   gearName: Charm 4
   idOfHero: 0
   price: []
-  mainAttribute:
-    attType: 0
-    valueMinRandom: []
-    valueMaxRandom: []
+  mainStatConfig:
+    attType: 19
+    valueMinRandom:
+    - 1
+    - 3
+    - 5
+    - 10
+    - 15
+    valueMaxRandom:
+    - 2
+    - 4
+    - 7
+    - 13
+    - 20

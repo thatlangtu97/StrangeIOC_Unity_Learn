@@ -19,7 +19,17 @@ MonoBehaviour:
   gearName: Sword 9
   idOfHero: 0
   price: []
-  mainAttribute:
+  mainStatConfig:
     attType: 0
-    valueMinRandom: []
-    valueMaxRandom: []
+    valueMinRandom:
+    - 50
+    - 150
+    - 500
+    - 2500
+    - 8000
+    valueMaxRandom:
+    - 70
+    - 170
+    - 540
+    - 2600
+    - 9000

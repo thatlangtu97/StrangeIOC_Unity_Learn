@@ -11,14 +11,15 @@ public class ComponentManager : MonoBehaviour
     public BehaviorTree BehaviorTree;
     public Rigidbody2D rgbody2D;
     public LayerMask layerMaskGround,layerMaskWall,layerEnemy;
-
     public ComponentProperties properties;
+    public MeshRenderer meshRenderer;
+    //[HideInInspector]
+    public GameEntity entity;
+    public EntityLink link;
     public bool hasCheckEnemyInSigh;
     public bool isFaceRight = false;
     public bool isAttack = false;
-    public float timeScale=1f;
-    public float speedMove = 1f;
-    public float maxSpeedMove = 2f;
+    public bool isOnGround;
     public bool isBufferAttack;
     [Range(0f,2f)]
     public float distanceCheckGround=0.1f;
@@ -26,15 +27,14 @@ public class ComponentManager : MonoBehaviour
     public float distanceCheckWall = 0.1f;
     [Range(0f, 2f)]
     public float distanceChecEnemy = 0.1f;
-    public bool isOnGround;
+    public float timeScale = 1f;
+    public float speedMove = 1f;
+    public float maxSpeedMove = 2f;
     public int jumpCount;
     public int dashCount;
     public int attackAirCount;
     public int maxJump,maxDash, maxAttackAirCount;
 
-    //[HideInInspector]
-    public GameEntity entity;
-    public EntityLink link;
     
     private void Awake()
     {
@@ -52,42 +52,25 @@ public class ComponentManager : MonoBehaviour
         component.AddComponent(ref entity);
         ComponentManagerUtils.AddComponent(this);
     }
-    public void Unlink()
+    private void OnDisable()
     {
-        link.Unlink();
+        DestroyEntity();
     }
     public void OnInputChangeFacing()
     {
-
         if (enemy.transform.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            speedMove = -maxSpeedMove;
+            //speedMove = -maxSpeedMove;
         }
         else if (enemy.transform.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            speedMove = maxSpeedMove;
+            //speedMove = maxSpeedMove;
         }
-        //if (isFaceRight == true)
-        //{
-        //    isFaceRight = false;
-        //}
-        //else
-        //{
-        //    isFaceRight = true;
-        //}
-        //if (isFaceRight)
-        //{
-        //    transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        //    speedMove = Mathf.Abs(speedMove);
-        //}
-        //else
-        //{
-        //    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        //    speedMove = -Mathf.Abs(speedMove);
-        //}
     }
+    
+    
     public void ResetJumpCount()
     {
         jumpCount = 0;

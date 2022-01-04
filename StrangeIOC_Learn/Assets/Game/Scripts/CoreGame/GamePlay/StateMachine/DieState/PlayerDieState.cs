@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-[CreateAssetMenu(fileName = "PlayerDieState", menuName = "State/PlayerDieState")]
+﻿using UnityEngine;
+[CreateAssetMenu(fileName = "PlayerDieState", menuName = "State/Player/PlayerDieState")]
 public class PlayerDieState : State
 {
     public float duration = 1f;
     float coutTime = 0;
     public override void EnterState()
     {
-        base.EnterState();
-        
+        base.EnterState();        
         controller.animator.SetTrigger(AnimationTriger.DIE);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
         coutTime = duration;
@@ -35,7 +32,7 @@ public class PlayerDieState : State
         if (coutTime <= 0)
         {
             base.OnRevive();
-            controller.ChangeState(NameState.RreviveState, true);
+            controller.ChangeState(NameState.ReviveState, true);
         }
     }
 }

@@ -8,19 +8,30 @@ public class CheckNeedMoveTask : Conditional
 {
     public SharedComponentManager componentManager;
     public SharedFloat rangeToEnemy;
-    public float distance;
-    //public float stopRange =/*0.99f;*/0f;
-    //public float cooldown = 0.5f;
-    //float lastTime = 0f;
-    //public bool useRandomRange;
+    public float distanceStop;
+    public float distanceBreak;
+
     public override TaskStatus OnUpdate()
     {
-
-        if (rangeToEnemy.Value < distance)
+        if(rangeToEnemy.Value > distanceBreak)
         {
-            return TaskStatus.Success;
+            componentManager.Value.speedMove = 0;
+            return TaskStatus.Failure;
         }
-        return TaskStatus.Failure;
+        if (rangeToEnemy.Value < distanceStop)
+        {
+            componentManager.Value.speedMove = 0;
+            return TaskStatus.Failure;
+        }
+        if (componentManager.Value.transform.localScale.x<0)
+        {
+            componentManager.Value.speedMove = -componentManager.Value.maxSpeedMove;
+        }
+        else if (componentManager.Value.transform.localScale.x > 0)
+        {
+            componentManager.Value.speedMove = componentManager.Value.maxSpeedMove;
+        }
+        return TaskStatus.Success;
 
 
     }
