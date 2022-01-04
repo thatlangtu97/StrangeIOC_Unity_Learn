@@ -48,9 +48,16 @@ public class ComponentManager : MonoBehaviour
     {
         entity = Contexts.sharedInstance.game.CreateEntity();
         link = gameObject.Link(entity);
-        var component = GetComponent<IAutoAdd<GameEntity>>();
-        component.AddComponent(ref entity);
-        ComponentManagerUtils.AddComponent(this);
+        //var component = GetComponent<IAutoAdd<GameEntity>>();
+        //component.AddComponent(ref entity);
+        
+
+        var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
+        foreach (var component in components)
+        {
+            component.AddComponent(ref entity);
+            ComponentManagerUtils.AddComponent(this);
+        }
     }
     private void OnDisable()
     {

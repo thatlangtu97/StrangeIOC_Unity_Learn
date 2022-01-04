@@ -18,12 +18,14 @@ public class CheckEnemyInSightTask : Conditional
     }
     public override TaskStatus OnUpdate()
     {
+
         if (componentManager.Value.enemy != null)
         {
             return TaskStatus.Success;
         }
         else
         {
+            componentManager.Value.enemy = Contexts.sharedInstance.game.playerFlagEntity.stateMachineContainer.stateMachine.transform;
             return TaskStatus.Failure;
         }
 
