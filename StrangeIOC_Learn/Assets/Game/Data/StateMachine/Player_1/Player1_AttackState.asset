@@ -103,7 +103,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    eventConfig: {fileID: 0}
+    eventConfig: {fileID: 11400000, guid: 440c1a88a79cb87418a2e9b0083069b6, type: 2}
   - NameTrigger: attack3
     NameTriggerAir: attack3
     durationAnimation: 0.567
@@ -139,5 +139,5 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    eventConfig: {fileID: 0}
+    eventConfig: {fileID: 11400000, guid: 102dcd39135274d4f9c6e5c7a2e34e37, type: 2}
   currentCombo: 0

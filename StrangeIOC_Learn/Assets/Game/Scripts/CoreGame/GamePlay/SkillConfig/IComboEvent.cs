@@ -72,3 +72,27 @@ public class CastEnableMeshRenderer : IComboEvent
         }
     }
 }
+public class CastImpackEvent : IComboEvent
+{
+    public int idEvent;
+    public float timeTriggerEvent;
+    public int id { get { return idEvent; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    public GameObject Prefab;
+    public Vector3 Localosition;
+    public Vector3 LocalRotation;
+    public Vector3 LocalScale;
+    public void OnEventTrigger(GameEntity entity)
+    {
+        if (Prefab)
+        {
+            GameObject temp = ObjectPool.Spawn(Prefab);
+            Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
+            temp.transform.parent = entity.stateMachineContainer.stateMachine.transform;
+            temp.transform.localPosition = new Vector3(Localosition.x , Localosition.y , Localosition.z );
+            temp.transform.rotation = Quaternion.Euler(LocalRotation);
+            temp.transform.localScale = LocalScale;
+            ObjectPool.instance.Recycle(temp, .5f);
+        }
+    }
+}
