@@ -2,7 +2,7 @@
 [CreateAssetMenu(fileName = "PlayerAttackState", menuName = "State/Player/PlayerAttackState")]
 public class PlayerAttackState : State
 {
-    public int currentCombo;
+    //public int idState;
     float timeCount=0;
     float durationVelocity=0;
     bool isEnemyForwark;
@@ -10,7 +10,7 @@ public class PlayerAttackState : State
     {
         base.EnterState();
         controller.componentManager.isAttack = true;
-        currentCombo = 0;
+        idState = 0;
         CastSkill();
     }
     public override void UpdateState()
@@ -20,7 +20,7 @@ public class PlayerAttackState : State
         {
             if (durationVelocity > 0 && !isEnemyForwark)
             {
-                Vector2 velocityAttack = new Vector2( eventData[currentCombo].curveX.Evaluate(durationVelocity), eventData[currentCombo].curveY.Evaluate(durationVelocity));
+                Vector2 velocityAttack = new Vector2( eventData[idState].curveX.Evaluate(durationVelocity), eventData[idState].curveY.Evaluate(durationVelocity));
                 controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
             }
             timeCount -= Time.deltaTime;
@@ -30,8 +30,8 @@ public class PlayerAttackState : State
         {
             if (controller.componentManager.isBufferAttack == true)
             {
-                currentCombo += 1;
-                if(currentCombo== eventData.Count)
+                idState += 1;
+                if(idState== eventData.Count)
                 {
                     if (controller.componentManager.speedMove != 0)
                     {
@@ -68,10 +68,10 @@ public class PlayerAttackState : State
         base.ResetTrigger();
         isEnemyForwark = controller.componentManager.checkEnemyForwark();
         controller.componentManager.Rotate();
-        timeCount = eventData[currentCombo].durationAnimation;
-        controller.animator.SetTrigger(eventData[currentCombo].NameTrigger);
+        timeCount = eventData[idState].durationAnimation;
+        controller.animator.SetTrigger(eventData[idState].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
-        durationVelocity = eventData[currentCombo].durationVelocity;
+        durationVelocity = eventData[idState].durationVelocity;
         controller.componentManager.isBufferAttack = false;
     }
     public override void OnInputDash()

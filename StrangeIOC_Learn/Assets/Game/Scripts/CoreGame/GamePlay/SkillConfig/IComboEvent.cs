@@ -88,9 +88,9 @@ public class CastImpackEvent : IComboEvent
         {
             GameObject temp = ObjectPool.Spawn(Prefab);
             Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
-            temp.transform.parent = entity.stateMachineContainer.stateMachine.transform;
+            temp.transform.parent = baseTransform;
             temp.transform.localPosition = new Vector3(Localosition.x , Localosition.y , Localosition.z );
-            temp.transform.rotation = Quaternion.Euler(LocalRotation);
+            temp.transform.localRotation = Quaternion.Euler(LocalRotation);
             temp.transform.localScale = LocalScale;
             ObjectPool.instance.Recycle(temp, .5f);
         }
