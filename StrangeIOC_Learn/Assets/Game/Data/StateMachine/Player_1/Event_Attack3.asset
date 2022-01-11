@@ -37,7 +37,7 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.1
+      Data: 0.15
     - Name: Prefab
       Entry: 10
       Data: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: -60
+      Data: -70
     - Name: 
       Entry: 4
       Data: 90
@@ -76,10 +76,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.3
+      Data: 0.4
     - Name: 
       Entry: 4
-      Data: 0.3
+      Data: 0.4
     - Name: 
       Entry: 4
       Data: 0.3
