@@ -36,6 +36,11 @@ public class State : SerializedScriptableObject
             }
         }
     }
+    public virtual void ResetEvent()
+    {
+        idEventTrigged.Clear();
+        timeTrigger = 0f;
+    }
     public virtual void UpdateState()
     {
         timeTrigger +=Time.deltaTime;

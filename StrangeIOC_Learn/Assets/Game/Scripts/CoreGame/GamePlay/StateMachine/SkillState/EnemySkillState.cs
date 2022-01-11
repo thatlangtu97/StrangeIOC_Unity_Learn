@@ -61,10 +61,9 @@ public class EnemySkillState : State
     }
     public void CastSkill()
     {
-        idEventTrigged.Clear();
+        ResetEvent();
         controller.componentManager.Rotate();
         timeCurve = 0;
-        timeTrigger = 0;
         timeCount = eventData[idState].durationAnimation;
         if (controller.componentManager.checkGround() == true)
             controller.animator.SetTrigger(eventData[idState].NameTrigger);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerAttackState", menuName = "State/Player/PlayerAttackState")]
 public class PlayerAttackState : State
 {
@@ -66,6 +67,7 @@ public class PlayerAttackState : State
     public void CastSkill()
     {
         base.ResetTrigger();
+        ResetEvent();
         isEnemyForwark = controller.componentManager.checkEnemyForwark();
         controller.componentManager.Rotate();
         timeCount = eventData[idState].durationAnimation;
@@ -73,6 +75,7 @@ public class PlayerAttackState : State
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
         durationVelocity = eventData[idState].durationVelocity;
         controller.componentManager.isBufferAttack = false;
+
     }
     public override void OnInputDash()
     {
