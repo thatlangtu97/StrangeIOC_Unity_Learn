@@ -19,9 +19,10 @@ public class PlayerDashAttackState : State
         {
             timeCount -= Time.deltaTime;
             durationVelocity -= Time.deltaTime;
-            if (durationVelocity > 0)
+            if (timeCount > 0)
             {
-                Vector2 velocityAttack = eventData[currentCombo].velocity;
+                //Vector2 velocityAttack = eventData[currentCombo].velocity;
+                Vector2 velocityAttack = new Vector2(eventData[currentCombo].curveX.Evaluate(timeCount), eventData[currentCombo].curveY.Evaluate(timeCount));
                 Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
                 controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
             }

@@ -22,7 +22,9 @@ public class PlayerDashState : State
         if (countTime >= 0)
         {
             Vector3 newVelocity = new Vector2(speedDash * controller.componentManager.transform.localScale.x, 0f);
-            controller.componentManager.rgbody2D.velocity = new Vector2(speedDash * controller.componentManager.transform.localScale.x, 0f);
+
+            Vector2 velocityAttack = new Vector2(eventData[idState].curveX.Evaluate(countTime), eventData[idState].curveY.Evaluate(countTime));
+            controller.componentManager.rgbody2D.velocity = new Vector2(velocityAttack.x * controller.componentManager.transform.localScale.x, 0f);
             countTime -= Time.deltaTime;
             //cancel dash
             if((newVelocity.x * controller.componentManager.speedMove) < 0)

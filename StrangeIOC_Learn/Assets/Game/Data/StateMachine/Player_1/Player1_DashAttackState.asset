@@ -30,7 +30,43 @@ MonoBehaviour:
     durationVelocity: 0.2
     curveX:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.20004654
+        value: 0
+        inSlope: 90.07961
+        outSlope: 90.07961
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.28944093
+        value: 8.052612
+        inSlope: 74.7935
+        outSlope: 74.7935
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.32213324
+        value: 9.998047
+        inSlope: 0.07779823
+        outSlope: 0.07779823
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.2751225
+      - serializedVersion: 3
+        time: 0.5
+        value: 10
+        inSlope: 0.010980832
+        outSlope: 0.010980832
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -40,5 +76,5 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    eventConfig: {fileID: 0}
+    eventConfig: {fileID: 11400000, guid: 57e55afe8c7122e41858848db5153d59, type: 2}
   currentCombo: 0

@@ -38,6 +38,9 @@ MonoBehaviour:
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0.15
+    - Name: duration
+      Entry: 4
+      Data: 0.5
     - Name: Prefab
       Entry: 10
       Data: 0
@@ -86,6 +89,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: setParent
+      Entry: 5
+      Data: true
     - Name: 
       Entry: 8
       Data: 

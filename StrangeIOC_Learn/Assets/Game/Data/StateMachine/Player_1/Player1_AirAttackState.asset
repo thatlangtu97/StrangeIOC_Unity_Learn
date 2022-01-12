@@ -40,5 +40,5 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    eventConfig: {fileID: 0}
+    eventConfig: {fileID: 11400000, guid: 50ae11a67d5361f4b8bf47af182d74ac, type: 2}
   currentCombo: 0

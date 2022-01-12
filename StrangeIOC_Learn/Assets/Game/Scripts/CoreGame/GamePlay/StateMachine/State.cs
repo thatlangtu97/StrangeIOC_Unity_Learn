@@ -41,6 +41,13 @@ public class State : SerializedScriptableObject
         idEventTrigged.Clear();
         timeTrigger = 0f;
     }
+    public virtual void RecycleEvent()
+    {
+        foreach(IComboEvent temp in idEventTrigged.Values)
+        {
+            temp.Recycle();
+        }
+    }
     public virtual void UpdateState()
     {
         timeTrigger +=Time.deltaTime;
@@ -61,6 +68,7 @@ public class State : SerializedScriptableObject
     }
     public virtual void ExitState()
     {
+        RecycleEvent();
     }
     public virtual void OnInputMove()
     {

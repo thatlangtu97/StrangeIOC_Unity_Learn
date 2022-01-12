@@ -22,6 +22,60 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   idState: 0
-  eventData: []
+  eventData:
+  - NameTrigger: dash
+    NameTriggerAir: dash
+    durationAnimation: 0.3
+    velocity: {x: 0, y: 0}
+    durationVelocity: 0
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 10
+        inSlope: 0.0007919864
+        outSlope: 0.0007919864
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.43236583
+      - serializedVersion: 3
+        time: 0.20052266
+        value: 10
+        inSlope: 0.101078756
+        outSlope: 0.101078756
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.5910183
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.22073855
+        value: 9.993523
+        inSlope: -0.3897188
+        outSlope: -0.3897188
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.3
+        value: 7
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    curveY:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    eventConfig: {fileID: 0}
   duration: 0.3
   speedDash: 10

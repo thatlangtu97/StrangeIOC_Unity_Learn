@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5b043cdd2a08b64e98416a1bd87481b, type: 3}
-  m_Name: Event_Attack1
+  m_Name: Event_DashAttack
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 1744892889613756, guid: 8e7c6e5309f9cd3428b6049c60a047e3, type: 3}
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -37,10 +37,10 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.15
+      Data: 0
     - Name: duration
       Entry: 4
-      Data: 0.5
+      Data: 0.6
     - Name: Prefab
       Entry: 10
       Data: 0
@@ -49,10 +49,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0
+      Data: 0.5
     - Name: 
       Entry: 4
-      Data: 0.3
+      Data: 0.5
     - Name: 
       Entry: 4
       Data: 0
@@ -67,10 +67,10 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 4
-      Data: 90
+      Data: -90
     - Name: 
       Entry: 4
-      Data: 130
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -79,13 +79,13 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.4
+      Data: 0.3
     - Name: 
       Entry: 4
-      Data: 0.4
+      Data: 0.3
     - Name: 
       Entry: 4
-      Data: 0.4
+      Data: 0.3
     - Name: 
       Entry: 8
       Data: 
