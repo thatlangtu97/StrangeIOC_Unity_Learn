@@ -133,8 +133,8 @@ R_thigh
 arrow
   rotate: false
   xy: 107, 182
-  size: 112, 13
-  orig: 115, 16
+  size: 0, 0
+  orig: 0, 0
   offset: 1, 2
   index: -1
 bow

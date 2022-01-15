@@ -102,6 +102,7 @@ Material:
     - _Cull: 0
     - _CustomRenderQueue: 0
     - _Cutoff: 0
+    - _DarkColorAlphaAdditive: 0
     - _Destroyer_Speed_1: 0.7
     - _Destroyer_Value_1: 0
     - _DstBlend: 10
@@ -117,6 +118,10 @@ Material:
     - _InnerGlowHQ_Size_1: 0.48
     - _Metallic: 0
     - _OperationBlend_Fade_1: 1
+    - _OutlineMipLevel: 0
+    - _OutlineReferenceTexWidth: 1024
+    - _OutlineSmoothness: 1
+    - _OutlineWidth: 3
     - _RenderQueue: 0
     - _RimPower: 2
     - _Saturation: 1
@@ -135,6 +140,8 @@ Material:
     - _StencilRef: 1
     - _StencilWriteMask: 255
     - _StraightAlphaInput: 0
+    - _ThresholdEnd: 0.25
+    - _Use8Neighbourhood: 1
     - _ZWrite: 0
     m_Colors:
     - _Black: {r: 0, g: 0, b: 0, a: 0}
@@ -145,5 +152,6 @@ Material:
     - _FillColor_Color_1: {r: 0.05882353, g: 0.2210956, b: 1, a: 1}
     - _FixedNormal: {r: 0, g: 0, b: 1, a: 1}
     - _InnerGlowHQ_Color_1: {r: 1, g: 0, b: 0.040957928, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}

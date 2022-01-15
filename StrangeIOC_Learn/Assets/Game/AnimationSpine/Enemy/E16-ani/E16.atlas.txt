@@ -105,22 +105,22 @@ coin_drop
 fx_attack/Group-6
   rotate: false
   xy: 2, 147
-  size: 190, 260
-  orig: 200, 267
+  size: 0, 0
+  orig: 0, 0
   offset: 9, 1
   index: -1
 fx_attack/Group-6-copy
   rotate: true
   xy: 2, 6
-  size: 139, 224
-  orig: 150, 237
+  size: 0, 0
+  orig: 0, 0
   offset: 8, 4
   index: -1
 fx_attack/Group-6-copy-2
   rotate: false
   xy: 194, 190
-  size: 135, 217
-  orig: 150, 234
+  size: 0, 0
+  orig: 0, 0
   offset: 12, 6
   index: -1
 get_hit

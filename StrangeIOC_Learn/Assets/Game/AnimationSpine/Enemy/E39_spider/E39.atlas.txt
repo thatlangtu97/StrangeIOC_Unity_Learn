@@ -286,8 +286,8 @@ s
   index: -1
 warning
   rotate: false
-  xy: 2, 86
-  size: 96, 416
-  orig: 96, 427
-  offset: 0, 11
+  xy: 0, 0
+  size: 0, 0
+  orig: 0, 0
+  offset: 0, 0
   index: -1

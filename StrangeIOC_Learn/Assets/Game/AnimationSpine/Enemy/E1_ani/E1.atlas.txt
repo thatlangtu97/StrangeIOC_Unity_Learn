@@ -139,22 +139,22 @@ Weapon
   index: -1
 fx_attack/1
   rotate: true
-  xy: 2, 33
-  size: 203, 155
-  orig: 203, 155
+  xy: 0, 0
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx_attack/3
   rotate: false
-  xy: 2, 238
-  size: 220, 90
-  orig: 220, 90
+  xy: 0, 0
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx_attack/4
   rotate: true
-  xy: 224, 40
-  size: 212, 44
-  orig: 212, 44
+  xy: 0, 0
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
