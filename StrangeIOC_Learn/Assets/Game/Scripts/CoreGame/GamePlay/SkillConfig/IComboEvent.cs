@@ -17,7 +17,7 @@ public class CastProjectileEvent : IComboEvent
     
     public int id { get { return idEvent; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
-
+    public bool recycleWhenFinishDuration = false;
     private GameObject prefabSpawned;
     public void OnEventTrigger(GameEntity entity)
     {
@@ -37,8 +37,11 @@ public class CastProjectileEvent : IComboEvent
 
     public void Recycle()
     {
-        if (prefabSpawned)
-            ObjectPool.Recycle(prefabSpawned);
+        if (recycleWhenFinishDuration)
+        {
+            if (prefabSpawned)
+                ObjectPool.Recycle(prefabSpawned);
+        }
     }
 }
 public class CastColliderEvent : IComboEvent
@@ -105,6 +108,7 @@ public class CastImpackEvent : IComboEvent
     public Vector3 LocalRotation;
     public Vector3 LocalScale;
     public bool setParent=true;
+    public bool recycleWhenFinishDuration = false;
     private GameObject prefabSpawned;
     public void OnEventTrigger(GameEntity entity)
     {
@@ -126,7 +130,10 @@ public class CastImpackEvent : IComboEvent
     }
     public void Recycle()
     {
-        if(prefabSpawned)
-        ObjectPool.Recycle(prefabSpawned);
+        if (recycleWhenFinishDuration)
+        {
+            if (prefabSpawned)
+                ObjectPool.Recycle(prefabSpawned);
+        }
     }
 }

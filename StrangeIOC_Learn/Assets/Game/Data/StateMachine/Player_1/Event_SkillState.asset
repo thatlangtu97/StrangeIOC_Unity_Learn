@@ -38,6 +38,9 @@ MonoBehaviour:
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0.01
+    - Name: duration
+      Entry: 4
+      Data: 2
     - Name: Prefab
       Entry: 10
       Data: 0
@@ -56,6 +59,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: recycleWhenFinishDuration
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 

@@ -16,7 +16,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 0}
+    - {fileID: 1744892889613756, guid: 3e54e5bc5065cdb469f03f82eb7e408a, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.5
+      Data: 2.4
     - Name: 
       Entry: 4
       Data: 0.5
@@ -82,16 +82,16 @@ MonoBehaviour:
       Data: 0.3
     - Name: 
       Entry: 4
-      Data: 0.3
+      Data: 0.2
     - Name: 
       Entry: 4
-      Data: 0.3
+      Data: 0.45
     - Name: 
       Entry: 8
       Data: 
     - Name: setParent
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 

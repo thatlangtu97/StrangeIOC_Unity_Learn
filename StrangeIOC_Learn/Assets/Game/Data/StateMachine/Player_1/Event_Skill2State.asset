@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5b043cdd2a08b64e98416a1bd87481b, type: 3}
-  m_Name: Event_SkillState
+  m_Name: Event_Skill2State
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 2298935955140347883, guid: 41f5d9e780d3f2945aabf1d723d5119d, type: 3}
+    - {fileID: 5053236340229439972, guid: 945d846eb7e194846bf736762599350a, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -31,13 +31,16 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|CastProjectileEvent, Assembly-CSharp
+      Data: 1|CastImpackEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.01
+      Data: 0
+    - Name: duration
+      Entry: 4
+      Data: 3
     - Name: Prefab
       Entry: 10
       Data: 0
@@ -46,16 +49,49 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.3
+      Data: 4
     - Name: 
       Entry: 4
-      Data: 0.7
+      Data: 0.5
     - Name: 
       Entry: 4
       Data: 0
     - Name: 
       Entry: 8
       Data: 
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setParent
+      Entry: 5
+      Data: true
     - Name: 
       Entry: 8
       Data: 
