@@ -11,8 +11,9 @@ public class IdleState : State
     public override void EnterState()
     {
         base.EnterState();
-        controller.animator.SetTrigger(AnimationTriger.IDLE);
+        //controller.animator.SetTrigger(AnimationTriger.IDLE);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
     }
     public override void ExitState()
     {

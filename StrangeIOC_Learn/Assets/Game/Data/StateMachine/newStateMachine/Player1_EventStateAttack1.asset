@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
+  m_Name: Player1_EventStateAttack1
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1744892889613756, guid: 8e7c6e5309f9cd3428b6049c60a047e3, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: EventCombo
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|CastImpackEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 0
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0.15
+    - Name: duration
+      Entry: 4
+      Data: 0.5
+    - Name: Prefab
+      Entry: 10
+      Data: 0
+    - Name: Localosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 90
+    - Name: 
+      Entry: 4
+      Data: 130
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.4
+    - Name: 
+      Entry: 4
+      Data: 0.4
+    - Name: 
+      Entry: 4
+      Data: 0.4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setParent
+      Entry: 5
+      Data: true
+    - Name: recycleWhenFinishDuration
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  NameTrigger: attack1
+  durationAnimation: 0.5
+  curveX:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.9089074
+      outSlope: 1.9089074
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.91705006
+    - serializedVersion: 3
+      time: 0.2
+      value: 5
+      inSlope: 0.19625238
+      outSlope: 0.19625238
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19342144
+      outWeight: 0.3948183
+    - serializedVersion: 3
+      time: 0.21
+      value: 0
+      inSlope: -21.66651
+      outSlope: -21.66651
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.14627896
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveY:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

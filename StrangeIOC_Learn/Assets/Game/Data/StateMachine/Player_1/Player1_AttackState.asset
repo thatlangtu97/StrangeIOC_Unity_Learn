@@ -140,4 +140,8 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     eventConfig: {fileID: 11400000, guid: 102dcd39135274d4f9c6e5c7a2e34e37, type: 2}
-  currentCombo: 0
+  eventCollectionData:
+  - {fileID: 11400000, guid: fbe34101dd472824d8c69c5fd1b08c9a, type: 2}
+  - {fileID: 11400000, guid: 38b86457c920f8e4dadb64ee1184988e, type: 2}
+  - {fileID: 11400000, guid: 6823c88c64949b149a92ed653fdf116f, type: 2}
+  timeBuffer: 0.15

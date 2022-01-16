@@ -17,7 +17,7 @@ public class PlayerAirAttackState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        if (timeCount >= 0)
+        if (timeCount < eventCollectionData[currentCombo].durationAnimation)
         {
 
             if (controller.componentManager.checkGround() == false)
@@ -36,8 +36,8 @@ public class PlayerAirAttackState : State
                     controller.ChangeState(NameState.IdleState);
                 }
             }
-            timeCount -= Time.deltaTime;
-            if (timeCount < 0)
+            timeCount += Time.deltaTime;
+            if (timeCount >= eventCollectionData[currentCombo].durationAnimation)
             {
                 controller.animator.SetTrigger(AnimationTriger.AIRATTACKFAIL);
             }
@@ -78,9 +78,9 @@ public class PlayerAirAttackState : State
     public void CastSkill()
     {
         controller.componentManager.Rotate();
-        timeCount = eventData[currentCombo].durationAnimation;
-        controller.animator.SetTrigger(eventData[currentCombo].NameTrigger);
-        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, eventData[currentCombo].velocity.y);
+        timeCount = 0;
+        controller.animator.SetTrigger(eventCollectionData[currentCombo].NameTrigger);
+        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, eventCollectionData[currentCombo].curveY.Evaluate(0));
     }
     public override void OnInputDash()
     {
@@ -99,14 +99,23 @@ public class PlayerAirAttackState : State
         base.OnInputAttack();
         if (controller.componentManager.isAttack)
         {
-            currentCombo = (currentCombo + 1);
-            if(currentCombo< eventData.Count)
+            if (currentCombo < eventCollectionData.Count - 1)
+            {
+                currentCombo = (currentCombo + 1);
                 CastSkill();
+            }
         }
     }
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(NameState.SkillState);
+        if (controller.componentManager.checkGround() == true)
+        {
+            controller.ChangeState(NameState.SkillState);
+        }
+        else
+        {
+            controller.ChangeState(NameState.AirSkillState);
+        }
     }
 }

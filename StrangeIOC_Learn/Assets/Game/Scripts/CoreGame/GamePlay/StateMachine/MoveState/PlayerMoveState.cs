@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerMoveState", menuName = "State/Player/PlayerMoveState")]
-public class PlayerMoveState : EnemyMeleeMoveState
+public class PlayerMoveState : State
 {
     public override void EnterState()
     {
         base.EnterState();
-        
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
     }
     public override void UpdateState()
     {
@@ -43,7 +43,14 @@ public class PlayerMoveState : EnemyMeleeMoveState
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(NameState.SkillState);
+        if (controller.componentManager.checkGround() == true)
+        {
+            controller.ChangeState(NameState.SkillState);
+        }
+        else
+        {
+            controller.ChangeState(NameState.AirSkillState);
+        }
     }
 
 }

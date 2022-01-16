@@ -4,25 +4,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerJumpState", menuName = "State/Player/PlayerJumpState")]
 public class PlayerJumpState : State
 {
-    public float forceJump=7f;
-    public float duration = 0.05f;
     float countTimeBufferJump = 0;
     public override void EnterState()
     {
         base.EnterState();
-        controller.animator.SetTrigger(AnimationTriger.JUMP);
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         controller.componentManager.Rotate();
-        countTimeBufferJump = duration;
+        countTimeBufferJump = eventCollectionData[idState].durationAnimation;
         controller.componentManager.jumpCount += 1;
+        Vector2 velocity = new Vector2(0f, eventCollectionData[idState].curveY.Evaluate(0));
         if (controller.componentManager.speedMove != 0)
         {
-            controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.maxSpeedMove * controller.componentManager.transform.localScale.x, forceJump);
+            velocity.x = controller.componentManager.maxSpeedMove * controller.componentManager.transform.localScale.x;
         }
-        else
-        {
-            controller.componentManager.rgbody2D.velocity = new Vector2(0f, forceJump);
-        }
-        
+        controller.componentManager.rgbody2D.velocity = velocity;
     }
     public override void UpdateState()
     {
@@ -78,6 +73,13 @@ public class PlayerJumpState : State
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(NameState.SkillState);
+        if (controller.componentManager.checkGround() == true)
+        {
+            controller.ChangeState(NameState.SkillState);
+        }
+        else
+        {
+            controller.ChangeState(NameState.AirSkillState);
+        }
     }
 }

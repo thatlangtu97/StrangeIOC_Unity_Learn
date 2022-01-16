@@ -77,4 +77,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     eventConfig: {fileID: 11400000, guid: 57e55afe8c7122e41858848db5153d59, type: 2}
+  eventCollectionData:
+  - {fileID: 11400000, guid: f637a0b9d75854f4a922ff6307dc9e7e, type: 2}
   currentCombo: 0

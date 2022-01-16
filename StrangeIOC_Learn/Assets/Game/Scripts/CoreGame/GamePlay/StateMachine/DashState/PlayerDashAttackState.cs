@@ -76,6 +76,13 @@ public class PlayerDashAttackState : State
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(NameState.SkillState);
+        if (controller.componentManager.checkGround() == true)
+        {
+            controller.ChangeState(NameState.SkillState);
+        }
+        else
+        {
+            controller.ChangeState(NameState.AirSkillState);
+        }
     }
 }

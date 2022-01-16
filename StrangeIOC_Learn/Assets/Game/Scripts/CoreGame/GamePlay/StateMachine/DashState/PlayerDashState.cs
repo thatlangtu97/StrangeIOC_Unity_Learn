@@ -2,34 +2,32 @@
 [CreateAssetMenu(fileName = "PlayerDashState", menuName = "State/Player/PlayerDashState")]
 public class PlayerDashState : State
 {
-    public float duration = 0.4f;
-    public float speedDash = 10f;
     float countTime = 0;
     public override void EnterState()
     {
         base.EnterState();
         //controller.animator.SetTrigger(AnimationTriger.DASH);
         controller.componentManager.dashCount += 1;
-        controller.animator.Play(AnimationTriger.DASH);
+        controller.animator.Play(eventCollectionData[idState].NameTrigger);
         controller.componentManager.Rotate();
-        countTime = duration;
+        countTime = 0;
         
     }
     public override void UpdateState()
     {
         base.UpdateState();
         
-        if (countTime >= 0)
+        if (countTime < eventCollectionData[idState].durationAnimation)
         {
-            Vector3 newVelocity = new Vector2(speedDash * controller.componentManager.transform.localScale.x, 0f);
-
-            Vector2 velocityAttack = new Vector2(eventData[idState].curveX.Evaluate(countTime), eventData[idState].curveY.Evaluate(countTime));
-            controller.componentManager.rgbody2D.velocity = new Vector2(velocityAttack.x * controller.componentManager.transform.localScale.x, 0f);
-            countTime -= Time.deltaTime;
+            //Vector3 newVelocity = new Vector2(speedDash * controller.componentManager.transform.localScale.x, 0f);
+            Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(countTime) * controller.componentManager.transform.localScale.x, eventCollectionData[idState].curveY.Evaluate(countTime));
+            //Vector2 velocityAttack = new Vector2(eventData[idState].curveX.Evaluate(countTime), eventData[idState].curveY.Evaluate(countTime));
+            controller.componentManager.rgbody2D.velocity = new Vector2(velocityAttack.x , velocityAttack.y);
+            countTime += Time.deltaTime;
             //cancel dash
-            if((newVelocity.x * controller.componentManager.speedMove) < 0)
+            if((velocityAttack.x * controller.componentManager.speedMove) < 0)
             {
-                countTime = -1f;
+                countTime = eventCollectionData[0].durationAnimation;
             }
         }
         else
@@ -62,7 +60,7 @@ public class PlayerDashState : State
     public override void ExitState()
     {
         base.ExitState();
-        countTime = -1;
+        countTime = eventCollectionData[idState].durationAnimation;
     }
     public override void OnInputJump()
     {
@@ -78,7 +76,7 @@ public class PlayerDashState : State
     public override void OnInputMove()
     {
         base.OnInputMove();
-        if (controller.componentManager.checkGround() == true && countTime<0f)
+        if (controller.componentManager.checkGround() == true && countTime >= eventCollectionData[idState].durationAnimation)
         {
             if (controller.componentManager.speedMove != 0)
             {
@@ -100,6 +98,13 @@ public class PlayerDashState : State
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(NameState.SkillState);
+        if (controller.componentManager.checkGround() == true)
+        {
+            controller.ChangeState(NameState.SkillState);
+        }
+        else
+        {
+            controller.ChangeState(NameState.AirSkillState);
+        }
     }
 }

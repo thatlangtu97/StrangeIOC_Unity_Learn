@@ -106,7 +106,6 @@ public class StateMachineController : MonoBehaviour
     }
     public virtual void OnInputSkill(int idSkill)
     {
-
     }
 }
 
@@ -135,4 +134,5 @@ public enum NameState
     GetUpState,
     FreezeState,
     StuntState,
+    AirSkillState,
 }

@@ -4,13 +4,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SpawnState", menuName = "State/SpawnState")]
 public class SpawnState : State
 {
-    public float duration;
     float coutTime;
     public override void EnterState()
     {
         base.EnterState();
-        controller.animator.SetTrigger(AnimationTriger.SPAWN);
-        coutTime = duration;
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
+        coutTime = eventCollectionData[idState].durationAnimation;
     }
     public override void UpdateState()
     {

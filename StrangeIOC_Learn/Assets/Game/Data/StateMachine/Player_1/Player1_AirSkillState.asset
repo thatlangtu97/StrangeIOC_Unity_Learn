@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717c23e1f4b3311429ee83350999484b, type: 3}
-  m_Name: Player1_SpawnState
+  m_Script: {fileID: 11500000, guid: 037d665317dc22b4fa2a05bd6bd32cd7, type: 3}
+  m_Name: Player1_AirSkillState
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -24,5 +24,5 @@ MonoBehaviour:
   idState: 0
   eventData: []
   eventCollectionData:
-  - {fileID: 11400000, guid: 620f197b0f781764a9ccf9d639d98584, type: 2}
-  duration: 1.123
+  - {fileID: 11400000, guid: af4cef181e4d06e40bb47c297cd73e0f, type: 2}
+  - {fileID: 11400000, guid: 8406d6af96b229c449e4d4b1bab391a0, type: 2}

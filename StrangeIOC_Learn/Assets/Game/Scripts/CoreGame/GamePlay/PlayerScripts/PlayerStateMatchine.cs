@@ -68,8 +68,12 @@ public class PlayerStateMatchine : StateMachineController
             if (dictionaryStateMachine.ContainsKey(NameState.SkillState))
             {
                 dictionaryStateMachine[NameState.SkillState].idState = idSkill;
-                currentState.OnInputSkill(idSkill);
             }
+            if (dictionaryStateMachine.ContainsKey(NameState.AirSkillState))
+            {
+                dictionaryStateMachine[NameState.AirSkillState].idState = idSkill;
+            }
+            currentState.OnInputSkill(idSkill);
         }
 
     }

@@ -18,17 +18,12 @@ public class PlayerSkillState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        if (timeCount > 0)
+        if (timeCount < eventCollectionData[idState].durationAnimation )
         {
-            timeCount -= Time.fixedDeltaTime;
-            if (timeCurve < eventData[idState].durationAnimation)
-            {
-                Vector2 velocityAttack = new Vector2(eventData[idState].curveX.Evaluate(timeCurve), eventData[idState].curveY.Evaluate(timeCurve));
-                Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
-                
-                controller.componentManager.rgbody2D.position += force*Time.fixedDeltaTime;
-            }
-            timeCurve += Time.fixedDeltaTime;
+            Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
+            Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
+            controller.componentManager.rgbody2D.position += force * Time.fixedDeltaTime;
+            timeCount += Time.deltaTime;
         }
         else
         {
@@ -64,15 +59,15 @@ public class PlayerSkillState : State
         controller.componentManager.Rotate();
         timeCurve = 0;
         timeTrigger = 0;
-        timeCount = eventData[idState].durationAnimation;
-        if (controller.componentManager.checkGround() == true)
-            controller.animator.SetTrigger(eventData[idState].NameTrigger);
-        else
-            controller.animator.SetTrigger(eventData[idState].NameTriggerAir);
+        timeCount = 0;
+        //if (controller.componentManager.checkGround() == true)
+            controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
+        //else
+        //    controller.animator.SetTrigger(eventData[idState].NameTriggerAir);
     }
     public override void OnInputDash()
     {
-        if (timeCount < 0 && controller.componentManager.CanDash)
+        if (timeCount >= eventCollectionData[idState].durationAnimation && controller.componentManager.CanDash)
         {
             base.OnInputDash();
             controller.ChangeState(NameState.DashState);
@@ -80,7 +75,7 @@ public class PlayerSkillState : State
     }
     public override void OnInputJump()
     {
-        if (timeCount < 0 && controller.componentManager.CanJump)
+        if (timeCount >= eventCollectionData[idState].durationAnimation && controller.componentManager.CanJump)
         {
             base.OnInputJump();
             controller.ChangeState(NameState.JumpState);
@@ -88,7 +83,7 @@ public class PlayerSkillState : State
     }
     public override void OnInputMove()
     {
-        if (timeCount < 0 && controller.componentManager.checkGround() == true)
+        if (timeCount >= eventCollectionData[idState].durationAnimation && controller.componentManager.checkGround() == true)
         {
             base.OnInputMove();
             controller.ChangeState(NameState.MoveState);
@@ -96,11 +91,27 @@ public class PlayerSkillState : State
     }
     public override void OnInputSkill(int idSkill)
     {
-        if (timeCount < 0)
+        if (timeCount >= eventCollectionData[idState].durationAnimation)
         {
             base.OnInputSkill(idSkill);
             idState = idSkill;
             EnterState();
+        }
+    }
+    public override void OnInputAttack()
+    {
+        if (timeCount >= eventCollectionData[idState].durationAnimation)
+        {
+            base.OnInputAttack();
+            if (controller.componentManager.checkGround() == true)
+            {
+                controller.ChangeState(NameState.AttackState);
+            }
+            else
+            {
+                if (controller.componentManager.CanAttackAir)
+                    controller.ChangeState(NameState.AirAttackState);
+            }
         }
     }
 }
