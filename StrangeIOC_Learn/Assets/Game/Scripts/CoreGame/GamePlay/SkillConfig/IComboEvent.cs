@@ -135,5 +135,9 @@ public class CastImpackEvent : IComboEvent
             if (prefabSpawned)
                 ObjectPool.Recycle(prefabSpawned);
         }
+        else
+        {
+            prefabSpawned.transform.parent = null;
+        }
     }
 }

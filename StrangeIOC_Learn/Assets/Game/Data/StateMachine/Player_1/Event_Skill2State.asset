@@ -67,7 +67,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 4
-      Data: 0
+      Data: -90
     - Name: 
       Entry: 4
       Data: 0
@@ -92,6 +92,9 @@ MonoBehaviour:
     - Name: setParent
       Entry: 5
       Data: true
+    - Name: recycleWhenFinishDuration
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 

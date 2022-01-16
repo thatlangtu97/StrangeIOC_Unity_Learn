@@ -5259,18 +5259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startupPoolMode: 0
-  startupPools:
-  - size: 2
-    prefab: {fileID: 2298935955140347883, guid: 41f5d9e780d3f2945aabf1d723d5119d,
-      type: 3}
-  - size: 6
-    prefab: {fileID: 3969153100511159295, guid: ba6e5970cef1f8248bbac8ebc424b63f,
-      type: 3}
-  - size: 3
-    prefab: {fileID: 6049752459094999481, guid: 6f230328331304e43acefd494218c59c,
-      type: 3}
-  - size: 4
-    prefab: {fileID: 184144, guid: c631ee4cfc195df48bd60432f0a1949a, type: 3}
+  startupPools: []
 --- !u!4 &489803271
 Transform:
   m_ObjectHideFlags: 0
@@ -19405,7 +19394,7 @@ PrefabInstance:
     - target: {fileID: 198598609680779244, guid: 3e54e5bc5065cdb469f03f82eb7e408a,
         type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e54e5bc5065cdb469f03f82eb7e408a, type: 3}
