@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerReviveState", menuName = "State/Player/PlayerReviveState")]
 public class PlayerReviveState : State
 {
-    public float duration = 1f;
     float countTime;
 
     public override void InitState(StateMachineController controller)
@@ -14,17 +13,17 @@ public class PlayerReviveState : State
     public override void EnterState()
     {
         base.EnterState();
-        controller.animator.SetTrigger(AnimationTriger.REVIVE);
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
-        countTime = duration;
+        countTime = 0;
     }
     public override void UpdateState()
     {
         base.UpdateState();
 
-        if (countTime >= 0)
+        if (countTime < eventCollectionData[idState].durationAnimation)
         {
-            countTime -= Time.deltaTime;
+            countTime += Time.deltaTime;
         }
         else
         {

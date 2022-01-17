@@ -22,61 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   idState: 0
-  eventData:
-  - NameTrigger: dashattack
-    NameTriggerAir: 
-    durationAnimation: 0.5
-    velocity: {x: 10, y: 0}
-    durationVelocity: 0.2
-    curveX:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.2
-        value: 2
-        inSlope: 67.671616
-        outSlope: 67.671616
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.28944093
-        value: 8.052612
-        inSlope: 63.589508
-        outSlope: 63.589508
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.32213324
-        value: 9.998047
-        inSlope: 0.07779823
-        outSlope: 0.07779823
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.2751225
-      - serializedVersion: 3
-        time: 0.5
-        value: 10
-        inSlope: 0.010980832
-        outSlope: 0.010980832
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    curveY:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    eventConfig: {fileID: 11400000, guid: 57e55afe8c7122e41858848db5153d59, type: 2}
+  eventData: []
   eventCollectionData:
   - {fileID: 11400000, guid: f637a0b9d75854f4a922ff6307dc9e7e, type: 2}
   currentCombo: 0
