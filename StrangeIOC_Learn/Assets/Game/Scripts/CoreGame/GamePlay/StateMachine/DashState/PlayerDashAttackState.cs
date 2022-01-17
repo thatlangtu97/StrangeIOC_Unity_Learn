@@ -4,7 +4,6 @@ public class PlayerDashAttackState : State
 {
     public int currentCombo;
     float timeCount;
-    float durationVelocity;
     public override void EnterState()
     {
         base.EnterState();
@@ -15,23 +14,17 @@ public class PlayerDashAttackState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        if (timeCount > 0)
+        if (timeCount < eventCollectionData[currentCombo].durationAnimation)
         {
-            timeCount -= Time.deltaTime;
-            durationVelocity -= Time.deltaTime;
-            if (timeCount > 0)
-            {
-                //Vector2 velocityAttack = eventData[currentCombo].velocity;
-                Vector2 velocityAttack = new Vector2(eventData[currentCombo].curveX.Evaluate(timeCount), eventData[currentCombo].curveY.Evaluate(timeCount));
-                Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
-                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
-            }
+            timeCount += Time.deltaTime;
+            Vector2 velocityAttack = new Vector2(eventCollectionData[currentCombo].curveX.Evaluate(timeCount), eventCollectionData[currentCombo].curveY.Evaluate(timeCount));
+            controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
         }
         else
         {
             if (controller.componentManager.isBufferAttack == true)
             {
-                currentCombo = (currentCombo + 1) % (eventData.Count);
+                currentCombo = (currentCombo + 1) % (eventCollectionData.Count);
                 CastSkill();
             }
             else
@@ -56,10 +49,9 @@ public class PlayerDashAttackState : State
     public void CastSkill()
     {
         controller.componentManager.Rotate();
-        timeCount = eventData[currentCombo].durationAnimation;
-        controller.animator.SetTrigger(eventData[currentCombo].NameTrigger);
+        timeCount = 0;
+        controller.animator.SetTrigger(eventCollectionData[currentCombo].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
-        durationVelocity = eventData[currentCombo].durationVelocity;
         controller.componentManager.isBufferAttack = false;
     }
 

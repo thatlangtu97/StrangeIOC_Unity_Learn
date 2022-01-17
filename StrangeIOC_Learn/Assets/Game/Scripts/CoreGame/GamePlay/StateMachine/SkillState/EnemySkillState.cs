@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySkillState : State
 {
     float timeCount;
-    float timeCurve = 0;
     public override void EnterState()
     {
         base.EnterState();
@@ -18,40 +17,17 @@ public class EnemySkillState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        if (timeCount > 0)
+        if (timeCount < eventCollectionData[idState].durationAnimation)
         {
-            timeCount -= Time.fixedDeltaTime;
-            if (timeCurve < eventData[idState].durationAnimation)
-            {
-                Vector2 velocityAttack = new Vector2(eventData[idState].curveX.Evaluate(timeCurve), eventData[idState].curveY.Evaluate(timeCurve));
-                Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
-
-                controller.componentManager.rgbody2D.position += force * Time.fixedDeltaTime;
-            }
-            timeCurve += Time.fixedDeltaTime;
+            timeCount += Time.fixedDeltaTime;
+            Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
+            Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
+            controller.componentManager.rgbody2D.position += force * Time.fixedDeltaTime;
         }
         else
         {
             controller.componentManager.rgbody2D.gravityScale = 2;
             controller.ChangeState(NameState.IdleState);
-            //if (controller.componentManager.checkGround() == true)
-            //{
-            //    if (controller.componentManager.speedMove != 0)
-            //    {
-            //        controller.ChangeState(NameState.MoveState);
-            //    }
-            //    else
-            //    {
-            //        controller.ChangeState(NameState.IdleState);
-            //    }
-            //}
-            //else
-            //{
-            //    controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-            //    controller.componentManager.Rotate();
-            //    controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-
-            //}
         }
     }
     public override void ExitState()
@@ -63,12 +39,8 @@ public class EnemySkillState : State
     {
         ResetEvent();
         controller.componentManager.Rotate();
-        timeCurve = 0;
-        timeCount = eventData[idState].durationAnimation;
-        if (controller.componentManager.checkGround() == true)
-            controller.animator.SetTrigger(eventData[idState].NameTrigger);
-        else
-            controller.animator.SetTrigger(eventData[idState].NameTriggerAir);
+        timeCount = 0;
+            controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
     }
     public override void OnInputDash()
     {
