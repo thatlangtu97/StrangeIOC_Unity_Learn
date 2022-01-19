@@ -44,7 +44,7 @@ public class PlayFlashScene : View
         }
         catch (System.Exception e)
         {
-
+            Debug.LogError(e);
         }
         yield return new WaitForSeconds(timeDelay);        
         SceneManager.LoadSceneAsync(namescene);

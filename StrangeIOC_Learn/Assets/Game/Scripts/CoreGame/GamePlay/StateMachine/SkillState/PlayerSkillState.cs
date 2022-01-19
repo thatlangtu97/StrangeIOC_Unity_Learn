@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerSkillState : State
 {
     float timeCount;
-    float timeCurve = 0;
     public override void EnterState()
     {
         base.EnterState();
@@ -57,7 +56,6 @@ public class PlayerSkillState : State
     {
         idEventTrigged.Clear();
         controller.componentManager.Rotate();
-        timeCurve = 0;
         timeTrigger = 0;
         timeCount = 0;
         //if (controller.componentManager.checkGround() == true)
