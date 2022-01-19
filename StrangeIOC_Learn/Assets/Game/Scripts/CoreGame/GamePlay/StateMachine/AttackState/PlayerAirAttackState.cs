@@ -4,20 +4,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerAirAttackState", menuName = "State/Player/PlayerAirAttackState")]
 public class PlayerAirAttackState : State
 {
-    public int currentCombo;
     float timeCount;
     public override void EnterState()
     {
         base.EnterState();
         controller.componentManager.isAttack = true;
         controller.componentManager.attackAirCount += 1;
-        currentCombo = 0;
         CastSkill();
     }
     public override void UpdateState()
     {
         base.UpdateState();
-        if (timeCount < eventCollectionData[currentCombo].durationAnimation)
+        if (timeCount < eventCollectionData[idState].durationAnimation)
         {
 
             if (controller.componentManager.checkGround() == false)
@@ -37,7 +35,7 @@ public class PlayerAirAttackState : State
                 }
             }
             timeCount += Time.deltaTime;
-            if (timeCount >= eventCollectionData[currentCombo].durationAnimation)
+            if (timeCount >= eventCollectionData[idState].durationAnimation)
             {
                 controller.animator.SetTrigger(AnimationTriger.AIRATTACKFAIL);
             }
@@ -73,14 +71,13 @@ public class PlayerAirAttackState : State
     {
         base.ExitState();
         controller.componentManager.isAttack = false;
-        currentCombo = 0;
     }
     public void CastSkill()
     {
         controller.componentManager.Rotate();
         timeCount = 0;
-        controller.animator.SetTrigger(eventCollectionData[currentCombo].NameTrigger);
-        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, eventCollectionData[currentCombo].curveY.Evaluate(0));
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
+        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, eventCollectionData[idState].curveY.Evaluate(0));
     }
     public override void OnInputDash()
     {
@@ -99,9 +96,9 @@ public class PlayerAirAttackState : State
         base.OnInputAttack();
         if (controller.componentManager.isAttack)
         {
-            if (currentCombo < eventCollectionData.Count - 1)
+            if (idState < eventCollectionData.Count - 1)
             {
-                currentCombo = (currentCombo + 1);
+                idState = (idState + 1);
                 CastSkill();
             }
         }

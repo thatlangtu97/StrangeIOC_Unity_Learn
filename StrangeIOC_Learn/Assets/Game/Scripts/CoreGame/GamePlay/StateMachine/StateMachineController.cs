@@ -58,7 +58,7 @@ public class StateMachineController : MonoBehaviour
             dictionaryStateMachine[stateClone.NameState] = state;
         }
     }
-    public virtual void ChangeState(NameState nameState, bool forceChange = false)
+    public virtual void ChangeState(NameState nameState, bool forceChange = false )
     {
         if ( !dictionaryStateMachine.ContainsKey(nameState) ) return;
         State newState = dictionaryStateMachine[nameState];
