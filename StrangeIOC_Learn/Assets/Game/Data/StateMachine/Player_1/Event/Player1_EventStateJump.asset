@@ -25,7 +25,7 @@ MonoBehaviour:
       Entry: 6
       Data: 
   NameTrigger: jump
-  durationAnimation: 0.05
+  durationAnimation: 0.467
   curveX:
     serializedVersion: 2
     m_Curve: []

@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerJumpState : State
 {
     float countTimeBufferJump = 0;
+    public float timeBuffer = 0.15f;
+    bool bufferJump = false;
+
     public override void EnterState()
     {
         base.EnterState();
@@ -18,6 +21,7 @@ public class PlayerJumpState : State
             velocity.x = controller.componentManager.maxSpeedMove * controller.componentManager.transform.localScale.x;
         }
         controller.componentManager.rgbody2D.velocity = velocity;
+        bufferJump = false;
     }
     public override void UpdateState()
     {
@@ -31,6 +35,13 @@ public class PlayerJumpState : State
                 newVelocity.x = 0;
             }
             controller.componentManager.rgbody2D.velocity = newVelocity;
+            if (bufferJump && controller.componentManager.CanJump)
+            {
+                if(countTimeBufferJump< timeBuffer)
+                {
+                    EnterState();
+                }
+            }
         }
         else
         {
@@ -61,8 +72,11 @@ public class PlayerJumpState : State
     public override void OnInputJump()
     {
         base.OnInputJump();
-        if(controller.componentManager.CanJump)
-            EnterState();
+        //if(controller.componentManager.CanJump && countTimeBufferJump < timeBuffer)
+        //    EnterState();
+        //if (controller.componentManager.CanJump && countTimeBufferJump < timeBuffer)
+        //    EnterState();
+        bufferJump = true;
     }
     public override void OnInputAttack()
     {
