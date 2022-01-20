@@ -16,7 +16,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 1744892889613756, guid: c028c49671c3ad043bf2472dc6ad6c83, type: 3}
+    - {fileID: 8531063397262081728, guid: 7be97970b895d1c4fb3164527361e539, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -37,10 +37,10 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.05
+      Data: 0
     - Name: duration
       Entry: 4
-      Data: 0.5
+      Data: 0.6
     - Name: Prefab
       Entry: 10
       Data: 0
