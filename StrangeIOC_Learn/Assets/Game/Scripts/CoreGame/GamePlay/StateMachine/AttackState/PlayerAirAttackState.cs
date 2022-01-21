@@ -23,17 +23,17 @@ public class PlayerAirAttackState : State
                 controller.componentManager.Rotate();
                 controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
             }
-            else
-            {
-                if (controller.componentManager.speedMove != 0)
-                {
-                    controller.ChangeState(NameState.MoveState);
-                }
-                else
-                {
-                    controller.ChangeState(NameState.IdleState);
-                }
-            }
+            //else
+            //{
+            //    if (controller.componentManager.speedMove != 0)
+            //    {
+            //        controller.ChangeState(NameState.MoveState);
+            //    }
+            //    else
+            //    {
+            //        controller.ChangeState(NameState.IdleState);
+            //    }
+            //}
             timeCount += Time.deltaTime;
             if (timeCount >= eventCollectionData[idState].durationAnimation)
             {

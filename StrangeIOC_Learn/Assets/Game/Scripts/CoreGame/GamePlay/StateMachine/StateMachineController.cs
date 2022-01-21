@@ -143,4 +143,6 @@ public enum NameState
     FreezeState,
     StuntState,
     AirSkillState,
+    FallingState,
+
 }
