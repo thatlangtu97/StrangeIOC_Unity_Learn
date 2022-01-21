@@ -45,14 +45,15 @@ public class PlayerDashState : State
             }
             else
             {
-                controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-                controller.componentManager.Rotate();
-                Vector3 newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-                if (controller.componentManager.checkWall() == true)
-                {
-                    newVelocity.x = 0;
-                }
-                controller.componentManager.rgbody2D.velocity = newVelocity;
+                controller.ChangeState(NameState.FallingState);
+                //controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
+                //controller.componentManager.Rotate();
+                //Vector3 newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+                //if (controller.componentManager.checkWall() == true)
+                //{
+                //    newVelocity.x = 0;
+                //}
+                //controller.componentManager.rgbody2D.velocity = newVelocity;
                              
             }
         }

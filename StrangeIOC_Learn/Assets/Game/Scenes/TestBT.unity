@@ -1922,6 +1922,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: 0cd61a1dd84903a49a2f3f9e1b32dd8b, type: 2}
   - NameState: 17
     StateToClone: {fileID: 11400000, guid: c110046615e7a0b40bb48acdd355f411, type: 2}
+  - NameState: 18
+    StateToClone: {fileID: 11400000, guid: 87e0975ba1722254f95b82ceb2c64a82, type: 2}
   componentManager: {fileID: 218680112}
   animator: {fileID: 790741382}
 --- !u!114 &218680112

@@ -40,9 +40,10 @@ public class PlayerSkillState : State
             }
             else
             {
-                controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-                controller.componentManager.Rotate();
-                controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+                controller.ChangeState(NameState.FallingState);
+                //controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
+                //controller.componentManager.Rotate();
+                //controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
 
             }
         }
