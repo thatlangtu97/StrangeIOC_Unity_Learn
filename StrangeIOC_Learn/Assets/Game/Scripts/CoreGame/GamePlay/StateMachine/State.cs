@@ -7,7 +7,7 @@ public class State : SerializedScriptableObject
     protected StateMachineController controller;
     public int idState;
     protected Dictionary<int,IComboEvent> idEventTrigged = new Dictionary<int, IComboEvent>();
-    protected float timeTrigger;
+    public float timeTrigger;
     public List<AttackConfig> eventData;
     public List<EventCollection> eventCollectionData;
 
@@ -52,30 +52,16 @@ public class State : SerializedScriptableObject
     public virtual void UpdateState()
     {
         timeTrigger +=Time.deltaTime;
-        //if (eventData != null && eventData.Count > idState && idState >= 0)
-        //{
-        //    if (eventData[idState].eventConfig != null)
-        //    {
-        //        foreach (IComboEvent comboevent in eventData[idState].eventConfig.EventCombo)
-        //        {
-        //            if (timeTrigger > comboevent.timeTrigger && !idEventTrigged.ContainsKey(comboevent.id))
-        //            {
-        //                comboevent.OnEventTrigger(controller.componentManager.entity);
-        //                idEventTrigged.Add(comboevent.id, comboevent);
-        //            }
-        //        }
-        //    }
-        //}
         if (eventCollectionData != null && eventCollectionData.Count > idState && idState >= 0)
         {
             if (eventCollectionData[idState].EventCombo != null)
             {
-                foreach (IComboEvent comboevent in eventCollectionData[idState].EventCombo)
+                foreach (IComboEvent tempComboEvent in eventCollectionData[idState].EventCombo)
                 {
-                    if (timeTrigger > comboevent.timeTrigger && !idEventTrigged.ContainsKey(comboevent.id))
+                    if (timeTrigger > tempComboEvent.timeTrigger && !idEventTrigged.ContainsKey(tempComboEvent.id))
                     {
-                        comboevent.OnEventTrigger(controller.componentManager.entity);
-                        idEventTrigged.Add(comboevent.id, comboevent);
+                        tempComboEvent.OnEventTrigger(controller.componentManager.entity);
+                        idEventTrigged.Add(tempComboEvent.id, tempComboEvent);
                     }
                 }
             }

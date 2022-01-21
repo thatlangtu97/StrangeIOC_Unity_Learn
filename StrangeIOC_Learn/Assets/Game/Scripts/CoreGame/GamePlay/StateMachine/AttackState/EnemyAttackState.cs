@@ -2,24 +2,22 @@
 [CreateAssetMenu(fileName = "EnemyAttackState", menuName = "State/Enemy/EnemyAttackState")]
 public class EnemyAttackState : State
 {
-    public int currentCombo;
     float timeCount = 0;
     bool isEnemyForwark;
     public override void EnterState()
     {
         base.EnterState();
         controller.componentManager.isAttack = true;
-        currentCombo = 0;
         CastSkill();
     }
     public override void UpdateState()
     {
         base.UpdateState();
-        if (timeCount < eventCollectionData[currentCombo].durationAnimation)
+        if (timeCount < eventCollectionData[idState].durationAnimation)
         {
             if (!isEnemyForwark)
             {
-                Vector2 velocityAttack = new Vector2(eventCollectionData[currentCombo].curveX.Evaluate(timeCount), eventCollectionData[currentCombo].curveY.Evaluate(timeCount));
+                Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
                 controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
             }
             timeCount += Time.deltaTime;
@@ -28,8 +26,8 @@ public class EnemyAttackState : State
         {
             if (controller.componentManager.isBufferAttack == true)
             {
-                currentCombo += 1;
-                if (currentCombo == eventCollectionData.Count)
+                idState += 1;
+                if (idState == eventCollectionData.Count)
                 {
                     if (controller.componentManager.speedMove != 0)
                     {
@@ -67,7 +65,7 @@ public class EnemyAttackState : State
         isEnemyForwark = controller.componentManager.checkEnemyForwark();
         controller.componentManager.Rotate();
         timeCount = 0;
-        controller.animator.SetTrigger(eventCollectionData[currentCombo].NameTrigger);
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
         controller.componentManager.isBufferAttack = false;
     }

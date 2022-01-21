@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "IdleState", menuName = "State/IdleState")]
 public class IdleState : State
 {
+    bool isFailing = false;
     public override void InitState(StateMachineController controller)
     {
         base.InitState(controller);
@@ -14,6 +15,29 @@ public class IdleState : State
         //controller.animator.SetTrigger(AnimationTriger.IDLE);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
+        isFailing = false;
+    }
+    public override void UpdateState()
+    {
+        base.UpdateState();
+        if (controller.componentManager.checkGroundBox == false)
+        {
+            controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
+            Vector3 newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+            if (controller.componentManager.checkWall() == true)
+            {
+                newVelocity.x = 0;
+            }
+            controller.componentManager.rgbody2D.velocity = newVelocity;
+            isFailing = true;
+        }
+        else
+        {
+            if (isFailing == true)
+            {
+                EnterState();
+            }
+        }
     }
     public override void ExitState()
     {

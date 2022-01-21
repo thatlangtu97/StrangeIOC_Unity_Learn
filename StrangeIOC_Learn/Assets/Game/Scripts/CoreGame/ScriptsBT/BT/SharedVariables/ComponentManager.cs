@@ -34,7 +34,7 @@ public class ComponentManager : MonoBehaviour
     public int dashCount;
     public int attackAirCount;
     public int maxJump,maxDash, maxAttackAirCount;
-
+    public Vector2 sizeBoxCheckGround2d = new Vector2(.5f,.1f);
     
     private void Awake()
     {
@@ -107,11 +107,30 @@ public class ComponentManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceCheckGround, layerMaskGround);
         if (hit.collider != null)
         {
+            isOnGround = true;
             return true;
         }
         else
         {
+            isOnGround = false;
             return false;
+        }
+    }
+    public bool checkGroundBox
+    {
+        get
+        {
+            Collider2D col = Physics2D.OverlapBox(transform.position, sizeBoxCheckGround2d, layerMaskGround);
+            if (col != null)
+            {
+                isOnGround = true;
+                return true;
+            }
+            else
+            {
+                isOnGround = false;
+                return false;
+            }
         }
     }
     public bool checkWall()

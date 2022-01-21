@@ -12,18 +12,18 @@ public class EnemyFreezeState : State
         controller.componentManager.BehaviorTree.DisableBehavior();
         controller.componentManager.timeScale = 0;
         controller.animator.speed = 0f;
-        coutTime = duration;
+        coutTime = 0;
     }
     public override void UpdateState()
     {
         base.UpdateState();
         
-        if (coutTime < 0)
+        if (coutTime > eventCollectionData[idState].durationAnimation)
         {
             controller.ChangeState(NameState.IdleState);
             //ExitState();
         }
-        coutTime -= Time.deltaTime;
+        coutTime += Time.deltaTime;
     }
     public override void ExitState()
     {
@@ -32,6 +32,5 @@ public class EnemyFreezeState : State
         controller.componentManager.BehaviorTree.EnableBehavior();
         controller.componentManager.timeScale = 1f;
         controller.animator.speed = 1f;
-        
     }
 }

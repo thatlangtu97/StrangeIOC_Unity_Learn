@@ -40,7 +40,7 @@ public class EnemySkillState : State
         ResetEvent();
         controller.componentManager.Rotate();
         timeCount = 0;
-            controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
     }
     public override void OnInputDash()
     {

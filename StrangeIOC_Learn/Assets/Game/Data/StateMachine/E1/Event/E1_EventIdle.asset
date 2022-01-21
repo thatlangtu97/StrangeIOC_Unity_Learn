@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5aa0f1a31e98b14195ebaac1ba4fa42, type: 3}
-  m_Name: E1_IdleState
+  m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
+  m_Name: E1_EventIdle
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -20,9 +20,21 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  idState: 0
-  timeTrigger: 0
-  eventData: []
-  eventCollectionData:
-  - {fileID: 11400000, guid: 06c89b2dfefa7c346b400c86005a9dae, type: 2}
+    SerializationNodes:
+    - Name: EventCombo
+      Entry: 6
+      Data: 
+  NameTrigger: idle
+  durationAnimation: 1
+  curveX:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveY:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

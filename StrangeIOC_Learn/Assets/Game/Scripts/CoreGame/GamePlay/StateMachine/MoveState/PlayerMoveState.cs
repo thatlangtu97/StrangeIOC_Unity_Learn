@@ -4,18 +4,43 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerMoveState", menuName = "State/Player/PlayerMoveState")]
 public class PlayerMoveState : State
 {
+    bool isFailing = false;
     public override void EnterState()
     {
         base.EnterState();
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
+        isFailing = false;
     }
     public override void UpdateState()
     {
         controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
         controller.componentManager.Rotate();
-        if (controller.componentManager.speedMove == 0)
+        
+
+        if (controller.componentManager.checkGround() == false)
         {
-            controller.ChangeState(NameState.IdleState);
+            controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
+            Vector3 newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+            if (controller.componentManager.checkWall() == true)
+            {
+                newVelocity.x = 0;
+            }
+            controller.componentManager.rgbody2D.velocity = newVelocity;
+            isFailing = true;
+        }
+        else
+        {
+            if (controller.componentManager.speedMove == 0)
+            {
+                controller.ChangeState(NameState.IdleState);
+            }
+            else
+            {
+                if (isFailing == true)
+                {
+                    EnterState();
+                }
+            }
         }
     }
     public override void ExitState()

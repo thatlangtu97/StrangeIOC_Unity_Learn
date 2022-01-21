@@ -23,6 +23,5 @@ public class EnemyStateMachine : StateMachineController
                 currentState.OnInputSkill(idSkill);
             }
         }
-
     }
 }

@@ -11,6 +11,9 @@ public class StateMachineController : MonoBehaviour
     public List<StateClone> States;
     public void SetupState()
     {
+        dictionaryStateMachine = new Dictionary<NameState, State>();
+        currentState = null;
+        currentNameState = NameState.UnknowState;
         foreach (StateClone tempState in States) {
             CreateStateFactory(tempState);
         }
@@ -89,6 +92,9 @@ public class StateMachineController : MonoBehaviour
             currentState.EnterState();
         }
     }
+    public virtual void OnInputState(NameState nameState,int idState)
+    {
+    }
     public virtual void OnInputAttack()
     {
     }
@@ -107,6 +113,8 @@ public class StateMachineController : MonoBehaviour
     public virtual void OnInputSkill(int idSkill)
     {
     }
+
+    
 }
 
 [System.Serializable]

@@ -9,13 +9,13 @@ public class SpawnState : State
     {
         base.EnterState();
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
-        coutTime = eventCollectionData[idState].durationAnimation;
+        coutTime = 0;;
     }
     public override void UpdateState()
     {
         base.UpdateState();
-        coutTime -= Time.deltaTime;
-        if (coutTime <= 0)
+        coutTime += Time.deltaTime;
+        if (coutTime > eventCollectionData[idState].durationAnimation)
         {
             controller.ChangeState(NameState.IdleState);
         }
