@@ -16,36 +16,24 @@ public class IdleState : State
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         isFailing = false;
+        controller.componentManager.ResetJumpCount();
+        controller.componentManager.ResetDashCount();
+        controller.componentManager.ResetAttackAirCount();
     }
     public override void UpdateState()
     {
         base.UpdateState();
-        if (controller.componentManager.checkGroundBox == false)
+        if (controller.componentManager.checkGroundBoxCast == false)
         {
             controller.ChangeState(NameState.FallingState);
-            //controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-            //Vector3 newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-            //if (controller.componentManager.checkWall() == true)
-            //{
-            //    newVelocity.x = 0;
-            //}
-            //controller.componentManager.rgbody2D.velocity = newVelocity;
-            //isFailing = true;
-        }
-        else
-        {
-            //if (isFailing == true)
-            //{
-            //    EnterState();
-            //}
         }
     }
     public override void ExitState()
     {
         base.ExitState();
-        controller.componentManager.ResetJumpCount();
-        controller.componentManager.ResetDashCount();
-        controller.componentManager.ResetAttackAirCount();
+        //controller.componentManager.ResetJumpCount();
+        //controller.componentManager.ResetDashCount();
+        //controller.componentManager.ResetAttackAirCount();
     }
     public override void OnInputAttack()
     {

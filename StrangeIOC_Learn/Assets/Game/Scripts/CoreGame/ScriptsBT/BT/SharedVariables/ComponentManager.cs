@@ -34,8 +34,10 @@ public class ComponentManager : MonoBehaviour
     public int dashCount;
     public int attackAirCount;
     public int maxJump,maxDash, maxAttackAirCount;
+    public Vector2 originBoxCheckGround2d = new Vector2(0f, 0f);
     public Vector2 sizeBoxCheckGround2d = new Vector2(.5f,.1f);
-    
+    public float radius = .1f;
+
     private void Awake()
     {
         // var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
@@ -116,12 +118,19 @@ public class ComponentManager : MonoBehaviour
             return false;
         }
     }
-    public bool checkGroundBox
+    public bool checkGroundBoxCast
     {
         get
         {
-            Collider2D col = Physics2D.OverlapBox(transform.position, sizeBoxCheckGround2d, layerMaskGround);
-            if (col != null)
+            //RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + originBoxCheckGround2d, sizeBoxCheckGround2d,0, Vector2.down,0f, layerMaskGround);
+            Vector2 origin = (Vector2)transform.position + originBoxCheckGround2d;
+            float radius = this.radius;
+            Vector2 direction = Vector2.zero;
+            float distance = 0;
+            int layerMask = layerMaskGround;
+            RaycastHit2D hit = Physics2D.CircleCast(origin, radius, direction, distance, layerMask);
+            
+            if (hit.collider != null)
             {
                 isOnGround = true;
                 return true;

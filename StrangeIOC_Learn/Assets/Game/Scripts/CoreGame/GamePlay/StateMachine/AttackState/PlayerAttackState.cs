@@ -23,6 +23,7 @@ public class PlayerAttackState : State
             {
                 Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
                 controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
+                controller.componentManager.rgbody2D.velocity = Vector2.zero;
             }
             
             if (controller.componentManager.isBufferAttack == true && (timeCount + timeBuffer) > eventCollectionData[idState].durationAnimation) {
@@ -31,7 +32,16 @@ public class PlayerAttackState : State
             else
             {
                 timeCount += Time.deltaTime;
+                if ((timeCount + timeBuffer) > eventCollectionData[idState].durationAnimation)
+                {
+                    if (controller.componentManager.checkGround() == false)
+                    {
+                        controller.ChangeState(NameState.FallingState);
+                    }
+                }
             }
+
+            
         }
         else
         {
@@ -54,13 +64,20 @@ public class PlayerAttackState : State
             }
             else
             {
-                if (controller.componentManager.speedMove != 0)
+                if (controller.componentManager.checkGround() == true)
                 {
-                    controller.ChangeState(NameState.MoveState);
+                    if (controller.componentManager.speedMove != 0)
+                    {
+                        controller.ChangeState(NameState.MoveState);
+                    }
+                    else
+                    {
+                        controller.ChangeState(NameState.IdleState);
+                    }
                 }
                 else
                 {
-                    controller.ChangeState(NameState.IdleState);
+                    controller.ChangeState(NameState.FallingState);
                 }
             }
         }

@@ -10,24 +10,17 @@ public class PlayerMoveState : State
         base.EnterState();
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         isFailing = false;
+        controller.componentManager.ResetJumpCount();
+        controller.componentManager.ResetDashCount();
+        controller.componentManager.ResetAttackAirCount();
     }
     public override void UpdateState()
     {
         controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
         controller.componentManager.Rotate();
-        
-
-        if (controller.componentManager.checkGround() == false)
+        if (controller.componentManager.checkGroundBoxCast == false)
         {
             controller.ChangeState(NameState.FallingState);
-            //controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-            //Vector3 newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-            //if (controller.componentManager.checkWall() == true)
-            //{
-            //    newVelocity.x = 0;
-            //}
-            //controller.componentManager.rgbody2D.velocity = newVelocity;
-            //isFailing = true;
         }
         else
         {
@@ -47,9 +40,9 @@ public class PlayerMoveState : State
     public override void ExitState()
     {
         base.ExitState();
-        controller.componentManager.ResetJumpCount();
-        controller.componentManager.ResetDashCount();
-        controller.componentManager.ResetAttackAirCount();
+        //controller.componentManager.ResetJumpCount();
+        //controller.componentManager.ResetDashCount();
+        //controller.componentManager.ResetAttackAirCount();
     }
     public override void OnInputAttack()
     {

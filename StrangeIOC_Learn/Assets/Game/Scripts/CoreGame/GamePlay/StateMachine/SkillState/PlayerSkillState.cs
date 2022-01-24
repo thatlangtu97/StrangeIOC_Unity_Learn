@@ -59,10 +59,7 @@ public class PlayerSkillState : State
         controller.componentManager.Rotate();
         timeTrigger = 0;
         timeCount = 0;
-        //if (controller.componentManager.checkGround() == true)
-            controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
-        //else
-        //    controller.animator.SetTrigger(eventData[idState].NameTriggerAir);
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
     }
     public override void OnInputDash()
     {

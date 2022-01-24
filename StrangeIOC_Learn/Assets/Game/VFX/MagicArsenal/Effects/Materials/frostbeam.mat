@@ -21,8 +21,8 @@ Material:
     m_TexEnvs:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 05be7bed1f22a384b82b267d3a0ac553, type: 3}
-        m_Scale: {x: 0.51137835, y: 1}
-        m_Offset: {x: -195.36504, y: 0}
+        m_Scale: {x: 1.483615, y: 1}
+        m_Offset: {x: -201.27185, y: 0}
     m_Floats:
     - _InvFade: 1
     m_Colors:

@@ -8,8 +8,8 @@ public class FallingState : State
     {
         base.EnterState();
         controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-        //controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         controller.componentManager.Rotate();
+
     }
     public override void UpdateState()
     {
