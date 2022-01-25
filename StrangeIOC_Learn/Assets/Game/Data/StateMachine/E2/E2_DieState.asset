@@ -22,5 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   idState: 0
+  timeTrigger: 0
   eventData: []
-  duration: 1
+  eventCollectionData:
+  - {fileID: 11400000, guid: f73672a8f7e2cb74c92d57ad8370760f, type: 2}

@@ -32,7 +32,7 @@ Material:
     - _ColorMask: 15
     - _Cutoff: 0
     - _DarkColorAlphaAdditive: 0
-    - _GrayPhase: 1
+    - _GrayPhase: 0
     - _GrayScale_Fade_1: 1
     - _OutlineMipLevel: 0
     - _OutlineReferenceTexWidth: 1024

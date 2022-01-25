@@ -22,22 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   idState: 0
-  eventData:
-  - NameTrigger: skill1
-    NameTriggerAir: skill1
-    durationAnimation: 1.506
-    velocity: {x: 0, y: 0}
-    durationVelocity: 0
-    curveX:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    curveY:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    eventConfig: {fileID: 11400000, guid: 6b692d255e6b744efb2e3b4947f5a128, type: 2}
+  timeTrigger: 0
+  eventData: []
+  eventCollectionData:
+  - {fileID: 11400000, guid: 86131eec6c8a5ce4d844872f07400d1d, type: 2}

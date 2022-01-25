@@ -92,6 +92,12 @@ public class StateMachineController : MonoBehaviour
             currentState.EnterState();
         }
     }
+    public void SetIdState(NameState nameState, int idState)
+    {
+        if (!dictionaryStateMachine.ContainsKey(nameState)) return;
+        State newState = dictionaryStateMachine[nameState];
+        newState.idState = idState;
+    }
     public virtual void OnInputState(NameState nameState,int idState)
     {
     }

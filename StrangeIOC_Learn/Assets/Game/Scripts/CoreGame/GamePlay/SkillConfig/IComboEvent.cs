@@ -1,7 +1,9 @@
 ﻿
 using UnityEngine;
+using Sirenix.OdinInspector;
 public interface IComboEvent 
 {
+
     int id { get; }
     float timeTrigger { get; }
     void OnEventTrigger(GameEntity entity);
@@ -9,15 +11,30 @@ public interface IComboEvent
 }
 public class CastProjectileEvent : IComboEvent
 {
+    [BoxGroup("Cast Projectile")]
+    [GUIColor(0f,1f,0f)]
     public int idEvent;
+
+    [BoxGroup("Cast Projectile")]
+    [Range(0f, 5f)]
     public float timeTriggerEvent;
+
+    [BoxGroup("Cast Projectile")]
+    [Range(0f,5f)]
     public float duration;
+
+    [BoxGroup("Cast Projectile")]
     public GameObject Prefab;
+
+    [BoxGroup("Cast Projectile")]
     public Vector3 Localosition;
-    
+
+    [BoxGroup("Cast Projectile")]
+    [LabelWidth(300)]
+    public bool recycleWhenFinishDuration = false;
+
     public int id { get { return idEvent; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
-    public bool recycleWhenFinishDuration = false;
     private GameObject prefabSpawned;
     public void OnEventTrigger(GameEntity entity)
     {
@@ -46,11 +63,23 @@ public class CastProjectileEvent : IComboEvent
 }
 public class CastColliderEvent : IComboEvent
 {
+    [BoxGroup("Cast Collider")]
+    [GUIColor(0f, 1f, 0f)]
     public int idEvent;
+
+    [BoxGroup("Cast Collider")]
+    [Range(0f, 5f)]
     public float timeTriggerEvent;
+
+    [BoxGroup("Cast Collider")]
     public Vector3 position;
+
+    [BoxGroup("Cast Collider")]
     public Vector3 sizeBox;
+
+    [BoxGroup("Cast Collider")]
     public LayerMask layerMaskEnemy;
+
     public int id { get { return idEvent; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
 
@@ -78,8 +107,15 @@ public class CastColliderEvent : IComboEvent
 }
 public class CastEnableMeshRenderer : IComboEvent
 {
+    [BoxGroup("Enable Mesh Renderer")]
+    [GUIColor(0f, 1f, 0f)]
     public int idEvent;
+
+    [BoxGroup("Enable Mesh Renderer")]
+    [Range(0f, 5f)]
     public float timeTriggerEvent;
+
+    [BoxGroup("Enable Mesh Renderer")]
     public bool enable;
     public int id { get { return idEvent; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
@@ -98,17 +134,38 @@ public class CastEnableMeshRenderer : IComboEvent
 }
 public class CastImpackEvent : IComboEvent
 {
+    [BoxGroup("Cast Impack Event")]
+    [GUIColor(0f, 1f, 0f)]
     public int idEvent;
+
+    [BoxGroup("Cast Impack Event")]
+    [Range(0f, 5f)]
     public float timeTriggerEvent;
+
+    [BoxGroup("Cast Impack Event")]
+    public float duration = 0.5f;
+
+    [BoxGroup("Cast Impack Event")]
+    public GameObject Prefab;
+
+    [BoxGroup("Cast Impack Event")]
+    public Vector3 Localosition;
+
+    [BoxGroup("Cast Impack Event")]
+    public Vector3 LocalRotation;
+
+    [BoxGroup("Cast Impack Event")]
+    public Vector3 LocalScale;
+
+    [BoxGroup("Cast Impack Event")]
+    public bool setParent = true;
+
+    [BoxGroup("Cast Impack Event")]
+    [LabelWidth(300)]
+    public bool recycleWhenFinishDuration = false;
+
     public int id { get { return idEvent; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
-    public float duration=0.5f;
-    public GameObject Prefab;
-    public Vector3 Localosition;
-    public Vector3 LocalRotation;
-    public Vector3 LocalScale;
-    public bool setParent=true;
-    public bool recycleWhenFinishDuration = false;
     private GameObject prefabSpawned;
     public void OnEventTrigger(GameEntity entity)
     {
