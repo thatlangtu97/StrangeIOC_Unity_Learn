@@ -29,7 +29,7 @@ namespace CoreBT
                     if (Contexts.sharedInstance.game.playerFlagEntity == null)
                     {
                         componentManager.Value.enemy = null;
-                        componentManager.Value.stateMachine.ChangeState(NameState.IdleState, true);
+                        componentManager.Value.stateMachine.ChangeState(NameState.IdleState, 0, true);
                         return TaskStatus.Failure;
                     }
                 }

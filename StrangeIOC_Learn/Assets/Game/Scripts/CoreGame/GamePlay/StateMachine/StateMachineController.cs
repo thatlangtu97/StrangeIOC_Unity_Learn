@@ -28,11 +28,11 @@ public class StateMachineController : MonoBehaviour
         SetupState();
         if (dictionaryStateMachine.ContainsKey(NameState.SpawnState))
         {
-            ChangeState(NameState.SpawnState, true);
+            ChangeState(NameState.SpawnState, 0, true);
         }
         else
         {
-            ChangeState(NameState.IdleState, true);
+            ChangeState(NameState.IdleState, 0, true);
         }
     }
     public virtual void UpdateState()
@@ -61,10 +61,73 @@ public class StateMachineController : MonoBehaviour
             dictionaryStateMachine[stateClone.NameState] = state;
         }
     }
-    public virtual void ChangeState(NameState nameState, bool forceChange = false )
+    //public virtual void ChangeState(NameState nameState, bool forceChange = false )
+    //{
+    //    if ( !dictionaryStateMachine.ContainsKey(nameState) ) return;
+    //    State newState = dictionaryStateMachine[nameState];
+    //    if (!forceChange)
+    //    {
+    //        if (currentNameState != NameState.DieState && currentNameState != NameState.ReviveState)
+    //        {
+    //            if (nameState != currentNameState)
+    //            {
+    //                if (currentState != null)
+    //                {
+    //                    currentState.ExitState();
+    //                }
+    //                currentState = newState;
+    //                currentNameState = nameState;
+    //                currentState.EnterState();
+    //            }
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (currentState != null)
+    //        {
+    //            currentState.ExitState();
+    //        }
+    //        currentState = newState;
+    //        currentNameState = nameState;
+    //        currentState.EnterState();
+    //    }
+    //}
+    public virtual void ChangeState(NameState nameState, bool forceChange = false)
     {
-        if ( !dictionaryStateMachine.ContainsKey(nameState) ) return;
+        if (!dictionaryStateMachine.ContainsKey(nameState)) return;
         State newState = dictionaryStateMachine[nameState];
+        if (!forceChange)
+        {
+            if (currentNameState != NameState.DieState && currentNameState != NameState.ReviveState)
+            {
+                if (nameState != currentNameState)
+                {
+                    if (currentState != null)
+                    {
+                        currentState.ExitState();
+                    }
+                    currentState = newState;
+                    currentNameState = nameState;
+                    currentState.EnterState();
+                }
+            }
+        }
+        else
+        {
+            if (currentState != null)
+            {
+                currentState.ExitState();
+            }
+            currentState = newState;
+            currentNameState = nameState;
+            currentState.EnterState();
+        }
+    }
+    public virtual void ChangeState(NameState nameState, int idState, bool forceChange = false)
+    {
+        if (!dictionaryStateMachine.ContainsKey(nameState)) return;
+        State newState = dictionaryStateMachine[nameState];
+        newState.idState = idState;
         if (!forceChange)
         {
             if (currentNameState != NameState.DieState && currentNameState != NameState.ReviveState)

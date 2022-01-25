@@ -6,10 +6,12 @@ namespace CoreBT
     {
         public SharedComponentManager componentManager;
         public NameState nameState;
+        public int idState;
+        public bool forceChangeState;
         public override void OnStart()
         {
             base.OnStart();
-            componentManager.Value.stateMachine.ChangeState(nameState);
+            componentManager.Value.stateMachine.ChangeState(nameState, idState, forceChangeState);
 
         }
     }

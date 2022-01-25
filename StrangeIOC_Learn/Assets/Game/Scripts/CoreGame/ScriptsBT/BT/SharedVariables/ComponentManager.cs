@@ -25,7 +25,7 @@ public class ComponentManager : MonoBehaviour
     public float distanceCheckGround=0.1f;
     [Range(0f, 2f)]
     public float distanceCheckWall = 0.1f;
-    [Range(0f, 2f)]
+    [Range(0f, 5f)]
     public float distanceChecEnemy = 0.1f;
     public float timeScale = 1f;
     public float speedMove = 1f;

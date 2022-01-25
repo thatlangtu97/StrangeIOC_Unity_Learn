@@ -14973,7 +14973,7 @@ MonoBehaviour:
   isBufferAttack: 0
   distanceCheckGround: 0.02
   distanceCheckWall: 0.1
-  distanceChecEnemy: 0.32
+  distanceChecEnemy: 2.5
   timeScale: 1
   speedMove: 0
   maxSpeedMove: 1
@@ -16849,7 +16849,7 @@ Transform:
   m_GameObject: {fileID: 1637345640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.0023, z: 0}
-  m_LocalScale: {x: -0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: -2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1269408444}
   m_RootOrder: 0
