@@ -41,10 +41,6 @@ public class PlayerSkillState : State
             else
             {
                 controller.ChangeState(NameState.FallingState);
-                //controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-                //controller.componentManager.Rotate();
-                //controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-
             }
         }
     }
@@ -55,9 +51,8 @@ public class PlayerSkillState : State
     }
     public void CastSkill()
     {
-        idEventTrigged.Clear();
+        ResetEvent();
         controller.componentManager.Rotate();
-        timeTrigger = 0;
         timeCount = 0;
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
     }

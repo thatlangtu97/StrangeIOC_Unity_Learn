@@ -104,6 +104,10 @@ public class StateMachineController : MonoBehaviour
     public virtual void OnInputAttack()
     {
     }
+    public virtual void OnInputAttack(int idState)
+    {
+
+    }
     public virtual void OnInputJump()
     {
     }

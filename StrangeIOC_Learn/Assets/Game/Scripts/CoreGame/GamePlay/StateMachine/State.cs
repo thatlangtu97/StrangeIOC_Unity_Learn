@@ -5,10 +5,9 @@ using UnityEngine;
 public class State : SerializedScriptableObject
 {
     protected StateMachineController controller;
+    protected Dictionary<int, IComboEvent> idEventTrigged = new Dictionary<int, IComboEvent>();
+    protected float timeTrigger;
     public int idState;
-    protected Dictionary<int,IComboEvent> idEventTrigged = new Dictionary<int, IComboEvent>();
-    public float timeTrigger;
-    public List<AttackConfig> eventData;
     public List<EventCollection> eventCollectionData;
 
     public virtual void InitState(StateMachineController controller)
@@ -40,6 +39,10 @@ public class State : SerializedScriptableObject
     public virtual void ResetEvent()
     {
         idEventTrigged.Clear();
+        timeTrigger = 0f;
+    }
+    public virtual void ResetTimeTrigger()
+    {
         timeTrigger = 0f;
     }
     public virtual void RecycleEvent()
@@ -92,6 +95,7 @@ public class State : SerializedScriptableObject
     public virtual void OnRevive()
     {
     }
+    
     /*
         public virtual TaskStatus OnInputMoveLeft()
         {
