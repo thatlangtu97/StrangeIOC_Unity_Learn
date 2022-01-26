@@ -26,19 +26,19 @@ public class EnemySkillState : State
         }
         else
         {
-            controller.componentManager.rgbody2D.gravityScale = 2;
+            //controller.componentManager.rgbody2D.gravityScale = 2;
             controller.ChangeState(NameState.IdleState);
         }
     }
     public override void ExitState()
     {
         base.ExitState();
-        controller.componentManager.rgbody2D.gravityScale = 2;
+        //controller.componentManager.rgbody2D.gravityScale = 2;
     }
     public void CastSkill()
     {
         ResetEvent();
-        controller.componentManager.Rotate();
+        //controller.componentManager.Rotate();
         timeCount = 0;
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
     }
