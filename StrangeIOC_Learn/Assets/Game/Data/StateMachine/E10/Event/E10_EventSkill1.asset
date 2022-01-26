@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
-  m_Name: E10_EventAttack2
+  m_Name: E10_EventSkill1
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -24,14 +24,14 @@ MonoBehaviour:
     - Name: EventCombo
       Entry: 6
       Data: 
-  NameTrigger: attack2
-  durationAnimation: 1
+  NameTrigger: skill1
+  durationAnimation: 4.1
   curveX:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.004166667
-      value: 0.002350072
+      time: 0
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -39,35 +39,35 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.1316985
+      time: 1.5971338
       value: 0
-      inSlope: 0.099636614
-      outSlope: 0.099636614
+      inSlope: 0.000000100516544
+      outSlope: 0.000000100516544
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.9372362
+      inWeight: 0.45850828
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.13628192
-      value: 7
-      inSlope: -0.0067318026
-      outSlope: -0.0067318026
+      time: 1.767
+      value: 5
+      inSlope: -0.0030250447
+      outSlope: -0.0030250447
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.1850168
+    - serializedVersion: 3
+      time: 4.1
+      value: 5
+      inSlope: -0.0024307694
+      outSlope: -0.0024307694
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.2540914
+      outWeight: 0.39180982
     - serializedVersion: 3
-      time: 0.42487156
-      value: 7
-      inSlope: -0.07514588
-      outSlope: -0.07514588
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.24270967
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.43487155
-      value: 0
+      time: 4.15
+      value: 3
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -79,16 +79,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   curveY:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.3
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
