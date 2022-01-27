@@ -9,4 +9,22 @@ public class EventCollection : SerializedScriptableObject
     public float durationAnimation;
     public AnimationCurve curveX, curveY;
     public List<IComboEvent> EventCombo;
+    protected override void OnAfterDeserialize()
+    {
+        //base.OnAfterDeserialize();
+        Modify();
+    }
+    protected override void OnBeforeSerialize()
+    {
+        //base.OnBeforeSerialize();
+        Modify();
+    }
+    public void Modify()
+    {
+        if(EventCombo!=null)
+        for (int i = 0; i < EventCombo.Count; i++)
+        {
+            EventCombo[i].id = i;
+        }
+    }
 }

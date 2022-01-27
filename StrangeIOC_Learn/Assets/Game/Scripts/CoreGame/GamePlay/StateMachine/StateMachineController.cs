@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class StateMachineController : MonoBehaviour
 {
     public Dictionary<NameState, State> dictionaryStateMachine = new Dictionary<NameState, State>();
@@ -61,37 +60,6 @@ public class StateMachineController : MonoBehaviour
             dictionaryStateMachine[stateClone.NameState] = state;
         }
     }
-    //public virtual void ChangeState(NameState nameState, bool forceChange = false )
-    //{
-    //    if ( !dictionaryStateMachine.ContainsKey(nameState) ) return;
-    //    State newState = dictionaryStateMachine[nameState];
-    //    if (!forceChange)
-    //    {
-    //        if (currentNameState != NameState.DieState && currentNameState != NameState.ReviveState)
-    //        {
-    //            if (nameState != currentNameState)
-    //            {
-    //                if (currentState != null)
-    //                {
-    //                    currentState.ExitState();
-    //                }
-    //                currentState = newState;
-    //                currentNameState = nameState;
-    //                currentState.EnterState();
-    //            }
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (currentState != null)
-    //        {
-    //            currentState.ExitState();
-    //        }
-    //        currentState = newState;
-    //        currentNameState = nameState;
-    //        currentState.EnterState();
-    //    }
-    //}
     public virtual void ChangeState(NameState nameState, bool forceChange = false)
     {
         if (!dictionaryStateMachine.ContainsKey(nameState)) return;

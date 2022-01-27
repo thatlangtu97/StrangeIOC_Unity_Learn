@@ -8,7 +8,7 @@ public class PlayerSkillState : State
     public override void EnterState()
     {
         base.EnterState();
-
+        
         CastSkill();
         controller.componentManager.rgbody2D.gravityScale = 0;
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
@@ -88,6 +88,7 @@ public class PlayerSkillState : State
             idState = idSkill;
             EnterState();
         }
+
     }
     public override void OnInputAttack()
     {

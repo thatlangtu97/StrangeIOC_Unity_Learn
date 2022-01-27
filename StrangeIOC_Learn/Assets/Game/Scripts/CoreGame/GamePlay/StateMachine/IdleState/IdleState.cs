@@ -48,7 +48,6 @@ public class IdleState : State
     public override void OnInputJump()
     {
         base.OnInputJump();
-        Debug.Log(controller.dictionaryStateMachine[NameState.JumpState]);
         controller.ChangeState(NameState.JumpState);
     }
     public override void OnInputMove()

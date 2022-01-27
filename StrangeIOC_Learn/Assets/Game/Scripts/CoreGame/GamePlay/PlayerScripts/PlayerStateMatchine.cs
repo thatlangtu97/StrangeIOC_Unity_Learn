@@ -30,6 +30,22 @@ public class PlayerStateMatchine : StateMachineController
         {
             ChangeState(NameState.ReviveState, true);
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            OnInputSkill(0);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            OnInputSkill(1);
+        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    OnInputSkill(2);
+        //}
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    OnInputSkill(3);
+        //}
     }
     public override void OnInputDash()
     {
@@ -75,6 +91,5 @@ public class PlayerStateMatchine : StateMachineController
             }
             currentState.OnInputSkill(idSkill);
         }
-
     }
 }

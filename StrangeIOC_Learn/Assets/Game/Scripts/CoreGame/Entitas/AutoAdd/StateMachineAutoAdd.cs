@@ -9,7 +9,6 @@ public class StateMachineAutoAdd : MonoBehaviour, IAutoAdd<GameEntity>
     {
         e.AddStateMachineContainer(stateMachine);
         stateMachine.InitStateMachine();
-        Debug.Log("add state machine");
         //Destroy(this);
     }
 
