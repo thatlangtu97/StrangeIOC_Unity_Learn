@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 public class StateMachineController : MonoBehaviour
 {
     public Dictionary<NameState, State> dictionaryStateMachine = new Dictionary<NameState, State>();
-    [Header("Current State")]
+    [BoxGroup("Current State")]
     public State currentState;
+    [BoxGroup("Current State")]
     public NameState currentNameState;
+    [LabelText("STATE TO CLONE")]
     public List<StateClone> States;
     public void SetupState()
     {
@@ -154,8 +157,19 @@ public class StateMachineController : MonoBehaviour
     public virtual void OnInputSkill(int idSkill)
     {
     }
+    public virtual void OnHit(Action action)
+    {
+        if (componentManager.properties.immuneHit)
+        { 
+            return; 
+        }
+        if (action != null)
+        {
+            action.Invoke();
+        }
+        ChangeState(NameState.HitState,true);
+    }
 
-    
 }
 
 [System.Serializable]

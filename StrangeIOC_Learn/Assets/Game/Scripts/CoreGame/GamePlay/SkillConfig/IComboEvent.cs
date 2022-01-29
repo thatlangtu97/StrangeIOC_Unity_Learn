@@ -1,6 +1,16 @@
 ﻿
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System;
+
+public enum PowerCollider
+{
+    Node,
+    Small,
+    Medium,
+    Heavy,
+    Keep,
+}
 public interface IComboEvent 
 {
 
@@ -9,28 +19,34 @@ public interface IComboEvent
     void OnEventTrigger(GameEntity entity);
     void Recycle();
 }
+#region CAST PROJECTILE
 public class CastProjectileEvent : IComboEvent
 {
-    [BoxGroup("Cast Projectile")]
-    [GUIColor(0f,1f,0f)]
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile", true, true)]
+    [HideInEditorMode()]
     public int idEvent;
 
-    [BoxGroup("Cast Projectile")]
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
     [Range(0f, 5f)]
     public float timeTriggerEvent;
 
-    [BoxGroup("Cast Projectile")]
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
     [Range(0f,5f)]
     public float duration;
 
-    [BoxGroup("Cast Projectile")]
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
     public GameObject Prefab;
 
-    [BoxGroup("Cast Projectile")]
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
     public Vector3 Localosition;
 
-    [BoxGroup("Cast Projectile")]
-    [LabelWidth(300)]
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
     public bool recycleWhenFinishDuration = false;
 
     public int id { get { return idEvent; } set { idEvent = value; } }
@@ -61,25 +77,40 @@ public class CastProjectileEvent : IComboEvent
         }
     }
 }
+#endregion
+
+#region CAST BOX COLLIDER
 public class CastBoxColliderEvent : IComboEvent
 {
-    [BoxGroup("Cast Collider")]
-    [GUIColor(0f, 1f, 0f)]
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    //[BoxGroup("Cast Collider", true, true)]
+    [HideInEditorMode()]
     public int idEvent;
 
-    [BoxGroup("Cast Collider")]
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    //[BoxGroup("Cast Collider")]
     [Range(0f, 5f)]
     public float timeTriggerEvent;
 
-    [BoxGroup("Cast Collider")]
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    //[BoxGroup("Cast Collider")]
     public Vector3 position;
 
-    [BoxGroup("Cast Collider")]
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    //[BoxGroup("Cast Collider")]
     public Vector3 sizeBox;
 
-    [BoxGroup("Cast Collider")]
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    //[BoxGroup("Cast Collider")]
     public LayerMask layerMaskEnemy;
 
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    //[BoxGroup("Cast Collider")]
+    public PowerCollider powerCollider;
+
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    //[BoxGroup("Cast Collider")]
+    public Vector2 force;
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
 
@@ -96,7 +127,11 @@ public class CastBoxColliderEvent : IComboEvent
             {
                 if (col != null)
                 {
-                    DealDmgManager.DealDamage(col, entity);
+                    Action action = delegate
+                    {
+                        col.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(force.x * transform.localScale.x, force.y), col.transform.position);
+                    };
+                    DealDmgManager.DealDamage(col, entity, powerCollider, action);
                     break;
                 }
             }
@@ -109,25 +144,40 @@ public class CastBoxColliderEvent : IComboEvent
     {
     }
 }
+#endregion
+
+#region CAST CIRCLE COLLIDER
 public class CastCircleColliderEvent : IComboEvent
 {
-    [BoxGroup("Cast Collider")]
-    [GUIColor(0f, 1f, 0f)]
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    //[BoxGroup("Cast Circle Collider", true, true)]
+    [HideInEditorMode()]
     public int idEvent;
 
-    [BoxGroup("Cast Collider")]
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    //[BoxGroup("Cast Circle Collider")]
     [Range(0f, 5f)]
     public float timeTriggerEvent;
 
-    [BoxGroup("Cast Collider")]
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    //[BoxGroup("Cast Circle Collider")]
     public Vector3 position;
 
-    [BoxGroup("Cast Collider")]
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    //[BoxGroup("Cast Circle Collider")]
     public float radius;
 
-    [BoxGroup("Cast Collider")]
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    //[BoxGroup("Cast Circle Collider")]
     public LayerMask layerMaskEnemy;
 
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    //[BoxGroup("Cast Circle Collider")]
+    public PowerCollider powerCollider;
+
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    //[BoxGroup("Cast Circle Collider")]
+    public Vector2 force;
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
 
@@ -143,7 +193,11 @@ public class CastCircleColliderEvent : IComboEvent
             {
                 if (col != null)
                 {
-                    DealDmgManager.DealDamage(col, entity);
+                    Action action = delegate
+                    {
+                        col.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(force.x * transform.localScale.x, force.y), col.transform.position);
+                    };
+                    DealDmgManager.DealDamage(col, entity, powerCollider, action);
                     break;
                 }
             }
@@ -156,17 +210,23 @@ public class CastCircleColliderEvent : IComboEvent
     {
     }
 }
+#endregion
+
+#region CAST ENABLE MESH RENDERER
 public class CastEnableMeshRenderer : IComboEvent
 {
-    [BoxGroup("Enable Mesh Renderer")]
-    [GUIColor(0f, 1f, 0f)]
+    [FoldoutGroup("CAST ENABLE MESH RENDERER")]
+    //[BoxGroup("Enable Mesh Renderer", true, true)]
+    [HideInEditorMode()]
     public int idEvent;
 
-    [BoxGroup("Enable Mesh Renderer")]
+    [FoldoutGroup("CAST ENABLE MESH RENDERER")]
+    //[BoxGroup("Enable Mesh Renderer")]
     [Range(0f, 5f)]
     public float timeTriggerEvent;
 
-    [BoxGroup("Enable Mesh Renderer")]
+    [FoldoutGroup("CAST ENABLE MESH RENDERER")]
+    //[BoxGroup("Enable Mesh Renderer")]
     public bool enable;
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
@@ -183,36 +243,48 @@ public class CastEnableMeshRenderer : IComboEvent
     {
     }
 }
+#endregion
+
+#region CAST IMPACK
 public class CastImpackEvent : IComboEvent
 {
-    [BoxGroup("Cast Impack Event")]
-    [GUIColor(0f, 1f, 0f)]
+    //[FoldoutGroup("$arenaName")]
+    [FoldoutGroup("CAST IMPACK")]
+    //[BoxGroup("Cast Impack Event", true, true)]
+    [HideInEditorMode()]
     public int idEvent;
 
-    [BoxGroup("Cast Impack Event")]
+    [FoldoutGroup("CAST IMPACK")]
+    //[BoxGroup("Cast Impack Event")]
     [Range(0f, 5f)]
     public float timeTriggerEvent;
 
-    [BoxGroup("Cast Impack Event")]
+    [FoldoutGroup("CAST IMPACK")]
+    //[BoxGroup("Cast Impack Event")]
     public float duration = 0.5f;
 
-    [BoxGroup("Cast Impack Event")]
+    [FoldoutGroup("CAST IMPACK")]
+    //[BoxGroup("Cast Impack Event")]
     public GameObject Prefab;
 
-    [BoxGroup("Cast Impack Event")]
+    [FoldoutGroup("CAST IMPACK")]
+    //[BoxGroup("Cast Impack Event")]
     public Vector3 Localosition;
 
-    [BoxGroup("Cast Impack Event")]
+    [FoldoutGroup("CAST IMPACK")]
+    //[BoxGroup("Cast Impack Event")]
     public Vector3 LocalRotation;
 
-    [BoxGroup("Cast Impack Event")]
+    [FoldoutGroup("CAST IMPACK")]
+    //[BoxGroup("Cast Impack Event")]
     public Vector3 LocalScale;
 
-    [BoxGroup("Cast Impack Event")]
+    [FoldoutGroup("CAST IMPACK")]
+    //[BoxGroup("Cast Impack Event")]
     public bool setParent = true;
 
-    [BoxGroup("Cast Impack Event")]
-    [LabelWidth(300)]
+    [FoldoutGroup("CAST IMPACK")]
+    //[BoxGroup("Cast Impack Event")]
     public bool recycleWhenFinishDuration = false;
 
     public int id { get { return idEvent; } set { idEvent = value; } }
@@ -249,3 +321,6 @@ public class CastImpackEvent : IComboEvent
         }
     }
 }
+#endregion
+
+

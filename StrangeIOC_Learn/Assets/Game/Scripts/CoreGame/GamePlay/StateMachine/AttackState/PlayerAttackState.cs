@@ -19,6 +19,7 @@ public class PlayerAttackState : State
         base.UpdateState();
         if (timeCount < eventCollectionData[idState].durationAnimation)
         {
+            isEnemyForwark = controller.componentManager.checkEnemyForwark();
             if (!isEnemyForwark)
             {
                 Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));

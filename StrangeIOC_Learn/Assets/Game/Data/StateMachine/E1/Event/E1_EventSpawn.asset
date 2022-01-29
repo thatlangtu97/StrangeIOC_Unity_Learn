@@ -88,7 +88,7 @@ MonoBehaviour:
       Data: 2
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.4
+      Data: 0.29
     - Name: enable
       Entry: 5
       Data: true
@@ -101,7 +101,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  NameTrigger: spawn
+  NameTrigger: idle
   durationAnimation: 1
   curveX:
     serializedVersion: 2

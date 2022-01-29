@@ -9,8 +9,8 @@ public class GizmoDrawerTool : MonoBehaviour
             if(skeleton == null)
             {
                 GameObject temp = new GameObject();
-                skeleton = temp.AddComponent<GizmoDrawerTool>();
                 temp.name = "GizmoDrawerTool";
+                skeleton = temp.AddComponent<GizmoDrawerTool>();
             }
             return skeleton; }
     
@@ -51,14 +51,6 @@ public class GizmoDrawerTool : MonoBehaviour
                     listCollider.RemoveAt(i);
                 }
             }
-            //for (int i = 0; i < listCollider.Count; i++)
-            //{
-            //    if (listCollider[i].flameDestroy >= frameDestroy)
-            //    {
-            //        listCollider.RemoveAt(i);
-            //    }
-            //}
-
         }
     }
     public void draw(Vector3 position, Vector3 sizeBox, colliderType colliderType )

@@ -11,21 +11,25 @@ public partial class GameEntity {
     public TakeDamageComponent takeDamage { get { return (TakeDamageComponent)GetComponent(GameComponentsLookup.TakeDamage); } }
     public bool hasTakeDamage { get { return HasComponent(GameComponentsLookup.TakeDamage); } }
 
-    public void AddTakeDamage(GameEntity newEntity, GameEntity newEntityEnemy, int newDamage) {
+    public void AddTakeDamage(GameEntity newEntity, GameEntity newEntityEnemy, int newDamage, PowerCollider newPowerCollider, System.Action newAction) {
         var index = GameComponentsLookup.TakeDamage;
         var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
         component.entity = newEntity;
         component.entityEnemy = newEntityEnemy;
         component.damage = newDamage;
+        component.powerCollider = newPowerCollider;
+        component.action = newAction;
         AddComponent(index, component);
     }
 
-    public void ReplaceTakeDamage(GameEntity newEntity, GameEntity newEntityEnemy, int newDamage) {
+    public void ReplaceTakeDamage(GameEntity newEntity, GameEntity newEntityEnemy, int newDamage, PowerCollider newPowerCollider, System.Action newAction) {
         var index = GameComponentsLookup.TakeDamage;
         var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
         component.entity = newEntity;
         component.entityEnemy = newEntityEnemy;
         component.damage = newDamage;
+        component.powerCollider = newPowerCollider;
+        component.action = newAction;
         ReplaceComponent(index, component);
     }
 

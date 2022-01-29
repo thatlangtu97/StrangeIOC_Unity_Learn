@@ -8,7 +8,9 @@ public class EventCollection : SerializedScriptableObject
     public string NameTrigger;
     public float durationAnimation;
     public AnimationCurve curveX, curveY;
-    public List<IComboEvent> EventCombo;
+    [HideReferenceObjectPicker]
+    [LabelText("EVENT")]
+    public List<IComboEvent> EventCombo = new List<IComboEvent>();
     protected override void OnAfterDeserialize()
     {
         //base.OnAfterDeserialize();
@@ -21,10 +23,16 @@ public class EventCollection : SerializedScriptableObject
     }
     public void Modify()
     {
-        if(EventCombo!=null)
-        for (int i = 0; i < EventCombo.Count; i++)
+        if (EventCombo != null)
         {
-            EventCombo[i].id = i;
+            for (int i = 0; i < EventCombo.Count; i++)
+            {
+                EventCombo[i].id = i;
+            }
+        }
+        else
+        {
+            EventCombo = new List<IComboEvent>();
         }
     }
 }

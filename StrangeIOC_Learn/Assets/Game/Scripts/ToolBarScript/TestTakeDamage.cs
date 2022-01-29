@@ -21,9 +21,9 @@ public class TestTakeDamage : MonoBehaviour
     }
     public void AddReactiveComponent()
     {
-        GameEntity takeDamage;
-        takeDamage = Contexts.sharedInstance.game.CreateEntity();
-        takeDamage.AddTakeDamage( entity, entityTakeDamage, 10);
+        //GameEntity takeDamage;
+        //takeDamage = Contexts.sharedInstance.game.CreateEntity();
+        //takeDamage.AddTakeDamage( entity, entityTakeDamage, 10,null);
         //takeDamage.Destroy();
     }
     public void AddEntity(GameEntity e)

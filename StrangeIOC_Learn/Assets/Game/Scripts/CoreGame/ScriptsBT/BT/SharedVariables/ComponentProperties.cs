@@ -5,5 +5,7 @@ using UnityEngine;
 public class ComponentProperties : MonoBehaviour
 {
     public int Heal=100;
-    
+    public bool immuneHit;
+
+
 }

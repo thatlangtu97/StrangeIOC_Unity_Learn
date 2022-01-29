@@ -112,7 +112,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.5
+      Data: 0
     - Name: 
       Entry: 4
       Data: 0.5
@@ -143,6 +143,21 @@ MonoBehaviour:
     - Name: 
       Entry: 3
       Data: 4096
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: powerCollider
+      Entry: 3
+      Data: 1
+    - Name: force
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
