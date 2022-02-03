@@ -169,7 +169,20 @@ public class StateMachineController : MonoBehaviour
         }
         ChangeState(NameState.HitState,true);
     }
-
+    public virtual void OnKnockDown(Action action)
+    {
+        
+        if (componentManager.properties.immuneKnock)
+        {
+            return;
+        }
+        ChangeState(NameState.KnockDownState, true);
+        if (action != null)
+        {
+            action.Invoke();
+        }
+        
+    }
 }
 
 [System.Serializable]
@@ -199,5 +212,6 @@ public enum NameState
     StuntState,
     AirSkillState,
     FallingState,
+    KnockUpState,
 
 }

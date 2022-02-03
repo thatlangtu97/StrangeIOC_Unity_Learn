@@ -9,7 +9,7 @@ public enum PowerCollider
     Small,
     Medium,
     Heavy,
-    Keep,
+    KnockDown,
 }
 public interface IComboEvent 
 {

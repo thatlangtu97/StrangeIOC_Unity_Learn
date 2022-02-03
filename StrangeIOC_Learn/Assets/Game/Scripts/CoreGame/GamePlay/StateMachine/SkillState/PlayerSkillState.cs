@@ -21,7 +21,7 @@ public class PlayerSkillState : State
         {
             Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
             Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
-            controller.componentManager.rgbody2D.position += force * Time.fixedDeltaTime;
+            controller.componentManager.rgbody2D.position += force * Time.deltaTime;
             timeCount += Time.deltaTime;
         }
         else

@@ -106,7 +106,7 @@ MonoBehaviour:
       Data: 1
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.2
+      Data: 0.17
     - Name: position
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -148,13 +148,13 @@ MonoBehaviour:
       Data: 
     - Name: powerCollider
       Entry: 3
-      Data: 1
+      Data: 4
     - Name: force
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 200
     - Name: 
       Entry: 4
       Data: 0

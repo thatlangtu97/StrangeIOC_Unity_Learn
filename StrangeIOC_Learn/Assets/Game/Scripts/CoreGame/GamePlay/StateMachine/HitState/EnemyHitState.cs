@@ -10,7 +10,8 @@ public class EnemyHitState : State
     public override void EnterState()
     {
         base.EnterState();
-        controller.componentManager.BehaviorTree.DisableBehavior();
+        if (controller.componentManager.BehaviorTree)
+            controller.componentManager.BehaviorTree.DisableBehavior();
         hit = (hit + 1);
         if (hit % 2 == 0)
             controller.animator.Play(AnimationTriger.HIT);
@@ -33,6 +34,7 @@ public class EnemyHitState : State
     {
         base.ExitState();
         coutTime = 0;
+        if(controller.componentManager.BehaviorTree)
         controller.componentManager.BehaviorTree.EnableBehavior();
     }
     public override void OnHit()

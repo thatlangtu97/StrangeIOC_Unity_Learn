@@ -1886,6 +1886,12 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: c110046615e7a0b40bb48acdd355f411, type: 2}
   - NameState: 18
     StateToClone: {fileID: 11400000, guid: 87e0975ba1722254f95b82ceb2c64a82, type: 2}
+  - NameState: 13
+    StateToClone: {fileID: 11400000, guid: 7eda0c4baef9f5f4abbbd96f39fd20b9, type: 2}
+  - NameState: 12
+    StateToClone: {fileID: 11400000, guid: aca1ba4b8dab5f140bd83ac5aa0d9e52, type: 2}
+  - NameState: 19
+    StateToClone: {fileID: 11400000, guid: 914a27dd975d7e149a7e5b3cb93019c7, type: 2}
   componentManager: {fileID: 218680112}
   animator: {fileID: 790741382}
 --- !u!114 &218680112
@@ -1986,6 +1992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Heal: 10000
+  immuneHit: 0
 --- !u!1 &230371031
 GameObject:
   m_ObjectHideFlags: 0
@@ -13830,6 +13837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Heal: 100000
+  immuneHit: 0
 --- !u!114 &1050489532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14801,7 +14809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1269408436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15130,6 +15138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Heal: 100000
+  immuneHit: 0
 --- !u!114 &1269408443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16092,7 +16101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1483235765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16333,6 +16342,10 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: 2b09e855de5db4eee89f5d49bde03111, type: 2}
   - NameState: 6
     StateToClone: {fileID: 11400000, guid: 6823371ddc6e44645aae0569a4b99417, type: 2}
+  - NameState: 12
+    StateToClone: {fileID: 11400000, guid: ee6e375017af2d148b0bf3f696d5e747, type: 2}
+  - NameState: 19
+    StateToClone: {fileID: 11400000, guid: a010a11f0e6e0a649b88b593084468b1, type: 2}
   componentManager: {fileID: 1483235766}
   animator: {fileID: 1208435665}
 --- !u!50 &1483235773
@@ -16382,6 +16395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Heal: 10000
+  immuneHit: 0
 --- !u!1 &1527176885
 GameObject:
   m_ObjectHideFlags: 0
