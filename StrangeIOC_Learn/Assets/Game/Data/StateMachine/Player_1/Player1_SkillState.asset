@@ -22,7 +22,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   idState: 0
-  eventData: []
   eventCollectionData:
   - {fileID: 11400000, guid: b413aecafabec204e9218859483f3977, type: 2}
-  - {fileID: 11400000, guid: c988c8e861e267a4e8b39c5d2d82d1da, type: 2}
+  - {fileID: 11400000, guid: 2fc3ddb9e9e212d4fb95fb9992243e36, type: 2}

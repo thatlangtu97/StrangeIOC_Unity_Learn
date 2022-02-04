@@ -60,10 +60,17 @@ public class State : SerializedScriptableObject
             {
                 foreach (IComboEvent tempComboEvent in eventCollectionData[idState].EventCombo)
                 {
-                    if (timeTrigger > tempComboEvent.timeTrigger && !idEventTrigged.ContainsKey(tempComboEvent.id))
+                    if (timeTrigger > tempComboEvent.timeTrigger )
                     {
-                        tempComboEvent.OnEventTrigger(controller.componentManager.entity);
-                        idEventTrigged.Add(tempComboEvent.id, tempComboEvent);
+                        if (!idEventTrigged.ContainsKey(tempComboEvent.id))
+                        {
+                            tempComboEvent.OnEventTrigger(controller.componentManager.entity);
+                            idEventTrigged.Add(tempComboEvent.id, tempComboEvent);
+                        }
+                        else
+                        {
+                            tempComboEvent.OnUpdateTrigger();
+                        }
                     }
                 }
             }

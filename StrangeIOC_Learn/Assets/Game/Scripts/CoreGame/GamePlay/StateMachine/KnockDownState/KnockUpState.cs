@@ -20,11 +20,15 @@ public class KnockUpState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        if (controller.componentManager.checkGroundBoxCast == true && timeCount >= eventCollectionData[idState].durationAnimation)
+        if (controller.componentManager.checkGroundBoxCast == true )
         {
-            controller.ChangeState(NameState.IdleState);
+            timeCount += Time.deltaTime;
+            if (timeCount >= eventCollectionData[idState].durationAnimation)
+            {
+                controller.ChangeState(NameState.IdleState);
+            }
         }
-        timeCount += Time.deltaTime;
+        
     }
     public override void ExitState()
     {

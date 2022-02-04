@@ -161,6 +161,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: castByTime
+      Entry: 5
+      Data: false
+    - Name: idStartCastByTime
+      Entry: 3
+      Data: 0
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0
+    - Name: timeStepCastByTime
+      Entry: 4
+      Data: 0
+    - Name: maxCastByTime
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 

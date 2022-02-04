@@ -11,16 +11,19 @@ public class EventCollection : SerializedScriptableObject
     [HideReferenceObjectPicker]
     [LabelText("EVENT")]
     public List<IComboEvent> EventCombo = new List<IComboEvent>();
-    protected override void OnAfterDeserialize()
-    {
-        //base.OnAfterDeserialize();
-        Modify();
-    }
-    protected override void OnBeforeSerialize()
-    {
-        //base.OnBeforeSerialize();
-        Modify();
-    }
+
+    //protected override void OnAfterDeserialize()
+    //{
+    //    //base.OnAfterDeserialize();
+    //    //Modify();
+    //}
+    //protected override void OnBeforeSerialize()
+    //{
+    //    //base.OnBeforeSerialize();
+    //    //Modify();
+    //}
+    [Button("ACCEPT MODIFY",ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
+
     public void Modify()
     {
         if (EventCombo != null)

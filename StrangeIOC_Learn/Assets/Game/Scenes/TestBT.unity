@@ -1993,6 +1993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Heal: 10000
   immuneHit: 0
+  immuneKnock: 0
 --- !u!1 &230371031
 GameObject:
   m_ObjectHideFlags: 0
@@ -13838,6 +13839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Heal: 100000
   immuneHit: 0
+  immuneKnock: 0
 --- !u!114 &1050489532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14771,7 +14773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorGimoz: {r: 0.46625376, g: 1, b: 0, a: 0.39215687}
   listCollider: []
-  frameDestroy: 30
+  frameDestroy: 1
 --- !u!4 &1249438601
 Transform:
   m_ObjectHideFlags: 0
@@ -14809,7 +14811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1269408436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15138,7 +15140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Heal: 100000
-  immuneHit: 0
+  immuneHit: 1
+  immuneKnock: 0
 --- !u!114 &1269408443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16093,7 +16096,6 @@ GameObject:
   - component: {fileID: 1483235765}
   - component: {fileID: 1483235773}
   - component: {fileID: 1483235775}
-  - component: {fileID: 1483235767}
   - component: {fileID: 1483235768}
   m_Layer: 12
   m_Name: E1
@@ -16101,7 +16103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1483235765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16248,31 +16250,6 @@ MonoBehaviour:
   originBoxCheckGround2d: {x: 0, y: 0}
   sizeBoxCheckGround2d: {x: 0.5, y: 0.1}
   radius: 0.1
---- !u!114 &1483235767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483235764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2648226427031f846be77ff6cb322b73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Preset: 0
-  CustomWireColor: {r: 0, g: 0, b: 0, a: 0}
-  CustomFillColor: {r: 0, g: 0, b: 0, a: 0}
-  CustomCenterColor: {r: 0, g: 0, b: 0, a: 0}
-  Alpha: 1
-  WireColor: {r: 0.6, g: 0.6, b: 1, a: 0.5}
-  FillColor: {r: 0.6, g: 0.7, b: 1, a: 0.1}
-  CenterColor: {r: 0.6, g: 0.7, b: 1, a: 0.7}
-  DrawFill: 1
-  DrawWire: 1
-  DrawCenter: 0
-  CenterMarkerRadius: 1
-  IncludeChildColliders: 0
 --- !u!61 &1483235768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16396,6 +16373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Heal: 10000
   immuneHit: 0
+  immuneKnock: 0
 --- !u!1 &1527176885
 GameObject:
   m_ObjectHideFlags: 0

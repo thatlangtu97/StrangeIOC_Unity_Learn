@@ -17,6 +17,7 @@ public interface IComboEvent
     int id { get; set; }
     float timeTrigger { get; }
     void OnEventTrigger(GameEntity entity);
+    void OnUpdateTrigger();
     void Recycle();
 }
 #region CAST PROJECTILE
@@ -76,6 +77,10 @@ public class CastProjectileEvent : IComboEvent
                 ObjectPool.Recycle(prefabSpawned);
         }
     }
+
+    public void OnUpdateTrigger()
+    {
+    }
 }
 #endregion
 
@@ -84,7 +89,7 @@ public class CastBoxColliderEvent : IComboEvent
 {
     [FoldoutGroup("CAST BOX COLLIDER")]
     //[BoxGroup("Cast Collider", true, true)]
-    [HideInEditorMode()]
+    //[HideInEditorMode()]
     public int idEvent;
 
     [FoldoutGroup("CAST BOX COLLIDER")]
@@ -111,6 +116,27 @@ public class CastBoxColliderEvent : IComboEvent
     [FoldoutGroup("CAST BOX COLLIDER")]
     //[BoxGroup("Cast Collider")]
     public Vector2 force;
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    public bool castByTime;
+
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    [ShowIf("castByTime")]
+    public int idStartCastByTime;
+
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    [ShowIf("castByTime")]
+    public float timeStartCastByTime;
+
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    [ShowIf("castByTime")]
+    public float timeStepCastByTime;
+
+    [FoldoutGroup("CAST BOX COLLIDER")]
+    [ShowIf("castByTime")]
+    public int maxCastByTime;
+
+    private int countCast;
+
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
 
@@ -140,8 +166,28 @@ public class CastBoxColliderEvent : IComboEvent
         GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box);
 #endif
     }
+
+    public void OnUpdateTrigger()
+    {
+        if (castByTime)
+        {
+            if (countCast < maxCastByTime)
+            {
+                timeTriggerEvent = timeStartCastByTime + countCast * timeStepCastByTime;
+                idEvent = idStartCastByTime + countCast;
+                countCast += 1;
+            }
+        }
+    }
+
     public void Recycle()
     {
+        if (castByTime)
+        {
+            timeTriggerEvent = timeStartCastByTime;
+            idEvent = idStartCastByTime;
+            countCast = 0;
+        }
     }
 }
 #endregion
@@ -178,6 +224,27 @@ public class CastCircleColliderEvent : IComboEvent
     [FoldoutGroup("CAST CIRCLE COLLIDER")]
     //[BoxGroup("Cast Circle Collider")]
     public Vector2 force;
+
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    public bool castByTime;
+
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    [ShowIf("castByTime")]
+    public int idStartCastByTime;
+
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    [ShowIf("castByTime")]
+    public float timeStartCastByTime;
+
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    [ShowIf("castByTime")]
+    public float timeStepCastByTime;
+
+    [FoldoutGroup("CAST CIRCLE COLLIDER")]
+    [ShowIf("castByTime")]
+    public int maxCastByTime;
+
+    private int countCast;
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
 
@@ -206,8 +273,28 @@ public class CastCircleColliderEvent : IComboEvent
         GizmoDrawerTool.instance.draw(point, new Vector3(radius,0f,0f), GizmoDrawerTool.colliderType.Circle);
 #endif
     }
+
+    public void OnUpdateTrigger()
+    {
+        if (castByTime)
+        {
+            if (countCast < maxCastByTime)
+            {
+                timeTriggerEvent = timeStartCastByTime + countCast * timeStepCastByTime;
+                idEvent = idStartCastByTime + countCast;
+                countCast += 1;
+            }
+        }
+    }
+
     public void Recycle()
     {
+        if (castByTime)
+        {
+            timeTriggerEvent = timeStartCastByTime;
+            idEvent = idStartCastByTime;
+            countCast = 0;
+        }
     }
 }
 #endregion
@@ -239,6 +326,12 @@ public class CastEnableMeshRenderer : IComboEvent
             mesh.enabled = enable;
         }
     }
+
+    public void OnUpdateTrigger()
+    {
+        
+    }
+
     public void Recycle()
     {
     }
@@ -319,6 +412,11 @@ public class CastImpackEvent : IComboEvent
         {
             prefabSpawned.transform.parent = null;
         }
+    }
+
+    public void OnUpdateTrigger()
+    {
+        
     }
 }
 #endregion

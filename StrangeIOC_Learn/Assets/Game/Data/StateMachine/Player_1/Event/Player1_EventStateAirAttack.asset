@@ -28,7 +28,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|CastImpackEvent, Assembly-CSharp
@@ -103,7 +103,7 @@ MonoBehaviour:
       Data: 2|CastCircleColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 1
+      Data: 10
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0.07
@@ -136,7 +136,7 @@ MonoBehaviour:
       Data: 
     - Name: powerCollider
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: force
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -149,276 +149,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 3|CastCircleColliderEvent, Assembly-CSharp
-    - Name: idEvent
+    - Name: castByTime
+      Entry: 5
+      Data: true
+    - Name: idStartCastByTime
       Entry: 3
-      Data: 2
-    - Name: timeTriggerEvent
+      Data: 10
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0.07
+    - Name: timeStepCastByTime
       Entry: 4
       Data: 0.1
-    - Name: position
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: radius
-      Entry: 4
-      Data: 1.1
-    - Name: layerMaskEnemy
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 4096
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: powerCollider
-      Entry: 3
-      Data: 0
-    - Name: force
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 4|CastCircleColliderEvent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 3
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0.2
-    - Name: position
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: radius
-      Entry: 4
-      Data: 1.1
-    - Name: layerMaskEnemy
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 4096
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: powerCollider
-      Entry: 3
-      Data: 0
-    - Name: force
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 5|CastCircleColliderEvent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 4
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0.3
-    - Name: position
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: radius
-      Entry: 4
-      Data: 1.1
-    - Name: layerMaskEnemy
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 4096
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: powerCollider
-      Entry: 3
-      Data: 0
-    - Name: force
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 6|CastCircleColliderEvent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 5
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0.4
-    - Name: position
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: radius
-      Entry: 4
-      Data: 1.1
-    - Name: layerMaskEnemy
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 4096
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: powerCollider
-      Entry: 3
-      Data: 0
-    - Name: force
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 7|CastCircleColliderEvent, Assembly-CSharp
-    - Name: idEvent
+    - Name: maxCastByTime
       Entry: 3
       Data: 6
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0.5
-    - Name: position
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: radius
-      Entry: 4
-      Data: 1.1
-    - Name: layerMaskEnemy
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 4096
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: powerCollider
-      Entry: 3
-      Data: 0
-    - Name: force
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
