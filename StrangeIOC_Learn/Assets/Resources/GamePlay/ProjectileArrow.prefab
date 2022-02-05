@@ -297,6 +297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 3969153100511159291}
+  powerCollider: 1
+  force: {x: 100, y: 0}
 --- !u!60 &3969153100511159293
 PolygonCollider2D:
   m_ObjectHideFlags: 0

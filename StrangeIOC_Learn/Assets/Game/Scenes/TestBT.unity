@@ -576,6 +576,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 40049888}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &40049888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,6 +859,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 63286512}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &63286512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 104479896}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &104479896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,6 +1520,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 116585515}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &116585515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2322,6 +2330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 248063180}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &248063180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3655,6 +3665,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 447989793}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &447989793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6870,6 +6882,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 597903488}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &597903488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7078,6 +7092,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 598530250}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &598530250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7312,6 +7328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 620082095}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &620082095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7633,6 +7651,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 682880782}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &682880782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8028,6 +8048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 782806251}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &782806251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8801,6 +8823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 927732705}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &927732705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9147,6 +9171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 969829065}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &969829065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14649,6 +14675,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 1078341616}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &1078341616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16117,6 +16145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 1271660777}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &1271660777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17041,6 +17071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 1476106631}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &1476106631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17699,6 +17731,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 1594628745}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &1594628745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21039,7 +21073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1786180270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21771,6 +21805,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 1901077573}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!114 &1901077573
 MonoBehaviour:
   m_ObjectHideFlags: 0
