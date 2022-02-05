@@ -18,7 +18,6 @@ public class ProjectileArrowMovement : ProjectileMovement
     private void OnEnable()
     {
         dirMove = new Vector3(direction.x * transform.localScale.x, direction.y, direction.z);
-        Debug.Log(dirMove);
         timeCount = 0f;
         trail.enabled = false;
     }

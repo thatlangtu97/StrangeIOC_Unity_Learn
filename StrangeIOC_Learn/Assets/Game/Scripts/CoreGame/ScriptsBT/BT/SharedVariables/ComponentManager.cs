@@ -25,7 +25,7 @@ public class ComponentManager : MonoBehaviour
     public float distanceCheckGround=0.1f;
     [Range(0f, 2f)]
     public float distanceCheckWall = 0.1f;
-    [Range(0f, 2f)]
+    [Range(0f, 5f)]
     public float distanceChecEnemy = 0.1f;
     public float timeScale = 1f;
     public float speedMove = 1f;
@@ -34,8 +34,10 @@ public class ComponentManager : MonoBehaviour
     public int dashCount;
     public int attackAirCount;
     public int maxJump,maxDash, maxAttackAirCount;
+    public Vector2 originBoxCheckGround2d = new Vector2(0f, 0f);
+    public Vector2 sizeBoxCheckGround2d = new Vector2(.5f,.1f);
+    public float radius = .1f;
 
-    
     private void Awake()
     {
         // var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
@@ -48,9 +50,16 @@ public class ComponentManager : MonoBehaviour
     {
         entity = Contexts.sharedInstance.game.CreateEntity();
         link = gameObject.Link(entity);
-        var component = GetComponent<IAutoAdd<GameEntity>>();
-        component.AddComponent(ref entity);
-        ComponentManagerUtils.AddComponent(this);
+        //var component = GetComponent<IAutoAdd<GameEntity>>();
+        //component.AddComponent(ref entity);
+        
+
+        var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
+        foreach (var component in components)
+        {
+            component.AddComponent(ref entity);
+            ComponentManagerUtils.AddComponent(this);
+        }
     }
     private void OnDisable()
     {
@@ -61,12 +70,12 @@ public class ComponentManager : MonoBehaviour
         if (enemy.transform.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            //speedMove = -maxSpeedMove;
+            speedMove = -maxSpeedMove;
         }
         else if (enemy.transform.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            //speedMove = maxSpeedMove;
+            speedMove = maxSpeedMove;
         }
     }
     
@@ -100,11 +109,37 @@ public class ComponentManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceCheckGround, layerMaskGround);
         if (hit.collider != null)
         {
+            isOnGround = true;
             return true;
         }
         else
         {
+            isOnGround = false;
             return false;
+        }
+    }
+    public bool checkGroundBoxCast
+    {
+        get
+        {
+            //RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + originBoxCheckGround2d, sizeBoxCheckGround2d,0, Vector2.down,0f, layerMaskGround);
+            Vector2 origin = (Vector2)transform.position + originBoxCheckGround2d;
+            float radius = this.radius;
+            Vector2 direction = Vector2.zero;
+            float distance = 0;
+            int layerMask = layerMaskGround;
+            RaycastHit2D hit = Physics2D.CircleCast(origin, radius, direction, distance, layerMask);
+            
+            if (hit.collider != null)
+            {
+                isOnGround = true;
+                return true;
+            }
+            else
+            {
+                isOnGround = false;
+                return false;
+            }
         }
     }
     public bool checkWall()

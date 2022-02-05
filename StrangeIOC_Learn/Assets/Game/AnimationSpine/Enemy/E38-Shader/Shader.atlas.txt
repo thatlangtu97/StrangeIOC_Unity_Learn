@@ -112,78 +112,78 @@ Weapon
 fx/fx2 (00)
   rotate: true
   xy: 150, 170
-  size: 153, 123
-  orig: 193, 164
+  size: 0, 0
+  orig: 0, 0
   offset: 15, 18
   index: -1
 fx/fx2 (01)
   rotate: true
   xy: 132, 352
-  size: 150, 136
-  orig: 193, 164
+  size: 0, 0
+  orig: 0, 0
   offset: 18, 10
   index: -1
 fx/fx2 (02)
   rotate: true
   xy: 2, 18
-  size: 150, 136
-  orig: 193, 164
+  size: 0, 0
+  orig: 0, 0
   offset: 18, 10
   index: -1
 fx/fx2 (03)
   rotate: true
   xy: 140, 19
-  size: 149, 134
-  orig: 193, 164
+  size: 0, 0
+  orig: 0, 0
   offset: 21, 11
   index: -1
 fx/fx2 (04)
   rotate: true
   xy: 270, 355
-  size: 147, 124
-  orig: 193, 164
+  size: 0, 0
+  orig: 0, 0
   offset: 25, 21
   index: -1
 fx/fx2 (05)
   rotate: true
   xy: 275, 206
-  size: 147, 124
-  orig: 193, 164
+  size: 0, 0
+  orig: 0, 0
   offset: 25, 21
   index: -1
 fx/fx2 (06)
   rotate: false
   xy: 396, 373
-  size: 104, 129
-  orig: 193, 164
+  size: 0, 0
+  orig: 0, 0
   offset: 73, 16
   index: -1
 fx/fx4 (00)
   rotate: false
   xy: 2, 318
-  size: 128, 184
-  orig: 134, 188
+  size: 0, 0
+  orig: 0, 0
   offset: 4, 1
   index: -1
 fx/fx4 (01)
   rotate: false
   xy: 2, 170
-  size: 146, 146
-  orig: 151, 153
+  size: 0, 0
+  orig: 0, 0
   offset: 3, 3
   index: -1
 fx/fx4 (02)
   rotate: true
   xy: 401, 218
-  size: 153, 87
-  orig: 159, 91
+  size: 0, 0
+  orig: 0, 0
   offset: 2, 1
   index: -1
 fx/fx4 (03)
   rotate: false
   xy: 276, 18
-  size: 137, 48
-  orig: 142, 51
+  size: 0, 0
+  orig: 0, 0
   offset: 2, 1
   index: -1
 shoulder1

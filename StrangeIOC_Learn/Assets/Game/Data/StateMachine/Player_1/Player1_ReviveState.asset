@@ -23,4 +23,5 @@ MonoBehaviour:
     SerializationNodes: []
   idState: 0
   eventData: []
-  duration: 1.933
+  eventCollectionData:
+  - {fileID: 11400000, guid: 9b1c65a5f5d558040ad994e7c67e7a71, type: 2}

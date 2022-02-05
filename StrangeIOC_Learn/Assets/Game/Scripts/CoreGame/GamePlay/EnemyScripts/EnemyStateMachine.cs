@@ -12,6 +12,14 @@ public class EnemyStateMachine : StateMachineController
             currentState.OnInputAttack();
         }
     }
+    public override void OnInputAttack(int idState)
+    {
+        base.OnInputAttack();
+        if (currentState != null)
+        {
+            currentState.OnInputAttack();
+        }
+    }
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
@@ -23,6 +31,5 @@ public class EnemyStateMachine : StateMachineController
                 currentState.OnInputSkill(idSkill);
             }
         }
-
     }
 }

@@ -7,5 +7,5 @@ public class AttackConfig
     public Vector2 velocity;
     public float durationVelocity;
     public AnimationCurve curveX, curveY;
-    public EventConfig eventConfig;
+    //public EventConfig eventConfig;
 }

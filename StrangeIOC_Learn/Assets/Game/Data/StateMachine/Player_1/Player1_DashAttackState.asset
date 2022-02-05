@@ -22,23 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   idState: 0
-  eventData:
-  - NameTrigger: dashattack
-    NameTriggerAir: 
-    durationAnimation: 0.5
-    velocity: {x: 10, y: 0}
-    durationVelocity: 0.2
-    curveX:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    curveY:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    eventConfig: {fileID: 0}
+  eventData: []
+  eventCollectionData:
+  - {fileID: 11400000, guid: f637a0b9d75854f4a922ff6307dc9e7e, type: 2}
   currentCombo: 0

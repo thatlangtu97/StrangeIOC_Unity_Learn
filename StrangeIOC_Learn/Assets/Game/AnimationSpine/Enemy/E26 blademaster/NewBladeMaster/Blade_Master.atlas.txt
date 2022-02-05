@@ -175,8 +175,8 @@ light
 new
   rotate: false
   xy: 2, 336
-  size: 454, 263
-  orig: 457, 268
+  size: 0, 0
+  orig: 0, 0
   offset: 2, 4
   index: -1
 skirt

@@ -2,36 +2,34 @@
 [CreateAssetMenu(fileName = "EnemyAttackState", menuName = "State/Enemy/EnemyAttackState")]
 public class EnemyAttackState : State
 {
-    public int currentCombo;
     float timeCount = 0;
-    float durationVelocity = 0;
     bool isEnemyForwark;
     public override void EnterState()
     {
         base.EnterState();
         controller.componentManager.isAttack = true;
-        currentCombo = 0;
+        idState = 0;
         CastSkill();
     }
     public override void UpdateState()
     {
         base.UpdateState();
-        if (timeCount >= 0)
+        if (timeCount < eventCollectionData[idState].durationAnimation)
         {
-            if (durationVelocity > 0 && !isEnemyForwark)
+            isEnemyForwark = controller.componentManager.checkEnemyForwark();
+            if (!isEnemyForwark)
             {
-                Vector2 velocityAttack = new Vector2(eventData[currentCombo].curveX.Evaluate(durationVelocity), eventData[currentCombo].curveY.Evaluate(durationVelocity));
-                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
+                Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
+                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
             }
-            timeCount -= Time.deltaTime;
-            durationVelocity -= Time.deltaTime;
+            timeCount += Time.deltaTime;
         }
         else
         {
             if (controller.componentManager.isBufferAttack == true)
             {
-                currentCombo += 1;
-                if (currentCombo == eventData.Count)
+                idState += 1;
+                if (idState >= eventCollectionData.Count)
                 {
                     if (controller.componentManager.speedMove != 0)
                     {
@@ -68,10 +66,10 @@ public class EnemyAttackState : State
         base.ResetTrigger();
         isEnemyForwark = controller.componentManager.checkEnemyForwark();
         controller.componentManager.Rotate();
-        timeCount = eventData[currentCombo].durationAnimation;
-        controller.animator.SetTrigger(eventData[currentCombo].NameTrigger);
+        timeCount = 0;
+        if (idState >= eventCollectionData.Count) return;
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
-        durationVelocity = eventData[currentCombo].durationVelocity;
         controller.componentManager.isBufferAttack = false;
     }
     public override void OnInputDash()
@@ -87,7 +85,10 @@ public class EnemyAttackState : State
     public override void OnInputMove()
     {
         base.OnInputMove();
-        controller.ChangeState(NameState.MoveState);
+        if (idState >= eventCollectionData.Count) return;
+        if (timeCount < eventCollectionData[idState].durationAnimation) return;
+        if (controller.componentManager.isBufferAttack == true) return;
+            controller.ChangeState(NameState.MoveState);
     }
     public override void OnInputAttack()
     {

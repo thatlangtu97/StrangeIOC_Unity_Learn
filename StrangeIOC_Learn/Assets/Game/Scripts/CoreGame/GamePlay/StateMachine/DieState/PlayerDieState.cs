@@ -2,20 +2,19 @@
 [CreateAssetMenu(fileName = "PlayerDieState", menuName = "State/Player/PlayerDieState")]
 public class PlayerDieState : State
 {
-    public float duration = 1f;
     float coutTime = 0;
     public override void EnterState()
     {
         base.EnterState();        
-        controller.animator.SetTrigger(AnimationTriger.DIE);
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
-        coutTime = duration;
+        coutTime = 0;
     }
     public override void UpdateState()
     {
         base.UpdateState();
-        coutTime -= Time.deltaTime;
-        if (coutTime <= 0)
+        coutTime += Time.deltaTime;
+        if (coutTime > eventCollectionData[idState].durationAnimation)
         {
             ExitState();
         }
@@ -23,13 +22,10 @@ public class PlayerDieState : State
     public override void ExitState()
     {
         base.ExitState();
-        {
-            //controller.gameObject.SetActive(false);
-        }
     }
     public override void OnRevive()
     {
-        if (coutTime <= 0)
+        if (coutTime > eventCollectionData[idState].durationAnimation)
         {
             base.OnRevive();
             controller.ChangeState(NameState.ReviveState, true);

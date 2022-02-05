@@ -77,281 +77,281 @@ eye
 fire/Layer-1
   rotate: false
   xy: 378, 53
-  size: 122, 114
-  orig: 122, 114
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-10
   rotate: false
   xy: 253, 165
-  size: 123, 115
-  orig: 123, 115
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-11
   rotate: false
   xy: 837, 149
-  size: 123, 114
-  orig: 123, 114
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-12
   rotate: false
   xy: 2, 61
-  size: 121, 115
-  orig: 121, 115
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-2
   rotate: false
   xy: 129, 164
-  size: 122, 116
-  orig: 122, 116
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-3
   rotate: false
   xy: 762, 265
-  size: 124, 116
-  orig: 124, 116
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-4
   rotate: false
   xy: 888, 265
-  size: 124, 116
-  orig: 124, 116
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-5
   rotate: false
   xy: 583, 193
-  size: 125, 115
-  orig: 125, 115
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-6
   rotate: false
   xy: 710, 150
-  size: 125, 113
-  orig: 125, 113
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-7
   rotate: false
   xy: 549, 78
-  size: 124, 113
-  orig: 124, 113
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-8
   rotate: false
   xy: 2, 178
-  size: 125, 114
-  orig: 125, 114
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fire/Layer-9
   rotate: false
   xy: 422, 169
-  size: 125, 114
-  orig: 125, 114
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx1/0
   rotate: false
   xy: 906, 62
-  size: 49, 55
-  orig: 49, 55
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx1/1
   rotate: false
   xy: 324, 89
-  size: 52, 61
-  orig: 52, 61
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx1/2
   rotate: false
   xy: 751, 86
-  size: 53, 62
-  orig: 53, 62
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx1/3
   rotate: false
   xy: 962, 195
-  size: 52, 68
-  orig: 52, 68
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx1/4
   rotate: false
   xy: 246, 411
-  size: 52, 65
-  orig: 52, 65
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx1/5
   rotate: false
   xy: 856, 87
-  size: 48, 60
-  orig: 48, 60
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx1/6
   rotate: false
   xy: 806, 86
-  size: 48, 61
-  orig: 48, 61
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx1/7
   rotate: true
   xy: 306, 40
-  size: 47, 49
-  orig: 47, 49
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx2/0
   rotate: true
   xy: 865, 383
-  size: 176, 128
-  orig: 176, 128
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx2/1
   rotate: false
   xy: 246, 282
-  size: 174, 125
-  orig: 174, 125
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx2/2
   rotate: false
   xy: 422, 285
-  size: 159, 122
-  orig: 159, 122
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx2/3
   rotate: false
   xy: 2, 294
-  size: 150, 111
-  orig: 150, 111
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx2/4
   rotate: false
   xy: 125, 69
-  size: 124, 93
-  orig: 124, 93
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx2/5
   rotate: false
   xy: 915, 636
-  size: 92, 80
-  orig: 92, 80
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx2/6
   rotate: false
   xy: 154, 327
-  size: 86, 78
-  orig: 86, 78
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx2/7
   rotate: false
   xy: 915, 567
-  size: 69, 67
-  orig: 69, 67
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-1
   rotate: true
   xy: 607, 561
-  size: 149, 306
-  orig: 149, 306
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-10
   rotate: true
   xy: 607, 403
-  size: 156, 256
-  orig: 156, 256
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-11
   rotate: true
   xy: 309, 409
-  size: 137, 251
-  orig: 137, 251
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-12
   rotate: true
   xy: 2, 407
-  size: 138, 242
-  orig: 138, 242
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-2
   rotate: false
   xy: 173, 712
-  size: 168, 310
-  orig: 168, 310
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-3
   rotate: false
   xy: 343, 712
-  size: 168, 310
-  orig: 168, 310
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-4
   rotate: false
   xy: 513, 712
-  size: 168, 310
-  orig: 168, 310
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-5
   rotate: false
   xy: 683, 712
-  size: 168, 310
-  orig: 168, 310
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-6
   rotate: false
   xy: 2, 713
-  size: 169, 309
-  orig: 169, 309
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-7
   rotate: false
   xy: 853, 718
-  size: 167, 304
-  orig: 167, 304
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-8
   rotate: true
   xy: 2, 547
-  size: 163, 305
-  orig: 163, 305
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 fx3/1060-9
   rotate: true
   xy: 309, 548
-  size: 162, 296
-  orig: 162, 296
+  size: 0, 0
+  orig: 0, 0
   offset: 0, 0
   index: -1
 head

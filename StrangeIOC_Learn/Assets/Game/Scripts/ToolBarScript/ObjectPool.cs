@@ -100,8 +100,10 @@ public sealed class ObjectPool : MonoBehaviour
         if (instance.spawnedObjects.TryGetValue(gameObject, out prefab))
         {
             gameObject.SetActive(false);
+            gameObject.transform.parent = null;
             instance.pooledObjects[prefab].Add(gameObject);
             instance.spawnedObjects.Remove(gameObject);
+            
         }
     }
     public void Recycle(GameObject gameObject,float Time)

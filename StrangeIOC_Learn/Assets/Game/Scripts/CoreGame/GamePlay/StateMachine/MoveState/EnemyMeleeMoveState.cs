@@ -17,7 +17,7 @@ public class EnemyMeleeMoveState : State
     {
         base.UpdateState();
         if(controller.componentManager.speedMove!=0)
-            controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove * controller.componentManager.timeScale, 0f) /** Time.deltaTime */;
+            controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove * controller.componentManager.timeScale, controller.componentManager.rgbody2D.velocity.y) /** Time.deltaTime */;
         else
         {
             controller.ChangeState(NameState.IdleState);

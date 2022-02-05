@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "IdleState", menuName = "State/IdleState")]
+[CreateAssetMenu(fileName = "IdleState", menuName = "CoreGame/State/IdleState")]
 public class IdleState : State
 {
+    bool isFailing = false;
     public override void InitState(StateMachineController controller)
     {
         base.InitState(controller);
@@ -11,15 +12,35 @@ public class IdleState : State
     public override void EnterState()
     {
         base.EnterState();
-        controller.animator.SetTrigger(AnimationTriger.IDLE);
+        //controller.animator.SetTrigger(AnimationTriger.IDLE);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
+        isFailing = false;
+        controller.componentManager.ResetJumpCount();
+        controller.componentManager.ResetDashCount();
+        controller.componentManager.ResetAttackAirCount();
+    }
+    public override void UpdateState()
+    {
+        base.UpdateState();
+        if (controller.componentManager.checkGroundBoxCast == false)
+        {
+            controller.ChangeState(NameState.FallingState);
+        }
+        else
+        {
+            if (controller.componentManager.speedMove != 0)
+            {
+                controller.ChangeState(NameState.MoveState);
+            }
+        }
     }
     public override void ExitState()
     {
         base.ExitState();
-        controller.componentManager.ResetJumpCount();
-        controller.componentManager.ResetDashCount();
-        controller.componentManager.ResetAttackAirCount();
+        //controller.componentManager.ResetJumpCount();
+        //controller.componentManager.ResetDashCount();
+        //controller.componentManager.ResetAttackAirCount();
     }
     public override void OnInputAttack()
     {
@@ -34,7 +55,6 @@ public class IdleState : State
     public override void OnInputJump()
     {
         base.OnInputJump();
-        Debug.Log(controller.dictionaryStateMachine[NameState.JumpState]);
         controller.ChangeState(NameState.JumpState);
     }
     public override void OnInputMove()

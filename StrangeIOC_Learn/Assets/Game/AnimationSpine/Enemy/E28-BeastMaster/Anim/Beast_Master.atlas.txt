@@ -98,43 +98,43 @@ body
 fx1/new1
   rotate: false
   xy: 2, 10
-  size: 129, 61
-  orig: 134, 64
+  size: 0, 0
+  orig: 0, 0
   offset: 2, 1
   index: -1
 fx1/new2
   rotate: false
   xy: 280, 193
-  size: 147, 84
-  orig: 152, 87
+  size: 0, 0
+  orig: 0, 0
   offset: 3, 1
   index: -1
 fx1/new3
   rotate: false
   xy: 351, 17
-  size: 136, 86
-  orig: 141, 90
+  size: 0, 0
+  orig: 0, 0
   offset: 3, 2
   index: -1
 fx1/new4
   rotate: false
   xy: 307, 105
-  size: 139, 86
-  orig: 147, 96
+  size: 0, 0
+  orig: 0, 0
   offset: 5, 6
   index: -1
 fx1/new5
   rotate: false
   xy: 133, 2
-  size: 134, 82
-  orig: 147, 91
+  size: 0, 0
+  orig: 0, 0
   offset: 10, 5
   index: -1
 fx1/new6
   rotate: true
   xy: 448, 116
-  size: 104, 87
-  orig: 142, 96
+  size: 0, 0
+  orig: 0, 0
   offset: 35, 5
   index: -1
 hat
@@ -154,8 +154,8 @@ head
 new
   rotate: false
   xy: 2, 350
-  size: 438, 284
-  orig: 640, 360
+  size: 0, 0
+  orig: 0, 0
   offset: 94, 72
   index: -1
 weapon1
