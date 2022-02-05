@@ -10,7 +10,7 @@ public class DamageCollider : MonoBehaviour
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Take Damage");
-        DealDmgManager.DealDamage(other, component.entity);
+        //DealDmgManager.DealDamage(other, component.entity);
 
     }
 }

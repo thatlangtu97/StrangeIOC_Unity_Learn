@@ -11,7 +11,7 @@ public class PlayerDashState : State
         controller.animator.Play(eventCollectionData[idState].NameTrigger);
         controller.componentManager.Rotate();
         countTime = 0;
-        
+        controller.componentManager.properties.immuneKnock = true;
     }
     public override void UpdateState()
     {
@@ -62,6 +62,7 @@ public class PlayerDashState : State
     {
         base.ExitState();
         countTime = eventCollectionData[idState].durationAnimation;
+        controller.componentManager.properties.immuneKnock = false;
     }
     public override void OnInputJump()
     {

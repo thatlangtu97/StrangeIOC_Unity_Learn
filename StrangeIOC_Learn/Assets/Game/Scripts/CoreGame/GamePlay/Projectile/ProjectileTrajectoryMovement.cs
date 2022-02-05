@@ -104,7 +104,7 @@ public class ProjectileTrajectoryMovement : ProjectileMovement
     private void OnDrawGizmos()
     {
 
-        Gizmos.DrawSphere(startPosition, radiusCastEnemy);
+        Gizmos.DrawWireSphere(startPosition, radiusCastEnemy);
     }
     //private void OnDrawGizmos()
     //{

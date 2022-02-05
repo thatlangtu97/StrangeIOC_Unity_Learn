@@ -28,7 +28,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|CastImpackEvent, Assembly-CSharp
@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 4
       Data: 0.5
@@ -79,13 +79,13 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0.6
     - Name: 
       Entry: 4
       Data: 1
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0.6
     - Name: 
       Entry: 8
       Data: 
@@ -95,6 +95,87 @@ MonoBehaviour:
     - Name: recycleWhenFinishDuration
       Entry: 5
       Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|CastBoxColliderEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 10
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0.05
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeBox
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 4096
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: powerCollider
+      Entry: 3
+      Data: 4
+    - Name: force
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: castByTime
+      Entry: 5
+      Data: true
+    - Name: idStartCastByTime
+      Entry: 3
+      Data: 10
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0.05
+    - Name: timeStepCastByTime
+      Entry: 4
+      Data: 0.2
+    - Name: maxCastByTime
+      Entry: 3
+      Data: 5
     - Name: 
       Entry: 8
       Data: 

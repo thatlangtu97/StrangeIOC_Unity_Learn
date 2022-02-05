@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "IdleState", menuName = "State/IdleState")]
+[CreateAssetMenu(fileName = "IdleState", menuName = "CoreGame/State/IdleState")]
 public class IdleState : State
 {
     bool isFailing = false;
@@ -27,6 +27,13 @@ public class IdleState : State
         {
             controller.ChangeState(NameState.FallingState);
         }
+        else
+        {
+            if (controller.componentManager.speedMove != 0)
+            {
+                controller.ChangeState(NameState.MoveState);
+            }
+        }
     }
     public override void ExitState()
     {
@@ -48,7 +55,6 @@ public class IdleState : State
     public override void OnInputJump()
     {
         base.OnInputJump();
-        Debug.Log(controller.dictionaryStateMachine[NameState.JumpState]);
         controller.ChangeState(NameState.JumpState);
     }
     public override void OnInputMove()

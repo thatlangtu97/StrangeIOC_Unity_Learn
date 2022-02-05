@@ -8,6 +8,7 @@ public class EnemyAttackState : State
     {
         base.EnterState();
         controller.componentManager.isAttack = true;
+        idState = 0;
         CastSkill();
     }
     public override void UpdateState()
@@ -15,10 +16,11 @@ public class EnemyAttackState : State
         base.UpdateState();
         if (timeCount < eventCollectionData[idState].durationAnimation)
         {
+            isEnemyForwark = controller.componentManager.checkEnemyForwark();
             if (!isEnemyForwark)
             {
                 Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
-                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
+                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
             }
             timeCount += Time.deltaTime;
         }
@@ -27,7 +29,7 @@ public class EnemyAttackState : State
             if (controller.componentManager.isBufferAttack == true)
             {
                 idState += 1;
-                if (idState == eventCollectionData.Count)
+                if (idState >= eventCollectionData.Count)
                 {
                     if (controller.componentManager.speedMove != 0)
                     {
@@ -65,6 +67,7 @@ public class EnemyAttackState : State
         isEnemyForwark = controller.componentManager.checkEnemyForwark();
         controller.componentManager.Rotate();
         timeCount = 0;
+        if (idState >= eventCollectionData.Count) return;
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
         controller.componentManager.isBufferAttack = false;
@@ -82,7 +85,10 @@ public class EnemyAttackState : State
     public override void OnInputMove()
     {
         base.OnInputMove();
-        controller.ChangeState(NameState.MoveState);
+        if (idState >= eventCollectionData.Count) return;
+        if (timeCount < eventCollectionData[idState].durationAnimation) return;
+        if (controller.componentManager.isBufferAttack == true) return;
+            controller.ChangeState(NameState.MoveState);
     }
     public override void OnInputAttack()
     {

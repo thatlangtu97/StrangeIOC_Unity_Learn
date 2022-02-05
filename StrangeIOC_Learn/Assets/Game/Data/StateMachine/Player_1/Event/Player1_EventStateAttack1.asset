@@ -28,7 +28,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|CastImpackEvent, Assembly-CSharp
@@ -99,6 +99,87 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 2|CastBoxColliderEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 1
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0.2
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeBox
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 4096
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: powerCollider
+      Entry: 3
+      Data: 1
+    - Name: force
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: castByTime
+      Entry: 5
+      Data: false
+    - Name: idStartCastByTime
+      Entry: 3
+      Data: 0
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0
+    - Name: timeStepCastByTime
+      Entry: 4
+      Data: 0
+    - Name: maxCastByTime
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -112,29 +193,29 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1.9089074
-      outSlope: 1.9089074
+      inSlope: 41.416603
+      outSlope: 41.416603
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.11249989
+      outWeight: 0.33403885
+    - serializedVersion: 3
+      time: 0.1
+      value: 5
+      inSlope: 97.118
+      outSlope: 97.118
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.21951467
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.11
+      value: 0
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.91705006
-    - serializedVersion: 3
-      time: 0.2
-      value: 5
-      inSlope: 0.19625238
-      outSlope: 0.19625238
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.19342144
-      outWeight: 0.3948183
-    - serializedVersion: 3
-      time: 0.21
-      value: 0
-      inSlope: -21.66651
-      outSlope: -21.66651
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.14627896
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

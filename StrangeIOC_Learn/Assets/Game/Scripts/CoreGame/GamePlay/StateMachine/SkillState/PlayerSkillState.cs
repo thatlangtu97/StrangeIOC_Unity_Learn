@@ -8,7 +8,7 @@ public class PlayerSkillState : State
     public override void EnterState()
     {
         base.EnterState();
-
+        
         CastSkill();
         controller.componentManager.rgbody2D.gravityScale = 0;
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
@@ -21,7 +21,7 @@ public class PlayerSkillState : State
         {
             Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
             Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
-            controller.componentManager.rgbody2D.position += force * Time.fixedDeltaTime;
+            controller.componentManager.rgbody2D.position += force * Time.deltaTime;
             timeCount += Time.deltaTime;
         }
         else
@@ -41,10 +41,6 @@ public class PlayerSkillState : State
             else
             {
                 controller.ChangeState(NameState.FallingState);
-                //controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
-                //controller.componentManager.Rotate();
-                //controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-
             }
         }
     }
@@ -55,9 +51,8 @@ public class PlayerSkillState : State
     }
     public void CastSkill()
     {
-        idEventTrigged.Clear();
+        ResetEvent();
         controller.componentManager.Rotate();
-        timeTrigger = 0;
         timeCount = 0;
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
     }
@@ -93,6 +88,7 @@ public class PlayerSkillState : State
             idState = idSkill;
             EnterState();
         }
+
     }
     public override void OnInputAttack()
     {

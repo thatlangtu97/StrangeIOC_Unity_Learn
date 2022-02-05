@@ -19,26 +19,26 @@ public class EnemySkillState : State
         base.UpdateState();
         if (timeCount < eventCollectionData[idState].durationAnimation)
         {
-            timeCount += Time.fixedDeltaTime;
+            timeCount += Time.deltaTime;
             Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
             Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
-            controller.componentManager.rgbody2D.position += force * Time.fixedDeltaTime;
+            controller.componentManager.rgbody2D.position += force * Time.deltaTime;
         }
         else
         {
-            controller.componentManager.rgbody2D.gravityScale = 2;
+            //controller.componentManager.rgbody2D.gravityScale = 2;
             controller.ChangeState(NameState.IdleState);
         }
     }
     public override void ExitState()
     {
         base.ExitState();
-        controller.componentManager.rgbody2D.gravityScale = 2;
+        //controller.componentManager.rgbody2D.gravityScale = 2;
     }
     public void CastSkill()
     {
         ResetEvent();
-        controller.componentManager.Rotate();
+        //controller.componentManager.Rotate();
         timeCount = 0;
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
     }

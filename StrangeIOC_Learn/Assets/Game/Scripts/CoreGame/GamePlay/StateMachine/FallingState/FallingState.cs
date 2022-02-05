@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "FallingState", menuName = "State/FallingState")]
+[CreateAssetMenu(fileName = "FallingState", menuName = "CoreGame/State/FallingState")]
 public class FallingState : State
 {
     public override void EnterState()

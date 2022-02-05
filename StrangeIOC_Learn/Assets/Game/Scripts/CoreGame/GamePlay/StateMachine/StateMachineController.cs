@@ -1,13 +1,15 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class StateMachineController : MonoBehaviour
 {
     public Dictionary<NameState, State> dictionaryStateMachine = new Dictionary<NameState, State>();
-    [Header("Current State")]
+    [BoxGroup("Current State")]
     public State currentState;
+    [BoxGroup("Current State")]
     public NameState currentNameState;
+    [LabelText("STATE TO CLONE")]
     public List<StateClone> States;
     public void SetupState()
     {
@@ -28,11 +30,11 @@ public class StateMachineController : MonoBehaviour
         SetupState();
         if (dictionaryStateMachine.ContainsKey(NameState.SpawnState))
         {
-            ChangeState(NameState.SpawnState, true);
+            ChangeState(NameState.SpawnState, 0, true);
         }
         else
         {
-            ChangeState(NameState.IdleState, true);
+            ChangeState(NameState.IdleState, 0, true);
         }
     }
     public virtual void UpdateState()
@@ -61,10 +63,42 @@ public class StateMachineController : MonoBehaviour
             dictionaryStateMachine[stateClone.NameState] = state;
         }
     }
-    public virtual void ChangeState(NameState nameState, bool forceChange = false )
+    public virtual void ChangeState(NameState nameState, bool forceChange = false)
     {
-        if ( !dictionaryStateMachine.ContainsKey(nameState) ) return;
+        if (!dictionaryStateMachine.ContainsKey(nameState)) return;
         State newState = dictionaryStateMachine[nameState];
+        if (!forceChange)
+        {
+            if (currentNameState != NameState.DieState && currentNameState != NameState.ReviveState)
+            {
+                if (nameState != currentNameState)
+                {
+                    if (currentState != null)
+                    {
+                        currentState.ExitState();
+                    }
+                    currentState = newState;
+                    currentNameState = nameState;
+                    currentState.EnterState();
+                }
+            }
+        }
+        else
+        {
+            if (currentState != null)
+            {
+                currentState.ExitState();
+            }
+            currentState = newState;
+            currentNameState = nameState;
+            currentState.EnterState();
+        }
+    }
+    public virtual void ChangeState(NameState nameState, int idState, bool forceChange = false)
+    {
+        if (!dictionaryStateMachine.ContainsKey(nameState)) return;
+        State newState = dictionaryStateMachine[nameState];
+        newState.idState = idState;
         if (!forceChange)
         {
             if (currentNameState != NameState.DieState && currentNameState != NameState.ReviveState)
@@ -104,6 +138,10 @@ public class StateMachineController : MonoBehaviour
     public virtual void OnInputAttack()
     {
     }
+    public virtual void OnInputAttack(int idState)
+    {
+
+    }
     public virtual void OnInputJump()
     {
     }
@@ -119,8 +157,32 @@ public class StateMachineController : MonoBehaviour
     public virtual void OnInputSkill(int idSkill)
     {
     }
-
-    
+    public virtual void OnHit(Action action)
+    {
+        if (componentManager.properties.immuneHit)
+        { 
+            return; 
+        }
+        if (action != null)
+        {
+            action.Invoke();
+        }
+        ChangeState(NameState.HitState,true);
+    }
+    public virtual void OnKnockDown(Action action)
+    {
+        
+        if (componentManager.properties.immuneKnock)
+        {
+            return;
+        }
+        ChangeState(NameState.KnockDownState, true);
+        if (action != null)
+        {
+            action.Invoke();
+        }
+        
+    }
 }
 
 [System.Serializable]
@@ -150,5 +212,6 @@ public enum NameState
     StuntState,
     AirSkillState,
     FallingState,
+    KnockUpState,
 
 }

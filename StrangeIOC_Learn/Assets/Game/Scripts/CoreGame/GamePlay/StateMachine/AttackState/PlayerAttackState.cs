@@ -19,10 +19,11 @@ public class PlayerAttackState : State
         base.UpdateState();
         if (timeCount < eventCollectionData[idState].durationAnimation)
         {
+            isEnemyForwark = controller.componentManager.checkEnemyForwark();
             if (!isEnemyForwark)
             {
                 Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeCount), eventCollectionData[idState].curveY.Evaluate(timeCount));
-                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.fixedDeltaTime;
+                controller.componentManager.rgbody2D.position += new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y) * Time.deltaTime;
                 controller.componentManager.rgbody2D.velocity = Vector2.zero;
             }
             
@@ -112,7 +113,9 @@ public class PlayerAttackState : State
     public override void OnInputMove()
     {
         base.OnInputMove();
-        controller.ChangeState(NameState.MoveState);
+        if (idState >= eventCollectionData.Count) return;
+        if (timeCount >= eventCollectionData[idState].durationAnimation)
+            controller.ChangeState(NameState.MoveState);
     }
     public override void OnInputAttack()
     {

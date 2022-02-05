@@ -35,7 +35,17 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
             }
             else
             {
-                entityEnemy.stateMachineContainer.stateMachine.currentState.OnHit();
+                switch (e.takeDamage.powerCollider) {
+                    case PowerCollider.Small:
+                    case PowerCollider.Medium:
+                    case PowerCollider.Heavy:
+                        entityEnemy.stateMachineContainer.stateMachine.OnHit(e.takeDamage.action);
+                        break;
+                    case PowerCollider.KnockDown:
+                        entityEnemy.stateMachineContainer.stateMachine.OnKnockDown(e.takeDamage.action);
+                        break;
+                }
+                
             }
             e.Destroy();
         }
