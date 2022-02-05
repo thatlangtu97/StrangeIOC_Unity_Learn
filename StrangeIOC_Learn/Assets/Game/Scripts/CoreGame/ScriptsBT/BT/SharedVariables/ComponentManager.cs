@@ -70,10 +70,12 @@ public class ComponentManager : MonoBehaviour
         if (enemy.transform.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            speedMove = -maxSpeedMove;
         }
         else if (enemy.transform.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            speedMove = maxSpeedMove;
         }
     }
     

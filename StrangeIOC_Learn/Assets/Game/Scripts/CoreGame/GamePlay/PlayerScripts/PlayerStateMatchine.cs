@@ -9,43 +9,43 @@ public class PlayerStateMatchine : StateMachineController
     {
         base.UpdateState();
         componentManager.checkGround();
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            currentState.OnInputDash();
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    currentState.OnInputDash();
+        //}
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
             
-            currentState.OnInputAttack();
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            ChangeState(NameState.DieState);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            currentState.OnInputJump();
-        }
-        if (Input.GetKeyDown(KeyCode.End))
-        {
-            ChangeState(NameState.ReviveState, true);
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            OnInputSkill(0);
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            OnInputSkill(1);
-        }
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    OnInputSkill(2);
+        //    currentState.OnInputAttack();
         //}
-        //if (Input.GetKeyDown(KeyCode.R))
+        //if (Input.GetKeyDown(KeyCode.Return))
         //{
-        //    OnInputSkill(3);
+        //    ChangeState(NameState.DieState);
         //}
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    currentState.OnInputJump();
+        //}
+        //if (Input.GetKeyDown(KeyCode.End))
+        //{
+        //    ChangeState(NameState.ReviveState, true);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    OnInputSkill(0);
+        //}
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    OnInputSkill(1);
+        //}
+        ////if (Input.GetKeyDown(KeyCode.E))
+        ////{
+        ////    OnInputSkill(2);
+        ////}
+        ////if (Input.GetKeyDown(KeyCode.R))
+        ////{
+        ////    OnInputSkill(3);
+        ////}
     }
     public override void OnInputDash()
     {

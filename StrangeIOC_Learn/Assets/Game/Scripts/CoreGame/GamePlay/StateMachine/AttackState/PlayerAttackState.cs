@@ -113,7 +113,9 @@ public class PlayerAttackState : State
     public override void OnInputMove()
     {
         base.OnInputMove();
-        controller.ChangeState(NameState.MoveState);
+        if (idState >= eventCollectionData.Count) return;
+        if (timeCount >= eventCollectionData[idState].durationAnimation)
+            controller.ChangeState(NameState.MoveState);
     }
     public override void OnInputAttack()
     {

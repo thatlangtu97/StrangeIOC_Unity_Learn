@@ -87,65 +87,29 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
             componentManager.speedMove = 0f;
         }
     }
-    private void Update()
-    {
-        //Vector2 sizeDelta = BackGround.rectTransform.sizeDelta;
-        //if (Input.GetKeyDown(KeyCode.LeftArrow))
-        //{
-        //    ForceVector = new Vector3(-1, 0, 0f);
-        //    PointJoystick.rectTransform.anchoredPosition = new Vector3((-1f * sizeDelta.x) / space, (0 * sizeDelta.y) / space);
-        //    OnMove();
-        //    if (componentManager != null)
-        //    {
-        //        componentManager.stateMachine.currentState.OnInputMove();
-
-        //    }
-        //}
-        //else
-        //{
-        //    if (Input.GetKeyUp(KeyCode.LeftArrow))
-        //    {
-        //        OnStop();
-        //        PointJoystick.rectTransform.anchoredPosition = Vector3.zero;
-        //    }
-        //}
-        //if (Input.GetKeyDown(KeyCode.RightArrow))
-        //{
-        //    ForceVector = new Vector3(1, 0, 0f);
-        //    PointJoystick.rectTransform.anchoredPosition = new Vector3((1f * sizeDelta.x) / space, (0 * sizeDelta.y) / space);
-        //    OnMove();
-        //    if (componentManager != null)
-        //    {
-        //        componentManager.stateMachine.currentState.OnInputMove();
-        //    }
-        //}
-        //else
-        //{
-        //    if (Input.GetKeyUp(KeyCode.RightArrow))
-        //    {
-        //        OnStop();
-        //        PointJoystick.rectTransform.anchoredPosition = Vector3.zero;
-        //    }
-        //}
-#if UNITY_EDITOR
-        //Vector2 sizeDelta = BackGround.rectTransform.sizeDelta;
-        //float h = Input.GetAxisRaw("Horizontal");
-        //ForceVector = new Vector3(h, 0f, 0f);
-        //PointJoystick.rectTransform.anchoredPosition = new Vector3((h * sizeDelta.x) / space, (0 * sizeDelta.y) / space);
-        //if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
-        //{
-        //    if (componentManager != null)
-        //    {
-        //        if (componentManager.stateMachine.currentState != null)
-        //            componentManager.stateMachine.currentState.OnInputMove();
-        //    }
-        //}
-        //if (h != 0)
-        //{
-        //    OnMove();
-        //}
-        //else
-        //    OnStop();
-#endif
-    }
+    //public bool checkUseTool;
+    //private void Update()
+    //{
+    //    //if(checkUseTool)
+    //    if (componentManager != null)
+    //    {
+    //        if (ForceVector.x > 0)
+    //        {
+    //            componentManager.speedMove = componentManager.maxSpeedMove;
+    //        }
+    //        if (ForceVector.x < 0)
+    //        {
+    //            componentManager.speedMove = -componentManager.maxSpeedMove;
+    //        }
+    //        //if (ForceVector.x != 0)
+    //        //{
+    //        //    if (componentManager.stateMachine.currentState != null)
+    //        //        componentManager.stateMachine.currentState.OnInputMove();
+    //        //}
+    //        //else
+    //        //{
+    //        //    componentManager.speedMove = 0f;
+    //        //}
+    //    }
+    //}
 }

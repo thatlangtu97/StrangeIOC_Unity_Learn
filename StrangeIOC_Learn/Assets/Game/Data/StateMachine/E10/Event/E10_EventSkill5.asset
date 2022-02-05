@@ -22,7 +22,98 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes:
     - Name: EventCombo
-      Entry: 6
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|CastBoxColliderEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 13
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0.5
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeBox
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2048
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: powerCollider
+      Entry: 3
+      Data: 4
+    - Name: force
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 250
+    - Name: 
+      Entry: 4
+      Data: 50
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: castByTime
+      Entry: 5
+      Data: true
+    - Name: idStartCastByTime
+      Entry: 3
+      Data: 10
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0.2
+    - Name: timeStepCastByTime
+      Entry: 4
+      Data: 0.1
+    - Name: maxCastByTime
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
   NameTrigger: skill5
   durationAnimation: 1.768
