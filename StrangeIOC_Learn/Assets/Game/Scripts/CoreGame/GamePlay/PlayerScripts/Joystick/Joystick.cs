@@ -52,11 +52,11 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     public void OnPointerDown(PointerEventData eventData)
     {
         OnDrag(eventData);
-        if (componentManager != null)
-        {
-            if (componentManager.stateMachine.currentState != null)
-                componentManager.stateMachine.currentState.OnInputMove();
-        }
+        //if (componentManager != null)
+        //{
+        //    if (componentManager.stateMachine.currentState != null)
+        //        componentManager.stateMachine.currentState.OnInputMove();
+        //}
     }
     public void OnPointerUp(PointerEventData eventData)
     {

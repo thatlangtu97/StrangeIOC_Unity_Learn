@@ -1,19 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "IdleState", menuName = "CoreGame/State/IdleState")]
-public class IdleState : State
+[CreateAssetMenu(fileName = "MoveState", menuName = "CoreGame/State/MoveState")]
+public class MoveState : State
 {
     bool isFailing = false;
-    public override void InitState(StateMachineController controller)
-    {
-        base.InitState(controller);
-    }
     public override void EnterState()
     {
         base.EnterState();
-        //controller.animator.SetTrigger(AnimationTriger.IDLE);
-        controller.componentManager.rgbody2D.velocity = Vector2.zero;
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         isFailing = false;
         controller.componentManager.ResetJumpCount();
@@ -22,25 +16,30 @@ public class IdleState : State
     }
     public override void UpdateState()
     {
-        base.UpdateState();
+        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+        controller.componentManager.Rotate();
         if (controller.componentManager.checkGroundBoxCast == false)
         {
             controller.ChangeState(NameState.FallingState);
         }
         else
         {
-            if (controller.componentManager.speedMove != 0)
+            if (controller.componentManager.speedMove == 0)
             {
-                controller.ChangeState(NameState.MoveState);
+                controller.ChangeState(NameState.IdleState);
+            }
+            else
+            {
+                if (isFailing == true)
+                {
+                    EnterState();
+                }
             }
         }
     }
     public override void ExitState()
     {
         base.ExitState();
-        //controller.componentManager.ResetJumpCount();
-        //controller.componentManager.ResetDashCount();
-        //controller.componentManager.ResetAttackAirCount();
     }
     public override void OnInputAttack()
     {
@@ -57,19 +56,17 @@ public class IdleState : State
         base.OnInputJump();
         controller.ChangeState(NameState.JumpState);
     }
-    public override void OnInputMove()
-    {
-        base.OnInputMove();
-        controller.ChangeState(NameState.MoveState);
-    }
-    public override void OnHit()
-    {
-        base.OnHit();
-        controller.ChangeState(NameState.HitState);
-    }
     public override void OnInputSkill(int idSkill)
     {
         base.OnInputSkill(idSkill);
-        controller.ChangeState(NameState.SkillState);
+        if (controller.componentManager.checkGround() == true)
+        {
+            controller.ChangeState(NameState.SkillState);
+        }
+        else
+        {
+            controller.ChangeState(NameState.AirSkillState);
+        }
     }
+
 }

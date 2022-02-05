@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "AttackState", menuName = "CoreGame/State")]
+[CreateAssetMenu(fileName = "AttackState", menuName = "CoreGame/State/AttackState")]
 public class AttackState : State
 {
     bool isEnemyForwark;
@@ -83,6 +83,7 @@ public class AttackState : State
     {
         base.ExitState();
         controller.componentManager.isAttack = false;
+        idState = 0;
     }
     public void CastSkill()
     {

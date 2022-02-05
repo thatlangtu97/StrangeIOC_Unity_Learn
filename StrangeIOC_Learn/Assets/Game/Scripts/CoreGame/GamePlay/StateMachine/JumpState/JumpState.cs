@@ -1,15 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "FallingState", menuName = "CoreGame/State/FallingState")]
-public class FallingState : State
+[CreateAssetMenu(fileName = "JumpState", menuName = "CoreGame/State/JumpState")]
+public class JumpState : State
 {
+    float countTimeBufferJump = 0;
+    public float timeBuffer = 0.15f;
+    bool bufferJump = false;
+
     public override void EnterState()
     {
         base.EnterState();
-        controller.animator.SetTrigger(AnimationTriger.JUMPFAIL);
+        controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         controller.componentManager.Rotate();
-
+        countTimeBufferJump = eventCollectionData[idState].durationAnimation;
+        controller.componentManager.jumpCount += 1;
+        Vector2 velocity = new Vector2(0f, eventCollectionData[idState].curveY.Evaluate(0));
+        if (controller.componentManager.speedMove != 0)
+        {
+            velocity.x = controller.componentManager.maxSpeedMove * controller.componentManager.transform.localScale.x;
+        }
+        controller.componentManager.rgbody2D.velocity = velocity;
+        bufferJump = false;
     }
     public override void UpdateState()
     {
@@ -23,18 +35,29 @@ public class FallingState : State
                 newVelocity.x = 0;
             }
             controller.componentManager.rgbody2D.velocity = newVelocity;
+            if (bufferJump && controller.componentManager.CanJump)
+            {
+                if (countTimeBufferJump < timeBuffer)
+                {
+                    EnterState();
+                }
+            }
         }
         else
         {
-            if (controller.componentManager.speedMove != 0)
+            if (countTimeBufferJump < 0)
             {
-                controller.ChangeState(NameState.MoveState);
-            }
-            else
-            {
-                controller.ChangeState(NameState.IdleState);
+                if (controller.componentManager.speedMove != 0)
+                {
+                    controller.ChangeState(NameState.MoveState);
+                }
+                else
+                {
+                    controller.ChangeState(NameState.IdleState);
+                }
             }
         }
+        countTimeBufferJump -= Time.deltaTime;
     }
     public override void ExitState()
     {
@@ -48,11 +71,8 @@ public class FallingState : State
     }
     public override void OnInputJump()
     {
-        if (controller.componentManager.CanJump)
-        {
-            controller.ChangeState(NameState.JumpState);
-            base.OnInputJump();
-        }
+        base.OnInputJump();
+        bufferJump = true;
     }
     public override void OnInputAttack()
     {
