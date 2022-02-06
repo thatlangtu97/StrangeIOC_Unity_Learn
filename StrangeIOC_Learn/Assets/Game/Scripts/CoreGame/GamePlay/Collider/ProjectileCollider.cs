@@ -7,18 +7,14 @@ using System;
 public class ProjectileCollider : MonoBehaviour
 {
     public ProjectileComponent component;
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    //[BoxGroup("Cast Collider")]
+    [FoldoutGroup("EVENT COLLIDER")]
     public PowerCollider powerCollider;
 
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    //[BoxGroup("Cast Collider")]
+    [FoldoutGroup("EVENT COLLIDER")]
     public Vector2 force;
+
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        //DealDmgManager.DealDamage(other, component.entity, PowerCollider.Node);
-        //component.colliderProjectile.enabled = false;
-        
         Action action = delegate
         {
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, other.GetComponent<Rigidbody2D>().velocity.y);

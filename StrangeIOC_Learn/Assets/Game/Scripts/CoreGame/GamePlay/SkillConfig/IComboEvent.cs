@@ -410,7 +410,8 @@ public class CastImpackEvent : IComboEvent
         }
         else
         {
-            prefabSpawned.transform.parent = null;
+            if (prefabSpawned)
+                prefabSpawned.transform.parent = null;
         }
     }
 
@@ -420,5 +421,74 @@ public class CastImpackEvent : IComboEvent
     }
 }
 #endregion
+#region CAST FORWARD PROJECTILE
+public class CastForwardProjectileEvent : IComboEvent
+{
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile", true, true)]
+    [HideInEditorMode()]
+    public int idEvent;
 
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
+    [Range(0f, 5f)]
+    public float timeTriggerEvent;
+
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
+    [Range(0f, 5f)]
+    public float duration;
+
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
+    public GameObject Prefab;
+
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
+    public Vector3 Localosition;
+
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Impack Event")]
+    public Vector3 LocalDirection;
+
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
+    public bool recycleWhenFinishDuration = false;
+
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    private GameObject prefabSpawned;
+    public void OnEventTrigger(GameEntity entity)
+    {
+        if (Prefab)
+        {
+            prefabSpawned = ObjectPool.Spawn(Prefab);
+            Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
+            prefabSpawned.transform.localScale = new Vector3(prefabSpawned.transform.localScale.x * (baseTransform.localScale.x < 0 ? -1f : 1f),
+                                                                prefabSpawned.transform.localScale.y,
+                                                                prefabSpawned.transform.localScale.z);
+            prefabSpawned.transform.position = baseTransform.position + new Vector3(Localosition.x * baseTransform.localScale.x,
+                                                                                        Localosition.y * baseTransform.localScale.y,
+                                                                                        Localosition.z * baseTransform.localScale.z);
+            prefabSpawned.transform.right = new Vector3(LocalDirection.x /** (baseTransform.localScale.x < 0 ? -1f : 1f)*/,
+                                                        LocalDirection.y,
+                                                        LocalDirection.z);
+            ObjectPool.instance.Recycle(prefabSpawned, duration);
+        }
+    }
+
+    public void Recycle()
+    {
+        if (recycleWhenFinishDuration)
+        {
+            if (prefabSpawned)
+                ObjectPool.Recycle(prefabSpawned);
+        }
+    }
+
+    public void OnUpdateTrigger()
+    {
+    }
+}
+#endregion
 
