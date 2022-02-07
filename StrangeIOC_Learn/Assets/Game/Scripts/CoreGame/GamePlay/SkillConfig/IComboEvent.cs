@@ -421,6 +421,7 @@ public class CastImpackEvent : IComboEvent
     }
 }
 #endregion
+
 #region CAST FORWARD PROJECTILE
 public class CastForwardProjectileEvent : IComboEvent
 {

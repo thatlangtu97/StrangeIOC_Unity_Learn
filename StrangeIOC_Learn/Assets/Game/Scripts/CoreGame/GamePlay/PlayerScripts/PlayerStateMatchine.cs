@@ -9,43 +9,6 @@ public class PlayerStateMatchine : StateMachineController
     {
         base.UpdateState();
         componentManager.checkGround();
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    currentState.OnInputDash();
-        //}
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-            
-        //    currentState.OnInputAttack();
-        //}
-        //if (Input.GetKeyDown(KeyCode.Return))
-        //{
-        //    ChangeState(NameState.DieState);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    currentState.OnInputJump();
-        //}
-        //if (Input.GetKeyDown(KeyCode.End))
-        //{
-        //    ChangeState(NameState.ReviveState, true);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    OnInputSkill(0);
-        //}
-        //if (Input.GetKeyDown(KeyCode.W))
-        //{
-        //    OnInputSkill(1);
-        //}
-        ////if (Input.GetKeyDown(KeyCode.E))
-        ////{
-        ////    OnInputSkill(2);
-        ////}
-        ////if (Input.GetKeyDown(KeyCode.R))
-        ////{
-        ////    OnInputSkill(3);
-        ////}
     }
     public override void OnInputDash()
     {
@@ -78,18 +41,29 @@ public class PlayerStateMatchine : StateMachineController
     }
     public override void OnInputSkill(int idSkill)
     {
+        if (currentState == null) return;
         base.OnInputSkill(idSkill);
-        if (currentState != null)
+        bool check = false;
+        if (dictionaryStateMachine.ContainsKey(NameState.SkillState))
         {
-            if (dictionaryStateMachine.ContainsKey(NameState.SkillState))
+            if (dictionaryStateMachine[NameState.SkillState].eventCollectionData.Count> idSkill)
+               dictionaryStateMachine[NameState.SkillState].idState = idSkill;
+            else
             {
-                dictionaryStateMachine[NameState.SkillState].idState = idSkill;
+                check = true;
             }
-            if (dictionaryStateMachine.ContainsKey(NameState.AirSkillState))
-            {
-                dictionaryStateMachine[NameState.AirSkillState].idState = idSkill;
-            }
-            currentState.OnInputSkill(idSkill);
+            
         }
+        if (dictionaryStateMachine.ContainsKey(NameState.AirSkillState))
+        {
+            if (dictionaryStateMachine[NameState.AirSkillState].eventCollectionData.Count > idSkill)
+                dictionaryStateMachine[NameState.AirSkillState].idState = idSkill;
+            else
+            {
+                check = true;
+            }
+        }
+        if(!check)
+            currentState.OnInputSkill(idSkill);
     }
 }
