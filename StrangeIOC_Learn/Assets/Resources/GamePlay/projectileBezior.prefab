@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 2298935955238826347}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!58 &2298935955238826349
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -334,6 +336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 2298935955495520350}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!58 &2298935955495520352
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -556,6 +560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 2298935955671120024}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!58 &2298935955671120026
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -778,6 +784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 2298935956201179421}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!58 &2298935956201179423
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1000,6 +1008,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 2298935956370425440}
+  powerCollider: 0
+  force: {x: 0, y: 0}
 --- !u!58 &2298935956370425442
 CircleCollider2D:
   m_ObjectHideFlags: 0

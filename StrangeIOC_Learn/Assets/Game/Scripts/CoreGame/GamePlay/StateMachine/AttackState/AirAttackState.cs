@@ -42,14 +42,14 @@ public class AirAttackState : State
             }
             else
             {
-
-                controller.componentManager.Rotate();
-                Vector3 newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-                if (controller.componentManager.checkWall() == true)
-                {
-                    newVelocity.x = 0;
-                }
-                controller.componentManager.rgbody2D.velocity = newVelocity;
+                controller.ChangeState(NameState.FallingState);
+                //controller.componentManager.Rotate();
+                //Vector3 newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+                //if (controller.componentManager.checkWall() == true)
+                //{
+                //    newVelocity.x = 0;
+                //}
+                //controller.componentManager.rgbody2D.velocity = newVelocity;
             }
         }
 

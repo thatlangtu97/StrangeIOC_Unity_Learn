@@ -93,4 +93,8 @@ public class GameUIController : MonoBehaviour
     {
         stateMachine.OnInputSkill(1);
     }
+    public void Skill(int idSkill)
+    {
+        stateMachine.OnInputSkill(idSkill);
+    }
 }

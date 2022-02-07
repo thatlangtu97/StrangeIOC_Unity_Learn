@@ -181,7 +181,13 @@ public class StateMachineController : MonoBehaviour
         {
             action.Invoke();
         }
-        
+    }
+    public virtual void InvokeAction(Action action)
+    {
+        if (action != null)
+        {
+            action.Invoke();
+        }
     }
 }
 
