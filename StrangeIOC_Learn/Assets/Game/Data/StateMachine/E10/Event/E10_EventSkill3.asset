@@ -28,7 +28,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 5
     - Name: 
       Entry: 7
       Data: 1|CastForwardProjectileEvent, Assembly-CSharp
@@ -37,7 +37,7 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.5
+      Data: 0.6
     - Name: duration
       Entry: 4
       Data: 1
@@ -59,21 +59,24 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: LocalDirection
+    - Name: LocalRotation
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 0.3
+      Data: 0
     - Name: 
       Entry: 4
       Data: 0
     - Name: 
+      Entry: 4
+      Data: 10
+    - Name: 
       Entry: 8
       Data: 
+    - Name: setPatent
+      Entry: 5
+      Data: false
     - Name: recycleWhenFinishDuration
       Entry: 5
       Data: false
@@ -88,7 +91,7 @@ MonoBehaviour:
       Data: 1
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.7
+      Data: 0.8
     - Name: duration
       Entry: 4
       Data: 1
@@ -110,12 +113,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: LocalDirection
+    - Name: LocalRotation
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0
     - Name: 
       Entry: 4
       Data: 0
@@ -125,6 +128,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: setPatent
+      Entry: 5
+      Data: false
     - Name: recycleWhenFinishDuration
       Entry: 5
       Data: false
@@ -139,7 +145,7 @@ MonoBehaviour:
       Data: 2
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.5
+      Data: 1
     - Name: duration
       Entry: 4
       Data: 1
@@ -161,7 +167,46 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: LocalDirection
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: -10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setPatent
+      Entry: 5
+      Data: false
+    - Name: recycleWhenFinishDuration
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|CastForwardProjectileEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 3
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 1.2
+    - Name: duration
+      Entry: 4
+      Data: 1
+    - Name: Prefab
+      Entry: 10
+      Data: 0
+    - Name: Localosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
@@ -169,13 +214,85 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 4
-      Data: -0.3
+      Data: 1
     - Name: 
       Entry: 4
       Data: 0
     - Name: 
       Entry: 8
       Data: 
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setPatent
+      Entry: 5
+      Data: false
+    - Name: recycleWhenFinishDuration
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|CastForwardProjectileEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 4
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 1.4
+    - Name: duration
+      Entry: 4
+      Data: 1
+    - Name: Prefab
+      Entry: 10
+      Data: 0
+    - Name: Localosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: -15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setPatent
+      Entry: 5
+      Data: false
     - Name: recycleWhenFinishDuration
       Entry: 5
       Data: false

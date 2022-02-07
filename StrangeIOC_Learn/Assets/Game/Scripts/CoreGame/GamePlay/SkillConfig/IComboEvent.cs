@@ -424,36 +424,41 @@ public class CastImpackEvent : IComboEvent
 #region CAST FORWARD PROJECTILE
 public class CastForwardProjectileEvent : IComboEvent
 {
-    [FoldoutGroup("CAST PROJECTILE")]
+    [FoldoutGroup("CAST PROJECTILE FORWARD")]
     //[BoxGroup("Cast Projectile", true, true)]
     [HideInEditorMode()]
     public int idEvent;
 
-    [FoldoutGroup("CAST PROJECTILE")]
+    [FoldoutGroup("CAST PROJECTILE FORWARD")]
     //[BoxGroup("Cast Projectile")]
     [Range(0f, 5f)]
     public float timeTriggerEvent;
 
-    [FoldoutGroup("CAST PROJECTILE")]
+    [FoldoutGroup("CAST PROJECTILE FORWARD")]
     //[BoxGroup("Cast Projectile")]
     [Range(0f, 5f)]
     public float duration;
 
-    [FoldoutGroup("CAST PROJECTILE")]
+    [FoldoutGroup("CAST PROJECTILE FORWARD")]
     //[BoxGroup("Cast Projectile")]
     public GameObject Prefab;
 
-    [FoldoutGroup("CAST PROJECTILE")]
+    [FoldoutGroup("CAST PROJECTILE FORWARD")]
     //[BoxGroup("Cast Projectile")]
     public Vector3 Localosition;
 
-    [FoldoutGroup("CAST PROJECTILE")]
+    [FoldoutGroup("CAST PROJECTILE FORWARD")]
     //[BoxGroup("Cast Impack Event")]
-    public Vector3 LocalDirection;
+    public Vector3 LocalRotation;
 
-    [FoldoutGroup("CAST PROJECTILE")]
+    [FoldoutGroup("CAST PROJECTILE FORWARD")]
+    //[BoxGroup("Cast Projectile")]
+    public bool setPatent = false;
+
+    [FoldoutGroup("CAST PROJECTILE FORWARD")]
     //[BoxGroup("Cast Projectile")]
     public bool recycleWhenFinishDuration = false;
+
 
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
@@ -470,9 +475,10 @@ public class CastForwardProjectileEvent : IComboEvent
             prefabSpawned.transform.position = baseTransform.position + new Vector3(Localosition.x * baseTransform.localScale.x,
                                                                                         Localosition.y * baseTransform.localScale.y,
                                                                                         Localosition.z * baseTransform.localScale.z);
-            prefabSpawned.transform.right = new Vector3(LocalDirection.x /** (baseTransform.localScale.x < 0 ? -1f : 1f)*/,
-                                                        LocalDirection.y,
-                                                        LocalDirection.z);
+            prefabSpawned.transform.parent = baseTransform;
+            prefabSpawned.transform.localRotation = Quaternion.Euler(LocalRotation);
+            if(setPatent==false)
+                prefabSpawned.transform.parent = null;
             ObjectPool.instance.Recycle(prefabSpawned, duration);
         }
     }

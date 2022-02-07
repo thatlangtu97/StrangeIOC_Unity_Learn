@@ -6,40 +6,40 @@ public class ProjectileForwardMovement : ProjectileMovement
 {
     public float speed;
     public Vector3 direction;
-    public Vector3 dirMove;
     float fixedDeltaTime;
-    private void OnEnable()
-    {
-        dirMove = transform.right; /*new Vector3(direction.x * transform.localScale.x, direction.y, direction.z);*/
-    }
     public override void UpdatePosition()
     {
-        updateDirMove();
-        updateRotation();
-        direction = transform.right;
+        //updateDirMove();
+        //updateRotation();
+        //direction = new Vector3(transform.right.x * transform.localScale.x,
+        //                        transform.right.y * transform.localScale.y,
+        //                        transform.right.z * transform.localScale.z
+        //                        );
+        direction = transform.right * transform.localScale.x;
+                       
         fixedDeltaTime = Time.fixedDeltaTime;
-        transform.position += dirMove * speed * fixedDeltaTime;
+        transform.position += direction * speed * fixedDeltaTime;
     }
-    private void updateDirMove()
-    {
-        if (transform.localScale.x < 0)
-        {
-            dirMove.x = Mathf.Abs(dirMove.x) * -1f;
-        }
-        else
-        {
-            dirMove.x = Mathf.Abs(dirMove.x);
-        }
-    }
-    private void updateRotation()
-    {
-        if (transform.localScale.x < 0)
-        {
-            transform.right = dirMove * -1f;
-        }
-        else
-        {
-            transform.right = dirMove;
-        }
-    }
+    //private void updateDirMove()
+    //{
+    //    //if (transform.localScale.x < 0)
+    //    //{
+    //    //    dirMove.x = Mathf.Abs(dirMove.x) * -1f;
+    //    //}
+    //    //else
+    //    //{
+    //    //    dirMove.x = Mathf.Abs(dirMove.x);
+    //    //}
+    //}
+    //private void updateRotation()
+    //{
+    //    //if (transform.localScale.x < 0)
+    //    //{
+    //    //    transform.right = dirMove * -1f;
+    //    //}
+    //    //else
+    //    //{
+    //    //    transform.right = dirMove;
+    //    //}
+    //}
 }

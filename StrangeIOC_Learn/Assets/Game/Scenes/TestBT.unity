@@ -17859,7 +17859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0522bc7e1fa194d8b9212f4af447b1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 218680105}
+  player: {fileID: 1915414524}
   cameraAnim: {fileID: 0}
   offSetX: 0
   offSetY: 0
