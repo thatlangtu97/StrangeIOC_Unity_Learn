@@ -4,12 +4,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AirAttackState", menuName = "CoreGame/State/AirAttackState")]
 public class AirAttackState : State
 {
+    public float timeTriggerGroundPlatform=.3f;
     public override void EnterState()
     {
         base.EnterState();
         controller.componentManager.isAttack = true;
         controller.componentManager.attackAirCount += 1;
         CastSkill();
+
     }
     public override void UpdateState()
     {
@@ -23,9 +25,26 @@ public class AirAttackState : State
             }
             if (timeTrigger >= eventCollectionData[idState].durationAnimation)
             {
-                //controller.animator.SetTrigger(AnimationTriger.AIRATTACKFAIL);
                 controller.ChangeState(NameState.FallingState);
             }
+            else
+            {
+                if (timeTrigger > timeTriggerGroundPlatform)
+                {
+                    if (controller.componentManager.checkGround())
+                    {
+                        if (controller.componentManager.speedMove != 0)
+                        {
+                            controller.ChangeState(NameState.MoveState);
+                        }
+                        else
+                        {
+                            controller.ChangeState(NameState.IdleState);
+                        }
+                    }
+                }
+            }
+            
         }
         else
         {
@@ -43,13 +62,6 @@ public class AirAttackState : State
             else
             {
                 controller.ChangeState(NameState.FallingState);
-                //controller.componentManager.Rotate();
-                //Vector3 newVelocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-                //if (controller.componentManager.checkWall() == true)
-                //{
-                //    newVelocity.x = 0;
-                //}
-                //controller.componentManager.rgbody2D.velocity = newVelocity;
             }
         }
 

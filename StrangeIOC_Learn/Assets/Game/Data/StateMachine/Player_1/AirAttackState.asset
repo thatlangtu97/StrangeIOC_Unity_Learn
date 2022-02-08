@@ -24,3 +24,4 @@ MonoBehaviour:
   idState: 0
   eventCollectionData:
   - {fileID: 11400000, guid: 9b752436eab3b63458ce4dd22282c8e2, type: 2}
+  timeTriggerGroundPlatform: 0.3

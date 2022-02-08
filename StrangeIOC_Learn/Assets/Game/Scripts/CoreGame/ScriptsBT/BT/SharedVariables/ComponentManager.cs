@@ -30,6 +30,7 @@ public class ComponentManager : MonoBehaviour
     public float timeScale = 1f;
     public float speedMove = 1f;
     public float maxSpeedMove = 2f;
+    public Vector2 vectorSpeed =Vector2.zero;
     public int jumpCount;
     public int dashCount;
     public int attackAirCount;

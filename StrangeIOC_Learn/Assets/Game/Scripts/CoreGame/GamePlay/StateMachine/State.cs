@@ -6,6 +6,7 @@ public class State : SerializedScriptableObject
     protected StateMachineController controller;
     protected Dictionary<int, IComboEvent> idEventTrigged = new Dictionary<int, IComboEvent>();
     protected float timeTrigger;
+    [HideInInspector]
     public int idState;
     public List<EventCollection> eventCollectionData;
 

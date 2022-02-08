@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class StateMachineController : MonoBehaviour
 {
+    [DictionaryDrawerSettings(KeyLabel = "CustomKeyName", ValueLabel = "CustomValueLabel")]
     public Dictionary<NameState, State> dictionaryStateMachine = new Dictionary<NameState, State>();
     [BoxGroup("Current State")]
     public State currentState;

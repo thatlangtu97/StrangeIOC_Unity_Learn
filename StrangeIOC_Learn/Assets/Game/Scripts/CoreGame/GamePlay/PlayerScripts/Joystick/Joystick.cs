@@ -52,11 +52,6 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     public void OnPointerDown(PointerEventData eventData)
     {
         OnDrag(eventData);
-        //if (componentManager != null)
-        //{
-        //    if (componentManager.stateMachine.currentState != null)
-        //        componentManager.stateMachine.currentState.OnInputMove();
-        //}
     }
     public void OnPointerUp(PointerEventData eventData)
     {
@@ -78,6 +73,8 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
             {
                 componentManager.speedMove = -componentManager.maxSpeedMove;
             }
+
+            componentManager.vectorSpeed = ForceVector;
         }
     }
     void OnStop()
@@ -87,29 +84,5 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
             componentManager.speedMove = 0f;
         }
     }
-    //public bool checkUseTool;
-    //private void Update()
-    //{
-    //    //if(checkUseTool)
-    //    if (componentManager != null)
-    //    {
-    //        if (ForceVector.x > 0)
-    //        {
-    //            componentManager.speedMove = componentManager.maxSpeedMove;
-    //        }
-    //        if (ForceVector.x < 0)
-    //        {
-    //            componentManager.speedMove = -componentManager.maxSpeedMove;
-    //        }
-    //        //if (ForceVector.x != 0)
-    //        //{
-    //        //    if (componentManager.stateMachine.currentState != null)
-    //        //        componentManager.stateMachine.currentState.OnInputMove();
-    //        //}
-    //        //else
-    //        //{
-    //        //    componentManager.speedMove = 0f;
-    //        //}
-    //    }
-    //}
+
 }
