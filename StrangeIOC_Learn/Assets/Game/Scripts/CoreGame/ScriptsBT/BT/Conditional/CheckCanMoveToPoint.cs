@@ -6,63 +6,42 @@ using UnityEngine;
 [TaskCategory("Extension")]
 public class CheckCanMoveToPoint : Conditional
 {
-    public SharedComponentManager componentManager;
     public SharedFloat rangeToEnemy;
-    public SharedVector2 pointToMove;
-    public float timeTarget;
-    [SerializeField]
-    private float timeCountTarget;
+    public float distanceBreak;
 
     public override TaskStatus OnUpdate()
     {
-        if (Vector2.Distance(pointToMove.Value, componentManager.Value.transform.position) < 0.1f)
+        if (rangeToEnemy.Value < distanceBreak)
         {
-            if (componentManager.Value.transform.localScale.x < 0)
-            {
-                componentManager.Value.speedMove = -componentManager.Value.maxSpeedMove;
-            }
-            else if (componentManager.Value.transform.localScale.x > 0)
-            {
-                componentManager.Value.speedMove = componentManager.Value.maxSpeedMove;
-            }
-            
-
+            return TaskStatus.Success;
         }
-//        
-//        
-//        
-//        if (rangeToEnemy.Value > distanceBreak)
+        else
+        {
+            return TaskStatus.Failure;
+        }
+        
+        
+    }
+//        if (Vector2.Distance(pointToMove.Value, componentManager.Value.transform.position) > 0.1f)
 //        {
-//            if (timeCountTarget <= 0)
+//            if (componentManager.Value.transform.localScale.x < 0)
 //            {
-//                componentManager.Value.speedMove = 0;
-//
-//                return TaskStatus.Failure;
+//                componentManager.Value.speedMove = -componentManager.Value.maxSpeedMove;
 //            }
-//            else
+//            else if (componentManager.Value.transform.localScale.x > 0)
 //            {
-//                timeCountTarget -= Time.deltaTime;
+//                componentManager.Value.speedMove = componentManager.Value.maxSpeedMove;
 //            }
+//            return TaskStatus.Success;
 //        }
 //        else
 //        {
-//            timeCountTarget = timeTarget;
-//        }
-//        if (rangeToEnemy.Value < distanceStop)
-//        {
-//            componentManager.Value.speedMove = 0;
+//            componentManager.Value.speedMove = 0f;
 //            return TaskStatus.Failure;
 //        }
-//        if (componentManager.Value.transform.localScale.x < 0)
-//        {
-//            componentManager.Value.speedMove = -componentManager.Value.maxSpeedMove;
-//        }
-//        else if (componentManager.Value.transform.localScale.x > 0)
-//        {
-//            componentManager.Value.speedMove = componentManager.Value.maxSpeedMove;
-//        }
-        return TaskStatus.Success;
+//        
 
 
-    }
+    
+
 }

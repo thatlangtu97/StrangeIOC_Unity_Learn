@@ -1902,6 +1902,8 @@
                     <e p="CheckCanMoveToPoint.cs" t="Include" />
                     <e p="CheckCoolDown.cs" t="Include" />
                     <e p="CheckInRangeHorizontal.cs" t="Include" />
+                    <e p="CheckInRangeToPoint.cs" t="Include" />
+                    <e p="CheckInRangeWorld.cs" t="Include" />
                     <e p="HasTarget.cs" t="Include" />
                   </e>
                   <e p="SharedVariables" t="Include">
