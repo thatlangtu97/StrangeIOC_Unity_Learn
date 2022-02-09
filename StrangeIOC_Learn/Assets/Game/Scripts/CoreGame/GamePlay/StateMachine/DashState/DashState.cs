@@ -8,7 +8,6 @@ public class DashState : State
         controller.componentManager.dashCount += 1;
         controller.animator.Play(eventCollectionData[idState].NameTrigger);
         controller.componentManager.Rotate();
-        controller.componentManager.properties.immuneKnock = true;
     }
     public override void UpdateState()
     {
@@ -46,8 +45,6 @@ public class DashState : State
     public override void ExitState()
     {
         base.ExitState();
-        //timeTrigger = eventCollectionData[idState].durationAnimation;
-        controller.componentManager.properties.immuneKnock = false;
     }
     public override void OnInputJump()
     {

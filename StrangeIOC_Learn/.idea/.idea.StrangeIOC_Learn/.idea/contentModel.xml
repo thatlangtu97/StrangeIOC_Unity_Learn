@@ -1817,6 +1817,7 @@
                 <e p="Projectile" t="Include">
                   <e p="ProjectileArrowMovement.cs" t="Include" />
                   <e p="ProjectileForwardMovement.cs" t="Include" />
+                  <e p="ProjectileForwardToTargetMovement.cs" t="Include" />
                   <e p="ProjectileMovement.cs" t="Include" />
                   <e p="ProjectilePet.cs" t="Include" />
                   <e p="ProjectileTrajectoryMovement.cs" t="Include" />

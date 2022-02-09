@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
-  m_Name: Player1_EventStateHit
+  m_Name: E2_Hit2
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -34,8 +34,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  NameTrigger: hit1
-  durationAnimation: 0.2
+  NameTrigger: hit2
+  durationAnimation: 0.4
   curveX:
     serializedVersion: 2
     m_Curve: []

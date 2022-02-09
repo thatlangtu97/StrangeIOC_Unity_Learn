@@ -22,6 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   idState: 0
+  Immunes: 00000000
   eventCollectionData:
   - {fileID: 11400000, guid: b413aecafabec204e9218859483f3977, type: 2}
   - {fileID: 11400000, guid: 2fc3ddb9e9e212d4fb95fb9992243e36, type: 2}
+  LockGravity: 1

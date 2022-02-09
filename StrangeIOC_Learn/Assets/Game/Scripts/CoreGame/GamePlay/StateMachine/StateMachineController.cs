@@ -160,10 +160,8 @@ public class StateMachineController : MonoBehaviour
     }
     public virtual void OnHit(Action action)
     {
-        if (componentManager.properties.immuneHit)
-        { 
-            return; 
-        }
+        if(componentManager.properties.HasImmune(Immune.HIT)) 
+            return;
         if (action != null)
         {
             action.Invoke();
@@ -173,7 +171,7 @@ public class StateMachineController : MonoBehaviour
     public virtual void OnKnockDown(Action action)
     {
         
-        if (componentManager.properties.immuneKnock)
+        if(componentManager.properties.HasImmune(Immune.KNOCK))
         {
             return;
         }

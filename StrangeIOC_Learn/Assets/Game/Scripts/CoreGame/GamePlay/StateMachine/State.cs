@@ -8,6 +8,8 @@ public class State : SerializedScriptableObject
     protected float timeTrigger;
     [ReadOnly]
     public int idState;
+    public List<Immune> Immunes = new List<Immune>();
+    
     public List<EventCollection> eventCollectionData;
 
     public virtual void InitState(StateMachineController controller)
@@ -25,6 +27,7 @@ public class State : SerializedScriptableObject
         }
         timeTrigger = 0f;
         idEventTrigged = new Dictionary<int, IComboEvent>();
+        controller.componentManager.properties.AddImunes(Immunes);
     }
     public virtual void ResetTrigger()
     {
@@ -80,6 +83,7 @@ public class State : SerializedScriptableObject
     public virtual void ExitState()
     {
         RecycleEvent();
+        controller.componentManager.properties.RemoveImmunes(Immunes);
     }
     public virtual void OnInputMove()
     {

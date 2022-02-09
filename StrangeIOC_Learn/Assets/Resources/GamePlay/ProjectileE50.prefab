@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 8137836140472550330}
-  powerCollider: 0
+  powerCollider: 1
   force: {x: 0, y: 0}
 --- !u!58 &7950874950095868510
 CircleCollider2D:

@@ -27,11 +27,13 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
         {
             //entity = e.takeDamageComponent.entity;
             entityEnemy = e.takeDamage.entityEnemy;
-            entityEnemy.stateMachineContainer.stateMachine.componentManager.properties.Heal -= e.takeDamage.damage;
+            StateMachineController stateMachine = entityEnemy.stateMachineContainer.stateMachine;
+            if(!stateMachine.componentManager.properties.HasImmune(Immune.BLOCK))
+                stateMachine.componentManager.properties.Heal -= e.takeDamage.damage;
 
-            if (entityEnemy.stateMachineContainer.stateMachine.componentManager.properties.Heal <= 0)
+            if (stateMachine.componentManager.properties.Heal <= 0)
             {
-                entityEnemy.stateMachineContainer.stateMachine.ChangeState(NameState.DieState);
+                stateMachine.ChangeState(NameState.DieState);
             }
             else
             {
@@ -42,10 +44,10 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
                     case PowerCollider.Small:
                     case PowerCollider.Medium:
                     case PowerCollider.Heavy:
-                        entityEnemy.stateMachineContainer.stateMachine.OnHit(e.takeDamage.action);
+                        stateMachine.OnHit(e.takeDamage.action);
                         break;
                     case PowerCollider.KnockDown:
-                        entityEnemy.stateMachineContainer.stateMachine.OnKnockDown(e.takeDamage.action);
+                        stateMachine.OnKnockDown(e.takeDamage.action);
                         break;
                 }
                 

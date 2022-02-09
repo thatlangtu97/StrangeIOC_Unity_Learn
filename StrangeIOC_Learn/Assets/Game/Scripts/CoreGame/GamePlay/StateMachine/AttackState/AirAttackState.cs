@@ -70,6 +70,7 @@ public class AirAttackState : State
     {
         base.ExitState();
         controller.componentManager.isAttack = false;
+
     }
     public void CastSkill()
     {
