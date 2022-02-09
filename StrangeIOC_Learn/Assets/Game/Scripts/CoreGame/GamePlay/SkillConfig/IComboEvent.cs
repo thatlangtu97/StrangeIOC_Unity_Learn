@@ -598,3 +598,47 @@ public class CastForwardEnemyProjectileEvent : IComboEvent
     }
 }
 #endregion
+
+
+#region CAST ADD FORCE
+public class CastAddForce : IComboEvent
+{
+    [FoldoutGroup("CAST ADD FORCE")]
+    //[BoxGroup("Cast Projectile", true, true)]
+    [HideInEditorMode()]
+    public int idEvent;
+
+    [FoldoutGroup("CAST ADD FORCE")]
+    //[BoxGroup("Cast Projectile")]
+    [Range(0f, 5f)]
+    public float timeTriggerEvent;
+
+    [FoldoutGroup("CAST ADD FORCE")]
+    //[BoxGroup("Cast Projectile")]
+    public Vector3 force;
+
+
+
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    private GameObject prefabSpawned;
+    public void OnEventTrigger(GameEntity entity)
+    {
+        Rigidbody2D baseRigidbody = entity.stateMachineContainer.stateMachine.componentManager.rgbody2D;
+        Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
+        
+        Vector3 CalculateForce = new Vector3(force.x * (baseTransform.localScale.x < 0 ? -1f : 1f),
+            force.y,
+            force.z);
+        baseRigidbody.AddForce(CalculateForce);
+    }
+
+    public void Recycle()
+    {
+    }
+
+    public void OnUpdateTrigger()
+    {
+    }
+}
+#endregion

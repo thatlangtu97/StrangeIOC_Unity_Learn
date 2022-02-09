@@ -4,11 +4,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SkillState", menuName = "CoreGame/State/SkillState")]
 public class SkillState : State
 {
+    public bool LockGravity = true;
     public override void EnterState()
     {
         base.EnterState();
 
         CastSkill();
+        if(LockGravity)
         controller.componentManager.rgbody2D.gravityScale = 0;
         controller.componentManager.rgbody2D.velocity = Vector2.zero;
 
@@ -24,7 +26,8 @@ public class SkillState : State
         }
         else
         {
-            controller.componentManager.rgbody2D.gravityScale = 2;
+            if(LockGravity)
+                controller.componentManager.rgbody2D.gravityScale = 2;
             if (controller.componentManager.checkGround() == true)
             {
                 if (controller.componentManager.speedMove != 0)
@@ -45,7 +48,8 @@ public class SkillState : State
     public override void ExitState()
     {
         base.ExitState();
-        controller.componentManager.rgbody2D.gravityScale = 2;
+        if(LockGravity)
+            controller.componentManager.rgbody2D.gravityScale = 2;
     }
     public void CastSkill()
     {

@@ -8,6 +8,7 @@ public class FlyAttackState : State
     {
         base.EnterState();
         controller.componentManager.isAttack = true;
+
         CastSkill();
 
     }
@@ -17,8 +18,11 @@ public class FlyAttackState : State
         if (timeTrigger < eventCollectionData[idState].durationAnimation)
         {
             controller.componentManager.Rotate(); 
-            //controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
-            controller.componentManager.rgbody2D.velocity = Vector2.zero;
+//            //controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
+
+            Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeTrigger), eventCollectionData[idState].curveY.Evaluate(timeTrigger));
+            Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
+            controller.componentManager.rgbody2D.position += force * Time.deltaTime;
         }
         else
         {
@@ -43,7 +47,8 @@ public class FlyAttackState : State
         ResetEvent();
         controller.componentManager.Rotate();
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
-        controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, eventCollectionData[idState].curveY.Evaluate(0));
+        //controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.rgbody2D.velocity.x, eventCollectionData[idState].curveY.Evaluate(0));
+        controller.componentManager.rgbody2D.velocity = Vector2.zero;
     }
     public override void OnInputDash()
     {
