@@ -498,4 +498,103 @@ public class CastForwardProjectileEvent : IComboEvent
     }
 }
 #endregion
+#region CAST FORWARD ENEMY PROJECTILE
+public class CastForwardEnemyProjectileEvent : IComboEvent
+{
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Projectile", true, true)]
+    [HideInEditorMode()]
+    public int idEvent;
 
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Projectile")]
+    [Range(0f, 5f)]
+    public float timeTriggerEvent;
+
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Projectile")]
+    [Range(0f, 5f)]
+    public float duration;
+
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Projectile")]
+    public GameObject Prefab;
+
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Projectile")]
+    public Vector3 Localosition;
+
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Impack Event")]
+    public Vector3 LocalScale = Vector3.one;
+    
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Collider")]
+    public LayerMask layerMaskEnemy;
+    
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Collider")]
+    public float radiusCastEnemy;
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Projectile")]
+    public bool setPatent = false;
+
+    [FoldoutGroup("CAST PROJECTILE ENEMY FORWARD")]
+    //[BoxGroup("Cast Projectile")]
+    public bool recycleWhenFinishDuration = false;
+
+
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    private GameObject prefabSpawned;
+    public void OnEventTrigger(GameEntity entity)
+    {
+        if (Prefab)
+        {
+            prefabSpawned = ObjectPool.Spawn(Prefab);
+            Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
+            prefabSpawned.transform.localScale = new Vector3(LocalScale.x * (baseTransform.localScale.x < 0 ? -1f : 1f),
+                LocalScale.y,
+                LocalScale.z);
+            prefabSpawned.transform.position = baseTransform.position + new Vector3(Localosition.x * baseTransform.localScale.x,
+                                                                                        Localosition.y * baseTransform.localScale.y,
+                                                                                        Localosition.z * baseTransform.localScale.z);
+            prefabSpawned.transform.parent = baseTransform;
+            
+            Collider2D[] cols = null;
+            
+            cols = Physics2D.OverlapCircleAll(baseTransform.position, radiusCastEnemy, layerMaskEnemy);
+            if (cols != null)
+            {
+                foreach (var col in cols)
+                {
+                    if (col != null)
+                    {
+                        Debug.Log(col.gameObject.name);
+                        Vector3 direction = col.transform.position - baseTransform.position;
+                        prefabSpawned.transform.right = direction.normalized  * baseTransform.localScale.x ;
+                        break;
+                    }
+                }
+            }
+            
+            if(setPatent==false)
+                prefabSpawned.transform.parent = null;
+            ObjectPool.instance.Recycle(prefabSpawned, duration);
+        }
+    }
+
+    public void Recycle()
+    {
+        if (recycleWhenFinishDuration)
+        {
+            if (prefabSpawned)
+                ObjectPool.Recycle(prefabSpawned);
+        }
+    }
+
+    public void OnUpdateTrigger()
+    {
+    }
+}
+#endregion

@@ -15,8 +15,8 @@ public class ProjectileForwardToTargetMovement : ProjectileMovement
     public bool hasTarget;
     private void OnEnable()
     {
-        hasTarget = false;
-        FindEnemy();
+//        hasTarget = false;
+//        FindEnemy();
     }
 
     public void FindEnemy()
@@ -41,12 +41,13 @@ public class ProjectileForwardToTargetMovement : ProjectileMovement
     }
     public override void UpdatePosition()
     {
-        if (hasTarget)
-        {
-            direction = transform.right * transform.localScale.x;
+//        if (hasTarget)
+//        {
+        direction = transform.right * transform.localScale.x;
+//        * transform.localScale.x;
 
             fixedDeltaTime = Time.fixedDeltaTime;
             transform.position += direction * speed * fixedDeltaTime;
-        }
+//        }
     }
 }

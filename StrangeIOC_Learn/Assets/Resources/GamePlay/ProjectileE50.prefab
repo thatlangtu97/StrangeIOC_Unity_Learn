@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4558968845799797876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 8137836140472550328}
   m_RootOrder: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 1485561897
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 53376d46aa93495498e77d97f3dd13b2, type: 3}
-  m_Color: {r: 0.8962264, g: 0, b: 0.1546432, a: 1}
+  m_Sprite: {fileID: 21300000, guid: abffc294fa417764193f902a8a92be18, type: 3}
+  m_Color: {r: 0.7075472, g: 0.07008722, b: 0.07008722, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,8 +93,8 @@ GameObject:
   - component: {fileID: 8137836140472550329}
   - component: {fileID: 8137836140472550330}
   - component: {fileID: 8137836140472550331}
-  - component: {fileID: 5508922471928266118}
   - component: {fileID: 7950874950095868510}
+  - component: {fileID: 324274899}
   m_Layer: 0
   m_Name: ProjectileE50
   m_TagString: Untagged
@@ -142,9 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d790fa82fee00e4c84916e94ca85e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderProjectile: {fileID: 0}
+  colliderProjectile: {fileID: 7950874950095868510}
   link: {fileID: 0}
-  projectileMovement: {fileID: 5508922471928266118}
+  projectileMovement: {fileID: 324274899}
 --- !u!114 &8137836140472550331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,28 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component: {fileID: 8137836140472550330}
-  powerCollider: 1
+  powerCollider: 0
   force: {x: 0, y: 0}
---- !u!114 &5508922471928266118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8137836140472550334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf1954bf3646ca742ab352cd1c6691d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  direction: {x: 0, y: 0, z: 0}
-  radiusCastEnemy: 10
-  layerMaskEnemy:
-    serializedVersion: 2
-    m_Bits: 2048
-  enemyTransform: {fileID: 0}
-  hasTarget: 0
 --- !u!58 &7950874950095868510
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -196,3 +176,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &324274899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137836140472550334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832261b39b2f5422b8113d4d677056de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  direction: {x: 0, y: 0, z: 0}

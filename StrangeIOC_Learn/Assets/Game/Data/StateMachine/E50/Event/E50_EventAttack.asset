@@ -31,7 +31,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|CastForwardProjectileEvent, Assembly-CSharp
+      Data: 1|CastForwardEnemyProjectileEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
@@ -59,27 +59,39 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: LocalRotation
+    - Name: LocalScale
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 4
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 4
-      Data: -30
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2048
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: radiusCastEnemy
+      Entry: 4
+      Data: 6
     - Name: setPatent
       Entry: 5
       Data: false
     - Name: recycleWhenFinishDuration
       Entry: 5
-      Data: false
+      Data: true
     - Name: 
       Entry: 8
       Data: 
