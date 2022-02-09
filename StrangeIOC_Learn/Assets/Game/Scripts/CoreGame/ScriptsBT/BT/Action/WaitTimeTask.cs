@@ -11,9 +11,22 @@ public class WaitTimeTask : Action
     public SharedComponentManager componentManager;
     public SharedFloat waitTime = 1;
     private float startTime;
+    public bool useRandomWaitTime = false;
+    public float minWaitTime = 0.3f;
+    public float maxWaitTime = 1f;
+    public override void OnAwake()
+    {
+        base.OnAwake();
+        if (useRandomWaitTime)
+        {
+            startTime = Random.Range(minWaitTime, maxWaitTime);
+        }
+    }
+
     public override void OnStart()
     {
         // Remember the start time.
+        
         startTime =waitTime.Value;
 
     }
