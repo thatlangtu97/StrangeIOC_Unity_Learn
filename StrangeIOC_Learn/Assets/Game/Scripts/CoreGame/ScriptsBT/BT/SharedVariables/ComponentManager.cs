@@ -1,4 +1,5 @@
-﻿using BehaviorDesigner.Runtime;
+﻿using System;
+using BehaviorDesigner.Runtime;
 using Entitas.Unity;
 using System.Collections;
 using System.Collections.Generic;
@@ -216,10 +217,26 @@ public class ComponentManager : MonoBehaviour
     }
     public void DestroyEntity()
     {
-        gameObject.Unlink();
-        entity.Destroy();
-        link = null;
+        if (entity != null)
+        {
+            gameObject.Unlink();
+            entity.Destroy();
+            entity = null;
+            link = null;
+        }
     }
+
+    private void OnDestroy()
+    {
+        DestroyEntity();
+    }
+
+    private void Reset()
+    {
+        DestroyEntity();
+        OnEnable();
+    }
+
     /// <summary>
     /// UpdateWorldTransform() in Script 
     /// SkeletonAnimation.cs

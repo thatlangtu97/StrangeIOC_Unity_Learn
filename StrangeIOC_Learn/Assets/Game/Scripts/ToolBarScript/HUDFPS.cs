@@ -21,6 +21,8 @@ public class HUDFPS : MonoBehaviour
 	private float timeleft; // Left time for current interval4
 
 	private float fps = 0.0f;
+	private int CountFps = 10;
+	
     private void Awake()
     {
         Application.targetFrameRate = 62;
@@ -32,22 +34,34 @@ public class HUDFPS : MonoBehaviour
 	
 	void Update()
 	{
-		//timeleft -= Time.deltaTime;
-		//accum += Time.timeScale/Time.deltaTime;
-		//++frames;
+		CountFps -= 1;
+		if (CountFps <= 0)
+		{
+			fps = Time.timeScale / Time.deltaTime;
+			fps_text.text = System.String.Format("{0:F2}", fps);
+			CountFps = 10;
+			if (fps < 20)
+			{
+				fps_text.color = Color.red;
+				return;
+			}
 
-		//// Interval ended - update GUI text and start new interval
-		//if( timeleft <= 0.0 )
-		//{
-		//	// Calculate frame rate
-		//	fps = accum/frames;
-
-		//	timeleft = updateInterval;
-		//	accum = 0.0F;
-		//	frames = 0;
-		//}
-		fps = Time.timeScale / Time.deltaTime;
-        fps_text.text = System.String.Format("{0:F2}", fps);
-    }
+			if (fps < 30)
+			{
+				fps_text.color = Color.magenta;
+				return;
+			}
+			if (fps < 50)
+			{
+				fps_text.color = Color.yellow;
+				return;
+			}
+			if (fps < 100)
+			{
+				fps_text.color = Color.green;
+				return;
+			}
+		}
+	}
 }
 

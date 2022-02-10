@@ -21,7 +21,9 @@ public class DieState : State
     {
         base.ExitState();
         {
+            
             controller.gameObject.SetActive(false);
+            Destroy(controller.gameObject);
         }
     }
     public override void OnRevive()

@@ -571,7 +571,6 @@ public class CastForwardEnemyProjectileEvent : IComboEvent
                 {
                     if (col != null)
                     {
-                        Debug.Log(col.gameObject.name);
                         Vector3 direction = col.transform.position - baseTransform.position;
                         prefabSpawned.transform.right = direction.normalized  * baseTransform.localScale.x ;
                         break;

@@ -21,5 +21,6 @@ public class ProjectileCollider : MonoBehaviour
             other.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(force.x * transform.localScale.x, force.y), other.transform.position);
         };
         DealDmgManager.DealDamage(other, component.entity, powerCollider, action);
+        ObjectPool.Recycle(this.gameObject);
     }
 }

@@ -69,8 +69,8 @@ public class GameController : MonoBehaviour
         contexts.Reset();
         */
         ComponentManagerUtils.ResetAll();
-        Contexts.sharedInstance.Reset();
-        //Contexts.sharedInstance = new Contexts();
+        //Contexts.sharedInstance.Reset();
+        Contexts.sharedInstance = new Contexts();
     }
     public void BackToHome()
     {
@@ -81,8 +81,8 @@ public class GameController : MonoBehaviour
         if(PlayFlashScene.instance!=null)
             PlayFlashScene.instance.ShowLoading();
         ComponentManagerUtils.ResetAll();
-        Contexts.sharedInstance.Reset();
-        //Contexts.sharedInstance = new Contexts();
+        //Contexts.sharedInstance.Reset();
+        Contexts.sharedInstance = new Contexts();
         yield return new WaitForSeconds(1.2f);
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);

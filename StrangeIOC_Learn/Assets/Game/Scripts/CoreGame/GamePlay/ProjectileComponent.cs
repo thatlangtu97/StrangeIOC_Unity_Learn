@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Entitas.Unity;
 using UnityEngine;
@@ -23,9 +24,17 @@ public class ProjectileComponent : MonoBehaviour
     }
     public void OnDisable()
     {
-        gameObject.Unlink();
-        entity.Destroy();
-        entity = null;
-        link = null;
+        if (entity != null)
+        {
+            gameObject.Unlink();
+            entity.Destroy();
+            entity = null;
+            link = null;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        OnDisable();
     }
 }
