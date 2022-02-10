@@ -20,7 +20,7 @@ public class KnockDownState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        if (controller.componentManager.checkGroundBoxCast == true && timeTrigger>= eventCollectionData[idState].durationAnimation)
+        if (controller.componentManager.checkGround() == true && timeTrigger>= eventCollectionData[idState].durationAnimation)
         {
             controller.ChangeState(NameState.KnockUpState);
         }

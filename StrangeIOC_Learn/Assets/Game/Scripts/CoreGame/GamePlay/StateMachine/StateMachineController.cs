@@ -23,9 +23,6 @@ public class StateMachineController : MonoBehaviour
     }
     public ComponentManager componentManager;
     public Animator animator;
-    public virtual void Update()
-    {
-    }
     public virtual void InitStateMachine()
     {
         SetupState();
@@ -74,7 +71,7 @@ public class StateMachineController : MonoBehaviour
             {
                 if (nameState != currentNameState)
                 {
-                    if (currentState != null)
+                    if (currentState)
                     {
                         currentState.ExitState();
                     }
@@ -86,7 +83,7 @@ public class StateMachineController : MonoBehaviour
         }
         else
         {
-            if (currentState != null)
+            if (currentState)
             {
                 currentState.ExitState();
             }
@@ -106,7 +103,7 @@ public class StateMachineController : MonoBehaviour
             {
                 if (nameState != currentNameState)
                 {
-                    if (currentState != null)
+                    if (currentState)
                     {
                         currentState.ExitState();
                     }
@@ -118,7 +115,7 @@ public class StateMachineController : MonoBehaviour
         }
         else
         {
-            if (currentState != null)
+            if (currentState)
             {
                 currentState.ExitState();
             }
@@ -160,7 +157,7 @@ public class StateMachineController : MonoBehaviour
     }
     public virtual void OnHit(Action action)
     {
-        if(componentManager.properties.HasImmune(Immune.HIT)) 
+        if(componentManager.HasImmune(Immune.HIT)) 
             return;
         if (action != null)
         {
@@ -171,7 +168,7 @@ public class StateMachineController : MonoBehaviour
     public virtual void OnKnockDown(Action action)
     {
         
-        if(componentManager.properties.HasImmune(Immune.KNOCK))
+        if(componentManager.HasImmune(Immune.KNOCK))
         {
             return;
         }

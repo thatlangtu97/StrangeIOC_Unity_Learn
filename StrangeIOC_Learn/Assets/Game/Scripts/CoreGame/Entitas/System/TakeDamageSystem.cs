@@ -7,7 +7,6 @@ using Entitas;
 public class TakeDamageSystem : ReactiveSystem<GameEntity>
 {
     readonly GameContext _gameContext;
-    //GameEntity entity;
     GameEntity entityEnemy;
     public TakeDamageSystem(Contexts contexts) : base(contexts.game)
     {
@@ -25,13 +24,12 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
     {
         foreach (GameEntity e in entities)
         {
-            //entity = e.takeDamageComponent.entity;
             entityEnemy = e.takeDamage.entityEnemy;
             StateMachineController stateMachine = entityEnemy.stateMachineContainer.stateMachine;
-            if(!stateMachine.componentManager.properties.HasImmune(Immune.BLOCK))
-                stateMachine.componentManager.properties.Heal -= e.takeDamage.damage;
+            if(!stateMachine.componentManager.HasImmune(Immune.BLOCK))
+                stateMachine.componentManager.heal -= e.takeDamage.damage;
 
-            if (stateMachine.componentManager.properties.Heal <= 0)
+            if (stateMachine.componentManager.heal <= 0)
             {
                 stateMachine.ChangeState(NameState.DieState);
             }

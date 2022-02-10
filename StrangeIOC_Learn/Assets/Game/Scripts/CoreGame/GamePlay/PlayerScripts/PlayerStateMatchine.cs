@@ -8,7 +8,7 @@ public class PlayerStateMatchine : StateMachineController
     public override void UpdateState()
     {
         base.UpdateState();
-        componentManager.checkGround();
+        //componentManager.checkGround();
     }
     public override void OnInputDash()
     {

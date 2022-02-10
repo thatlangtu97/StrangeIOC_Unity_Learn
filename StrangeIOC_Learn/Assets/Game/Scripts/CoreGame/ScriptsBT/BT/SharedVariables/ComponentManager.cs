@@ -2,43 +2,71 @@
 using Entitas.Unity;
 using System.Collections;
 using System.Collections.Generic;
+using Doozy.Engine.Extensions;
+using Sirenix.OdinInspector;
 using UnityEngine;
 [System.Serializable]
 public class ComponentManager : MonoBehaviour
 {
+    [FoldoutGroup("REFERENCE")]
     public Transform enemy;
+    [FoldoutGroup("REFERENCE")]
     public StateMachineController stateMachine;
+    [FoldoutGroup("REFERENCE")]
     public BehaviorTree BehaviorTree;
+    [FoldoutGroup("REFERENCE")]
     public Rigidbody2D rgbody2D;
-    public LayerMask layerMaskGround,layerMaskWall,layerEnemy;
+    [FoldoutGroup("REFERENCE")]
     public ComponentProperties properties;
+    [FoldoutGroup("REFERENCE")]
     public MeshRenderer meshRenderer;
-    //[HideInInspector]
-    public GameEntity entity;
+    [FoldoutGroup("REFERENCE")]
     public EntityLink link;
-    public bool hasCheckEnemyInSigh;
-    public bool isFaceRight = false;
+    [FoldoutGroup("REFERENCE")]
+    [ShowInInspector]
+    public GameEntity entity;
+    
+    [FoldoutGroup("BUFFER")]
+    public LayerMask layerMaskGround,layerMaskWall,layerEnemy;
+    [FoldoutGroup("BUFFER")]
     public bool isAttack = false;
+    [FoldoutGroup("BUFFER")]
     public bool isOnGround;
+    [FoldoutGroup("BUFFER")]
     public bool isBufferAttack;
+    [FoldoutGroup("BUFFER")]
     [Range(0f,2f)]
     public float distanceCheckGround=0.1f;
+    [FoldoutGroup("BUFFER")]
     [Range(0f, 2f)]
     public float distanceCheckWall = 0.1f;
+    [FoldoutGroup("BUFFER")]
     [Range(0f, 5f)]
     public float distanceChecEnemy = 0.1f;
-    public float timeScale = 1f;
-    public float speedMove = 1f;
-    public float maxSpeedMove = 2f;
+    [FoldoutGroup("BUFFER")]
     public Vector2 vectorSpeed =Vector2.zero;
-    public int jumpCount;
-    public int dashCount;
+    [FoldoutGroup("BUFFER")]
     public int attackAirCount;
+    [FoldoutGroup("BUFFER")]
+    public float speedMove ;
+    [FoldoutGroup("BUFFER")]
+    public Vector2 originBoxCheckGround2d = new Vector2(.4f, .1f);
+//    [FoldoutGroup("BUFFER")]
+//    public float radius = .1f;
+    [FoldoutGroup("BUFFER")]
+    [ShowInInspector]
+    public List<Immune> currentImunes= new List<Immune>();
+    
+    [FoldoutGroup("PROPERTIES")]
+    public int heal=100;
+    [FoldoutGroup("PROPERTIES")]
+    public List<Immune> baseImmunes = new List<Immune>();
+    [FoldoutGroup("PROPERTIES")]
+    public int jumpCount,dashCount;
+    [FoldoutGroup("PROPERTIES")] 
+    public float maxSpeedMove = 2f;
+    [FoldoutGroup("PROPERTIES")] 
     public int maxJump,maxDash, maxAttackAirCount;
-    public Vector2 originBoxCheckGround2d = new Vector2(0f, 0f);
-    public Vector2 sizeBoxCheckGround2d = new Vector2(.5f,.1f);
-    public float radius = .1f;
-
     private void Awake()
     {
         // var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
@@ -46,14 +74,15 @@ public class ComponentManager : MonoBehaviour
         //{
         //    component.AddComponent(ref entity);
         //}
+        
     }
     public void OnEnable()
     {
+        currentImunes = baseImmunes.Clone();
         entity = Contexts.sharedInstance.game.CreateEntity();
         link = gameObject.Link(entity);
         //var component = GetComponent<IAutoAdd<GameEntity>>();
         //component.AddComponent(ref entity);
-        
 
         var components = GetComponentsInChildren<IAutoAdd<GameEntity>>();
         foreach (var component in components)
@@ -80,34 +109,40 @@ public class ComponentManager : MonoBehaviour
         }
     }
     
-    
     public void ResetJumpCount()
     {
         jumpCount = 0;
     }
+    
     public void ResetDashCount()
     {
         dashCount = 0;
     }
+    
     public void ResetAttackAirCount()
     {
         attackAirCount = 0;
     }
+    
     public bool CanJump
     {
         get { return jumpCount < maxJump; }
     }
+    
     public bool CanDash
     {
         get { return dashCount < maxDash; }
     }
+    
     public bool CanAttackAir
     {
         get { return attackAirCount < maxAttackAirCount; }
     }
+    
     public bool checkGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceCheckGround, layerMaskGround);
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceCheckGround, layerMaskGround);
+        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position , originBoxCheckGround2d,0, Vector2.down,0f, layerMaskGround);
         if (hit.collider != null)
         {
             isOnGround = true;
@@ -119,30 +154,31 @@ public class ComponentManager : MonoBehaviour
             return false;
         }
     }
-    public bool checkGroundBoxCast
-    {
-        get
-        {
-            //RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + originBoxCheckGround2d, sizeBoxCheckGround2d,0, Vector2.down,0f, layerMaskGround);
-            Vector2 origin = (Vector2)transform.position + originBoxCheckGround2d;
-            float radius = this.radius;
-            Vector2 direction = Vector2.zero;
-            float distance = 0;
-            int layerMask = layerMaskGround;
-            RaycastHit2D hit = Physics2D.CircleCast(origin, radius, direction, distance, layerMask);
-            
-            if (hit.collider != null)
-            {
-                isOnGround = true;
-                return true;
-            }
-            else
-            {
-                isOnGround = false;
-                return false;
-            }
-        }
-    }
+    
+//    public bool checkGroundBoxCast
+//    {
+//        get
+//        {
+//            int layerMask = layerMaskGround;
+////            Vector2 origin = (Vector2)transform.position + originBoxCheckGround2d;
+////            float radius = this.radius;
+////            Vector2 direction = Vector2.zero;
+////            float distance = 0;
+////            RaycastHit2D hit = Physics2D.CircleCast(origin, radius, direction, distance, layerMask);
+//            
+//            RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position , originBoxCheckGround2d,0, Vector2.down,0f, layerMask);
+//            if (hit.collider != null)
+//            {
+//                isOnGround = true;
+//                return true;
+//            }
+//            else
+//            {
+//                isOnGround = false;
+//                return false;
+//            }
+//        }
+//    }
     public bool checkWall()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1,0)* transform.localScale.x, distanceCheckWall, layerMaskWall);
@@ -202,4 +238,37 @@ public class ComponentManager : MonoBehaviour
     //        mecanim.skeleton.UpdateWorldTransform();
     //    }
     //}
+
+    public void AddImunes(List<Immune> immunesAdd)
+    {
+        List<Immune> tempImmune = baseImmunes.Clone();
+        foreach (Immune immuneItem in immunesAdd)
+        {
+            if(baseImmunes.Contains(immuneItem))
+                continue;
+            tempImmune.Add(immuneItem);
+        }
+
+        currentImunes = tempImmune;
+    }
+
+    public void RemoveImmunes(List<Immune> immunesRemove)
+    {
+        foreach (Immune immuneItem in immunesRemove)
+        {
+            if(baseImmunes.Contains(immuneItem))
+                continue;
+            if(currentImunes.Contains(immuneItem))
+                currentImunes.Remove(immuneItem);
+        }
+    }
+
+    public bool HasImmune(Immune immune)
+    {
+        if (currentImunes.Contains(immune))
+        {
+            return true;
+        }
+        return false;
+    }
 }

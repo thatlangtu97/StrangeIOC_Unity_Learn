@@ -18,8 +18,20 @@ public class HitState : State
         base.UpdateState();
         if (timeTrigger > eventCollectionData[idState].durationAnimation)
         {
-            controller.ChangeState(NameState.IdleState);
+            if (controller.componentManager.checkGround())
+            {
+                controller.ChangeState(NameState.IdleState);
+            }
+//            else
+//            {
+//                controller.ChangeState(NameState.FallingState);
+//            }
         }
+        if (!controller.componentManager.checkGround())
+        {
+            controller.ChangeState(NameState.FallingState);
+        }
+        
     }
     public override void ExitState()
     {

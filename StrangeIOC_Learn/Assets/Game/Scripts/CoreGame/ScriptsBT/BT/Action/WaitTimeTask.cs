@@ -38,7 +38,7 @@ public class WaitTimeTask : Action
         {
             return TaskStatus.Success;
         }
-        startTime -= Time.deltaTime * componentManager.Value.timeScale;
+        startTime -= Time.deltaTime;
         // Otherwise we are still waiting.
         return TaskStatus.Running;
     }

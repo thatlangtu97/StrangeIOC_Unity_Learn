@@ -18,7 +18,7 @@ public class MoveState : State
     {
         controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove, controller.componentManager.rgbody2D.velocity.y);
         controller.componentManager.Rotate();
-        if (controller.componentManager.checkGroundBoxCast == false)
+        if (controller.componentManager.checkGround() == false)
         {
             controller.ChangeState(NameState.FallingState);
         }

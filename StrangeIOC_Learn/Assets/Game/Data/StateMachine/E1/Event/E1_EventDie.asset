@@ -120,7 +120,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   NameTrigger: die
-  durationAnimation: 1
+  durationAnimation: 0
   curveX:
     serializedVersion: 2
     m_Curve: []

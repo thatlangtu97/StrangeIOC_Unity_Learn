@@ -23,7 +23,7 @@ public class IdleState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        if (controller.componentManager.checkGroundBoxCast == false)
+        if (controller.componentManager.checkGround() == false)
         {
             controller.ChangeState(NameState.FallingState);
         }

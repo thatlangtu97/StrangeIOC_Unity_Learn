@@ -41,7 +41,6 @@ public class ProjectileTrajectoryMovement : ProjectileMovement
             {
                 if (col != null)
                 {
-                    Debug.Log(col.gameObject.name);
                     enemyTransform = col.transform;
                     break;
                 }

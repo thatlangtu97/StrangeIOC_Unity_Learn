@@ -20,7 +20,7 @@ public class KnockUpState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        if (controller.componentManager.checkGroundBoxCast == true )
+        if (controller.componentManager.checkGround() == true )
         {
             timeCount += Time.deltaTime;
             if (timeCount >= eventCollectionData[idState].durationAnimation)

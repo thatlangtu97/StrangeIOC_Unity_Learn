@@ -23,7 +23,7 @@ public class ReviveState : State
         }
         else
         {
-            controller.componentManager.properties.Heal = 100;
+            controller.componentManager.heal = 100;
             if (controller.componentManager.checkGround() == true)
             {
                 if (controller.componentManager.speedMove != 0)

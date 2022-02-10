@@ -158,7 +158,7 @@ public class CastBoxColliderEvent : IComboEvent
                         col.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(force.x * transform.localScale.x, force.y), col.transform.position);
                     };
                     DealDmgManager.DealDamage(col, entity, powerCollider, action);
-                    break;
+                    //break;
                 }
             }
         }
@@ -265,7 +265,7 @@ public class CastCircleColliderEvent : IComboEvent
                         col.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(force.x * transform.localScale.x, force.y), col.transform.position);
                     };
                     DealDmgManager.DealDamage(col, entity, powerCollider, action);
-                    break;
+                    //break;
                 }
             }
         }
@@ -498,6 +498,7 @@ public class CastForwardProjectileEvent : IComboEvent
     }
 }
 #endregion
+
 #region CAST FORWARD ENEMY PROJECTILE
 public class CastForwardEnemyProjectileEvent : IComboEvent
 {
@@ -598,7 +599,6 @@ public class CastForwardEnemyProjectileEvent : IComboEvent
     }
 }
 #endregion
-
 
 #region CAST ADD FORCE
 public class CastAddForce : IComboEvent
