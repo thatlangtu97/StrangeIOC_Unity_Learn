@@ -9,6 +9,7 @@ public class UiViewController : MonoBehaviour
     public UIView uiView;
     public bool isStarted;
     public Action action;
+    public bool DisableGameObjectWhenHidden = true;
     void Start()
     {
         //if (action != null && isStarted == false && gameObject.activeInHierarchy)
@@ -18,7 +19,7 @@ public class UiViewController : MonoBehaviour
         //    action.Invoke();
         //}
         
-        uiView.DisableGameObjectWhenHidden = true;
+        uiView.DisableGameObjectWhenHidden = DisableGameObjectWhenHidden;
         isStarted = true;
         DelayInvokeAction();
         //action.Invoke();

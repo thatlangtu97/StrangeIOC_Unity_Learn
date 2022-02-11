@@ -9,6 +9,7 @@ public class SetupDataManagerCmd : Command
     {
         DataManager.Instance.CurrencyDataManager.LoadData();
         EquipmentLogic.Cache();
+        HeroLogic.Cache();
         PrefabUtils.LoadPrefab(GameResourcePath.PANEL_CRAFT);
         PrefabUtils.LoadPrefab(GameResourcePath.PANEL_HERO);
         PrefabUtils.LoadPrefab(GameResourcePath.PANEL_SHOP);

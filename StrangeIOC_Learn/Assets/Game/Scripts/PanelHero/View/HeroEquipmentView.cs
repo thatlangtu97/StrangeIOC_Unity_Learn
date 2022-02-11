@@ -3,16 +3,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class HeroEquipmentView : View
 {
     [Inject] public GlobalData global { get; set; }
     [Inject] public OnViewHeroSignal OnViewHeroSignal { get; set; }
 
-    Dictionary<GearSlot, EquipmentOfHeroView> DicEquipmentOfHeroView = new Dictionary<GearSlot, EquipmentOfHeroView>();
+    private Dictionary<GearSlot, EquipmentOfHeroView> DicEquipmentOfHeroView = new Dictionary<GearSlot, EquipmentOfHeroView>();
     [SerializeField]
-    List<EquipmentOfHeroView> listEquipmentOfHeroView = new List<EquipmentOfHeroView>();
-    List<EquipmentData> currentEquipment = new List<EquipmentData>();
+    private List<EquipmentOfHeroView> listEquipmentOfHeroView = new List<EquipmentOfHeroView>();
+    private List<EquipmentData> currentEquipment = new List<EquipmentData>();
+    [SerializeField]
+    private HeroPreViewData heroPreViewData;
     protected override void Awake()
     {
         base.Awake();
@@ -44,9 +46,8 @@ public class HeroEquipmentView : View
             DicEquipmentOfHeroView[data.gearSlot].backItem.SetActive(false);
             DicEquipmentOfHeroView[data.gearSlot].view.gameObject.SetActive(true);
             DicEquipmentOfHeroView[data.gearSlot].view.Show(data, config);
-            
-            
         }
+        heroPreViewData.Show(global.CurrentIdHero);
     }
     private void InitItem()
     {
@@ -68,5 +69,18 @@ public class HeroEquipmentView : View
         public GearSlot slot;
         public EquipmentItemView view;
         public GameObject backItem;
+    }
+    [System.Serializable]
+    public struct HeroPreViewData
+    {
+        public Image previewImage;
+        public Text previewName;
+
+        public void Show(int id)
+        {
+            previewImage.sprite = HeroLogic.GetHeroConfigById(id).preview;
+            previewImage.SetNativeSize();
+            previewName.text= HeroLogic.GetHeroConfigById(id).name;
+        }
     }
 }

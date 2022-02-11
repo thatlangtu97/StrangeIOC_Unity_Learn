@@ -16,14 +16,15 @@ public class PanelHeroView : AbsPanelView
         backBtn.onClick.AddListener(()=>popupManager.BackPanel());
         popupManager.AddPopup(PopupKey.EquipmentHeroDetailLeft, PopupEquipmentDetailLeft);
         popupManager.AddPopup(PopupKey.EquipmentHeroDetailRight, PopupEquipmentDetailFight);
+        
     }
     public override void NotifyShowPanel()
     {
         base.NotifyShowPanel();
         heroEquipmentView.Show();
         inventoryView.ReloadPage();
-        PopupEquipmentDetailLeft.HidePopup();
-        PopupEquipmentDetailFight.HidePopup();
+//        PopupEquipmentDetailLeft.HidePopup();
+//        PopupEquipmentDetailFight.HidePopup();
     }
     public override void ShowPanelByCmd()
     {

@@ -1956,6 +1956,7 @@
               </e>
               <e p="EquipmentItemView.cs" t="Include" />
               <e p="EquipmentLogic.cs" t="Include" />
+              <e p="HeroLogic.cs" t="Include" />
               <e p="Signal" t="Include">
                 <e p="EquipGearSignal.cs" t="Include" />
                 <e p="ShowEquipmentDetailSignal.cs" t="Include" />

@@ -10872,6 +10872,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5739063899169825810}
+  - {fileID: 8137005267389295721}
   m_Father: {fileID: 1519741571647278500}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13584,7 +13585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NAGATO
+  m_Text: 
 --- !u!1 &1519741571647278501
 GameObject:
   m_ObjectHideFlags: 0
@@ -13661,6 +13662,9 @@ MonoBehaviour:
   - slot: 3
     view: {fileID: 2569945773631529318}
     backItem: {fileID: 8415059594867491616}
+  heroPreViewData:
+    previewImage: {fileID: 1643708173460382388}
+    previewName: {fileID: 1519741571034859382}
 --- !u!1 &1519741572102731441
 GameObject:
   m_ObjectHideFlags: 0
@@ -39829,6 +39833,80 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4629832905938264862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8137005267389295721}
+  - component: {fileID: 1258956007336960371}
+  - component: {fileID: 1643708173460382388}
+  m_Layer: 5
+  m_Name: Image_Demo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8137005267389295721
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629832905938264862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2943912018045163187}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -392}
+  m_SizeDelta: {x: 495, y: 741}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &1258956007336960371
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629832905938264862}
+  m_CullTransparentMesh: 0
+--- !u!114 &1643708173460382388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629832905938264862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4659889710029160724
 GameObject:
   m_ObjectHideFlags: 0
@@ -45906,7 +45984,7 @@ MonoBehaviour:
   AutoHideAfterShow: 0
   AutoHideAfterShowDelay: 3
   AutoSelectButtonAfterShow: 0
-  BehaviorAtStart: 0
+  BehaviorAtStart: 2
   CustomStartAnchoredPosition: {x: 0, y: 0, z: 0}
   DeselectAnyButtonSelectedOnHide: 0
   DeselectAnyButtonSelectedOnShow: 0
@@ -46674,6 +46752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: -7859120478517912315}
   isStarted: 0
+  DisableGameObjectWhenHidden: 1
 --- !u!1 &6064920608051475519
 GameObject:
   m_ObjectHideFlags: 0
@@ -58090,7 +58169,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 65335
 --- !u!225 &1995156944
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -58123,12 +58202,12 @@ MonoBehaviour:
   AutoHideAfterShow: 0
   AutoHideAfterShowDelay: 3
   AutoSelectButtonAfterShow: 0
-  BehaviorAtStart: 1
+  BehaviorAtStart: 2
   CustomStartAnchoredPosition: {x: 0, y: 0, z: 0}
   DeselectAnyButtonSelectedOnHide: 0
   DeselectAnyButtonSelectedOnShow: 0
   DisableCanvasWhenHidden: 1
-  DisableGameObjectWhenHidden: 0
+  DisableGameObjectWhenHidden: 1
   DisableGraphicRaycasterWhenHidden: 1
   HideBehavior:
     Animation:
@@ -58891,6 +58970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: 1995156943}
   isStarted: 0
+  DisableGameObjectWhenHidden: 1
 --- !u!114 &380415088501025424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84433,12 +84513,12 @@ MonoBehaviour:
   AutoHideAfterShow: 0
   AutoHideAfterShowDelay: 3
   AutoSelectButtonAfterShow: 0
-  BehaviorAtStart: 1
+  BehaviorAtStart: 2
   CustomStartAnchoredPosition: {x: 0, y: 0, z: 0}
   DeselectAnyButtonSelectedOnHide: 0
   DeselectAnyButtonSelectedOnShow: 0
   DisableCanvasWhenHidden: 1
-  DisableGameObjectWhenHidden: 0
+  DisableGameObjectWhenHidden: 1
   DisableGraphicRaycasterWhenHidden: 1
   HideBehavior:
     Animation:
@@ -85201,6 +85281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: 1995156936}
   isStarted: 0
+  DisableGameObjectWhenHidden: 1
 --- !u!114 &3969694040350756793
 MonoBehaviour:
   m_ObjectHideFlags: 0

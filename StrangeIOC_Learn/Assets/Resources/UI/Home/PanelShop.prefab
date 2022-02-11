@@ -21722,6 +21722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: 5310814889744348533}
   isStarted: 0
+  DisableGameObjectWhenHidden: 1
 --- !u!1 &3214352557952737723
 GameObject:
   m_ObjectHideFlags: 0
@@ -43036,6 +43037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: 7720944449282682993}
   isStarted: 0
+  DisableGameObjectWhenHidden: 1
 --- !u!114 &8542216147822493131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71004,7 +71006,7 @@ MonoBehaviour:
   AutoHideAfterShow: 0
   AutoHideAfterShowDelay: 3
   AutoSelectButtonAfterShow: 0
-  BehaviorAtStart: 0
+  BehaviorAtStart: 2
   CustomStartAnchoredPosition: {x: 0, y: 0, z: 0}
   DeselectAnyButtonSelectedOnHide: 0
   DeselectAnyButtonSelectedOnShow: 0
@@ -71772,6 +71774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: 4958004383133987958}
   isStarted: 0
+  DisableGameObjectWhenHidden: 1
 --- !u!1 &6178995031711916413
 GameObject:
   m_ObjectHideFlags: 0
@@ -83891,6 +83894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: 770088091775459407}
   isStarted: 0
+  DisableGameObjectWhenHidden: 1
 --- !u!114 &5365304383882721392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94382,6 +94386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: 5589453430076488827}
   isStarted: 0
+  DisableGameObjectWhenHidden: 1
 --- !u!114 &746619271955532945
 MonoBehaviour:
   m_ObjectHideFlags: 0
