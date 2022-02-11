@@ -361,7 +361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &22562921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,6 +594,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &22562928
 Transform:
   m_ObjectHideFlags: 0
@@ -4308,7 +4310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &123914736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4563,6 +4565,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &123914743
 Transform:
   m_ObjectHideFlags: 0
@@ -4644,7 +4648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &164031655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4877,6 +4881,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &164031662
 Transform:
   m_ObjectHideFlags: 0
@@ -4914,7 +4920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &173896505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5147,6 +5153,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &173896512
 Transform:
   m_ObjectHideFlags: 0
@@ -5769,6 +5777,8 @@ MonoBehaviour:
   maxJump: 2
   maxDash: 1
   maxAttackAirCount: 1
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!50 &218680113
 Rigidbody2D:
   serializedVersion: 4
@@ -5842,7 +5852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &227871291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6075,6 +6085,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &227871298
 Transform:
   m_ObjectHideFlags: 0
@@ -6496,7 +6508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &252816239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6729,6 +6741,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &252816246
 Transform:
   m_ObjectHideFlags: 0
@@ -6802,7 +6816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &275605059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7035,6 +7049,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &275605066
 Transform:
   m_ObjectHideFlags: 0
@@ -7351,7 +7367,7 @@ MonoBehaviour:
   logTaskChanges: 0
   group: 0
   resetValuesOnRestart: 0
-  externalBehavior: {fileID: 11400000, guid: e87e0c57dcdefad49aca52c7230933fb, type: 2}
+  externalBehavior: {fileID: 11400000, guid: cd034e3f5e0aa0842859d5870bbaf396, type: 2}
   mBehaviorSource:
     behaviorName: Behavior
     behaviorDescription: 
@@ -7491,6 +7507,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 1440613848}
+  UpdateWorldTransform: 0
 --- !u!4 &380558437
 Transform:
   m_ObjectHideFlags: 0
@@ -10229,7 +10247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &447276978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10508,6 +10526,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &447276986
 Transform:
   m_ObjectHideFlags: 0
@@ -13291,7 +13311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &494273896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13524,6 +13544,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &494273903
 Transform:
   m_ObjectHideFlags: 0
@@ -15974,7 +15996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &703401315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16207,6 +16229,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &703401322
 Transform:
   m_ObjectHideFlags: 0
@@ -20419,7 +20443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &981312152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20652,6 +20676,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &981312159
 Transform:
   m_ObjectHideFlags: 0
@@ -23457,6 +23483,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &1050489533
 Transform:
   m_ObjectHideFlags: 0
@@ -23707,7 +23735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1082169374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23940,6 +23968,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &1082169381
 Transform:
   m_ObjectHideFlags: 0
@@ -24035,7 +24065,7 @@ MonoBehaviour:
   initialSkinName: OutFits/skin3
   initialFlipX: 0
   initialFlipY: 0
-  updateWhenInvisible: 3
+  updateWhenInvisible: 0
   separatorSlotNames: []
   zSpacing: 0
   useClipping: 1
@@ -24452,7 +24482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1143274949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24685,6 +24715,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &1143274956
 Transform:
   m_ObjectHideFlags: 0
@@ -25412,7 +25444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1220640975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25691,6 +25723,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &1220640982
 Transform:
   m_ObjectHideFlags: 0
@@ -26257,6 +26291,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &1269408444
 Transform:
   m_ObjectHideFlags: 0
@@ -26896,7 +26932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1354372276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27149,6 +27185,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &1354372283
 Transform:
   m_ObjectHideFlags: 0
@@ -27489,7 +27527,7 @@ MonoBehaviour:
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
-  updateWhenInvisible: 3
+  updateWhenInvisible: 0
   separatorSlotNames: []
   zSpacing: 0
   useClipping: 1
@@ -28016,6 +28054,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!61 &1483235768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32250,7 +32290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1786180270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32611,6 +32651,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &1786180278
 Transform:
   m_ObjectHideFlags: 0
@@ -33217,6 +33259,8 @@ MonoBehaviour:
   maxJump: 2
   maxDash: 1
   maxAttackAirCount: 1
+  mecanim: {fileID: 1120853459}
+  UpdateWorldTransform: 0
 --- !u!50 &1915414532
 Rigidbody2D:
   serializedVersion: 4
@@ -33281,7 +33325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1980211688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33514,6 +33558,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &1980211695
 Transform:
   m_ObjectHideFlags: 0
@@ -38820,7 +38866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2069841391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39075,6 +39121,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &2069841398
 Transform:
   m_ObjectHideFlags: 0
@@ -39162,7 +39210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2111682171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39395,6 +39443,8 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
+  mecanim: {fileID: 0}
+  UpdateWorldTransform: 0
 --- !u!4 &2111682178
 Transform:
   m_ObjectHideFlags: 0

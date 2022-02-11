@@ -4,14 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Sirenix.OdinInspector;
 public class InventoryView : View
 {
     [Inject] public GlobalData global{ get; set; }
     [Inject] public ShowEquipmentDetailSignal showEquipmentDetailSignal { get; set; }
     public List<TabType> tabTypes = new List<TabType>();
     public List<EquipmentItemView> equipmentItemViews = new List<EquipmentItemView>();
-    List<EquipmentData> ListEquipment = new List<EquipmentData>();
+    [ShowInInspector]
+    public List<EquipmentData> ListEquipment = new List<EquipmentData>();
     public int currentPage = 1;
     protected override void Awake()
     {

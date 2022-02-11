@@ -7,6 +7,8 @@ using UnityEngine;
 public class HeroEquipmentView : View
 {
     [Inject] public GlobalData global { get; set; }
+    [Inject] public OnViewHeroSignal OnViewHeroSignal { get; set; }
+
     Dictionary<GearSlot, EquipmentOfHeroView> DicEquipmentOfHeroView = new Dictionary<GearSlot, EquipmentOfHeroView>();
     [SerializeField]
     List<EquipmentOfHeroView> listEquipmentOfHeroView = new List<EquipmentOfHeroView>();

@@ -244,17 +244,17 @@ public class ComponentManager : MonoBehaviour
     /// Skeleton.cs
     /// SkeletonGraphic.cs
     /// </summary>
-    //public Spine.Unity.SkeletonMecanim mecanim;
-    //[Header("Update Skeleton")]
-    //public bool UpdateWorldTransform;
-    //public void UpdateMecanim()
-    //{
-    //    if (UpdateWorldTransform)/* return;*/
-    //    {
-    //        mecanim.skeleton.UpdateCache();
-    //        mecanim.skeleton.UpdateWorldTransform();
-    //    }
-    //}
+    public Spine.Unity.SkeletonMecanim mecanim;
+    [Header("Update Skeleton")]
+    public bool UpdateWorldTransform;
+    public void UpdateMecanim()
+    {
+        if (UpdateWorldTransform)/* return;*/
+        {
+            mecanim.skeleton.UpdateCache();
+            mecanim.skeleton.UpdateWorldTransform();
+        }
+    }
 
     public void AddImunes(List<Immune> immunesAdd)
     {

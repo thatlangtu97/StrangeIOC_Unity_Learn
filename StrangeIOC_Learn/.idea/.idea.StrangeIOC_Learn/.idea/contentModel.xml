@@ -2023,7 +2023,12 @@
               <e p="Command" t="Include">
                 <e p="ShowPanelHeroCmd.cs" t="Include" />
               </e>
+              <e p="Mediator" t="Include">
+                <e p="HeroEquipmentMediator.cs" t="Include" />
+                <e p="InventoryMediator.cs" t="Include" />
+              </e>
               <e p="Signal" t="Include">
+                <e p="OnViewHeroSignal.cs" t="Include" />
                 <e p="ShowPanelHeroSignal.cs" t="Include" />
               </e>
               <e p="View" t="Include">

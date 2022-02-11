@@ -11,6 +11,8 @@ namespace EntrySystem
         public void MapBindings(ICrossContextInjectionBinder injectionBinder, ICommandBinder commandBinder,
             IMediationBinder mediationBinder)
         {
+            injectionBinder.Bind<OnViewHeroSignal>().ToSingleton();
+            
             //
             commandBinder.Bind<ShowPanelHomeSignal>().To<ShowPanelHomeCmd>();
             commandBinder.Bind<ShowPopupStaminaSignal>().To<ShowPopupStaminaCmd>();
@@ -27,6 +29,9 @@ namespace EntrySystem
             //NOTIFICATION
             commandBinder.Bind<NotificationPanelHeroSignal>().To<NotificationPanelHeroCmd>();
             commandBinder.Bind<NotificationPanelCraftSignal>().To<NotificationPanelCraftCmd>();
+            //MEDIATOR
+            mediationBinder.Bind<InventoryView>().To<InventoryMediator>();
+            mediationBinder.Bind<HeroEquipmentView>().To<HeroEquipmentMediator>();
         }
     }
 }

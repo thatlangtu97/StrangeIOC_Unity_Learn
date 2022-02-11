@@ -17,8 +17,9 @@ namespace EntrySystem
 			injectionBinder.Bind<EquipmentLogic>().ToValue(new EquipmentLogic()).ToSingleton().CrossContext();
 			injectionBinder.Bind<PopupManager>().ToValue(new PopupManager()).ToSingleton().CrossContext();
 			injectionBinder.Bind<EntryContext>().ToValue(this).ToSingleton().CrossContext();
-
 			injectionBinder.Bind<AdsManager>().ToValue(new AdsManager()).ToSingleton().CrossContext();
+
+
 
 			commandBinder.Bind<SetupDatamanagerSignal>().To<SetupDataManagerCmd>();
 		}

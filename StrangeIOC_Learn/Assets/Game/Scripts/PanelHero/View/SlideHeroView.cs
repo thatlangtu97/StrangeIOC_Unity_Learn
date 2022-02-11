@@ -6,6 +6,8 @@ using UnityEngine;
 class SlideHeroView : View
 {
     [Inject] public GlobalData global { get; set; }
+    [Inject] public OnViewHeroSignal OnViewHeroSignal { get; set; }
+    
     public Button nextHero,previousHero;
     List<int> tempList = new List<int>();
     protected override void Awake()
@@ -18,6 +20,13 @@ class SlideHeroView : View
             tempList.Add(config.id);
         }
     }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        CheckButton();
+    }
+
     public void SelectNextHero()
     {
         for (int i = 0; i < tempList.Count; i++) {
@@ -35,6 +44,8 @@ class SlideHeroView : View
                 }
             }
         }
+        OnViewHeroSignal.Dispatch();
+        CheckButton();
         Debug.Log($"current hero {global.CurrentIdHero}");
     }
     public void SelectPreviousHero()
@@ -56,6 +67,28 @@ class SlideHeroView : View
                 }
             }
         }
+        OnViewHeroSignal.Dispatch();
+        CheckButton();
         Debug.Log($"current hero {global.CurrentIdHero}");
+    }
+
+    public void CheckButton()
+    {
+        if (global.CurrentIdHero == tempList[tempList.Count - 1])
+        {
+            nextHero.gameObject.SetActive(false);
+            previousHero.gameObject.SetActive(true);
+            return;
+        }
+
+        if (global.CurrentIdHero == tempList[0])
+        {
+            nextHero.gameObject.SetActive(true);
+            previousHero.gameObject.SetActive(false);
+            return;
+        }
+        
+        nextHero.gameObject.SetActive(true);
+        previousHero.gameObject.SetActive(true);
     }
 }
