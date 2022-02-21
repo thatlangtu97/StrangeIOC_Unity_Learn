@@ -39,12 +39,12 @@ public class InitHomeSceneCmd : Command
         //}
         //		));
 
-        GetResourcePath = GameResourcePath.PANEL_HERO;
-        PanelHeroView panelHeroView = GetInstance<PanelHeroView>();
-        GetResourcePath = GameResourcePath.PANEL_CRAFT;
-        PanelCraftView panelCraftView = GetInstance<PanelCraftView>();
-        GetResourcePath = GameResourcePath.PANEL_SHOP;
-        PanelShopView panelShopView = GetInstance<PanelShopView>();
+//        GetResourcePath = GameResourcePath.PANEL_HERO;
+//        PanelHeroView panelHeroView = GetInstance<PanelHeroView>();
+//        GetResourcePath = GameResourcePath.PANEL_CRAFT;
+//        PanelCraftView panelCraftView = GetInstance<PanelCraftView>();
+//        GetResourcePath = GameResourcePath.PANEL_SHOP;
+//        PanelShopView panelShopView = GetInstance<PanelShopView>();
         GetResourcePath = GameResourcePath.PANEL_HOME;
         PanelHomeView panelHomeView = GetInstance<PanelHomeView>();
     }

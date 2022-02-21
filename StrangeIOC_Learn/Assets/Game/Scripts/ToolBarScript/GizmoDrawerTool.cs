@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GizmoDrawerTool : MonoBehaviour
 {
+    public Mesh mesh;
     public static GizmoDrawerTool instance {
         get { 
             if(skeleton == null)
@@ -38,7 +39,9 @@ public class GizmoDrawerTool : MonoBehaviour
                     switch (listCollider[i].colliderType)
                     {
                         case colliderType.Box:
-                            Gizmos.DrawWireCube(listCollider[i].position, listCollider[i].size);
+                            //Gizmos.DrawWireCube(listCollider[i].position, listCollider[i].size);
+                            Gizmos.DrawWireMesh(mesh, listCollider[i].position, Quaternion.Euler(0, 0, listCollider[i].angle),
+                                listCollider[i].size);
                             break;
                         case colliderType.Circle:
                             Gizmos.DrawWireSphere(listCollider[i].position, listCollider[i].size.x);
@@ -53,10 +56,10 @@ public class GizmoDrawerTool : MonoBehaviour
             }
         }
     }
-    public void draw(Vector3 position, Vector3 sizeBox, colliderType colliderType )
+    public void draw(Vector3 position, Vector3 sizeBox, colliderType colliderType,float angle )
     {
         if (listCollider == null) listCollider = new List<colliderGizmo>();
-        listCollider.Add(new colliderGizmo(position, sizeBox, colliderType));
+        listCollider.Add(new colliderGizmo(position, sizeBox, colliderType,angle));
     }
     [System.Serializable]
     public class colliderGizmo
@@ -64,13 +67,15 @@ public class GizmoDrawerTool : MonoBehaviour
         public Vector3 position;
         public Vector3 size;
         public colliderType colliderType;
+        public float angle;
         public int flameDestroy;
-        public colliderGizmo(Vector3 position, Vector3 sizeBox, colliderType colliderType)
+        public colliderGizmo(Vector3 position, Vector3 sizeBox, colliderType colliderType, float angle)
         {
             this.position = position;
             this.size = sizeBox;
             this.colliderType = colliderType;
             this.flameDestroy = 0;
+            this.angle = angle;
         }
     }
     public enum colliderType

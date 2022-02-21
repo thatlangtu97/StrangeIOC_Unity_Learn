@@ -28,13 +28,49 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|CastProjectileEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 4.07
+    - Name: duration
+      Entry: 4
+      Data: 2
+    - Name: Prefab
+      Entry: 10
+      Data: 0
+    - Name: Localosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: recycleWhenFinishDuration
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|CastVfxEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 1
     - Name: timeTriggerEvent
       Entry: 4
       Data: 1
@@ -59,6 +95,39 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 90
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setParent
+      Entry: 5
+      Data: false
     - Name: recycleWhenFinishDuration
       Entry: 5
       Data: false

@@ -2747,6 +2747,9 @@
           </e>
         </e>
         <e p="Third-Party Notices.txt" t="Include" />
+        <e p="Toan" t="Include">
+          <e p="EGA_Laser.cs" t="Include" />
+        </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

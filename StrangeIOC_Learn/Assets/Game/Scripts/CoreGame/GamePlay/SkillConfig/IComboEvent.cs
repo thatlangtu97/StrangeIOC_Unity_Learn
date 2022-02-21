@@ -11,6 +11,11 @@ public enum PowerCollider
     Heavy,
     KnockDown,
 }
+public enum ColliderCast
+{
+    Box,
+    Circle,
+}
 public interface IComboEvent 
 {
 
@@ -163,7 +168,7 @@ public class CastBoxColliderEvent : IComboEvent
             }
         }
 #if UNITY_EDITOR
-        GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box);
+        GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
 #endif
     }
 
@@ -270,7 +275,7 @@ public class CastCircleColliderEvent : IComboEvent
             }
         }
 #if UNITY_EDITOR
-        GizmoDrawerTool.instance.draw(point, new Vector3(radius,0f,0f), GizmoDrawerTool.colliderType.Circle);
+        GizmoDrawerTool.instance.draw(point, new Vector3(radius,0f,0f), GizmoDrawerTool.colliderType.Circle,0);
 #endif
     }
 
@@ -641,3 +646,250 @@ public class CastAddForce : IComboEvent
     }
 }
 #endregion
+
+
+
+
+
+
+
+#region CAST VFX
+public class CastVfxEvent : IComboEvent
+{
+    [FoldoutGroup("CAST VFX")]
+    [ReadOnly]
+    public int idEvent;
+
+    [FoldoutGroup("CAST VFX")]
+    public float timeTriggerEvent;
+
+    [FoldoutGroup("CAST VFX")]
+    public float duration = 0.5f;
+
+    [FoldoutGroup("CAST VFX")]
+    public GameObject Prefab;
+
+    [FoldoutGroup("CAST VFX")]
+    public Vector3 Localosition;
+
+    [FoldoutGroup("CAST VFX")]
+    public Vector3 LocalRotation;
+
+    [FoldoutGroup("CAST VFX")]
+    public Vector3 LocalScale;
+
+    [FoldoutGroup("CAST VFX")]
+    public bool setParent = true;
+
+    [FoldoutGroup("CAST VFX")]
+    public bool recycleWhenFinishDuration = false;
+    
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    private GameObject prefabSpawned;
+    public void OnEventTrigger(GameEntity entity)
+    {
+        if (Prefab)
+        {
+            prefabSpawned = ObjectPool.Spawn(Prefab);
+            Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
+            
+            prefabSpawned.transform.parent = baseTransform;
+            prefabSpawned.transform.localPosition = new Vector3(Localosition.x , Localosition.y , Localosition.z );
+            prefabSpawned.transform.localRotation = Quaternion.Euler(LocalRotation);
+            prefabSpawned.transform.localScale = LocalScale;
+            if (!setParent)
+            {
+                prefabSpawned.transform.parent = null;
+            }
+            ObjectPool.instance.Recycle(prefabSpawned, duration);
+        }
+    }
+    public void Recycle()
+    {
+        if (recycleWhenFinishDuration)
+        {
+            if (prefabSpawned)
+                ObjectPool.Recycle(prefabSpawned);
+        }
+        else
+        {
+            if (prefabSpawned)
+                prefabSpawned.transform.parent = null;
+        }
+    }
+
+    public void OnUpdateTrigger()
+    {
+        
+    }
+}
+#endregion
+
+#region CAST COLLIDER
+public class CastColliderEvent : IComboEvent
+{
+    [FoldoutGroup("CAST COLLIDER")]
+    [ReadOnly]
+    public int idEvent;
+
+    [FoldoutGroup("CAST COLLIDER")]
+    public float timeTriggerEvent;
+    
+    [FoldoutGroup("CAST COLLIDER")]
+    public LayerMask layerMaskEnemy;
+    
+    [FoldoutGroup("CAST COLLIDER")]
+    public ColliderCast typeCast;
+    
+    [FoldoutGroup("CAST COLLIDER")]
+    [ShowIf("typeCast", ColliderCast.Box)]
+    public Vector3 sizeBox;
+    
+    [FoldoutGroup("CAST COLLIDER")]
+    [ShowIf("typeCast", ColliderCast.Circle)]
+    public float radius;
+    
+    [FoldoutGroup("CAST COLLIDER")]
+    public Vector3 localPosition;
+    
+    [FoldoutGroup("CAST COLLIDER")]
+    public bool useAngle;
+    
+    [FoldoutGroup("CAST COLLIDER")]
+    [ShowIf("useAngle")]
+    public float angleCollider;
+    
+    [FoldoutGroup("CAST COLLIDER")]
+    public PowerCollider powerCollider;
+
+    [FoldoutGroup("CAST COLLIDER")]
+    public Vector2 forcePower;
+    
+    [FoldoutGroup("CAST COLLIDER")]
+    public bool castByTime;
+
+    [FoldoutGroup("CAST COLLIDER")]
+    [ShowIf("castByTime")]
+    public int idStartCastByTime;
+
+    [FoldoutGroup("CAST COLLIDER")]
+    [ShowIf("castByTime")]
+    public float timeStartCastByTime;
+
+    [FoldoutGroup("CAST COLLIDER")]
+    [ShowIf("castByTime")]
+    public float timeStepCastByTime;
+
+    [FoldoutGroup("CAST COLLIDER")]
+    [ShowIf("castByTime")]
+    public int maxCastByTime;
+
+    
+    private int countCast;
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+
+    public void OnEventTrigger(GameEntity entity)
+    {
+        ////    CAST BOX    ////////////////////////////////////////////
+        if (typeCast == ColliderCast.Box)
+        {
+            Collider2D[] cols = null;
+            Transform transform = entity.stateMachineContainer.stateMachine.transform;
+            Vector3 point = transform.position + new Vector3((localPosition.x + (sizeBox.x / 2f)) * transform.localScale.x,
+                                localPosition.y, localPosition.z);
+            float angle = 0;
+            if (!useAngle)
+            {
+                angle  = transform.localScale.x > 0 ? 0f : 180f;
+            }
+            else
+            {
+                if (transform.localScale.x > 0)
+                {
+                    angle = angleCollider;
+                }
+                else
+                {
+                    angle = 180f - angleCollider;
+                }
+                
+                
+//                angle  = transform.localScale.x > 0 ? 0f : 180f;
+            }
+            
+            cols = Physics2D.OverlapBoxAll(point, sizeBox, angle, layerMaskEnemy);
+            if (cols != null)
+            {
+                foreach (var col in cols)
+                {
+                    if (col != null)
+                    {
+                        Action action = delegate
+                        {
+                            col.GetComponent<Rigidbody2D>().AddForceAtPosition(
+                                new Vector2(forcePower.x * transform.localScale.x, forcePower.y), col.transform.position);
+                        };
+                        DealDmgManager.DealDamage(col, entity, powerCollider, action);
+                    }
+                }
+            }
+#if UNITY_EDITOR
+            GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
+#endif
+        }
+        ////    CAST CIRCLE    ////////////////////////////////////////////
+        else if(typeCast == ColliderCast.Circle)
+        {
+            Collider2D[] cols = null;
+            Transform transform = entity.stateMachineContainer.stateMachine.transform;
+            Vector3 point = transform.position + new Vector3(localPosition.x * transform.localScale.x, localPosition.y, localPosition.z);
+            cols = Physics2D.OverlapCircleAll(point, radius, layerMaskEnemy);
+            if (cols != null)
+            {
+                foreach (var col in cols)
+                {
+                    if (col != null)
+                    {
+                        Action action = delegate
+                        {
+                            col.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(forcePower.x * transform.localScale.x, forcePower.y), col.transform.position);
+                        };
+                        DealDmgManager.DealDamage(col, entity, powerCollider, action);
+                    }
+                }
+            }
+#if UNITY_EDITOR
+            GizmoDrawerTool.instance.draw(point, new Vector3(radius,0f,0f), GizmoDrawerTool.colliderType.Circle,0);
+#endif
+        }
+        
+    }
+
+    public void OnUpdateTrigger()
+    {
+        if (castByTime)
+        {
+            if (countCast < maxCastByTime)
+            {
+                timeTriggerEvent = timeStartCastByTime + countCast * timeStepCastByTime;
+                idEvent = idStartCastByTime + countCast;
+                countCast += 1;
+            }
+        }
+    }
+
+    public void Recycle()
+    {
+        if (castByTime)
+        {
+            timeTriggerEvent = timeStartCastByTime;
+            idEvent = idStartCastByTime;
+            countCast = 0;
+        }
+    }
+}
+#endregion
+
+

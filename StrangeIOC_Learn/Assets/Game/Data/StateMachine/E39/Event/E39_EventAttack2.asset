@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
-  m_Name: E1_EventAttack
+  m_Name: E39_EventAttack2
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -30,13 +30,43 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|CastColliderEvent, Assembly-CSharp
+      Data: 1|CastBoxColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.6
+      Data: 1.2
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeBox
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: layerMaskEnemy
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
@@ -46,54 +76,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: typeCast
-      Entry: 3
-      Data: 0
-    - Name: sizeBox
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: radius
-      Entry: 4
-      Data: 0
-    - Name: localPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: powerCollider
       Entry: 3
-      Data: 1
-    - Name: forcePower
+      Data: 4
+    - Name: force
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 300
     - Name: 
       Entry: 4
-      Data: 0
+      Data: 100
     - Name: 
       Entry: 8
       Data: 
@@ -121,11 +115,56 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  NameTrigger: attack1
-  durationAnimation: 1
+  NameTrigger: attack2
+  durationAnimation: 2
   curveX:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.004166667
+      value: 0.002350072
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1316985
+      value: 0
+      inSlope: 0.099636614
+      outSlope: 0.099636614
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.9372362
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6882428
+      value: 3.6574006
+      inSlope: 7.7404847
+      outSlope: 7.7404847
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2320162
+      outWeight: 0.16910358
+    - serializedVersion: 3
+      time: 1.1245741
+      value: 7
+      inSlope: -0.07514588
+      outSlope: -0.07514588
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.24270967
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.134574
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

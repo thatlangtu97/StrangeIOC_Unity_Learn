@@ -13840,7 +13840,7 @@ MonoBehaviour:
   AutoHideAfterShow: 0
   AutoHideAfterShowDelay: 3
   AutoSelectButtonAfterShow: 0
-  BehaviorAtStart: 1
+  BehaviorAtStart: 2
   CustomStartAnchoredPosition: {x: 0, y: 0, z: 0}
   DeselectAnyButtonSelectedOnHide: 0
   DeselectAnyButtonSelectedOnShow: 0
@@ -14608,6 +14608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiView: {fileID: 7817138660932248441}
   isStarted: 0
+  DisableGameObjectWhenHidden: 1
 --- !u!1 &9095081321009080933
 GameObject:
   m_ObjectHideFlags: 0
