@@ -26,5 +26,4 @@ MonoBehaviour:
   eventCollectionData:
   - {fileID: 11400000, guid: 324e9a1fcb5cbac4b9f131f77aacac48, type: 2}
   - {fileID: 11400000, guid: b5b800545c4189e4ea4bb593c18a202d, type: 2}
-  - {fileID: 11400000, guid: 9c2c169f454a0074b987f34af487025e, type: 2}
   timeBuffer: 0.1

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
-  m_Name: E39_EventAttack2
+  m_Name: E39_EventSkill2
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 6483303288064547348, guid: e251d63bf90b9904a89f539172df1418, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -27,25 +28,94 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 1|CastBoxColliderEvent, Assembly-CSharp
+      Data: 1|CastImpackEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.75
+      Data: 2.4
+    - Name: duration
+      Entry: 4
+      Data: 1
+    - Name: Prefab
+      Entry: 10
+      Data: 0
+    - Name: Localosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -90
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setParent
+      Entry: 5
+      Data: true
+    - Name: recycleWhenFinishDuration
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|CastBoxColliderEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 1
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 2.4
     - Name: position
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.5
+      Data: -2
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0.5
     - Name: 
       Entry: 4
       Data: 0
@@ -57,10 +127,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 3
+      Data: 5
     - Name: 
       Entry: 4
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 4
       Data: 0
@@ -84,10 +154,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 300
+      Data: 200
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 300
     - Name: 
       Entry: 8
       Data: 
@@ -115,47 +185,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  NameTrigger: attack2
-  durationAnimation: 2
+  NameTrigger: skill2
+  durationAnimation: 3.2
   curveX:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -0.004166667
-      value: 0.002350072
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.05162503
-      value: 0
-      inSlope: 0.099636614
-      outSlope: 0.099636614
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.9372362
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.7161817
-      value: 7
-      inSlope: -0.07514588
-      outSlope: -0.07514588
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.24270967
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.7261817
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

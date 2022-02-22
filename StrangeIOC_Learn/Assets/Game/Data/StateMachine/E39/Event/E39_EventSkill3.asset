@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
-  m_Name: E39_EventAttack2
+  m_Name: E39_EventSkill3
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -27,7 +27,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|CastBoxColliderEvent, Assembly-CSharp
@@ -36,7 +36,88 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.75
+      Data: 1.2
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeBox
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2048
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: powerCollider
+      Entry: 3
+      Data: 4
+    - Name: force
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 300
+    - Name: 
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: castByTime
+      Entry: 5
+      Data: false
+    - Name: idStartCastByTime
+      Entry: 3
+      Data: 0
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0
+    - Name: timeStepCastByTime
+      Entry: 4
+      Data: 0
+    - Name: maxCastByTime
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|CastBoxColliderEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 1
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 2.2
     - Name: position
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -115,8 +196,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  NameTrigger: attack2
-  durationAnimation: 2
+  NameTrigger: skill3
+  durationAnimation: 3.7
   curveX:
     serializedVersion: 2
     m_Curve:
@@ -130,7 +211,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.05162503
+      time: 0.1316985
       value: 0
       inSlope: 0.099636614
       outSlope: 0.099636614
@@ -139,7 +220,7 @@ MonoBehaviour:
       inWeight: 0.9372362
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.7161817
+      time: 1.1245741
       value: 7
       inSlope: -0.07514588
       outSlope: -0.07514588
@@ -148,7 +229,34 @@ MonoBehaviour:
       inWeight: 0.24270967
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.7261817
+      time: 1.134574
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.2618055
+      value: 0.00486311
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.984557
+      value: 7.066324
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 2.0042303
       value: 0
       inSlope: 0
       outSlope: 0

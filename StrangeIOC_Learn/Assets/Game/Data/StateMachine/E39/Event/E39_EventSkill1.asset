@@ -685,7 +685,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  NameTrigger: attack3
+  NameTrigger: skill1
   durationAnimation: 2.4
   curveX:
     serializedVersion: 2
