@@ -116,7 +116,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   NameTrigger: attack1
-  durationAnimation: 1.33
+  durationAnimation: 1
   curveX:
     serializedVersion: 2
     m_Curve:

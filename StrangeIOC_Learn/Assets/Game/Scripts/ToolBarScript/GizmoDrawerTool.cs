@@ -39,9 +39,8 @@ public class GizmoDrawerTool : MonoBehaviour
                     switch (listCollider[i].colliderType)
                     {
                         case colliderType.Box:
-                            //Gizmos.DrawWireCube(listCollider[i].position, listCollider[i].size);
-                            Gizmos.DrawWireMesh(mesh, listCollider[i].position, Quaternion.Euler(0, 0, listCollider[i].angle),
-                                listCollider[i].size);
+                            Gizmos.DrawWireCube(listCollider[i].position, listCollider[i].size);
+                            //Gizmos.DrawWireMesh(mesh, listCollider[i].position, Quaternion.Euler(0, 0, listCollider[i].angle),listCollider[i].size);
                             break;
                         case colliderType.Circle:
                             Gizmos.DrawWireSphere(listCollider[i].position, listCollider[i].size.x);

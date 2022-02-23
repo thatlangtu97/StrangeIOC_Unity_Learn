@@ -8,8 +8,9 @@ using UnityEngine.UI;
 public class GameUIController : MonoBehaviour
 {
     public Joystick Joystick;
+    public CameraFollow cameraFollow;
+    [PreviewField]
     public StateMachineController stateMachine;
-
     //public Button btnJump, btnDash, btnAttack, btnSkill1, btnSkill2;
     //public EventTrigger EJump, EDash, EAttack, ESkill1, ESkill2;
     [Button("MODIFY", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
@@ -21,6 +22,8 @@ public class GameUIController : MonoBehaviour
         {
             stateMachine.componentManager.BehaviorTree.enabled = false;
         }
+        if(cameraFollow)
+            cameraFollow.player = stateMachine.gameObject;
         //btnJump.onClick.RemoveAllListeners();
         //btnDash.onClick.RemoveAllListeners();
         //btnAttack.onClick.RemoveAllListeners();

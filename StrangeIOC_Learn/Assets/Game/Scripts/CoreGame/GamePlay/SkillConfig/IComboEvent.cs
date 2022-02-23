@@ -54,6 +54,10 @@ public class CastProjectileEvent : IComboEvent
     [FoldoutGroup("CAST PROJECTILE")]
     //[BoxGroup("Cast Projectile")]
     public bool recycleWhenFinishDuration = false;
+    
+    [FoldoutGroup("CAST PROJECTILE")]
+    //[BoxGroup("Cast Projectile")]
+    public LayerMask LayerMask ;
 
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
@@ -70,6 +74,11 @@ public class CastProjectileEvent : IComboEvent
             prefabSpawned.transform.position = baseTransform.position + new Vector3(    Localosition.x * baseTransform.localScale.x, 
                                                                                         Localosition.y * baseTransform.localScale.y, 
                                                                                         Localosition.z * baseTransform.localScale.z);
+            RaycastHit2D hit = Physics2D.Raycast(baseTransform.position, new Vector2(1,0)* baseTransform.localScale.x, Localosition.x, LayerMask);
+            if (hit.collider != null)
+            {
+                prefabSpawned.transform.position = new Vector3(hit.point.x,prefabSpawned.transform.position.y,prefabSpawned.transform.position.z); 
+            }
             ObjectPool.instance.Recycle(prefabSpawned, duration);
         }
     }

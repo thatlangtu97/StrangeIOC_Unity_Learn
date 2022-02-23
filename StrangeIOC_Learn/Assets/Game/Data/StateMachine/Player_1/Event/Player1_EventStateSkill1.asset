@@ -17,6 +17,8 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2298935955140347883, guid: 41f5d9e780d3f2945aabf1d723d5119d, type: 3}
+    - {fileID: 1428247025656620843, guid: d1fd96d52532e5b47bc38962e11da2ec, type: 3}
+    - {fileID: 2330693787773347420, guid: 1331e05deded2bb409ce8ce3674a97e7, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -28,7 +30,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|CastProjectileEvent, Assembly-CSharp
@@ -37,7 +39,7 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.01
+      Data: 3
     - Name: duration
       Entry: 4
       Data: 2
@@ -62,6 +64,105 @@ MonoBehaviour:
     - Name: recycleWhenFinishDuration
       Entry: 5
       Data: false
+    - Name: LayerMask
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|CastProjectileEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 1
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0.01
+    - Name: duration
+      Entry: 4
+      Data: 0.4
+    - Name: Prefab
+      Entry: 10
+      Data: 1
+    - Name: Localosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: recycleWhenFinishDuration
+      Entry: 5
+      Data: false
+    - Name: LayerMask
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 12288
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|CastProjectileEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 2
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0.5
+    - Name: duration
+      Entry: 4
+      Data: 1
+    - Name: Prefab
+      Entry: 10
+      Data: 2
+    - Name: Localosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 6
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: recycleWhenFinishDuration
+      Entry: 5
+      Data: false
+    - Name: LayerMask
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 12288
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 

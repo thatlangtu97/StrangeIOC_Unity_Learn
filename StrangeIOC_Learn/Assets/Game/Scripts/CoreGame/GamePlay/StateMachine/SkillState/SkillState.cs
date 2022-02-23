@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkillState : State
 {
     public bool LockGravity = true;
+    public bool useCheckEnemyForwark=false;
     public override void EnterState()
     {
         base.EnterState();
@@ -20,9 +21,23 @@ public class SkillState : State
         base.UpdateState();
         if (timeTrigger < eventCollectionData[idState].durationAnimation)
         {
-            Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeTrigger), eventCollectionData[idState].curveY.Evaluate(timeTrigger));
-            Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x, velocityAttack.y * controller.transform.localScale.y);
-            controller.componentManager.rgbody2D.position += force * Time.deltaTime;
+            Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeTrigger),
+                eventCollectionData[idState].curveY.Evaluate(timeTrigger));
+            Vector2 force = new Vector2(velocityAttack.x * controller.transform.localScale.x,
+                velocityAttack.y * controller.transform.localScale.y);
+            if (!useCheckEnemyForwark)
+            {
+               
+                controller.componentManager.rgbody2D.position += force * Time.deltaTime;
+            }
+            else
+            {
+                bool isEnemyForwark = controller.componentManager.checkEnemyForwark();
+                if (!isEnemyForwark)
+                {
+                    controller.componentManager.rgbody2D.position += force * Time.deltaTime;
+                }
+            }
         }
         else
         {
@@ -83,12 +98,12 @@ public class SkillState : State
     }
     public override void OnInputSkill(int idSkill)
     {
-        if (timeTrigger >= eventCollectionData[idState].durationAnimation)
-        {
-            base.OnInputSkill(idSkill);
-            idState = idSkill;
-            EnterState();
-        }
+//        if (timeTrigger >= eventCollectionData[idState].durationAnimation)
+//        {
+//            base.OnInputSkill(idSkill);
+//            idState = idSkill;
+//            EnterState();
+//        }
 
     }
     public override void OnInputAttack()

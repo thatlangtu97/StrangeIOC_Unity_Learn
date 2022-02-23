@@ -17,8 +17,8 @@ public class ComponentManager : MonoBehaviour
     public BehaviorTree BehaviorTree;
     [FoldoutGroup("REFERENCE")]
     public Rigidbody2D rgbody2D;
-    [FoldoutGroup("REFERENCE")]
-    public ComponentProperties properties;
+//    [FoldoutGroup("REFERENCE")]
+//    public ComponentProperties properties;
     [FoldoutGroup("REFERENCE")]
     public MeshRenderer meshRenderer;
     [FoldoutGroup("REFERENCE")]

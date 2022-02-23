@@ -1879,7 +1879,9 @@
                     <e p="SpawnState.cs" t="Include" />
                   </e>
                   <e p="State.cs" t="Include" />
+                  <e p="StateMachineClone.cs" t="Include" />
                   <e p="StateMachineController.cs" t="Include" />
+                  <e p="StateMachineSingle.cs" t="Include" />
                 </e>
               </e>
               <e p="ScriptsBT" t="Include">
@@ -1904,6 +1906,7 @@
                     <e p="CheckCanMoveToPoint.cs" t="Include" />
                     <e p="CheckCoolDown.cs" t="Include" />
                     <e p="CheckInRangeHorizontal.cs" t="Include" />
+                    <e p="CheckInRangeToAction.cs" t="Include" />
                     <e p="CheckInRangeToPoint.cs" t="Include" />
                     <e p="CheckInRangeWorld.cs" t="Include" />
                     <e p="CheckTargetRemoved.cs" t="Include" />
