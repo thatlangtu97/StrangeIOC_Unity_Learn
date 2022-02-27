@@ -8,6 +8,7 @@ public class EventCollection : SerializedScriptableObject
     public string NameTrigger;
     public float durationAnimation;
     public AnimationCurve curveX, curveY;
+    public AnimationCurve curveSpeedAnimation= new AnimationCurve(new Keyframe(0,1f));
     [HideReferenceObjectPicker]
     [LabelText("EVENT")]
     public List<IComboEvent> EventCombo = new List<IComboEvent>();

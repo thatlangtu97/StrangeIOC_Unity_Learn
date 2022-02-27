@@ -195,8 +195,6 @@ GameObject:
   - component: {fileID: 1428247025656620880}
   - component: {fileID: 1428247025656620881}
   - component: {fileID: 1428247025656620846}
-  - component: {fileID: 1428247025656620847}
-  - component: {fileID: 1428247025656620844}
   - component: {fileID: 1428247025656620845}
   - component: {fileID: 1428247025656620842}
   m_Layer: 11
@@ -303,33 +301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 1428247025656620842}
---- !u!114 &1428247025656620847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428247025656620843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08cecbac18c3a7c4f9662146b3000e7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1428247025656620844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428247025656620843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a9a39415fd2ae468a91babe273cc29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skinWeaponName: Weapons/weapon2
-  skinOufitName: OutFits/skin3
-  skeletonMecanim: {fileID: 1428247025635656918}
 --- !u!61 &1428247025656620845
 BoxCollider2D:
   m_ObjectHideFlags: 0
