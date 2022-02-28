@@ -27,16 +27,16 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|CastBoxColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 24
+      Data: 10
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 3
+      Data: 1.6
     - Name: position
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -191,87 +191,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: 3|CastBoxColliderEvent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 2
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 1
-    - Name: position
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: sizeBox
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 7
-    - Name: 
-      Entry: 4
-      Data: 2
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: layerMaskEnemy
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 2048
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: powerCollider
-      Entry: 3
-      Data: 1
-    - Name: force
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: -400
-    - Name: 
-      Entry: 4
-      Data: 300
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: castByTime
-      Entry: 5
-      Data: false
-    - Name: idStartCastByTime
-      Entry: 3
-      Data: 0
-    - Name: timeStartCastByTime
-      Entry: 4
-      Data: 0
-    - Name: timeStepCastByTime
-      Entry: 4
-      Data: 0
-    - Name: maxCastByTime
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -324,6 +243,21 @@ MonoBehaviour:
   curveY:
     serializedVersion: 2
     m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveSpeedAnimation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

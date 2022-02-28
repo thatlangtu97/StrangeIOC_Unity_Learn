@@ -25,7 +25,13 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
         foreach (GameEntity e in entities)
         {
             entityEnemy = e.takeDamage.entityEnemy;
+            
             StateMachineController stateMachine = entityEnemy.stateMachineContainer.stateMachine;
+            if (!stateMachine)
+            {
+                e.Destroy(); 
+                return;
+            }
             if(!stateMachine.componentManager.HasImmune(Immune.BLOCK))
                 stateMachine.componentManager.heal -= e.takeDamage.damage;
 

@@ -79,6 +79,13 @@ public class ComponentManager : MonoBehaviour
     }
     public void OnEnable()
     {
+        if (this.BehaviorTree)
+        {
+            this.BehaviorTree.DisableBehavior();
+            if (meshRenderer)
+                meshRenderer.enabled = false;
+        }
+
         currentImunes = baseImmunes.Clone();
         entity = Contexts.sharedInstance.game.CreateEntity();
         link = gameObject.Link(entity);
@@ -95,6 +102,8 @@ public class ComponentManager : MonoBehaviour
     private void OnDisable()
     {
         DestroyEntity();
+        if(this.BehaviorTree)
+            this.BehaviorTree.DisableBehavior();
     }
     public void OnInputChangeFacing()
     {

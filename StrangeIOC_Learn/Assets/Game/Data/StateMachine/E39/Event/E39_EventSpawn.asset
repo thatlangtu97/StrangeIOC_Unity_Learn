@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
-  m_Name: E10_EventDie
+  m_Name: E39_EventSpawn
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -23,19 +23,34 @@ MonoBehaviour:
     SerializationNodes:
     - Name: EventCombo
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[IComboEvent, Assembly-CSharp]],
-        mscorlib
+      Data: 0|MS.Internal.Xml.XPath.ClonableStack`1[[IComboEvent, Assembly-CSharp]],
+        System.Xml
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|CastEnableMeshRenderer, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
       Data: 0
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0.05
+    - Name: enable
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-  NameTrigger: die
-  durationAnimation: 2
+  NameTrigger: spawn
+  durationAnimation: 4
   curveX:
     serializedVersion: 2
     m_Curve: []
@@ -54,6 +69,33 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6820092
+      value: 0.2
+      inSlope: 0.0006591471
+      outSlope: 0.0006591471
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 2.2392879
+      value: 0.2847555
+      inSlope: 0.022079688
+      outSlope: 0.022079688
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.9455648
+    - serializedVersion: 3
+      time: 3.3862524
+      value: 1.0052108
       inSlope: 0
       outSlope: 0
       tangentMode: 0

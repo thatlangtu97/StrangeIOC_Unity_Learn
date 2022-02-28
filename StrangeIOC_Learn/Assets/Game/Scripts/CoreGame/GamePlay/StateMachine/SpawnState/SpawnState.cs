@@ -8,6 +8,8 @@ public class SpawnState : State
     {
         base.EnterState();
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
+        if(controller.componentManager.BehaviorTree)
+            controller.componentManager.BehaviorTree.DisableBehavior();
     }
     public override void UpdateState()
     {
@@ -32,5 +34,7 @@ public class SpawnState : State
     public override void ExitState()
     {
         base.ExitState();
+        if(controller.componentManager.BehaviorTree)
+            controller.componentManager.BehaviorTree.EnableBehavior();
     }
 }

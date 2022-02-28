@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e63af1aa6dc0cef40a60f74914940133, type: 3}
-  m_Name: FallingState
+  m_Script: {fileID: 11500000, guid: 717c23e1f4b3311429ee83350999484b, type: 3}
+  m_Name: SpawnState
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -24,4 +24,4 @@ MonoBehaviour:
   idState: 0
   Immunes: 
   eventCollectionData:
-  - {fileID: 11400000, guid: b97b8c3b2b909684994957fd8ddfa713, type: 2}
+  - {fileID: 11400000, guid: 471aa75c87c3ea34493dd837476b24c0, type: 2}

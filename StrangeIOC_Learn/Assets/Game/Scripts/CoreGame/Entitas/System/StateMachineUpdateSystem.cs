@@ -18,8 +18,14 @@ public class StateMachineUpdateSystem : IExecuteSystem
     {
         foreach (var e in entities.GetEntities())
         {
+            if (!e.stateMachineContainer.stateMachine)
+            {
+                e.Destroy();
+                continue;
+            }
+
             e.stateMachineContainer.stateMachine.UpdateState();
-            e.stateMachineContainer.stateMachine.componentManager.UpdateMecanim();
+            //e.stateMachineContainer.stateMachine.componentManager.UpdateMecanim();
         }
         //updateMecanimJobSystem.Execute();
     }

@@ -20,11 +20,10 @@ public class DieState : State
     public override void ExitState()
     {
         base.ExitState();
-        {
-            
-            controller.gameObject.SetActive(false);
-            Destroy(controller.gameObject);
-        }
+        controller.componentManager.DestroyEntity();
+        
+        //controller.gameObject.SetActive(false);
+            //Destroy(controller.gameObject);
     }
     public override void OnRevive()
     {
