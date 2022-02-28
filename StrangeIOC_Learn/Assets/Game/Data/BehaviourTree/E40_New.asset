@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23f08d2ae4cba14087c1ed36193d82b, type: 3}
+  m_Name: E40_New
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: E1
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(747.888855,16.9145355)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-4.238599,130.268524)","Comment":"Selector
+        task => Fail khi c\u00f3 task return Failure ."},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"WaitTimeTask","NodeData":{"Offset":"(-138.883972,162.596436)"},"ID":2,"Name":"Wait
+        Time Task","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"BooleanuseRandomWaitTime":false,"SingleminWaitTime":0.3,"SinglemaxWaitTime":1},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(0.6906357,160.324982)"},"ID":3,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":1},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-0.6265354,183.263718)","Comment":"Selector
+        task => Fail khi c\u00f3 task return Failure ."},"ID":4,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CoreBT.HasTarget","NodeData":{"Offset":"(-214.403809,182.304382)"},"ID":5,"Name":"Has
+        Target","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"Int32frameUpdate":5,"Int32frameCount":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(10,180)","Comment":"Selector
+        task => True khi c\u00f3 task return Success ."},"ID":6,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-1909.6958,222.028229)","Comment":"Selector
+        task => True khi c\u00f3 task return Success ."},"ID":7,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1.2779274,137.291061)","Comment":"move\n"},"ID":8,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CoreBT.RangeHorizontal","NodeData":{"Offset":"(-522.515259,184.184937)"},"ID":9,"Name":"Range
+        Horizontal","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"SharedFloatrangeToEnemy":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"rangeToEnemy","IsShared":true,"SinglemValue":0}},{"Type":"CheckCanMove","NodeData":{"Offset":"(-322.4014,177.3424)"},"ID":10,"Name":"Check
+        Can Move","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"SharedFloatrangeToEnemy":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"rangeToEnemy","IsShared":true,"SinglemValue":0},"SingletimeTarget":3,"SingledistanceStop":1,"SingledistanceBreak":4,"SingletimeCountTarget":0},{"Type":"CoreBT.LookToTarget","NodeData":{"Offset":"(-154.10643,176.230469)"},"ID":11,"Name":"Look
+        To Target","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true}},{"Type":"CoreBT.MoveForwark","NodeData":{"Offset":"(3.60327148,175.304077)"},"ID":12,"Name":"Move
+        Forwark","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-686.1079,221.85582)","Comment":"Selector
+        task => True khi c\u00f3 task return Success .\n"},"ID":13,"Name":"Selector","Instant":true,"Disabled":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-0.61016655,131.515747)","Comment":"Attack\n"},"ID":14,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-871.270264,402.435242)","Comment":"Xoay
+        to Enemy"},"ID":15,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"None","Children":[{"Type":"CoreBT.CheckInRangeHorizontal","NodeData":{"Offset":"(-295.394165,153.46106)"},"ID":16,"Name":"Check
+        In Range Horizontal","Instant":true,"SharedFloatrangeToEnemy":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"rangeToEnemy","IsShared":true,"SinglemValue":0},"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"Singledistance":1.5,"SinglespaceY":0.3},{"Type":"CoreBT.LookToTarget","NodeData":{"Offset":"(-134.443848,151.764648)"},"ID":17,"Name":"Look
+        To Target","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true}},{"Type":"WaitTimeTask","NodeData":{"Offset":"(0,150.869568)"},"ID":18,"Name":"Wait
+        Time Task","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.1},"BooleanuseRandomWaitTime":false,"SingleminWaitTime":0.3,"SinglemaxWaitTime":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0.9206848,374.856323)"},"ID":19,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CoreBT.CheckInRangeHorizontal","NodeData":{"Offset":"(-651.1658,169.0163)"},"ID":20,"Name":"Check
+        In Range Horizontal","Instant":true,"SharedFloatrangeToEnemy":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"rangeToEnemy","IsShared":true,"SinglemValue":0},"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"Singledistance":1.5,"SinglespaceY":0.3},{"Type":"CoreBT.LookToTarget","NodeData":{"Offset":"(-498.680573,173.958282)"},"ID":21,"Name":"Look
+        To Target","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true}},{"Type":"WaitTimeTask","NodeData":{"Offset":"(-380.606018,169.5149)"},"ID":22,"Name":"Wait
+        Time Task","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.1},"BooleanuseRandomWaitTime":false,"SingleminWaitTime":0.3,"SinglemaxWaitTime":1},{"Type":"CoreBT.ChangeState","NodeData":{"Offset":"(-258.6754,174.980682)"},"ID":23,"Name":"Change
+        State","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"NameStatenameState":"AttackState","Int32idState":0,"BooleanforceChangeState":false},{"Type":"WaitTimeTask","NodeData":{"Offset":"(-130.926086,170.515564)"},"ID":24,"Name":"Wait
+        Time Task","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.7},"BooleanuseRandomWaitTime":false,"SingleminWaitTime":0.3,"SinglemaxWaitTime":1},{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnSuccess","NodeData":{"Offset":"(0.505851746,166.481873)"},"ID":25,"Name":"Return
+        Success","Instant":true,"Children":[{"Type":"CoreBT.ChangeState","NodeData":{"Offset":"(0,99.28581)"},"ID":26,"Name":"Change
+        State","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"NameStatenameState":"IdleState","Int32idState":0,"BooleanforceChangeState":false}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(3.85007477,215.886887)"},"ID":27,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-0.116631508,118.767624)","Comment":"Idle\n"},"ID":28,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnSuccess","NodeData":{"Offset":"(-4.989005,116.101563)"},"ID":29,"Name":"Return
+        Success","Instant":true,"Children":[{"Type":"CoreBT.ChangeState","NodeData":{"Offset":"(0.0344667435,108.610138)"},"ID":30,"Name":"Change
+        State","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"NameStatenameState":"IdleState","Int32idState":0,"BooleanforceChangeState":false}]}]}]}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"rangeToEnemy","IsShared":true,"SinglemValue":0},{"Type":"SharedComponentManager","Name":"component","IsShared":true}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 1.6.8

@@ -22,6 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   idState: 0
+  Immunes: 
   eventCollectionData:
   - {fileID: 11400000, guid: 130bd7779a45b774ca849b7e6802f955, type: 2}
   - {fileID: 11400000, guid: 22ee2d0d4bac1b845bccdd93060c80a8, type: 2}
@@ -29,3 +30,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: defa6f7a8dcf07e4aaab14bf73e88ccd, type: 2}
   - {fileID: 11400000, guid: 6ea76058cc1f4df45b2fc3b354436950, type: 2}
   - {fileID: 11400000, guid: 278fe9ea499107541907db99f94aa5c5, type: 2}
+  - {fileID: 11400000, guid: 6e6056f3fd42494438f00827b0af3b77, type: 2}
+  - {fileID: 11400000, guid: 8d5c253faea42cc428cd6b80c9864044, type: 2}
+  LockGravity: 1
+  useCheckEnemyForwark: 0
