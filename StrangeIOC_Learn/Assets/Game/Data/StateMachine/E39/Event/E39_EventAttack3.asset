@@ -36,13 +36,13 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 1.2
+      Data: 1.22
     - Name: position
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.5
+      Data: 0
     - Name: 
       Entry: 4
       Data: 1
@@ -117,7 +117,7 @@ MonoBehaviour:
       Data: 1
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 2
+      Data: 2.02
     - Name: position
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -220,16 +220,16 @@ MonoBehaviour:
       inWeight: 0.9372362
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1.1245741
-      value: 7
-      inSlope: -0.07514588
-      outSlope: -0.07514588
+      time: 0.83326703
+      value: 5.9572816
+      inSlope: -0.006145236
+      outSlope: -0.006145236
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.24270967
-      outWeight: 0.33333334
+      outWeight: 1
     - serializedVersion: 3
-      time: 1.134574
+      time: 0.843267
       value: 0
       inSlope: 0
       outSlope: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1.984557
-      value: 7.066324
+      value: 5.9498787
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -270,6 +270,21 @@ MonoBehaviour:
   curveY:
     serializedVersion: 2
     m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveSpeedAnimation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

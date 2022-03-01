@@ -30,28 +30,25 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|CastBoxColliderEvent, Assembly-CSharp
+      Data: 1|CastColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.45
-    - Name: position
+      Data: 0.8
+    - Name: layerMaskEnemy
       Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 0
+      Entry: 3
+      Data: 2048
     - Name: 
       Entry: 8
       Data: 
+    - Name: typeCast
+      Entry: 3
+      Data: 0
     - Name: sizeBox
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -67,19 +64,34 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: layerMaskEnemy
+    - Name: radius
+      Entry: 4
+      Data: 0
+    - Name: localPosition
       Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
-      Entry: 3
-      Data: 2048
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
+    - Name: useAngle
+      Entry: 5
+      Data: false
+    - Name: angleCollider
+      Entry: 4
+      Data: 0
     - Name: powerCollider
       Entry: 3
       Data: 4
-    - Name: force
+    - Name: forcePower
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
@@ -116,7 +128,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   NameTrigger: attack2
-  durationAnimation: 2
+  durationAnimation: 1
   curveX:
     serializedVersion: 2
     m_Curve:

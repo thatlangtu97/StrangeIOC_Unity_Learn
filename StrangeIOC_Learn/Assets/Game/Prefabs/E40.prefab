@@ -76,7 +76,7 @@ MonoBehaviour:
   speedMove: 0
   originBoxCheckGround2d: {x: 0.4, y: 0.1}
   currentImunes: 
-  heal: 100
+  heal: 1
   baseImmunes: 
   jumpCount: 0
   dashCount: 0

@@ -11730,7 +11730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joystick: {fileID: 931071010}
   cameraFollow: {fileID: 1597534331}
-  stateMachine: {fileID: 1526201459}
+  stateMachine: {fileID: 1915414529}
 --- !u!1 &523041948
 GameObject:
   m_ObjectHideFlags: 0
@@ -14129,7 +14129,7 @@ MonoBehaviour:
   ForceVector: {x: 0, y: 0, z: 0}
   space: 3.7
   effectLook: {fileID: 689637403}
-  componentManager: {fileID: 1526201465}
+  componentManager: {fileID: 1915414531}
 --- !u!114 &931071011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21858,7 +21858,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526201458}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
   m_Name: 
@@ -22617,7 +22617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0522bc7e1fa194d8b9212f4af447b1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1526201458}
+  player: {fileID: 1915414524}
   cameraAnim: {fileID: 0}
   offSetX: 0
   offSetY: 0
