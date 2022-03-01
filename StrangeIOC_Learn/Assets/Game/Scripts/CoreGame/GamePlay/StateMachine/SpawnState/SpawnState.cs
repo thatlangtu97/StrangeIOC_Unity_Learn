@@ -34,7 +34,10 @@ public class SpawnState : State
     public override void ExitState()
     {
         base.ExitState();
-        if(controller.componentManager.BehaviorTree)
+        if (controller.componentManager.BehaviorTree && controller.componentManager.BehaviorTree.enabled==true)
+        {
+            
             controller.componentManager.BehaviorTree.EnableBehavior();
+        }
     }
 }

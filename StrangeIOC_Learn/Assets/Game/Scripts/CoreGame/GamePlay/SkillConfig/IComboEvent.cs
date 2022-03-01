@@ -671,7 +671,7 @@ public class CastVfxEvent : IComboEvent
 
     [FoldoutGroup("CAST VFX")]
     public float timeTriggerEvent;
-
+    
     [FoldoutGroup("CAST VFX")]
     public float duration = 0.5f;
 
@@ -901,4 +901,93 @@ public class CastColliderEvent : IComboEvent
 }
 #endregion
 
+#region CAST ENEMY VFX
+public class CastEnemyEvent : IComboEvent
+{
+    [FoldoutGroup("CAST ENEMY VFX")]
+    [ReadOnly]
+    public int idEvent;
+
+    [FoldoutGroup("CAST ENEMY VFX")]
+    public float timeTriggerEvent;
+
+    [FoldoutGroup("CAST ENEMY VFX")]
+    public bool notUseDuration ;
+    
+    [FoldoutGroup("CAST ENEMY VFX")]
+    public float duration = 0.5f;
+
+    [FoldoutGroup("CAST ENEMY VFX")]
+    public GameObject Prefab;
+
+    [FoldoutGroup("CAST ENEMY VFX")]
+    public Vector3 Localosition;
+    
+
+    [FoldoutGroup("CAST ENEMY VFX")]
+    public Vector3 LocalScale;
+
+    
+    [FoldoutGroup("CAST ENEMY VFX")]
+    public Vector2 ForceSpawn ;
+
+    
+    [FoldoutGroup("CAST ENEMY VFX")]
+    public bool setParent = true;
+
+    [FoldoutGroup("CAST ENEMY VFX")]
+    public bool recycleWhenFinishDuration = false;
+    
+    
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    private GameObject prefabSpawned;
+    public void OnEventTrigger(GameEntity entity)
+    {
+        if (Prefab)
+        {
+            prefabSpawned = ObjectPool.Spawn(Prefab);
+            Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
+            
+            prefabSpawned.transform.parent = baseTransform;
+            prefabSpawned.transform.localPosition = new Vector3(Localosition.x , Localosition.y , Localosition.z );
+            prefabSpawned.transform.localScale = LocalScale;
+            
+            if (!setParent)
+            {
+                prefabSpawned.transform.parent = null;
+            }
+            Rigidbody2D rg = prefabSpawned.GetComponent<Rigidbody2D>();
+            if (rg)
+            {
+                rg.AddForce(new Vector2(ForceSpawn.x*prefabSpawned.transform.localScale.x,ForceSpawn.y *prefabSpawned.transform.localScale.y));
+            }
+            if(!notUseDuration)
+                ObjectPool.instance.Recycle(prefabSpawned, duration);
+            
+        }
+    }
+    public void Recycle()
+    {
+        if (!notUseDuration)
+        {
+            if (recycleWhenFinishDuration)
+            {
+                if (prefabSpawned)
+                    ObjectPool.Recycle(prefabSpawned);
+            }
+            else
+            {
+                if (prefabSpawned)
+                    prefabSpawned.transform.parent = null;
+            }
+        }
+    }
+
+    public void OnUpdateTrigger()
+    {
+        
+    }
+}
+#endregion
 
