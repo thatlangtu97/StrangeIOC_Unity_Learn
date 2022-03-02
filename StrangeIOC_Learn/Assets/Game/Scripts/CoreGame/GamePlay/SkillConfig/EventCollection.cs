@@ -18,11 +18,11 @@ public class EventCollection : SerializedScriptableObject
     //    //base.OnAfterDeserialize();
     //    //Modify();
     //}
-    //protected override void OnBeforeSerialize()
-    //{
-    //    //base.OnBeforeSerialize();
-    //    //Modify();
-    //}
+    protected override void OnBeforeSerialize()
+    {
+        //base.OnBeforeSerialize();
+        Modify();
+    }
     [Button("ACCEPT MODIFY",ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
 
     public void Modify()
@@ -31,7 +31,7 @@ public class EventCollection : SerializedScriptableObject
         {
             for (int i = 0; i < EventCombo.Count; i++)
             {
-                EventCombo[i].id = i;
+                EventCombo[i].id = i*100;
             }
         }
         else

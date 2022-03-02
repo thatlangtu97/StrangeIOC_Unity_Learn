@@ -30,25 +30,10 @@ MonoBehaviour:
       Data: 3
     - Name: 
       Entry: 7
-      Data: 1|CastEnableMeshRenderer, Assembly-CSharp
+      Data: 1|ColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0
-    - Name: enable
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 2|CastColliderEvent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 2
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0
@@ -64,6 +49,21 @@ MonoBehaviour:
     - Name: typeCast
       Entry: 3
       Data: 0
+    - Name: localPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: sizeBox
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -81,22 +81,7 @@ MonoBehaviour:
       Data: 
     - Name: radius
       Entry: 4
-      Data: 1.44
-    - Name: localPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
       Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: useAngle
       Entry: 5
       Data: false
@@ -138,10 +123,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|CastColliderEvent, Assembly-CSharp
+      Data: 2|ColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 3
+      Data: 100
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0
@@ -157,6 +142,21 @@ MonoBehaviour:
     - Name: typeCast
       Entry: 3
       Data: 0
+    - Name: localPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -1
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: sizeBox
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -174,22 +174,7 @@ MonoBehaviour:
       Data: 
     - Name: radius
       Entry: 4
-      Data: 1.44
-    - Name: localPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: -1
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
       Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: useAngle
       Entry: 5
       Data: false
@@ -224,6 +209,24 @@ MonoBehaviour:
       Entry: 4
       Data: 0
     - Name: maxCastByTime
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|EnableComponent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 200
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: enable
+      Entry: 5
+      Data: false
+    - Name: Component
       Entry: 3
       Data: 0
     - Name: 

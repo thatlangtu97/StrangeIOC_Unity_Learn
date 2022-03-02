@@ -30,14 +30,26 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|CastBoxColliderEvent, Assembly-CSharp
+      Data: 1|ColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 10
+      Data: 0
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0.2
-    - Name: position
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 2048
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: typeCast
+      Entry: 3
+      Data: 0
+    - Name: localPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
@@ -67,19 +79,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: layerMaskEnemy
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 2048
-    - Name: 
-      Entry: 8
-      Data: 
+    - Name: radius
+      Entry: 4
+      Data: 0
+    - Name: useAngle
+      Entry: 5
+      Data: false
+    - Name: angleCollider
+      Entry: 4
+      Data: 0
     - Name: powerCollider
       Entry: 3
       Data: 4
-    - Name: force
+    - Name: forcePower
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
@@ -130,7 +142,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.1850168
     - serializedVersion: 3
-      time: 2.3554878
+      time: 1.7658882
       value: 5
       inSlope: -0.0024307694
       outSlope: -0.0024307694
@@ -153,6 +165,21 @@ MonoBehaviour:
   curveY:
     serializedVersion: 2
     m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveSpeedAnimation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

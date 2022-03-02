@@ -25,7 +25,11 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
         foreach (GameEntity e in entities)
         {
             entityEnemy = e.takeDamage.entityEnemy;
-            
+            if (entityEnemy == null)
+            {
+                entityEnemy.Destroy();
+                return;
+            }
             StateMachineController stateMachine = entityEnemy.stateMachineContainer.stateMachine;
             if (!stateMachine)
             {

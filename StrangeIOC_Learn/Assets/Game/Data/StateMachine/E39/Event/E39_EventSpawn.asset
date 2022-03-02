@@ -30,7 +30,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|CastEnableMeshRenderer, Assembly-CSharp
+      Data: 1|EnableComponent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
@@ -40,6 +40,9 @@ MonoBehaviour:
     - Name: enable
       Entry: 5
       Data: true
+    - Name: Component
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 

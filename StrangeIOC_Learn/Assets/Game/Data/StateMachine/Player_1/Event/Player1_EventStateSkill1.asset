@@ -16,7 +16,6 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 2298935955140347883, guid: 41f5d9e780d3f2945aabf1d723d5119d, type: 3}
     - {fileID: 1428247025656620843, guid: d1fd96d52532e5b47bc38962e11da2ec, type: 3}
     - {fileID: 2330693787773347420, guid: 1331e05deded2bb409ce8ce3674a97e7, type: 3}
     SerializedBytesString: 
@@ -30,58 +29,13 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 1|CastProjectileEvent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 0
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 3
-    - Name: duration
-      Entry: 4
       Data: 2
-    - Name: Prefab
-      Entry: 10
-      Data: 0
-    - Name: Localosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0.3
-    - Name: 
-      Entry: 4
-      Data: 0.7
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: recycleWhenFinishDuration
-      Entry: 5
-      Data: false
-    - Name: LayerMask
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 7
-      Data: 2|CastProjectileEvent, Assembly-CSharp
+      Data: 1|SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0.01
@@ -90,8 +44,8 @@ MonoBehaviour:
       Data: 0.4
     - Name: Prefab
       Entry: 10
-      Data: 1
-    - Name: Localosition
+      Data: 0
+    - Name: localPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
@@ -106,9 +60,60 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: recycleWhenFinishDuration
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ForceSpawn
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setParent
       Entry: 5
       Data: false
+    - Name: UseDuration
+      Entry: 5
+      Data: true
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
+      Entry: 3
+      Data: 0
     - Name: LayerMask
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
@@ -123,10 +128,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|CastProjectileEvent, Assembly-CSharp
+      Data: 2|SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 2
+      Data: 100
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0.5
@@ -135,13 +140,13 @@ MonoBehaviour:
       Data: 1
     - Name: Prefab
       Entry: 10
-      Data: 2
-    - Name: Localosition
+      Data: 1
+    - Name: localPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 6
+      Data: 2
     - Name: 
       Entry: 4
       Data: 0
@@ -151,9 +156,60 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: recycleWhenFinishDuration
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ForceSpawn
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setParent
       Entry: 5
       Data: false
+    - Name: UseDuration
+      Entry: 5
+      Data: true
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
+      Entry: 3
+      Data: 0
     - Name: LayerMask
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule

@@ -5570,7 +5570,7 @@ MonoBehaviour:
   speedMove: 0
   originBoxCheckGround2d: {x: 0.4, y: 0.1}
   currentImunes: 
-  heal: 100
+  heal: 1
   baseImmunes: 
   jumpCount: 0
   dashCount: 0
@@ -8350,6 +8350,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: d40dece6064d6744e8cf101c25db7ca4, type: 2}
   - NameState: 19
     StateToClone: {fileID: 11400000, guid: cad7f3f96ebc37d468f3a21c58e1a8e0, type: 2}
+  - NameState: 1
+    StateToClone: {fileID: 11400000, guid: 73a76d737861b754c89f52145f4031f8, type: 2}
   componentManager: {fileID: 447276985}
   animator: {fileID: 1337739900}
 --- !u!61 &447276979
@@ -8552,7 +8554,7 @@ MonoBehaviour:
   stateMachine: {fileID: 447276978}
   BehaviorTree: {fileID: 447276983}
   rgbody2D: {fileID: 447276982}
-  meshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 1337739902}
   link: {fileID: 0}
   layerMaskGround:
     serializedVersion: 2
@@ -8574,7 +8576,7 @@ MonoBehaviour:
   speedMove: 0
   originBoxCheckGround2d: {x: 0.4, y: 0.1}
   currentImunes: 
-  heal: 100
+  heal: 1
   baseImmunes: 
   jumpCount: 0
   dashCount: 0
@@ -8582,7 +8584,7 @@ MonoBehaviour:
   maxJump: 0
   maxDash: 0
   maxAttackAirCount: 0
-  mecanim: {fileID: 0}
+  mecanim: {fileID: 1337739901}
   UpdateWorldTransform: 0
 --- !u!4 &447276986
 Transform:
@@ -11331,6 +11333,9 @@ MonoBehaviour:
       type: 3}
   - size: 2
     prefab: {fileID: 6483303288064547348, guid: e251d63bf90b9904a89f539172df1418,
+      type: 3}
+  - size: 5
+    prefab: {fileID: 6049752459094999481, guid: 6f230328331304e43acefd494218c59c,
       type: 3}
 --- !u!4 &489803271
 Transform:
@@ -14129,7 +14134,7 @@ MonoBehaviour:
   ForceVector: {x: 0, y: 0, z: 0}
   space: 3.7
   effectLook: {fileID: 689637403}
-  componentManager: {fileID: 1915414531}
+  componentManager: {fileID: 1786180277}
 --- !u!114 &931071011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20796,7 +20801,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!95 &1337739900
 Animator:
@@ -21370,7 +21375,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!95 &1440613846
 Animator:
@@ -22617,7 +22622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0522bc7e1fa194d8b9212f4af447b1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1915414524}
+  player: {fileID: 1786180269}
   cameraAnim: {fileID: 0}
   offSetX: 0
   offSetY: 0
@@ -26108,7 +26113,7 @@ MonoBehaviour:
   stateMachine: {fileID: 1786180270}
   BehaviorTree: {fileID: 1786180275}
   rgbody2D: {fileID: 1786180274}
-  meshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 1719145495}
   link: {fileID: 0}
   layerMaskGround:
     serializedVersion: 2
