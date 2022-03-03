@@ -666,13 +666,6 @@ public class CastAddForce : IComboEvent
     }
 }
 #endregion
-
-
-
-
-
-
-
 #region CAST VFX
 public class CastVfxEvent : IComboEvent
 {
@@ -745,9 +738,6 @@ public class CastVfxEvent : IComboEvent
     }
 }
 #endregion
-
-
-
 #region CAST ENEMY VFX
 public class CastEnemyEvent : IComboEvent
 {
@@ -950,39 +940,38 @@ public class SpawnGameObject : IComboEvent
                         rg.AddForce(new Vector2(ForceSpawn.x*prefabSpawned.transform.localScale.x,ForceSpawn.y *prefabSpawned.transform.localScale.y));
                     }
                     break;
-                    ;
-//                case TypeSpawn.Forward:
-//                    prefabSpawned = ObjectPool.Spawn(Prefab);
-//                    prefabSpawned.transform.localScale = new Vector3(LocalScale.x * (baseTransform.localScale.x < 0 ? -1f : 1f),
-//                        LocalScale.y,
-//                        LocalScale.z);
-//                    prefabSpawned.transform.position = baseTransform.position + new Vector3(localPosition.x * baseTransform.localScale.x,
-//                                                           localPosition.y * baseTransform.localScale.y,
-//                                                           localPosition.z * baseTransform.localScale.z);
-//                    prefabSpawned.transform.parent = baseTransform;
-//            
-//                    Collider2D[] cols = null;
-//            
-//                    cols = Physics2D.OverlapCircleAll(baseTransform.position, radiusCastEnemy, layerMaskEnemy);
-//                    if (cols != null)
-//                    {
-//                        foreach (var col in cols)
-//                        {
-//                            if (col != null)
-//                            {
-//                                Vector3 direction = col.transform.position - baseTransform.position;
-//                                prefabSpawned.transform.right = direction.normalized  * baseTransform.localScale.x ;
-//                                break;
-//                            }
-//                        }
-//                    }
-//                    if (!setParent)
-//                    {
-//                        prefabSpawned.transform.parent = null;
-//                    }
-//                    ObjectPool.instance.Recycle(prefabSpawned, duration);
-//                    
-//                    break;
+                case TypeSpawn.Forward:
+                    prefabSpawned = ObjectPool.Spawn(Prefab);
+                    prefabSpawned.transform.localScale = new Vector3(LocalScale.x * (baseTransform.localScale.x < 0 ? -1f : 1f),
+                        LocalScale.y,
+                        LocalScale.z);
+                    prefabSpawned.transform.position = baseTransform.position + new Vector3(localPosition.x * baseTransform.localScale.x,
+                                                           localPosition.y * baseTransform.localScale.y,
+                                                           localPosition.z * baseTransform.localScale.z);
+                    prefabSpawned.transform.parent = baseTransform;
+            
+                    Collider2D[] cols = null;
+            
+                    cols = Physics2D.OverlapCircleAll(baseTransform.position, 100, LayerMask);
+                    if (cols != null)
+                    {
+                        foreach (var col in cols)
+                        {
+                            if (col != null)
+                            {
+                                Vector3 direction = col.transform.position - baseTransform.position;
+                                prefabSpawned.transform.right = direction.normalized  * baseTransform.localScale.x ;
+                                break;
+                            }
+                        }
+                    }
+                    if (!setParent)
+                    {
+                        prefabSpawned.transform.parent = null;
+                    }
+                    ObjectPool.instance.Recycle(prefabSpawned, duration);
+                    
+                    break;
             }
             if(UseDuration)
                 ObjectPool.instance.Recycle(prefabSpawned, duration);
@@ -1016,166 +1005,6 @@ public class SpawnGameObject : IComboEvent
         if (hit.collider != null)
         {
             transform.position = new Vector3(hit.point.x,transform.position.y,transform.position.z); 
-        }
-    }
-}
-#endregion
-#region COLLIDER
-public class CastColliderEvent : IComboEvent
-{
-    [FoldoutGroup("COLLIDER")]
-    [ReadOnly]
-    public int idEvent;
-
-    [FoldoutGroup("COLLIDER")]
-    public float timeTriggerEvent;
-    
-    [FoldoutGroup("COLLIDER")]
-    public LayerMask layerMaskEnemy;
-    
-    [FoldoutGroup("COLLIDER")]
-    public ColliderCast typeCast;
-    
-    [FoldoutGroup("COLLIDER")]
-    public Vector3 localPosition;
-    
-    [FoldoutGroup("COLLIDER")]
-    [ShowIf("typeCast", ColliderCast.Box)]
-    public Vector3 sizeBox;
-    
-    [FoldoutGroup("COLLIDER")]
-    [ShowIf("typeCast", ColliderCast.Circle)]
-    public float radius;
-    
-    [FoldoutGroup("COLLIDER")]
-    public bool useAngle;
-    
-    [FoldoutGroup("COLLIDER")]
-    [ShowIf("useAngle")]
-    public float angleCollider;
-    
-    [FoldoutGroup("COLLIDER")]
-    public PowerCollider powerCollider;
-
-    [FoldoutGroup("COLLIDER")]
-    public Vector2 forcePower;
-    
-    [FoldoutGroup("COLLIDER")]
-    public bool castByTime;
-
-    [FoldoutGroup("COLLIDER")]
-    [ShowIf("castByTime")]
-    public int idStartCastByTime;
-
-    [FoldoutGroup("COLLIDER")]
-    [ShowIf("castByTime")]
-    public float timeStartCastByTime;
-
-    [FoldoutGroup("COLLIDER")]
-    [ShowIf("castByTime")]
-    public float timeStepCastByTime;
-
-    [FoldoutGroup("COLLIDER")]
-    [ShowIf("castByTime")]
-    public int maxCastByTime;
-
-    
-    private int countCast;
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-
-    public void OnEventTrigger(GameEntity entity)
-    {
-        ////    CAST BOX    ////////////////////////////////////////////
-        if (typeCast == ColliderCast.Box)
-        {
-            Collider2D[] cols = null;
-            Transform transform = entity.stateMachineContainer.stateMachine.transform;
-            Vector3 point = transform.position + new Vector3((localPosition.x + (sizeBox.x / 2f)) * transform.localScale.x,
-                                localPosition.y, localPosition.z);
-            float angle = 0;
-            if (!useAngle)
-            {
-                angle  = transform.localScale.x > 0 ? 0f : 180f;
-            }
-            else
-            {
-                if (transform.localScale.x > 0)
-                {
-                    angle = angleCollider;
-                }
-                else
-                {
-                    angle = 180f - angleCollider;
-                }
-            }
-            
-            cols = Physics2D.OverlapBoxAll(point, sizeBox, angle, layerMaskEnemy);
-            if (cols != null)
-            {
-                foreach (var col in cols)
-                {
-                    if (col != null)
-                    {
-                        Action action = delegate
-                        {
-                            col.GetComponent<Rigidbody2D>().AddForceAtPosition(
-                                new Vector2(forcePower.x * transform.localScale.x, forcePower.y), col.transform.position);
-                        };
-                        DealDmgManager.DealDamage(col, entity, powerCollider, action);
-                    }
-                }
-            }
-#if UNITY_EDITOR
-            GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
-#endif
-        }
-        ////    CAST CIRCLE    ////////////////////////////////////////////
-        else if(typeCast == ColliderCast.Circle)
-        {
-            Collider2D[] cols = null;
-            Transform transform = entity.stateMachineContainer.stateMachine.transform;
-            Vector3 point = transform.position + new Vector3(localPosition.x * transform.localScale.x, localPosition.y, localPosition.z);
-            cols = Physics2D.OverlapCircleAll(point, radius, layerMaskEnemy);
-            if (cols != null)
-            {
-                foreach (var col in cols)
-                {
-                    if (col != null)
-                    {
-                        Action action = delegate
-                        {
-                            col.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(forcePower.x * transform.localScale.x, forcePower.y), col.transform.position);
-                        };
-                        DealDmgManager.DealDamage(col, entity, powerCollider, action);
-                    }
-                }
-            }
-#if UNITY_EDITOR
-            GizmoDrawerTool.instance.draw(point, new Vector3(radius,0f,0f), GizmoDrawerTool.colliderType.Circle,0);
-#endif
-        }
-    }
-    public void OnUpdateTrigger()
-    {
-        if (castByTime)
-        {
-            if (countCast < maxCastByTime)
-            {
-                timeTriggerEvent = timeStartCastByTime + countCast * timeStepCastByTime;
-                idEvent = idStartCastByTime + countCast;
-                countCast += 1;
-            }
-        }
-    }
-
-    public void Recycle()
-    {
-        if (castByTime)
-        {
-            timeTriggerEvent = timeStartCastByTime;
-            idEvent = idStartCastByTime;
-            countCast = 0;
         }
     }
 }
@@ -1239,13 +1068,33 @@ public class ColliderEvent : IComboEvent
     [ShowIf("castByTime")]
     public int maxCastByTime;
 
+    [FoldoutGroup("COLLIDER EVENT")]
+    public bool useColliderComponent;
     
+    [FoldoutGroup("COLLIDER EVENT")] 
+    [ShowIf("useColliderComponent")] 
+    public float duration;
+    
+    [FoldoutGroup("COLLIDER EVENT")] 
+    [ShowIf("useColliderComponent")] 
+    public bool setParen;
+    
+    [FoldoutGroup("COLLIDER EVENT")] 
+    [ShowIf("useColliderComponent")] 
+    public GameObject prefab;
+    
+    private GameObject col;
     private int countCast;
+    private float countDuration;
+
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
 
     public void OnEventTrigger(GameEntity entity)
     {
+
+
+
         ////    CAST BOX    ////////////////////////////////////////////
         if (typeCast == ColliderCast.Box)
         {
@@ -1269,26 +1118,45 @@ public class ColliderEvent : IComboEvent
                     angle = 180f - angleCollider;
                 }
             }
-            
-            cols = Physics2D.OverlapBoxAll(point, sizeBox, angle, layerMaskEnemy);
-            if (cols != null)
+            if (useColliderComponent)
             {
-                foreach (var col in cols)
+                countDuration = 0;
+                col = ObjectPool.Spawn(prefab);
+
+//                col = new GameObject("box",typeof(BoxCollider2D));
+//                col.layer = layer;
+                BoxCollider2D boxCol = col.GetComponent<BoxCollider2D>();
+                boxCol.size = sizeBox;
+                col.transform.position = point;
+                if (setParen)
                 {
-                    if (col != null)
-                    {
-                        Action action = delegate
-                        {
-                            col.GetComponent<Rigidbody2D>().AddForceAtPosition(
-                                new Vector2(forcePower.x * transform.localScale.x, forcePower.y), col.transform.position);
-                        };
-                        DealDmgManager.DealDamage(col, entity, powerCollider, action);
-                    }
+                    col.transform.parent = transform;
                 }
             }
+            else
+            {
+                cols = Physics2D.OverlapBoxAll(point, sizeBox, angle, layerMaskEnemy);
+                if (cols != null)
+                {
+                    foreach (var col in cols)
+                    {
+                        if (col != null)
+                        {
+                            Action action = delegate
+                            {
+                                col.GetComponent<Rigidbody2D>().AddForceAtPosition(
+                                    new Vector2(forcePower.x * transform.localScale.x, forcePower.y),
+                                    col.transform.position);
+                            };
+                            DealDmgManager.DealDamage(col, entity, powerCollider, action);
+                        }
+                    }
+                }
+            
 #if UNITY_EDITOR
             GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
 #endif
+            }
         }
         ////    CAST CIRCLE    ////////////////////////////////////////////
         else if(typeCast == ColliderCast.Circle)
@@ -1327,6 +1195,16 @@ public class ColliderEvent : IComboEvent
                 countCast += 1;
             }
         }
+
+        if (useColliderComponent)
+        {
+            countDuration += Time.deltaTime;
+            if (countDuration > duration)
+            {
+                if(col)
+                    ObjectPool.Recycle(col);
+            }
+        }
     }
 
     public void Recycle()
@@ -1337,6 +1215,8 @@ public class ColliderEvent : IComboEvent
             idEvent = idStartCastByTime;
             countCast = 0;
         }
+        if(col)
+            ObjectPool.Recycle(col);
     }
 }
 #endregion
