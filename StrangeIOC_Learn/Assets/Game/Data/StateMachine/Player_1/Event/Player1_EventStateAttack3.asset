@@ -17,6 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 6511985301000678627, guid: 40be303f4c3fe304097825f2ecd987cb, type: 3}
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -100,14 +101,26 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|CastBoxColliderEvent, Assembly-CSharp
+      Data: 2|ColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 1
+      Data: 100
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.17
-    - Name: position
+      Data: 0.16
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 4096
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: typeCast
+      Entry: 3
+      Data: 0
+    - Name: localPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
@@ -127,7 +140,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1.5
+      Data: 2
     - Name: 
       Entry: 4
       Data: 1.5
@@ -137,19 +150,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: layerMaskEnemy
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 4096
-    - Name: 
-      Entry: 8
-      Data: 
+    - Name: radius
+      Entry: 4
+      Data: 0
+    - Name: useAngle
+      Entry: 5
+      Data: false
+    - Name: angleCollider
+      Entry: 4
+      Data: 0
     - Name: powerCollider
       Entry: 3
-      Data: 4
-    - Name: force
+      Data: 0
+    - Name: forcePower
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
@@ -158,6 +171,111 @@ MonoBehaviour:
     - Name: 
       Entry: 4
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: castByTime
+      Entry: 5
+      Data: false
+    - Name: idStartCastByTime
+      Entry: 3
+      Data: 0
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0
+    - Name: timeStepCastByTime
+      Entry: 4
+      Data: 0
+    - Name: maxCastByTime
+      Entry: 3
+      Data: 0
+    - Name: useColliderComponent
+      Entry: 5
+      Data: false
+    - Name: duration
+      Entry: 4
+      Data: 0
+    - Name: setParen
+      Entry: 5
+      Data: false
+    - Name: prefab
+      Entry: 6
+      Data: 
+    - Name: damageInfo
+      Entry: 7
+      Data: 3|DamageInfo, Assembly-CSharp
+    - Name: powerCollider
+      Entry: 3
+      Data: 4
+    - Name: powerForce
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 200
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: power
+      Entry: 4
+      Data: 10
+    - Name: powerScale
+      Entry: 4
+      Data: 1
+    - Name: action
+      Entry: 7
+      Data: 4|System.Action, mscorlib
+    - Name: target
+      Entry: 7
+      Data: 5|ColliderEvent+<>c__DisplayClass29_0, Assembly-CSharp
+    - Name: col
+      Entry: 10
+      Data: 1
+    - Name: <>4__this
+      Entry: 9
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declaringType
+      Entry: 7
+      Data: 6|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: ColliderEvent+<>c__DisplayClass29_0, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: <OnEventTrigger>b__0
+    - Name: delegateType
+      Entry: 7
+      Data: 7|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Action, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 8|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -208,6 +326,21 @@ MonoBehaviour:
   curveY:
     serializedVersion: 2
     m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveSpeedAnimation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

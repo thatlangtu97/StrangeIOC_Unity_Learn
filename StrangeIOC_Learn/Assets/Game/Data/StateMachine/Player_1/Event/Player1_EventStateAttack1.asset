@@ -215,6 +215,45 @@ MonoBehaviour:
     - Name: maxCastByTime
       Entry: 3
       Data: 0
+    - Name: useColliderComponent
+      Entry: 5
+      Data: false
+    - Name: duration
+      Entry: 4
+      Data: 0
+    - Name: setParen
+      Entry: 5
+      Data: false
+    - Name: prefab
+      Entry: 6
+      Data: 
+    - Name: damageInfo
+      Entry: 7
+      Data: 3|DamageInfo, Assembly-CSharp
+    - Name: powerCollider
+      Entry: 3
+      Data: 1
+    - Name: powerForce
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: power
+      Entry: 4
+      Data: 10
+    - Name: powerScale
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 

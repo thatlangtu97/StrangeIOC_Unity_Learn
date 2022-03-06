@@ -17,8 +17,6 @@ public class ComponentManager : MonoBehaviour
     public BehaviorTree BehaviorTree;
     [FoldoutGroup("REFERENCE")]
     public Rigidbody2D rgbody2D;
-//    [FoldoutGroup("REFERENCE")]
-//    public ComponentProperties properties;
     [FoldoutGroup("REFERENCE")]
     public MeshRenderer meshRenderer;
     [FoldoutGroup("REFERENCE")]
@@ -26,6 +24,10 @@ public class ComponentManager : MonoBehaviour
     [FoldoutGroup("REFERENCE")]
     [ShowInInspector]
     public GameEntity entity;
+    [FoldoutGroup("REFERENCE")]
+    public DamageProperties damageProperties;
+    [FoldoutGroup("REFERENCE")]
+    public DamageInfoEvent damageInfoEvent;
     
     [FoldoutGroup("BUFFER")]
     public LayerMask layerMaskGround,layerMaskWall,layerEnemy;

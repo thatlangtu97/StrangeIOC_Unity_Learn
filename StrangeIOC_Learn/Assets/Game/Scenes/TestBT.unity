@@ -575,9 +575,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 40049888}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &40049888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,9 +861,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 63286512}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &63286512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,9 +1232,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 104479896}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &104479896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3959,9 +3968,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 116585515}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &116585515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4249,6 +4261,11 @@ MonoBehaviour:
   rgbody2D: {fileID: 123914739}
   meshRenderer: {fileID: 2053602784}
   link: {fileID: 0}
+  damageProperties: {fileID: 0}
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
@@ -4549,6 +4566,11 @@ MonoBehaviour:
   rgbody2D: {fileID: 164031658}
   meshRenderer: {fileID: 193003175}
   link: {fileID: 0}
+  damageProperties: {fileID: 0}
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
@@ -5060,9 +5082,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 248063180}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &248063180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5331,9 +5356,10 @@ GameObject:
   - component: {fileID: 380558436}
   - component: {fileID: 380558433}
   - component: {fileID: 380558432}
-  - component: {fileID: 380558431}
   - component: {fileID: 380558430}
+  - component: {fileID: 380558431}
   - component: {fileID: 380558429}
+  - component: {fileID: 380558434}
   m_Layer: 12
   m_Name: E1
   m_TagString: Untagged
@@ -5532,6 +5558,19 @@ MonoBehaviour:
       Version: 1.6.8
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &380558434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380558428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b2839081093b049b08316c68a4aa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
 --- !u!114 &380558436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5550,6 +5589,11 @@ MonoBehaviour:
   rgbody2D: {fileID: 380558432}
   meshRenderer: {fileID: 1440613849}
   link: {fileID: 0}
+  damageProperties: {fileID: 0}
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
@@ -5570,7 +5614,7 @@ MonoBehaviour:
   speedMove: 0
   originBoxCheckGround2d: {x: 0.4, y: 0.1}
   currentImunes: 
-  heal: 1
+  heal: 100
   baseImmunes: 
   jumpCount: 0
   dashCount: 0
@@ -8306,12 +8350,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 447276986}
-  - component: {fileID: 447276985}
-  - component: {fileID: 447276983}
-  - component: {fileID: 447276982}
-  - component: {fileID: 447276980}
   - component: {fileID: 447276979}
+  - component: {fileID: 447276982}
+  - component: {fileID: 447276983}
+  - component: {fileID: 447276985}
+  - component: {fileID: 447276980}
   - component: {fileID: 447276978}
+  - component: {fileID: 447276981}
   m_Layer: 12
   m_Name: E2
   m_TagString: Untagged
@@ -8393,6 +8438,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 447276978}
+--- !u!114 &447276981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447276977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b2839081093b049b08316c68a4aa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
 --- !u!50 &447276982
 Rigidbody2D:
   serializedVersion: 4
@@ -8556,6 +8614,11 @@ MonoBehaviour:
   rgbody2D: {fileID: 447276982}
   meshRenderer: {fileID: 1337739902}
   link: {fileID: 0}
+  damageProperties: {fileID: 447276981}
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
@@ -8794,9 +8857,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 447989793}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &447989793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12043,9 +12109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 597903488}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &597903488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12253,9 +12322,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 598530250}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &598530250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12489,9 +12561,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 620082095}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &620082095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12869,9 +12944,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 682880782}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &682880782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13266,9 +13344,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 782806251}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &782806251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14018,9 +14099,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 927732705}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &927732705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14366,9 +14450,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 969829065}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &969829065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19539,9 +19626,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 1078341616}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &1078341616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20539,9 +20629,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 1271660777}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &1271660777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21688,9 +21781,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 1476106631}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &1476106631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21766,7 +21862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1526201459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22057,6 +22153,11 @@ MonoBehaviour:
   rgbody2D: {fileID: 1526201462}
   meshRenderer: {fileID: 1367761821}
   link: {fileID: 0}
+  damageProperties: {fileID: 0}
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
@@ -22493,9 +22594,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 1594628745}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &1594628745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26115,6 +26219,11 @@ MonoBehaviour:
   rgbody2D: {fileID: 1786180274}
   meshRenderer: {fileID: 1719145495}
   link: {fileID: 0}
+  damageProperties: {fileID: 0}
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
@@ -26187,13 +26296,14 @@ GameObject:
   - component: {fileID: 1832217148}
   - component: {fileID: 1832217147}
   - component: {fileID: 1832217146}
+  - component: {fileID: 1832217153}
   m_Layer: 12
   m_Name: E40 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1832217146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26377,6 +26487,11 @@ MonoBehaviour:
   rgbody2D: {fileID: 1832217149}
   meshRenderer: {fileID: 1174291960}
   link: {fileID: 0}
+  damageProperties: {fileID: 1832217153}
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
@@ -26423,6 +26538,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1832217153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832217145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b2839081093b049b08316c68a4aa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
 --- !u!1 &1892798795
 GameObject:
   m_ObjectHideFlags: 0
@@ -26650,6 +26778,11 @@ MonoBehaviour:
   rgbody2D: {fileID: 1892798799}
   meshRenderer: {fileID: 0}
   link: {fileID: 0}
+  damageProperties: {fileID: 0}
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
@@ -26877,9 +27010,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 0}
   component: {fileID: 1901077573}
-  powerCollider: 0
-  force: {x: 0, y: 0}
 --- !u!114 &1901077573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26919,12 +27055,12 @@ GameObject:
   - component: {fileID: 1915414533}
   - component: {fileID: 1915414532}
   - component: {fileID: 1915414531}
-  - component: {fileID: 1915414530}
   - component: {fileID: 1915414529}
   - component: {fileID: 1915414528}
   - component: {fileID: 1915414527}
   - component: {fileID: 1915414526}
   - component: {fileID: 1915414525}
+  - component: {fileID: 1915414530}
   m_Layer: 11
   m_Name: player
   m_TagString: Untagged
@@ -27056,11 +27192,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1915414524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b475949ad64273743a85e397b9048d63, type: 3}
+  m_Script: {fileID: 11500000, guid: e7b2839081093b049b08316c68a4aa4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heal: 10000
-  baseImmunes: 
+  baseDamage: 0
 --- !u!114 &1915414531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27079,6 +27214,11 @@ MonoBehaviour:
   rgbody2D: {fileID: 1915414532}
   meshRenderer: {fileID: 1120853461}
   link: {fileID: 0}
+  damageProperties: {fileID: 0}
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 0
+    forcePower: {x: 0, y: 0}
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 512
@@ -42744,16 +42884,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: E40
-      objectReference: {fileID: 0}
-    - target: {fileID: 6471316227819945589, guid: 8d0bf4a54c3854e4cbcc8dbdf6c55bd1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6471316228301277991, guid: 8d0bf4a54c3854e4cbcc8dbdf6c55bd1,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d0bf4a54c3854e4cbcc8dbdf6c55bd1, type: 3}

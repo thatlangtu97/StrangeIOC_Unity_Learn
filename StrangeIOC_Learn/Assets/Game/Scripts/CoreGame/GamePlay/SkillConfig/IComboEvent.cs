@@ -36,416 +36,7 @@ public interface IComboEvent
     void OnUpdateTrigger();
     void Recycle();
 }
-#region CAST PROJECTILE
-public class CastProjectileEvent : IComboEvent
-{
-    [FoldoutGroup("CAST PROJECTILE")]
-    //[BoxGroup("Cast Projectile", true, true)]
-    [HideInEditorMode()]
-    public int idEvent;
 
-    [FoldoutGroup("CAST PROJECTILE")]
-    //[BoxGroup("Cast Projectile")]
-    [Range(0f, 5f)]
-    public float timeTriggerEvent;
-
-    [FoldoutGroup("CAST PROJECTILE")]
-    //[BoxGroup("Cast Projectile")]
-    [Range(0f,5f)]
-    public float duration;
-
-    [FoldoutGroup("CAST PROJECTILE")]
-    //[BoxGroup("Cast Projectile")]
-    public GameObject Prefab;
-
-    [FoldoutGroup("CAST PROJECTILE")]
-    //[BoxGroup("Cast Projectile")]
-    public Vector3 Localosition;
-
-    [FoldoutGroup("CAST PROJECTILE")]
-    //[BoxGroup("Cast Projectile")]
-    public bool recycleWhenFinishDuration = false;
-    
-    [FoldoutGroup("CAST PROJECTILE")]
-    //[BoxGroup("Cast Projectile")]
-    public LayerMask LayerMask ;
-
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-    private GameObject prefabSpawned;
-    public void OnEventTrigger(GameEntity entity)
-    {
-        if (Prefab)
-        {
-            prefabSpawned = ObjectPool.Spawn(Prefab);
-            Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
-            prefabSpawned.transform.localScale = new Vector3(   prefabSpawned.transform.localScale.x * (baseTransform.localScale.x < 0 ? -1f : 1f), 
-                                                                prefabSpawned.transform.localScale.y, 
-                                                                prefabSpawned.transform.localScale.z);
-            prefabSpawned.transform.position = baseTransform.position + new Vector3(    Localosition.x * baseTransform.localScale.x, 
-                                                                                        Localosition.y * baseTransform.localScale.y, 
-                                                                                        Localosition.z * baseTransform.localScale.z);
-            RaycastHit2D hit = Physics2D.Raycast(baseTransform.position, new Vector2(1,0)* baseTransform.localScale.x, Localosition.x, LayerMask);
-            if (hit.collider != null)
-            {
-                prefabSpawned.transform.position = new Vector3(hit.point.x,prefabSpawned.transform.position.y,prefabSpawned.transform.position.z); 
-            }
-            ObjectPool.instance.Recycle(prefabSpawned, duration);
-        }
-    }
-
-    public void Recycle()
-    {
-        if (recycleWhenFinishDuration)
-        {
-            if (prefabSpawned)
-                ObjectPool.Recycle(prefabSpawned);
-        }
-    }
-
-    public void OnUpdateTrigger()
-    {
-    }
-}
-#endregion
-
-#region CAST BOX COLLIDER
-public class CastBoxColliderEvent : IComboEvent
-{
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    //[BoxGroup("Cast Collider", true, true)]
-    //[HideInEditorMode()]
-    public int idEvent;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    //[BoxGroup("Cast Collider")]
-    [Range(0f, 5f)]
-    public float timeTriggerEvent;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    //[BoxGroup("Cast Collider")]
-    public Vector3 position;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    //[BoxGroup("Cast Collider")]
-    public Vector3 sizeBox;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    //[BoxGroup("Cast Collider")]
-    public LayerMask layerMaskEnemy;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    //[BoxGroup("Cast Collider")]
-    public PowerCollider powerCollider;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    //[BoxGroup("Cast Collider")]
-    public Vector2 force;
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    public bool castByTime;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    [ShowIf("castByTime")]
-    public int idStartCastByTime;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    [ShowIf("castByTime")]
-    public float timeStartCastByTime;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    [ShowIf("castByTime")]
-    public float timeStepCastByTime;
-
-    [FoldoutGroup("CAST BOX COLLIDER")]
-    [ShowIf("castByTime")]
-    public int maxCastByTime;
-
-    private int countCast;
-
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-
-    public void OnEventTrigger(GameEntity entity)
-    {
-        Collider2D[] cols = null;
-        Transform transform = entity.stateMachineContainer.stateMachine.transform;
-        Vector3 point = transform.position + new Vector3((position.x + (sizeBox.x / 2f)) * transform.localScale.x, position.y, position.z);
-        float angle = transform.localScale.x > 0 ? 0f : 180f;
-        cols = Physics2D.OverlapBoxAll(point, sizeBox, angle, layerMaskEnemy);
-        if (cols != null)
-        {
-            foreach (var col in cols)
-            {
-                if (col != null)
-                {
-                    Action action = delegate
-                    {
-                        col.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(force.x * transform.localScale.x, force.y), col.transform.position);
-                    };
-                    DealDmgManager.DealDamage(col, entity, powerCollider, action);
-                    //break;
-                }
-            }
-        }
-#if UNITY_EDITOR
-        GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
-#endif
-    }
-
-    public void OnUpdateTrigger()
-    {
-        if (castByTime)
-        {
-            if (countCast < maxCastByTime)
-            {
-                timeTriggerEvent = timeStartCastByTime + countCast * timeStepCastByTime;
-                idEvent = idStartCastByTime + countCast;
-                countCast += 1;
-            }
-        }
-    }
-
-    public void Recycle()
-    {
-        if (castByTime)
-        {
-            timeTriggerEvent = timeStartCastByTime;
-            idEvent = idStartCastByTime;
-            countCast = 0;
-        }
-    }
-}
-#endregion
-
-#region CAST CIRCLE COLLIDER
-public class CastCircleColliderEvent : IComboEvent
-{
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    //[BoxGroup("Cast Circle Collider", true, true)]
-    [HideInEditorMode()]
-    public int idEvent;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    //[BoxGroup("Cast Circle Collider")]
-    [Range(0f, 5f)]
-    public float timeTriggerEvent;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    //[BoxGroup("Cast Circle Collider")]
-    public Vector3 position;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    //[BoxGroup("Cast Circle Collider")]
-    public float radius;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    //[BoxGroup("Cast Circle Collider")]
-    public LayerMask layerMaskEnemy;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    //[BoxGroup("Cast Circle Collider")]
-    public PowerCollider powerCollider;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    //[BoxGroup("Cast Circle Collider")]
-    public Vector2 force;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    public bool castByTime;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    [ShowIf("castByTime")]
-    public int idStartCastByTime;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    [ShowIf("castByTime")]
-    public float timeStartCastByTime;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    [ShowIf("castByTime")]
-    public float timeStepCastByTime;
-
-    [FoldoutGroup("CAST CIRCLE COLLIDER")]
-    [ShowIf("castByTime")]
-    public int maxCastByTime;
-
-    private int countCast;
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-
-    public void OnEventTrigger(GameEntity entity)
-    {
-        Collider2D[] cols = null;
-        Transform transform = entity.stateMachineContainer.stateMachine.transform;
-        Vector3 point = transform.position + new Vector3(position.x * transform.localScale.x, position.y, position.z);
-        cols = Physics2D.OverlapCircleAll(point, radius, layerMaskEnemy);
-        if (cols != null)
-        {
-            foreach (var col in cols)
-            {
-                if (col != null)
-                {
-                    Action action = delegate
-                    {
-                        col.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(force.x * transform.localScale.x, force.y), col.transform.position);
-                    };
-                    DealDmgManager.DealDamage(col, entity, powerCollider, action);
-                    //break;
-                }
-            }
-        }
-#if UNITY_EDITOR
-        GizmoDrawerTool.instance.draw(point, new Vector3(radius,0f,0f), GizmoDrawerTool.colliderType.Circle,0);
-#endif
-    }
-
-    public void OnUpdateTrigger()
-    {
-        if (castByTime)
-        {
-            if (countCast < maxCastByTime)
-            {
-                timeTriggerEvent = timeStartCastByTime + countCast * timeStepCastByTime;
-                idEvent = idStartCastByTime + countCast;
-                countCast += 1;
-            }
-        }
-    }
-
-    public void Recycle()
-    {
-        if (castByTime)
-        {
-            timeTriggerEvent = timeStartCastByTime;
-            idEvent = idStartCastByTime;
-            countCast = 0;
-        }
-    }
-}
-#endregion
-
-#region CAST ENABLE MESH RENDERER
-public class CastEnableMeshRenderer : IComboEvent
-{
-    [FoldoutGroup("CAST ENABLE MESH RENDERER")]
-    //[BoxGroup("Enable Mesh Renderer", true, true)]
-    [ReadOnly()]
-    public int idEvent;
-
-    [FoldoutGroup("CAST ENABLE MESH RENDERER")]
-    //[BoxGroup("Enable Mesh Renderer")]
-    [Range(0f, 5f)]
-    public float timeTriggerEvent;
-
-    [FoldoutGroup("CAST ENABLE MESH RENDERER")]
-    //[BoxGroup("Enable Mesh Renderer")]
-    public bool enable;
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-
-    public void OnEventTrigger(GameEntity entity)
-    {
-        MeshRenderer mesh = entity.stateMachineContainer.stateMachine.componentManager.meshRenderer;
-        if (mesh != null)
-        {
-            mesh.enabled = enable;
-        }
-    }
-
-    public void OnUpdateTrigger()
-    {
-        
-    }
-
-    public void Recycle()
-    {
-    }
-}
-#endregion
-
-#region CAST IMPACK
-public class CastImpackEvent : IComboEvent
-{
-    //[FoldoutGroup("$arenaName")]
-    [FoldoutGroup("CAST IMPACK")]
-    //[BoxGroup("Cast Impack Event", true, true)]
-    [HideInEditorMode()]
-    public int idEvent;
-
-    [FoldoutGroup("CAST IMPACK")]
-    //[BoxGroup("Cast Impack Event")]
-    [Range(0f, 5f)]
-    public float timeTriggerEvent;
-
-    [FoldoutGroup("CAST IMPACK")]
-    //[BoxGroup("Cast Impack Event")]
-    public float duration = 0.5f;
-
-    [FoldoutGroup("CAST IMPACK")]
-    //[BoxGroup("Cast Impack Event")]
-    public GameObject Prefab;
-
-    [FoldoutGroup("CAST IMPACK")]
-    //[BoxGroup("Cast Impack Event")]
-    public Vector3 Localosition;
-
-    [FoldoutGroup("CAST IMPACK")]
-    //[BoxGroup("Cast Impack Event")]
-    public Vector3 LocalRotation;
-
-    [FoldoutGroup("CAST IMPACK")]
-    //[BoxGroup("Cast Impack Event")]
-    public Vector3 LocalScale;
-
-    [FoldoutGroup("CAST IMPACK")]
-    //[BoxGroup("Cast Impack Event")]
-    public bool setParent = true;
-
-    [FoldoutGroup("CAST IMPACK")]
-    //[BoxGroup("Cast Impack Event")]
-    public bool recycleWhenFinishDuration = false;
-
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-    private GameObject prefabSpawned;
-    public void OnEventTrigger(GameEntity entity)
-    {
-        if (Prefab)
-        {
-            prefabSpawned = ObjectPool.Spawn(Prefab);
-            Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
-            
-            prefabSpawned.transform.parent = baseTransform;
-            prefabSpawned.transform.localPosition = new Vector3(Localosition.x , Localosition.y , Localosition.z );
-            prefabSpawned.transform.localRotation = Quaternion.Euler(LocalRotation);
-            prefabSpawned.transform.localScale = LocalScale;
-            if (!setParent)
-            {
-                prefabSpawned.transform.parent = null;
-            }
-            ObjectPool.instance.Recycle(prefabSpawned, duration);
-        }
-    }
-    public void Recycle()
-    {
-        if (recycleWhenFinishDuration)
-        {
-            if (prefabSpawned)
-                ObjectPool.Recycle(prefabSpawned);
-        }
-        else
-        {
-            if (prefabSpawned)
-                prefabSpawned.transform.parent = null;
-        }
-    }
-
-    public void OnUpdateTrigger()
-    {
-        
-    }
-}
-#endregion
 
 #region CAST FORWARD PROJECTILE
 public class CastForwardProjectileEvent : IComboEvent
@@ -666,6 +257,7 @@ public class CastAddForce : IComboEvent
     }
 }
 #endregion
+
 #region CAST VFX
 public class CastVfxEvent : IComboEvent
 {
@@ -738,95 +330,7 @@ public class CastVfxEvent : IComboEvent
     }
 }
 #endregion
-#region CAST ENEMY VFX
-public class CastEnemyEvent : IComboEvent
-{
-    [FoldoutGroup("CAST ENEMY VFX")]
-    [ReadOnly]
-    public int idEvent;
 
-    [FoldoutGroup("CAST ENEMY VFX")]
-    public float timeTriggerEvent;
-
-    [FoldoutGroup("CAST ENEMY VFX")]
-    public bool notUseDuration ;
-    
-    [FoldoutGroup("CAST ENEMY VFX")]
-    public float duration = 0.5f;
-
-    [FoldoutGroup("CAST ENEMY VFX")]
-    public GameObject Prefab;
-
-    [FoldoutGroup("CAST ENEMY VFX")]
-    public Vector3 Localosition;
-    
-
-    [FoldoutGroup("CAST ENEMY VFX")]
-    public Vector3 LocalScale;
-
-    
-    [FoldoutGroup("CAST ENEMY VFX")]
-    public Vector2 ForceSpawn ;
-
-    
-    [FoldoutGroup("CAST ENEMY VFX")]
-    public bool setParent = true;
-
-    [FoldoutGroup("CAST ENEMY VFX")]
-    public bool recycleWhenFinishDuration = false;
-    
-    
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-    private GameObject prefabSpawned;
-    public void OnEventTrigger(GameEntity entity)
-    {
-        if (Prefab)
-        {
-            prefabSpawned = ObjectPool.Spawn(Prefab);
-            Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
-            
-            prefabSpawned.transform.parent = baseTransform;
-            prefabSpawned.transform.localPosition = new Vector3(Localosition.x , Localosition.y , Localosition.z );
-            prefabSpawned.transform.localScale = LocalScale;
-            
-            if (!setParent)
-            {
-                prefabSpawned.transform.parent = null;
-            }
-            Rigidbody2D rg = prefabSpawned.GetComponent<Rigidbody2D>();
-            if (rg)
-            {
-                rg.AddForce(new Vector2(ForceSpawn.x*prefabSpawned.transform.localScale.x,ForceSpawn.y *prefabSpawned.transform.localScale.y));
-            }
-            if(!notUseDuration)
-                ObjectPool.instance.Recycle(prefabSpawned, duration);
-            
-        }
-    }
-    public void Recycle()
-    {
-        if (!notUseDuration)
-        {
-            if (recycleWhenFinishDuration)
-            {
-                if (prefabSpawned)
-                    ObjectPool.Recycle(prefabSpawned);
-            }
-            else
-            {
-                if (prefabSpawned)
-                    prefabSpawned.transform.parent = null;
-            }
-        }
-    }
-
-    public void OnUpdateTrigger()
-    {
-        
-    }
-}
-#endregion
 /// <summary>
 /// //////////////////////
 /// </summary>
@@ -873,6 +377,7 @@ public class EnableComponent : IComboEvent
     }
 }
 #endregion
+
 #region SPAWN GAMEOBJECT
 public class SpawnGameObject : IComboEvent
 {
@@ -906,7 +411,6 @@ public class SpawnGameObject : IComboEvent
     private GameObject prefabSpawned;
     public void OnEventTrigger(GameEntity entity)
     {
-        
         if (Prefab)
         {
             Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
@@ -1009,6 +513,7 @@ public class SpawnGameObject : IComboEvent
     }
 }
 #endregion
+
 #region COLLIDER EVENT
 public class ColliderEvent : IComboEvent
 {
@@ -1035,13 +540,10 @@ public class ColliderEvent : IComboEvent
     [FoldoutGroup("COLLIDER EVENT")]
     [ShowIf("typeCast", ColliderCast.Circle)]
     public float radius;
-    
-    [FoldoutGroup("COLLIDER EVENT")]
-    public bool useAngle;
-    
-    [FoldoutGroup("COLLIDER EVENT")]
-    [ShowIf("useAngle")]
-    public float angleCollider;
+
+//    [FoldoutGroup("COLLIDER EVENT")]
+//    [ShowIf("useAngle")]
+//    public float angleCollider;
     
     [FoldoutGroup("COLLIDER EVENT")]
     public PowerCollider powerCollider;
@@ -1079,9 +581,16 @@ public class ColliderEvent : IComboEvent
     [ShowIf("useColliderComponent")] 
     public bool setParen;
     
+//    [FoldoutGroup("COLLIDER EVENT")]
+//    [ShowIf("useColliderComponent")] 
+//    public bool useAngle;
+    
     [FoldoutGroup("COLLIDER EVENT")] 
     [ShowIf("useColliderComponent")] 
     public GameObject prefab;
+    
+    [FoldoutGroup("COLLIDER EVENT")] 
+    public DamageInfoEvent damageInfoEvent;
     
     private GameObject col;
     private int countCast;
@@ -1091,98 +600,129 @@ public class ColliderEvent : IComboEvent
     public float timeTrigger { get { return timeTriggerEvent; } }
 
     public void OnEventTrigger(GameEntity entity)
-    {
-
-
-
-        ////    CAST BOX    ////////////////////////////////////////////
-        if (typeCast == ColliderCast.Box)
+    {   
+        Collider2D[] cols = null;
+        Transform transform = entity.stateMachineContainer.stateMachine.transform;
+        Vector3 point = Vector3.zero;
+        
+        switch (typeCast)
         {
-            Collider2D[] cols = null;
-            Transform transform = entity.stateMachineContainer.stateMachine.transform;
-            Vector3 point = transform.position + new Vector3((localPosition.x + (sizeBox.x / 2f)) * transform.localScale.x,
-                                localPosition.y, localPosition.z);
-            float angle = 0;
-            if (!useAngle)
-            {
-                angle  = transform.localScale.x > 0 ? 0f : 180f;
-            }
-            else
-            {
-                if (transform.localScale.x > 0)
+            case ColliderCast.Box:
+                point = transform.position + new Vector3((localPosition.x + (sizeBox.x / 2f)) * transform.localScale.x,
+                                    localPosition.y, localPosition.z);
+                float angle = 0;
+//                if (!useAngle)
+//                {
+                    angle  = transform.localScale.x > 0 ? 0f : 180f;
+//                }
+//                else
+//                {
+//                    if (transform.localScale.x > 0)
+//                    {
+//                        angle = angleCollider;
+//                    }
+//                    else
+//                    {
+//                        angle = 180f - angleCollider;
+//                    }
+//                }
+                if (useColliderComponent)
                 {
-                    angle = angleCollider;
+                    countDuration = 0;
+                    col = ObjectPool.Spawn(prefab);
+                    BoxCollider2D boxCol = col.GetComponent<BoxCollider2D>();
+                    DamageProperties properties = col.GetComponent<DamageProperties>();
+                    properties = new DamageProperties(entity.stateMachineContainer.stateMachine.componentManager.damageProperties);
+                    DamageInfoEvent damageInfoEvent = col.GetComponent<DamageInfoEvent>();
+                    damageInfoEvent= new DamageInfoEvent(damageInfoEvent);
+                    boxCol.size = sizeBox;
+                    col.transform.position = point;
+                    if (setParen)
+                    {
+                        col.transform.parent = transform;
+                    }
                 }
                 else
                 {
-                    angle = 180f - angleCollider;
-                }
-            }
-            if (useColliderComponent)
-            {
-                countDuration = 0;
-                col = ObjectPool.Spawn(prefab);
-
-//                col = new GameObject("box",typeof(BoxCollider2D));
-//                col.layer = layer;
-                BoxCollider2D boxCol = col.GetComponent<BoxCollider2D>();
-                boxCol.size = sizeBox;
-                col.transform.position = point;
-                if (setParen)
-                {
-                    col.transform.parent = transform;
-                }
-            }
-            else
-            {
-                cols = Physics2D.OverlapBoxAll(point, sizeBox, angle, layerMaskEnemy);
-                if (cols != null)
-                {
-                    foreach (var col in cols)
+                    cols = Physics2D.OverlapBoxAll(point, sizeBox, angle, layerMaskEnemy);
+                    if (cols != null)
                     {
-                        if (col != null)
+                        foreach (var col in cols)
                         {
-                            Action action = delegate
+                            if (col != null)
                             {
-                                col.GetComponent<Rigidbody2D>().AddForceAtPosition(
-                                    new Vector2(forcePower.x * transform.localScale.x, forcePower.y),
-                                    col.transform.position);
-                            };
-                            DealDmgManager.DealDamage(col, entity, powerCollider, action);
+                                
+                                Vector2 direction = (col.transform.position - transform.position).normalized;
+                                DamageProperties damageProperties = new DamageProperties(entity.stateMachineContainer.stateMachine.componentManager.damageProperties);
+                                DamageInfoEvent damageInfoEventTemp = new DamageInfoEvent(damageInfoEvent);
+                                damageInfoEventTemp.forcePower = damageInfoEvent.forcePower * direction;
+                                void Action()
+                                {
+                                    col.GetComponent<Rigidbody2D>().AddForceAtPosition(damageInfoEventTemp.forcePower, col.transform.position);
+                                }
+                                DamageInfoSend damageInfoSend = new DamageInfoSend(damageInfoEventTemp,damageProperties,Action);
+                                DealDmgManager.DealDamage(col, entity,damageInfoSend);
+
+                            }
+                        }
+                    }
+#if UNITY_EDITOR
+                    GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
+#endif
+                }
+                break;
+            
+            case ColliderCast.Circle:
+                point = transform.position + new Vector3(localPosition.x * transform.localScale.x, localPosition.y, localPosition.z);
+                
+                if (useColliderComponent)
+                {
+                    countDuration = 0;
+                    col = ObjectPool.Spawn(prefab);
+                    CircleCollider2D boxCol = col.GetComponent<CircleCollider2D>();
+                    DamageProperties properties = col.GetComponent<DamageProperties>();
+                    properties = new DamageProperties(entity.stateMachineContainer.stateMachine.componentManager.damageProperties);
+                    DamageInfoEvent damageInfoEvent = col.GetComponent<DamageInfoEvent>();
+                    damageInfoEvent= new DamageInfoEvent(damageInfoEvent);
+                    boxCol.radius = radius;
+                    col.transform.position = point;
+                    if (setParen)
+                    {
+                        col.transform.parent = transform;
+                    }
+                }
+                else
+                {
+                    cols = Physics2D.OverlapCircleAll(point, radius, layerMaskEnemy);
+                    if (cols != null)
+                    {
+                        foreach (var col in cols)
+                        {
+                            if (col != null)
+                            {
+                                Vector2 direction = (col.transform.position - transform.position).normalized;
+                                DamageProperties damageProperties = new DamageProperties(entity.stateMachineContainer
+                                    .stateMachine.componentManager.damageProperties);
+                                DamageInfoEvent damageInfoEventTemp = new DamageInfoEvent(damageInfoEvent);
+                                damageInfoEventTemp.forcePower = damageInfoEvent.forcePower * direction;
+                                Action action = delegate
+                                {
+                                    col.GetComponent<Rigidbody2D>()
+                                        .AddForceAtPosition(damageInfoEventTemp.forcePower, col.transform.position);
+                                };
+                                DamageInfoSend damageInfoSend =
+                                    new DamageInfoSend(damageInfoEventTemp, damageProperties, action);
+                                DealDmgManager.DealDamage(col, entity, damageInfoSend);
+                            }
                         }
                     }
                 }
-            
 #if UNITY_EDITOR
-            GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
+                GizmoDrawerTool.instance.draw(point, new Vector3(radius,0f,0f), GizmoDrawerTool.colliderType.Circle,0);
 #endif
-            }
+                break;
         }
-        ////    CAST CIRCLE    ////////////////////////////////////////////
-        else if(typeCast == ColliderCast.Circle)
-        {
-            Collider2D[] cols = null;
-            Transform transform = entity.stateMachineContainer.stateMachine.transform;
-            Vector3 point = transform.position + new Vector3(localPosition.x * transform.localScale.x, localPosition.y, localPosition.z);
-            cols = Physics2D.OverlapCircleAll(point, radius, layerMaskEnemy);
-            if (cols != null)
-            {
-                foreach (var col in cols)
-                {
-                    if (col != null)
-                    {
-                        Action action = delegate
-                        {
-                            col.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(forcePower.x * transform.localScale.x, forcePower.y), col.transform.position);
-                        };
-                        DealDmgManager.DealDamage(col, entity, powerCollider, action);
-                    }
-                }
-            }
-#if UNITY_EDITOR
-            GizmoDrawerTool.instance.draw(point, new Vector3(radius,0f,0f), GizmoDrawerTool.colliderType.Circle,0);
-#endif
-        }
+       
     }
     public void OnUpdateTrigger()
     {
@@ -1191,7 +731,7 @@ public class ColliderEvent : IComboEvent
             if (countCast < maxCastByTime)
             {
                 timeTriggerEvent = timeStartCastByTime + countCast * timeStepCastByTime;
-                idEvent = idStartCastByTime + countCast;
+                idEvent = idStartCastByTime + countCast;    
                 countCast += 1;
             }
         }
@@ -1217,6 +757,174 @@ public class ColliderEvent : IComboEvent
         }
         if(col)
             ObjectPool.Recycle(col);
+    }
+}
+#endregion
+
+#region CAST PROJECTILE EVENT
+public class CastProjectile : IComboEvent
+{
+    [FoldoutGroup("PROJECTILE")]
+    [ReadOnly]
+    public int idEvent;
+
+    [FoldoutGroup("PROJECTILE")] 
+    public float timeTriggerEvent;
+    
+    [FoldoutGroup("PROJECTILE")]
+    public bool useDuration;
+    [FoldoutGroup("PROJECTILE")] 
+    [ShowIf("useDuration")]
+    public bool forceWhenFinishEvent;
+    
+    [FoldoutGroup("PROJECTILE")] 
+    [ShowIf("useDuration")]
+    public float duration ;
+    
+    [FoldoutGroup("PROJECTILE")]  
+    public bool setParent ;
+    
+    [FoldoutGroup("PROJECTILE")] 
+    public TypeSpawn typeSpawn;
+    
+    [FoldoutGroup("PROJECTILE")] 
+    public GameObject Prefab;
+
+    [FoldoutGroup("PROJECTILE")]
+    public Vector3 localPosition;
+    
+    [FoldoutGroup("PROJECTILE")] 
+    public Vector3 LocalRotation;
+
+    [FoldoutGroup("PROJECTILE")] 
+    public Vector3 LocalScale = Vector3.one;
+    
+    [FoldoutGroup("PROJECTILE")] 
+    [ShowIf("typeSpawn", TypeSpawn.RigidBody2D)]   
+    public Vector2 ForceSpawn;
+    
+    [FoldoutGroup("PROJECTILE")] 
+    public DamageInfoEvent damageInfoEvent;
+
+    [FoldoutGroup("PROJECTILE")]     
+    public LayerMask LayerMaskLimitPosition ;
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    private GameObject prefabSpawned;
+    public void OnEventTrigger(GameEntity entity)
+    {
+        
+        if (Prefab)
+        {
+            Transform baseTransform = entity.stateMachineContainer.stateMachine.transform;
+            switch (typeSpawn)
+            {
+                case TypeSpawn.Transform:
+                    prefabSpawned = ObjectPool.Spawn(Prefab,baseTransform,localPosition,Quaternion.Euler(LocalRotation),LocalScale);
+                    if (!setParent)
+                    {
+                        prefabSpawned.transform.parent = null;
+                    }
+                    UseRayCast(prefabSpawned.transform, baseTransform.position, new Vector2(1,0)* baseTransform.localScale.x, Mathf.Abs(localPosition.x), LayerMaskLimitPosition);
+                    break;
+                
+                case TypeSpawn.RigidBody2D:
+                    prefabSpawned = ObjectPool.Spawn(Prefab,baseTransform,localPosition,Quaternion.Euler(LocalRotation),LocalScale);
+                    if (!setParent)
+                    {
+                        prefabSpawned.transform.parent = null;
+                    }
+                    UseRayCast(prefabSpawned.transform, baseTransform.position, new Vector2(1,0)* baseTransform.localScale.x, Mathf.Abs(localPosition.x), LayerMaskLimitPosition);
+                    Rigidbody2D temp = prefabSpawned.GetComponent<Rigidbody2D>();
+                    if (temp)
+                    {
+                        var localScale = prefabSpawned.transform.localScale;
+                        temp.AddForce(new Vector2(ForceSpawn.x*localScale.x,ForceSpawn.y * localScale.y));
+                    }
+                    break;
+                
+                case TypeSpawn.Forward:
+                    Vector3 localScaleCalculate = new Vector3(LocalScale.x * (baseTransform.localScale.x < 0 ? -1f : 1f),
+                                                            LocalScale.y,
+                                                            LocalScale.z);
+                    Collider2D[] cols = Physics2D.OverlapCircleAll(baseTransform.position, 100, LayerMaskLimitPosition);
+                    if (cols != null)
+                    {
+                        foreach (var col in cols)
+                        {
+                            if (col != null)
+                            {
+                                Vector3 direction = col.transform.position - baseTransform.position;
+                                Vector3 rightTransform = direction.normalized  * baseTransform.localScale.x ;
+                                prefabSpawned = ObjectPool.Spawn(Prefab, baseTransform, localPosition, rightTransform, localScaleCalculate);
+                                break;
+                            }
+                        }
+                    }
+                    if (!setParent)
+                    {
+                        prefabSpawned.transform.parent = null;
+                    }
+                    if(useDuration)
+                    ObjectPool.instance.Recycle(prefabSpawned, duration);
+                    break;
+                
+            }
+            
+            StateMachineController state = prefabSpawned.GetComponent<StateMachineController>();
+            ProjectileCollider prj = prefabSpawned.GetComponent<ProjectileCollider>();
+            if (state != null)
+            {
+                if (state.componentManager.entity != null)
+                {
+                    state.componentManager.damageInfoEvent = damageInfoEvent;
+                    state.componentManager.damageProperties =
+                        entity.stateMachineContainer.stateMachine.componentManager.damageProperties;
+                }
+            }
+            if (prj != null)
+            {
+                if (prj.component.entity != null)
+                {
+                    prj.damageProperties = entity.stateMachineContainer.stateMachine.componentManager.damageProperties;
+                    prj.damageInfoEvent = damageInfoEvent;
+                }
+
+            }
+            if(useDuration)
+                ObjectPool.instance.Recycle(prefabSpawned, duration);
+        }
+    }
+    public void Recycle()
+    {
+        if (useDuration)
+        {
+            if (forceWhenFinishEvent)
+            {
+                if (prefabSpawned)
+                    ObjectPool.Recycle(prefabSpawned);
+            }
+            else
+            {
+                if (prefabSpawned)
+                    prefabSpawned.transform.parent = null;
+            }
+        }
+    }
+
+    public void OnUpdateTrigger()
+    {
+        
+    }
+    void UseRayCast(Transform transform ,Vector2 fromPosition,Vector2 direction,float distance,int layerMask)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(fromPosition, direction,distance, LayerMaskLimitPosition);
+        if (hit.collider != null)
+        {
+            var position = transform.position;
+            position = new Vector3(hit.point.x,position.y,position.z);
+            transform.position = position;
+        }
     }
 }
 #endregion

@@ -7,7 +7,7 @@ using Entitas;
 public class TakeDamageSystem : ReactiveSystem<GameEntity>
 {
     readonly GameContext _gameContext;
-    GameEntity entityEnemy;
+    GameEntity targetEnemy;
     public TakeDamageSystem(Contexts contexts) : base(contexts.game)
     {
         _gameContext = contexts.game;
@@ -22,22 +22,22 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
     }
     protected override void Execute(List<GameEntity> entities)
     {
-        foreach (GameEntity e in entities)
+        foreach (GameEntity myEntity in entities)
         {
-            entityEnemy = e.takeDamage.entityEnemy;
-            if (entityEnemy == null)
+            targetEnemy = myEntity.takeDamage.targetEnemy;
+            if (targetEnemy == null)
             {
-                entityEnemy.Destroy();
+                //targetEnemy.Destroy();
                 return;
             }
-            StateMachineController stateMachine = entityEnemy.stateMachineContainer.stateMachine;
+            StateMachineController stateMachine = targetEnemy.stateMachineContainer.stateMachine;
             if (!stateMachine)
             {
-                e.Destroy(); 
+                myEntity.Destroy(); 
                 return;
             }
             if(!stateMachine.componentManager.HasImmune(Immune.BLOCK))
-                stateMachine.componentManager.heal -= e.takeDamage.damage;
+                stateMachine.componentManager.heal -= (int)(myEntity.takeDamage.damageInfoSend.damageProperties.baseDamage * myEntity.takeDamage.damageInfoSend.damageInfoEvent.damageScale);
 
             if (stateMachine.componentManager.heal <= 0)
             {
@@ -45,22 +45,22 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
             }
             else
             {
-                switch (e.takeDamage.powerCollider) {
+                switch (myEntity.takeDamage.damageInfoSend.damageInfoEvent.powerCollider) {
                     //case PowerCollider.Node:
                     //    entityEnemy.stateMachineContainer.stateMachine.InvokeAction(e.takeDamage.action);
                     //    break;
                     case PowerCollider.Small:
                     case PowerCollider.Medium:
                     case PowerCollider.Heavy:
-                        stateMachine.OnHit(e.takeDamage.action);
+                        stateMachine.OnHit(myEntity.takeDamage.damageInfoSend.action);
                         break;
                     case PowerCollider.KnockDown:
-                        stateMachine.OnKnockDown(e.takeDamage.action);
+                        stateMachine.OnKnockDown(myEntity.takeDamage.damageInfoSend.action); 
                         break;
                 }
                 
             }
-            e.Destroy();
+            myEntity.Destroy();
         }
     }
 }

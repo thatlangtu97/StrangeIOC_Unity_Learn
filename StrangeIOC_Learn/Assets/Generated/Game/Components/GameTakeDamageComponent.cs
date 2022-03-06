@@ -6,30 +6,29 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System;
+
 public partial class GameEntity {
 
     public TakeDamageComponent takeDamage { get { return (TakeDamageComponent)GetComponent(GameComponentsLookup.TakeDamage); } }
     public bool hasTakeDamage { get { return HasComponent(GameComponentsLookup.TakeDamage); } }
 
-    public void AddTakeDamage(GameEntity newEntity, GameEntity newEntityEnemy, int newDamage, PowerCollider newPowerCollider, System.Action newAction) {
+    public void AddTakeDamage(GameEntity myEntity, GameEntity targetEntity, DamageInfoSend damageInfoSend) {
         var index = GameComponentsLookup.TakeDamage;
         var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
-        component.entity = newEntity;
-        component.entityEnemy = newEntityEnemy;
-        component.damage = newDamage;
-        component.powerCollider = newPowerCollider;
-        component.action = newAction;
+        component.myEntity = myEntity;
+        component.targetEnemy = targetEntity;
+        component.damageInfoSend = damageInfoSend;
         AddComponent(index, component);
     }
 
-    public void ReplaceTakeDamage(GameEntity newEntity, GameEntity newEntityEnemy, int newDamage, PowerCollider newPowerCollider, System.Action newAction) {
+    public void ReplaceTakeDamage(GameEntity myEntity, GameEntity targetEntity, DamageInfoSend damageInfoSend) {
         var index = GameComponentsLookup.TakeDamage;
         var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
-        component.entity = newEntity;
-        component.entityEnemy = newEntityEnemy;
-        component.damage = newDamage;
-        component.powerCollider = newPowerCollider;
-        component.action = newAction;
+        component.myEntity = myEntity;
+        component.targetEnemy = targetEntity;
+        component.damageInfoSend = damageInfoSend;
         ReplaceComponent(index, component);
     }
 

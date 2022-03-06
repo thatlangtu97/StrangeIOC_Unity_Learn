@@ -5,24 +5,15 @@ using UnityEngine;
 
 public class DealDmgManager
 {
-    public static void DealDamage(Collider2D other, GameEntity entity, PowerCollider powerCollider, Action action =null)
+    public static void DealDamage(Collider2D target, GameEntity myEntity, DamageInfoSend damageInfoSend)
     {
-        ComponentManager enemyComponent = other.GetComponent<ComponentManager>();      
-        GameEntity entityEnemy = enemyComponent.entity;
-        int damage=10;
-        AddReactiveComponent(damage, entity, enemyComponent.entity, powerCollider, action);
+        ComponentManager enemyComponent = target.GetComponent<ComponentManager>();      
+        GameEntity targetEntity = enemyComponent.entity;
+        AddReactiveComponent(myEntity, targetEntity, damageInfoSend);
     }
-    //public static void DealDamageProjectile(Collider2D other, GameEntity entity)
-    //{
-    //    ProjectileComponent enemyComponent = other.GetComponent<ProjectileComponent>();
-    //    GameEntity entityEnemy = enemyComponent.entity;
-    //    int damage = 5;
-    //    AddReactiveComponent(damage, entity, enemyComponent.entity);
-    //}
-    static void AddReactiveComponent(int damage, GameEntity entity, GameEntity entityEnemy, PowerCollider powerCollider, Action action = null)
+    static void AddReactiveComponent( GameEntity myEntity, GameEntity targetEntity, DamageInfoSend damageInfoSend)
     {
-        GameEntity takeDamageComponent;
-        takeDamageComponent = Contexts.sharedInstance.game.CreateEntity();
-        takeDamageComponent.AddTakeDamage(entity, entityEnemy, damage, powerCollider, action);
+        GameEntity takeDamageComponent = Contexts.sharedInstance.game.CreateEntity();
+        takeDamageComponent.AddTakeDamage(myEntity, targetEntity, damageInfoSend);
     }
 }

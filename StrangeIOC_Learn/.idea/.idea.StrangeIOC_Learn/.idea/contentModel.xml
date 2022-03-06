@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Toan\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Toan\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_StrangeIOC_Learn.-1328901763.00" t="ExcludeRecursive" />
-    <e p="D:\Github\StrangeIOC_Learn" t="IncludeRecursive">
+    <e p="C:\ProjectUnity\StrangeIOC_Learn_SR4\StrangeIOC_Learn" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -1796,6 +1794,9 @@
                 <e p="CameraFollow.cs" t="Include" />
                 <e p="Collider" t="Include">
                   <e p="DamageCollider.cs" t="Include" />
+                  <e p="DamageInfo.cs" t="Include" />
+                  <e p="DamageInfoEvent.cs" t="Include" />
+                  <e p="DamageProperties.cs" t="Include" />
                   <e p="DealDmgManager.cs" t="Include" />
                   <e p="Detectable.cs" t="Include" />
                   <e p="ProjectileCollider.cs" t="Include" />
@@ -1820,6 +1821,7 @@
                   <e p="ProjectileForwardToTargetMovement.cs" t="Include" />
                   <e p="ProjectileMovement.cs" t="Include" />
                   <e p="ProjectilePet.cs" t="Include" />
+                  <e p="ProjectileRotateByTime.cs" t="Include" />
                   <e p="ProjectileTrajectoryMovement.cs" t="Include" />
                 </e>
                 <e p="ProjectileComponent.cs" t="Include" />
@@ -1868,6 +1870,7 @@
                     <e p="MoveAirState.cs" t="Include" />
                     <e p="MoveBeziorToPointState.cs" t="Include" />
                     <e p="MoveState.cs" t="Include" />
+                    <e p="MoveStepByStepState.cs" t="Include" />
                   </e>
                   <e p="ReviveState" t="Include">
                     <e p="ReviveState.cs" t="Include" />
@@ -2764,5 +2767,7 @@
       <e p="StrangeIOC_Learn.sln" t="IncludeFlat" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\ADMIN\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ADMIN\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_StrangeIOC_Learn.1988834449.00" t="ExcludeRecursive" />
   </component>
 </project>

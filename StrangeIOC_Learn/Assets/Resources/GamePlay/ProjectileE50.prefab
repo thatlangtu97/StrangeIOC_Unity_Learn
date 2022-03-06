@@ -157,6 +157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfo:
+    powerCollider: 1
+    powerForce: {x: 300, y: 0}
+    power: 10
+    powerScale: 1
   component: {fileID: 8137836140472550330}
   powerCollider: 0
   force: {x: 0, y: 0}

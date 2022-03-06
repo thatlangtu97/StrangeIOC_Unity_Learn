@@ -31,16 +31,28 @@ MonoBehaviour:
       Data: 2
     - Name: 
       Entry: 7
-      Data: 1|SpawnGameObject, Assembly-CSharp
+      Data: 1|CastProjectile, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0.6
+    - Name: useDuration
+      Entry: 5
+      Data: true
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
     - Name: duration
       Entry: 4
       Data: 2
+    - Name: setParent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
+      Entry: 3
+      Data: 0
     - Name: Prefab
       Entry: 10
       Data: 0
@@ -101,19 +113,34 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: UseDuration
-      Entry: 5
-      Data: true
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
+    - Name: damageInfoEvent
+      Entry: 7
+      Data: 2|DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 1
+    - Name: powerCollider
       Entry: 3
+      Data: 1
+    - Name: forcePower
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 200
+    - Name: 
+      Entry: 4
       Data: 0
-    - Name: LayerMask
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LayerMaskLimitPosition
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 
@@ -127,16 +154,28 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|SpawnGameObject, Assembly-CSharp
+      Data: 3|CastProjectile, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100
     - Name: timeTriggerEvent
       Entry: 4
       Data: 1.1
+    - Name: useDuration
+      Entry: 5
+      Data: true
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
     - Name: duration
       Entry: 4
       Data: 2
+    - Name: setParent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
+      Entry: 3
+      Data: 0
     - Name: Prefab
       Entry: 10
       Data: 0
@@ -197,19 +236,34 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: UseDuration
-      Entry: 5
-      Data: true
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
+    - Name: damageInfoEvent
+      Entry: 7
+      Data: 4|DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 1
+    - Name: powerCollider
       Entry: 3
+      Data: 1
+    - Name: forcePower
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 4
       Data: 0
-    - Name: LayerMask
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LayerMaskLimitPosition
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 

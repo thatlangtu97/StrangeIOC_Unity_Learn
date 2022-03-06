@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
+using UnityEngine.Serialization;
 
 public class ProjectileCollider : MonoBehaviour
 {
+    public DamageInfoEvent damageInfoEvent;
+    public DamageProperties damageProperties;
     public ProjectileComponent component;
-    [FoldoutGroup("EVENT COLLIDER")]
-    public PowerCollider powerCollider;
-
-    [FoldoutGroup("EVENT COLLIDER")]
-    public Vector2 force;
-
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        Action action = delegate
+        void Action()
         {
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, other.GetComponent<Rigidbody2D>().velocity.y);
-            other.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(force.x * transform.localScale.x, force.y), other.transform.position);
-        };
-        DealDmgManager.DealDamage(other, component.entity, powerCollider, action);
+            other.GetComponent<Rigidbody2D>().AddForceAtPosition(damageInfoEvent.forcePower * transform.localScale.x, other.transform.position);
+        }
+
+        Vector2 direction = (other.transform.position - transform.position).normalized;
+        
+        DamageInfoSend damageInfoSend = new DamageInfoSend(damageInfoEvent, damageProperties, Action);
+        DealDmgManager.DealDamage(other, component.entity, damageInfoSend);
         ObjectPool.Recycle(this.gameObject);
     }
 }

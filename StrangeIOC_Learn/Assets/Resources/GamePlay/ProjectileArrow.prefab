@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9030769380971832754}
   - component: {fileID: 1891372011863126130}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3969153100310521632}
   - component: {fileID: 3969153100310521633}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,8 @@ GameObject:
   - component: {fileID: 3969153100511159290}
   - component: {fileID: 3969153100511159293}
   - component: {fileID: 3969153100511159292}
-  m_Layer: 0
+  - component: {fileID: 5348319791768747326}
+  m_Layer: 14
   m_Name: ProjectileArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,9 +297,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb34e66c5b2674d8f3c338aa6a53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageInfoEvent:
+    damageScale: 0
+    powerCollider: 1
+    forcePower: {x: 0, y: 0}
+  damageProperties: {fileID: 5348319791768747326}
   component: {fileID: 3969153100511159291}
-  powerCollider: 1
-  force: {x: 100, y: 0}
 --- !u!60 &3969153100511159293
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -344,6 +348,19 @@ MonoBehaviour:
   timeStartMoveDown: 0.3
   trail: {fileID: 1891372011863126130}
   speedDown: 0.5
+--- !u!114 &5348319791768747326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3969153100511159295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b2839081093b049b08316c68a4aa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 0
 --- !u!1 &8700553636919399477
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8476560380933329608}
   - component: {fileID: 8793157983654182928}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: arrow (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
