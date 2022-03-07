@@ -5366,7 +5366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &380558429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8363,7 +8363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &447276978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8382,7 +8382,7 @@ MonoBehaviour:
   - NameState: 2
     StateToClone: {fileID: 11400000, guid: 3537d59c8044c814ea7422be1eba6367, type: 2}
   - NameState: 3
-    StateToClone: {fileID: 11400000, guid: 8f217e68dc31872458eccf9bc983dcf3, type: 2}
+    StateToClone: {fileID: 11400000, guid: 409ea32d886a1154ea38411d032d6c05, type: 2}
   - NameState: 8
     StateToClone: {fileID: 11400000, guid: 944cdd0b0433ec3488cd2fa2224df105, type: 2}
   - NameState: 6
@@ -11801,7 +11801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joystick: {fileID: 931071010}
   cameraFollow: {fileID: 1597534331}
-  stateMachine: {fileID: 1915414529}
+  stateMachine: {fileID: 447276978}
 --- !u!1 &523041948
 GameObject:
   m_ObjectHideFlags: 0
@@ -27068,7 +27068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1915414525
 BoxCollider2D:
   m_ObjectHideFlags: 0

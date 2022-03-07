@@ -8,7 +8,8 @@ public class MoveStepByStepState : State
     private float countTimeMovement;
     
     public float timeByStep=0.2f;
-    public float timeStop=0.2f;
+//    public float timeStop=0.2f;
+    public AnimationCurve curveX;
     public override void EnterState()
     {
         base.EnterState();
@@ -17,24 +18,23 @@ public class MoveStepByStepState : State
         controller.componentManager.ResetJumpCount();
         controller.componentManager.ResetDashCount();
         controller.componentManager.ResetAttackAirCount();
-        countTimeMovement = timeByStep;
+        countTimeMovement = 0;
     }
     public override void UpdateState()
     {
-        if (countTimeMovement > 0)
+        if (countTimeMovement <= timeByStep)
         {
-            controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove,
+            
+            controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.speedMove * curveX.Evaluate(countTimeMovement),
                 controller.componentManager.rgbody2D.velocity.y);
             
         }
         else
         {
-            if (countTimeMovement < 0 - timeStop)
-            {
-                countTimeMovement = timeByStep;
-            }
+            countTimeMovement = 0;
+            
         }
-        countTimeMovement -= Time.deltaTime;
+        countTimeMovement += Time.deltaTime;
         controller.componentManager.Rotate();
         if (controller.componentManager.checkGround() == false)
         {
