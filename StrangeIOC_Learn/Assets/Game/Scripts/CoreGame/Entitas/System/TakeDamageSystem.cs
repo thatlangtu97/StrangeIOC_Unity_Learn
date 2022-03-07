@@ -43,11 +43,11 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
                                       myEntity.takeDamage.damageInfoSend.damageInfoEvent.damageScale);
                 stateMachine.componentManager.heal -= damageTake;
                     
-                DamageTextManager.AddReactiveComponent(DamageTextType.Normal,damageTake.ToString(),stateMachine.transform.position+new Vector3(0,1f,0f));
+                DamageTextManager.AddReactiveComponent(DamageTextType.Normal,damageTake.ToString(),stateMachine.transform.position + new Vector3(Random.Range(-.5f,.5f),Random.Range(1.5f,2f),0f));
             }
             else
             {
-                DamageTextManager.AddReactiveComponent(DamageTextType.Normal,"Block",stateMachine.transform.position+new Vector3(0,1f,0f));
+                DamageTextManager.AddReactiveComponent(DamageTextType.Normal,"Block",stateMachine.transform.position + new Vector3(Random.Range(-.5f,.5f),Random.Range(1.5f,2f),0f));
             }
             if (stateMachine.componentManager.heal <= 0)
             {

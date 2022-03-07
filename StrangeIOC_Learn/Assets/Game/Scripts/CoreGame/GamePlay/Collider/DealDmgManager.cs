@@ -25,4 +25,16 @@ public class DamageTextManager
         GameEntity damageText = Contexts.sharedInstance.game.CreateEntity();
         damageText.AddDamageText(newDamageTextType, newValue, newPosition);
     }
+
+    public static Color GetColor(DamageTextType newDamageTextType)
+    {
+        switch (newDamageTextType)
+        {
+            case DamageTextType.Normal:
+                return Color.white;
+            default: 
+                return Color.white;
+        }
+        
+    }
 }
