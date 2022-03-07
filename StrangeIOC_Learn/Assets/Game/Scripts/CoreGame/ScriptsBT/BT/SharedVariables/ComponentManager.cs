@@ -88,6 +88,9 @@ public class ComponentManager : MonoBehaviour
                 meshRenderer.enabled = false;
         }
 
+        if (!damageProperties)
+            damageProperties = GetComponent<DamageProperties>();
+        
         currentImunes = baseImmunes.Clone();
         entity = Contexts.sharedInstance.game.CreateEntity();
         link = gameObject.Link(entity);

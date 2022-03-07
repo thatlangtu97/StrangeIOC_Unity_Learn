@@ -417,11 +417,8 @@ public class SpawnGameObject : IComboEvent
             switch (typeSpawn)
             {
                 case TypeSpawn.Transform:
-                    prefabSpawned = ObjectPool.Spawn(Prefab);
-                    prefabSpawned.transform.parent = baseTransform;
-                    prefabSpawned.transform.localPosition = new Vector3(localPosition.x , localPosition.y , localPosition.z );
-                    prefabSpawned.transform.localRotation = Quaternion.Euler(LocalRotation);
-                    prefabSpawned.transform.localScale = LocalScale;
+                    prefabSpawned = ObjectPool.Spawn(Prefab, baseTransform, localPosition,Quaternion.Euler(LocalRotation), LocalScale);
+                    
                     if (!setParent)
                     {
                         prefabSpawned.transform.parent = null;
@@ -429,10 +426,8 @@ public class SpawnGameObject : IComboEvent
                     UseRayCast(baseTransform.position, new Vector2(1,0)* baseTransform.localScale.x, Mathf.Abs(localPosition.x), LayerMask,prefabSpawned.transform,baseTransform);
                     break;
                 case TypeSpawn.RigidBody2D:
-                    prefabSpawned = ObjectPool.Spawn(Prefab);
-                    prefabSpawned.transform.parent = baseTransform;
-                    prefabSpawned.transform.localPosition = new Vector3(localPosition.x , localPosition.y , localPosition.z );
-                    prefabSpawned.transform.localScale = LocalScale;
+                    prefabSpawned = ObjectPool.Spawn(Prefab, baseTransform, localPosition,Quaternion.Euler(LocalRotation), LocalScale);
+                    
                     if (!setParent)
                     {
                         prefabSpawned.transform.parent = null;
@@ -445,14 +440,9 @@ public class SpawnGameObject : IComboEvent
                     }
                     break;
                 case TypeSpawn.Forward:
-                    prefabSpawned = ObjectPool.Spawn(Prefab);
-                    prefabSpawned.transform.localScale = new Vector3(LocalScale.x * (baseTransform.localScale.x < 0 ? -1f : 1f),
+                    Vector3 localScaleCalculate = new Vector3(LocalScale.x * (baseTransform.localScale.x < 0 ? -1f : 1f),
                         LocalScale.y,
                         LocalScale.z);
-                    prefabSpawned.transform.position = baseTransform.position + new Vector3(localPosition.x * baseTransform.localScale.x,
-                                                           localPosition.y * baseTransform.localScale.y,
-                                                           localPosition.z * baseTransform.localScale.z);
-                    prefabSpawned.transform.parent = baseTransform;
             
                     Collider2D[] cols = null;
             
@@ -464,7 +454,8 @@ public class SpawnGameObject : IComboEvent
                             if (col != null)
                             {
                                 Vector3 direction = col.transform.position - baseTransform.position;
-                                prefabSpawned.transform.right = direction.normalized  * baseTransform.localScale.x ;
+                                Vector3 rightTransform = direction.normalized  * baseTransform.localScale.x ;
+                                prefabSpawned = ObjectPool.Spawn(Prefab, baseTransform, localPosition, rightTransform, localScaleCalculate);
                                 break;
                             }
                         }
@@ -595,7 +586,8 @@ public class ColliderEvent : IComboEvent
     private GameObject col;
     private int countCast;
     private float countDuration;
-
+    private DamageCollider damageCollider;
+    
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
 
@@ -630,12 +622,8 @@ public class ColliderEvent : IComboEvent
                 {
                     countDuration = 0;
                     col = ObjectPool.Spawn(prefab);
-                    BoxCollider2D boxCol = col.GetComponent<BoxCollider2D>();
-                    DamageProperties properties = col.GetComponent<DamageProperties>();
-                    properties = new DamageProperties(entity.stateMachineContainer.stateMachine.componentManager.damageProperties);
-                    DamageInfoEvent damageInfoEvent = col.GetComponent<DamageInfoEvent>();
-                    damageInfoEvent= new DamageInfoEvent(damageInfoEvent);
-                    boxCol.size = sizeBox;
+                    damageCollider = col.GetComponent<DamageCollider>();
+                    damageCollider.SetCollider(typeCast, sizeBox, entity.stateMachineContainer.stateMachine.componentManager.damageProperties, damageInfoEvent, entity);
                     col.transform.position = point;
                     if (setParen)
                     {
@@ -662,7 +650,7 @@ public class ColliderEvent : IComboEvent
                                 }
                                 DamageInfoSend damageInfoSend = new DamageInfoSend(damageInfoEventTemp,damageProperties,Action);
                                 DealDmgManager.DealDamage(col, entity,damageInfoSend);
-
+                                Debug.Log("damage by Event");
                             }
                         }
                     }
@@ -679,12 +667,8 @@ public class ColliderEvent : IComboEvent
                 {
                     countDuration = 0;
                     col = ObjectPool.Spawn(prefab);
-                    CircleCollider2D boxCol = col.GetComponent<CircleCollider2D>();
-                    DamageProperties properties = col.GetComponent<DamageProperties>();
-                    properties = new DamageProperties(entity.stateMachineContainer.stateMachine.componentManager.damageProperties);
-                    DamageInfoEvent damageInfoEvent = col.GetComponent<DamageInfoEvent>();
-                    damageInfoEvent= new DamageInfoEvent(damageInfoEvent);
-                    boxCol.radius = radius;
+                    damageCollider = col.GetComponent<DamageCollider>();
+                    damageCollider.SetCollider(typeCast, radius, entity.stateMachineContainer.stateMachine.componentManager.damageProperties, damageInfoEvent, entity);
                     col.transform.position = point;
                     if (setParen)
                     {
@@ -701,8 +685,7 @@ public class ColliderEvent : IComboEvent
                             if (col != null)
                             {
                                 Vector2 direction = (col.transform.position - transform.position).normalized;
-                                DamageProperties damageProperties = new DamageProperties(entity.stateMachineContainer
-                                    .stateMachine.componentManager.damageProperties);
+                                DamageProperties damageProperties = new DamageProperties(entity.stateMachineContainer.stateMachine.componentManager.damageProperties);
                                 DamageInfoEvent damageInfoEventTemp = new DamageInfoEvent(damageInfoEvent);
                                 damageInfoEventTemp.forcePower = damageInfoEvent.forcePower * direction;
                                 Action action = delegate
@@ -741,8 +724,12 @@ public class ColliderEvent : IComboEvent
             countDuration += Time.deltaTime;
             if (countDuration > duration)
             {
-                if(col)
+                if (col)
+                {
+                    damageCollider.Recycle();
                     ObjectPool.Recycle(col);
+                }
+                    
             }
         }
     }
@@ -755,8 +742,12 @@ public class ColliderEvent : IComboEvent
             idEvent = idStartCastByTime;
             countCast = 0;
         }
-        if(col)
+
+        if (col)
+        {
+            damageCollider.Recycle();
             ObjectPool.Recycle(col);
+        }
     }
 }
 #endregion
@@ -877,17 +868,16 @@ public class CastProjectile : IComboEvent
             {
                 if (state.componentManager.entity != null)
                 {
-                    state.componentManager.damageInfoEvent = damageInfoEvent;
-                    state.componentManager.damageProperties =
-                        entity.stateMachineContainer.stateMachine.componentManager.damageProperties;
+                    state.componentManager.damageInfoEvent = new DamageInfoEvent(damageInfoEvent); 
+                    state.componentManager.damageProperties = new DamageProperties(entity.stateMachineContainer.stateMachine.componentManager.damageProperties);
                 }
             }
             if (prj != null)
             {
                 if (prj.component.entity != null)
                 {
-                    prj.damageProperties = entity.stateMachineContainer.stateMachine.componentManager.damageProperties;
-                    prj.damageInfoEvent = damageInfoEvent;
+                    prj.damageProperties = new DamageProperties(entity.stateMachineContainer.stateMachine.componentManager.damageProperties); 
+                    prj.damageInfoEvent =  new DamageInfoEvent(damageInfoEvent);
                 }
 
             }

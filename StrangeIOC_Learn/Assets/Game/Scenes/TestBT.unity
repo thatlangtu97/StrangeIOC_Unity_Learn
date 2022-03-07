@@ -5366,7 +5366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &380558429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5589,7 +5589,7 @@ MonoBehaviour:
   rgbody2D: {fileID: 380558432}
   meshRenderer: {fileID: 1440613849}
   link: {fileID: 0}
-  damageProperties: {fileID: 0}
+  damageProperties: {fileID: 380558434}
   damageInfoEvent:
     damageScale: 0
     powerCollider: 0
@@ -20269,7 +20269,8 @@ MeshRenderer:
   m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 2100000, guid: 27a2dbe9697f66a4f87e80d58d9150cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26303,7 +26304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1832217146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27214,7 +27215,7 @@ MonoBehaviour:
   rgbody2D: {fileID: 1915414532}
   meshRenderer: {fileID: 1120853461}
   link: {fileID: 0}
-  damageProperties: {fileID: 0}
+  damageProperties: {fileID: 1915414530}
   damageInfoEvent:
     damageScale: 0
     powerCollider: 0
