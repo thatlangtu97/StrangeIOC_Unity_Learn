@@ -83,12 +83,6 @@ MonoBehaviour:
     - Name: radius
       Entry: 4
       Data: 0
-    - Name: useAngle
-      Entry: 5
-      Data: false
-    - Name: angleCollider
-      Entry: 4
-      Data: 0
     - Name: powerCollider
       Entry: 3
       Data: 4
@@ -119,12 +113,48 @@ MonoBehaviour:
     - Name: maxCastByTime
       Entry: 3
       Data: 0
+    - Name: useColliderComponent
+      Entry: 5
+      Data: false
+    - Name: duration
+      Entry: 4
+      Data: 0
+    - Name: setParen
+      Entry: 5
+      Data: false
+    - Name: prefab
+      Entry: 6
+      Data: 
+    - Name: damageInfoEvent
+      Entry: 7
+      Data: 2|DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 1
+    - Name: powerCollider
+      Entry: 3
+      Data: 4
+    - Name: forcePower
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 200
+    - Name: 
+      Entry: 4
+      Data: 200
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|SpawnGameObject, Assembly-CSharp
+      Data: 3|SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100

@@ -17,7 +17,6 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 6511985301000678627, guid: 40be303f4c3fe304097825f2ecd987cb, type: 3}
-    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -32,79 +31,10 @@ MonoBehaviour:
       Data: 2
     - Name: 
       Entry: 7
-      Data: 1|CastImpackEvent, Assembly-CSharp
+      Data: 1|ColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0.15
-    - Name: duration
-      Entry: 4
-      Data: 0.5
-    - Name: Prefab
-      Entry: 10
-      Data: 0
-    - Name: Localosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalRotation
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: -70
-    - Name: 
-      Entry: 4
-      Data: 90
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalScale
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0.4
-    - Name: 
-      Entry: 4
-      Data: 0.4
-    - Name: 
-      Entry: 4
-      Data: 0.3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: setParent
-      Entry: 5
-      Data: true
-    - Name: recycleWhenFinishDuration
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 2|ColliderEvent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 100
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0.16
@@ -153,12 +83,6 @@ MonoBehaviour:
     - Name: radius
       Entry: 4
       Data: 0
-    - Name: useAngle
-      Entry: 5
-      Data: false
-    - Name: angleCollider
-      Entry: 4
-      Data: 0
     - Name: powerCollider
       Entry: 3
       Data: 0
@@ -201,13 +125,16 @@ MonoBehaviour:
     - Name: prefab
       Entry: 6
       Data: 
-    - Name: damageInfo
+    - Name: damageInfoEvent
       Entry: 7
-      Data: 3|DamageInfo, Assembly-CSharp
+      Data: 2|DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 1
     - Name: powerCollider
       Entry: 3
       Data: 4
-    - Name: powerForce
+    - Name: forcePower
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
@@ -219,63 +146,102 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: power
-      Entry: 4
-      Data: 10
-    - Name: powerScale
-      Entry: 4
-      Data: 1
-    - Name: action
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 4|System.Action, mscorlib
-    - Name: target
-      Entry: 7
-      Data: 5|ColliderEvent+<>c__DisplayClass29_0, Assembly-CSharp
-    - Name: col
+      Data: 3|SpawnGameObject, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 100
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0.1
+    - Name: duration
+      Entry: 4
+      Data: 0.5
+    - Name: Prefab
       Entry: 10
-      Data: 1
-    - Name: <>4__this
-      Entry: 9
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: declaringType
+      Data: 0
+    - Name: localPosition
       Entry: 7
-      Data: 6|System.RuntimeType, mscorlib
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
-      Entry: 1
-      Data: ColliderEvent+<>c__DisplayClass29_0, Assembly-CSharp
+      Entry: 4
+      Data: 0.1
     - Name: 
-      Entry: 8
-      Data: 
-    - Name: methodName
-      Entry: 1
-      Data: <OnEventTrigger>b__0
-    - Name: delegateType
-      Entry: 7
-      Data: 7|System.RuntimeType, mscorlib
+      Entry: 4
+      Data: 0.8
     - Name: 
-      Entry: 1
-      Data: System.Action, mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: signature
-      Entry: 7
-      Data: 8|System.Type[], mscorlib
-    - Name: 
-      Entry: 12
+      Entry: 4
       Data: 0
     - Name: 
-      Entry: 13
+      Entry: 8
       Data: 
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -60
+    - Name: 
+      Entry: 4
+      Data: 90
+    - Name: 
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
+    - Name: LocalScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.4
+    - Name: 
+      Entry: 4
+      Data: 0.4
+    - Name: 
+      Entry: 4
+      Data: 0.3
     - Name: 
       Entry: 8
       Data: 
+    - Name: ForceSpawn
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setParent
+      Entry: 5
+      Data: false
+    - Name: UseDuration
+      Entry: 5
+      Data: true
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
+      Entry: 3
+      Data: 0
+    - Name: LayerMask
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 

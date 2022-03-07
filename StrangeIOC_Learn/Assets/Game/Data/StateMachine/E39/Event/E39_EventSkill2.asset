@@ -180,12 +180,6 @@ MonoBehaviour:
     - Name: radius
       Entry: 4
       Data: 0
-    - Name: useAngle
-      Entry: 5
-      Data: false
-    - Name: angleCollider
-      Entry: 4
-      Data: 0
     - Name: powerCollider
       Entry: 3
       Data: 4
@@ -216,21 +210,69 @@ MonoBehaviour:
     - Name: maxCastByTime
       Entry: 3
       Data: 0
+    - Name: useColliderComponent
+      Entry: 5
+      Data: false
+    - Name: duration
+      Entry: 4
+      Data: 0
+    - Name: setParen
+      Entry: 5
+      Data: false
+    - Name: prefab
+      Entry: 6
+      Data: 
+    - Name: damageInfoEvent
+      Entry: 7
+      Data: 3|DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 1
+    - Name: powerCollider
+      Entry: 3
+      Data: 4
+    - Name: forcePower
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|SpawnGameObject, Assembly-CSharp
+      Data: 4|CastProjectile, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 200
     - Name: timeTriggerEvent
       Entry: 4
       Data: 2.4
+    - Name: useDuration
+      Entry: 5
+      Data: false
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
     - Name: duration
       Entry: 4
-      Data: 0.5
+      Data: 0
+    - Name: setParent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
+      Entry: 3
+      Data: 1
     - Name: Prefab
       Entry: 10
       Data: 1
@@ -291,19 +333,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: UseDuration
-      Entry: 5
-      Data: false
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
+    - Name: damageInfoEvent
+      Entry: 7
+      Data: 5|DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 0
+    - Name: powerCollider
       Entry: 3
-      Data: 1
-    - Name: LayerMask
+      Data: 0
+    - Name: forcePower
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LayerMaskLimitPosition
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 
@@ -317,16 +371,28 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|SpawnGameObject, Assembly-CSharp
+      Data: 6|CastProjectile, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 300
     - Name: timeTriggerEvent
       Entry: 4
       Data: 2.4
+    - Name: useDuration
+      Entry: 5
+      Data: false
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
     - Name: duration
       Entry: 4
-      Data: 0.5
+      Data: 0
+    - Name: setParent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
+      Entry: 3
+      Data: 1
     - Name: Prefab
       Entry: 10
       Data: 1
@@ -387,19 +453,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: UseDuration
-      Entry: 5
-      Data: false
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
+    - Name: damageInfoEvent
+      Entry: 7
+      Data: 7|DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 0
+    - Name: powerCollider
       Entry: 3
-      Data: 1
-    - Name: LayerMask
+      Data: 0
+    - Name: forcePower
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LayerMaskLimitPosition
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 

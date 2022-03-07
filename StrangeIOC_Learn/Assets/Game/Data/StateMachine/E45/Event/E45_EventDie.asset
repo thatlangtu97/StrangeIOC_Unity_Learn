@@ -28,97 +28,13 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 4
-    - Name: 
-      Entry: 7
-      Data: 1|CastEnableMeshRenderer, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 0
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0
-    - Name: enable
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 2|CastImpackEvent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 100
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0
-    - Name: duration
-      Entry: 4
       Data: 2
-    - Name: Prefab
-      Entry: 10
-      Data: 0
-    - Name: Localosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0.5
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalRotation
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalScale
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: setParent
-      Entry: 5
-      Data: true
-    - Name: recycleWhenFinishDuration
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 7
-      Data: 3|EnableComponent, Assembly-CSharp
+      Data: 1|EnableComponent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 200
+      Data: 0
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0
@@ -133,10 +49,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|SpawnGameObject, Assembly-CSharp
+      Data: 2|SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 300
+      Data: 100
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0

@@ -535,13 +535,7 @@ public class ColliderEvent : IComboEvent
 //    [FoldoutGroup("COLLIDER EVENT")]
 //    [ShowIf("useAngle")]
 //    public float angleCollider;
-    
-    [FoldoutGroup("COLLIDER EVENT")]
-    public PowerCollider powerCollider;
 
-    [FoldoutGroup("COLLIDER EVENT")]
-    public Vector2 forcePower;
-    
     [FoldoutGroup("COLLIDER EVENT")]
     public bool castByTime;
 

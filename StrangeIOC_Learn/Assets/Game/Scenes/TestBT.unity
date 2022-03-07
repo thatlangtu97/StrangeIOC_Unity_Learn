@@ -8363,7 +8363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &447276978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11801,7 +11801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joystick: {fileID: 931071010}
   cameraFollow: {fileID: 1597534331}
-  stateMachine: {fileID: 447276978}
+  stateMachine: {fileID: 1915414529}
 --- !u!1 &523041948
 GameObject:
   m_ObjectHideFlags: 0
@@ -25894,13 +25894,14 @@ GameObject:
   - component: {fileID: 1786180272}
   - component: {fileID: 1786180271}
   - component: {fileID: 1786180270}
+  - component: {fileID: 1786180273}
   m_Layer: 12
   m_Name: E10(BOSS)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1786180270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25969,6 +25970,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 1786180270}
+--- !u!114 &1786180273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786180269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b2839081093b049b08316c68a4aa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
 --- !u!50 &1786180274
 Rigidbody2D:
   serializedVersion: 4
@@ -26220,7 +26234,7 @@ MonoBehaviour:
   rgbody2D: {fileID: 1786180274}
   meshRenderer: {fileID: 1719145495}
   link: {fileID: 0}
-  damageProperties: {fileID: 0}
+  damageProperties: {fileID: 1786180273}
   damageInfoEvent:
     damageScale: 0
     powerCollider: 0
@@ -27068,7 +27082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1915414525
 BoxCollider2D:
   m_ObjectHideFlags: 0

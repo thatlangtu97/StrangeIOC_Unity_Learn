@@ -179,12 +179,6 @@ MonoBehaviour:
     - Name: radius
       Entry: 4
       Data: 0
-    - Name: useAngle
-      Entry: 5
-      Data: false
-    - Name: angleCollider
-      Entry: 4
-      Data: 0
     - Name: powerCollider
       Entry: 3
       Data: 1
@@ -227,13 +221,16 @@ MonoBehaviour:
     - Name: prefab
       Entry: 6
       Data: 
-    - Name: damageInfo
+    - Name: damageInfoEvent
       Entry: 7
-      Data: 3|DamageInfo, Assembly-CSharp
+      Data: 3|DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 0.6
     - Name: powerCollider
       Entry: 3
       Data: 1
-    - Name: powerForce
+    - Name: forcePower
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
@@ -245,12 +242,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: power
-      Entry: 4
-      Data: 10
-    - Name: powerScale
-      Entry: 4
-      Data: 1
     - Name: 
       Entry: 8
       Data: 

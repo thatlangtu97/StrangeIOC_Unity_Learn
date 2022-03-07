@@ -15,8 +15,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 4677585346147428307, guid: 1ba7624304d12154bb8b241528a46b70, type: 3}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -123,8 +122,8 @@ MonoBehaviour:
       Entry: 5
       Data: false
     - Name: prefab
-      Entry: 10
-      Data: 0
+      Entry: 6
+      Data: 
     - Name: damageInfoEvent
       Entry: 7
       Data: 2|DamageInfoEvent, Assembly-CSharp
