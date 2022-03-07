@@ -8,14 +8,16 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int PlayerFlag = 0;
-    public const int ProjectileContainer = 1;
-    public const int StateMachineContainer = 2;
-    public const int TakeDamage = 3;
+    public const int DamageText = 0;
+    public const int PlayerFlag = 1;
+    public const int ProjectileContainer = 2;
+    public const int StateMachineContainer = 3;
+    public const int TakeDamage = 4;
 
-    public const int TotalComponents = 4;
+    public const int TotalComponents = 5;
 
     public static readonly string[] componentNames = {
+        "DamageText",
         "PlayerFlag",
         "ProjectileContainer",
         "StateMachineContainer",
@@ -23,6 +25,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(DamageTextComponent),
         typeof(PlayerFlagComponent),
         typeof(ProjectileContainerComponent),
         typeof(StateMachineContainerComponent),

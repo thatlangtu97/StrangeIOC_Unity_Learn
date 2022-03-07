@@ -17,3 +17,12 @@ public class DealDmgManager
         takeDamageComponent.AddTakeDamage(myEntity, targetEntity, damageInfoSend);
     }
 }
+
+public class DamageTextManager
+{
+    public static void AddReactiveComponent( DamageTextType newDamageTextType,string newValue, Vector3 newPosition)
+    {
+        GameEntity damageText = Contexts.sharedInstance.game.CreateEntity();
+        damageText.AddDamageText(newDamageTextType, newValue, newPosition);
+    }
+}

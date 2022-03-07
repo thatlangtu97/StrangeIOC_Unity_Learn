@@ -6,29 +6,26 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using System;
-
 public partial class GameEntity {
 
     public TakeDamageComponent takeDamage { get { return (TakeDamageComponent)GetComponent(GameComponentsLookup.TakeDamage); } }
     public bool hasTakeDamage { get { return HasComponent(GameComponentsLookup.TakeDamage); } }
 
-    public void AddTakeDamage(GameEntity myEntity, GameEntity targetEntity, DamageInfoSend damageInfoSend) {
+    public void AddTakeDamage(GameEntity newMyEntity, GameEntity newTargetEnemy, DamageInfoSend newDamageInfoSend) {
         var index = GameComponentsLookup.TakeDamage;
         var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
-        component.myEntity = myEntity;
-        component.targetEnemy = targetEntity;
-        component.damageInfoSend = damageInfoSend;
+        component.myEntity = newMyEntity;
+        component.targetEnemy = newTargetEnemy;
+        component.damageInfoSend = newDamageInfoSend;
         AddComponent(index, component);
     }
 
-    public void ReplaceTakeDamage(GameEntity myEntity, GameEntity targetEntity, DamageInfoSend damageInfoSend) {
+    public void ReplaceTakeDamage(GameEntity newMyEntity, GameEntity newTargetEnemy, DamageInfoSend newDamageInfoSend) {
         var index = GameComponentsLookup.TakeDamage;
         var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
-        component.myEntity = myEntity;
-        component.targetEnemy = targetEntity;
-        component.damageInfoSend = damageInfoSend;
+        component.myEntity = newMyEntity;
+        component.targetEnemy = newTargetEnemy;
+        component.damageInfoSend = newDamageInfoSend;
         ReplaceComponent(index, component);
     }
 

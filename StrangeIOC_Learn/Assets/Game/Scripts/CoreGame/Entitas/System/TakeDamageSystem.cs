@@ -36,9 +36,19 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
                 myEntity.Destroy(); 
                 return;
             }
-            if(!stateMachine.componentManager.HasImmune(Immune.BLOCK))
-                stateMachine.componentManager.heal -= (int)(myEntity.takeDamage.damageInfoSend.damageProperties.baseDamage * myEntity.takeDamage.damageInfoSend.damageInfoEvent.damageScale);
 
+            if (!stateMachine.componentManager.HasImmune(Immune.BLOCK))
+            {
+                int damageTake=(int) (myEntity.takeDamage.damageInfoSend.damageProperties.baseDamage *
+                                      myEntity.takeDamage.damageInfoSend.damageInfoEvent.damageScale);
+                stateMachine.componentManager.heal -= damageTake;
+                    
+                DamageTextManager.AddReactiveComponent(DamageTextType.Normal,damageTake.ToString(),stateMachine.transform.position+new Vector3(0,1f,0f));
+            }
+            else
+            {
+                DamageTextManager.AddReactiveComponent(DamageTextType.Normal,"Block",stateMachine.transform.position+new Vector3(0,1f,0f));
+            }
             if (stateMachine.componentManager.heal <= 0)
             {
                 stateMachine.ChangeState(NameState.DieState);
