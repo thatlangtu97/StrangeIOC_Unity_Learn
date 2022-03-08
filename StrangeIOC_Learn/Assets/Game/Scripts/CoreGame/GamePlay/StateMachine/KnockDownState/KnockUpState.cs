@@ -35,4 +35,9 @@ public class KnockUpState : State
         if (controller.componentManager.BehaviorTree)
             controller.componentManager.BehaviorTree.EnableBehavior();
     }
+    public override void OnInputDash()
+    {
+        base.OnInputDash();
+        controller.ChangeState(NameState.RollOutState);
+    }
 }

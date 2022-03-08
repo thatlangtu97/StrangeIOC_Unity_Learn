@@ -29,4 +29,13 @@ public class KnockDownState : State
     {
         base.ExitState();
     }
+
+    public override void OnInputDash()
+    {
+        if (timeTrigger >= 0.1f)
+        {
+            base.OnInputDash();
+            controller.ChangeState(NameState.RollOutState);
+        }
+    }
 }

@@ -215,5 +215,6 @@ public enum NameState
     AirSkillState,
     FallingState,
     KnockUpState,
+    RollOutState,
 
 }

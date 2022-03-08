@@ -20,6 +20,7 @@ public class DealDmgManager
 
 public class DamageTextManager
 {
+    public static string hexColorNormal="#9c9c9c9c";
     public static void AddReactiveComponent( DamageTextType newDamageTextType,string newValue, Vector3 newPosition)
     {
         GameEntity damageText = Contexts.sharedInstance.game.CreateEntity();
@@ -31,10 +32,14 @@ public class DamageTextManager
         switch (newDamageTextType)
         {
             case DamageTextType.Normal:
+//                ColorUtility.TryParseHtmlString(hexColorNormal, out Color colorNormal);
+//                return colorNormal;
                 return Color.white;
             default: 
-                return Color.white;
+                return Color.black;
         }
+
         
+
     }
 }

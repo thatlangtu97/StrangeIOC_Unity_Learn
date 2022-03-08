@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,15 @@ public class ProjectileForwardMovement : ProjectileMovement
     public float speed;
     public Vector3 direction;
     float fixedDeltaTime;
+    public AnimationCurve curve = new AnimationCurve(new Keyframe(0,1f));
+    private float timeCount;
+
+    public void OnEnable()
+    {
+        timeCount = 0;
+        fixedDeltaTime = Time.fixedDeltaTime;
+    }
+
     public override void UpdatePosition()
     {
         //updateDirMove();
@@ -17,8 +27,9 @@ public class ProjectileForwardMovement : ProjectileMovement
         //                        );
         direction = transform.right * transform.localScale.x;
                        
-        fixedDeltaTime = Time.fixedDeltaTime;
-        transform.position += direction * speed * fixedDeltaTime;
+        
+        timeCount += fixedDeltaTime;
+        transform.position += direction * fixedDeltaTime * (speed * curve.Evaluate(timeCount));
     }
     //private void updateDirMove()
     //{

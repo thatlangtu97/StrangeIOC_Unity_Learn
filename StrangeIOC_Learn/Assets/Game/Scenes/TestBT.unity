@@ -5398,6 +5398,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: 8b4a2f7eebf902e488cbd8d8dd71aaba, type: 2}
   - NameState: 19
     StateToClone: {fileID: 11400000, guid: 5d15443f1693f6d4ca6e772c0d7248a6, type: 2}
+  - NameState: 11
+    StateToClone: {fileID: 11400000, guid: 5d6fd10a8f157744e9f30080d3293895, type: 2}
   componentManager: {fileID: 380558436}
   animator: {fileID: 1440613846}
 --- !u!61 &380558430
@@ -13474,7 +13476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829539136}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8.247038}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0390625, y: -0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 2038054126}
@@ -27199,6 +27201,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: 16a6881674df7b4488929e2432e0f9ea, type: 2}
   - NameState: 19
     StateToClone: {fileID: 11400000, guid: 91d29fe1a77004049b05e7c1dc0d48a9, type: 2}
+  - NameState: 20
+    StateToClone: {fileID: 11400000, guid: fdb82a0be4835f8498cfe9732dc5d794, type: 2}
   componentManager: {fileID: 1915414531}
   animator: {fileID: 1120853463}
 --- !u!114 &1915414530
