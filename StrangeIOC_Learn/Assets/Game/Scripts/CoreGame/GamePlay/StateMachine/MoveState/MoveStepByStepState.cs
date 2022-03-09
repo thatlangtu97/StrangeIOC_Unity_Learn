@@ -4,11 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MoveStepByStepState", menuName = "CoreGame/State/MoveStepByStepState")]
 public class MoveStepByStepState : State
 {
-    bool isFailing = false;
+    private bool isFailing = false;
     private float countTimeMovement;
+    private float timeByStep;
     
-    public float timeByStep=0.2f;
-//    public float timeStop=0.2f;
     public AnimationCurve curveX;
     public override void EnterState()
     {
@@ -19,6 +18,12 @@ public class MoveStepByStepState : State
         controller.componentManager.ResetDashCount();
         controller.componentManager.ResetAttackAirCount();
         countTimeMovement = 0;
+        foreach (var VARIABLE in curveX.keys)
+        {
+            if (timeByStep < VARIABLE.time)
+                timeByStep = VARIABLE.time;
+        }
+
     }
     public override void UpdateState()
     {

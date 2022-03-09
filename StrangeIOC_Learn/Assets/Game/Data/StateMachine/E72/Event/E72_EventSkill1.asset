@@ -33,10 +33,10 @@ MonoBehaviour:
       Data: 1|ColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
-      Data: 0
+      Data: 10
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 1.267
+      Data: 1.25
     - Name: layerMaskEnemy
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
@@ -82,33 +82,18 @@ MonoBehaviour:
     - Name: radius
       Entry: 4
       Data: 1
-    - Name: powerCollider
-      Entry: 3
-      Data: 4
-    - Name: forcePower
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 300
-    - Name: 
-      Entry: 4
-      Data: 100
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: castByTime
       Entry: 5
       Data: true
     - Name: idStartCastByTime
       Entry: 3
-      Data: 0
+      Data: 10
     - Name: timeStartCastByTime
       Entry: 4
-      Data: 1.267
+      Data: 1.25
     - Name: timeStepCastByTime
       Entry: 4
-      Data: 0.15
+      Data: 0.125
     - Name: maxCastByTime
       Entry: 3
       Data: 10
@@ -138,7 +123,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 300
+      Data: 350
     - Name: 
       Entry: 4
       Data: 100

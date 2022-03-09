@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8137836140472550331}
   - component: {fileID: 7950874950095868510}
   - component: {fileID: 324274899}
+  - component: {fileID: 6636397638057653380}
   m_Layer: 0
   m_Name: ProjectileE50
   m_TagString: Untagged
@@ -161,7 +162,7 @@ MonoBehaviour:
     damageScale: 0
     powerCollider: 0
     forcePower: {x: 0, y: 0}
-  damageProperties: {fileID: 0}
+  damageProperties: {fileID: 6636397638057653380}
   component: {fileID: 8137836140472550330}
 --- !u!58 &7950874950095868510
 CircleCollider2D:
@@ -217,3 +218,16 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6636397638057653380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137836140472550334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b2839081093b049b08316c68a4aa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 0

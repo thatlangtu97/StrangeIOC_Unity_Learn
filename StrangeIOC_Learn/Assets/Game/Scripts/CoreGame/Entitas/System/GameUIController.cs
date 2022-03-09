@@ -9,8 +9,12 @@ public class GameUIController : MonoBehaviour
 {
     public Joystick Joystick;
     public CameraFollow cameraFollow;
-    [PreviewField]
+
     public StateMachineController stateMachine;
+
+    public LayerMask maskToolTest;
+
+    private bool useRayCastTest;
     //public Button btnJump, btnDash, btnAttack, btnSkill1, btnSkill2;
     //public EventTrigger EJump, EDash, EAttack, ESkill1, ESkill2;
     [Button("MODIFY", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
@@ -36,6 +40,11 @@ public class GameUIController : MonoBehaviour
         //btnSkill2.onClick.AddListener(Skill2);
 
         //EJump.OnPointerDown()
+    }
+    [Button("RAYCAST TEST", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
+    void RAYCASTTEST()
+    {
+        useRayCastTest = true;
     }
     private void Update()
     {
@@ -63,6 +72,7 @@ public class GameUIController : MonoBehaviour
         {
             Skill2();
         }
+        
         //if (Input.GetKeyDown(KeyCode.E))
         //{
         //    OnInputSkill(2);
@@ -71,6 +81,9 @@ public class GameUIController : MonoBehaviour
         //{
         //    OnInputSkill(3);
         //}
+        
+        if(Input.GetMouseButtonDown(0) && useRayCastTest )
+            RayCastChangeObject();
     }
     private void Start()
     {
@@ -99,5 +112,21 @@ public class GameUIController : MonoBehaviour
     public void Skill(int idSkill)
     {
         stateMachine.OnInputSkill(idSkill);
+    }
+
+    public void RayCastChangeObject()
+    {
+        
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.transform.position ,(Camera.main.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition) ).normalized , 100f,maskToolTest);
+        if(hit.collider != null)
+        {
+            Debug.Log ("Target Position: " + hit.collider.gameObject);
+            if (hit.collider.gameObject.GetComponent<StateMachineController>() != null)
+            {
+                stateMachine = hit.collider.gameObject.GetComponent<StateMachineController>();
+                MODIFY();
+            }
+        }
+        Debug.DrawRay(Camera.main.transform.position , (Camera.main.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition) ).normalized  *100f,Color.blue);
     }
 }

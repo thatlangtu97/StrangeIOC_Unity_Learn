@@ -28,76 +28,10 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 1|CastForwardEnemyProjectileEvent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 0
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0.6
-    - Name: duration
-      Entry: 4
-      Data: 2
-    - Name: Prefab
-      Entry: 10
-      Data: 0
-    - Name: Localosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalScale
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
       Data: 1
     - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: layerMaskEnemy
       Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 2048
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: radiusCastEnemy
-      Entry: 4
-      Data: 6
-    - Name: setPatent
-      Entry: 5
-      Data: false
-    - Name: recycleWhenFinishDuration
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 2|CastProjectile, Assembly-CSharp
+      Data: 1|CastProjectile, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100
@@ -107,18 +41,18 @@ MonoBehaviour:
     - Name: useDuration
       Entry: 5
       Data: true
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
     - Name: duration
       Entry: 4
       Data: 2
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
     - Name: setParent
       Entry: 5
       Data: false
     - Name: typeSpawn
       Entry: 3
-      Data: 2
+      Data: 0
     - Name: Prefab
       Entry: 10
       Data: 0
@@ -148,7 +82,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 4
-      Data: 0
+      Data: -35
     - Name: 
       Entry: 8
       Data: 
@@ -181,7 +115,7 @@ MonoBehaviour:
       Data: 
     - Name: damageInfoEvent
       Entry: 7
-      Data: 3|DamageInfoEvent, Assembly-CSharp
+      Data: 2|DamageInfoEvent, Assembly-CSharp
     - Name: damageScale
       Entry: 4
       Data: 0.5

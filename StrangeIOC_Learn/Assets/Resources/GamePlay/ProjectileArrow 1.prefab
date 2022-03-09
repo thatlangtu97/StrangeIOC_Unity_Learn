@@ -348,7 +348,6 @@ MonoBehaviour:
   timeStartMoveDown: 0.2
   trail: {fileID: 1891372011863126130}
   speedDown: 0.8
-  useCostumeDirection: 1
 --- !u!114 &5348319791768747326
 MonoBehaviour:
   m_ObjectHideFlags: 0

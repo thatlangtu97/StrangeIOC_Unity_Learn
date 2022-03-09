@@ -5,6 +5,7 @@ public class AttackState : State
 {
     bool isEnemyForwark;
     public float timeBuffer = 0.15f;
+    public bool useCheckEnemyForwark=true;
     public override void EnterState()
     {
         base.EnterState();
@@ -16,7 +17,8 @@ public class AttackState : State
         base.UpdateState();
         if (timeTrigger < eventCollectionData[idState].durationAnimation)
         {
-            isEnemyForwark = controller.componentManager.checkEnemyForwark();
+            if(useCheckEnemyForwark)
+                isEnemyForwark = controller.componentManager.checkEnemyForwark();
             if (!isEnemyForwark)
             {
                 Vector2 velocityAttack = new Vector2(eventCollectionData[idState].curveX.Evaluate(timeTrigger), eventCollectionData[idState].curveY.Evaluate(timeTrigger));
@@ -89,7 +91,9 @@ public class AttackState : State
     {
         base.ResetTrigger();
         ResetEvent();
-        isEnemyForwark = controller.componentManager.checkEnemyForwark();
+        isEnemyForwark = false;
+//        if(useCheckEnemyForwark)
+//            isEnemyForwark = controller.componentManager.checkEnemyForwark();
         controller.componentManager.Rotate();
         controller.animator.SetTrigger(eventCollectionData[idState].NameTrigger);
         controller.componentManager.rgbody2D.velocity = Vector2.zero;

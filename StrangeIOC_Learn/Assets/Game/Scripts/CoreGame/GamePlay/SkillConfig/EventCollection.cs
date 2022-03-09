@@ -21,7 +21,7 @@ public class EventCollection : SerializedScriptableObject
     protected override void OnBeforeSerialize()
     {
         //base.OnBeforeSerialize();
-        Modify();
+        //Modify();
     }
     [Button("ACCEPT MODIFY",ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
 

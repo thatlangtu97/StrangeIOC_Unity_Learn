@@ -41,12 +41,12 @@ MonoBehaviour:
     - Name: useDuration
       Entry: 5
       Data: true
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
     - Name: duration
       Entry: 4
       Data: 2
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
     - Name: setParent
       Entry: 5
       Data: false
@@ -82,7 +82,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 4
-      Data: 0
+      Data: -40
     - Name: 
       Entry: 8
       Data: 
@@ -161,12 +161,12 @@ MonoBehaviour:
     - Name: useDuration
       Entry: 5
       Data: true
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
     - Name: duration
       Entry: 4
       Data: 2
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
     - Name: setParent
       Entry: 5
       Data: false
@@ -202,7 +202,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 4
-      Data: 0
+      Data: -40
     - Name: 
       Entry: 8
       Data: 
@@ -276,7 +276,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   NameTrigger: skill1
-  durationAnimation: 3
+  durationAnimation: 2.1
   curveX:
     serializedVersion: 2
     m_Curve:
