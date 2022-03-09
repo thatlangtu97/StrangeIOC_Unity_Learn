@@ -14,10 +14,11 @@ public class ProjectileArrowMovement : ProjectileMovement
     Vector3 dirMove;
     float fixedDeltaTime;
     float timeCount = 0;
-    
+    private float localScaleX;
     private void OnEnable()
     {
-        dirMove = new Vector3(direction.x * transform.localScale.x, direction.y, direction.z);
+        fixedDeltaTime = Time.fixedDeltaTime;
+        localScaleX = transform.localScale.x;
         timeCount = 0f;
         trail.enabled = false;
     }
@@ -27,43 +28,26 @@ public class ProjectileArrowMovement : ProjectileMovement
     }
     public override void UpdatePosition()
     {
-        updateDirMove();
-        updateRotation();
-        fixedDeltaTime = Time.fixedDeltaTime;
-        transform.position += dirMove * speed * fixedDeltaTime;
+        localScaleX = transform.localScale.x;
+        direction = transform.right * transform.localScale.x;
+        transform.position +=  direction * speed  * fixedDeltaTime;
         timeCount += fixedDeltaTime;
         trail.enabled = true;
+        CaculatePosition();
+        updateRotation();
 
 
     }
     public override void CaculatePosition()
     {
-        if(timeCount> timeStartMoveDown)
+        if(timeCount > timeStartMoveDown)
         {
-            dirMove.y -= fixedDeltaTime*speedDown;
-        }
-    }
-    private void updateDirMove()
-    {
-        if (transform.localScale.x < 0)
-        {
-            dirMove.x = Mathf.Abs(dirMove.x) * -1f;
-        }
-        else
-        {
-            dirMove.x = Mathf.Abs(dirMove.x);
+            direction.y -= fixedDeltaTime * speedDown ;
         }
     }
     private void updateRotation()
     {
-        if (transform.localScale.x < 0)
-        {
-            transform.right = dirMove * -1f;
-        }
-        else
-        {
-            transform.right = dirMove;
-        }
+        transform.right = direction / localScaleX ;
     }
 
     //public Transform enemyTransform;

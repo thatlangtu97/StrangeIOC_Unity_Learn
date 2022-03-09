@@ -31,6 +31,7 @@ public class EventCollection : SerializedScriptableObject
         {
             for (int i = 0; i < EventCombo.Count; i++)
             {
+                
                 EventCombo[i].id = i*100;
             }
         }

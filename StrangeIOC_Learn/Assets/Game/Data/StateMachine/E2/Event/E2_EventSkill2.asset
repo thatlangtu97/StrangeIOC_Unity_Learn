@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
-  m_Name: E10_EventSkill3
+  m_Name: E2_EventSkill2
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 2149371864225604891, guid: 02ebd0007e99d47cba133a06d7288dab, type: 3}
+    - {fileID: 3969153100511159295, guid: ec4180d002a888a419950644330142d0, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -28,7 +28,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|CastProjectile, Assembly-CSharp
@@ -37,13 +37,13 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.6
+      Data: 1.6
     - Name: useDuration
       Entry: 5
       Data: true
     - Name: duration
       Entry: 4
-      Data: 1
+      Data: 3
     - Name: forceWhenFinishEvent
       Entry: 5
       Data: false
@@ -61,10 +61,130 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalRotation
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LocalScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
       Data: 1
     - Name: 
       Entry: 4
       Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ForceSpawn
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: damageInfoEvent
+      Entry: 7
+      Data: 2|DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 2
+    - Name: powerCollider
+      Entry: 3
+      Data: 1
+    - Name: forcePower
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 200
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: LayerMaskLimitPosition
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|CastProjectile, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 100
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 1.5
+    - Name: useDuration
+      Entry: 5
+      Data: true
+    - Name: duration
+      Entry: 4
+      Data: 3
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
+    - Name: setParent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
+      Entry: 3
+      Data: 0
+    - Name: Prefab
+      Entry: 10
+      Data: 0
+    - Name: localPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 4
+      Data: 0.8
     - Name: 
       Entry: 4
       Data: 0
@@ -115,130 +235,10 @@ MonoBehaviour:
       Data: 
     - Name: damageInfoEvent
       Entry: 7
-      Data: 2|DamageInfoEvent, Assembly-CSharp
-    - Name: damageScale
-      Entry: 4
-      Data: 0.3
-    - Name: powerCollider
-      Entry: 3
-      Data: 1
-    - Name: forcePower
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 100
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LayerMaskLimitPosition
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 3|CastProjectile, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 100
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0.8
-    - Name: useDuration
-      Entry: 5
-      Data: true
-    - Name: duration
-      Entry: 4
-      Data: 1
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
-      Entry: 3
-      Data: 0
-    - Name: Prefab
-      Entry: 10
-      Data: 0
-    - Name: localPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalRotation
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalScale
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: ForceSpawn
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: damageInfoEvent
-      Entry: 7
       Data: 4|DamageInfoEvent, Assembly-CSharp
     - Name: damageScale
       Entry: 4
-      Data: 0.3
+      Data: 2
     - Name: powerCollider
       Entry: 3
       Data: 1
@@ -247,7 +247,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 100
+      Data: 200
     - Name: 
       Entry: 4
       Data: 0
@@ -277,13 +277,13 @@ MonoBehaviour:
       Data: 200
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 1
+      Data: 1.4
     - Name: useDuration
       Entry: 5
       Data: true
     - Name: duration
       Entry: 4
-      Data: 1
+      Data: 3
     - Name: forceWhenFinishEvent
       Entry: 5
       Data: false
@@ -301,10 +301,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0.3
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0.8
     - Name: 
       Entry: 4
       Data: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 4
-      Data: -10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -358,7 +358,7 @@ MonoBehaviour:
       Data: 6|DamageInfoEvent, Assembly-CSharp
     - Name: damageScale
       Entry: 4
-      Data: 0.3
+      Data: 2
     - Name: powerCollider
       Entry: 3
       Data: 1
@@ -367,247 +367,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 100
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LayerMaskLimitPosition
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 7|CastProjectile, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 300
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 1.2
-    - Name: useDuration
-      Entry: 5
-      Data: true
-    - Name: duration
-      Entry: 4
-      Data: 1
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
-      Entry: 3
-      Data: 0
-    - Name: Prefab
-      Entry: 10
-      Data: 0
-    - Name: localPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalRotation
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 15
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalScale
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: ForceSpawn
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: damageInfoEvent
-      Entry: 7
-      Data: 8|DamageInfoEvent, Assembly-CSharp
-    - Name: damageScale
-      Entry: 4
-      Data: 0.3
-    - Name: powerCollider
-      Entry: 3
-      Data: 1
-    - Name: forcePower
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 100
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LayerMaskLimitPosition
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|CastProjectile, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 400
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 1.4
-    - Name: useDuration
-      Entry: 5
-      Data: true
-    - Name: duration
-      Entry: 4
-      Data: 1
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
-      Entry: 3
-      Data: 0
-    - Name: Prefab
-      Entry: 10
-      Data: 0
-    - Name: localPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalRotation
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: -15
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalScale
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: ForceSpawn
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: damageInfoEvent
-      Entry: 7
-      Data: 10|DamageInfoEvent, Assembly-CSharp
-    - Name: damageScale
-      Entry: 4
-      Data: 0.3
-    - Name: powerCollider
-      Entry: 3
-      Data: 1
-    - Name: forcePower
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 100
+      Data: 200
     - Name: 
       Entry: 4
       Data: 0
@@ -635,8 +395,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  NameTrigger: skill3
-  durationAnimation: 1.7
+  NameTrigger: skill2
+  durationAnimation: 3
   curveX:
     serializedVersion: 2
     m_Curve: []
@@ -657,6 +417,42 @@ MonoBehaviour:
       value: 1
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.27402967
+      value: 1
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.27785903
+      value: 0.5
+      inSlope: 0.010000307
+      outSlope: 0.010000307
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.7565133
+    - serializedVersion: 3
+      time: 1.3187332
+      value: 0.3754279
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.3260591
+      value: 1.5
+      inSlope: Infinity
+      outSlope: Infinity
       tangentMode: 0
       weightedMode: 0
       inWeight: 0

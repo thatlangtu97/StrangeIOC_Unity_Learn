@@ -22,5 +22,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   idState: 0
+  Immunes: 
   eventCollectionData:
   - {fileID: 11400000, guid: 86131eec6c8a5ce4d844872f07400d1d, type: 2}
+  - {fileID: 11400000, guid: de0a9e72a5d0a5a40b206fe71c98206c, type: 2}
+  LockGravity: 1
+  useCheckEnemyForwark: 0

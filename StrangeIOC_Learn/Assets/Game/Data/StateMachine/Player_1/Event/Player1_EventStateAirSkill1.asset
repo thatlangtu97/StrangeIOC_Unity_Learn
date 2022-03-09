@@ -42,12 +42,12 @@ MonoBehaviour:
     - Name: useDuration
       Entry: 5
       Data: true
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
     - Name: duration
       Entry: 4
       Data: 0.5
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
     - Name: setParent
       Entry: 5
       Data: false
@@ -162,12 +162,12 @@ MonoBehaviour:
     - Name: useDuration
       Entry: 5
       Data: true
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
     - Name: duration
       Entry: 4
       Data: 0.4
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
     - Name: setParent
       Entry: 5
       Data: false

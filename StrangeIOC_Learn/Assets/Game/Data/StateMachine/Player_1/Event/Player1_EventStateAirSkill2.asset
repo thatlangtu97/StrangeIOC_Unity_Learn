@@ -179,21 +179,6 @@ MonoBehaviour:
     - Name: radius
       Entry: 4
       Data: 0
-    - Name: powerCollider
-      Entry: 3
-      Data: 4
-    - Name: forcePower
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 100
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: castByTime
       Entry: 5
       Data: true
